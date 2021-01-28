@@ -1,0 +1,67 @@
+// COLORS //
+$color-white: #ffffff;
+$color-dark-1: #222222;
+$color-secondary-gray: #8694A7;
+
+$default-text-color-black: #32363B;
+
+$highlight-text-color-gray: #EAF1FE;
+
+// STYLING //
+$border-default-gray: 1px solid #8694A7;
+$border-light-gray: 1px solid #E6E9ED;
+
+// BASE //
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* font-size: 10px; 1rem = 10px*/
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #f1f1f1;
+}
+
+// BUTTONS //
+.btn{
+  //this singular ampersand translates to button element
+  &,
+  &:link,
+  &:visited {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 9px 12px;
+    position: relative;
+    display: inline-block;
+    border: $border-light-gray;
+    border-radius:3px;
+    height:32px;
+    cursor: pointer;
+    background-color: white;
+  }
+
+  &:hover {
+  }
+
+  &:active,
+  &:focus{
+    border: none;
+  }
+}
+
+@import "./_typography.scss";
+
+@import "./components/navbar-dark";
+@import "./components/login";
+
+
+
