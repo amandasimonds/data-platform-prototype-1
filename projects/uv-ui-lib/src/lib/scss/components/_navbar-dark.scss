@@ -1,0 +1,39 @@
+// @import "../../scss/_styles.scss";
+
+.navbar-dark{
+  position: fixed;
+  width: 5.6rem;
+  height: 100vh;
+  background-color:$color-dark-1;
+
+  &__icon-box{
+    width:24px;
+    height: 24px;
+    margin: 16px;
+  }
+
+  &__divider{
+    border-bottom: 1px solid #505050;
+    margin: 0 16px;
+  }
+}
+
+.profile-box{
+  position: absolute;
+  bottom: 16px;
+  width:24px;
+  height: 24px;
+  margin: 16px;
+  border-top: 1px solid #505050;
+}
+
+.profile-picture{
+  width:24px;
+  height: 24px;
+  margin: 16px 0 16px 0;
+  background-image: url("../../assets/images/user-picture.jfif");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  border-radius: 100%;
+}

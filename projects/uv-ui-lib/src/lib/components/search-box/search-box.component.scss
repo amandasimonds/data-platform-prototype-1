@@ -1,0 +1,30 @@
+@import "../../scss/_styles.scss";
+
+.search-container{
+  width:60%;
+  margin-left: 60px;
+}
+
+.search-box{
+  height: 32px;
+  width: 90%;
+  color: $color-secondary-gray;
+  border: $border-light-gray;
+  border-right: none;
+  border-radius: 3px 0px 0px 3px;
+  font-size: 1.4rem;
+  background-color: #f4f7f9;
+  padding: 8px;
+}
+
+.dropdown{
+  width: 10%;
+  height: 32px;
+  color: $default-text-color-black;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  border: $border-light-gray;
+  border-radius: 0px 3px 3px 0px;
+  font-size: 1.4rem;
+  background-color: #f3f7f9;
+}

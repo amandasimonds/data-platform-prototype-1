@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/uv-ui-lib",
+  "assets": [
+    "CHANGELOG.md",
+    "./styles/**/*.theme.scss",
+    "./src/lib/scss/*",
+    "./src/lib/assets/*"
+  ],
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  }
+}
