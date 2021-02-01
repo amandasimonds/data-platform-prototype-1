@@ -8,4 +8,21 @@ import { Component } from '@angular/core';
 
 export class DataClusteringComponent {
 
+  nav = [
+    {
+      icon: "../../assets/images/user-picture.jfif",
+      navlink: "/login",
+      classes: ["", ""]
+    },
+    {
+      icon: "../../assets/images/pin.png",
+      navlink: "/start-page",
+      classes: ["", ""]
+    },
+    {
+      icon: "../../assets/images/search-icon.png",
+      navlink: "/start-page",
+      classes: ["", ""]
+    }
+  ]
 }
