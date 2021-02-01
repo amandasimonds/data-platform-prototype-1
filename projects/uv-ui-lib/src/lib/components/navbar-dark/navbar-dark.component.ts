@@ -7,13 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavbarDarkComponent implements OnInit {
 
-  @Input() icon1: string;
-  @Input() icon2: string;
-  @Input() icon3: string;
+  @Input() navlinks: [Nav];
+
   @Input() userPic: string;
-  @Input() navLink1: string;
-  @Input() navLink2: string;
-  @Input() navLink3: string;
   @Input() userLink: string;
 
   constructor() { }
@@ -21,4 +17,10 @@ export class NavbarDarkComponent implements OnInit {
   ngOnInit(): void {
   }
 
+}
+
+interface Nav{
+  icon: string;
+  navlink: string;
+  classes: [string];
 }

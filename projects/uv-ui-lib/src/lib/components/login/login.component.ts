@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'lib-login',
@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  @Input() login: () => void;
+  @Input() header: string;
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }

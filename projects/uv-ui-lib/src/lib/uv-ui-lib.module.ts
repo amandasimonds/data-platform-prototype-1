@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { UvUiLibComponent } from './uv-ui-lib.component';
+
 
 import { NavbarDarkComponent } from './components/navbar-dark/navbar-dark.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -9,6 +11,7 @@ import { HeaderSbsComponent } from './components/header-sbs/header-sbs.component
 import { HeaderSbsSubComponent } from './components/header-sbs-sub/header-sbs-sub.component';
 import { ContentSbsLeftComponent } from './components/content-sbs-left/content-sbs-left.component';
 import { IconsComponent } from './components/icons/icons.component';
+import { ButtonComponent } from './components/button/button.component';
 
 
 
@@ -22,8 +25,10 @@ import { IconsComponent } from './components/icons/icons.component';
     HeaderSbsComponent,
     HeaderSbsSubComponent,
     ContentSbsLeftComponent,
-    IconsComponent],
+    IconsComponent,
+    ButtonComponent],
   imports: [
+    CommonModule
   ],
   exports: [
     UvUiLibComponent,
@@ -33,7 +38,8 @@ import { IconsComponent } from './components/icons/icons.component';
     LoginComponent,
     HeaderSbsComponent,
     HeaderSbsSubComponent,
-    ContentSbsLeftComponent
+    ContentSbsLeftComponent,
+    ButtonComponent
   ]
 })
 export class UvUiLibModule { }
