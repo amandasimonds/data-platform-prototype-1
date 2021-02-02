@@ -1,16 +1,3 @@
-// COLORS //
-$color-white: #ffffff;
-$color-dark-1: #222222;
-$color-secondary-gray: #8694A7;
-
-$default-text-color-black: #32363B;
-
-$highlight-text-color-gray: #EAF1FE;
-
-// STYLING //
-$border-default-gray: 1px solid #8694A7;
-$border-light-gray: 1px solid #E6E9ED;
-
 // BASE //
 *,
 *::after,
@@ -29,7 +16,10 @@ body {
     background-color: #f1f1f1;
 }
 
-@import "./_typography.scss";
+// IMPORTS //
+@import "./variables";
+@import "./typography";
+
 
 @import "./components/navbar-dark";
 @import "./components/login";

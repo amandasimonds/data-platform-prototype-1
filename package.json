@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-scss": "scss-bundle -p scss-bundle.config.json",
-    "build-lib-scss": "ng build uv-ui-lib --prod && npm run build-scss",
+    "build-lib": "ng build uv-ui-lib --prod && npm run build-scss",
     "build-lib-prod": "ng build uv-ui-lib --prod",
     "build-lib-watch": "ng build uv-ui-lib --prod --watch",
     "pack-lib": "cd dist/uv-ui-lib && npm pack",

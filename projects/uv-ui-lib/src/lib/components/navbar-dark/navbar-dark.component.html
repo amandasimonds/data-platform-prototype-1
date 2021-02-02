@@ -1,6 +1,16 @@
 <div class="navbar-dark">
 
-  <span *ngFor="let navlink of navlinks" class="navlink-wrapper"><a ngClass={{navlink.classes}} href={{navlink.navlink}}><img src={{navlink.icon}} class="navbar-dark__icon-box" ></a></span>
+  <span
+    *ngFor="let navlink of navlinks"
+    class="navlink-wrapper">
+    <a
+      ngClass={{navlink.classes}}
+      href={{navlink.navlink}}>
+      <img
+      src={{navlink.icon}}
+      class="navbar-dark__icon-box" >
+    </a>
+  </span>
 
 <div class="navbar-dark__divider"></div>
 
