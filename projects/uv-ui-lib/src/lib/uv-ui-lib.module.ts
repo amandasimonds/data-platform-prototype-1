@@ -39,7 +39,8 @@ import { ButtonComponent } from './components/button/button.component';
     HeaderSbsComponent,
     HeaderSbsSubComponent,
     ContentSbsLeftComponent,
-    ButtonComponent
+    ButtonComponent,
+    IconsComponent
   ]
 })
 export class UvUiLibModule { }
