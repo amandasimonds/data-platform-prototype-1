@@ -10,6 +10,8 @@ export class ButtonComponent implements OnInit {
   @Input() btnText: string;
   @Output() onClick = new EventEmitter<any>();
 
+  //hover | active | disabled | focus
+
   constructor() { }
 
   ngOnInit(): void {
