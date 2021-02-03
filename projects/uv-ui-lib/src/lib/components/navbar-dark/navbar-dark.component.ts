@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'lib-navbar-dark',
   templateUrl: './navbar-dark.component.html',
-  styleUrls: ['./navbar-dark.component.scss']
+  styleUrls: ['../../scss/_styles.scss']
 })
 export class NavbarDarkComponent implements OnInit {
 

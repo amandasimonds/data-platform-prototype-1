@@ -3,7 +3,7 @@ import { uvIcons } from './icons';
 
 @Component({
   selector: 'lib-icons',
-  templateUrl: './icons.component.html',
+  template: '',
   styleUrls: ['../../scss/_styles.scss']
 })
 export class IconsComponent implements OnInit {
