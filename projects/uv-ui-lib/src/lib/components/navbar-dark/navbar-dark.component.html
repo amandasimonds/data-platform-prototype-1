@@ -4,11 +4,10 @@
     *ngFor="let navlink of navlinks"
     class="navlink-wrapper">
     <a
-      ngClass={{navlink.classes}}
       href={{navlink.navlink}}>
-      <img
-      src={{navlink.icon}}
-      class="navbar-dark__icon-box" >
+    <lib-icons
+      name={{navlink.icon}}
+      class="navbar-dark__svg-nav"></lib-icons>
     </a>
   </span>
 

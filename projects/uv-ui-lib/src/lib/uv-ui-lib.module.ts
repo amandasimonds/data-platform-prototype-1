@@ -12,6 +12,9 @@ import { HeaderSbsSubComponent } from './components/header-sbs-sub/header-sbs-su
 import { ContentSbsLeftComponent } from './components/content-sbs-left/content-sbs-left.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { ButtonComponent } from './components/button/button.component';
+import { NavbarDashboardComponent } from './components/navbar-dashboard/navbar-dashboard.component';
+import { HeaderDashboardComponent } from './components/header-dashboard/header-dashboard.component';
+import { IconPngsComponent } from './components/icons/iconPngs.component';
 
 
 
@@ -26,7 +29,10 @@ import { ButtonComponent } from './components/button/button.component';
     HeaderSbsSubComponent,
     ContentSbsLeftComponent,
     IconsComponent,
-    ButtonComponent],
+    ButtonComponent,
+    NavbarDashboardComponent,
+    HeaderDashboardComponent,
+    IconPngsComponent],
   imports: [
     CommonModule
   ],
@@ -40,7 +46,10 @@ import { ButtonComponent } from './components/button/button.component';
     HeaderSbsSubComponent,
     ContentSbsLeftComponent,
     ButtonComponent,
-    IconsComponent
+    IconsComponent,
+    NavbarDashboardComponent,
+    HeaderDashboardComponent,
+    IconPngsComponent
   ]
 })
 export class UvUiLibModule { }
