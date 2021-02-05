@@ -1,0 +1,28 @@
+.header-dashboard{
+  background-color: white;
+  border: $border-light-gray;
+  height: 153px;
+  width:100%;
+  float:right;
+  box-shadow: 0 2px 14px 0 rgba(215,215,215,0.5);
+}
+
+.header-dashboard-svg{
+  float: left;
+  margin: 1px 20px;
+
+    path{
+      fill: $color-light-gray;
+    }
+    svg{
+      width:24px;
+    }
+}
+
+.heading-container{
+  padding:42.5px 80px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

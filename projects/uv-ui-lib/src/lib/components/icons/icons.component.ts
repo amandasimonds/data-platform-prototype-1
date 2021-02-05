@@ -12,10 +12,6 @@ export class IconsComponent implements OnInit {
     set name(iconName : string) {
       this.element.nativeElement.innerHTML = uvIcons[iconName] || null
     }
-  @Input()
-    set viewBox(viewBox : string) {
-      this.element.nativeElement.setAttribute("viewBox", viewBox )
-    }
 
   constructor(private element: ElementRef) { }
 

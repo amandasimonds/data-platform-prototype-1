@@ -10,12 +10,14 @@ export class DataClusteringComponent {
 
   nav = [
     {
-      icon: "../../assets/images/user-picture.jfif",
+      icon: "clouds",
       navlink: "/login",
-      classes: ["", ""]
+      classes: ["", ""],
+      disabled: true,
+      primary: true
     },
     {
-      icon: "../../assets/images/pin.png",
+      icon: "fileCancel",
       navlink: "/start-page",
       classes: ["", ""]
     },
