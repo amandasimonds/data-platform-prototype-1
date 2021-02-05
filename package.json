@@ -12,6 +12,8 @@
     "build-lib": "ng build uv-ui-lib --prod && npm run build-scss",
     "build-lib-prod": "ng build uv-ui-lib --prod",
     "build-lib-watch": "ng build uv-ui-lib --prod --watch",
+    "watch-test-lib": "ng test uv-ui-lib --code-coverage",
+    "test-lib": "ng test uv-ui-lib --watch=false --code-coverage",
     "pack-lib": "cd dist/uv-ui-lib && npm pack",
     "package": "npm run build-lib && npm run pack-lib",
     "publish-lib": "cd dist/uv-ui-lib && npm publish"

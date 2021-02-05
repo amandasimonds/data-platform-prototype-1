@@ -2,17 +2,21 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'lib-button',
-  template: '<a (click)="onClickButton($event)">{{btnText}}</a>',
+  templateUrl: './button.component.html',
   styleUrls: ['../../scss/_styles.scss']
 })
 export class ButtonComponent implements OnInit {
 
   @Input() btnText: string;
   @Output() onClick = new EventEmitter<any>();
+  @Input() buttonConfig: BtnConfig;  
 
   constructor() { }
 
   ngOnInit(): void {
+    if(!this.buttonConfig){
+      this.buttonConfig = {};
+    }
   }
 
   onClickButton(event) {
@@ -21,7 +25,7 @@ export class ButtonComponent implements OnInit {
 
 }
 
-interface BtnConfig{
+interface BtnConfig {
   disabled?: boolean,
   active?: boolean,
   focus?: boolean
