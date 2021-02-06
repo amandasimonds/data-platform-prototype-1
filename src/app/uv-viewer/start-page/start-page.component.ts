@@ -11,19 +11,36 @@ export class StartPageComponent implements OnInit {
   nav = [
     {
       icon: "dashboard",
-      navlink: "/data-clustering",
+      navlink: "/start-page",
       classes: ["", ""],
     },
     {
       icon: "inspect",
-      navlink: "/login",
-      classes: ["", ""]
-    },
-    {
-      icon: "clouds",
       navlink: "/start-page",
       classes: ["", ""]
     },
+
+    {
+      icon: "sideBySide",
+      navlink: "/start-page",
+      classes: ["", ""]
+    },
+    {
+      icon: "designRipple",
+      navlink: "/start-page",
+      classes: ["", ""]
+    },
+    {
+      icon: "ingestion",
+      navlink: "/start-page",
+      classes: ["", ""]
+    },
+    {
+      icon: "settings",
+      navlink: "/start-page",
+      classes: ["", ""]
+    },
+
   ]
 
   constructor(private route : Router) {}

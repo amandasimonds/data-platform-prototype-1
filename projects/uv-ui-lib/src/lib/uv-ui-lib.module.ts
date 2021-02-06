@@ -15,6 +15,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { NavbarDashboardComponent } from './components/navbar-dashboard/navbar-dashboard.component';
 import { HeaderDashboardComponent } from './components/header-dashboard/header-dashboard.component';
 import { IconPngsComponent } from './components/icons/iconPngs.component';
+import { NavbarDashboardSubComponent } from './components/navbar-dashboard-sub/navbar-dashboard-sub.component';
 
 
 
@@ -32,7 +33,8 @@ import { IconPngsComponent } from './components/icons/iconPngs.component';
     ButtonComponent,
     NavbarDashboardComponent,
     HeaderDashboardComponent,
-    IconPngsComponent],
+    IconPngsComponent,
+    NavbarDashboardSubComponent],
   imports: [
     CommonModule
   ],
