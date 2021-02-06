@@ -1,0 +1,31 @@
+.navbar-dashboard-sub{
+  position: fixed;
+  float:left;
+  width: 212px;
+  height: 100vh;
+  border: $border-light-gray;
+  background-color:$color-white;
+  box-shadow: $box-shadow-light;
+
+  &__heading-container{
+    padding: 18px 16px;
+  }
+
+  &__divider{
+    border-bottom: 1px solid $color-light-gray-2;
+    opacity: .31;
+    margin-bottom: 22px;
+    // position: relative;
+    // top:113px;
+  }
+
+  &__links-flexbox{
+    position: relative;
+    top:113px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 100%;
+  }
+
+}
