@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-navbar-dashboard-sub',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../../scss/_styles.scss']
 })
 export class NavbarDashboardSubComponent implements OnInit {
+
+  @Input() headingTxt : string;
 
   constructor() { }
 
