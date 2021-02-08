@@ -1,9 +1,11 @@
 .navbar-dashboard{
-  position: fixed;
+  position: relative;
   float:left;
   width: 64px;
   height: 100vh;
+  z-index: 200;
   border: $border-light-gray;
+  border-bottom: none;
   background-color:$color-white;
   box-shadow: $box-shadow-light;
   overflow:hidden auto;
@@ -27,7 +29,6 @@
   &__svg-nav{
     path{
       fill: url(#linearGradient-1);
-      // fill: black;
     }
     svg{
       width:24px;

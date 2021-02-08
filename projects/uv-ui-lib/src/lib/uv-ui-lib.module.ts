@@ -17,8 +17,6 @@ import { HeaderDashboardComponent } from './components/header-dashboard/header-d
 import { IconPngsComponent } from './components/icons/iconPngs.component';
 import { NavbarDashboardSubComponent } from './components/navbar-dashboard-sub/navbar-dashboard-sub.component';
 
-
-
 @NgModule({
   declarations: [
     UvUiLibComponent,
@@ -51,7 +49,8 @@ import { NavbarDashboardSubComponent } from './components/navbar-dashboard-sub/n
     IconsComponent,
     NavbarDashboardComponent,
     HeaderDashboardComponent,
-    IconPngsComponent
+    IconPngsComponent,
+    NavbarDashboardSubComponent
   ]
 })
 export class UvUiLibModule { }

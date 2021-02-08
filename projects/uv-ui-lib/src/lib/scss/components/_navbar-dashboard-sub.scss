@@ -1,14 +1,18 @@
 .navbar-dashboard-sub{
-  position: fixed;
+  position: relative;
   float:left;
   width: 212px;
   height: 100vh;
+  z-index:100;
   border: $border-light-gray;
+  border-left:none;
+  border-bottom: none;
   background-color:$color-white;
   box-shadow: $box-shadow-light;
+  overflow: hidden;
 
   &__heading-container{
-    padding: 18px 16px;
+    padding: 0;
   }
 
   &__divider{
@@ -26,6 +30,15 @@
     flex-direction: column;
     align-content: center;
     height: 100%;
+  }
+
+  &__icon{
+    path{
+      fill: $color-blue;
+    }
+    svg{
+      width:24px;
+    }
   }
 
 }
