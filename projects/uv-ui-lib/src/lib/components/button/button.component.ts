@@ -7,9 +7,8 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
-  @Input() btnText: string;
   @Output() onClick = new EventEmitter<any>();
-  @Input() buttonConfig: BtnConfig;  
+  @Input() buttonConfig: any;
 
   constructor() { }
 
@@ -22,7 +21,6 @@ export class ButtonComponent implements OnInit {
   onClickButton(event) {
     this.onClick.emit(event);
   }
-
 }
 
 interface BtnConfig {

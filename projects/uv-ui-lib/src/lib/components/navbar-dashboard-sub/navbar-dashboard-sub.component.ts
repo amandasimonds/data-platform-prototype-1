@@ -8,10 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavbarDashboardSubComponent implements OnInit {
 
   @Input() headingTxt : string;
+  @Input() subHeadingTxt : string;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  iconBtnConfig = {
+    iconName: "moreHorizontal"
   }
 
 }

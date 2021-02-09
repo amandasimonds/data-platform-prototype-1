@@ -1,8 +1,8 @@
 <lib-login header="Welcome to UV">
 
   <lib-button
+    [buttonConfig]="textBtnConfig"
     (onClick)="btnFunctionCall($event)"
-    btnText="Login"
     [ngClass]="['btn','btn-login']">
   </lib-button>
 
