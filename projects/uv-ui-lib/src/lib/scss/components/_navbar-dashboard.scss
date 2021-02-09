@@ -4,13 +4,13 @@
   width: 64px;
   height: 100vh;
   z-index: 200;
-  border: $border-light-gray;
+  border: $border-gray-light;
   border-bottom: none;
   background-color:$color-white;
   box-shadow: $box-shadow-light;
 
   &__divider{
-    border-bottom: 1px solid $color-light-gray-2;
+    border-bottom: 1px solid $color-gray-light-2;
     opacity: .31;
   }
 
