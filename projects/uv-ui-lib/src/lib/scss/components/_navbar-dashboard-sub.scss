@@ -13,6 +13,11 @@
 
   &__heading-container{
     padding: 18px 16px;
+    height: 88px;
+  }
+
+  &__text-container{
+    float: left;
   }
 
   &__divider{
@@ -23,22 +28,25 @@
     // top:113px;
   }
 
-  &__links-flexbox{
+  &__snippet-flexbox{
     position: relative;
     top:113px;
     display: flex;
     flex-direction: column;
     align-content: center;
     height: 100%;
+    padding: 19px 16px;
   }
 
   &__icon{
-    path{
-      fill: $color-blue;
-    }
-    svg{
-      width:24px;
-    }
+    float: right;
   }
 
+  &__snippet-container{
+    height: 73px;
+    &--textbox{
+      width: 126.5px;
+      float: right;
+    }
+  }
 }
