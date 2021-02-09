@@ -1,7 +1,7 @@
 .header-dashboard{
   position: absolute;
   background-color: white;
-  border: $border-light-gray;
+  border: $border-gray-light;
   border-left: none;
   height: 153px;
   width: 1518px;
@@ -20,7 +20,7 @@
     margin: 1px 20px;
 
       path{
-        fill: $color-light-gray;
+        fill: $color-gray-light;
       }
       svg{
         width:24px;

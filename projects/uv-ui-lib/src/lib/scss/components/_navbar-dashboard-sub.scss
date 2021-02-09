@@ -4,7 +4,7 @@
   width: 212px;
   height: 100vh;
   z-index:100;
-  border: $border-light-gray;
+  border: $border-gray-light;
   border-left:none;
   border-bottom: none;
   background-color:$color-white;
@@ -21,7 +21,7 @@
   }
 
   &__divider{
-    border-bottom: 1px solid $color-light-gray-2;
+    border-bottom: 1px solid $color-gray-light-2;
     opacity: .31;
     margin-bottom: 22px;
     // position: relative;
