@@ -2,7 +2,11 @@
 
   <lib-navbar-dashboard [navlinks]="nav"></lib-navbar-dashboard>
 
-  <lib-navbar-dashboard-sub headingTxt="Heading"></lib-navbar-dashboard-sub>
+  <lib-navbar-dashboard-sub
+    headingTxt="Heading"
+    subHeadingTxt="Subheading"
+    (onClick)="btnFunctionCall($event)"
+  ></lib-navbar-dashboard-sub>
 
   <lib-header-dashboard headerText="Viewer" iconName="inspect"></lib-header-dashboard>
 
