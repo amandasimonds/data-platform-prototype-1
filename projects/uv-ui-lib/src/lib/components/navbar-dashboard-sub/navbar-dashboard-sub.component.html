@@ -1,21 +1,29 @@
 <div class="navbar-dashboard-sub">
 
   <div class="navbar-dashboard-sub__heading-container">
-    <p class="heading-2">{{headingTxt}}</p>
-    <p class="subheading">{{subHeadingTxt}}</p>
+
+    <div class="navbar-dashboard-sub__text-container">
+      <p class="heading-2">{{headingTxt}}</p>
+      <p class="subheading">{{subHeadingTxt}}</p>
+    </div>
+
     <lib-button
     [buttonConfig]="iconBtnConfig"
-    class="svg-blue"
+    class="svg-blue navbar-dashboard-sub__icon"
     >
   </lib-button>
-    <!-- <span (click)="onClickButton($event)">
-      <lib-icons class="navbar-dashboard-sub__icon" name="moreHorizontal"></lib-icons>
-    </span> -->
+
   </div>
 
-  <div class="navbar-dashboard-sub__navlinks-flexbox">
+  <div class="navbar-dashboard-sub__divider"></div>
 
-    <div class="navbar-dashboard-sub__divider"></div>
+  <div class="navbar-dashboard-sub____snippet-flexbox">
+
+    <div class="navbar-dashboard-sub__snippet-container">
+      <p class="subheading">{{snippetHeading}}</p>
+      <p>{{snippetTxt}}</p>
+
+    </div>
 
     <span
       class="navlink-wrapper">
