@@ -17,13 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   textBtnConfig = {
-    styles: {},
     text: "Login"
-  }
-
-  iconBtnConfig = {
-    styles: {},
-    iconName: "inspect"
   }
 
   btnFunctionCall(event) {
