@@ -7,8 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SearchPanelComponent implements OnInit {
 
-  @Input('ngModel') model: any
-
   constructor() { }
 
   ngOnInit(): void {

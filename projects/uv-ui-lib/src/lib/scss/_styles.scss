@@ -10,9 +10,9 @@
     box-sizing: inherit;
 }
 
-html {
-    font-size: 62.5%; /* font-size: 10px; 1rem = 10px*/
-}
+// html {
+//     font-size: 62.5%; /* font-size: 10px; 1rem = 10px*/
+// }
 
 body {
     box-sizing: border-box;
@@ -24,7 +24,6 @@ body {
 @import "./typography";
 @import "./svg";
 @import "./utils";
-@import "./uv-dites-vars";
 
 @import "./components/search-panel";
 @import "./components/navbar-dashboard";
