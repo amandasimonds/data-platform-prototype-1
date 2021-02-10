@@ -24,7 +24,9 @@ body {
 @import "./typography";
 @import "./svg";
 @import "./utils";
+@import "./uv-dites-vars";
 
+@import "./components/search-panel";
 @import "./components/navbar-dashboard";
 @import "./components/navbar-dashboard-sub";
 @import "./components/navbar-dark";
