@@ -1,2 +1,21 @@
-<a (click)="onClickButton($event)" [ngClass]="{'disabled': buttonConfig.disabled}"
-    >{{btnText}}</a>
+<ng-container *ngTemplateOutlet="buttonConfig['text'] ? text : icon"></ng-container>
+
+<ng-template #text>
+
+  <a (click)="onClickButton($event)"
+  [ngStyle]="buttonConfig.styles"
+  [ngClass]="{'disabled': buttonConfig.disabled}">{{buttonConfig.text}}</a>
+
+</ng-template>
+
+<ng-template #icon>
+  <a (click)="onClickButton($event)">
+    
+    <lib-icons
+    name={{buttonConfig.iconName}}
+    [ngStyle]="buttonConfig.styles">
+  </lib-icons>
+
+  </a>
+
+</ng-template>

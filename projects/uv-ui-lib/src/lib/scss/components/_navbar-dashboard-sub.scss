@@ -1,31 +1,52 @@
 .navbar-dashboard-sub{
-  position: fixed;
+  position: relative;
   float:left;
   width: 212px;
   height: 100vh;
-  border: $border-light-gray;
+  z-index:100;
+  border: $border-gray-light;
+  border-left:none;
+  border-bottom: none;
   background-color:$color-white;
   box-shadow: $box-shadow-light;
+  overflow: hidden;
 
   &__heading-container{
     padding: 18px 16px;
+    height: 88px;
+  }
+
+  &__text-container{
+    float: left;
   }
 
   &__divider{
-    border-bottom: 1px solid $color-light-gray-2;
+    border-bottom: 1px solid $color-gray-light-2;
     opacity: .31;
     margin-bottom: 22px;
     // position: relative;
     // top:113px;
   }
 
-  &__links-flexbox{
+  &__snippet-flexbox{
     position: relative;
     top:113px;
     display: flex;
     flex-direction: column;
     align-content: center;
     height: 100%;
+    padding: 19px 16px;
   }
 
+  &__icon{
+    float: right;
+  }
+
+  &__snippet-container{
+    height: 73px;
+    &--textbox{
+      width: 126.5px;
+      float: right;
+    }
+  }
 }

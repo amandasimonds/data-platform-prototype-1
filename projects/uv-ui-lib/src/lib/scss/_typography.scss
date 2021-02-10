@@ -3,44 +3,56 @@
 body{
   font-family: "Noto Sans", sans-serif;
   color: $default-text-color-black;
+  font-size: inherit;
 }
 
-.paragraph{
-  font-size: 1.8rem;
-  line-height: 2.7rem;
+p{
+  // font-size: 1.2rem;
+  // line-height: 1.7rem;
+  font-size: 12px;
+  line-height: 17px;
 }
 
 .heading{
   font-family: "Noto Sans", sans-serif;
   font-weight: bold;
-  font-size: 2.8rem;
-  line-height: 3.8rem;
+  // font-size: 2.8rem;
+  // line-height: 3.8rem;
+  font-size: 28px;
+  line-height: 38px;
 
-  &--block{
-    font-family: "Noto Sans", sans-serif;
-    font-weight: 500;
-    font-size: 1.9rem;
-    line-height: 2.2rem;
-    display: inline-block;
-  }
+  // &--block{
+  //   font-family: "Noto Sans", sans-serif;
+  //   font-weight: 500;
+  //   font-size: 1.9rem;
+  //   line-height: 2.2rem;
+  //   display: inline-block;
+  // }
 }
 
 .heading-2{
-  font-size:1.6rem;
-  font-weight: bold;
+  // font-size:1.8rem;
+  // line-height: 2.4rem;
+  font-size:18px;
   line-height: 24px;
+  font-weight: bold;
 }
 
 .heading-3{
-  font-size: 2.4rem;
-  line-height: 3.6rem;
+  // font-size: 2.4rem;
+  // line-height: 3.6rem;
+  font-size: 24px;
+  line-height: 36px;
+
 }
 
 .subheading {
   color: $color-gray;
+  // font-size: 1.2rem;
+  // line-height: 1.7rem;
   font-size: 12px;
-  font-weight: bold;
   line-height: 17px;
+  font-weight: bold;
 }
 
 .highlight{

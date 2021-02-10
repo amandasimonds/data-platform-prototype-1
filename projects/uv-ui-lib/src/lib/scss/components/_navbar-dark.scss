@@ -5,7 +5,7 @@
   align-content: center;
   width: 6.6rem;
   height: 100vh;
-  background-color:$color-dark-1;
+  background-color:$color-black;
 
   // &__icon-box{
   //   width:24px;
@@ -25,15 +25,8 @@
     path{
       fill: $color-gray;
     }
-
     svg{
       width:50px;
-      border-radius: 50%;
-      padding: 10px;
-
-      &:hover{
-        background-color: blue;
-      }
     }
   }
 }
@@ -55,7 +48,6 @@
   width:24px;
   height: 24px;
   margin: 16px 0 16px 0;
-  background-image: url("../../assets/images/user-picture.jfif");
   background-size: cover;
   background-position: top;
   position: relative;

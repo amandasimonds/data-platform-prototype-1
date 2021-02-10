@@ -16,6 +16,10 @@ export class LoginComponent implements OnInit {
 
   }
 
+  textBtnConfig = {
+    text: "Login"
+  }
+
   btnFunctionCall(event) {
     console.log('function was called', event);
     this.route.navigate(["/start-page"])

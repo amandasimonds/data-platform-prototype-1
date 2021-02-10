@@ -10,7 +10,7 @@
     padding: 9px 12px;
     position: relative;
     display: inline-block;
-    border: $border-light-gray;
+    border: $border-gray-light;
     border-radius:3px;
     height:32px;
     cursor: pointer;
@@ -37,14 +37,10 @@
 
 }
 
-.btn-primary{
-  background-color: green;
-}
-
 .btn-login{
   margin:25px;
   font-size: 1.4rem;
-  border: $border-light-gray;
+  border: $border-gray-light;
   padding: 12px;
   border-radius: 3px;
   width: 320px;
