@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-navbar-dashboard-sub',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarDashboardSubComponent implements OnInit {
 
+  @Input() headingTxt : string;
+  @Input() subHeadingTxt : string;
+  @Input() snippetTxt : string;
+  @Input() snippetHeading: string;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  iconBtnConfig = {
+    iconName: "moreHorizontal"
   }
 
 }

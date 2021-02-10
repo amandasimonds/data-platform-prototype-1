@@ -1,14 +1,9 @@
 <lib-login header="Welcome to UV">
 
   <lib-button
+    [buttonConfig]="textBtnConfig"
     (onClick)="btnFunctionCall($event)"
-    btnText="Login"
     [ngClass]="['btn','btn-login']">
   </lib-button>
-
-  <lib-icons name="designRipple"></lib-icons>
-  <lib-icons name="ingestion"></lib-icons>
-  <lib-icons name="designRipple"></lib-icons>
-  <lib-icons name="dashboard"></lib-icons>
 
 </lib-login>
