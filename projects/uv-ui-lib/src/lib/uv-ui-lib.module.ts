@@ -10,6 +10,8 @@ import { ButtonComponent } from './components/button/button.component';
 import { NavbarDashboardComponent } from './components/navbar-dashboard/navbar-dashboard.component';
 import { HeaderDashboardComponent } from './components/header-dashboard/header-dashboard.component';
 import { NavbarDashboardSubComponent } from './components/navbar-dashboard-sub/navbar-dashboard-sub.component';
+import { SearchPanelComponent } from './components/search-panel/search-panel.component';
+import { FiltersListComponent } from './components/search-panel/filters-list/filters-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { NavbarDashboardSubComponent } from './components/navbar-dashboard-sub/n
     ButtonComponent,
     NavbarDashboardComponent,
     HeaderDashboardComponent,
-    NavbarDashboardSubComponent],
+    NavbarDashboardSubComponent,
+    SearchPanelComponent,
+    FiltersListComponent],
   imports: [
     CommonModule
   ],
