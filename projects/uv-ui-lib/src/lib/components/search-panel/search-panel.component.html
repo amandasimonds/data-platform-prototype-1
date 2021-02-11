@@ -1,56 +1,66 @@
-<input type="text" class="search-panel" placeholder="Search..."/>
+<!-- <input type="text" class="search-panel" placeholder="Search..."/> -->
 
+<div class="search-panel input-group input-group-sm w-100">
 
-<!-- <div class="input-group input-group-sm w-100"> -->
-
-  <!-- <div class="input-group-prepend">
+  <div class="input-group-prepend">
       <span class="input-group-text">
-          <div
-                     >
-      </div>
-          <ng-container >
+          <lib-badge
+                       badgeCSSClasses="badge badge-font-medium d-flex align-items-center pointer"
+                       [badgeText]="'...'"
+                       (click)="badgeClicked()">
+          </lib-badge>
+          <ng-container>
               <ng-container *ngTemplateOutlet="expandedFiltersTemplate"></ng-container>
           </ng-container>
-          <ng-container >
-              <lib-filters-list
-                                  >
+          <ng-container *ngIf="shortFilters?.length">
+              <lib-filters-list [filterList]="shortFilters"
+                                  [filterCSSClasses]="'badge-width-small'"
+                                  (click)="filterRemoveClicked()">
               </lib-filters-list>
           </ng-container>
       </span>
   </div>
 
   <input  type="text"
-          class="search-field form-control border border-right-0">
+          class="search-field form-control border border-right-0"
+          [(ngModel)]="data"
+          (keydown.enter)="enterKeyEvent()"
+          >
 
   <div class="input-group-append first-group">
       <button class="clear-btn mat-icon-button btn btn-outline-secondary border-left-0 border-right-0 border"
-
-              >
-          <span>clear</span>
+              [class.hidden]="searchConfig"
+              mat-icon-button
+              (click)="clearBtnClicked()">
+          <lib-icons>clear</lib-icons>
       </button>
       <button
               class="search-panel-btn mat-icon-button btn btn-outline-secondary border-left-0 border-right-0 border"
-              >
-          <span>network_check</span>
+              [disabled]="searchConfig"
+              (click)=" measureBtnClicked()">
+          <lib-icons>network_check</lib-icons>
       </button>
-      <button class="search-panel-btn mat-icon-button btn btn-outline-secondary border-left-0 border"
-
-              mat-icon-button>
-          <span>search</span>
+      <button class="search-panel-btn lib-icons-button btn btn-outline-secondary border-left-0 border"
+              [disabled]="searchConfig"
+              (click)="searchBtnClicked()"
+              >
+          <lib-icons>search</lib-icons>
       </button>
   </div>
 
   <div
        class="input-group-append">
+      <!-- <lib-index-settings></lib-index-settings> -->
   </div>
 
 </div>
 
 <ng-template #expandedFiltersTemplate>
   <div class="expanded-filters-container border input-group input-group-sm w-100">
-      <div class="expanded-filters" >
-          <lib-filters-list >
+      <div class="expanded-filters">
+          <lib-filters-list [filterList]="filters"
+                              (click)="removeClicked()">
           </lib-filters-list>
       </div>
   </div>
-</ng-template> -->
+</ng-template>
