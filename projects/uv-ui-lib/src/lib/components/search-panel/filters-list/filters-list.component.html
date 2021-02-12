@@ -1,4 +1,4 @@
-<ng-container *ngFor="let filter of filterList; trackBy: trackByFiltersFn; let filterIndex = index">
+<ng-container *ngFor="let filter of filters; let filterIndex = index">
     <ng-container *ngFor="let item of filter | keyvalue">
         <ng-container *ngFor="let filter of filters">
             <lib-badge iconTitle="Remove concept"

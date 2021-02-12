@@ -1,8 +1,8 @@
 <!-- <input type="text" class="search-panel" placeholder="Search..."/> -->
 
-<div class="search-panel input-group input-group-sm w-100">
+<div class="search-panel">
 
-  <div class="input-group-prepend">
+  <!-- <div class="input-group-prepend">
       <span class="input-group-text">
           <lib-badge
                        badgeCSSClasses="badge badge-font-medium d-flex align-items-center pointer"
@@ -13,21 +13,31 @@
               <ng-container *ngTemplateOutlet="expandedFiltersTemplate"></ng-container>
           </ng-container>
           <ng-container *ngIf="shortFilters?.length">
-              <lib-filters-list [filterList]="shortFilters"
+              <lib-filters-list [filters]="shortFilters"
                                   [filterCSSClasses]="'badge-width-small'"
                                   (click)="filterRemoveClicked()">
               </lib-filters-list>
           </ng-container>
       </span>
-  </div>
+  </div> -->
 
-  <input  type="text"
-          class="search-field form-control border border-right-0"
+  <lib-icons class="search-panel__icon-search" name="search"></lib-icons>
+
+  <input type="text"
+  placeholder="Search..."
+          class="search-panel__input"
           [(ngModel)]="data"
           (keydown.enter)="enterKeyEvent()"
           >
+  <div class="search-panel__filters-container">
+    <lib-icons class="search-panel__icon-arrow-left" name="leftArrow"></lib-icons>
+    <lib-icons class="search-panel__icon-arrow-right" name="rightArrow"></lib-icons>
+    <lib-icons class="search-panel__icon-filter" name="filter"></lib-icons>
+    <lib-icons class="search-panel__icon-close" name="close"></lib-icons>
 
-  <div class="input-group-append first-group">
+  </div>
+
+  <!-- <div class="">
       <button class="clear-btn mat-icon-button btn btn-outline-secondary border-left-0 border-right-0 border"
               [class.hidden]="searchConfig"
               mat-icon-button
@@ -46,7 +56,7 @@
               >
           <lib-icons>search</lib-icons>
       </button>
-  </div>
+  </div> -->
 
   <div
        class="input-group-append">
@@ -58,7 +68,7 @@
 <ng-template #expandedFiltersTemplate>
   <div class="expanded-filters-container border input-group input-group-sm w-100">
       <div class="expanded-filters">
-          <lib-filters-list [filterList]="filters"
+          <lib-filters-list [filters]="filters"
                               (click)="removeClicked()">
           </lib-filters-list>
       </div>
