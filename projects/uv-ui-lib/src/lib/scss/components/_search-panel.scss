@@ -4,35 +4,95 @@
   border: $border-gray-light;
   border-radius: 28px;
   background-color: #FFFFFF;
-  margin: 10px;
-  padding: 10px;
+  margin: 10px 94px;
 
-  &__icon-search{
+  &__input{
+    font-size: 16px;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    border-radius: 3px solid transparent;
+    float:left;
+    margin: 16px;
 
+    &:focus {
+        outline: none;
+    }
+
+    //represents things that aren't on the webpage(like placeholders)
+    &::-webkit-input-placeholder{
+        color: $color-gray;
+        font-style: italic;
+    }
+
+    &:focus:invalid{
+        border-bottom: 3px solid $color-gray;
+    }
   }
 
-  &__text{
+  &__label{
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .2s;
+  }
 
+  &__icon-search{
+    float: left;
+    margin: 16px 16px 16px 23.7px;
+
+    svg{
+      path{
+        fill:blue;
+      }
+    }
   }
 
   &__filters-container{
 
-    &__icon-arrow-left{
+    position: relative;
+    height: 100%;
+    float: right;
+    width:20%;
+    border-left: $border-gray-light;
 
+  }
+
+  &__icon-arrow-left{
+    svg{
+      path{
+        fill:blue;
+      }
     }
 
-    &__icon-arrow-right{
+  }
 
+  &__icon-arrow-right{
+    svg{
+      path{
+        fill:blue;
+      }
     }
 
-    &__icon-filters{
+  }
 
+  &__icon-filter{
+    svg{
+      path{
+        fill:blue;
+      }
     }
 
-    &__icon-clear{
-      
-    }
+  }
 
+  &__icon-close{
+    svg{
+      path{
+        fill:blue;
+      }
+    }
   }
 }
 
