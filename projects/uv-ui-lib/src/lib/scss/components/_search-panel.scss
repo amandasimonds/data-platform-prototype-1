@@ -45,7 +45,7 @@
 
     svg{
       path{
-        fill:blue;
+        fill:black;
       }
     }
   }
@@ -61,36 +61,44 @@
   }
 
   &__icon-arrow-left{
+    float: left;
+    margin: 16px;
     svg{
       path{
-        fill:blue;
+        fill: $color-gray-light-3;
       }
     }
 
   }
 
   &__icon-arrow-right{
+    margin: 16px 16px 16px 0;;
+    display: inline-block;
     svg{
       path{
-        fill:blue;
+        fill:$color-gray-light-3;
       }
     }
 
   }
 
   &__icon-filter{
+    margin: 16px 16px 16px 0;;
+    display: inline-block;
     svg{
       path{
-        fill:blue;
+        fill:$color-blue;
       }
     }
 
   }
 
   &__icon-close{
+    margin: 16px 16px 16px 0;
+    display: inline-block;
     svg{
       path{
-        fill:blue;
+        fill: $color-gray-light-3;
       }
     }
   }
