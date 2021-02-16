@@ -17,8 +17,4 @@ export class NavbarDashboardSubComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  iconBtnConfig = {
-    iconName: "moreHorizontal"
-  }
-
 }
