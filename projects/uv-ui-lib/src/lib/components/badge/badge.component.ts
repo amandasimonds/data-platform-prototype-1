@@ -11,7 +11,6 @@ export class BadgeComponent {
 
     @Input() public badgeText: string;
     @Input() public badgeTitle: string;
-
     @Input() public badgeCSSClasses: string;
     @Input() public iconType: string | null;
     @Input() public iconTitle: string;
