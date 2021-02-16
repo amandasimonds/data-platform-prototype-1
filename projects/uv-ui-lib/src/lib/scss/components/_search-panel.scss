@@ -39,68 +39,27 @@
     transition: all .2s;
   }
 
-  &__icon-search{
+  &__icon-search-container{
     float: left;
     margin: 16px 16px 16px 23.7px;
-
-    svg{
-      path{
-        fill:black;
-      }
-    }
   }
 
   &__filters-container{
-
     position: relative;
     height: 100%;
     float: right;
     width:20%;
     border-left: $border-gray-light;
-
   }
 
   &__icon-arrow-left{
     float: left;
     margin: 16px;
-    svg{
-      path{
-        fill: $color-gray-light-3;
-      }
-    }
-
   }
 
-  &__icon-arrow-right{
+  &__icon-container{
     margin: 16px 16px 16px 0;;
     display: inline-block;
-    svg{
-      path{
-        fill:$color-gray-light-3;
-      }
-    }
-
   }
 
-  &__icon-filter{
-    margin: 16px 16px 16px 0;;
-    display: inline-block;
-    svg{
-      path{
-        fill:$color-blue;
-      }
-    }
-
-  }
-
-  &__icon-close{
-    margin: 16px 16px 16px 0;
-    display: inline-block;
-    svg{
-      path{
-        fill: $color-gray-light-3;
-      }
-    }
-  }
 }
-
