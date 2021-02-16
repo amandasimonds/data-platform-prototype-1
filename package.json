@@ -19,7 +19,7 @@
     "publish-lib": "cd dist/uv-ui-lib && npm publish",
     "build:elements": "ng build --prod --project elements --output-hashing none && npm run pack:elements && cp projects/elements/package.json dist/elements",
     "pack:elements": "cat ./dist/elements/{runtime,polyfills,main}.js > dist/elements/elements.js && ls -lah dist/elements/elements.js",
-    "build:components": "ng build --prod --project components"
+    "start-react": "cp dist/elements/elements.js react-app/test-app/public/ && cd react-app/test-app/ && yarn start"
   },
   "private": true,
   "dependencies": {
@@ -38,8 +38,7 @@
     "rxjs": "~6.6.0",
     "scss-bundle": "^3.1.2",
     "tslib": "^2.1.0",
-    "uv-ui-lib": "0.0.3",
-    "zone.js": "~0.10.2"
+    "uv-ui-lib": "0.0.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1100.7",
