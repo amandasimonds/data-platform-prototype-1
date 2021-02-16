@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -51,6 +51,11 @@ export class StartPageComponent implements OnInit {
 
   btnFunctionCall(){
     this.route.navigate(["/data-clustering"])
+  }
+
+  clear(){
+    console.log("clearbuttonclicked");
+    // input.value.clear();
   }
 
 }

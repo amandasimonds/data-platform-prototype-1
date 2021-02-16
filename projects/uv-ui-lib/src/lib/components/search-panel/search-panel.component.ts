@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit, Self, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit, Self, ViewChild, Output, EventEmitter } from '@angular/core';
 import { NgModel } from '@angular/forms';
 @Component({
     selector: 'lib-search-panel',
@@ -8,6 +8,7 @@ import { NgModel } from '@angular/forms';
 export class SearchPanelComponent implements OnInit {
 
   @Input() searchConfig: [SearchConfig];
+  @Output() clearBtnClick = new EventEmitter<any>();
 
     public shortFilters;
     public filters;
@@ -23,9 +24,7 @@ export class SearchPanelComponent implements OnInit {
       console.log("enter key pressed")
     }
 
-    clearBtnClicked() {
 
-    }
 
     measureBtnClicked(){
 
