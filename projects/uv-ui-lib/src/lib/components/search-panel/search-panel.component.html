@@ -20,8 +20,9 @@
           </ng-container>
       </span>
   </div> -->
-
-  <lib-icons class="search-panel__icon-search" name="search"></lib-icons>
+<span class="search-panel__icon-search-container">
+  <lib-icons class="svg-black" name="search"></lib-icons>
+</span>
 
   <input type="text"
   placeholder="Search..."
@@ -30,10 +31,22 @@
           (keydown.enter)="enterKeyEvent()"
           >
   <div class="search-panel__filters-container">
-    <lib-icons class="search-panel__icon-arrow-left" name="leftArrow"></lib-icons>
-    <lib-icons class="search-panel__icon-arrow-right" name="rightArrow"></lib-icons>
-    <lib-icons class="search-panel__icon-filter" name="filter"></lib-icons>
-    <lib-icons class="search-panel__icon-close" name="close"></lib-icons>
+
+    <span class="search-panel__icon-arrow-left">
+      <lib-icons class="svg-gray" name="leftArrow"></lib-icons>
+    </span>
+
+    <span class="search-panel__icon-container">
+      <lib-icons class="svg-gray" name="rightArrow"></lib-icons>
+    </span>
+
+    <span class="search-panel__icon-container">
+      <lib-icons class="svg-blue" name="filter"></lib-icons>
+    </span>
+
+    <span class="search-panel__icon-container">
+      <lib-icons class="svg-gray" name="close"></lib-icons>
+    </span>
 
   </div>
 
