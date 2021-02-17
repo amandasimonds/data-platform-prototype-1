@@ -1,0 +1,926 @@
+[
+    {
+      "id": 914823,
+      "name": "C-302",
+      "year": "2009",
+      "type": "platform",
+      "links": {
+        "programs": [
+          379501,
+          191421,
+          379501
+        ]
+      }
+    },
+    {
+      "id": 537511,
+      "name": "DPC-2801 (LE)",
+      "year": "2002",
+      "type": "platform",
+      "links": {
+        "programs": [
+          241618,
+          979234,
+          497540,
+          457352
+        ]
+      }
+    },
+    {
+      "id": 276408,
+      "name": "DPC-2801 (STD)",
+      "year": "2011",
+      "type": "platform",
+      "links": {
+        "programs": [
+          380679
+        ]
+      }
+    },
+    {
+      "id": 419091,
+      "name": "DPC-2802 (LE)",
+      "year": "2013",
+      "type": "platform",
+      "links": {
+        "programs": [
+          212931,
+          267418,
+          688211
+        ]
+      }
+    },
+    {
+      "id": 740798,
+      "name": "DPC-2802 (STD)",
+      "year": "2014",
+      "type": "platform",
+      "links": {
+        "programs": [
+          191421,
+          688211
+        ]
+      }
+    },
+    {
+      "id": 441611,
+      "name": "DPC-2803 (LE)",
+      "year": "2001",
+      "type": "platform",
+      "links": {
+        "programs": [
+          212931,
+          191421
+        ]
+      }
+    },
+    {
+      "id": 280398,
+      "name": "DPC-2803 (STD)",
+      "year": "2003",
+      "type": "platform",
+      "links": {
+        "programs": [
+          497540,
+          241618
+        ]
+      }
+    },
+    {
+      "id": 348561,
+      "name": "DPC-2803 (ULE)",
+      "year": "2003",
+      "type": "platform",
+      "links": {
+        "programs": [
+          993477,
+          527023
+        ]
+      }
+    },
+    {
+      "id": 263339,
+      "name": "DPC-2804 (LE)",
+      "year": "2007",
+      "type": "platform",
+      "links": {
+        "programs": [
+          662248
+        ]
+      }
+    },
+    {
+      "id": 123641,
+      "name": "DPC-2804 (STD)",
+      "year": "2019",
+      "type": "platform",
+      "links": {
+        "programs": [
+          457352
+        ]
+      }
+    },
+    {
+      "id": 730209,
+      "name": "DPC-280x",
+      "year": "2005",
+      "type": "platform",
+      "links": {
+        "programs": [
+          379501
+        ]
+      }
+    },
+    {
+      "id": 529974,
+      "name": "E565",
+      "year": "2016",
+      "type": "platform",
+      "links": {
+        "programs": [
+          453597,
+          457352,
+          448334
+        ]
+      }
+    },
+    {
+      "id": 572791,
+      "name": "WH 6",
+      "year": "2000",
+      "type": "platform",
+      "links": {
+        "programs": [
+          662248
+        ]
+      }
+    },
+    {
+      "id": 880192,
+      "name": "EM",
+      "year": "2007",
+      "type": "platform",
+      "links": {
+        "programs": [
+          906309
+        ]
+      }
+    },
+    {
+      "id": 544594,
+      "name": "FM",
+      "year": "2011",
+      "type": "platform",
+      "links": {
+        "programs": [
+          453597,
+          154422,
+          906309,
+          267418
+        ]
+      }
+    },
+    {
+      "id": 312674,
+      "name": "GLWM",
+      "year": "2012",
+      "type": "platform",
+      "links": {
+        "programs": [
+          267418
+        ]
+      }
+    },
+    {
+      "id": 644242,
+      "name": "GMV",
+      "year": "2008",
+      "type": "platform",
+      "links": {
+        "programs": [
+          662248,
+          457352,
+          379501,
+          457352
+        ]
+      }
+    },
+    {
+      "id": 512387,
+      "name": "GMVA",
+      "year": "2018",
+      "type": "platform",
+      "links": {
+        "programs": [
+          267418,
+          527023,
+          453597
+        ]
+      }
+    },
+    {
+      "id": 439956,
+      "name": "GMVC",
+      "year": "2017",
+      "type": "platform",
+      "links": {
+        "programs": [
+          453597,
+          689633
+        ]
+      }
+    },
+    {
+      "id": 388113,
+      "name": "GMVE",
+      "year": "2012",
+      "type": "platform",
+      "links": {
+        "programs": [
+          212931,
+          154907
+        ]
+      }
+    },
+    {
+      "id": 723544,
+      "name": "GMVG",
+      "year": "2019",
+      "type": "platform",
+      "links": {
+        "programs": [
+          457352,
+          993477
+        ]
+      }
+    },
+    {
+      "id": 871482,
+      "name": "GMVH",
+      "year": "2005",
+      "type": "platform",
+      "links": {
+        "programs": [
+          906309
+        ]
+      }
+    },
+    {
+      "id": 600075,
+      "name": "GMW",
+      "year": "2008",
+      "type": "platform",
+      "links": {
+        "programs": [
+          212931,
+          241618,
+          662248,
+          380679
+        ]
+      }
+    },
+    {
+      "id": 751289,
+      "name": "GMWA",
+      "year": "2010",
+      "type": "platform",
+      "links": {
+        "programs": [
+          993477,
+          154422,
+          662248
+        ]
+      }
+    },
+    {
+      "id": 325664,
+      "name": "GMWC",
+      "year": "2010",
+      "type": "platform",
+      "links": {
+        "programs": [
+          191421
+        ]
+      }
+    },
+    {
+      "id": 173545,
+      "name": "GMWH",
+      "year": "2009",
+      "type": "platform",
+      "links": {
+        "programs": [
+          212931,
+          140007
+        ]
+      }
+    },
+    {
+      "id": 340155,
+      "name": "GMWK",
+      "year": "2008",
+      "type": "platform",
+      "links": {
+        "programs": [
+          497540
+        ]
+      }
+    },
+    {
+      "id": 239985,
+      "name": "GMWS",
+      "year": "2015",
+      "type": "platform",
+      "links": {
+        "programs": [
+          993477
+        ]
+      }
+    },
+    {
+      "id": 521235,
+      "name": "GMX",
+      "year": "2002",
+      "type": "platform",
+      "links": {
+        "programs": [
+          688211
+        ]
+      }
+    },
+    {
+      "id": 594079,
+      "name": "GMXA",
+      "year": "2012",
+      "type": "platform",
+      "links": {
+        "programs": [
+          688211,
+          212931
+        ]
+      }
+    },
+    {
+      "id": 299555,
+      "name": "GMXD",
+      "year": "2018",
+      "type": "platform",
+      "links": {
+        "programs": [
+          453597
+        ]
+      }
+    },
+    {
+      "id": 464129,
+      "name": "GMXE",
+      "year": "2012",
+      "type": "platform",
+      "links": {
+        "programs": [
+          191421,
+          993477,
+          688211
+        ]
+      }
+    },
+    {
+      "id": 883871,
+      "name": "KM",
+      "year": "2015",
+      "type": "platform",
+      "links": {
+        "programs": [
+          241618
+        ]
+      }
+    },
+    {
+      "id": 910720,
+      "name": "KSV-T",
+      "year": "2011",
+      "type": "platform",
+      "links": {
+        "programs": [
+          993477,
+          154422
+        ]
+      }
+    },
+    {
+      "id": 627244,
+      "name": "LM",
+      "year": "2014",
+      "type": "platform",
+      "links": {
+        "programs": [
+          689633,
+          979234,
+          241618
+        ]
+      }
+    },
+    {
+      "id": 694930,
+      "name": "LSV",
+      "year": "2003",
+      "type": "platform",
+      "links": {
+        "programs": [
+          241618,
+          191421,
+          241618
+        ]
+      }
+    },
+    {
+      "id": 658214,
+      "name": "LSVB",
+      "year": "2003",
+      "type": "platform",
+      "links": {
+        "programs": [
+          688211,
+          906309,
+          448334,
+          379501
+        ]
+      }
+    },
+    {
+      "id": 844323,
+      "name": "SGTD825",
+      "year": "2006",
+      "type": "platform",
+      "links": {
+        "programs": [
+          380679,
+          448334,
+          241618
+        ]
+      }
+    },
+    {
+      "id": 585424,
+      "name": "V-250",
+      "year": "2002",
+      "type": "platform",
+      "links": {
+        "programs": [
+          191421,
+          154907
+        ]
+      }
+    },
+    {
+      "id": 436024,
+      "name": "W-330",
+      "year": "2003",
+      "type": "platform",
+      "links": {
+        "programs": [
+          154422
+        ]
+      }
+    },
+    {
+      "id": 487933,
+      "name": "Z-330",
+      "year": "2014",
+      "type": "platform",
+      "links": {
+        "programs": [
+          154422,
+          688211
+        ]
+      }
+    },
+    {
+      "id": 250465,
+      "name": "HBA",
+      "year": "2017",
+      "type": "platform",
+      "links": {
+        "programs": [
+          457352,
+          906309
+        ]
+      }
+    },
+    {
+      "id": 604205,
+      "name": "HRA",
+      "year": "2002",
+      "type": "platform",
+      "links": {
+        "programs": [
+          154907,
+          688211,
+          662248
+        ]
+      }
+    },
+    {
+      "id": 121707,
+      "name": "KVG",
+      "year": "2014",
+      "type": "platform",
+      "links": {
+        "programs": [
+          688211
+        ]
+      }
+    },
+    {
+      "id": 523472,
+      "name": "KVGR",
+      "year": "2001",
+      "type": "platform",
+      "links": {
+        "programs": [
+          979234,
+          154422,
+          267418,
+          527023
+        ]
+      }
+    },
+    {
+      "id": 856471,
+      "name": "KVS",
+      "year": "2008",
+      "type": "platform",
+      "links": {
+        "programs": [
+          241618,
+          453597,
+          448334,
+          154422
+        ]
+      }
+    },
+    {
+      "id": 351598,
+      "name": "LTC",
+      "year": "2016",
+      "type": "platform",
+      "links": {
+        "programs": [
+          380679,
+          380679
+        ]
+      }
+    },
+    {
+      "id": 849729,
+      "name": "TCVA",
+      "year": "2018",
+      "type": "platform",
+      "links": {
+        "programs": [
+          497540,
+          448334
+        ]
+      }
+    },
+    {
+      "id": 596292,
+      "name": "UTC",
+      "year": "2004",
+      "type": "platform",
+      "links": {
+        "programs": [
+          380679
+        ]
+      }
+    },
+    {
+      "id": 637613,
+      "name": "R-48",
+      "year": "2016",
+      "type": "platform",
+      "links": {
+        "programs": [
+          453597,
+          688211,
+          380679
+        ]
+      }
+    },
+    {
+      "id": 671205,
+      "name": "A352",
+      "year": "2009",
+      "type": "platform",
+      "links": {
+        "programs": [
+          154422,
+          212931,
+          689633,
+          154422
+        ]
+      }
+    },
+    {
+      "id": 681756,
+      "name": "A354",
+      "year": "2011",
+      "type": "platform",
+      "links": {
+        "programs": [
+          689633
+        ]
+      }
+    },
+    {
+      "id": 319800,
+      "name": "A35x",
+      "year": "2008",
+      "type": "platform",
+      "links": {
+        "programs": [
+          497540,
+          457352,
+          380679,
+          267418,
+          154422
+        ]
+      }
+    },
+    {
+      "id": 587988,
+      "name": "DEF",
+      "year": "2017",
+      "type": "platform",
+      "links": {
+        "programs": [
+          154422,
+          212931
+        ]
+      }
+    },
+    {
+      "id": 709851,
+      "name": "DS604",
+      "year": "2008",
+      "type": "platform",
+      "links": {
+        "programs": [
+          906309
+        ]
+      }
+    },
+    {
+      "id": 381822,
+      "name": "H302",
+      "year": "2018",
+      "type": "platform",
+      "links": {
+        "programs": [
+          497540,
+          267418,
+          191421,
+          154422,
+          191421
+        ]
+      }
+    },
+    {
+      "id": 223020,
+      "name": "H304",
+      "year": "2007",
+      "type": "platform",
+      "links": {
+        "programs": [
+          688211
+        ]
+      }
+    },
+    {
+      "id": 609482,
+      "name": "H30x",
+      "year": "2008",
+      "type": "platform",
+      "links": {
+        "programs": [
+          212931
+        ]
+      }
+    },
+    {
+      "id": 962177,
+      "name": "M/H",
+      "year": "2007",
+      "type": "platform",
+      "links": {
+        "programs": [
+          379501
+        ]
+      }
+    },
+    {
+      "id": 124538,
+      "name": "CFA 32",
+      "year": "2009",
+      "type": "platform",
+      "links": {
+        "programs": [
+          979234
+        ]
+      }
+    },
+    {
+      "id": 189816,
+      "name": "CFA 34",
+      "year": "2006",
+      "type": "platform",
+      "links": {
+        "programs": [
+          689633
+        ]
+      }
+    },
+    {
+      "id": 656665,
+      "name": "CFA 3x",
+      "year": "2001",
+      "type": "platform",
+      "links": {
+        "programs": [
+          993477,
+          457352,
+          140007,
+          267418,
+          979234
+        ]
+      }
+    },
+    {
+      "id": 315050,
+      "name": "MH 6",
+      "year": "2010",
+      "type": "platform",
+      "links": {
+        "programs": [
+          497540,
+          191421,
+          527023
+        ]
+      }
+    },
+    {
+      "id": 289866,
+      "name": "MH/WH",
+      "year": "2014",
+      "type": "platform",
+      "links": {
+        "programs": [
+          154422,
+          527023,
+          379501
+        ]
+      }
+    },
+    {
+      "id": 900877,
+      "name": "MW6",
+      "year": "2003",
+      "type": "platform",
+      "links": {
+        "programs": [
+          979234
+        ]
+      }
+    },
+    {
+      "id": 630767,
+      "name": "RAM 5",
+      "year": "2010",
+      "type": "platform",
+      "links": {
+        "programs": [
+          689633,
+          662248,
+          267418,
+          380679
+        ]
+      }
+    },
+    {
+      "id": 546004,
+      "name": "WG",
+      "year": "2005",
+      "type": "platform",
+      "links": {
+        "programs": [
+          906309,
+          154907
+        ]
+      }
+    },
+    {
+      "id": 493167,
+      "name": "WG 6",
+      "year": "2000",
+      "type": "platform",
+      "links": {
+        "programs": [
+          688211
+        ]
+      }
+    },
+    {
+      "id": 883059,
+      "name": "WG 7",
+      "year": "2015",
+      "type": "platform",
+      "links": {
+        "programs": [
+          906309
+        ]
+      }
+    },
+    {
+      "id": 251606,
+      "name": "WH 7",
+      "year": "2001",
+      "type": "platform",
+      "links": {
+        "programs": [
+          380679,
+          212931
+        ]
+      }
+    },
+    {
+      "id": 267289,
+      "name": "2400DR",
+      "year": "2007",
+      "type": "platform",
+      "links": {
+        "programs": [
+          267418,
+          212931,
+          906309
+        ]
+      }
+    },
+    {
+      "id": 309905,
+      "name": "G510",
+      "year": "2018",
+      "type": "platform",
+      "links": {
+        "programs": [
+          689633,
+          241618
+        ]
+      }
+    },
+    {
+      "id": 790427,
+      "name": "G825",
+      "year": "2004",
+      "type": "platform",
+      "links": {
+        "programs": [
+          191421
+        ]
+      }
+    },
+    {
+      "id": 230536,
+      "name": "GTLB825",
+      "year": "2005",
+      "type": "platform",
+      "links": {
+        "programs": [
+          140007,
+          191421
+        ]
+      }
+    },
+    {
+      "id": 944209,
+      "name": "MODEL 40 (GDX)",
+      "year": "2006",
+      "type": "platform",
+      "links": {
+        "programs": [
+          689633
+        ]
+      }
+    },
+    {
+      "id": 972639,
+      "name": "DSX",
+      "year": "2017",
+      "type": "platform",
+      "links": {
+        "programs": [
+          497540,
+          497540
+        ]
+      }
+    }
+  ]
