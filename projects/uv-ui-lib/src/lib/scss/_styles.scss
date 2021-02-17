@@ -19,6 +19,42 @@ body {
     background-color: #f1f1f1;
 }
 
+ /*scrollbar*/
+* {
+  scrollbar-width: 9px;
+  scrollbar-color: #FBEDED white;
+}
+
+*::-webkit-scrollbar {
+  width: 21px;
+
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  background-color: transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #FBEDED;
+  border-radius: 5.5px;
+  border: 6px solid transparent;
+  background-clip: padding-box;
+  // -webkit-border-radius: 1em;
+
+}
+
+*::-webkit-scrollbar-corner{
+  background: transparent;
+}
+
+// *::-webkit-scrollbar-button:end:increment {
+//   height: 30%;
+//   display: block;
+//   background: blue;
+// }
+
 // IMPORTS //
 @import "./variables";
 @import "./typography";

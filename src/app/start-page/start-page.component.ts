@@ -43,6 +43,59 @@ export class StartPageComponent implements OnInit {
 
   ]
 
+  snippetBox = [
+    {
+      icon: "string",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "string",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "string",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "string",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "string",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "string",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "string",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "string",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "string",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "string",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    }
+  ]
+
   constructor(private route : Router) {}
 
   ngOnInit(): void {

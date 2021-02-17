@@ -23,20 +23,17 @@
   &__divider{
     border-bottom: 1px solid $color-gray-light-2;
     opacity: .31;
-    margin-bottom: 22px;
-    // position: relative;
-    // top:113px;
   }
 
-  &__snippet-flexbox{
+  &__snippets-flexbox{
     position: relative;
-    top:113px;
     display: flex;
     flex-direction: column;
     align-content: center;
     height: 100%;
-    padding: 19px 16px;
-  }
+    padding: 19px 41px 0 16px;
+    overflow: auto;
+   }
 
   &__icon{
     float: right;
@@ -44,9 +41,18 @@
 
   &__snippet-container{
     height: 73px;
+    position: relative;
+    margin-bottom: 24px;
+    min-height: 73px;
     &--textbox{
+      position: absolute;
       width: 126.5px;
-      float: right;
+      height: 68px;
+      right: 0;
+      bottom: 0;
+
+      overflow: hidden;
+      // text-overflow: ellipsis;
     }
   }
 }
