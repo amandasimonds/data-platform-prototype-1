@@ -7,20 +7,20 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
-  @Output() onClick = new EventEmitter<any>();
-  @Input() buttonConfig: any;
+  // @Output() onClick = new EventEmitter<any>();
+  @Input() buttonType: string;
+  @Input() buttonText: string;
+  @Input() iconName: string;
 
   constructor() { }
 
   ngOnInit(): void {
-    if(!this.buttonConfig){
-      this.buttonConfig = {};
-    }
+
   }
 
-  onClickButton(event) {
-    this.onClick.emit(event);
-  }
+  // onClickButton(event) {
+  //   this.onClick.emit(event);
+  // }
 }
 
 interface BtnConfig {

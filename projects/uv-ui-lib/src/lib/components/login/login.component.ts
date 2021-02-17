@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  @Input() login: () => void;
+  // @Input() login: () => void;
   @Input() header: string;
 
   constructor() {

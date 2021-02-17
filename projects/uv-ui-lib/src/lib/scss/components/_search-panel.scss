@@ -4,6 +4,67 @@
   border: $border-gray-light;
   border-radius: 28px;
   background-color: #FFFFFF;
-  margin: 10px;
-  padding: 10px;
+  margin: 10px 94px;
+
+  &__input{
+    font-size: 16px;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    border-radius: 3px solid transparent;
+    float:left;
+    margin: 16px;
+
+    &:focus {
+        outline: none;
+    }
+
+    //represents things that aren't on the webpage(like placeholders)
+    &::-webkit-input-placeholder{
+        color: $color-gray;
+        font-style: italic;
+    }
+
+    &:focus:invalid{
+        border-bottom: 3px solid $color-gray;
+    }
+  }
+
+  &__label{
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .2s;
+  }
+
+  &__icon-search-container{
+    float: left;
+    margin: 16px 16px 16px 23.7px;
+  }
+
+  &__filters-container{
+    position: relative;
+    height: 100%;
+    float: right;
+    width:20%;
+    border-left: $border-gray-light;
+
+    &--expanded{
+      width: 50%;
+      transition: all ease-in-out .8s;
+    }
+  }
+
+  &__icon-arrow-left{
+    float: left;
+    margin: 16px;
+  }
+
+  &__icon-container{
+    float: right;
+    margin: 16px 16px 16px 0;
+  }
+
 }

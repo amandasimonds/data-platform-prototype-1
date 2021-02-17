@@ -1,13 +1,20 @@
+.svg-black{
+  svg{
+    width: 24px;
+    fill:black;
+  }
+}
+
 .svg-blue{
-  path{
+  svg{
+    width: 24px;
     fill:$color-blue;
   }
-  svg{
-    width:24px;
+}
 
-    &:hover{
-      background-color: $color-gray-light;
-      cursor: pointer;
-    }
+.svg-gray{
+  svg{
+    width: 24px;
+    fill:$color-gray-light-3;
   }
 }

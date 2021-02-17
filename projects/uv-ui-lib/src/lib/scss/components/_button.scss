@@ -39,10 +39,14 @@
 
 .btn-login{
   margin:25px;
-  font-size: 1.4rem;
+  font-size: 14px;
   border: $border-gray-light;
   padding: 12px;
   border-radius: 3px;
   width: 320px;
   height: 48px;
+}
+
+.btn-icon{
+  cursor: pointer;
 }

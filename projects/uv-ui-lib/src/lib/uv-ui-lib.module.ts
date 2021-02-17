@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UvUiLibComponent } from './uv-ui-lib.component';
 
@@ -11,6 +12,8 @@ import { NavbarDashboardComponent } from './components/navbar-dashboard/navbar-d
 import { HeaderDashboardComponent } from './components/header-dashboard/header-dashboard.component';
 import { NavbarDashboardSubComponent } from './components/navbar-dashboard-sub/navbar-dashboard-sub.component';
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
+import { BadgeComponent } from './components/badge/badge.component';
+import { FiltersListComponent } from './components/search-panel/filters-list/filters-list.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +26,12 @@ import { SearchPanelComponent } from './components/search-panel/search-panel.com
     HeaderDashboardComponent,
     NavbarDashboardSubComponent,
     SearchPanelComponent,
+    BadgeComponent,
+    FiltersListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     UvUiLibComponent,
@@ -35,7 +41,10 @@ import { SearchPanelComponent } from './components/search-panel/search-panel.com
     IconsComponent,
     NavbarDashboardComponent,
     HeaderDashboardComponent,
-    NavbarDashboardSubComponent
+    NavbarDashboardSubComponent,
+    SearchPanelComponent,
+    BadgeComponent,
+    FiltersListComponent
   ]
 })
 export class UvUiLibModule { }
