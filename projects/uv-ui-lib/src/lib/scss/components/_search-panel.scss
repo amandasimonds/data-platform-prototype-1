@@ -50,6 +50,11 @@
     float: right;
     width:20%;
     border-left: $border-gray-light;
+
+    &--expanded{
+      width: 50%;
+      transition: all ease-in-out .8s;
+    }
   }
 
   &__icon-arrow-left{
@@ -58,8 +63,8 @@
   }
 
   &__icon-container{
-    margin: 16px 16px 16px 0;;
-    display: inline-block;
+    float: right;
+    margin: 16px 16px 16px 0;
   }
 
 }

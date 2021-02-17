@@ -20,42 +20,43 @@
   </div> -->
 
 <span class="search-panel__icon-search-container">
-  <lib-icons class="svg-black" name="search"></lib-icons>
+  <lib-button buttonType="icon" class="svg-black" iconName="search" (click)="searchBtnClicked()"></lib-button>
 </span>
 
   <input type="text"
     placeholder="Search..."
     class="search-panel__input"
-    [(ngModel)]="data"
-    (keydown.enter)="enterKeyEvent()">
+    [(ngModel)]="data">
 
-  <div class="search-panel__filters-container">
+  <div class="search-panel__filters-container" [ngClass]="filterContainerCssClasses">
 
     <span class="search-panel__icon-arrow-left">
-      <lib-button  buttonType="icon" class="svg-gray" iconName="leftArrow"></lib-button>
+      <lib-button  buttonType="icon" class="svg-gray" iconName="leftArrow" (click)="expandFiltersClicked(); expandFiltersContainer()"></lib-button>
     </span>
 
     <ng-template #expandedFiltersTemplate>
       <div class="expanded-filters-container border input-group input-group-sm w-100">
           <div class="expanded-filters">
               <lib-filters-list [filters]="filters"
-                                  (click)="removeClicked()">
+                                  (click)="filterRemoveClicked()">
               </lib-filters-list>
           </div>
       </div>
     </ng-template>
 
     <span class="search-panel__icon-container">
-      <lib-button buttonType="icon" class="svg-gray" iconName="rightArrow"></lib-button>
-    </span>
-
-    <span class="search-panel__icon-container">
-      <lib-button buttonType="icon" class="svg-blue" iconName="filter"></lib-button>
-    </span>
-
-    <span class="search-panel__icon-container">
       <lib-button buttonType="icon" class="svg-gray" iconName="close" (click)="clearBtnClicked()"></lib-button>
     </span>
+
+    <span class="search-panel__icon-container">
+      <lib-button buttonType="icon" class="svg-blue" iconName="filter" (click)="filterBtnClicked()"></lib-button>
+    </span>
+
+    <span class="search-panel__icon-container">
+      <lib-button buttonType="icon" class="svg-gray" iconName="rightArrow" (click)="rightArrowBtnClicked()"></lib-button>
+    </span>
+
+
 
   </div>
 
