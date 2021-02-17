@@ -49,13 +49,24 @@ export class StartPageComponent implements OnInit {
 
   }
 
-  btnFunctionCall(){
-    this.route.navigate(["/data-clustering"])
-  }
-
   clear(){
     console.log("clearbuttonclicked");
-    // input.value.clear();
+  }
+
+  expandFilters(){
+    console.log("expandddd");
+  }
+
+  moveRight(){
+    console.log("move right");
+  }
+
+  showFilters(){
+    console.log("show filters");
+  }
+
+  search(){
+    console.log("search sumthin");
   }
 
 }

@@ -7,12 +7,20 @@ import { NgModel } from '@angular/forms';
 })
 export class SearchPanelComponent implements OnInit {
 
-  @Input() searchConfig: [SearchConfig];
-  @Output() clearBtnClick = new EventEmitter<any>();
+  @Input() clearBtnClicked : any;
+  @Input() expandFiltersClicked : any;
+  @Input() filterRemoveClicked : any;
+  @Input() searchBtnClicked : any;
+  @Input() rightArrowBtnClicked : any;
+  @Input() filterBtnClicked : any;
+
+  state : string;
 
     public shortFilters;
     public filters;
     public data = '';
+
+    filterContainerCssClasses = []
 
     constructor() {}
 
@@ -20,26 +28,8 @@ export class SearchPanelComponent implements OnInit {
 
     }
 
-    enterKeyEvent() {
-      console.log("enter key pressed")
+    expandFiltersContainer(){
+      this.filterContainerCssClasses.push("search-panel__filters-container--expanded")
     }
 
-
-
-    measureBtnClicked(){
-
-    }
-
-    searchBtnClicked(){
-
-    }
-
-    removeClicked(){}
-
-    filterRemoveClicked(){}
-
-    badgeClicked(){}
 }
-  interface SearchConfig{
-   disabled: boolean
- }

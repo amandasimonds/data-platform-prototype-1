@@ -12,7 +12,11 @@
   <lib-header-dashboard headerText="Dashboard" iconName="dashboard">
 
 <lib-search-panel
-  clearBtnClick="clear()">
+  [rightArrowBtnClicked]="moveRight"
+  [filterBtnClicked]="showFilters"
+  [searchBtnClicked]="search"
+  [clearBtnClicked]="clear"
+  [expandFiltersClicked]="expandFilters">
 
 </lib-search-panel>
 
