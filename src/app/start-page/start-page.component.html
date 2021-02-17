@@ -8,7 +8,18 @@
     subHeadingTxt="Subheading" [snippets]="snippetBox"
   ></lib-navbar-dashboard-sub>
 
-  <lib-header-dashboard headerText="Viewer" iconName="inspect"></lib-header-dashboard>
+  <lib-header-dashboard headerText="Dashboard" iconName="dashboard">
+
+<lib-search-panel
+  [rightArrowBtnClicked]="moveRight"
+  [filterBtnClicked]="showFilters"
+  [searchBtnClicked]="search"
+  [clearBtnClicked]="clear"
+  [expandFiltersClicked]="expandFilters">
+
+</lib-search-panel>
+
+  </lib-header-dashboard>
 
 </div>
 

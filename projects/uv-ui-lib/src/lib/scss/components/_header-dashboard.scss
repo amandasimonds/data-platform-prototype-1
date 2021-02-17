@@ -1,29 +1,24 @@
 .header-dashboard{
   position: absolute;
+  padding:24px 78px 26px 80px;
   background-color: white;
   border: $border-gray-light;
   border-left: none;
   height: 153px;
   width: 1518px;
-  // width: 100%;
 
   &__heading-container{
-    padding:42.5px 80px;
     float: left;
-    display: flex;
-    justify-content: center;
+    display: flex;;
     align-items: center;
+    justify-content: center;
   }
 
-  &__svg{
-    float: left;
-    margin: 1px 20px;
-
-      path{
-        fill: $color-gray-light;
-      }
-      svg{
-        width:24px;
-      }
+  &__icon-wrapper{
+    position: relative;
+    top: 4px;
+    margin-right: 16px;
   }
+
 }
+
