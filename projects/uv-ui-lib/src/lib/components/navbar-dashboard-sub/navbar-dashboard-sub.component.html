@@ -17,11 +17,18 @@
 
   <div class="navbar-dashboard-sub__divider"></div>
 
-  <div class="navbar-dashboard-sub____snippet-flexbox">
+  <div class="navbar-dashboard-sub__snippets-flexbox">
 
-    <div class="navbar-dashboard-sub__snippet-container">
-      <p class="subheading">{{snippetHeading}}</p>
-      <p>{{snippetTxt}}</p>
+    <div class="navbar-dashboard-sub__snippet-container" *ngFor="let snippet of snippets">
+
+      <div class="navbar-dashboard-sub__snippet-container--heading-align">
+      </div>
+
+      <div class="navbar-dashboard-sub__snippet-container--textbox">
+        <p class="subheading">{{snippet.snippetHeading}}</p>
+
+        <p>{{snippet.snippetTxt}}</p>
+      </div>
 
     </div>
 

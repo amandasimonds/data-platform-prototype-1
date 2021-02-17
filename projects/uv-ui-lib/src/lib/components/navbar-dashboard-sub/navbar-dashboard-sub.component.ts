@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NavbarDashboardSubComponent implements OnInit {
 
+  @Input() snippets: [NavBarSub];
+
   @Input() headingTxt : string;
   @Input() subHeadingTxt : string;
   @Input() snippetTxt : string;
@@ -21,4 +23,10 @@ export class NavbarDashboardSubComponent implements OnInit {
     iconName: "moreHorizontal"
   }
 
+}
+
+interface NavBarSub{
+  icon: string;
+  snippetHeading: string;
+  snippetTxt: string;
 }
