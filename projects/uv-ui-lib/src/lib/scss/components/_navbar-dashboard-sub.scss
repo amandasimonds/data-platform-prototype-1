@@ -31,12 +31,19 @@
     flex-direction: column;
     align-content: center;
     height: 100%;
-    padding: 19px 41px 0 16px;
+    padding: 19px 16px 0 16px;
     overflow: auto;
    }
 
   &__icon{
     float: right;
+    width: 26px;
+    height: 26px;
+
+    &:hover{
+      background-color: #d8d8d821;
+      border-radius: 50%;
+    }
   }
 
   &__snippet-container{
@@ -57,7 +64,7 @@
     }
     &--icon-box{
       display: inline-block;
-      margin-top: 1px;
+      margin-top: 3px;
     }
   }
 }

@@ -20,7 +20,6 @@ export class NavbarDashboardSubComponent implements OnInit {
   }
 
 }
-
 interface NavBarSub{
   icon: string;
   snippetHeading: string;
