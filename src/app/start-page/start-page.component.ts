@@ -45,52 +45,52 @@ export class StartPageComponent implements OnInit {
 
   snippetBox = [
     {
-      icon: "string",
+      icon: "circle",
       snippetHeading: "Heading",
       snippetTxt: "Snippet will go here on three lines. And is clickable"
     },
     {
-      icon: "string",
+      icon: "circle",
       snippetHeading: "Heading",
       snippetTxt: "Snippet will go here on three lines. And is clickable"
     },
     {
-      icon: "string",
+      icon: "circle",
       snippetHeading: "Heading",
       snippetTxt: "Snippet will go here on three lines. And is clickable"
     },
     {
-      icon: "string",
+      icon: "circle",
       snippetHeading: "Heading",
       snippetTxt: "Snippet will go here on three lines. And is clickable"
     },
     {
-      icon: "string",
+      icon: "circle",
       snippetHeading: "Heading",
       snippetTxt: "Snippet will go here on three lines. And is clickable"
     },
     {
-      icon: "string",
+      icon: "circle",
       snippetHeading: "Heading",
       snippetTxt: "Snippet will go here on three lines. And is clickable"
     },
     {
-      icon: "string",
+      icon: "circle",
       snippetHeading: "Heading",
       snippetTxt: "Snippet will go here on three lines. And is clickable"
     },
     {
-      icon: "string",
+      icon: "circle",
       snippetHeading: "Heading",
       snippetTxt: "Snippet will go here on three lines. And is clickable"
     },
     {
-      icon: "string",
+      icon: "circle",
       snippetHeading: "Heading",
       snippetTxt: "Snippet will go here on three lines. And is clickable"
     },
     {
-      icon: "string",
+      icon: "circle",
       snippetHeading: "Heading",
       snippetTxt: "Snippet will go here on three lines. And is clickable"
     }

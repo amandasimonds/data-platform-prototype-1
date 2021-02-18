@@ -41,6 +41,7 @@
 
   &__snippet-container{
     height: 73px;
+    width: 155px;
     position: relative;
     margin-bottom: 24px;
     min-height: 73px;
@@ -53,6 +54,10 @@
 
       overflow: hidden;
       // text-overflow: ellipsis;
+    }
+    &--icon-box{
+      display: inline-block;
+      margin-top: 1px;
     }
   }
 }
