@@ -2,9 +2,7 @@
 
 # UV-Platform's UI Library and Sandbox Environment
 
-### To view the demo online, please visit [amandasimonds.github.io/uv-platform-design](https://amandasimonds.github.io/uv-platform-design).
 ---
-
 
 ## Installing Locally
 
