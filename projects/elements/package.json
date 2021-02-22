@@ -8,5 +8,8 @@
   },
   "author": "",
   "license": "ISC",
-  "files": ["elements.js", "styles.css"]
+  "files": [
+    "elements.js",
+    "styles.css"
+  ]
 }
