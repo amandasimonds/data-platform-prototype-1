@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { SearchPanelComponent } from './search-panel.component';
 
@@ -16,7 +16,7 @@ describe('SearchPanelComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SearchPanelComponent);
     component = fixture.componentInstance;
-    component.searchBtnClicked = 'searchBtnClicked()';
+    component.searchBtnClicked = 'test function call';
     fixture.detectChanges();
   });
 
@@ -24,17 +24,18 @@ describe('SearchPanelComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should have a search button', () => {
-  //   const searchButton = fixture.debugElement.query(By.css('search-panel__icon-search-container')).nativeElement;
-  //   // const searchButton = fixture.debugElement.nativeElement.querySelector('#search');
-  //   expect(searchButton).toBeTruthy();
-  // });
-
-  it('should have a search button with a click listener', () => {
-    spyOn(component, 'searchBtnClicked');
-    const searchButton = fixture.debugElement.query(By.css('search-panel__icon-search-container')).nativeElement;
-    // const searchButton = fixture.debugElement.nativeElement.querySelector('#search');
-    searchButton.click();
-    expect(component.searchBtnClicked).toHaveBeenCalledTimes(1);
+  it('should have a search icon that is clickable', () => {
+    const searchBtnClickedMock = spyOn(component, 'searchBtnClicked');
+    const searchBtn = fixture.debugElement.nativeElement.querySelector('#search-button');
+    searchBtn.click();
+    expect(searchBtnClickedMock).toHaveBeenCalled();
   });
+
+  it('should have a search icon that is clickable', () => {
+    const searchBtnClickedMock = spyOn(component, 'searchBtnClicked');
+    const searchBtn = fixture.debugElement.nativeElement.querySelector('#search-button');
+    searchBtn.click();
+    expect(searchBtnClickedMock).toHaveBeenCalled();
+  });
+  
 });

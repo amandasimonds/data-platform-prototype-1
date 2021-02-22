@@ -35,10 +35,14 @@
     "@angular/router": "^11.0.9",
     "cpx": "^1.5.0",
     "document-register-element": "^1.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.2",
     "rxjs": "~6.6.0",
     "scss-bundle": "^3.1.2",
     "tslib": "^2.1.0",
-    "uv-ui-lib": "0.0.3"
+    "uv-ui-lib": "0.0.3",
+    "web-vitals": "^1.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1100.7",
