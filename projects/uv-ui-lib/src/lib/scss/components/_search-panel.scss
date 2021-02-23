@@ -50,10 +50,10 @@
     float: right;
     width:20%;
     border-left: $border-gray-light;
+    transition: all ease-in-out .8s;
 
     &--expanded{
       width: 50%;
-      transition: all ease-in-out .8s;
     }
   }
 

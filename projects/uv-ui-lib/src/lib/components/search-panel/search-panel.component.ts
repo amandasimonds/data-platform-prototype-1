@@ -20,7 +20,7 @@ export class SearchPanelComponent implements OnInit {
     public filters;
     public data = '';
 
-    filterContainerCssClasses = []
+    expanded: boolean;
 
     constructor() {}
 
@@ -28,8 +28,9 @@ export class SearchPanelComponent implements OnInit {
 
     }
 
-    expandFiltersContainer(){
-      this.filterContainerCssClasses.push("search-panel__filters-container--expanded")
+    expandFiltersContainer() : boolean {
+      !this.expanded ? this.expanded = true : this.expanded = false;
+      return this.expanded;
     }
 
 }

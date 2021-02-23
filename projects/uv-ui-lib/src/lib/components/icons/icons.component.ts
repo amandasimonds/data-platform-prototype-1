@@ -13,6 +13,11 @@ export class IconsComponent implements OnInit {
       this.element.nativeElement.innerHTML = uvIcons[iconName] || null
     }
 
+  @Input()
+    set id(id : string) {
+      this.element.nativeElement.innerHTML = "lib-icon" || null
+    }
+
   constructor(private element: ElementRef) { }
 
   ngOnInit(): void {
