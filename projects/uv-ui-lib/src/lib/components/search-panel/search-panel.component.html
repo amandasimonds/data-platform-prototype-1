@@ -28,10 +28,10 @@
     class="search-panel__input"
     [(ngModel)]="data">
 
-  <div class="search-panel__filters-container" id="search-panel-filters-container" [ngClass]="filterContainerCssClasses">
+  <div class="search-panel__filters-container" id="search-panel-filters-container" [ngClass]="{'search-panel__filters-container--expanded' : expanded}">
 
     <span class="search-panel__icon-arrow-left">
-      <lib-button  buttonType="icon" id="leftArrow-button" class="svg-gray" iconName="leftArrow" (click)="expandFiltersClicked(); expandFiltersContainer()"></lib-button>
+      <lib-button  buttonType="icon" id="leftArrow-button" class="svg-gray" iconName="leftArrow" (click)=" expandFiltersContainer(); expandFiltersClicked();"></lib-button>
     </span>
 
     <ng-template #expandedFiltersTemplate>

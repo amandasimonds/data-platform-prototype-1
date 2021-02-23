@@ -1,5 +1,7 @@
+import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { element } from 'protractor';
 import { SearchPanelComponent } from './search-panel.component';
 
 describe('SearchPanelComponent', () => {
@@ -18,7 +20,6 @@ describe('SearchPanelComponent', () => {
     component = fixture.componentInstance;
     component.searchBtnClicked = '';
     component.expandFiltersClicked = '';
-    component.expandFiltersContainer = () => {};
     fixture.detectChanges();
   });
 
@@ -41,14 +42,15 @@ describe('SearchPanelComponent', () => {
     expect(expandFiltersClickedMock).toHaveBeenCalled();
   });
 
-  // it('should have a left arrow icon thats expands the filter container on selection', () => {
-  //   const expandFiltersContainerClickedMock = spyOn(component, 'expandFiltersClicked');
-  //   const leftBtn = fixture.debugElement.nativeElement.querySelector('#leftArrow-button');
-  //   const searchPanelFiltersContainer = fixture.debugElement.nativeElement.querySelector('#search-panel-filters-container');
-  //   leftBtn.click();
-  //   // expect(".search-panel__filters-container--expanded").toBeTruthy();
-  //   expect(searchPanelFiltersContainer).toHaveClass('search-panel__filters-container.search-panel__filters-container--expanded');
-  //   // expect(leftArrowBtn).toHaveBeenCalled();
-  // });
+  it('should add a class to the filter container when the left arrow is clicked', () => {
+    component.expanded = false;
+    component.expandFiltersContainer();
+    expect(component.expanded).toBe(true);
+  });
 
+  it('should add a class to the filter container when the left arrow is clicked', () => {
+    component.expanded = true;
+    component.expandFiltersContainer();
+    expect(component.expanded).toBe(false);
+  });
 });
