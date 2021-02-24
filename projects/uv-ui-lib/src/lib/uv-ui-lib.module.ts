@@ -14,6 +14,7 @@ import { NavbarDashboardSubComponent } from './components/navbar-dashboard-sub/n
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { FiltersListComponent } from './components/search-panel/filters-list/filters-list.component';
+import { WidgetComponent } from './components/widget/widget.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FiltersListComponent } from './components/search-panel/filters-list/fil
     NavbarDashboardSubComponent,
     SearchPanelComponent,
     BadgeComponent,
-    FiltersListComponent
+    FiltersListComponent,
+    WidgetComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +46,8 @@ import { FiltersListComponent } from './components/search-panel/filters-list/fil
     NavbarDashboardSubComponent,
     SearchPanelComponent,
     BadgeComponent,
-    FiltersListComponent
+    FiltersListComponent,
+    WidgetComponent
   ]
 })
 export class UvUiLibModule { }

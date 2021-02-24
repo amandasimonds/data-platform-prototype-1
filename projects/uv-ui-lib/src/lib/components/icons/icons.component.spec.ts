@@ -20,13 +20,14 @@ describe('IconsComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create an icon-type button', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 
-  // it('should have the proper name', () => {
-  //   const icon = fixture.debugElement.query(By.css('moreHorizontal')).nativeElement;
-  //   expect(icon.innerHTML).toBe('test name');
-  // });
+  it('should have the proper name', () => {
+    fixture.detectChanges();
+    // const icon = fixture.debugElement.query(By.css('#lib-icon'));
+    expect(component.name).toBe('test name');
+  });
 
 });

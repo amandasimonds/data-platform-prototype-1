@@ -1,9 +1,9 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import { uvIcons } from './icons';
 
 @Component({
   selector: 'lib-icons',
-  template: '',
+  template: '<span id="lib-icon"></span>',
   styleUrls: ['../../scss/_styles.scss']
 })
 export class IconsComponent implements OnInit {
@@ -13,14 +13,12 @@ export class IconsComponent implements OnInit {
       this.element.nativeElement.innerHTML = uvIcons[iconName] || null
     }
 
-  @Input()
-    set id(id : string) {
-      this.element.nativeElement.innerHTML = "lib-icon" || null
-    }
-
-  constructor(private element: ElementRef) { }
+  constructor(private element: ElementRef, private renderer : Renderer2) {
+  }
 
   ngOnInit(): void {
+    // this.renderer.setAttribute(this.element.nativeElement, 'id', 'lib-icon');
+    // this.renderer.setProperty(this.element.nativeElement, 'id', 'lib-icon');
   }
 
 
