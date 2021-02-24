@@ -5,7 +5,9 @@
   border: $border-gray-light;
   border-left: none;
   height: 153px;
-  width: 1518px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 
   &__heading-container{
     float: left;
