@@ -16,7 +16,7 @@ describe('IconsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(IconsComponent);
     component = fixture.componentInstance;
-    component.name = 'test name';
+    component.name = 'dashboard';
     fixture.detectChanges();
   });
 
@@ -26,8 +26,12 @@ describe('IconsComponent', () => {
 
   it('should have the proper name', () => {
     fixture.detectChanges();
-    // const icon = fixture.debugElement.query(By.css('#lib-icon'));
-    expect(component.name).toBe('test name');
+    const icon = fixture.debugElement.nativeElement.querySelector('#dashboard');
+    // expect(icon).toBeTruthy()
+    // expect(icon.nativeElement.getAttribute('name')).toBe('test name');
+    console.log(icon)
+    expect(icon.attributes['name']).toBe('dashboard');
+    // icon.name
   });
 
 });
