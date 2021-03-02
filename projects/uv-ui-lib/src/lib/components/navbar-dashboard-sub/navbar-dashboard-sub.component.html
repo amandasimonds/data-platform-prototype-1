@@ -20,7 +20,9 @@
 
   <div class="navbar-dashboard-sub__snippets-flexbox">
 
-    <div class="navbar-dashboard-sub__snippet-container" *ngFor="let snippet of snippets">
+    <div class="navbar-dashboard-sub__snippet-wrapper" *ngFor="let snippet of snippets" (click)="snippetClicked()">
+
+    <div class="navbar-dashboard-sub__snippet-container">
 
       <div class="navbar-dashboard-sub__snippet-container--heading-align">
       </div>
@@ -34,6 +36,8 @@
 
         <p>{{snippet.snippetTxt}}</p>
       </div>
+
+    </div>
 
     </div>
 
