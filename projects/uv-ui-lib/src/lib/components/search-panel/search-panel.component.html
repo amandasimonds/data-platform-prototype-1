@@ -49,8 +49,11 @@
     </span>
 
     <span class="search-panel__icon-container">
-      <lib-button buttonType="icon" class="svg-blue" iconName="filter" (click)="filterBtnClicked()"></lib-button>
+      <lib-button buttonType="icon" class="svg-blue" iconName="filter" (click)="filterBtnClicked(); showFilters();"></lib-button>
     </span>
+
+    <!-- <div *ngIf="showFilters">
+      </div> -->
 
     <span class="search-panel__icon-container">
       <lib-button buttonType="icon" class="svg-gray" iconName="rightArrow" (click)="rightArrowBtnClicked()"></lib-button>

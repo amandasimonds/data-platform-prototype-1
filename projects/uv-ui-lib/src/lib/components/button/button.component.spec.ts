@@ -17,8 +17,8 @@ describe('ButtonComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
-    component.buttonText = 'test text';
     component.buttonType = 'text'
+    component.buttonText = 'test text';
     fixture.detectChanges();
   });
 
@@ -59,7 +59,6 @@ describe('ButtonComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
-    component.buttonText = 'test text';
     component.buttonType = 'icon'
     fixture.detectChanges();
   });
