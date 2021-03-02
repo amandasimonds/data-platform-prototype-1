@@ -1,12 +1,12 @@
 .header-dashboard{
-  position: absolute;
+  position: fixed;
+  left:276px;
   padding:24px 70px 26px 70px;
   background-color: white;
   border: $border-gray-light;
   border-left: none;
   height: 153px;
-  width: 90%;
-  flex: 1 0 auto;
+  width:90%;
   display: flex;
   justify-content: space-between;
 
