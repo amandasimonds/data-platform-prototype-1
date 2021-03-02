@@ -1,25 +1,51 @@
 .header-dashboard{
-  position: absolute;
-  padding:24px 78px 26px 80px;
+  position: fixed;
+  left:276px;
+  padding:24px 70px 26px 70px;
   background-color: white;
   border: $border-gray-light;
   border-left: none;
   height: 153px;
-  width: 100%;
+  width:90%;
   display: flex;
   justify-content: space-between;
 
   &__heading-container{
     float: left;
-    display: flex;;
+    display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &__right-container{
   }
 
   &__icon-wrapper{
     position: relative;
     top: 4px;
     margin-right: 16px;
+  }
+
+  &__button-wrapper{
+    width: 57px;
+    height: 57px;
+    position: relative;
+    margin-right: 23px;
+    text-align:center;
+    border: $border-gray-light;
+    padding: 10.5px;
+    border-radius: 100%;
+  }
+
+  &__help-button{
+    color: $color-blue !important;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  &__icon-position{
+    position: relative;
+    top: 3px;
   }
 
 }
