@@ -3,8 +3,7 @@ import { uvIcons } from './icons';
 
 @Component({
   selector: 'lib-icons',
-  // template: '',
-  template: '<span id="lib-icon"></span>',
+  template: '',
   styleUrls: ['../../scss/_styles.scss']
 })
 export class IconsComponent implements OnInit {
@@ -20,7 +19,6 @@ export class IconsComponent implements OnInit {
 
   ngOnInit(): void {
     this.renderer.setAttribute(this.element.nativeElement, 'id', 'lib-icon');
-    // this.renderer.setProperty(this.element.nativeElement, 'id', 'lib-icon');
   }
 
 
