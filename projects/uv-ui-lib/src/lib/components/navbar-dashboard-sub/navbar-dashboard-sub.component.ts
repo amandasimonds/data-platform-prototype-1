@@ -13,6 +13,7 @@ export class NavbarDashboardSubComponent implements OnInit {
   @Input() subHeadingTxt : string;
   @Input() snippetTxt : string;
   @Input() snippetHeading: string;
+  @Input() snippetClicked: any;
 
   constructor() { }
 

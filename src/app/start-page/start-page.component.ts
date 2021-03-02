@@ -122,4 +122,8 @@ export class StartPageComponent implements OnInit {
     console.log("search sumthin");
   }
 
+  snippetClick(){
+    console.log("snippet was clicked");
+  }
+
 }

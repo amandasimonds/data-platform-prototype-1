@@ -1,5 +1,5 @@
 .navbar-dashboard-sub{
-  position: relative;
+  position: fixed;
   float:left;
   width: 212px;
   height: 100vh;
@@ -9,7 +9,6 @@
   border-bottom: none;
   background-color:$color-white;
   box-shadow: $box-shadow-light;
-  overflow: hidden;
 
   &__heading-container{
     padding: 18px 16px;
@@ -26,13 +25,13 @@
   }
 
   &__snippets-flexbox{
-    position: relative;
     display: flex;
     flex-direction: column;
     align-content: center;
-    height: 100%;
-    padding: 19px 16px 0 16px;
+    height: 90%;
+    padding: 19px 14px 400px 16px;
     overflow: auto;
+    flex-shrink: 1;
    }
 
   &__icon{
@@ -46,12 +45,24 @@
     }
   }
 
+  &__snippet-wrapper{
+    margin-bottom: 12px;
+    padding: 7px 10px 7px 7px;
+
+    &:hover{
+      cursor: pointer;
+      background-color: #d8d8d821;
+      border-radius: 5px;
+    }
+
+  }
+
   &__snippet-container{
     height: 73px;
     width: 155px;
     position: relative;
-    margin-bottom: 24px;
     min-height: 73px;
+
     &--textbox{
       position: absolute;
       width: 126.5px;
@@ -62,6 +73,7 @@
       overflow: hidden;
       // text-overflow: ellipsis;
     }
+
     &--icon-box{
       display: inline-block;
       margin-top: 3px;

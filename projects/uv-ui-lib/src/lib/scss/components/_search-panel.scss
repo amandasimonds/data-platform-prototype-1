@@ -4,7 +4,8 @@
   border: $border-gray-light;
   border-radius: 28px;
   background-color: #FFFFFF;
-  margin: 10px 94px;
+  margin: 10px 23px;
+  float: right;
 
   &__input{
     font-size: 16px;
@@ -19,7 +20,6 @@
         outline: none;
     }
 
-    //represents things that aren't on the webpage(like placeholders)
     &::-webkit-input-placeholder{
         color: $color-gray;
         font-style: italic;
