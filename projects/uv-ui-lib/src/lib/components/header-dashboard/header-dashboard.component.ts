@@ -9,6 +9,8 @@ export class HeaderDashboardComponent implements OnInit {
 
   @Input() headerText : string;
   @Input() iconName : string;
+  @Input() profileBtnClicked : any;
+  @Input() helpBtnClicked : any;
 
   constructor() { }
 
