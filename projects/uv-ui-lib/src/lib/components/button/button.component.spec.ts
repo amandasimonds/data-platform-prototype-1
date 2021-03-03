@@ -30,26 +30,6 @@ describe('ButtonComponent', () => {
     const button = fixture.debugElement.query(By.css('a')).nativeElement;
     expect(button.innerHTML).toBe('test text');
   });
-
-  // it('should emit an event when the button is clicked', () => {
-  //   spyOn(component.onClick, 'emit');
-  //   component.onClickButton({test:'test'});
-  //   expect(component.onClick.emit).toHaveBeenCalledOnceWith({test:'test'});
-  // });
-
-  // it('should have a button with a click event', () => {
-  //   spyOn(component.onClick, 'emit');
-  //   const button = fixture.debugElement.query(By.css('a')).nativeElement;
-  //   button.click();
-  //   expect(component.onClick.emit).toHaveBeenCalledTimes(1);
-  // });
-
-//   it('should have the proper classes', () => {
-//     component.buttonConfig = {disabled: true};
-//     fixture.detectChanges();
-//     const button = fixture.debugElement.query(By.css('.disabled'));
-//     expect(button).toBeTruthy();
-//   });
 });
 
 describe('ButtonComponent', () => {

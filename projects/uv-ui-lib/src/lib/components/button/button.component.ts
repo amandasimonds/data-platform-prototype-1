@@ -7,7 +7,6 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
-  // @Output() onClick = new EventEmitter<any>();
   @Input() buttonType: string;
   @Input() buttonText: string;
   @Input() iconName: string;
@@ -17,10 +16,6 @@ export class ButtonComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-  // onClickButton(event) {
-  //   this.onClick.emit(event);
-  // }
 }
 
 interface BtnConfig {

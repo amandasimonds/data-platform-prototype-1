@@ -24,11 +24,12 @@ describe('IconsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should have the proper name', () => {
-  //   fixture.detectChanges();
-  //   const icon = fixture.debugElement.nativeElement.innerHTML;
-  //   console.log(icon)
-  //   expect(icon.id).toBe('dashboard');
-  // });
+  it('should have the proper name', () => {
+    fixture.detectChanges();
+    const icon = fixture.debugElement.nativeElement.querySelector('#lib-icon')
+    const svg = icon.innerHTML;
+    console.log(svg)
+    expect(svg.id).toBe('dashboard');
+  });
 
 });
