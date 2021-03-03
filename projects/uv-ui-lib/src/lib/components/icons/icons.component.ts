@@ -21,5 +21,4 @@ export class IconsComponent implements OnInit {
     this.renderer.setAttribute(this.element.nativeElement, 'id', 'lib-icon');
   }
 
-
 }
