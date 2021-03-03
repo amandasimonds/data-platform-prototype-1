@@ -103,11 +103,11 @@ export class StartPageComponent implements OnInit {
   }
 
   clear(){
-    console.log("clearbuttonclicked");
+    console.log("clear button clicked");
   }
 
   expandFilters(){
-    console.log("expandddd");
+    console.log("expand button clicked");
   }
 
   moveRight(){
@@ -119,7 +119,7 @@ export class StartPageComponent implements OnInit {
   }
 
   search(){
-    console.log("search sumthin");
+    console.log("search something");
   }
 
   snippetClick(){
