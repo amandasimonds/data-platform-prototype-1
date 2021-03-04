@@ -24,14 +24,30 @@
     opacity: .31;
   }
 
+  &__snippets-scrollbar-padding{
+    padding: 19px 16px 0 16px;
+    height: 100%;
+  }
+
   &__snippets-flexbox{
     display: flex;
     flex-direction: column;
     align-content: center;
     height: 90%;
-    padding: 19px 14px 400px 16px;
+    padding: 0 16px 200px 0;
     overflow: auto;
-    flex-shrink: 1;
+
+    &::-webkit-scrollbar-thumb {
+      background-color:#fbeded00;
+      transition: background-color .3s;
+    }
+
+    &:hover{
+      &::-webkit-scrollbar-thumb {
+        background-color: #FBEDED;
+        transition: background-color .3s;
+      }
+    }
    }
 
   &__icon{
@@ -40,43 +56,42 @@
     height: 26px;
 
     &:hover{
-      background-color: #d8d8d821;
+      background-color: $color-gray-light-4;
       border-radius: 50%;
     }
   }
 
   &__snippet-wrapper{
-    margin-bottom: 12px;
-    padding: 7px 10px 7px 7px;
+    margin-bottom: 24px;
 
     &:hover{
       cursor: pointer;
-      background-color: #d8d8d821;
-      border-radius: 5px;
+      background-color: $color-gray-light-4;
+      border-radius: 8px;
     }
 
   }
 
   &__snippet-container{
     height: 73px;
-    width: 155px;
     position: relative;
     min-height: 73px;
+    padding: 2px;
 
     &--textbox{
-      position: absolute;
-      width: 126.5px;
+      margin-left: 8px;
+      width: 120px;
       height: 68px;
-      right: 0;
-      bottom: 0;
+      float: left;
+      display: block;
 
       overflow: hidden;
       // text-overflow: ellipsis;
     }
 
     &--icon-box{
-      display: inline-block;
-      margin-top: 3px;
+      display: block;
+      float: left;
     }
   }
 }
