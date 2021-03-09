@@ -3,7 +3,6 @@ import { FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UvUiLibComponent } from './uv-ui-lib.component';
 
-
 import { NavbarDarkComponent } from './components/navbar-dark/navbar-dark.component';
 import { LoginComponent } from './components/login/login.component';
 import { IconsComponent } from './components/icons/icons.component';
@@ -15,6 +14,8 @@ import { SearchPanelComponent } from './components/search-panel/search-panel.com
 import { BadgeComponent } from './components/badge/badge.component';
 import { FiltersListComponent } from './components/search-panel/filters-list/filters-list.component';
 import { WidgetComponent } from './components/widget/widget.component';
+import { HomeContainerComponent } from './components/home-container/home-container.component';
+import { LogoSplashBlockComponent } from './components/logo-splash-block/logo-splash-block.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { WidgetComponent } from './components/widget/widget.component';
     SearchPanelComponent,
     BadgeComponent,
     FiltersListComponent,
-    WidgetComponent
+    WidgetComponent,
+    HomeContainerComponent,
+    LogoSplashBlockComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +50,9 @@ import { WidgetComponent } from './components/widget/widget.component';
     SearchPanelComponent,
     BadgeComponent,
     FiltersListComponent,
-    WidgetComponent
+    WidgetComponent,
+    HomeContainerComponent,
+    LogoSplashBlockComponent
   ]
 })
 export class UvUiLibModule { }

@@ -11,7 +11,7 @@ export class StartPageComponent implements OnInit {
   nav = [
     {
       icon: "dashboard",
-      navlink: "/start-page",
+      navlink: "/start-page/home",
       classes: ["", ""],
     },
     {
