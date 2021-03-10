@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-logo-splash-block',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../../scss/_styles.scss']
 })
 export class LogoSplashBlockComponent implements OnInit {
+
+  @Input() headingText : string;
+  @Input() blurbText : string;
 
   constructor() { }
 
