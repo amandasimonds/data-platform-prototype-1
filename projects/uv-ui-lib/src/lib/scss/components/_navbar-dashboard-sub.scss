@@ -25,7 +25,7 @@
   }
 
   &__snippets-scrollbar-padding{
-    padding: 19px 16px 0 16px;
+    padding: 0 16px 0 16px;
     height: 100%;
   }
 
@@ -34,19 +34,23 @@
     flex-direction: column;
     align-content: center;
     height: 90%;
-    padding: 0 16px 200px 0;
+    padding: 16px 16px 0 0;
     overflow: auto;
+    pointer-events: auto;
 
-    &::-webkit-scrollbar-thumb {
-      background-color:#fbeded00;
-      transition: background-color .3s;
+    &:hover .navbar-dashboard-sub__snippets-flexbox__scrollbar-cover{
+      background-color: rgba(white, 0.0);
+      z-index: -1;
     }
 
-    &:hover{
-      &::-webkit-scrollbar-thumb {
-        background-color: #FBEDED;
-        transition: background-color .3s;
-      }
+    &__scrollbar-cover{
+      transition: all .5s;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      width: 15%;
+      height:100%;
+      background-color: rgba(white, 1);
     }
    }
 
