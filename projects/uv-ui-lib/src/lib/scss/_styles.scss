@@ -19,7 +19,7 @@ body {
     background-color: #f1f1f1;
 }
 
- /*scrollbar*/
+ // SCROLLBAR //
 * {
   scrollbar-width: 9px;
   scrollbar-color: #FBEDED white;
@@ -27,6 +27,7 @@ body {
 
 *::-webkit-scrollbar {
   width: 9px;
+  height: 8px;
 }
 
 *::-webkit-scrollbar-track {
@@ -38,21 +39,23 @@ body {
 *::-webkit-scrollbar-thumb {
   background-color: #FBEDED;
   border-radius: 100px;
-  // border: 6px solid transparent;
   background-clip: padding-box;
-  // -webkit-border-radius: 1em;
-
+  max-height: 20px;
 }
 
 *::-webkit-scrollbar-corner{
   background: transparent;
 }
 
-// *::-webkit-scrollbar-button:end:increment {
-//   height: 30%;
-//   display: block;
-//   background: blue;
-// }
+*::-webkit-scrollbar-button:end:increment {
+  height: 50%;
+  display: block;
+}
+
+*::-webkit-scrollbar-button:start:increment {
+  height: 17px;
+  display: block;
+}
 
 // IMPORTS //
 @import "./variables";

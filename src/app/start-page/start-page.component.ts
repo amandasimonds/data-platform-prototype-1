@@ -93,6 +93,26 @@ export class StartPageComponent implements OnInit {
       icon: "circle",
       snippetHeading: "Heading",
       snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "circle",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "circle",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "circle",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
+    },
+    {
+      icon: "circle",
+      snippetHeading: "Heading",
+      snippetTxt: "Snippet will go here on three lines. And is clickable"
     }
   ]
 
