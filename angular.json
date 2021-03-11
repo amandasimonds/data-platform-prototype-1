@@ -25,7 +25,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "uv-logo.png",
+                "input": "./node_modules/uv-ui-lib/src/lib/assets/images",
+                "output": "assets"
+              }
             ],
             "styles": [
               "src/scss/main.scss"
