@@ -16,6 +16,7 @@ import { FiltersListComponent } from './components/search-panel/filters-list/fil
 import { WidgetComponent } from './components/widget/widget.component';
 import { HomeContainerComponent } from './components/home-container/home-container.component';
 import { LogoSplashBlockComponent } from './components/logo-splash-block/logo-splash-block.component';
+import { SideBySideLandingComponent } from './components/side-by-side-landing/side-by-side-landing.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LogoSplashBlockComponent } from './components/logo-splash-block/logo-sp
     FiltersListComponent,
     WidgetComponent,
     HomeContainerComponent,
-    LogoSplashBlockComponent
+    LogoSplashBlockComponent,
+    SideBySideLandingComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +54,8 @@ import { LogoSplashBlockComponent } from './components/logo-splash-block/logo-sp
     FiltersListComponent,
     WidgetComponent,
     HomeContainerComponent,
-    LogoSplashBlockComponent
+    LogoSplashBlockComponent,
+    SideBySideLandingComponent
   ]
 })
 export class UvUiLibModule { }

@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { StartPageComponent } from './start-page/start-page.component';
 import { HomeComponent } from './home/home.component';
+import { SideBySideComponent } from './side-by-side/side-by-side.component';
+import { HomeSplashComponent } from './home-splash/home-splash.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     StartPageComponent,
-    HomeComponent
+    HomeComponent,
+    SideBySideComponent,
+    HomeSplashComponent
   ],
   imports: [
     BrowserModule,

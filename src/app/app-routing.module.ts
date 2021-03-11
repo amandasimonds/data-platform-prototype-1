@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from "./login/login.component";
 import { StartPageComponent } from "./start-page/start-page.component";
 import { HomeComponent } from "./home/home.component";
+import { HomeSplashComponent } from './home-splash/home-splash.component';
+import { SideBySideComponent } from './side-by-side/side-by-side.component';
 
 const routes: Routes = [
   {
@@ -22,8 +24,12 @@ const routes: Routes = [
         component: StartPageComponent,
         children: [
           {
-            path: "home",
-            component: HomeComponent
+            path: "home-splash",
+            component: HomeSplashComponent
+          },
+          {
+            path: "side-by-side",
+            component: SideBySideComponent
           }
         ]
       },

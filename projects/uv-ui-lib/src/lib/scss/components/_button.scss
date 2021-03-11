@@ -50,3 +50,15 @@
 .btn-icon{
   cursor: pointer;
 }
+
+.btn-chip{
+  color: $color-orange;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  line-height: 16px;
+  padding: 8px 13px;
+  border: $border-gray-light;
+  border-radius: 8px;
+  background-color: white;
+}
