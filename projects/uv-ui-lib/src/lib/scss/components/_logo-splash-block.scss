@@ -1,6 +1,12 @@
 .logo-splash-block{
   text-align: center;
-  position: relative;
-  width: 100%;
+  position: absolute;
+  width: 577px;
+  left: 30%;
   top: 20%;
+
+  &__logo{
+    width: 100px;
+    margin: 30px;
+  }
 }
