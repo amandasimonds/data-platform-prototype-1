@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {compareTasksData} from "./compareTasks";
 
 @Component({
   selector: 'app-side-by-side',
@@ -7,48 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBySideComponent implements OnInit {
 
-  compareTasks = [
-    {
-      started: true,
-      link: "",
-      title: "Gasket Aluminum Exchangers",
-      description: "Lorem ipsum dolor sit amet consectetur ",
-      date: "Mar, 02",
-    },
-
-    {
-      started: true,
-      link: "",
-      title: "Gasket Aluminum Exchangers",
-      description: "Lorem ipsum dolor sit amet consectetur ",
-      date: "Mar, 02",
-    },
-
-    {
-      started: true,
-      link: "",
-      title: "Gasket Aluminum Exchangers",
-      description: "Lorem ipsum dolor sit amet consectetur ",
-      date: "Mar, 02",
-    },
-
-    {
-      started: true,
-      link: "",
-      title: "Gasket Aluminum Exchangers",
-      description: "Lorem ipsum dolor sit amet consectetur ",
-      date: "Mar, 02",
-    },
-
-    {
-      started: true,
-      link: "",
-      title: "Gasket Aluminum Exchangers",
-      description: "Lorem ipsum dolor sit amet consectetur ",
-      date: "Mar, 02",
-    }
-  ]
-
+  compareTasks = compareTasksData;
+  
   constructor() { }
 
   ngOnInit(): void {
