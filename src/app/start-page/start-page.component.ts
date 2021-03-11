@@ -146,4 +146,12 @@ export class StartPageComponent implements OnInit {
     console.log("snippet was clicked");
   }
 
+  profileClick(){
+  console.log("profile was clicked");
+  }
+
+  helpBtnClick(){
+    console.log("help button was clicked");
+  }
+
 }
