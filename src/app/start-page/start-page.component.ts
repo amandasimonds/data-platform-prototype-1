@@ -11,7 +11,7 @@ export class StartPageComponent implements OnInit {
   nav = [
     {
       icon: "dashboard",
-      navlink: "/start-page/home",
+      navlink: "/start-page/home-splash",
       classes: ["", ""],
     },
     {
@@ -22,7 +22,7 @@ export class StartPageComponent implements OnInit {
 
     {
       icon: "sideBySide",
-      navlink: "/start-page",
+      navlink: "/start-page/side-by-side",
       classes: ["", ""]
     },
     {

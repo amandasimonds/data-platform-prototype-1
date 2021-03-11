@@ -1,0 +1,8 @@
+<p class="heading-4">Comparison Tasks</p>
+
+<div *ngFor="let task of tasks" class="compare-task-box">
+  <button class="btn-chip">{{task.started}}</button>
+  <p class="subheading">{{task.title}}</p>
+  <p>{{task.description}}</p>
+  <p class="chip-date">{{task.date}}</p>
+</div>
