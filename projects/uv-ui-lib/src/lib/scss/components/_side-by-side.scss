@@ -1,3 +1,10 @@
+.tasks-container{
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  padding-bottom: 100px;
+}
+
 .compare-task-box{
   position: relative;
   float: left;
@@ -6,6 +13,6 @@
   background-color: white;
   height: 228px;
   width: 200px;
-  margin: 32px;
+  margin: 32px 32px 0 0;
   border-radius: 2px;
 }

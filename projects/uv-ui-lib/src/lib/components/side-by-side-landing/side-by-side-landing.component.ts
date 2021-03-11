@@ -14,7 +14,7 @@ export class SideBySideLandingComponent {
 }
 
 interface Task{
-  started: boolean;
+  started: string;
   link: string;
   title: string;
   description: string;
