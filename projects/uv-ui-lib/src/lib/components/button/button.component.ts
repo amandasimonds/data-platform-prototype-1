@@ -10,6 +10,9 @@ export class ButtonComponent implements OnInit {
   @Input() buttonType: string;
   @Input() buttonText: string;
   @Input() iconName: string;
+  @Input() dropdownName: string;
+  @Input() dropdownId: string;
+  @Input() dropdownPlaceholder: string;
 
   constructor() { }
 
