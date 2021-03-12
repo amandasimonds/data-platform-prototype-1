@@ -3,62 +3,62 @@
   &,
   &:link,
   &:visited {
-    font-family: "Roboto", sans-serif;
+    font-family: "Noto sans", sans-serif;
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 12px;
+    text-align: center;
     text-decoration: none;
-    padding: 9px 12px;
     position: relative;
     display: inline-block;
     border: $border-gray-light;
-    border-radius:3px;
-    height:32px;
+    border-radius: 8px;
     cursor: pointer;
     background-color: white;
-    transition: all .3s;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 1rem 1rem rgba($color-black, .2);
-
-        &::after{
-            transform: scaleX(1.4) scaleY(1.6);
-            opacity: 0;
-        }
+    transition: all .2s;
   }
 
   &:active,
   &:focus{
     outline: none;
-    transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba($color-black, .2);
   }
 
-}
-
-.btn-login{
-  margin:25px;
-  font-size: 14px;
-  border: $border-gray-light;
-  padding: 12px;
-  border-radius: 3px;
-  width: 320px;
-  height: 48px;
 }
 
 .btn-icon{
   cursor: pointer;
 }
 
+.btn-login{
+  margin:25px;
+  font-size: 14px;
+  padding: 12px;
+  width: 320px;
+  height: 48px;
+}
+
 .btn-chip{
   color: $color-orange;
-  font-size: 12px;
   font-weight: bold;
   letter-spacing: 0.2px;
   line-height: 16px;
   padding: 8px 13px;
-  border: $border-gray-light;
-  border-radius: 8px;
-  background-color: white;
+}
+
+.btn-round{
+  width: 41px;
+  height: 41px;
+  padding: 10.5px;
+  border-radius: 100%;
+}
+
+.btn-dropdown{
+  padding: 10px 16px;
+  font-weight: bold;
+}
+
+.btn-add-task{
+  color: $color-blue;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 6px;
 }

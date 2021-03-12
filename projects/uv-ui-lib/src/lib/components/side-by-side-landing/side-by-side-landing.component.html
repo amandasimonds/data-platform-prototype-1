@@ -1,9 +1,21 @@
-<p class="heading-4">Comparison Tasks</p>
+<div class="compare-tasks-header-container">
+
+  <p class="heading-4">Comparison Tasks</p>
+
+  <div>
+
+    <lib-button buttonType="text" class="btn btn-round btn-add-task margin-right-md" buttonText="+" (click)="addTaskClicked()"></lib-button>
+
+    <lib-button buttonType="dropdown" dropdownPlaceholder="Switch filter" buttonText="Switch filter" (click)="switchFilterClicked()"></lib-button>
+
+  </div>
+
+</div>
 
 <div class="tasks-container">
 
   <div *ngFor="let task of tasks" class="compare-task-box">
-    <button class="btn-chip margin-bottom-md">{{task.started}}</button>
+    <button class="btn btn-chip margin-bottom-md">{{task.started}}</button>
     <p class="txt-sm bold margin-bottom-sm">{{task.title}}</p>
     <p class="txt-sm margin-bottom-md">{{task.description}}</p>
     <p class="chip-date">{{task.date}}</p>

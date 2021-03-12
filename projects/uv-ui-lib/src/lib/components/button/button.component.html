@@ -1,6 +1,6 @@
 <span *ngIf="buttonType=='text'">
 
-    <a class="btn-icon">{{buttonText}}</a>
+    <a>{{buttonText}}</a>
 
 </span>
 
@@ -12,6 +12,17 @@
       name={{iconName}}>
     </lib-icons>
   </a>
+
+</span>
+
+<span *ngIf="buttonType=='dropdown'">
+
+  <select class="btn btn-dropdown" name={{dropdownName}} id={{dropdownId}}>
+    <option value="1">{{dropdownPlaceholder}}</option>
+    <option value="2"></option>
+    <option value="3"></option>
+    <option value="4"></option>
+  </select>
 
 </span>
 

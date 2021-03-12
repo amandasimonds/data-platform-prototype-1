@@ -8,6 +8,8 @@ import { Component, Input} from '@angular/core';
 export class SideBySideLandingComponent {
 
   @Input() tasks : Task
+  @Input() addTaskClicked : any
+  @Input() switchFilterClicked : any
 
   constructor() { }
 
