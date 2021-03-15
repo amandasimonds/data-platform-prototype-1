@@ -7,6 +7,7 @@ import { Component, Input} from '@angular/core';
 })
 export class SideBySideLandingComponent {
 
+  @Input() loadTask : any;
   @Input() tasks : Task
   @Input() addTaskClicked : any
   @Input() switchFilterClicked : any

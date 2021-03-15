@@ -8,9 +8,11 @@ import {compareTasksData} from "./compareTasks";
 })
 export class SideBySideComponent implements OnInit {
 
+  loadTask = true;
   compareTasks = compareTasksData;
-  
-  constructor() { }
+
+  constructor() {
+   }
 
   ngOnInit(): void {
   }
