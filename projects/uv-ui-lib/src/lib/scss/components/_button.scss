@@ -10,7 +10,6 @@
     text-decoration: none;
     position: relative;
     display: inline-block;
-    border: $border-gray-light;
     border-radius: 8px;
     cursor: pointer;
     background-color: white;
@@ -34,6 +33,7 @@
   padding: 12px;
   width: 320px;
   height: 48px;
+  border: $border-gray-light;
 }
 
 .btn-chip{
@@ -42,6 +42,7 @@
   letter-spacing: 0.2px;
   line-height: 16px;
   padding: 8px 13px;
+  border: $border-gray-light;
 }
 
 .btn-round{
@@ -49,11 +50,13 @@
   height: 41px;
   padding: 10.5px;
   border-radius: 100%;
+  border: $border-gray-light;
 }
 
 .btn-dropdown{
   padding: 10px 16px;
   font-weight: bold;
+  border: $border-gray-light;
 }
 
 .btn-add-task{
@@ -61,4 +64,5 @@
   font-weight: bold;
   font-size: 18px;
   padding: 6px;
+  border: $border-gray-light;
 }

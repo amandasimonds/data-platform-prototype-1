@@ -30,6 +30,10 @@ const routes: Routes = [
           {
             path: "side-by-side",
             component: SideBySideComponent
+          },
+          {
+            path: "side-by-side/task:id",
+            component: SideBySideComponent
           }
         ]
       },

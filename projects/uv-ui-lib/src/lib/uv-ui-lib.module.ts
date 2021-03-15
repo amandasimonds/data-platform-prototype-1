@@ -17,6 +17,7 @@ import { WidgetComponent } from './components/widget/widget.component';
 import { HomeContainerComponent } from './components/home-container/home-container.component';
 import { LogoSplashBlockComponent } from './components/logo-splash-block/logo-splash-block.component';
 import { SideBySideLandingComponent } from './components/side-by-side-landing/side-by-side-landing.component';
+import { AppSideBarComponent } from './components/app-side-bar/app-side-bar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SideBySideLandingComponent } from './components/side-by-side-landing/si
     WidgetComponent,
     HomeContainerComponent,
     LogoSplashBlockComponent,
-    SideBySideLandingComponent
+    SideBySideLandingComponent,
+    AppSideBarComponent
   ],
   imports: [
     CommonModule,
@@ -55,7 +57,8 @@ import { SideBySideLandingComponent } from './components/side-by-side-landing/si
     WidgetComponent,
     HomeContainerComponent,
     LogoSplashBlockComponent,
-    SideBySideLandingComponent
+    SideBySideLandingComponent,
+    AppSideBarComponent
   ]
 })
 export class UvUiLibModule { }
