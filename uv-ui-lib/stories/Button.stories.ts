@@ -1,0 +1,39 @@
+// also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
+import { Meta, Story } from '@storybook/angular/types-6-0';
+import { UvUiButtonComponent } from '../projects/uv-ui-components/src/lib/uv-ui-button/uv-ui-button.component';
+
+export default {
+    title: 'Example/Button',
+    component: UvUiButtonComponent,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as Meta;
+
+const Template: Story<UvUiButtonComponent> = (args: UvUiButtonComponent) => ({
+    component: UvUiButtonComponent,
+    props: args,
+});
+
+export const Primary = Template.bind({});
+Primary.args = {
+    primary: true,
+    label: 'Button',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+    label: 'Button',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+    size: 'large',
+    label: 'Button',
+};
+
+export const Small = Template.bind({});
+Small.args = {
+    size: 'small',
+    label: 'Button',
+};
