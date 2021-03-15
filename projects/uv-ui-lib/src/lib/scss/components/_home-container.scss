@@ -1,7 +1,8 @@
 .home-container{
-  position: relative;
   display: flex;
+  position: relative;
+  border: 1px solid red;
   width: auto;
   height: 80vh;
-  padding: 24px 79px 24px 79px;
+  padding: 0 0 24px 0;
 }

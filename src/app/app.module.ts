@@ -10,6 +10,7 @@ import { StartPageComponent } from './start-page/start-page.component';
 import { HomeComponent } from './home/home.component';
 import { SideBySideComponent } from './side-by-side/side-by-side.component';
 import { HomeSplashComponent } from './home-splash/home-splash.component';
+import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeSplashComponent } from './home-splash/home-splash.component';
     StartPageComponent,
     HomeComponent,
     SideBySideComponent,
-    HomeSplashComponent
+    HomeSplashComponent,
+    GlobalWhereUsedComponent
   ],
   imports: [
     BrowserModule,
