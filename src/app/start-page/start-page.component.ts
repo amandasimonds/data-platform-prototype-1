@@ -16,7 +16,7 @@ export class StartPageComponent implements OnInit {
     },
     {
       icon: "inspect",
-      navlink: "/start-page",
+      navlink: "/start-page/global-where-used",
       classes: ["", ""]
     },
 
