@@ -1,4 +1,8 @@
 .app-side-bar{
+  position: absolute;
   width: 336px;
-  height: 80vh;
+  height: 100vh;
+  border-left: none;
+  border-top: none;
+  z-index: 1;
 }
