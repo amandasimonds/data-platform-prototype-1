@@ -1,14 +1,18 @@
 .svg-black{
   svg{
     width: 24px;
-    fill:black;
+    path{
+      fill:black;
+    }
   }
 }
 
 .svg-blue{
   svg{
     width: 24px;
-    fill:$color-blue;
+    path{
+      fill:$color-blue;
+    }
   }
 }
 

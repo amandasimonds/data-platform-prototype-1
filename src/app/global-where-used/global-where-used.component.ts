@@ -7,6 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GlobalWhereUsedComponent implements OnInit {
 
+  gwuTabs = [
+    {
+      icon: "moreHorizontal",
+      link: "/",
+      linkText: "Link"
+    },
+    {
+      icon: "moreHorizontal",
+      link: "/",
+      linkText: "Link"
+    },
+    {
+      icon: "moreHorizontal",
+      link: "/",
+      linkText: "Link"
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
