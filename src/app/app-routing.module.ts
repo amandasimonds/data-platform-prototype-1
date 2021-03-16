@@ -33,10 +33,6 @@ const routes: Routes = [
             component: SideBySideComponent
           },
           {
-            path: "side-by-side/task:id",
-            component: SideBySideComponent
-          },
-          {
             path: "global-where-used",
             component: GlobalWhereUsedComponent
           },

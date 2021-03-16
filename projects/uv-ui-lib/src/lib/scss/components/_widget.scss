@@ -1,8 +1,13 @@
 .widget{
-  height: 100%;
+  height: auto;
   border: $border-gray-light;
   box-shadow: $box-shadow-light;
   background-color: white;
-  padding: 16px 16px 16px 24px;
+  border-radius: 16px;;
   position: relative;
+  display: inline-block;
+  width: auto;
+  padding: 10px;
+  margin: 128px 32px 32px 366px;
+  overflow: auto;
 }
