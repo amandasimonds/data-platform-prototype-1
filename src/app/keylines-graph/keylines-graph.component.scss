@@ -1,0 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.chart-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 16px;
+}
