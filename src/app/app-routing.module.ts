@@ -7,6 +7,7 @@ import { HomeComponent } from "./home/home.component";
 import { HomeSplashComponent } from './home-splash/home-splash.component';
 import { SideBySideComponent } from './side-by-side/side-by-side.component';
 import { GlobalWhereUsedComponent } from "./global-where-used/global-where-used.component";
+import { KeylinesGraphComponent } from './keylines-graph/keylines-graph.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: "login",
         component: LoginComponent
+      },
+      {
+        path: "data",
+        component: KeylinesGraphComponent
       },
       {
         path: "start-page",
