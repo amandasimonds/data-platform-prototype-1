@@ -1,0 +1,31 @@
+.svg-black{
+  svg{
+    width: 24px;
+    path{
+      fill:black;
+    }
+  }
+}
+
+.svg-blue{
+  svg{
+    width: 24px;
+    path{
+      fill:$color-blue;
+    }
+  }
+}
+
+.svg-gray{
+  svg{
+    width: 24px;
+    fill:$color-gray-light-3;
+  }
+}
+
+.svg-gray-small{
+  svg{
+    width: 20px;
+    fill:$color-gray-light-3;
+  }
+}
