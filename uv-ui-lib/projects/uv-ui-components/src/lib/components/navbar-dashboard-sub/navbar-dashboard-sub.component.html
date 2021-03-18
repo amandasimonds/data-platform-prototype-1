@@ -1,0 +1,42 @@
+<div class="navbar-dashboard-sub">
+
+  <div class="navbar-dashboard-sub__heading-container">
+
+    <div class="navbar-dashboard-sub__text-container">
+      <p class="heading-2">{{headingTxt}}</p>
+      <p class="subheading">{{subHeadingTxt}}</p>
+    </div>
+
+    <lib-button
+      buttonType='icon'
+      iconName='moreHorizontal'
+      class="svg-blue navbar-dashboard-sub__icon"
+      >
+    </lib-button>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="navbar-dashboard-sub__snippets-scrollbar-padding">
+    <div class="navbar-dashboard-sub__snippets-flexbox">
+
+      <div class="navbar-dashboard-sub__snippets-flexbox__spacer"></div>
+      <div class="navbar-dashboard-sub__snippets-flexbox__scrollbar-cover"></div>
+
+      <div class="navbar-dashboard-sub__snippet-wrapper" *ngFor="let snippet of snippets" (click)="snippetClicked($event)">
+        <div class="navbar-dashboard-sub__snippet-container">
+          <span class="navbar-dashboard-sub__snippet-container--icon-box">
+            <lib-icons name={{snippet.icon}} class="svg-gray-small"></lib-icons>
+          </span>
+          <div class="navbar-dashboard-sub__snippet-container--textbox">
+            <p class="subheading">{{snippet.snippetHeading}}</p>
+            <p>{{snippet.snippetTxt}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
