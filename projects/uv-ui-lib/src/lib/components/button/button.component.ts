@@ -7,6 +7,12 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
+  @Output() public readonly clicked = new EventEmitter<Event>();
+
+  public onClick($event: Event): void {
+    this.clicked.emit($event);
+}
+
   @Input() buttonType: string;
   @Input() buttonText: string;
   @Input() iconName: string;

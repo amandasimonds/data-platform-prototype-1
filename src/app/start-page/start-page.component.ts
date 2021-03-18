@@ -122,36 +122,36 @@ export class StartPageComponent implements OnInit {
 
   }
 
-  clear(){
-    console.log("clear button clicked");
+  clear(event){
+    console.log("clear button clicked", event);
   }
 
-  expandFilters(){
-    console.log("expand button clicked");
+  expandFilters(event){
+    console.log("expand button clicked", event);
   }
 
-  moveRight(){
-    console.log("move right");
+  moveRight(event){
+    console.log("move right", event);
   }
 
-  showFilters(){
-    console.log("show filters");
+  showFilters(event){
+    console.log("show filters", event);
   }
 
-  search(){
-    console.log("search something");
+  search(event){
+    console.log("search something", event);
   }
 
-  snippetClick(){
-    console.log("snippet was clicked");
+  snippetClick(event){
+    console.log("snippet was clicked", event);
   }
 
-  profileClick(){
-  console.log("profile was clicked");
+  profileClick(event){
+  console.log("profile was clicked", event);
   }
 
-  helpBtnClick(){
-    console.log("help button was clicked");
+  helpBtnClick(event){
+    console.log("help button was clicked", event);
   }
 
 }

@@ -7,12 +7,36 @@ import { NgModel } from '@angular/forms';
 })
 export class SearchPanelComponent implements OnInit {
 
-  @Input() clearBtnClicked : any;
-  @Input() expandFiltersClicked : any;
-  @Input() filterRemoveClicked : any;
-  @Input() searchBtnClicked : any;
-  @Input() rightArrowBtnClicked : any;
-  @Input() filterBtnClicked : any;
+  @Output() clearBtnEvent = new EventEmitter<any>();
+  @Output() expandFiltersEvent = new EventEmitter<any>();
+  @Output() filterRemoveBtnEvent = new EventEmitter<any>();
+  @Output() searchBtnEvent = new EventEmitter<any>();
+  @Output() rightArrowBtnEvent = new EventEmitter<any>();
+  @Output() filterBtnEvent = new EventEmitter<any>();
+
+  clearBtnClicked(event){
+    this.clearBtnEvent.emit(event);
+  };
+
+  expandFiltersClicked(event){
+    this.expandFiltersEvent.emit(event);
+  };
+
+  filterRemoveBtnClicked(event){
+    this.filterRemoveBtnEvent.emit(event);
+  };
+
+  searchBtnClicked(event){
+    this.searchBtnEvent.emit(event);
+  };
+
+  rightArrowBtnClicked(event){
+    this.rightArrowBtnEvent.emit(event);
+  };
+
+  filterBtnClicked(event){
+    this.filterBtnEvent.emit(event);
+  };
 
   state : string;
 

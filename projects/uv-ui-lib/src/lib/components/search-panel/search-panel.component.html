@@ -20,7 +20,7 @@
   </div> -->
 
 <span class="search-panel__icon-search-container">
-  <lib-button buttonType="icon" id="search-button" class="svg-black" iconName="search" (click)="searchBtnClicked()"></lib-button>
+  <lib-button buttonType="icon" id="search-button" class="svg-black" iconName="search" (click)="searchBtnClicked($event)"></lib-button>
 </span>
 
   <input type="text"
@@ -31,32 +31,32 @@
   <div class="search-panel__filters-container" id="search-panel-filters-container" [ngClass]="{'search-panel__filters-container--expanded' : expanded}">
 
     <span class="search-panel__icon-arrow-left">
-      <lib-button  buttonType="icon" id="leftArrow-button" class="svg-gray" iconName="leftArrow" (click)=" expandFiltersContainer(); expandFiltersClicked();"></lib-button>
+      <lib-button  buttonType="icon" id="leftArrow-button" class="svg-gray" iconName="leftArrow" (click)=" expandFiltersContainer(); expandFiltersClicked($event);"></lib-button>
     </span>
 
     <ng-template #expandedFiltersTemplate>
       <div class="expanded-filters-container border input-group input-group-sm w-100">
           <div class="expanded-filters">
               <lib-filters-list [filters]="filters"
-                                  (click)="filterRemoveClicked()">
+                                  (click)="filterRemoveBtnClicked($event)">
               </lib-filters-list>
           </div>
       </div>
     </ng-template>
 
     <span class="search-panel__icon-container">
-      <lib-button buttonType="icon" class="svg-gray" iconName="close" (click)="clearBtnClicked()"></lib-button>
+      <lib-button buttonType="icon" class="svg-gray" iconName="close" (click)="clearBtnClicked($event)"></lib-button>
     </span>
 
     <span class="search-panel__icon-container">
-      <lib-button buttonType="icon" class="svg-blue" iconName="filter" (click)="filterBtnClicked(); shortFilters();"></lib-button>
+      <lib-button buttonType="icon" class="svg-blue" iconName="filter" (click)="filterBtnClicked($event); shortFilters();"></lib-button>
     </span>
 
     <!-- <div *ngIf="showFilters">
       </div> -->
 
     <span class="search-panel__icon-container">
-      <lib-button buttonType="icon" class="svg-gray" iconName="rightArrow" (click)="rightArrowBtnClicked()"></lib-button>
+      <lib-button buttonType="icon" class="svg-gray" iconName="rightArrow" (click)="rightArrowBtnClicked($event)"></lib-button>
     </span>
 
 

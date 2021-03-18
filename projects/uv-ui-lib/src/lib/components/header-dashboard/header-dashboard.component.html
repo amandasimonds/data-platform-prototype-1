@@ -15,11 +15,11 @@
     <ng-content></ng-content>
 
     <span class="header-dashboard__button-wrapper">
-      <lib-button buttonType="text" class="header-dashboard__help-button" buttonText="?" (click)="helpBtnClicked()"></lib-button>
+      <lib-button buttonType="text" class="header-dashboard__help-button" buttonText="?" (click)="helpBtnClicked($event)"></lib-button>
     </span>
 
     <span class="header-dashboard__button-wrapper">
-      <lib-button buttonType="icon" class="header-dashboard__icon-position svg-blue" iconName="profile" (click)="profileBtnClicked()"></lib-button>
+      <lib-button buttonType="icon" class="header-dashboard__icon-position svg-blue" iconName="profile" (click)="profileBtnClicked($event)"></lib-button>
     </span>
 
   </div>
