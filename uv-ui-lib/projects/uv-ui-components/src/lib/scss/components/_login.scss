@@ -1,0 +1,26 @@
+.login{
+  position: absolute;
+  background-color: #ffffff;
+  width: 640px;
+  height: 356px;
+  top: 40%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  border: $border-gray-light;
+  border-radius: 6px;
+  text-align: center;
+  padding: 80px;
+
+  &__logo-box{
+    margin: 0 auto;
+    margin-bottom:20px;
+    width:64px;
+    height:64px;
+    background-image: url("../../assets/images/uvlogo.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+}
+
+

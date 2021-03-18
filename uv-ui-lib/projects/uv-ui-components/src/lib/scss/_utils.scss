@@ -1,0 +1,39 @@
+.fixed-container {
+  position: fixed;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+.margin-bottom-lg{
+  margin-bottom: 24px;
+}
+
+.margin-bottom-md{
+  margin-bottom: 16px;
+}
+
+.margin-bottom-sm{
+  margin-bottom: 8px;
+}
+
+.margin-right-sm{
+  margin-right: 17px;
+}
+
+.margin-right-md{
+  margin-right: 24px;
+}
+
+.float-right{
+  display: block;
+  float: right;
+}
+
+.float-left{
+  float: left;
+}
+
+.flex{
+  display: flex;
+}
