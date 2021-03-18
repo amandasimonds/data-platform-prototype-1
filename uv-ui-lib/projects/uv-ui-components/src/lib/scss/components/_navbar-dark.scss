@@ -1,0 +1,55 @@
+.navbar-dark{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 6.6rem;
+  height: 100vh;
+  background-color:$color-black;
+
+  // &__icon-box{
+  //   width:24px;
+  //   height: 24px;
+  //   margin: 16px;
+  // }
+
+  &__divider{
+    border-bottom: 1px solid #505050;
+    margin: 0 16px;
+  }
+
+  &__svg-nav{
+    display: inline-block;
+    margin:10px 0;
+
+    path{
+      fill: $color-gray;
+    }
+    svg{
+      width:50px;
+    }
+  }
+}
+
+.navlink-wrapper{
+  text-align: center;
+}
+
+.profile-box{
+  position: absolute;
+  bottom: 16px;
+  width:24px;
+  height: 24px;
+  margin: 16px;
+  border-top: 1px solid #505050;
+}
+
+.profile-picture{
+  width:24px;
+  height: 24px;
+  margin: 16px 0 16px 0;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  border-radius: 100%;
+}
