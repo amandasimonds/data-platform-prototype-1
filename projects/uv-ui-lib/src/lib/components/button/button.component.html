@@ -1,12 +1,12 @@
 <span *ngIf="buttonType=='text'">
 
-    <a>{{buttonText}}</a>
+    <a (click)="onClick($event)" class="btn">{{buttonText}}</a>
 
 </span>
 
 <span *ngIf="buttonType=='icon'">
 
-  <a>
+  <a (click)="onClick($event)">
     <lib-icons
       class="btn-icon"
       name={{iconName}}>

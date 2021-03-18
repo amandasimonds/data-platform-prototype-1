@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'lib-navbar-dashboard-sub',
@@ -13,7 +13,12 @@ export class NavbarDashboardSubComponent implements OnInit {
   @Input() subHeadingTxt : string;
   @Input() snippetTxt : string;
   @Input() snippetHeading: string;
-  @Input() snippetClicked: any;
+
+  @Output() snippetEvent = new EventEmitter<any>();
+
+  snippetClicked(event){
+    this.snippetEvent.emit(event);
+  };
 
   constructor() { }
 
