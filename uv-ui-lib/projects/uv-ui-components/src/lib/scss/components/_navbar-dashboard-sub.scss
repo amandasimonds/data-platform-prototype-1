@@ -1,0 +1,96 @@
+.navbar-dashboard-sub{
+  position: relative;
+  float:left;
+  width: 212px;
+  height: 100vh;
+  z-index:100;
+  border: $border-gray-light;
+  border-left:none;
+  border-bottom: none;
+  background-color:$color-white;
+  box-shadow: $box-shadow-light;
+
+  &__heading-container{
+    padding: 18px 16px;
+    height: 88px;
+  }
+
+  &__text-container{
+    float: left;
+  }
+
+  &__snippets-scrollbar-padding{
+    padding: 0 16px 0 16px;
+    height: 100%;
+  }
+
+  &__snippets-flexbox{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 100%;
+    padding: 16px 16px 200px 0;
+    overflow: auto;
+    pointer-events: auto;
+
+    &:hover .navbar-dashboard-sub__snippets-flexbox__scrollbar-cover{
+      background-color: rgba(white, 0.0);
+    }
+
+    &__scrollbar-cover{
+      transition: all .5s;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      width: 15%;
+      height:100%;
+      background-color: rgba(white, 1);
+      pointer-events: none;
+    }
+   }
+
+  &__icon{
+    float: right;
+    width: 26px;
+    height: 26px;
+
+    &:hover{
+      background-color: $color-gray-light-4;
+      border-radius: 50%;
+    }
+  }
+
+  &__snippet-wrapper{
+    margin-bottom: 24px;
+
+    &:hover{
+      cursor: pointer;
+      background-color: $color-gray-light-4;
+      border-radius: 8px;
+    }
+
+  }
+
+  &__snippet-container{
+    height: 73px;
+    position: relative;
+    min-height: 73px;
+    padding: 2px;
+
+    &--textbox{
+      margin-left: 8px;
+      width: 120px;
+      height: 68px;
+      float: left;
+      display: block;
+
+      overflow: hidden;
+      // text-overflow: ellipsis;
+    }
+
+    &--icon-box{
+      display: block;
+      float: left;
+    }
+  }
+}
