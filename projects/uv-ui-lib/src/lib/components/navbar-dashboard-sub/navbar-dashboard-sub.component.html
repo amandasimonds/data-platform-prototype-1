@@ -24,7 +24,7 @@
       <div class="navbar-dashboard-sub__snippets-flexbox__spacer"></div>
       <div class="navbar-dashboard-sub__snippets-flexbox__scrollbar-cover"></div>
 
-      <div class="navbar-dashboard-sub__snippet-wrapper" *ngFor="let snippet of snippets" (click)="snippetClicked()">
+      <div class="navbar-dashboard-sub__snippet-wrapper" *ngFor="let snippet of snippets" (click)="snippetClicked($event)">
         <div class="navbar-dashboard-sub__snippet-container">
           <span class="navbar-dashboard-sub__snippet-container--icon-box">
             <lib-icons name={{snippet.icon}} class="svg-gray-small"></lib-icons>

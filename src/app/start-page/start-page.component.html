@@ -7,21 +7,21 @@
     headingTxt="Heading"
     subHeadingTxt="Subheading"
     [snippets]="snippetBox"
-    [snippetClicked]="snippetClick"
+    (snippetEvent)="snippetClick($event)"
   ></lib-navbar-dashboard-sub>
 
   <lib-header-dashboard
   headerText="Dashboard"
   iconName="dashboard"
-  [profileBtnClicked]="profileClick"
-  [helpBtnClicked]="helpBtnClick">
+  (profileBtnEvent)="profileClick($event)"
+  (helpBtnEvent)="helpBtnClick($event)">
 
 <lib-search-panel
-  [rightArrowBtnClicked]="moveRight"
-  [filterBtnClicked]="showFilters"
-  [searchBtnClicked]="search"
-  [clearBtnClicked]="clear"
-  [expandFiltersClicked]="expandFilters">
+  (rightArrowBtnEvent)="moveRight($event)"
+  (filterBtnEvent)="showFilters($event)"
+  (searchBtnEvent)="search($event)"
+  (clearBtnEvent)="clear($event)"
+  (expandFiltersEvent)="expandFilters($event)">
 
 </lib-search-panel>
 

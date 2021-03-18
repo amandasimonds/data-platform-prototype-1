@@ -1,20 +1,25 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'lib-header-dashboard',
   templateUrl: './header-dashboard.component.html',
   styleUrls: ['../../scss/_styles.scss']
 })
-export class HeaderDashboardComponent implements OnInit {
+export class HeaderDashboardComponent {
 
   @Input() headerText : string;
   @Input() iconName : string;
-  @Input() profileBtnClicked : any;
-  @Input() helpBtnClicked : any;
 
-  constructor() { }
+  @Output() helpBtnEvent = new EventEmitter<any>();
+  @Output() profileBtnEvent = new EventEmitter<any>();
 
-  ngOnInit(): void {
-  }
+
+  profileBtnClicked(event){
+    this.profileBtnEvent.emit(event);
+  };
+
+  helpBtnClicked(event){
+    this.helpBtnEvent.emit(event);
+  };
 
 }
