@@ -1,0 +1,20 @@
+<div class="navbar-dark">
+
+  <span
+    *ngFor="let navlink of navlinks"
+    class="navlink-wrapper">
+    <a
+      href={{navlink.navlink}}>
+    <lib-icons
+      name={{navlink.icon}}
+      class="navbar-dark__svg-nav"></lib-icons>
+    </a>
+  </span>
+
+<div class="navbar-dark__divider"></div>
+
+<div class="profile-box">
+  <a href={{userLink}}><img src={{userPic}} class="profile-picture"></a>
+</div>
+
+</div>
