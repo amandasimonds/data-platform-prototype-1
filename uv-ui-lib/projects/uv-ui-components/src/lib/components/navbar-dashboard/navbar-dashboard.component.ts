@@ -1,21 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-navbar-dashboard',
+  selector: 'lib-uv-ui-navbar-dashboard',
   templateUrl: './navbar-dashboard.component.html',
-  styleUrls: ['../../scss/_styles.scss']
+  styleUrls: [ '../scss/_styles.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavbarDashboardComponent implements OnInit {
+export class NavbarDashboardComponent {
 
-  @Input() navlinks: [Nav];
-
-  @Input() userPic: string;
-  @Input() userLink: string;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Input() public navlinks: [Nav];
+  @Input() public userPic = '';
+  @Input() public userLink = '';
 
 }
 

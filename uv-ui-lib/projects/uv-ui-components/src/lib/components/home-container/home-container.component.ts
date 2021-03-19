@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-home-container',
+  selector: 'lib-uv-ui-home-container',
   templateUrl: './home-container.component.html',
-  styleUrls: ['../../scss/_styles.scss']
+  styleUrls: ['../scss/_styles.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeContainerComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class HomeContainerComponent {
 
 }

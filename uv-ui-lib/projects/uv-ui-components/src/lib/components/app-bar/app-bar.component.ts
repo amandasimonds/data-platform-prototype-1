@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'lib-app-bar',
-  templateUrl: './app-bar.component.html',
-  styleUrls: ['../../scss/_styles.scss']
+    selector: 'lib-uv-ui-app-bar',
+    templateUrl: './app-bar.component.html',
+    styleUrls: ['../scss/_styles.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppBarComponent {
-
-  constructor() { }
 
 }

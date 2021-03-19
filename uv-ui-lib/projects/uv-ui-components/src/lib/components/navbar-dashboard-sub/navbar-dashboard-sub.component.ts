@@ -1,33 +1,28 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'lib-navbar-dashboard-sub',
+  selector: 'lib-uv-ui-navbar-dashboard-sub',
   templateUrl: './navbar-dashboard-sub.component.html',
-  styleUrls: ['../../scss/_styles.scss']
+  styleUrls: ['../scss/_styles.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavbarDashboardSubComponent implements OnInit {
+export class NavbarDashboardSubComponent {
 
-  @Input() snippets: [NavBarSub];
+    @Input() public snippets: [NavBarSub];
+    @Input() public headingTxt = '';
+    @Input() public subHeadingTxt = '';
+    @Input() public snippetTxt = '';
+    @Input() public snippetHeading = '';
 
-  @Input() headingTxt : string;
-  @Input() subHeadingTxt : string;
-  @Input() snippetTxt : string;
-  @Input() snippetHeading: string;
+    @Output() public readonly snippetEvent = new EventEmitter<Event>();
 
-  @Output() snippetEvent = new EventEmitter<any>();
-
-  snippetClicked(event){
-    this.snippetEvent.emit(event);
-  };
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    public snippetClicked($event: Event): void{
+        this.snippetEvent.emit($event);
+    };
 }
+
 interface NavBarSub{
-  icon: string;
-  snippetHeading: string;
-  snippetTxt: string;
+    icon: string;
+    snippetHeading: string;
+    snippetTxt: string;
 }

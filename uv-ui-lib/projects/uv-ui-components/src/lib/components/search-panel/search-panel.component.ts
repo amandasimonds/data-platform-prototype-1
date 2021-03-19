@@ -1,59 +1,50 @@
-import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit, Self, ViewChild, Output, EventEmitter } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, Output, EventEmitter } from '@angular/core';
+
 @Component({
-    selector: 'lib-search-panel',
+    selector: 'lib-uv-ui-search-panel',
     templateUrl: './search-panel.component.html',
-    styleUrls: ['../../scss/_styles.scss'],
+    styleUrls: ['../scss/_styles.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchPanelComponent implements OnInit {
+export class SearchPanelComponent {
 
-  @Output() clearBtnEvent = new EventEmitter<any>();
-  @Output() expandFiltersEvent = new EventEmitter<any>();
-  @Output() filterRemoveBtnEvent = new EventEmitter<any>();
-  @Output() searchBtnEvent = new EventEmitter<any>();
-  @Output() rightArrowBtnEvent = new EventEmitter<any>();
-  @Output() filterBtnEvent = new EventEmitter<any>();
-
-  clearBtnClicked(event){
-    this.clearBtnEvent.emit(event);
-  };
-
-  expandFiltersClicked(event){
-    this.expandFiltersEvent.emit(event);
-  };
-
-  filterRemoveBtnClicked(event){
-    this.filterRemoveBtnEvent.emit(event);
-  };
-
-  searchBtnClicked(event){
-    this.searchBtnEvent.emit(event);
-  };
-
-  rightArrowBtnClicked(event){
-    this.rightArrowBtnEvent.emit(event);
-  };
-
-  filterBtnClicked(event){
-    this.filterBtnEvent.emit(event);
-  };
-
-  state : string;
-
-    public shortFilters;
-    public filters;
     public data = '';
+    public expanded = false;
 
-    expanded: boolean;
+    @Output() public readonly clearBtnEvent = new EventEmitter<Event>();
+    @Output() public readonly expandFiltersEvent = new EventEmitter<Event>();
+    @Output() public readonly filterRemoveBtnEvent = new EventEmitter<Event>();
+    @Output() public readonly searchBtnEvent = new EventEmitter<Event>();
+    @Output() public readonly rightArrowBtnEvent = new EventEmitter<Event>();
+    @Output() public readonly filterBtnEvent = new EventEmitter<Event>();
 
-    constructor() {}
-
-    ngOnInit(): void {
-
+    public clearBtnClicked($event: Event): void{
+        this.clearBtnEvent.emit($event);
     }
 
-    expandFiltersContainer() : boolean {
+    public expandFiltersClicked($event: Event): void{
+        this.expandFiltersEvent.emit($event);
+    }
+
+    public filterRemoveBtnClicked($event: Event): void{
+        this.filterRemoveBtnEvent.emit($event);
+    }
+
+    public searchBtnClicked($event: Event): void{
+        this.searchBtnEvent.emit($event);
+    }
+
+    public rightArrowBtnClicked($event: Event): void{
+        this.rightArrowBtnEvent.emit($event);
+    }
+
+    public filterBtnClicked($event: Event): void{
+        this.filterBtnEvent.emit($event);
+    }
+
+    public expandFiltersContainer(): boolean {
       !this.expanded ? this.expanded = true : this.expanded = false;
+
       return this.expanded;
     }
 
