@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-widget',
+  selector: 'lib-uv-ui-widget',
   templateUrl: './widget.component.html',
-  styleUrls: ['../../scss/_styles.scss']
+  styleUrls: ['../scss/_styles.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WidgetComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class WidgetComponent {
 
 }

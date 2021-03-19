@@ -68,7 +68,6 @@
       background-color: $color-gray-light-4;
       border-radius: 8px;
     }
-
   }
 
   &__snippet-container{
@@ -83,9 +82,7 @@
       height: 68px;
       float: left;
       display: block;
-
       overflow: hidden;
-      // text-overflow: ellipsis;
     }
 
     &--icon-box{
