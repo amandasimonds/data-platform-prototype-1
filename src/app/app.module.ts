@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { UvUiLibModule } from "../../uv-ui-lib/projects/uv-ui-components/src/lib/uv-ui-lib.module";
-
+import { UvUiLibModule } from "../../uv-ui-lib/projects/uv-ui-lib/src/lib/uv-ui-lib.module";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
