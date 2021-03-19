@@ -2,4 +2,4 @@
  * Public API Surface of uv-ui-lib
  */
 
-export * from './uv-ui-lib.module';
+export * from './lib/uv-ui-lib.module';
