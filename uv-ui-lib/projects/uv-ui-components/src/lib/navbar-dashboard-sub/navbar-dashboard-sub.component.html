@@ -7,12 +7,12 @@
       <p class="subheading">{{subHeadingTxt}}</p>
     </div>
 
-    <lib-button
+    <lib-uv-ui-button
       buttonType='icon'
       iconName='moreHorizontal'
       class="svg-blue navbar-dashboard-sub__icon"
       >
-    </lib-button>
+    </lib-uv-ui-button>
 
   </div>
 
@@ -27,7 +27,7 @@
       <div class="navbar-dashboard-sub__snippet-wrapper" *ngFor="let snippet of snippets" (click)="snippetClicked($event)">
         <div class="navbar-dashboard-sub__snippet-container">
           <span class="navbar-dashboard-sub__snippet-container--icon-box">
-            <lib-icons name={{snippet.icon}} class="svg-gray-small"></lib-icons>
+            <lib-uv-ui-icons name={{snippet.icon}} class="svg-gray-small"></lib-uv-ui-icons>
           </span>
           <div class="navbar-dashboard-sub__snippet-container--textbox">
             <p class="subheading">{{snippet.snippetHeading}}</p>
