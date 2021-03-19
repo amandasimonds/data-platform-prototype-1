@@ -11,7 +11,8 @@
     "build-components": "ng build uv-ui-components",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
-    "build-storybook": "npm run docs:json && build-storybook"
+    "build-storybook": "npm run docs:json && build-storybook",
+    "build-uv-ui-lib": "ng build uv-ui-lib"
   },
   "private": true,
   "dependencies": {
