@@ -43,7 +43,11 @@ export class SearchPanelComponent {
     }
 
     public expandFiltersContainer(): boolean {
-      !this.expanded ? this.expanded = true : this.expanded = false;
+      if (!this.expanded){
+          this.expanded = true;
+      } else if (this.expanded){
+          this.expanded = false;
+      }
 
       return this.expanded;
     }
