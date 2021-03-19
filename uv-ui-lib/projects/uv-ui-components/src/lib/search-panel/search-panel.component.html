@@ -1,0 +1,33 @@
+<div class="search-panel">
+
+<span class="search-panel__icon-search-container">
+  <lib-uv-ui-button buttonType="icon" id="search-button" class="svg-black" iconName="search" (click)="searchBtnClicked($event)"></lib-uv-ui-button>
+</span>
+
+  <input type="text"
+    placeholder="Search..."
+    class="search-panel__input">
+
+  <div class="search-panel__filters-container" id="search-panel-filters-container" [ngClass]="{'search-panel__filters-container--expanded' : expanded}">
+
+    <span class="search-panel__icon-arrow-left">
+      <lib-uv-ui-button  buttonType="icon" id="leftArrow-button" class="svg-gray" iconName="leftArrow" (click)=" expandFiltersContainer(); expandFiltersClicked($event);"></lib-uv-ui-button>
+    </span>
+
+    <span class="search-panel__icon-container">
+      <lib-uv-ui-button buttonType="icon" class="svg-gray" iconName="close" (click)="clearBtnClicked($event)"></lib-uv-ui-button>
+    </span>
+
+    <span class="search-panel__icon-container">
+      <lib-uv-ui-button buttonType="icon" class="svg-blue" iconName="filter" (click)="filterBtnClicked($event)"></lib-uv-ui-button>
+    </span>
+
+    <span class="search-panel__icon-container">
+      <lib-uv-ui-button buttonType="icon" class="svg-gray" iconName="rightArrow" (click)="rightArrowBtnClicked($event)"></lib-uv-ui-button>
+    </span>
+
+  </div>
+
+</div>
+
+
