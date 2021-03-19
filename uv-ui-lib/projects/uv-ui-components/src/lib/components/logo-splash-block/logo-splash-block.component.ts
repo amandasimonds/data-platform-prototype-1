@@ -1,18 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-logo-splash-block',
+  selector: 'lib-uv-ui-logo-splash-block',
   templateUrl: './logo-splash-block.component.html',
-  styleUrls: ['../../scss/_styles.scss']
+  styleUrls: ['../scss/_styles.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LogoSplashBlockComponent implements OnInit {
+export class LogoSplashBlockComponent {
 
-  @Input() headingText : string;
-  @Input() blurbText : string;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Input() public headingText = '';
+  @Input() public blurbText = '';
 
 }

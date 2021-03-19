@@ -1,20 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-login',
+  selector: 'lib-uv-ui-login',
   templateUrl: './login.component.html',
-  styleUrls: ['../../scss/_styles.scss']
+  styleUrls: ['../scss/_styles.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginComponent implements OnInit {
-
-
-  @Input() header: string;
-
-  constructor() {
-
-  }
-
-  ngOnInit(): void {
-  }
-
+export class LoginComponent {
+    @Input() public header = '';
 }

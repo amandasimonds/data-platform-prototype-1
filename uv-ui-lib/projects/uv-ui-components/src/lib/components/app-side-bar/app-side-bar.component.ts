@@ -1,25 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-app-side-bar',
-  templateUrl: './app-side-bar.component.html',
-  styleUrls: ['../../scss/_styles.scss']
+    selector: 'lib-uv-ui-app-side-bar',
+    templateUrl: './app-side-bar.component.html',
+    styleUrls: ['../scss/_styles.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppSideBarComponent implements OnInit {
-
-  @Input() titleText : string;
-  @Input() descriptionText : string;
-  @Input() tabs : GwuTab;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class AppSideBarComponent {
+    @Input() public titleText = '';
+    @Input() public descriptionText = '';
+    @Input() public tabs: GwuTab;
 }
 
 interface GwuTab{
-  icon: string;
-  link: string;
-  linkText: string;
+    icon: string;
+    link: string;
+    linkText: string;
 }
