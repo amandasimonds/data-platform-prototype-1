@@ -8,7 +8,6 @@ import { ChangeDetectionStrategy, Component, Output, EventEmitter } from '@angul
 })
 export class SearchPanelComponent {
 
-    public data = '';
     public expanded = false;
 
     @Output() public readonly clearBtnEvent = new EventEmitter<Event>();

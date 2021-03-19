@@ -1,6 +1,6 @@
 <div class="navbar-dashboard">
 
-  <lib-icons name="uv-logo"></lib-icons>
+  <lib-uv-ui-icons name="uv-logo"></lib-uv-ui-icons>
 
   <div class="navbar-dashboard__navlinks-flexbox">
 
@@ -8,7 +8,7 @@
 
     <span *ngFor="let navlink of navlinks" class="navlink-wrapper">
       <a href={{navlink.navlink}}>
-        <lib-icons name={{navlink.icon}} class="navbar-dashboard__svg-nav"></lib-icons>
+        <lib-uv-ui-icons name={{navlink.icon}} class="navbar-dashboard__svg-nav"></lib-uv-ui-icons>
       </a>
     </span>
 
