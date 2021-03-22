@@ -8,9 +8,17 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class NavbarDashboardComponent {
 
-  @Input() public navlinks: [Nav];
+  @Input() public navlinks: Nav[];
   @Input() public userPic = '';
   @Input() public userLink = '';
+
+  constructor(){
+      this.navlinks=[{
+        icon: '',
+        navlink: '',
+        classes: ['']
+      }]
+  }
 
 }
 

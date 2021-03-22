@@ -14,6 +14,7 @@ import { SideBySideLandingComponent } from './side-by-side-landing/side-by-side-
 import { AppSideBarComponent } from './app-side-bar/app-side-bar.component';
 import { AppBarComponent } from './app-bar/app-bar.component';
 import { IconsComponent } from './icons/icons.component';
+import { UvIcons } from './icons/icons';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { IconsComponent } from './icons/icons.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     LoginComponent,
@@ -49,6 +50,7 @@ import { IconsComponent } from './icons/icons.component';
     AppSideBarComponent,
     AppBarComponent,
     IconsComponent
-  ]
+  ],
+  providers: [{ provide: UvIcons, useClass: UvIcons }]
 })
 export class UvUiLibModule { }
