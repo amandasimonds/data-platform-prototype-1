@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {compareTasksData} from "./compareTasks";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {compareTasksData} from './compareTasks';
 
 @Component({
+// eslint-disable-next-line
   selector: 'app-side-by-side',
   templateUrl: './side-by-side.component.html',
-  styleUrls: ['./side-by-side.component.scss']
+  styleUrls: ['./side-by-side.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SideBySideComponent implements OnInit {
+export class SideBySideComponent {
 
-  loadTask = true;
-  compareTasks = compareTasksData;
-
-  constructor() {
-   }
-
-  ngOnInit(): void {
-  }
+  public loadTask = true;
+  public compareTasks = compareTasksData;
 
 }

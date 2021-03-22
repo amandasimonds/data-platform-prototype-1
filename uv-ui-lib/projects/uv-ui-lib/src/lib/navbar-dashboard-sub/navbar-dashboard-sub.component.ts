@@ -16,16 +16,16 @@ export class NavbarDashboardSubComponent {
 
     @Output() public readonly snippetEvent = new EventEmitter<Event>();
 
-    public snippetClicked($event: Event): void{
-        this.snippetEvent.emit($event);
-    };
-
     constructor(){
         this.snippets = [{
             icon: '',
             snippetHeading: '',
             snippetTxt: ''
         }];
+    }
+
+    public snippetClicked($event: Event): void{
+        this.snippetEvent.emit($event);
     }
 }
 

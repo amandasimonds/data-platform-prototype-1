@@ -1,158 +1,155 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Nav } from 'projects/uv-ui-lib/src/public-api';
 
 @Component({
+// eslint-disable-next-line
   selector: 'app-start-page',
   templateUrl: './start-page.component.html',
-  styleUrls: ['./start-page.component.scss']
+  styleUrls: ['./start-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class StartPageComponent implements OnInit {
+export class StartPageComponent {
 
-  nav: Nav[] = [
+  public nav: Nav[] = [
     {
-      icon: "dashboard",
-      navlink: "/start-page/home-splash",
-      classes: ["", ""],
+      icon: 'dashboard',
+      navlink: '/start-page/home-splash',
+      classes: []
     },
     {
-      icon: "inspect",
-      navlink: "/start-page/global-where-used",
-      classes: ["", ""]
-    },
-
-    {
-      icon: "sideBySide",
-      navlink: "/start-page/side-by-side",
-      classes: ["", ""]
-    },
-    {
-      icon: "designRipple",
-      navlink: "/start-page",
-      classes: ["", ""]
-    },
-    {
-      icon: "ingestion",
-      navlink: "/start-page",
-      classes: ["", ""]
-    },
-    {
-      icon: "settings",
-      navlink: "/start-page",
-      classes: ["", ""]
+      icon: 'inspect',
+      navlink: '/start-page/global-where-used',
+      classes: []
     },
 
-  ]
-
-  snippetBox = [
     {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
+      icon: 'sideBySide',
+      navlink: '/start-page/side-by-side',
+      classes: []
     },
     {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
+      icon: 'designRipple',
+      navlink: '/start-page',
+      classes: []
     },
     {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
+      icon: 'ingestion',
+      navlink: '/start-page',
+      classes: []
     },
     {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
-    },
-    {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
-    },
-    {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
-    },
-    {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
-    },
-    {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
-    },
-    {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
-    },
-    {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
-    },
-    {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
-    },
-    {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
-    },
-    {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
-    },
-    {
-      icon: "circle",
-      snippetHeading: "Heading",
-      snippetTxt: "Snippet will go here on three lines. And is clickable"
+      icon: 'settings',
+      navlink: '/start-page',
+      classes: []
     }
-  ]
+  ];
 
-  constructor(private route : Router) {}
+  public snippetBox = [
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    },
+    {
+      icon: 'circle',
+      snippetHeading: 'Heading',
+      snippetTxt: 'Snippet will go here on three lines. And is clickable'
+    }
+  ];
 
-  ngOnInit(): void {
+  constructor(private route: Router) {}
 
+  public clear(event: Event): void{
+    console.log('clear button clicked', event);
   }
 
-  clear(event: Event){
-    console.log("clear button clicked", event);
+  public expandFilters(event: Event): void {
+    console.log('expand button clicked', event);
   }
 
-  expandFilters(event: Event){
-    console.log("expand button clicked", event);
+  public moveRight(event: Event): void {
+    console.log('move right', event);
   }
 
-  moveRight(event: Event){
-    console.log("move right", event);
+  public showFilters(event: Event): void {
+    console.log('show filters', event);
   }
 
-  showFilters(event: Event){
-    console.log("show filters", event);
+  public search(event: Event): void {
+    console.log('search something', event);
   }
 
-  search(event: Event){
-    console.log("search something", event);
+  public snippetClick(event: Event): void {
+    console.log('snippet was clicked', event);
   }
 
-  snippetClick(event: Event){
-    console.log("snippet was clicked", event);
+  public profileClick(event: Event): void {
+  console.log('profile was clicked', event);
   }
 
-  profileClick(event: Event){
-  console.log("profile was clicked", event);
-  }
-
-  helpBtnClick(event: Event){
-    console.log("help button was clicked", event);
+  public helpBtnClick(event: Event): void {
+    console.log('help button was clicked', event);
   }
 
 }

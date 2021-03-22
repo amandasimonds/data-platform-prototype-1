@@ -13,7 +13,7 @@ export class NavbarDashboardComponent {
   @Input() public userLink = '';
 
   constructor(){
-      this.navlinks=[{
+      this.navlinks = [{
         icon: '',
         navlink: '',
         classes: ['']
