@@ -34,7 +34,7 @@ import { UvIcons } from './icons/icons';
   ],
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule
   ],
   exports: [
     LoginComponent,

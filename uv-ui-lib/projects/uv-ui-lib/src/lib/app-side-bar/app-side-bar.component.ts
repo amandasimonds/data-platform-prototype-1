@@ -15,9 +15,9 @@ export class AppSideBarComponent {
         this.tabs=[{
             icon: '',
             link: '',
-            linkText: '',
-        }]
-    } 
+            linkText: ''
+        }];
+    }
 }
 
 interface GwuTab{

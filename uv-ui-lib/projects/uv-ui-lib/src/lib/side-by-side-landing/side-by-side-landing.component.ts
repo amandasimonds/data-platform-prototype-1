@@ -27,8 +27,8 @@ export class SideBySideLandingComponent {
         link: '',
         title: '',
         description: '',
-        date: '',
-      }]
+        date: ''
+      }];
   }
 }
 
