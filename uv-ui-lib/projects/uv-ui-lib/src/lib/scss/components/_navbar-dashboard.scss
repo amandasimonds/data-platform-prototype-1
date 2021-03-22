@@ -47,3 +47,13 @@
     background-color:$color-gray-light-4;
   }
 }
+
+.navbar-logo{
+    width: 48px;
+    height: auto;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 18px;
+}

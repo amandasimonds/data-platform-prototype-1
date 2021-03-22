@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import { UvIcons, Icons } from './icons';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'lib-uv-ui-icons',
@@ -9,15 +10,17 @@ import { UvIcons, Icons } from './icons';
 })
 export class IconsComponent implements OnInit {
 
+    svg: SafeHtml = '';
+
     private icons: Icons;
 
     @Input()
         public set name(iconName: string) {
-        this.element.nativeElement = this.setIcon(this.icons[iconName]);
+        this.svg = this.sanitizer.bypassSecurityTrustHtml(this.icons[iconName])
     }
 
-    constructor(private element: ElementRef, private renderer: Renderer2, private uvIcons: UvIcons) {
-        this.icons = this.uvIcons.getIcons();
+    constructor(private sanitizer: DomSanitizer, private element: ElementRef, private renderer: Renderer2, private uvIcons: UvIcons) {
+        this.icons = this.uvIcons.getIcons(); 
     }
 
     public setIcon(html: string): Element {
