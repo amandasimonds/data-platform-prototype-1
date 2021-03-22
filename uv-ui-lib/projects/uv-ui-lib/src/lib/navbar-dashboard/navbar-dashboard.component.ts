@@ -17,13 +17,13 @@ export class NavbarDashboardComponent {
         icon: '',
         navlink: '',
         classes: ['']
-      }]
+      }];
   }
 
 }
 
-interface Nav{
+export interface Nav{
   icon: string;
   navlink: string;
-  classes: [string];
+  classes: string[];
 }

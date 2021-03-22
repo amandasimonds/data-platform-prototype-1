@@ -87,6 +87,129 @@
           }
         }
       }
+    },
+    "uv-ui-demo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/uv-ui-demo",
+      "sourceRoot": "projects/uv-ui-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/uv-ui-demo",
+            "index": "projects/uv-ui-demo/src/index.html",
+            "main": "projects/uv-ui-demo/src/main.ts",
+            "polyfills": "projects/uv-ui-demo/src/polyfills.ts",
+            "tsConfig": "projects/uv-ui-demo/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/uv-ui-demo/src/favicon.ico",
+              "projects/uv-ui-demo/src/assets"
+            ],
+            "styles": [
+              "projects/uv-ui-demo/src/scss/main.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/uv-ui-demo/src/environments/environment.ts",
+                  "with": "projects/uv-ui-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "uv-ui-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "uv-ui-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "uv-ui-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/uv-ui-demo/src/test.ts",
+            "polyfills": "projects/uv-ui-demo/src/polyfills.ts",
+            "tsConfig": "projects/uv-ui-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/uv-ui-demo/karma.conf.js",
+            "assets": [
+              "projects/uv-ui-demo/src/favicon.ico",
+              "projects/uv-ui-demo/src/assets"
+            ],
+            "styles": [
+              "projects/uv-ui-demo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/uv-ui-demo/tsconfig.app.json",
+              "projects/uv-ui-demo/tsconfig.spec.json",
+              "projects/uv-ui-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/uv-ui-demo/e2e/protractor.conf.js",
+            "devServerTarget": "uv-ui-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "uv-ui-demo:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "uv-ui-components"

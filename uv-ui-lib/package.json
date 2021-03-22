@@ -3,16 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve uv-ui-demo",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "lint-lib": "ng lint uv-ui-lib",
     "lint-scss": "npx stylelint **/*.scss",
     "build-components": "ng build uv-ui-components",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
-    "build-uv-ui-lib": "ng build uv-ui-lib"
+    "build-uv-ui-lib": "ng build uv-ui-lib",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
