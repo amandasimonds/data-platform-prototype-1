@@ -24,8 +24,8 @@ export class NavbarDashboardSubComponent {
         this.snippets = [{
             icon: '',
             snippetHeading: '',
-            snippetTxt: '',
-        }]
+            snippetTxt: ''
+        }];
     }
 }
 
