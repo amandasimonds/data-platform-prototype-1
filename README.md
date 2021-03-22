@@ -22,14 +22,6 @@
 3. Run the project on a local server
 ```ng serve --open```
 
-## Attributes
-The following attributes can be set
-- **[ngClass]** - class for that html element, refer to documentation on which class names to use
-- **[svgClass]** - optional style to be placed on the icon, refer to documentation for which names to use
-
-
----
-
 ## Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.

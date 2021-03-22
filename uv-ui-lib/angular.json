@@ -47,6 +47,46 @@
           "exclude": ["**/node_modules/**"]
         }
       }
+    },
+    "uv-ui-lib": {
+      "projectType": "library",
+      "root": "projects/uv-ui-lib",
+      "sourceRoot": "projects/uv-ui-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/uv-ui-lib/tsconfig.lib.json",
+            "project": "projects/uv-ui-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/uv-ui-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/uv-ui-lib/src/test.ts",
+            "tsConfig": "projects/uv-ui-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/uv-ui-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/uv-ui-lib/tsconfig.lib.json",
+              "projects/uv-ui-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "uv-ui-components"

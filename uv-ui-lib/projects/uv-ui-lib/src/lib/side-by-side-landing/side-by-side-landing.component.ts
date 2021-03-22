@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '
 })
 export class SideBySideLandingComponent {
 
-  @Input() public tasks: Task;
+  @Input() public tasks: Task[];
 
   @Output() public readonly addTaskEvent = new EventEmitter<Event>();
   @Output() public readonly switchFilterEvent = new EventEmitter<Event>();
@@ -20,6 +20,16 @@ export class SideBySideLandingComponent {
   public switchFilterClicked($event: Event): void{
     this.switchFilterEvent.emit($event);
   };
+
+  constructor(){
+      this.tasks = [{
+        started: '',
+        link: '',
+        title: '',
+        description: '',
+        date: '',
+      }]
+  }
 }
 
 interface Task{
