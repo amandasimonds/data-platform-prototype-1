@@ -10,8 +10,7 @@ import { UvIcons, Icons } from './icons';
 })
 export class IconsComponent implements OnInit {
 
-    svg: SafeHtml = '';
-
+    public svg: SafeHtml = '';
     private icons: Icons;
 
     @Input()
@@ -23,17 +22,7 @@ export class IconsComponent implements OnInit {
         this.icons = this.uvIcons.getIcons();
     }
 
-    public setIcon(html: string): Element {
-        const doc = document.createElement('span');
-        doc.style.cssText='display: inline-block; width: 100px; height: 100px; background-color:';
-        doc.innerHTML = html;
-        console.log('setIcon ran', doc);
-
-        return doc;
-    }
-
     public ngOnInit(): void {
         this.renderer.setAttribute(this.element.nativeElement, 'id', 'lib-icon');
-        console.log('ngOnInit - this.element', this.element.nativeElement);
     }
 }

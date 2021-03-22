@@ -17,7 +17,7 @@ describe('HeaderDashboardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HeaderDashboardComponent);
     component = fixture.componentInstance;
-    component.headerText = "test header text";
+    component.headerText = 'test header text';
     fixture.detectChanges();
   });
 

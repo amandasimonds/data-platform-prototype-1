@@ -13,14 +13,6 @@ export class SideBySideLandingComponent {
   @Output() public readonly addTaskEvent = new EventEmitter<Event>();
   @Output() public readonly switchFilterEvent = new EventEmitter<Event>();
 
-  public addTaskClicked($event: Event): void{
-    this.addTaskEvent.emit($event);
-  };
-
-  public switchFilterClicked($event: Event): void{
-    this.switchFilterEvent.emit($event);
-  };
-
   constructor(){
       this.tasks = [{
         started: '',
@@ -29,6 +21,14 @@ export class SideBySideLandingComponent {
         description: '',
         date: ''
       }];
+  }
+
+  public addTaskClicked($event: Event): void{
+    this.addTaskEvent.emit($event);
+  }
+
+  public switchFilterClicked($event: Event): void{
+    this.switchFilterEvent.emit($event);
   }
 }
 
