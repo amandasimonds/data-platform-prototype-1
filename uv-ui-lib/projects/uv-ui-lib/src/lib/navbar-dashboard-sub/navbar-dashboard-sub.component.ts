@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 })
 export class NavbarDashboardSubComponent {
 
-    @Input() public snippets: [NavBarSub];
+    @Input() public snippets: NavBarSub[];
     @Input() public headingTxt = '';
     @Input() public subHeadingTxt = '';
     @Input() public snippetTxt = '';
@@ -19,6 +19,14 @@ export class NavbarDashboardSubComponent {
     public snippetClicked($event: Event): void{
         this.snippetEvent.emit($event);
     };
+
+    constructor(){
+        this.snippets = [{
+            icon: '',
+            snippetHeading: '',
+            snippetTxt: '',
+        }]
+    }
 }
 
 interface NavBarSub{

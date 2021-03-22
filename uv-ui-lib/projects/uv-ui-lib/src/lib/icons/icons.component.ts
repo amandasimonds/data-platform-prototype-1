@@ -13,7 +13,7 @@ export class IconsComponent implements OnInit {
 
     @Input()
         public set name(iconName: string) {
-        this.element.nativeElement = this.setIcon(this.icons[iconName]) ;
+        this.element.nativeElement = this.setIcon(this.icons[iconName]);
     }
 
     constructor(private element: ElementRef, private renderer: Renderer2, private uvIcons: UvIcons) {
@@ -22,12 +22,15 @@ export class IconsComponent implements OnInit {
 
     public setIcon(html: string): Element {
         const doc = document.createElement('span');
+        doc.style.cssText="display: inline-block; width: 100px; height: 100px; background-color:";
         doc.innerHTML = html;
+        console.log("setIcon ran", doc);
 
         return doc;
     }
 
     public ngOnInit(): void {
         this.renderer.setAttribute(this.element.nativeElement, 'id', 'lib-icon');
+        console.log("ngOnInit - this.element", this.element.nativeElement);
     }
 }
