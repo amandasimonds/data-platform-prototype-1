@@ -12,7 +12,7 @@ export class AppSideBarComponent {
     @Input() public tabs: GwuTab[];
 
     constructor(){
-        this.tabs=[{
+        this.tabs = [{
             icon: '',
             link: '',
             linkText: ''

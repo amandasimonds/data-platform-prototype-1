@@ -26,9 +26,9 @@ describe('IconsComponent', () => {
 
   it('should have the proper name', () => {
     fixture.detectChanges();
-    const icon = fixture.debugElement.nativeElement.querySelector('#lib-icon')
+    const icon = fixture.debugElement.nativeElement.querySelector('#lib-icon');
     const svg = icon.innerHTML;
-    console.log(svg)
+    console.log(svg);
     expect(svg.id).toBe('dashboard');
   });
 

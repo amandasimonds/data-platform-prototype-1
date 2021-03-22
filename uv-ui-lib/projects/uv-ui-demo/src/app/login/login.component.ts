@@ -1,23 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
+// eslint-disable-next-line
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor(
-    private route: Router
-  ) { }
+  constructor(private route: Router) { }
 
-  ngOnInit(): void {
-
-  }
-
-  btnFunctionCall() {
-    console.log('function was called', event);
-    this.route.navigate(["/start-page"])
+  public btnFunctionCall(): void {
+    console.log('function was called');
+    void this.route.navigate(['/start-page']);
   }
 }

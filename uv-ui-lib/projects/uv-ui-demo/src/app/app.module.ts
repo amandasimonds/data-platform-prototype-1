@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { UvUiLibModule } from "../../../uv-ui-lib/src/lib/uv-ui-lib.module";
+import { UvUiLibModule } from '../../../uv-ui-lib/src/lib/uv-ui-lib.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -18,7 +18,7 @@ import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.
     HomeComponent,
     SideBySideComponent,
     HomeSplashComponent,
-    GlobalWhereUsedComponent,
+    GlobalWhereUsedComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +26,6 @@ import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.
     UvUiLibModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
