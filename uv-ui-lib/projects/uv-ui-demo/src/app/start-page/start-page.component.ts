@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 import { Nav } from 'projects/uv-ui-lib/src/public-api';
 
 @Component({
-// eslint-disable-next-line
-  selector: 'app-start-page',
+  selector: 'lib-uv-ui-start-page',
   templateUrl: './start-page.component.html',
   styleUrls: ['./start-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -45,7 +44,7 @@ export class StartPageComponent {
     }
   ];
 
-  public snippetBox = [
+  public snippetBox: {icon: string; snippetHeading: string; snippetTxt: string}[] = [
     {
       icon: 'circle',
       snippetHeading: 'Heading',

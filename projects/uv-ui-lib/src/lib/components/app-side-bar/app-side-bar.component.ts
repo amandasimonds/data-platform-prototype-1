@@ -1,20 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'lib-app-side-bar',
   templateUrl: './app-side-bar.component.html',
   styleUrls: ['../../scss/_styles.scss']
 })
-export class AppSideBarComponent implements OnInit {
+export class AppSideBarComponent {
 
   @Input() titleText : string;
   @Input() descriptionText : string;
   @Input() tabs : GwuTab;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
 

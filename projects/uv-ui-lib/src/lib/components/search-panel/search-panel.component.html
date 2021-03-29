@@ -25,8 +25,7 @@
 
   <input type="text"
     placeholder="Search..."
-    class="search-panel__input"
-    [(ngModel)]="data">
+    class="search-panel__input">
 
   <div class="search-panel__filters-container" id="search-panel-filters-container" [ngClass]="{'search-panel__filters-container--expanded' : expanded}">
 
@@ -37,8 +36,7 @@
     <ng-template #expandedFiltersTemplate>
       <div class="expanded-filters-container border input-group input-group-sm w-100">
           <div class="expanded-filters">
-              <lib-filters-list [filters]="filters"
-                                  (click)="filterRemoveBtnClicked($event)">
+              <lib-filters-list (click)="filterRemoveBtnClicked($event)">
               </lib-filters-list>
           </div>
       </div>
@@ -49,7 +47,7 @@
     </span>
 
     <span class="search-panel__icon-container">
-      <lib-button buttonType="icon" class="svg-blue" iconName="filter" (click)="filterBtnClicked($event); shortFilters();"></lib-button>
+      <lib-button buttonType="icon" class="svg-blue" iconName="filter" (click)="filterBtnClicked($event);"></lib-button>
     </span>
 
     <!-- <div *ngIf="showFilters">

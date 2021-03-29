@@ -7,8 +7,8 @@
     <div class="navbar-dashboard__divider"></div>
 
     <span *ngFor="let navlink of navlinks" class="navlink-wrapper">
-      <a href={{navlink.navlink}}>
-        <lib-uv-ui-icons name={{navlink.icon}} class="navbar-dashboard__svg-nav"></lib-uv-ui-icons>
+      <a [href]="navlink.navlink">
+        <lib-uv-ui-icons [name]="navlink.icon" class="navbar-dashboard__svg-nav"></lib-uv-ui-icons>
       </a>
     </span>
 

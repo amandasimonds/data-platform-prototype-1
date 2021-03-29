@@ -1,28 +1,16 @@
-<span *ngIf="buttonType=='text'">
+<a *ngIf="buttonType==='text'" (click)="onClick($event)" class="btn">{{buttonText}}</a>
 
-    <a (click)="onClick($event)" class="btn">{{buttonText}}</a>
-
-</span>
-
-<span *ngIf="buttonType=='icon'">
-
-  <a (click)="onClick($event)">
+  <a *ngIf="buttonType==='icon'" (click)="onClick($event)">
     <lib-icons
       class="btn-icon"
-      name={{iconName}}>
+      [name]="iconName">
     </lib-icons>
   </a>
 
-</span>
-
-<span *ngIf="buttonType=='dropdown'">
-
-  <select class="btn btn-dropdown" name={{dropdownName}} id={{dropdownId}}>
+  <select *ngIf="buttonType==='dropdown'" class="btn btn-dropdown" [name]="dropdownName" [id]="dropdownId">
     <option value="1">{{dropdownPlaceholder}}</option>
     <option value="2"></option>
     <option value="3"></option>
     <option value="4"></option>
   </select>
-
-</span>
 
