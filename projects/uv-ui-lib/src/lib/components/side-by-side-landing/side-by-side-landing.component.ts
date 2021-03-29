@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'lib-side-by-side-landing',
   templateUrl: './side-by-side-landing.component.html',
-  styleUrls: ['../../scss/_styles.scss']
+  styleUrls: ['../../scss/_styles.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SideBySideLandingComponent {
 
