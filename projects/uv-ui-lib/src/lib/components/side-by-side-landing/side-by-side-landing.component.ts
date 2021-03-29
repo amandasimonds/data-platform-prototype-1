@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'lib-side-by-side-landing',
@@ -7,13 +7,18 @@ import { Component, Input} from '@angular/core';
 })
 export class SideBySideLandingComponent {
 
-  @Input() loadTask : any;
-  @Input() tasks : Task;
-  @Input() addTaskClicked : any;
-  @Input() switchFilterClicked : any;
+  @Input() public tasks: Task[] = [{started: '', link: '', title: '', description: '', date: ''}];
 
-  constructor() { }
+  @Output() public readonly addTaskEvent = new EventEmitter<Event>();
+  @Output() public readonly switchFilterEvent = new EventEmitter<Event>();
 
+  public addTaskClicked($event: Event): void{
+    this.addTaskEvent.emit($event);
+  }
+
+  public switchFilterClicked($event: Event): void{
+    this.switchFilterEvent.emit($event);
+  }
 }
 
 interface Task{

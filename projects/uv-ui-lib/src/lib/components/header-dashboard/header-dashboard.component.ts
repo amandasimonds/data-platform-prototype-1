@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'lib-header-dashboard',
@@ -7,19 +7,18 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderDashboardComponent {
 
-  @Input() headerText : string;
-  @Input() iconName : string;
+  @Input() public headerText = '';
+  @Input() public iconName = '';
 
-  @Output() helpBtnEvent = new EventEmitter<any>();
-  @Output() profileBtnEvent = new EventEmitter<any>();
+  @Output() public readonly helpBtnEvent = new EventEmitter<Event>();
+  @Output() public readonly profileBtnEvent = new EventEmitter<Event>();
 
+  public profileBtnClicked($event: Event): void{
+    this.profileBtnEvent.emit($event);
+  }
 
-  profileBtnClicked(event){
-    this.profileBtnEvent.emit(event);
-  };
-
-  helpBtnClicked(event){
-    this.helpBtnEvent.emit(event);
-  };
+  public helpBtnClicked($event: Event): void{
+    this.helpBtnEvent.emit($event);
+  }
 
 }

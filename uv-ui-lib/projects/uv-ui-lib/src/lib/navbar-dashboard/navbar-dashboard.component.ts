@@ -7,19 +7,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarDashboardComponent {
-
-  @Input() public navlinks: Nav[];
+  @Input() public navlinks: Nav[] = [{icon: '', navlink: '', classes: ['']}];
   @Input() public userPic = '';
   @Input() public userLink = '';
-
-  constructor(){
-      this.navlinks = [{
-        icon: '',
-        navlink: '',
-        classes: ['']
-      }];
-  }
-
 }
 
 export interface Nav{

@@ -9,15 +9,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class AppSideBarComponent {
     @Input() public titleText = '';
     @Input() public descriptionText = '';
-    @Input() public tabs: GwuTab[];
-
-    constructor(){
-        this.tabs = [{
-            icon: '',
-            link: '',
-            linkText: ''
-        }];
-    }
+    @Input() public tabs: GwuTab[] = [{icon: '', link: '', linkText: ''}];
 }
 
 interface GwuTab{

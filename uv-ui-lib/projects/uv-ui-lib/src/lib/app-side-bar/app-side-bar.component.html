@@ -15,8 +15,8 @@
   <div class="app-side-bar__bottom-content">
 
     <div *ngFor="let tab of tabs" class="tab">
-      <span><lib-uv-ui-icons class="svg-black margin-right-sm" name={{tab.icon}}></lib-uv-ui-icons></span>
-      <a href={{tab.link}}>{{tab.linkText}}</a>
+      <span><lib-uv-ui-icons class="svg-black margin-right-sm" [name]="tab.icon"></lib-uv-ui-icons></span>
+      <a [href]="tab.link">{{tab.linkText}}</a>
     </div>
 
   </div>

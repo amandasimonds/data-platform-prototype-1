@@ -2,7 +2,7 @@
 
   <div class="app-side-bar__top-content">
 
-    <lib-button buttonType="text" buttonText="Back" class="btn btn-blue margin-bottom-lg" ></lib-button>
+    <lib-button buttonType="text" buttonText="Back" class="btn btn-blue margin-bottom-lg"></lib-button>
 
     <p class="heading-4 margin-bottom-lg">{{titleText}}</p>
 
@@ -15,8 +15,8 @@
   <div class="app-side-bar__bottom-content">
 
     <div *ngFor="let tab of tabs" class="tab">
-      <span><lib-icons class="svg-black margin-right-sm" name={{tab.icon}}></lib-icons></span>
-      <a href={{tab.link}}>{{tab.linkText}}</a>
+      <span><lib-icons class="svg-black margin-right-sm" [name]="tab.icon"></lib-icons></span>
+      <a [href]="tab.link">{{tab.linkText}}</a>
     </div>
 
   </div>
