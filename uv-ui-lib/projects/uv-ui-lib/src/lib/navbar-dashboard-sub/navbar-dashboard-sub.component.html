@@ -27,7 +27,7 @@
       <div class="navbar-dashboard-sub__snippet-wrapper" *ngFor="let snippet of snippets" (click)="snippetClicked($event)">
         <div class="navbar-dashboard-sub__snippet-container">
           <span class="navbar-dashboard-sub__snippet-container--icon-box">
-            <lib-uv-ui-icons name={{snippet.icon}} class="svg-gray-small"></lib-uv-ui-icons>
+            <lib-uv-ui-icons [name]="snippet.icon" class="svg-gray-small"></lib-uv-ui-icons>
           </span>
           <div class="navbar-dashboard-sub__snippet-container--textbox">
             <p class="subheading">{{snippet.snippetHeading}}</p>
