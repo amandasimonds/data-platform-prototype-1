@@ -1,56 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-body{
+body {
   font-family: "Noto Sans", sans-serif;
   color: $default-text-color-black;
   font-size: inherit;
 }
 
-p{
-  // font-size: 1.2rem;
-  // line-height: 1.7rem;
+p {
   font-size: 12px;
   line-height: 17px;
 }
 
-.txt-sm{
+.txt-sm {
   font-size: 14px;
   line-height: 20px;
 }
 
-.bold{
+.bold {
   font-weight: bold;
 }
 
-.heading{
+.heading {
   font-family: "Noto Sans", sans-serif;
   font-weight: bold;
-  // font-size: 2.8rem;
-  // line-height: 3.8rem;
   font-size: 28px;
   line-height: 38px;
 
 }
 
-.heading-2{
-  // font-size:1.8rem;
-  // line-height: 2.4rem;
+.heading-2 {
   font-size:18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.heading-3{
-  // font-size: 2.4rem;
-  // line-height: 3.6rem;
+.heading-3 {
   font-size: 24px;
   line-height: 36px;
 
 }
 
-.heading-4{
-  // font-size: 2.4rem;
-  // line-height: 3.6rem;
+.heading-4 {
   font-size: 20px;
   line-height: 32px;
 
@@ -58,26 +48,24 @@ p{
 
 .subheading {
   color: $color-gray;
-  // font-size: 1.2rem;
-  // line-height: 1.7rem;
   font-size: 12px;
   line-height: 17px;
   font-weight: bold;
 }
 
-.highlight{
+.highlight {
   background-color: $highlight-text-color-gray;
 }
 
 a,
 a:hover,
 a:active,
-a:visited{
+a:visited {
   text-decoration: none;
   color: inherit;
 }
 
-.chip-date{
+.chip-date {
   border-radius: 8px;
   background-color: $color-gray-light-5;
   padding: 5px 7px 7px 5px;
