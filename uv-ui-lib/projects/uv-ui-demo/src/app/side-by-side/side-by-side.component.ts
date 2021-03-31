@@ -8,8 +8,6 @@ import {compareTasksData} from './compareTasks';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SideBySideComponent {
-
   public loadTask = true;
   public compareTasks = compareTasksData;
-
 }

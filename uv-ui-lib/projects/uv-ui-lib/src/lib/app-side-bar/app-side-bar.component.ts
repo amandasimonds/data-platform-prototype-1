@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { IGwuTab } from '../interfaces/app-side-bar.interfaces';
 
 @Component({
     selector: 'lib-uv-ui-app-side-bar',
@@ -9,11 +10,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class AppSideBarComponent {
     @Input() public titleText = '';
     @Input() public descriptionText = '';
-    @Input() public tabs: GwuTab[] = [{icon: '', link: '', linkText: ''}];
-}
-
-interface GwuTab{
-    icon: string;
-    link: string;
-    linkText: string;
+    @Input() public tabs: IGwuTab[] = [{icon: '', link: '', linkText: ''}];
 }
