@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { INavBarSub } from '../interfaces/navbar-sub.interfaces';
 
 @Component({
   selector: 'lib-uv-ui-navbar-dashboard-sub',
@@ -8,7 +9,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 })
 export class NavbarDashboardSubComponent {
 
-    @Input() public snippets: NavBarSub[] = [{icon: '', snippetHeading: '', snippetTxt: ''}];
+    @Input() public snippets: INavBarSub[] = [{icon: '', snippetHeading: '', snippetTxt: ''}];
     @Input() public headingTxt = '';
     @Input() public subHeadingTxt = '';
     @Input() public snippetTxt = '';
@@ -19,10 +20,4 @@ export class NavbarDashboardSubComponent {
     public snippetClicked($event: Event): void{
         this.snippetEvent.emit($event);
     }
-}
-
-interface NavBarSub{
-    icon: string;
-    snippetHeading: string;
-    snippetTxt: string;
 }

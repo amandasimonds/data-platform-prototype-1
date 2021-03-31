@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '
 })
 export class SideBySideLandingComponent {
 
-  @Input() public tasks: Task[] = [{started: '', link: '', title: '', description: '', date: ''}];
+  @Input() public tasks: Task[] = [];
 
   @Output() public readonly addTaskEvent = new EventEmitter<Event>();
   @Output() public readonly switchFilterEvent = new EventEmitter<Event>();

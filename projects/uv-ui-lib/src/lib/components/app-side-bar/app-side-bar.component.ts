@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'lib-app-side-bar',
   templateUrl: './app-side-bar.component.html',
-  styleUrls: ['../../scss/_styles.scss']
+  styleUrls: ['../../scss/_styles.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppSideBarComponent {
 

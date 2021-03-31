@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { INav } from '../interfaces/navbar.interfaces';
 
 @Component({
   selector: 'lib-uv-ui-navbar-dashboard',
@@ -7,13 +8,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarDashboardComponent {
-  @Input() public navlinks: Nav[] = [{icon: '', navlink: '', classes: ['']}];
+  @Input() public navlinks: INav[] = [{icon: '', navlink: '', classes: ['']}];
   @Input() public userPic = '';
   @Input() public userLink = '';
-}
-
-export interface Nav{
-  icon: string;
-  navlink: string;
-  classes: string[];
 }

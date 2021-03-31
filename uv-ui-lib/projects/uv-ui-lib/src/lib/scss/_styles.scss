@@ -12,13 +12,44 @@
     box-sizing: inherit;
 }
 
-// html {
-//     font-size: 62.5%; /* font-size: 10px; 1rem = 10px*/
-// }
-
 body {
     box-sizing: border-box;
     background-color: #f1f1f1;
+}
+
+// FLEX STYLES //
+.flex {
+    display: flex;
+
+    &-inline {
+        display: inline-flex;
+    }
+
+    &-row {
+        flex-direction: row-reverse;
+    }
+
+    &-reverse {
+        flex-direction: row-reverse;
+    }
+
+    &-column {
+        flex-direction: column;
+    }
+
+    &-1 {
+        flex: 1;
+    }
+}
+
+.justify-content {
+    &-space-between {
+        justify-content: space-between;
+    }
+
+    &-space-around {
+        justify-content: space-around;
+    }
 }
 
  // SCROLLBAR //
