@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'demo-uv-ui-start-page',
+  selector: 'sandbox-uv-ui-start-page',
   templateUrl: './start-page.component.html',
   styleUrls: ['./start-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

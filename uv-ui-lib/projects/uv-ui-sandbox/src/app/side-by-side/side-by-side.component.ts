@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {compareTasksData} from './compareTasks';
 
 @Component({
-  selector: 'demo-uv-ui-side-by-side',
+  selector: 'sandbox-uv-ui-side-by-side',
   templateUrl: './side-by-side.component.html',
   styleUrls: ['./side-by-side.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
