@@ -1,16 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Nav } from 'projects/uv-ui-lib/src/public-api';
 
 @Component({
-  selector: 'lib-uv-ui-start-page',
+  selector: 'demo-uv-ui-start-page',
   templateUrl: './start-page.component.html',
   styleUrls: ['./start-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StartPageComponent {
 
-  public nav: Nav[] = [
+  public nav = [
     {
       icon: 'dashboard',
       navlink: '/start-page/home-splash',
@@ -44,7 +43,7 @@ export class StartPageComponent {
     }
   ];
 
-  public snippetBox: {icon: string; snippetHeading: string; snippetTxt: string}[] = [
+  public snippetBox = [
     {
       icon: 'circle',
       snippetHeading: 'Heading',
