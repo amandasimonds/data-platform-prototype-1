@@ -10,5 +10,13 @@ import { IGwuTab } from '../interfaces/app-side-bar.interfaces';
 export class AppSideBarComponent {
     @Input() public titleText = '';
     @Input() public descriptionText = '';
-    @Input() public tabs: IGwuTab[] = [{icon: '', link: '', linkText: ''}];
+    @Input() public tabs: IGwuTab[];
+
+    constructor(){
+        this.tabs = []
+    }
+
+    public trackByTabLink(_: number, tab: IGwuTab): string {
+        return tab.link;
+    }
 }

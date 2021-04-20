@@ -1,9 +1,9 @@
 @import "./variables";
 
 // BASE //
-*{
-  margin: 0;
-  padding: 0;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 *,
@@ -14,7 +14,7 @@
 
 body {
     box-sizing: border-box;
-    background-color: #f1f1f1;
+    background-color: $background-color;
 }
 
 // FLEX STYLES //
@@ -26,7 +26,7 @@ body {
     }
 
     &-row {
-        flex-direction: row-reverse;
+        flex-direction: row;
     }
 
     &-reverse {
@@ -42,6 +42,14 @@ body {
     }
 }
 
+.block{
+    display: block;
+
+    &-inline{
+        display: inline-block;
+    }
+}
+
 .justify-content {
     &-space-between {
         justify-content: space-between;
@@ -50,58 +58,57 @@ body {
     &-space-around {
         justify-content: space-around;
     }
+
+    &-center {
+        justify-content: center;
+    }
 }
 
- // SCROLLBAR //
-* {
-  scrollbar-width: 9px;
-  scrollbar-color: #FBEDED white;
-}
-
+ //scrollbar
 *::-webkit-scrollbar {
-  width: 9px;
-  height: 8px;
+    width: 9px;
+    height: 8px;
 }
 
 *::-webkit-scrollbar-track {
-  background: transparent;
-  background-color: transparent;
-  background-clip: padding-box;
+    background: transparent;
+    background-color: transparent;
+    background-clip: padding-box;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #FBEDED;
-  border-radius: 100px;
-  background-clip: padding-box;
-  max-height: 20px;
+    background-color: $scrollbar-color;
+    border-radius: 100px;
+    background-clip: padding-box;
+    max-height: 20px;
 }
 
 *::-webkit-scrollbar-corner{
-  background: transparent;
+    background: transparent;
 }
 
 *::-webkit-scrollbar-button:end:increment {
-  height: 50%;
-  display: block;
+    height: 50%;
+    display: block;
 }
 
 *::-webkit-scrollbar-button:start:increment {
-  height: 17px;
-  display: block;
+    height: 17px;
+    display: block;
 }
 
-.box{
-  background-color: white;
-  border: $border-gray-light;
-  box-shadow: $box-shadow-light;
+.box {
+    background-color: $color-white;
+    border: $border-gray-light;
+    box-shadow: $box-shadow-light;
 }
 
-.divider{
-  border-bottom: 1px solid $color-gray-light-2;
-  opacity: .31;
+.divider {
+    border-bottom: 1px solid $color-gray-light-2;
+    opacity: .31;
 }
 
-.img-small{
+.img-small {
     width: 24px;
     height: auto;
 }
@@ -124,7 +131,6 @@ body {
 @import "./components/logo-splash-block";
 @import "./components/side-by-side";
 @import "./components/app-side-bar";
-@import "./components/app-bar.scss";
 @import "./components/tab";
 
 

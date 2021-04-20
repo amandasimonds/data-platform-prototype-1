@@ -1,6 +1,7 @@
-// COLORS //
+//colors
 $color-white: #ffffff;
 $color-black: black;
+$background-color: #f1f1f1;
 $color-gray: #7D7D7D;
 $color-gray-light: #d7dfeb;
 $color-gray-light-2: #B1B1B1;
@@ -10,15 +11,33 @@ $color-gray-light-5: #F3F3F4;
 $color-gray-light-6: #6E6D7A;
 $color-blue: #00A3E5;
 $color-orange: #FF6969;
+$scrollbar-color: #FBEDED;
 
+
+//typography
+$font-family: "Noto sans", sans-serif !default;
 $default-text-color-black: #32363B;
-
 $highlight-text-color-gray: #EAF1FE;
 
-// STYLING //
+//sizes
+$xs-size: 16px;
+$sm-size: 24px;
+$md-size: 32px;
+$lg-size: 48px;
+$xl-size: 64px;
+
+//height
+$header-height: 60px;
+$footer-height: 24px;
+$grid-item-height: 78px;
+$grid-header-height: 56px;
+
+//width
+$search-width: 1000px;
+
+//styling
 $border-gray: 1px solid #8694A7;
 $border-gray-light: 1px solid #dddddd;
-
 $box-shadow-light: 0 2px 14px 0 rgba(215,215,215,0.5);
 
 //UV-DITES VARS
@@ -47,19 +66,3 @@ $tooltip-background-color: #32363b;
 $active-btn-background: #3177F3;
 $active-tree-background: rgba(49,119,243,0.1);
 $hover-tree-background: rgba(244,247,249,1);
-//sizes
-
-$xs-size: 16px;
-$sm-size: 24px;
-$md-size: 32px;
-$lg-size: 48px;
-$xl-size: 64px;
-
-//height
-$header-height: 60px;
-$footer-height: 24px;
-$grid-item-height: 78px;
-$grid-header-height: 56px;
-
-//width
-$search-width: 1000px;
