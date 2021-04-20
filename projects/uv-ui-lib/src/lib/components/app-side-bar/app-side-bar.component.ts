@@ -8,9 +8,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class AppSideBarComponent {
 
-  @Input() titleText : string;
-  @Input() descriptionText : string;
-  @Input() tabs : GwuTab;
+  @Input() public titleText: string;
+  @Input() public descriptionText: string;
+  @Input() public tabs: GwuTab;
 
 }
 

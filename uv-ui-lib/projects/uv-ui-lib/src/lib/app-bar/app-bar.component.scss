@@ -1,11 +1,6 @@
-.app-bar{
+.app-bar {
   position: absolute;
   height: 86px;
-  display: inline-flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  justify-items: center;
   width: 100%;
   border-left: none;
   border-top: none;
@@ -13,7 +8,7 @@
   z-index: 0;
 }
 
-.tags-container{
+.tags-container {
   align-self: flex-start;
   position: relative;
   left: 346px;
@@ -21,7 +16,7 @@
   height: 100%;
 }
 
-.container-right{
+.container-right {
   position: relative;
   width: 64px;
   display: flex;

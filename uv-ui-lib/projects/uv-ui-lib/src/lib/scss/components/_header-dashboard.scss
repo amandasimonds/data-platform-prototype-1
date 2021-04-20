@@ -1,47 +1,46 @@
 .header-dashboard{
-  position: relative;
-  padding:24px 70px 26px 70px;
-  background-color: white;
-  border: $border-gray-light;
-  border-left: none;
-  height: 153px;
-  display: flex;
-  justify-content: space-between;
-
-  &__heading-container{
-    float: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__icon-wrapper{
     position: relative;
-    top: 4px;
-    margin-right: 16px;
-  }
-
-  &__button-wrapper{
-    width: 57px;
-    height: 57px;
-    position: relative;
-    margin-right: 23px;
-    text-align:center;
+    padding:24px 70px 26px 70px;
+    background-color: white;
     border: $border-gray-light;
-    padding: 10.5px;
-    border-radius: 100%;
-  }
+    border-left: none;
+    height: 153px;
+    display: flex;
+    justify-content: space-between;
 
-  &__help-button{
-    color: $color-blue;
-    font-weight: bold;
-    font-size: 24px;
-  }
+    &__heading-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-  &__icon-position{
-    position: relative;
-    top: 3px;
-  }
+    &__icon-wrapper {
+        position: relative;
+        top: 4px;
+        margin-right: 16px;
+    }
+
+    &__button-wrapper {
+        width: 57px;
+        height: 57px;
+        position: relative;
+        margin-right: 23px;
+        text-align:center;
+        border: $border-gray-light;
+        padding: 10.5px;
+        border-radius: 100%;
+    }
+
+    &__help-button {
+        color: $color-blue;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    &__icon-position {
+        position: relative;
+        top: 3px;
+    }
 
 }
 

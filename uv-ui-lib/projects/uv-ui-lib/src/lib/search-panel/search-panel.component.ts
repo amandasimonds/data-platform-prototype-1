@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, Output, EventEmitter } from '@angul
 })
 export class SearchPanelComponent {
 
-    public expanded = false;
+    public isExpanded = false;
 
     @Output() public readonly clearBtnEvent = new EventEmitter<Event>();
     @Output() public readonly expandFiltersEvent = new EventEmitter<Event>();
@@ -17,38 +17,32 @@ export class SearchPanelComponent {
     @Output() public readonly rightArrowBtnEvent = new EventEmitter<Event>();
     @Output() public readonly filterBtnEvent = new EventEmitter<Event>();
 
-    public clearBtnClicked($event: Event): void{
+    public clearBtnClicked($event: Event): void {
         this.clearBtnEvent.emit($event);
     }
 
-    public expandFiltersClicked($event: Event): void{
+    public expandFiltersClicked($event: Event): void {
         this.expandFiltersEvent.emit($event);
     }
 
-    public filterRemoveBtnClicked($event: Event): void{
+    public filterRemoveBtnClicked($event: Event): void {
         this.filterRemoveBtnEvent.emit($event);
     }
 
-    public searchBtnClicked($event: Event): void{
+    public searchBtnClicked($event: Event): void {
         this.searchBtnEvent.emit($event);
     }
 
-    public rightArrowBtnClicked($event: Event): void{
+    public rightArrowBtnClicked($event: Event): void {
         this.rightArrowBtnEvent.emit($event);
     }
 
-    public filterBtnClicked($event: Event): void{
+    public filterBtnClicked($event: Event): void {
         this.filterBtnEvent.emit($event);
     }
 
-    public expandFiltersContainer(): boolean {
-      if (!this.expanded){
-          this.expanded = true;
-      } else if (this.expanded){
-          this.expanded = false;
-      }
-
-      return this.expanded;
+    public changeExpandedState(): void {
+      this.isExpanded = !this.isExpanded
     }
 
 }
