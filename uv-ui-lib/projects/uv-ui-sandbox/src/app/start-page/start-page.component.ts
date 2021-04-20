@@ -11,33 +11,33 @@ export class StartPageComponent {
 
   public nav = [
     {
-      icon: 'dashboard',
+      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/apps-quad.svg',
       navlink: '/start-page/home-splash',
       classes: []
     },
     {
-      icon: 'inspect',
+      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/apps-gwu.svg',
       navlink: '/start-page/global-where-used',
       classes: []
     },
 
     {
-      icon: 'sideBySide',
+      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/apps-sbs.svg',
       navlink: '/start-page/side-by-side',
       classes: []
     },
     {
-      icon: 'designRipple',
+      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/apps-design-ripple.svg',
       navlink: '/start-page',
       classes: []
     },
     {
-      icon: 'ingestion',
+      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/apps-ingestion.svg',
       navlink: '/start-page',
       classes: []
     },
     {
-      icon: 'settings',
+      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/apps-settings.svg',
       navlink: '/start-page',
       classes: []
     }

@@ -64,6 +64,12 @@ body {
     }
 }
 
+.align-items {
+    &-center {
+        align-items: center;
+    }
+}
+
  //scrollbar
 *::-webkit-scrollbar {
     width: 9px;
@@ -123,7 +129,6 @@ body {
 @import "./components/search-panel";
 @import "./components/navbar-dashboard";
 @import "./components/navbar-dashboard-sub";
-@import "./components/login";
 @import "./components/button";
 @import "./components/header-sbs";
 @import "./components/header-dashboard";
