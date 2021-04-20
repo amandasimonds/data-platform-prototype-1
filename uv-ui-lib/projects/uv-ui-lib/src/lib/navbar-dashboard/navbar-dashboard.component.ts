@@ -8,7 +8,7 @@ import { INav } from '../interfaces/navbar.interfaces';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarDashboardComponent {
-  @Input() public navlinks: INav[] = [{icon: '', navlink: '', classes: ['']}];
+  @Input() public navlinks: INav[] = [];
   @Input() public userPic = '';
   @Input() public userLink = '';
 }
