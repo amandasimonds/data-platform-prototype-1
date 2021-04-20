@@ -1,27 +1,19 @@
 <div class="header-dashboard">
 
-  <div class="header-dashboard__heading-container">
+    <div class="header-dashboard__heading-container">
 
-    <span class="header-dashboard__icon-wrapper">
-      <lib-uv-ui-icons [name]="iconName" class="svg-gray"></lib-uv-ui-icons>
-    </span>
+        <span class="header-dashboard__icon-wrapper">
+            <lib-uv-ui-icons [name]="iconName" class="svg-gray"></lib-uv-ui-icons>
+        </span>
 
     <h1 class="header">{{headerText}}</h1>
 
-  </div>
+    </div>
 
-  <div class="header-dashboard__heading-container">
+    <div class="header-dashboard__heading-container">
 
-    <ng-content></ng-content>
+        <ng-content></ng-content>
 
-    <span class="header-dashboard__button-wrapper">
-      <lib-uv-ui-button buttonType="text" class="header-dashboard__help-button" buttonText="?" (click)="helpBtnClicked($event)"></lib-uv-ui-button>
-    </span>
-
-    <span class="header-dashboard__button-wrapper">
-      <lib-uv-ui-button buttonType="icon" class="header-dashboard__icon-position svg-blue" iconName="profile" (click)="profileBtnClicked($event)"></lib-uv-ui-button>
-    </span>
-
-  </div>
+    </div>
 
 </div>

@@ -4,14 +4,13 @@
   flex-wrap: wrap;
   overflow: auto;
   height: 100%;
-  margin: 24px 60px 0 79px;
+  margin: $sm-size;
 }
 
 .compare-tasks-header-container{
   display: flex;
   justify-content: space-between;
-  margin: 0 125px 0 0;
-  margin: 24px 230px 0 79px;
+  margin: $sm-size;
 }
 
 .compare-task-box{

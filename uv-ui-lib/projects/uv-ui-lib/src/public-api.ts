@@ -9,7 +9,6 @@ export * from './lib/app-side-bar/app-side-bar.component';
 export * from './lib/button/button.component';
 export * from './lib/header-dashboard/header-dashboard.component';
 export * from './lib/home-container/home-container.component';
-export * from './lib/login/login.component';
 export * from './lib/logo-splash-block/logo-splash-block.component';
 export * from './lib/navbar-dashboard/navbar-dashboard.component';
 export * from './lib/navbar-dashboard-sub/navbar-dashboard-sub.component';

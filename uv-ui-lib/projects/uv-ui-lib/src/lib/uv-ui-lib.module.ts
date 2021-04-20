@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
 import { ButtonComponent } from './button/button.component';
 import { NavbarDashboardComponent } from './navbar-dashboard/navbar-dashboard.component';
 import { HeaderDashboardComponent } from './header-dashboard/header-dashboard.component';
@@ -18,7 +17,6 @@ import { UvIcons } from './icons/icons';
 
 @NgModule({
   declarations: [
-    LoginComponent,
     ButtonComponent,
     NavbarDashboardComponent,
     HeaderDashboardComponent,
@@ -37,7 +35,6 @@ import { UvIcons } from './icons/icons';
     FormsModule
   ],
   exports: [
-    LoginComponent,
     ButtonComponent,
     NavbarDashboardComponent,
     HeaderDashboardComponent,
