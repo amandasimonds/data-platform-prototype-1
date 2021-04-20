@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import { ITask } from '../interfaces/side-by-side.interfaces';
 
 @Component({
   selector: 'lib-uv-ui-side-by-side-landing',
@@ -8,10 +9,14 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '
 })
 export class SideBySideLandingComponent {
 
-  @Input() public tasks: Task[] = [{started: '', link: '', title: '', description: '', date: ''}];
-
+  @Input() public tasks: ITask[];
+  
   @Output() public readonly addTaskEvent = new EventEmitter<Event>();
   @Output() public readonly switchFilterEvent = new EventEmitter<Event>();
+
+  constructor(){
+    this.tasks = [];
+  }
 
   public addTaskClicked($event: Event): void{
     this.addTaskEvent.emit($event);
@@ -20,12 +25,8 @@ export class SideBySideLandingComponent {
   public switchFilterClicked($event: Event): void{
     this.switchFilterEvent.emit($event);
   }
-}
 
-interface Task{
-  started: string;
-  link: string;
-  title: string;
-  description: string;
-  date: string;
+  public trackByTaskTitle(_: number, task: ITask): string {
+      return task.title
+  }
 }

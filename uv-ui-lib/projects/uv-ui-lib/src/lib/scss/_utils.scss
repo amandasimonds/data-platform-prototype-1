@@ -1,39 +1,26 @@
 .fixed-container {
-  position: fixed;
-  height: 100vh;
-  overflow: hidden;
-  width: 100%;
+    position: fixed;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
 }
 
-.margin-bottom-lg{
-  margin-bottom: 24px;
+.margin-bottom-sm {
+    margin-bottom: $sm-size;
 }
 
-.margin-bottom-md{
-  margin-bottom: 16px;
+.margin-bottom-md {
+    margin-bottom: $md-size;
 }
 
-.margin-bottom-sm{
-  margin-bottom: 8px;
+.margin-bottom-lg {
+    margin-bottom: $lg-size;
 }
 
-.margin-right-sm{
-  margin-right: 17px;
+.margin-right-sm {
+    margin-right: $sm-size;
 }
 
-.margin-right-md{
-  margin-right: 24px;
-}
-
-.float-right{
-  display: block;
-  float: right;
-}
-
-.float-left{
-  float: left;
-}
-
-.flex{
-  display: flex;
+.margin-right-md {
+    margin-right: $md-size;
 }

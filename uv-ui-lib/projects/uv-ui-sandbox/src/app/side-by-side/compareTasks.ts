@@ -1,4 +1,4 @@
-export const compareTasksData: {started: string; link: string; title: string; description: string; date: string}[] = [
+export const compareTasksData = [
   {
     started: 'Not Started',
     link: '',
