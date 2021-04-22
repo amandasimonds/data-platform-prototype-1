@@ -1,0 +1,22 @@
+<div class="grid">
+
+    <div class="box appbar flex align-items-center justify-content-space-between">
+
+        <p class="heading-4">Comparison Tasks</p>
+        
+        <div>
+            <lib-uv-ui-button class="btn btn-round btn-add-task margin-right-md" buttonText="+" (click)="addTaskClicked($event)"></lib-uv-ui-button>
+            <lib-uv-ui-dropdown-button dropdownPlaceholder="Switch filter" buttonText="Switch filter" (click)="switchFilterClicked($event)"></lib-uv-ui-dropdown-button>
+        </div>
+        
+    </div>
+
+<div class="content">
+    
+    <lib-uv-ui-task-snippet [tasks]="compareTasks">
+    </lib-uv-ui-task-snippet>
+    
+</div>
+
+</div>
+

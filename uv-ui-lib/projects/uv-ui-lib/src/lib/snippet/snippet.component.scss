@@ -1,0 +1,26 @@
+@import '../scss/styles';
+
+.snippet-wrapper {
+    margin-bottom: $sm-size;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $color-gray-light-4;
+        border-radius: 8px;
+    }
+}
+
+.snippet-container {
+    height: 73px;
+    position: relative;
+    min-height: 73px;
+    padding: 2px;
+
+    &-textbox {
+        margin-left: 8px;
+        width: 120px;
+        height: 68px;
+        display: inline-block;
+        overflow: hidden;
+    }
+}

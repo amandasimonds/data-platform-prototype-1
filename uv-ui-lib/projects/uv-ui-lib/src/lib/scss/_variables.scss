@@ -1,7 +1,22 @@
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(../assets/NotoSans-Regular.ttf) format("truetype");
+    font-weight:300;
+}
+
+@font-face {
+    font-family: 'Noto Sans Bold';
+    src: url(../assets/NotoSans-Bold.ttf) format("truetype");
+    font-weight:300;
+}
+
+:root {
+    --color-white: #ffffff;
+    --color-black: black;
+    --background-color: #f1f1f1;
+}
+
 //colors
-$color-white: #ffffff;
-$color-black: black;
-$background-color: #f1f1f1;
 $color-gray: #7D7D7D;
 $color-gray-light: #d7dfeb;
 $color-gray-light-2: #B1B1B1;
@@ -13,13 +28,22 @@ $color-blue: #00A3E5;
 $color-orange: #FF6969;
 $scrollbar-color: #FBEDED;
 
-
 //typography
-$font-family: "Noto sans", sans-serif !default;
+$font-family: 'Noto Sans', sans-serif !default;
+$font-family-bold: 'Noto Sans Bold';
 $default-text-color-black: #32363B;
 $highlight-text-color-gray: #EAF1FE;
+$font-bold: 500 !default;
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 18px;
+$font-size-md-lg: 20px;
+$font-size-lg: 24px;
+$font-size-xl: 28px;
+$font-size-xxl: 32px;
 
 //sizes
+$xxs-size: 8px;
 $xs-size: 16px;
 $sm-size: 24px;
 $md-size: 32px;
@@ -32,37 +56,7 @@ $footer-height: 24px;
 $grid-item-height: 78px;
 $grid-header-height: 56px;
 
-//width
-$search-width: 1000px;
-
 //styling
 $border-gray: 1px solid #8694A7;
 $border-gray-light: 1px solid #dddddd;
 $box-shadow-light: 0 2px 14px 0 rgba(215,215,215,0.5);
-
-//UV-DITES VARS
-//colors
-$background: gray !default;
-$dark-grey-color: darkgray !default;
-$grey-btn-color: #65686C;
-$link-color: #212529 !default;
-$error-color: rgba(255, 0, 0, 0.7) !default;
-$facet-color: rgba(134, 148, 167, 0.15);
-$text-color: #32363b;
-$active-card-color: #ffffff;
-$card-color: #FCFDFE;
-$white-color:  #ffffff;
-$background-color: #f9fbfc;
-$results-background-color: #f4f7f9;
-$border-color: #e6e9ed;
-$icon-color: #eaedf2;
-$hover-btn-color: #f3f4f6;
-$active-btn-color: #8694a7;
-$active-facet-color: rgba(49, 119, 243, 0.15);
-$active-facet-color-bg: rgba(49, 119, 243, 0.1);
-$active-icon-color: rgba(49, 119, 243, 1);
-$badge-color: rgba(224, 235, 253, 1);
-$tooltip-background-color: #32363b;
-$active-btn-background: #3177F3;
-$active-tree-background: rgba(49,119,243,0.1);
-$hover-tree-background: rgba(244,247,249,1);

@@ -1,0 +1,9 @@
+<div class="snippet-wrapper" *ngFor="let snippet of snippets trackBy: trackBySnippetTitle" (click)="snippetClicked($event)">
+    <div class="snippet-container">
+        <img class="btn-icon-xs" [src]="snippet.icon">
+        <div class="snippet-container-textbox">
+            <p class="heading heading-sub">{{snippet.snippetHeading}}</p>
+            <p>{{snippet.snippetTxt}}</p>
+        </div>
+    </div>
+</div>

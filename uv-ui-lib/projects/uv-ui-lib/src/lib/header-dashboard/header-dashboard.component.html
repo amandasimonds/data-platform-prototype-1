@@ -1,16 +1,13 @@
-<div class="header-dashboard">
+<div class="header-dashboard box flex justify-content-space-between">
 
-    <div class="header-dashboard__heading-container">
+    <div class="flex justify-content-center align-items-center">
 
-        <span class="header-dashboard__icon-wrapper">
-            <lib-uv-ui-icons [name]="iconName" class="svg-gray"></lib-uv-ui-icons>
-        </span>
-
-    <h1 class="header">{{headerText}}</h1>
+        <img class="img-small margin-md" src="http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg">
+        <h1 class="heading">{{headerText}}</h1>
 
     </div>
 
-    <div class="header-dashboard__heading-container">
+    <div class="flex justify-content-center align-items-center">
 
         <ng-content></ng-content>
 

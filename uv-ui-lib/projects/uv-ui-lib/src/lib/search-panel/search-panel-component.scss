@@ -1,0 +1,32 @@
+@import '../scss/styles';
+
+.search-panel {
+    height: 56px;
+    width: 993px;
+    border: $border-gray-light;
+    border-radius: 28px;
+    background-color: #FFFFFF;
+    margin: 10px 23px;
+    transition: all .2s;
+
+    &__search-field {
+        margin-left: 16px;
+
+        &__input {
+            margin-left: 16px;
+            font-size: 16px;
+            font-family: inherit;
+            border: none;
+    
+            &:focus,
+            &:invalid {
+                outline: none;
+            }
+    
+            &::-webkit-input-placeholder {
+                color: $color-gray;
+                font-style: italic;
+            }
+        }
+    }
+}

@@ -6,22 +6,6 @@
 
 ## Importing in App
 
-- Import the module in `app.module.ts` :
-
-```
-import { UvUiLib } from 'uv-ui-lib'
-
-@NgModule({
-  imports: [
-    UvUiLibModule,
-    ...
-  ]
-})
-
-export class AppModule {
-}
-```
-
 ## Import global styles
 
 - In `/src/styles.scss` add `@import "~uv-ui-lib/src/lib/scss/_styles.scss";`

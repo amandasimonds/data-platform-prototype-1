@@ -1,6 +1,8 @@
 @import "./variables";
+@import "./typography";
+@import "./utils";
 
-// BASE //
+//base
 * {
     margin: 0;
     padding: 0;
@@ -14,97 +16,53 @@
 
 body {
     box-sizing: border-box;
-    background-color: $background-color;
-}
-
-// FLEX STYLES //
-.flex {
-    display: flex;
-
-    &-inline {
-        display: inline-flex;
-    }
-
-    &-row {
-        flex-direction: row;
-    }
-
-    &-reverse {
-        flex-direction: row-reverse;
-    }
-
-    &-column {
-        flex-direction: column;
-    }
-
-    &-1 {
-        flex: 1;
-    }
-}
-
-.block{
-    display: block;
-
-    &-inline{
-        display: inline-block;
-    }
-}
-
-.justify-content {
-    &-space-between {
-        justify-content: space-between;
-    }
-
-    &-space-around {
-        justify-content: space-around;
-    }
-
-    &-center {
-        justify-content: center;
-    }
-}
-
-.align-items {
-    &-center {
-        align-items: center;
-    }
+    background-color: var(--background-color);
 }
 
  //scrollbar
-*::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 9px;
     height: 8px;
 }
 
-*::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: transparent;
     background-color: transparent;
     background-clip: padding-box;
 }
 
-*::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: $scrollbar-color;
     border-radius: 100px;
     background-clip: padding-box;
     max-height: 20px;
 }
 
-*::-webkit-scrollbar-corner{
+::-webkit-scrollbar-corner{
     background: transparent;
 }
 
-*::-webkit-scrollbar-button:end:increment {
+::-webkit-scrollbar-button:end:increment {
     height: 50%;
     display: block;
 }
 
-*::-webkit-scrollbar-button:start:increment {
+::-webkit-scrollbar-button:start:increment {
     height: 17px;
     display: block;
 }
 
+.scroll-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    height: 100%;
+    margin: $sm-size;
+}
+
 .box {
-    background-color: $color-white;
+    background-color: var(--color-white);
     border: $border-gray-light;
     box-shadow: $box-shadow-light;
 }
@@ -119,24 +77,160 @@ body {
     height: auto;
 }
 
-// IMPORTS //
-@import "./typography";
-@import "./svg";
-@import "./utils";
-@import "./components/form";
+svg {
+    color: currentColor;
+}
 
-@import "./components/widget";
-@import "./components/search-panel";
-@import "./components/navbar-dashboard";
-@import "./components/navbar-dashboard-sub";
-@import "./components/button";
-@import "./components/header-sbs";
-@import "./components/header-dashboard";
-@import "./components/home-container";
-@import "./components/logo-splash-block";
-@import "./components/side-by-side";
-@import "./components/app-side-bar";
-@import "./components/tab";
+.btn {
+    &,
+    &:link,
+    &:visited {
+        font-family: $font-family;
+        font-weight: $font-bold;
+        text-align: center;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        background-color: var(--color-white);
+        transition: all .2s;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn-icon svg {
+    cursor: pointer;
+    width: $sm-size;
+    height: $sm-size;
+
+    &-xs {
+        width: $xs-size;
+        height: $xs-size;
+    }
+}
+
+.btn-login {
+    margin:25px;
+    font-size: 14px;
+    padding: 12px;
+    width: 320px;
+    height: 48px;
+    border: $border-gray-light;
+}
+
+.btn-chip {
+    color: $color-orange;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    line-height: 16px;
+    padding: 8px 13px;
+    border: $border-gray-light;
+}
+
+.btn-round {
+    width: 41px;
+    height: 41px;
+    padding: 10.5px;
+    border-radius: 100%;
+    border: $border-gray-light;
+
+    &-large{
+        width: 57px;
+        height: 57px;
+        color: $color-blue;
+        font-weight: bold;
+        font-size: 24px;
+        text-align:center;
+    }
+}
+
+.btn-dropdown {
+    padding: 10px 16px;
+    font-weight: bold;
+    border: $border-gray-light;
+}
+
+.btn-add-task {
+    color: $color-blue;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 6px;
+    border: $border-gray-light;
+}
+
+.btn-blue {
+    font-size: 14px;
+    font-weight: bold;
+    color: $color-blue;
+    line-height: 20px;
+}
+
+.btn-gray {
+    color: $color-gray-light-3;
+}
+
+.tab {
+    display: flex;
+    align-content: center;
+    padding: 14px 24px;
+
+    &:hover {
+        cursor: pointer;
+        color: $color-blue;
+        font-weight: bold;
+        background-color: $color-gray-light-5;
+        border-right: 4px solid $color-blue;
+            a {
+                color: $color-blue;
+            }
+    }
+}
+
+.header-sbs {
+    background-color: var(--color-white);
+    border: $border-gray;
+    height: 4.8rem;
+    width:100%;
+}
+
+.header-sbs-sub {
+    background-color: var(--color-white);
+    border: $border-gray;
+    border-top: none;
+    height: 4.8rem;
+    width:100%;
+}
+
+.search-panel-side-container {
+    padding: 16px;
+    position: relative;
+    width:20%;
+    border-left: $border-gray-light;
+    transition: all ease-in-out .8s;
+
+    &--expanded {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1700px) {
+    .search-panel {
+        width: 100%;
+    }
+
+    .search-panel__filters-container {
+        display: none;
+    }
+}
+
+
+
 
 
 
