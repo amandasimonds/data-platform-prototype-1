@@ -1,0 +1,23 @@
+.grid{
+    position: relative;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: [row1] 68px [row2] auto;
+    grid-template-areas: 
+    "appbar"
+    "content" ;
+}
+
+.appbar {
+    grid-row: row1;
+    padding: 20px;
+    border-top: none;
+    border-left: none;
+}
+
+.content {
+    grid-row: row2;
+    overflow: auto;
+    padding-left: 96px;
+    padding-top:20px;
+}

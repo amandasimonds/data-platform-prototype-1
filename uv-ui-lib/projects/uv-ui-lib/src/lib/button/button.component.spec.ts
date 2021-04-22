@@ -17,7 +17,6 @@ describe('ButtonComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
-    component.buttonType = 'text';
     component.buttonText = 'test text';
     fixture.detectChanges();
   });
@@ -30,22 +29,5 @@ describe('ButtonComponent', () => {
     const button = fixture.debugElement.query(By.css('a')).nativeElement;
     expect(button.innerHTML).toBe('test text');
   });
-});
-
-describe('ButtonComponent', () => {
-  let component: ButtonComponent;
-  let fixture: ComponentFixture<ButtonComponent>;
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ButtonComponent);
-    component = fixture.componentInstance;
-    component.buttonType = 'icon';
-    fixture.detectChanges();
-  });
-
-  it('should create an icon-type button', () => {
-    expect(component).toBeTruthy();
-  });
-
 });
 

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve uv-ui-sandbox",
+    "start": "ng serve uv-ui-prototype",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -14,6 +14,7 @@
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
     "build-uv-ui-lib": "ng build uv-ui-lib",
+    "build-uv-ui-lib:watch": "ng build uv-ui-lib --watch",
     "e2e": "ng e2e"
   },
   "private": true,

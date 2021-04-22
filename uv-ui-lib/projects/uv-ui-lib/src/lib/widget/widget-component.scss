@@ -1,0 +1,11 @@
+@import '../scss/styles';
+
+.widget {
+    margin: $xs-size;
+    height: auto;
+    width: auto;
+    border-radius: 16px;
+    position: relative;
+    padding: 10px;
+    overflow: auto;
+}
