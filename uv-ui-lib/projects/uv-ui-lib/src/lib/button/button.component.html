@@ -1,16 +1,3 @@
-<a *ngIf="buttonType==='text'" (click)="onClick($event)" class="btn">{{buttonText}}</a>
+<a class="btn">{{buttonText}}</a>
 
-  <a *ngIf="buttonType==='icon'" (click)="onClick($event)">
-    <lib-uv-ui-icons
-      class="btn-icon"
-      [name]="iconName">
-    </lib-uv-ui-icons>
-  </a>
-
-  <select *ngIf="buttonType === 'dropdown'" class="btn btn-dropdown" [name]="dropdownName" [id]="dropdownId">
-    <option value="1">{{dropdownPlaceholder}}</option>
-    <option value="2"></option>
-    <option value="3"></option>
-    <option value="4"></option>
-  </select>
 

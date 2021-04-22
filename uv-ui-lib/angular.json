@@ -88,7 +88,7 @@
         }
       }
     },
-    "uv-ui-sandbox": {
+    "uv-ui-prototype": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -98,25 +98,25 @@
           "strict": true
         }
       },
-      "root": "projects/uv-ui-sandbox",
-      "sourceRoot": "projects/uv-ui-sandbox/src",
+      "root": "projects/uv-ui-prototype",
+      "sourceRoot": "projects/uv-ui-prototype/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/uv-ui-sandbox",
-            "index": "projects/uv-ui-sandbox/src/index.html",
-            "main": "projects/uv-ui-sandbox/src/main.ts",
-            "polyfills": "projects/uv-ui-sandbox/src/polyfills.ts",
-            "tsConfig": "projects/uv-ui-sandbox/tsconfig.app.json",
+            "outputPath": "dist/uv-ui-prototype",
+            "index": "projects/uv-ui-prototype/src/index.html",
+            "main": "projects/uv-ui-prototype/src/main.ts",
+            "polyfills": "projects/uv-ui-prototype/src/polyfills.ts",
+            "tsConfig": "projects/uv-ui-prototype/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/uv-ui-sandbox/src/favicon.ico",
-              "projects/uv-ui-sandbox/src/assets"
+              "projects/uv-ui-prototype/src/favicon.ico",
+              "projects/uv-ui-prototype/src/assets"
             ],
             "styles": [
-              "projects/uv-ui-sandbox/src/scss/main.scss"
+              "projects/uv-ui-prototype/src/scss/main.scss"
             ],
             "scripts": []
           },
@@ -124,8 +124,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/uv-ui-sandbox/src/environments/environment.ts",
-                  "with": "projects/uv-ui-sandbox/src/environments/environment.prod.ts"
+                  "replace": "projects/uv-ui-prototype/src/environments/environment.ts",
+                  "with": "projects/uv-ui-prototype/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -153,33 +153,33 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "uv-ui-sandbox:build"
+            "browserTarget": "uv-ui-prototype:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "uv-ui-sandbox:build:production"
+              "browserTarget": "uv-ui-prototype:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "uv-ui-sandbox:build"
+            "browserTarget": "uv-ui-prototype:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/uv-ui-sandbox/src/test.ts",
-            "polyfills": "projects/uv-ui-sandbox/src/polyfills.ts",
-            "tsConfig": "projects/uv-ui-sandbox/tsconfig.spec.json",
-            "karmaConfig": "projects/uv-ui-sandbox/karma.conf.js",
+            "main": "projects/uv-ui-prototype/src/test.ts",
+            "polyfills": "projects/uv-ui-prototype/src/polyfills.ts",
+            "tsConfig": "projects/uv-ui-prototype/tsconfig.spec.json",
+            "karmaConfig": "projects/uv-ui-prototype/karma.conf.js",
             "assets": [
-              "projects/uv-ui-sandbox/src/favicon.ico",
-              "projects/uv-ui-sandbox/src/assets"
+              "projects/uv-ui-prototype/src/favicon.ico",
+              "projects/uv-ui-prototype/src/assets"
             ],
             "styles": [
-              "projects/uv-ui-sandbox/src/styles.scss"
+              "projects/uv-ui-prototype/src/styles.scss"
             ],
             "scripts": []
           }
@@ -188,9 +188,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/uv-ui-sandbox/tsconfig.app.json",
-              "projects/uv-ui-sandbox/tsconfig.spec.json",
-              "projects/uv-ui-sandbox/e2e/tsconfig.json"
+              "projects/uv-ui-prototype/tsconfig.app.json",
+              "projects/uv-ui-prototype/tsconfig.spec.json",
+              "projects/uv-ui-prototype/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -200,12 +200,12 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/uv-ui-sandbox/e2e/protractor.conf.js",
-            "devServerTarget": "uv-ui-sandbox:serve"
+            "protractorConfig": "projects/uv-ui-prototype/e2e/protractor.conf.js",
+            "devServerTarget": "uv-ui-prototype:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "uv-ui-sandbox:serve:production"
+              "devServerTarget": "uv-ui-prototype:serve:production"
             }
           }
         }

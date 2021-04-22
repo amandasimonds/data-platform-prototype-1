@@ -1,33 +1,16 @@
-<div class="search-panel">
+<div class="search-panel flex justify-content-space-between">
 
-    <div class="search-panel__search-field">
+    <div class="search-panel__search-field flex align-items-center">
 
-        <lib-uv-ui-button buttonType="icon" id="search-button" class="svg-black" iconName="search" (click)="searchBtnClicked($event)"></lib-uv-ui-button>
+        <lib-uv-ui-icon-button id="search-button" src="http://dpzaq1wj21co3.cloudfront.net/icons/search.svg" (click)="searchBtnEvent"></lib-uv-ui-icon-button>
         
         <input type="text"
         placeholder="Search..."
         class="search-panel__search-field__input">
         
     </div>
-
-    <div class="search-panel__filters-container flex-inline justify-content-space-between" id="search-panel-filters-container" [ngClass]="{'search-panel__filters-container--expanded' : isExpanded}">
-
-        <span class="search-panel__icon-arrow-left">
-            <lib-uv-ui-button  buttonType="icon" id="leftArrow-button" class="svg-gray" iconName="leftArrow" (click)=" changeExpandedState(); expandFiltersClicked($event);"></lib-uv-ui-button>
-        </span>
-
-        <div>
-            <span class="search-panel__icon-container">
-            <lib-uv-ui-button buttonType="icon" class="svg-gray" iconName="close" (click)="clearBtnClicked($event)"></lib-uv-ui-button>
-            </span>
-            <span class="search-panel__icon-container">
-            <lib-uv-ui-button buttonType="icon" class="svg-blue" iconName="filter" (click)="filterBtnClicked($event)"></lib-uv-ui-button>    
-            </span>
-            <span class="search-panel__icon-container">
-            <lib-uv-ui-button buttonType="icon" class="svg-gray" iconName="rightArrow" (click)="rightArrowBtnClicked($event)"></lib-uv-ui-button>
-            </span>
-        </div>   
-    </div>
+    
+    <ng-content></ng-content>
 
 </div>
 

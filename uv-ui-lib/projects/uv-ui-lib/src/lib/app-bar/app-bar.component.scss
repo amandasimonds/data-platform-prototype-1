@@ -1,27 +1,26 @@
+@import '../scss/styles';
+
 .app-bar {
-  position: absolute;
-  height: 86px;
-  width: 100%;
-  border-left: none;
-  border-top: none;
-  padding: 0 32px 0 32px;
-  z-index: 0;
+    height: 100%;
+    width: 100%;
+    border-left: none;
+    border-top: none;
+    z-index: 0;
 }
 
 .tags-container {
-  align-self: flex-start;
-  position: relative;
-  left: 346px;
-  width: 60%;
-  height: 100%;
+    align-self: flex-start;
+    position: relative;
+    width: 60%;
+    height: 100%;
 }
 
 .container-right {
-  position: relative;
-  width: 64px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-self: flex-end;
-  height: 100%;
+    width: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-end;
+    height: 100%;
+    margin-right: $md-size;
 }

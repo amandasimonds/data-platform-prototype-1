@@ -2,14 +2,13 @@
 
     <div class="navbar-dashboard-sub__heading-container flex justify-content-space-between">
         <div>
-            <p class="heading-2">{{headingTxt}}</p>
-            <p class="subheading">{{subHeadingTxt}}</p>
+            <p class="heading heading-5">{{headingTxt}}</p>
+            <p class="heading heading-sub">{{subHeadingTxt}}</p>
         </div>
-        <lib-uv-ui-button
-            buttonType='icon'
-            iconName='moreHorizontal'
-            class="svg-blue navbar-dashboard-sub__icon">
-        </lib-uv-ui-button>
+        <lib-uv-ui-icon-button
+            src="http://dpzaq1wj21co3.cloudfront.net/icons/more-horizontal.svg"
+            class="navbar-dashboard-sub__icon">
+        </lib-uv-ui-icon-button>
     </div>
 
     <div class="divider"></div>
@@ -18,15 +17,9 @@
         <div class="navbar-dashboard-sub__snippets-flexbox flex-column">
             <div class="navbar-dashboard-sub__snippets-flexbox__spacer"></div>
             <div class="navbar-dashboard-sub__snippets-flexbox__scrollbar-cover"></div>
-            <div class="navbar-dashboard-sub__snippet-wrapper" *ngFor="let snippet of snippets trackBy: trackBySnippetTitle" (click)="snippetClicked($event)">
-                <div class="navbar-dashboard-sub__snippet-container">
-                    <lib-uv-ui-icons [name]="snippet.icon" class="svg-gray-small"></lib-uv-ui-icons>
-                    <div class="navbar-dashboard-sub__snippet-container--textbox">
-                        <p class="subheading">{{snippet.snippetHeading}}</p>
-                        <p>{{snippet.snippetTxt}}</p>
-                    </div>
-                </div>
-            </div>
+            
+            <ng-content></ng-content>
+            
         </div>
     </div>
 

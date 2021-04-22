@@ -2,17 +2,14 @@
 
     <img class="navbar-logo" src="http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg">
 
-  <div class="navbar-dashboard__navlinks-flexbox">
+    <div class="navbar-dashboard__navlinks-flexbox">
 
     <div class="navbar-dashboard__divider"></div>
 
-    <span *ngFor="let navlink of navlinks" class="navlink-wrapper">
-      <a [href]="navlink.navlink">
-          <img class="svg-green" [src]="navlink.icon">
-        <!-- <lib-uv-ui-icons [name]="navlink.icon" class="navbar-dashboard__svg-nav"></lib-uv-ui-icons> -->
-      </a>
+    <span *ngFor="let navlink of navlinks trackBy: trackByFn" class="navlink-wrapper">
+        <a [href]="navlink.navlink"><img [src]="navlink.icon"></a>
     </span>
 
-  </div>
+    </div>
 
 </div>

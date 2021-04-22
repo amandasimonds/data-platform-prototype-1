@@ -1,0 +1,16 @@
+@import '../scss/styles';
+
+.compare-task-box {
+    display: inline-block;
+    border: $border-gray-light;
+    padding: 24px;
+    background-color: var(--color-white);
+    min-height: 228px;
+    width: 200px;
+    margin: 0 32px 32px 0;
+    border-radius: 2px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
