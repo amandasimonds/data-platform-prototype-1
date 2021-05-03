@@ -10,7 +10,7 @@ import { INav } from '../interfaces/navbar.interfaces';
 export class NavbarDashboardComponent {
   @Input() public navlinks: INav[] = [];
 
-  public trackByFn(_: number, navlink: INav): string {
-    return navlink.navlink;
+  public trackByFn(_: number, {navlink}: INav): string {
+    return navlink;
 }
 }

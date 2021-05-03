@@ -1,12 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input, Output, EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'lib-uv-ui-button',
     templateUrl: './button.component.html',
-    styleUrls: ['../scss/_styles.scss'],
+    styleUrls: ['./button.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent {
     @Input() public buttonText = '';
-
 }

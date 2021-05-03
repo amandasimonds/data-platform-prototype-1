@@ -1,15 +1,11 @@
-<div class="navbar-dashboard">
+<div class="navbar-dashboard flex flex-column align-content-center">
 
     <img class="navbar-logo" src="http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg">
-
-    <div class="navbar-dashboard__navlinks-flexbox">
 
     <div class="navbar-dashboard__divider"></div>
 
     <span *ngFor="let navlink of navlinks trackBy: trackByFn" class="navlink-wrapper">
         <a [href]="navlink.navlink"><img [src]="navlink.icon"></a>
     </span>
-
-    </div>
 
 </div>

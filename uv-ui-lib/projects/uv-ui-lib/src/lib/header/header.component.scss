@@ -1,9 +1,8 @@
-@import '../scss/_styles.scss';
+@import '../scss/variables';
 
-.header-dashboard {
+.header {
     position: relative;
     border-left: none;
     height: 100%;
     z-index: 100;
 }
-

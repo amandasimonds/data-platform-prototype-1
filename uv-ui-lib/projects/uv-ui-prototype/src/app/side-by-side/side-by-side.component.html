@@ -6,7 +6,7 @@
         
         <div>
             <lib-uv-ui-button class="btn btn-round btn-add-task margin-right-md" buttonText="+" (click)="addTaskClicked($event)"></lib-uv-ui-button>
-            <lib-uv-ui-dropdown-button dropdownPlaceholder="Switch filter" buttonText="Switch filter" (click)="switchFilterClicked($event)"></lib-uv-ui-dropdown-button>
+            <lib-uv-ui-dropdown-button [items]="dropdownItems" dropdownName="Switch filter" (click)="switchFilterClicked($event)"></lib-uv-ui-dropdown-button>
         </div>
         
     </div>

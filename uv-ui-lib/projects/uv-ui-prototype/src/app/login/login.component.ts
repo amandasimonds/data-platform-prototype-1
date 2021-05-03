@@ -12,6 +12,6 @@ export class LoginComponent {
   constructor(private route: Router) { }
 
   public login(): void {
-    void this.route.navigate(['/main']);
+    this.route.navigate(['/main']);
   }
 }

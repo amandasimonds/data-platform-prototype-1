@@ -1,0 +1,12 @@
+@import '../scss/variables';
+
+.btn-image {
+    cursor: pointer;
+    width: $sm-size;
+    height: $sm-size;
+
+    &-xs {
+        width: $xs-size;
+        height: $xs-size;
+    }
+}
