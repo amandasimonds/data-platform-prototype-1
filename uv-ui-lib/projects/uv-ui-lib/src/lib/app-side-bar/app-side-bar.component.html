@@ -14,8 +14,8 @@
 
     <div class="app-side-bar__bottom-content">
 
-        <div *ngFor="let tab of tabs trackBy: trackByTabLink" class="tab">
-            <lib-uv-ui-icon-button class="margin-right-sm" [src]="tab.icon"></lib-uv-ui-icon-button>
+        <div *ngFor="let tab of tabs trackBy: trackByFn" class="tab">
+            <lib-uv-ui-image-button class="margin-right-sm" [src]="tab.icon"></lib-uv-ui-image-button>
             <a [href]="tab.link">{{tab.linkText}}</a>
         </div>
 

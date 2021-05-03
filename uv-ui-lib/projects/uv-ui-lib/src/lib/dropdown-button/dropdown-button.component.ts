@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { IDropdown } from '../interfaces/dropdown-button.interfaces';
 
 @Component({
     selector: 'lib-uv-ui-dropdown-button',
@@ -9,7 +10,10 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 export class DropdownButtonComponent {
 
     @Input() public dropdownName = '';
-    @Input() public dropdownId = '';
-    @Input() public dropdownPlaceholder = '';
+    @Input() public items: IDropdown[] = [];
+
+    public trackByFn(_: number, {name}: IDropdown): string {
+        return name;
+    }
 
 }

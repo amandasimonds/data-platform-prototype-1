@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import {compareTasksData} from './compareTasks';
+import { compareTasksData } from './compareTasks';
+import { dropdownItems } from './dropdownItems';
 
 @Component({
     selector: 'prototype-uv-ui-side-by-side',
@@ -10,6 +11,7 @@ import {compareTasksData} from './compareTasks';
 export class SideBySideComponent {
     public loadTask = true;
     public compareTasks = compareTasksData;
+    public dropdownItems = dropdownItems;
 
     public addTaskClicked(event: Event): void {
         console.log(event, 'add task was clicked');

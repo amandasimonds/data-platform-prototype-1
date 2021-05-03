@@ -81,6 +81,14 @@ svg {
     color: currentColor;
 }
 
+.gray {
+    color: $color-gray-light-3;
+}
+
+.blue {
+    color: $color-blue;
+}
+
 .btn {
     &,
     &:link,
@@ -117,7 +125,6 @@ svg {
 
 .btn-login {
     margin:25px;
-    font-size: 14px;
     padding: 12px;
     width: 320px;
     height: 48px;
@@ -150,29 +157,16 @@ svg {
     }
 }
 
-.btn-dropdown {
-    padding: 10px 16px;
-    font-weight: bold;
-    border: $border-gray-light;
-}
-
 .btn-add-task {
     color: $color-blue;
-    font-weight: bold;
     font-size: 18px;
     padding: 6px;
     border: $border-gray-light;
 }
 
 .btn-blue {
-    font-size: 14px;
-    font-weight: bold;
     color: $color-blue;
     line-height: 20px;
-}
-
-.btn-gray {
-    color: $color-gray-light-3;
 }
 
 .tab {

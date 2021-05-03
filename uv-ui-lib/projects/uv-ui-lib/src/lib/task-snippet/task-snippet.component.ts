@@ -9,13 +9,9 @@ import { ITask } from '../interfaces/side-by-side.interfaces';
 })
 export class TaskSnippetComponent {
 
-    @Input() public tasks: ITask[];
+    @Input() public tasks: ITask[] = [];
 
-    constructor(){
-        this.tasks = [];
-    }
-
-    public trackByTaskTitle(_: number, task: ITask): string {
-        return task.title;
+    public trackByFn(_: number, {title}: ITask): string {
+        return title;
     }
 }

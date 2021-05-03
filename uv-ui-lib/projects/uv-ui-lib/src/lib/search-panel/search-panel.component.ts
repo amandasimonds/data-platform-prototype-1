@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Output, EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'lib-uv-ui-search-panel',
@@ -8,9 +8,4 @@ import { ChangeDetectionStrategy, Component, Output, EventEmitter } from '@angul
 })
 export class SearchPanelComponent {
 
-    @Output() public readonly searchBtnEvent = new EventEmitter<Event>();
-
-    public searchBtnClicked($event: Event): void {
-        this.searchBtnEvent.emit($event);
-    }
 }

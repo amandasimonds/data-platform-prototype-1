@@ -16,7 +16,7 @@ export class AppSideBarComponent {
         this.tabs = [];
     }
 
-    public trackByTabLink(_: number, tab: IGwuTab): string {
-        return tab.link;
+    public trackByFn(_: number, {link}: IGwuTab): string {
+        return link;
     }
 }
