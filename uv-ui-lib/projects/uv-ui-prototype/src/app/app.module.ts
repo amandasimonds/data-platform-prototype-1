@@ -7,13 +7,14 @@ import {
     AppSideBarModule,
     NavbarDashboardSubModule,
     SearchPanelModule,
-    HeaderDashboardModule,
+    HeaderModule,
     NavbarDashboardModule,
     WidgetModule,
     TaskSnippetModule,
     SnippetModule,
     DropdownButtonModule,
-    IconButtonModule
+    ImageButtonModule,
+    SvgButtonModule
 } from '../../../uv-ui-lib/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -43,13 +44,14 @@ import { MainComponent } from './layouts/main/main.component';
         AppSideBarModule,
         SearchPanelModule,
         NavbarDashboardSubModule,
-        HeaderDashboardModule,
+        HeaderModule,
         NavbarDashboardModule,
         WidgetModule,
         TaskSnippetModule,
         SnippetModule,
         DropdownButtonModule,
-        IconButtonModule
+        ImageButtonModule,
+        SvgButtonModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { navItems } from './navItems';
 
 @Component({
     selector: 'prototype-app-main',
@@ -10,40 +11,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 export class MainComponent {
 
     public isExpanded = false;
-
-    public nav = [
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',
-            navlink: '/main/home-splash',
-            classes: []
-        },
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',
-            navlink: '/main/global-where-used',
-            classes: []
-        },
-
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',
-            navlink: '/main/side-by-side',
-            classes: []
-        },
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',
-            navlink: '/main',
-            classes: []
-        },
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',
-            navlink: '/main',
-            classes: []
-        },
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',
-            navlink: '/main',
-            classes: []
-        }
-    ];
+    public nav = navItems;
 
     public expandFilters(event: Event): void {
         console.log('expand button clicked', event);

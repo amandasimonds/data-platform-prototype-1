@@ -1,35 +1,12 @@
 <div class="grid">
     <div class="header">
-        <lib-uv-ui-header-dashboard
+        <lib-uv-ui-header
             headerText="Dashboard"
             iconName="dashboard">
 
-            <lib-uv-ui-search-panel>
-                <div class="search-panel-side-container flex-inline justify-content-space-between align-items-center" id="search-panel-filters-container" [class.search-panel-side-container--expanded]="isExpanded">
+            <lib-uv-ui-svg-button (click)="profileClick($event)" color='blue' svgPath='assets/profile.svg#profile' class="margin-right-sm"></lib-uv-ui-svg-button>
 
-                    <button class="btn btn-icon btn-gray" (click)="expandFilters($event)">
-                        <svg><use href='assets/left-arrow.svg#leftArrow'></use></svg>
-                    </button>
-            
-                    <div>
-                        <button class="btn btn-icon btn-gray margin-xxs">
-                            <svg><use href='assets/close.svg#close'></use></svg>
-                        </button>
-                        <button class="btn btn-icon btn-blue margin-xxs">
-                            <svg><use href='assets/filter.svg#filter'></use></svg>
-                        </button>
-                        <button class="btn btn-icon btn-gray margin-xxs">
-                            <svg><use href='assets/right-arrow.svg#rightArrow'></use></svg>
-                        </button>    
-                    </div>   
-                </div>
-            </lib-uv-ui-search-panel>
-
-            <button (click)="profileClick($event)" class="btn btn-blue btn-icon btn-round btn-round-large margin-right-sm">
-                <svg><use href='assets/profile.svg#profile'></use></svg>
-            </button>
-
-        </lib-uv-ui-header-dashboard>
+        </lib-uv-ui-header>
     </div>
 
     <div class="navbar">

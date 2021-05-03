@@ -1,4 +1,4 @@
-<div *ngFor="let task of tasks; trackBy:trackByTaskTitle" class="compare-task-box">
+<div *ngFor="let task of tasks; trackBy:trackByFn" class="compare-task-box">
     <p class="btn btn-chip margin-bottom-md">{{task.started}}</p>
     <p class="txt-sm bold margin-bottom-sm">{{task.title}}</p>
     <p class="txt-sm margin-bottom-md">{{task.description}}</p>

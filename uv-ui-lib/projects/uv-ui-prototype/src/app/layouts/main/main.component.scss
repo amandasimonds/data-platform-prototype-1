@@ -5,7 +5,7 @@
     display: grid;
     grid-gap: 0;
     grid-template-columns: [col1] 64px [col2] auto;
-    grid-template-rows: [row1] 104px [row2] auto;
+    grid-template-rows: [row1] 64px [row2] auto;
     grid-template-areas: 
     "navbar header"
     "navbar main" ;
@@ -14,17 +14,16 @@
 .header {
     grid-column: col2;
     grid-row: row1;
-    // border: 5px solid green;
 }
+
 .navbar {
     grid-column: col1;
     grid-row-start: row1;
     grid-row-end: 3;
-    // border: 5px solid orange;
 }
+
 .content {
     grid-column: col2;
     grid-row: row2;
-    // border: 5px solid blue;
 }
 
