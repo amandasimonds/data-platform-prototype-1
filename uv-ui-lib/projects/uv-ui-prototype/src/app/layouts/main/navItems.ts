@@ -27,7 +27,12 @@ export const navItems = [
     },
     {
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',
-        navlink: '/main',
+        navlink: 'main/settings',
+        classes: []
+    },
+    {
+        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg',
+        navlink: 'main/search',
         classes: []
     }
 ];
