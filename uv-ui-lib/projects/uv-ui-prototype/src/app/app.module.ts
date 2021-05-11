@@ -25,6 +25,7 @@ import { SideBySideComponent } from './side-by-side/side-by-side.component';
 import { HomeSplashComponent } from './home-splash/home-splash.component';
 import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
 import { MainComponent } from './layouts/main/main.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { MainComponent } from './layouts/main/main.component';
         SideBySideComponent,
         HomeSplashComponent,
         GlobalWhereUsedComponent,
-        MainComponent
+        MainComponent,
+        SearchComponent
     ],
     imports: [
         BrowserModule,
