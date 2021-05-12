@@ -9,11 +9,10 @@ import { HeaderService } from '../../services/header.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class MainComponent implements OnChanges {
+export class MainComponent implements OnInit {
 
     public isExpanded = false;
     public nav = navItems;
-
     public title = '';
     public appIcon = '';
 
@@ -38,15 +37,13 @@ export class MainComponent implements OnChanges {
     
     ngOnInit() {
         this.headerService.title.subscribe(title => {
-        this.title = title;
-        console.log("main component", this.title)
-        });
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
-        this.headerService.title.subscribe(title => {
             this.title = title;
-            console.log("main component onChange", this.title)
-            });
+            console.log("main component", this.title)
+        });
+
+        this.headerService.appIcon.subscribe(appIcon => {
+            this.appIcon = appIcon;
+            console.log("main component", this.appIcon)
+        });
     }
 }
