@@ -1,5 +1,6 @@
 import { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { HeaderService } from '../services/header.service';
+import { searchItems } from './searchItems';
 
 @Component({
   selector: 'lib-search',
@@ -8,6 +9,8 @@ import { HeaderService } from '../services/header.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent implements OnInit {
+
+    public items = searchItems;
 
     public searchTabs = [
         {
@@ -32,56 +35,10 @@ export class SearchComponent implements OnInit {
         }
     ];
 
-    items = [
-        {
-            title: 'API 13M-4 / ISO 13503-4', 
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        },
-        {
-            title: 'API 13M-4 / ISO 13503-4', 
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        },
-        {
-            title: 'API 13M-4 / ISO 13503-4', 
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        },
-        {
-            title: 'API 13M-4 / ISO 13503-4', 
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        },
-        {
-            title: 'API 13M-4 / ISO 13503-4', 
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        },
-        {
-            title: 'API 13M-4 / ISO 13503-4', 
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        },
-        {
-            title: 'API 13M-4 / ISO 13503-4', 
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        },
-        {
-            title: 'API 13M-4 / ISO 13503-4', 
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        },
-        {
-            title: 'API 13M-4 / ISO 13503-4', 
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        },
-        {
-            title: 'API 13M-4 / ISO 13503-4', 
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        },
-        {
-            title: 'API 13M-4 / ISO 13503-4', 
-            description: 'End Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        },
-    ]
-
     constructor(private headerService: HeaderService){}
 
     ngOnInit(): void {
         this.headerService.setTitle('Search')
+        this.headerService.setAppIcon('assets/search.svg#search')
     }
 }

@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class HeaderService {
   public title = new BehaviorSubject('Title');
+  public appIcon = new BehaviorSubject('assets/search.svg#search');
 
   constructor() { }
 
@@ -14,4 +15,7 @@ export class HeaderService {
     console.log("header service", title)
   }
 
+  setAppIcon(appIcon: string) {
+      this.appIcon.next(appIcon);
+  }
 }
