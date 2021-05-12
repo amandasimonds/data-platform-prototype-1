@@ -2,11 +2,17 @@
 
     <div class="app-side-bar__top-content">
 
-        <lib-uv-ui-button buttonText="Back" class="btn btn-blue margin-bottom-lg" ></lib-uv-ui-button>
+        <div class="button-container margin-bottom-sm flex justify-content-space-between">
+            
+            <lib-uv-ui-button buttonText="Back" type="btn-blue"></lib-uv-ui-button>
 
-        <p class="heading-4 margin-bottom-lg">{{titleText}}</p>
+            <lib-uv-ui-svg-button color='blue' size='xs' svgPath='assets/filter.svg#filter'></lib-uv-ui-svg-button>
+        
+        </div>
 
-        <p class="paragraph margin-bottom-lg">{{descriptionText}}</p>
+        <p class="heading-4 margin-bottom-md">{{titleText}}</p>
+
+        <p class="paragraph margin-bottom-md">{{descriptionText}}</p>
 
     </div>
 
