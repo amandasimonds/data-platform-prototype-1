@@ -87,6 +87,14 @@
     margin-bottom: $lg-size;
 }
 
+.margin-left-sm {
+    margin-left: $sm-size;
+}
+
+.margin-left-md {
+    margin-left: $md-size;
+}
+
 .margin-right-sm {
     margin-right: $sm-size;
 }
@@ -97,10 +105,6 @@
 
 .padding-md {
     padding: $md-size
-}
-
-.img-md {
-    width: 64px;
 }
 
 .position-center {
