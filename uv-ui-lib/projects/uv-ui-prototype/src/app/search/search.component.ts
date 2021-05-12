@@ -1,4 +1,5 @@
-import { Component,  ChangeDetectionStrategy } from '@angular/core';
+import { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { HeaderService } from '../services/header.service';
 
 @Component({
   selector: 'lib-search',
@@ -6,7 +7,31 @@ import { Component,  ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
+
+    public searchTabs = [
+        {
+            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            link: '/',
+            linkText: 'Parts'
+        },
+        {
+            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            link: '/',
+            linkText: 'Requirements'
+        },
+        {
+            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            link: '/',
+            linkText: 'Documents'
+        },
+        {
+            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            link: '/',
+            linkText: 'Recent Searches'
+        }
+    ];
+
     items = [
         {
             title: 'API 13M-4 / ISO 13503-4', 
@@ -54,4 +79,9 @@ export class SearchComponent {
         },
     ]
 
+    constructor(private headerService: HeaderService){}
+
+    ngOnInit(): void {
+        this.headerService.setTitle('Search')
+    }
 }
