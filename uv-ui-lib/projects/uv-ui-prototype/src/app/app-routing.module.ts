@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { MainComponent } from './layouts/main/main.component';
 import { SideBySideComponent } from './side-by-side/side-by-side.component';
 import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
     {
@@ -32,7 +33,11 @@ const routes: Routes = [
             {
                 path: 'search',
                 loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
-            }
+            },
+            {
+                path: 'settings',
+                component: SettingsComponent
+            },
         ]
     }
 ];

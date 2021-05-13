@@ -1,19 +1,26 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class HeaderService {
-  public title = new BehaviorSubject('Title');
-  public appIcon = new BehaviorSubject('assets/apps-quad.svg#dashboard');
+    public title = new BehaviorSubject<string>('Title');
+    public appIcon = new BehaviorSubject<string>('assets/apps-quad.svg#dashboard');
 
-  setTitle(title: string) {
-    this.title.next(title);
-    console.log("header service", title)
-  }
+    public get currentTitle$(): Observable<string> {
+        return this.title.asObservable();
+    }
 
-  setAppIcon(appIcon: string) {
-      this.appIcon.next(appIcon);
-  }
+    public get currentIcon$(): Observable<string> {
+        return this.appIcon.asObservable();
+    }
+
+    setTitle(title: string) {
+        this.title.next(title);
+    }
+
+    setAppIcon(appIcon: string) {
+        this.appIcon.next(appIcon);
+    }
 }

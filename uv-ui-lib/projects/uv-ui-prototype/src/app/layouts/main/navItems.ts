@@ -1,18 +1,18 @@
 export const navItems = [
     {
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',
-        navlink: '/main/home-splash',
+        navlink: 'home-splash',
         classes: []
     },
     {
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',
-        navlink: '/main/global-where-used',
+        navlink: 'global-where-used',
         classes: []
     },
 
     {
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',
-        navlink: '/main/side-by-side',
+        navlink: 'side-by-side',
         classes: []
     },
     {
@@ -27,12 +27,12 @@ export const navItems = [
     },
     {
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',
-        navlink: 'main/settings',
+        navlink: 'settings',
         classes: []
     },
     {
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg',
-        navlink: 'main/search',
+        navlink: 'search',
         classes: []
     }
 ];

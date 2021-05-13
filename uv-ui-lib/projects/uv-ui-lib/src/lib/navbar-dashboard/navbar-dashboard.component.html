@@ -5,7 +5,7 @@
     <div class="navbar-dashboard__divider"></div>
 
     <span *ngFor="let navlink of navlinks trackBy: trackByFn" class="navlink-wrapper">
-        <a [href]="navlink.navlink"><img [src]="navlink.icon"></a>
+        <a [routerLink]="navlink.navlink"><img [src]="navlink.icon"></a>
     </span>
 
 </div>
