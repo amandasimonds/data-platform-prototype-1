@@ -10,19 +10,22 @@ export class GlobalWhereUsedComponent {
 
     public gwuTabs = [
         {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            icon: 'assets/more-horizontal.svg#moreHorizontal',
             link: '/',
-            linkText: 'Link'
+            linkText: 'Link',
+            results: ''
         },
         {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            icon: 'assets/more-horizontal.svg#moreHorizontal',
             link: '/',
-            linkText: 'Link'
+            linkText: 'Link',
+            results: ''
         },
         {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            icon: 'assets/more-horizontal.svg#moreHorizontal',
             link: '/',
-            linkText: 'Link'
+            linkText: 'Link',
+            results: ''
         }
     ];
 }

@@ -10,6 +10,16 @@ export class HeaderService {
 
   constructor() { }
 
+    // // getting the title
+    // getTitle(): string {
+
+    // }
+    
+    // // setting the ttile
+    // setTitle(newTitle: string) {
+
+    // }
+
   setTitle(title: string) {
     this.title.next(title);
     console.log("header service", title)
