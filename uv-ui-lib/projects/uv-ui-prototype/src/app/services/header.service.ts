@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class HeaderService {
   public title = new BehaviorSubject('Title');
-  public appIcon = new BehaviorSubject('assets/search.svg#search');
+  public appIcon = new BehaviorSubject('assets/apps-quad.svg#dashboard');
 
   setTitle(title: string) {
     this.title.next(title);
