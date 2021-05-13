@@ -22,10 +22,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { StartPageComponent } from './start-page/start-page.component';
 import { SideBySideComponent } from './side-by-side/side-by-side.component';
-import { HomeSplashComponent } from './home-splash/home-splash.component';
+import { HomeSplashModule } from './home-splash/home-splash.module';
 import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
 import { MainComponent } from './layouts/main/main.component';
-import { SearchComponent } from './search/search.component';
+import { SearchModule } from './search/search.module';
 
 @NgModule({
     declarations: [
@@ -33,10 +33,8 @@ import { SearchComponent } from './search/search.component';
         LoginComponent,
         StartPageComponent,
         SideBySideComponent,
-        HomeSplashComponent,
         GlobalWhereUsedComponent,
         MainComponent,
-        SearchComponent
     ],
     imports: [
         BrowserModule,
@@ -53,7 +51,9 @@ import { SearchComponent } from './search/search.component';
         SnippetModule,
         DropdownButtonModule,
         ImageButtonModule,
-        SvgButtonModule
+        SvgButtonModule,
+        HomeSplashModule,
+        SearchModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,27 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { HomeSplashComponent } from './home-splash/home-splash.component';
+import { MainComponent } from './layouts/main/main.component';
 import { SideBySideComponent } from './side-by-side/side-by-side.component';
 import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
-import { MainComponent } from './layouts/main/main.component';
-import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
     {
         path: '', redirectTo: '/login', pathMatch: 'full'
     },
-        {
-            path: 'login',
-            component: LoginComponent
-        },
-        {
-            path: 'main',
-            component: MainComponent,
-            children: [
+    {
+        path: 'login',
+        component: LoginComponent
+    },
+    {
+        path: 'main',
+        component: MainComponent,
+        children: [
             {
                 path: 'home-splash',
-                component: HomeSplashComponent
+                loadChildren: () => import('./home-splash/home-splash.module').then(m => m.HomeSplashModule)
             },
             {
                 path: 'side-by-side',
@@ -33,11 +31,11 @@ const routes: Routes = [
             },
             {
                 path: 'search',
-                component: SearchComponent
+                loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
             }
-            ]
-        }
-    ];
+        ]
+    }
+];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
