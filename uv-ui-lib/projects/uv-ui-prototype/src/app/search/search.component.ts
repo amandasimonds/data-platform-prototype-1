@@ -1,6 +1,6 @@
 import { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { HeaderService } from '../services/header.service';
-import { searchItems } from './searchItems';
+import { searchItems } from './search-results/searchItems';
 
 @Component({
   selector: 'lib-search',
@@ -10,7 +10,7 @@ import { searchItems } from './searchItems';
 })
 export class SearchComponent implements OnInit {
 
-    public items = searchItems;
+    public items = searchItems
 
     public searchTabs = [
         {
