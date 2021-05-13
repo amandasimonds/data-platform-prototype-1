@@ -1,0 +1,15 @@
+<div class="documents box flex">
+    <div class="heading-container">
+        <p class="heading-3">Documents</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content-container">
+        <div class="item margin-bottom-md" *ngFor="let item of items">
+            <p class="heading-5">{{item.title}}</p>
+            <p class="paragraph">{{item.description}}</p>
+        </div>
+        
+    </div>
+</div>
