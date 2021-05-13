@@ -35,4 +35,28 @@ export const searchItems = [
         title: 'API 13M-4 / ISO 13503-4',
         description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
     },
+    {
+        title: 'API 13M-4 / ISO 13503-4',
+        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
+    },
+    {
+        title: 'API 13M-4 / ISO 13503-4',
+        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
+    },
+    {
+        title: 'API 13M-4 / ISO 13503-4',
+        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
+    },
+    {
+        title: 'API 13M-4 / ISO 13503-4',
+        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
+    },
+    {
+        title: 'API 13M-4 / ISO 13503-4',
+        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
+    },
+    {
+        title: 'API 13M-4 / ISO 13503-4',
+        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
+    },
 ];
