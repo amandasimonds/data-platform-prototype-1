@@ -42,7 +42,7 @@ export class SearchComponent implements OnInit {
     constructor(private headerService: HeaderService){}
 
     ngOnInit(): void {
-        this.headerService.setTitle('Search')
-        this.headerService.setAppIcon('assets/search.svg#search')
+        this.headerService.setTitle('Search');
+        this.headerService.setAppIcon('assets/search.svg#search');
     }
 }

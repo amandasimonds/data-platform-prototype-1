@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { HeaderService } from '../services/header.service';
 
 @Component({
   selector: 'prototype-uv-ui-global-where-used',
@@ -28,4 +29,11 @@ export class GlobalWhereUsedComponent {
             results: ''
         }
     ];
+
+    constructor(private headerService: HeaderService){}
+
+    ngOnInit(): void {
+        this.headerService.setTitle('Global Where Used');
+        this.headerService.setAppIcon('assets/apps-gwu.svg#inspect');
+    }
 }
