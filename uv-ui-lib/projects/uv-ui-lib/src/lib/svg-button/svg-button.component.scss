@@ -50,6 +50,10 @@
 
 .gray {
     color: $color-gray-light-3;
+    
+    &:hover {
+        color: $color-blue;
+    }
 }
 
 .blue {

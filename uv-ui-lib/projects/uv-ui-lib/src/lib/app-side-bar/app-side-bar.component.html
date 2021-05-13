@@ -6,7 +6,7 @@
             
             <lib-uv-ui-button buttonText="Back" type="btn-blue"></lib-uv-ui-button>
 
-            <lib-uv-ui-svg-button color='blue' size='xs' svgPath='assets/filter.svg#filter'></lib-uv-ui-svg-button>
+            <lib-uv-ui-svg-button color='blue' svgPath='assets/filter.svg#filter'></lib-uv-ui-svg-button>
         
         </div>
 
@@ -20,9 +20,12 @@
 
     <div class="app-side-bar__bottom-content">
 
-        <div *ngFor="let tab of tabs trackBy: trackByFn" class="tab">
-            <lib-uv-ui-image-button class="margin-right-sm" [src]="tab.icon"></lib-uv-ui-image-button>
-            <a [href]="tab.link">{{tab.linkText}}</a>
+        <div *ngFor="let tab of tabs trackBy: trackByFn" class="tab justify-content-space-between">
+            <div>
+                <lib-uv-ui-svg-button color='gray' class="margin-right-sm" [svgPath]="tab.icon" ></lib-uv-ui-svg-button>
+                <a [href]="tab.link">{{tab.linkText}}</a>
+            </div>
+            <span class="chip" *ngIf="tab.results">{{tab.results}}</span>
         </div>
 
     </div>

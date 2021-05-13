@@ -14,24 +14,28 @@ export class SearchComponent implements OnInit {
 
     public searchTabs = [
         {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            icon: 'assets/filter.svg#filter',
             link: '/',
-            linkText: 'Parts'
+            linkText: 'Parts',
+            results: '49'
         },
         {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            icon: 'assets/filter.svg#filter',
             link: '/',
-            linkText: 'Requirements'
+            linkText: 'Requirements',
+            results: '274'
         },
         {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            icon: 'assets/filter.svg#filter',
             link: '/',
-            linkText: 'Documents'
+            linkText: 'Documents',
+            results: '276'
         },
         {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            icon: 'assets/filter.svg#filter',
             link: '/',
-            linkText: 'Recent Searches'
+            linkText: 'Recent Searches',
+            results: ''
         }
     ];
 

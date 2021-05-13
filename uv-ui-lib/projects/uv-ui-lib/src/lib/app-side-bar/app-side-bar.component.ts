@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { IGwuTab } from '../interfaces/app-side-bar.interfaces';
+import { ITab } from '../interfaces/app-side-bar.interfaces';
 
 @Component({
     selector: 'lib-uv-ui-app-side-bar',
@@ -10,13 +10,13 @@ import { IGwuTab } from '../interfaces/app-side-bar.interfaces';
 export class AppSideBarComponent {
     @Input() public titleText = '';
     @Input() public descriptionText = '';
-    @Input() public tabs: IGwuTab[];
+    @Input() public tabs: ITab[];
 
     constructor(){
         this.tabs = [];
     }
 
-    public trackByFn(_: number, {link}: IGwuTab): string {
+    public trackByFn(_: number, {link}: ITab): string {
         return link;
     }
 }
