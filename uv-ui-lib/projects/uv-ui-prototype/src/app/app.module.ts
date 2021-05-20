@@ -14,7 +14,8 @@ import {
     SnippetModule,
     DropdownButtonModule,
     ImageButtonModule,
-    SvgButtonModule
+    SvgButtonModule,
+    TabModule
 } from '../../../uv-ui-lib/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -53,7 +54,8 @@ import { SearchModule } from './search/search.module';
         ImageButtonModule,
         SvgButtonModule,
         HomeSplashModule,
-        SearchModule
+        SearchModule,
+        TabModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,19 +1,53 @@
 <div class="grid">
+    <div class="sidebar">     
+        <lib-uv-ui-app-side-bar titleText="600 Results">
 
-    <div class="sidebar">
-    
-        <lib-uv-ui-app-side-bar
-            titleText="600 Results"
-            [tabs]="searchTabs"
-            >
+            <div top class="flex justify-content-space-between">
+                <lib-uv-ui-button buttonText="Back" type="btn-blue" (click)="clearResults()"></lib-uv-ui-button>
+                <lib-uv-ui-svg-button color='blue' svgPath='assets/filter.svg#filter'></lib-uv-ui-svg-button>
+            </div>
+
+            <div bottom>
+                
+                <div *ngFor="let tab of searchTabs">
+                <lib-uv-ui-tab 
+                    svgPath="{{tab.icon}}" 
+                    label="{{tab.linkText}}" 
+                    (click)="onSelected()">
+                </lib-uv-ui-tab>
+                </div> 
+               
+                <lib-uv-ui-tab 
+                    [isActive]="getTabState()"
+                    svgPath="assets/filter.svg#filter" 
+                    label="Parts" 
+                    (click)="getPartsResults()">
+                </lib-uv-ui-tab>
+                <lib-uv-ui-tab 
+                    [isActive]="true"
+                    svgPath="assets/filter.svg#filter" 
+                    label="Requirements" 
+                    (click)="getRequirementsResults()">
+                </lib-uv-ui-tab>
+                <lib-uv-ui-tab 
+                    svgPath="assets/filter.svg#filter" 
+                    label="Documents" 
+                    (click)="getDocumentsResults()">
+                </lib-uv-ui-tab>
+                <lib-uv-ui-tab 
+                    svgPath="assets/filter.svg#filter" 
+                    label="Recent Searches" 
+                    (click)="getRecentSearches()">
+                </lib-uv-ui-tab>
+            </div>
+
         </lib-uv-ui-app-side-bar>
-        
     </div>
-
+    
     <div class="content">
-
-        <router-outlet></router-outlet>
-        
+        <app-search-results *ngIf="searchItems.length > 0" [searchResults]="searchItems"></app-search-results>
+        <app-landing *ngIf="searchItems.length === 0"></app-landing>
+        <!-- <router-outlet></router-outlet> -->
     </div>
-
+    
 </div>
