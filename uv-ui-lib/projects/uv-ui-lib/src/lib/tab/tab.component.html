@@ -1,0 +1,9 @@
+<div 
+    class="tab justify-content-space-between" 
+    [ngClass]="{'disabled': isDisabled, 'active': isActive}">
+    <div>
+        <svg class="gray margin-right-sm position"><use [attr.href]="svgPath"></use></svg>
+        {{label}}
+    </div>
+    <ng-content></ng-content>
+</div>

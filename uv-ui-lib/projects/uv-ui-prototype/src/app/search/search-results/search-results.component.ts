@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { searchItems } from './searchItems';
+import { SearchResult } from '../search-result.model';
 
 @Component({
   selector: 'app-search-results',
@@ -9,6 +10,8 @@ import { searchItems } from './searchItems';
 })
 export class SearchResultsComponent {
 
-    public items = searchItems;
+    @Input() public searchResults: SearchResult[] = [];
+
+    constructor() {}
 
 }

@@ -2,12 +2,8 @@
 
     <div class="app-side-bar__top-content">
 
-        <div class="button-container margin-bottom-sm flex justify-content-space-between">
-            
-            <lib-uv-ui-button buttonText="Back" type="btn-blue"></lib-uv-ui-button>
-
-            <lib-uv-ui-svg-button color='blue' svgPath='assets/filter.svg#filter'></lib-uv-ui-svg-button>
-        
+        <div class="margin-bottom-sm">
+            <ng-content select="[top]"></ng-content> 
         </div>
 
         <p class="heading-4 margin-bottom-sm">{{titleText}}</p>
@@ -19,15 +15,7 @@
     <div class="divider"></div>
 
     <div class="app-side-bar__bottom-content">
-
-        <div *ngFor="let tab of tabs trackBy: trackByFn" class="tab justify-content-space-between">
-            <div>
-                <lib-uv-ui-svg-button color='gray' class="margin-right-sm" [svgPath]="tab.icon" ></lib-uv-ui-svg-button>
-                <a [href]="tab.link">{{tab.linkText}}</a>
-            </div>
-            <span class="chip" *ngIf="tab.results">{{tab.results}}</span>
-        </div>
-
+        <ng-content select="[bottom]"></ng-content>
     </div>
 
 </div>

@@ -9,8 +9,10 @@
     
     <lib-uv-ui-app-side-bar
         titleText="Title Can Go Here"
-        [tabs]="gwuTabs"
         descriptionText="Lorem ipsum dolor sit amet consectetur eiusmod tempor adipiscing elit sed do incididunt ut labore">
+        <div *ngFor="let tab of gwuTabs">
+            <lib-uv-ui-tab svgPath="{{tab.icon}}" label="{{tab.linkText}}"></lib-uv-ui-tab>
+        </div>
     </lib-uv-ui-app-side-bar>
     
 </div>
