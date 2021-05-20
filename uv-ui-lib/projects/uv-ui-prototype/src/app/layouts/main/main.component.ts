@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { navItems } from './navItems';
 import { HeaderService } from '../../services/header.service';
 
@@ -14,6 +14,7 @@ export class MainComponent implements OnInit {
     public nav = navItems;
     public title = '';
     public appIcon = '';
+    @Input() public searchQuery = '';
 
     constructor(public headerService: HeaderService, private ref: ChangeDetectorRef) { }
     
@@ -26,5 +27,9 @@ export class MainComponent implements OnInit {
             this.appIcon = icon;
             this.ref.detectChanges();
         });
+    }
+
+    onSearchAction(query: string) {
+        // if (query === 'part')
     }
 }
