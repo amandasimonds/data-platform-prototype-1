@@ -27,6 +27,9 @@ import { HomeSplashModule } from './home-splash/home-splash.module';
 import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
 import { MainComponent } from './layouts/main/main.component';
 import { SearchModule } from './search/search.module';
+import { HelperService } from './services/helper.service';
+import { AuthService } from './services/auth.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -55,9 +58,10 @@ import { SearchModule } from './search/search.module';
         SvgButtonModule,
         HomeSplashModule,
         SearchModule,
-        TabModule
+        TabModule,
+        HttpClientModule
     ],
-    providers: [],
+    providers: [HelperService, AuthService, HttpClient],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

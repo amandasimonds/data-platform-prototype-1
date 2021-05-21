@@ -1,5 +1,6 @@
 import { Component,  ChangeDetectionStrategy, OnInit, EventEmitter } from '@angular/core';
 import { HeaderService } from '../services/header.service';
+import { SearchResult } from './search-result.model';
 // import { searchItems } from './search-results/searchItems';
 
 @Component({
@@ -10,8 +11,10 @@ import { HeaderService } from '../services/header.service';
 })
 export class SearchComponent implements OnInit {
 
-    public searchItems: {title: string, description: string}[] = [];
+    public searchItemsArray: SearchResult[] = [];
+    public searchItem: SearchResult = {category: '', title: '', description: ''};
     public searchCategory = '';
+    public activeExample = true;
 
     public searchTabs = [
         {
@@ -52,7 +55,8 @@ export class SearchComponent implements OnInit {
     }
 
     getPartsResults(){
-        this.searchItems.push({
+        this.searchItemsArray.push({
+            category: 'Parts',
             title: 'API 13M-4 / ISO 13503-4',
             description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
         });
@@ -60,28 +64,31 @@ export class SearchComponent implements OnInit {
     }
 
     getRequirementsResults(){
-        this.searchItems.push({
+        this.searchItemsArray.push({
+            category: 'Parts',
             title: 'API 13M-4 / ISO 13503-4',
             description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
         });
     }
 
     getDocumentsResults(){
-        this.searchItems.push({
+        this.searchItemsArray.push({
+            category: 'Parts',
             title: 'API 13M-4 / ISO 13503-4',
             description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
         });
     }
 
     getRecentSearches(){
-        this.searchItems.push({
+        this.searchItemsArray.push({
+            category: 'Parts',
             title: 'API 13M-4 / ISO 13503-4',
             description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
         });
     }
 
     clearResults(){
-        this.searchItems = [];
+        this.searchItemsArray = [];
     }
 
     getTabState(){
@@ -92,8 +99,13 @@ export class SearchComponent implements OnInit {
         }
     }
 
-    onSelected() {
-        
+    toggleActive(){
+        this.activeExample = !this.activeExample;
+        return this.activeExample;
+    }
+
+    onSelected(searchItem: SearchResult) {
+        this.searchItemsArray.push(searchItem)
     }
 
     // public trackByFn(_: number, {link}: this.searchTabs): string {

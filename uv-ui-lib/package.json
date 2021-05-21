@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "lint-lib": "ng lint uv-ui-lib",
     "lint-scss": "npx stylelint **/*.scss",
+    "build-prototype": "ng build uv-ui-prototype",
     "build-components": "ng build uv-ui-components",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",

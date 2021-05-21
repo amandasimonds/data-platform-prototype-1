@@ -5,15 +5,27 @@ import { MainComponent } from './layouts/main/main.component';
 import { SideBySideComponent } from './side-by-side/side-by-side.component';
 import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
 import { SettingsComponent } from './settings/settings.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthGuardComponent } from './layouts/auth-guard/auth-guard.component';
 
 const routes: Routes = [
     {
-        path: '', redirectTo: '/login', pathMatch: 'full'
+        path: '',
+        component: AuthGuardComponent,
+        canActivate: [AuthGuardService],
     },
     {
         path: 'login',
+        component: LoginComponent,
+    },
+    {
+        path: 'logout',
         component: LoginComponent
     },
+    {
+		path: 'auth-callback',
+		component: AuthGuardComponent,
+	},
     {
         path: 'main',
         component: MainComponent,
