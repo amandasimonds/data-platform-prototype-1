@@ -9,30 +9,33 @@
 
             <div bottom>
                 
-                <div *ngFor="let tab of searchTabs">
+                <!-- <div *ngFor="let tab of searchTabs">
                 <lib-uv-ui-tab 
                     svgPath="{{tab.icon}}" 
                     label="{{tab.linkText}}" 
-                    (click)="onSelected()">
+                    (click)="onSelected(searchItem)">
                 </lib-uv-ui-tab>
-                </div> 
+                </div>  -->
                
                 <lib-uv-ui-tab 
-                    [isActive]="getTabState()"
+                    [isDisabled]="true"
                     svgPath="assets/filter.svg#filter" 
                     label="Parts" 
                     (click)="getPartsResults()">
+                    
                 </lib-uv-ui-tab>
-                <lib-uv-ui-tab 
-                    [isActive]="true"
+                <lib-uv-ui-tab   
                     svgPath="assets/filter.svg#filter" 
                     label="Requirements" 
                     (click)="getRequirementsResults()">
+                    <span class="chip">210</span>
                 </lib-uv-ui-tab>
                 <lib-uv-ui-tab 
+                    [isActive]="toggleActive()"
                     svgPath="assets/filter.svg#filter" 
                     label="Documents" 
                     (click)="getDocumentsResults()">
+                    <span class="chip">103</span>
                 </lib-uv-ui-tab>
                 <lib-uv-ui-tab 
                     svgPath="assets/filter.svg#filter" 
@@ -45,9 +48,8 @@
     </div>
     
     <div class="content">
-        <app-search-results *ngIf="searchItems.length > 0" [searchResults]="searchItems"></app-search-results>
-        <app-landing *ngIf="searchItems.length === 0"></app-landing>
+        <app-search-results *ngIf="searchItemsArray.length > 0" [searchResults]="searchItemsArray"></app-search-results>
+        <app-landing *ngIf="searchItemsArray.length === 0"></app-landing>
         <!-- <router-outlet></router-outlet> -->
     </div>
-    
 </div>

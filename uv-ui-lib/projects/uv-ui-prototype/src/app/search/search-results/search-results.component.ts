@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { searchItems } from './searchItems';
+import { documentsResults } from './documentResults';
 import { SearchResult } from '../search-result.model';
 
 @Component({
