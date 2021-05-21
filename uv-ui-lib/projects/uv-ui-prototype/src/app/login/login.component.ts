@@ -12,6 +12,7 @@ export class LoginComponent {
   constructor(private route: Router) { }
 
   public login() {
+    console.log('login button');
     this.route.navigate(['/main/home-splash']);
   }
 }
