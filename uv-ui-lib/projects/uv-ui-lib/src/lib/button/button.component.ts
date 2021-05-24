@@ -7,5 +7,16 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent {
-    @Input() public buttonText = '';
+    @Input() public buttonText = 'Button';
+    @Input() public type: 'btn' | 'btn-login' | 'btn-chip' | 'btn-blue' | 'btn-round' = 'btn'
+
+    public cssClasses = ['btn'];
+
+    public getCssClasses(): void {
+        this.cssClasses.push(this.type);
+    }
+
+    public ngOnInit(): void {
+        this.getCssClasses();
+    }
 }

@@ -24,6 +24,8 @@ export * from './lib/snippet/snippet.component';
 export * from './lib/snippet/snippet.module';
 export * from './lib/svg-button/svg-button.component';
 export * from './lib/svg-button/svg-button.module';
+export * from './lib/tab/tab.component';
+export * from './lib/tab/tab.module';
 export * from './lib/task-snippet/task-snippet.component';
 export * from './lib/task-snippet/task-snippet.module';
 export * from './lib/widget/widget.component';

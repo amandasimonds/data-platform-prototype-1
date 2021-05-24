@@ -1,0 +1,13 @@
+.search-landing { 
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &--logo {
+        display: block;
+        opacity: .3;
+        width: 123px;
+        height: 123px;
+        margin: 0 auto 30px auto;
+    }
+}

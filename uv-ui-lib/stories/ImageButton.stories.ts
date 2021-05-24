@@ -17,5 +17,5 @@ const Template: Story<ImageButtonComponent> = (args: ImageButtonComponent) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-    src: ''
+    src: 'http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg'
 };

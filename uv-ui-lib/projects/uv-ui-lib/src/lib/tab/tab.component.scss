@@ -1,0 +1,56 @@
+@import '../scss/variables';
+
+.tab {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 14px 24px;
+
+    &:hover {
+        cursor: pointer;
+        color: $color-blue;
+        font-weight: bold;
+        background-color: $color-gray-light-5;
+        box-shadow: inset -4px 0 0 $color-blue;
+            a, svg, span {
+                color: $color-blue;
+            }
+    }
+}
+
+.disabled {
+    color: $color-gray-light;
+    pointer-events: none;
+    cursor: not-allowed;
+    a, svg, span {
+        color: $color-gray-light;
+        pointer-events: none;
+    }
+    &:hover {
+        cursor: not-allowed;
+        color: $color-gray-light;
+        font-weight: none;
+        background-color: white;
+        box-shadow: none;
+        pointer-events: none;
+        a, svg, span {
+            color: $color-gray-light;
+            pointer-events: none;
+        }
+    }
+}
+
+.active {
+    color: $color-blue;
+        font-weight: bold;
+        background-color: $color-gray-light-5;
+        box-shadow: inset -4px 0 0 $color-blue;
+            a, svg, span {
+                color: $color-blue;
+            }
+}
+
+.position {
+    position: relative;
+    top: 4px;
+}
