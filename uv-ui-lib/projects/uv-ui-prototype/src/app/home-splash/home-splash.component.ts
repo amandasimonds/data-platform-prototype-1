@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { HeaderService } from '../services/header.service';
 
 @Component({
   selector: 'prototype-uv-ui-home-splash',
@@ -6,6 +7,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./home-splash.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeSplashComponent {
+export class HomeSplashComponent implements OnInit{
 
+    constructor(private headerService: HeaderService){}
+
+    ngOnInit(): void {
+        this.headerService.setTitle('Dashboard');
+        this.headerService.setAppIcon('assets/apps-quad.svg#dashboard');
+    }
+    
 }

@@ -14,7 +14,8 @@ import {
     SnippetModule,
     DropdownButtonModule,
     ImageButtonModule,
-    SvgButtonModule
+    SvgButtonModule,
+    TabModule
 } from '../../../uv-ui-lib/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,9 +23,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { StartPageComponent } from './start-page/start-page.component';
 import { SideBySideComponent } from './side-by-side/side-by-side.component';
-import { HomeSplashComponent } from './home-splash/home-splash.component';
+import { HomeSplashModule } from './home-splash/home-splash.module';
 import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
 import { MainComponent } from './layouts/main/main.component';
+import { SearchModule } from './search/search.module';
+import { HelperService } from './services/helper.service';
+import { AuthService } from './services/auth.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SearchService } from './services/search.service';
 
 @NgModule({
     declarations: [
@@ -32,9 +38,8 @@ import { MainComponent } from './layouts/main/main.component';
         LoginComponent,
         StartPageComponent,
         SideBySideComponent,
-        HomeSplashComponent,
         GlobalWhereUsedComponent,
-        MainComponent
+        MainComponent,
     ],
     imports: [
         BrowserModule,
@@ -51,9 +56,13 @@ import { MainComponent } from './layouts/main/main.component';
         SnippetModule,
         DropdownButtonModule,
         ImageButtonModule,
-        SvgButtonModule
+        SvgButtonModule,
+        HomeSplashModule,
+        SearchModule,
+        TabModule,
+        HttpClientModule
     ],
-    providers: [],
+    providers: [HelperService, AuthService, HttpClient, SearchService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
