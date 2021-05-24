@@ -1,10 +1,12 @@
 <div class="grid">
     <div class="header">
         <lib-uv-ui-header
-            headerText="Dashboard"
-            iconName="dashboard">
+            [headerText]="title"
+            [headerSvgPath]="appIcon">
 
-            <lib-uv-ui-svg-button (click)="profileClick($event)" color='blue' svgPath='assets/profile.svg#profile' class="margin-right-sm"></lib-uv-ui-svg-button>
+            <lib-uv-ui-search-panel *ngIf="title === 'Search'" (searchClicked)="onSearchAction(searchQuery)"></lib-uv-ui-search-panel>
+
+            <lib-uv-ui-svg-button color='blue' svgPath='assets/profile.svg#profile' class="margin-left-sm margin-right-sm"></lib-uv-ui-svg-button>
 
         </lib-uv-ui-header>
     </div>

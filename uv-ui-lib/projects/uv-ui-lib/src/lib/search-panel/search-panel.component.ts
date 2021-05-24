@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'lib-uv-ui-search-panel',
@@ -7,5 +7,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchPanelComponent {
+
+    @Output() searchClicked = new EventEmitter<void>();
+
+    onSearch() {
+        this.searchClicked.emit();
+    }
 
 }

@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { navItems } from './navItems';
+import { HeaderService } from '../../services/header.service';
 
 @Component({
     selector: 'prototype-app-main',
@@ -8,26 +9,27 @@ import { navItems } from './navItems';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class MainComponent {
+export class MainComponent implements OnInit {
 
-    public isExpanded = false;
     public nav = navItems;
+    public title = '';
+    public appIcon = '';
+    @Input() public searchQuery = '';
 
-    public expandFilters(event: Event): void {
-        console.log('expand button clicked', event);
-        this.isExpanded = !this.isExpanded;
+    constructor(public headerService: HeaderService, private ref: ChangeDetectorRef) { }
+    
+    ngOnInit() {
+        this.headerService.currentTitle$.subscribe(title => {
+            this.title = title;
+            this.ref.detectChanges();
+        });
+        this.headerService.currentIcon$.subscribe(icon => {
+            this.appIcon = icon;
+            this.ref.detectChanges();
+        });
     }
 
-    public snippetClick(event: Event): void {
-        console.log('snippet was clicked', event);
+    onSearchAction(query: string) {
+        // if (query === 'part')
     }
-
-    public profileClick(event: Event): void {
-    console.log('profile was clicked', event);
-    }
-
-    public helpBtnClick(event: Event): void {
-        console.log('help button was clicked', event);
-    }
-
 }
