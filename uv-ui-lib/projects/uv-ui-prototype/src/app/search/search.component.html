@@ -9,47 +9,24 @@
 
             <div bottom>
                 
-                <!-- <div *ngFor="let tab of searchTabs">
+                <div *ngFor="let tab of searchTabs">
                 <lib-uv-ui-tab 
+                    (click)="onTabClicked(tab.category)"
+                    [isDisabled]="tab.entitySearchCount === 0"
+                    [isActive]="tab.selected"
                     svgPath="{{tab.icon}}" 
-                    label="{{tab.linkText}}" 
-                    (click)="onSelected(searchItem)">
+                    label="{{tab.title}}" 
+                    [routerLink]="tab.routeUri">
+                    <span class="chip" *ngIf="categorySelected">{{tab.entitySearchCount}}</span>
                 </lib-uv-ui-tab>
-                </div>  -->
-               
-                <lib-uv-ui-tab 
-                    [isDisabled]="true"
-                    svgPath="assets/filter.svg#filter" 
-                    label="Parts" 
-                    (click)="getPartsResults()">
-                    
-                </lib-uv-ui-tab>
-                <lib-uv-ui-tab   
-                    svgPath="assets/filter.svg#filter" 
-                    label="Requirements" 
-                    (click)="getRequirementsResults()">
-                    <span class="chip">210</span>
-                </lib-uv-ui-tab>
-                <lib-uv-ui-tab 
-                    [isActive]="toggleActive()"
-                    svgPath="assets/filter.svg#filter" 
-                    label="Documents" 
-                    (click)="getDocumentsResults()">
-                    <span class="chip">103</span>
-                </lib-uv-ui-tab>
-                <lib-uv-ui-tab 
-                    svgPath="assets/filter.svg#filter" 
-                    label="Recent Searches" 
-                    (click)="getRecentSearches()">
-                </lib-uv-ui-tab>
+                </div> 
             </div>
 
         </lib-uv-ui-app-side-bar>
     </div>
     
     <div class="content">
-        <app-search-results *ngIf="searchItemsArray.length > 0" [searchResults]="searchItemsArray"></app-search-results>
-        <app-landing *ngIf="searchItemsArray.length === 0"></app-landing>
-        <!-- <router-outlet></router-outlet> -->
+        <app-search-results *ngIf="categorySelected" [category]="searchCategory"></app-search-results>
+        <app-landing *ngIf="!categorySelected"></app-landing>
     </div>
 </div>

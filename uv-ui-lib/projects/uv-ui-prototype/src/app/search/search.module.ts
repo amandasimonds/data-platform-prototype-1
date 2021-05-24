@@ -8,12 +8,22 @@ import { SvgButtonModule } from '../../../../uv-ui-lib/src/public-api';
 import { TabModule } from '../../../../uv-ui-lib/src/public-api';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { LandingComponent } from './landing/landing.component';
-import { SearchResult } from './search-result.model';
+import { SearchResult } from './models/search-result.model';
+import { FilterResultsPipe } from './search-results/filter-results.pipe';
 
 @NgModule({
-  declarations: [SearchComponent, SearchResultsComponent, LandingComponent],
+  declarations: [
+    SearchComponent, 
+    SearchResultsComponent, 
+    LandingComponent, 
+    FilterResultsPipe],
   imports: [
-    CommonModule, SearchRoutingModule, AppSideBarModule, TabModule, ButtonModule, SvgButtonModule
+    CommonModule, 
+    SearchRoutingModule, 
+    AppSideBarModule, 
+    TabModule, 
+    ButtonModule, 
+    SvgButtonModule
   ],
   exports: [ SearchComponent ]
 })

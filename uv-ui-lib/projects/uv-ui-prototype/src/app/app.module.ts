@@ -30,6 +30,7 @@ import { SearchModule } from './search/search.module';
 import { HelperService } from './services/helper.service';
 import { AuthService } from './services/auth.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SearchService } from './services/search.service';
 
 @NgModule({
     declarations: [
@@ -61,7 +62,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
         TabModule,
         HttpClientModule
     ],
-    providers: [HelperService, AuthService, HttpClient],
+    providers: [HelperService, AuthService, HttpClient, SearchService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
