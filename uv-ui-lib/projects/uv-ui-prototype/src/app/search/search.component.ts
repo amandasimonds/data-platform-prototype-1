@@ -73,14 +73,6 @@ export class SearchComponent implements OnInit {
        this.categorySelected = false;
     }
 
-    getTabState(){
-        if (this.searchCategory === 'parts') {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     toggleActive(){
         this.activeExample = !this.activeExample;
         return this.activeExample;

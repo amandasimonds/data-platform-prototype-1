@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, OnInit, SimpleChanges } from '@angular/core';
 import { SearchResult } from '../models/search-result.model';
 import { SearchService } from '../../services/search.service';
 
@@ -20,10 +20,16 @@ export class SearchResultsComponent implements OnInit {
         this.documentsSearchResults = this.searchService.documentsSearchResults;
         this.partsSearchResults = this.searchService.partsSearchResults;
         this.requirementsSearchResults = this.searchService.requirementsSearchResults;
+        this.searchResults = this.searchService.allSearchResults;
     }
 
     ngOnInit(): void {
-        this.getSearchResults();
+        // this.getSearchResults();
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log(this.category);
+        console.log(this.searchResults);
     }
 
     getSearchResults(){

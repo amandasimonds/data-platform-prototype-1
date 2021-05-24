@@ -7,7 +7,7 @@
 <div class="divider"></div>
     
 <div class="content-container">
-    <div class="item margin-bottom-md" *ngFor="let item of searchResults">
+    <div class="item margin-bottom-md" *ngFor="let item of searchResults | filterResults: category">
         <p class="heading-5">{{item.title}}</p>
         <p class="paragraph">{{item.description}}</p>
     </div>
