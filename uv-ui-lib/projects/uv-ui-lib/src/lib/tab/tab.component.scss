@@ -20,17 +20,22 @@
 
 .disabled {
     color: $color-gray-light;
+    pointer-events: none;
+    cursor: not-allowed;
     a, svg, span {
         color: $color-gray-light;
+        pointer-events: none;
     }
-    &:hover{
+    &:hover {
         cursor: not-allowed;
         color: $color-gray-light;
         font-weight: none;
         background-color: white;
         box-shadow: none;
+        pointer-events: none;
         a, svg, span {
             color: $color-gray-light;
+            pointer-events: none;
         }
     }
 }

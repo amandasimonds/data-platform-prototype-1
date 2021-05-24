@@ -12,6 +12,7 @@ export class AuthService {
         authority: 'https://gwu.auth.us-east-1.amazoncognito.com',
         // TODO: These values will be based on the subdomain
         clientId: '2fakcqk6ihkmk78h8h0o7vs0bq',
+        // redirectUri: 'https://uvuiprototype.z13.web.core.windows.net/auth-callback',
         redirectUri: 'http://localhost:4200/auth-callback',
     };
     constructor(private http: HttpClient, private helper: HelperService) {}
@@ -48,6 +49,7 @@ export class AuthService {
         localStorage.clear();
         this.helper.navigateToUrl(
             `${this.settings.authority}/logout?client_id=${this.settings.clientId}&logout_uri=http://localhost:4200/logout`
+            // `${this.settings.authority}/logout?client_id=${this.settings.clientId}&logout_uri=https://uvuiprototype.z13.web.core.windows.net/logout`
         );
     }
 
