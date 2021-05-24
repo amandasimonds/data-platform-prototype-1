@@ -7,5 +7,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-    @Input() public headerText = '';
+    @Input() public headerText = '' ;
+    @Input() public headerSvgPath = '';
 }

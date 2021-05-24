@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { HeaderService } from '../services/header.service';
 
 @Component({
   selector: 'prototype-uv-ui-global-where-used',
@@ -10,19 +11,29 @@ export class GlobalWhereUsedComponent {
 
     public gwuTabs = [
         {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            icon: 'assets/more-horizontal.svg#moreHorizontal',
             link: '/',
-            linkText: 'Link'
+            linkText: 'Link',
+            results: ''
         },
         {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            icon: 'assets/more-horizontal.svg#moreHorizontal',
             link: '/',
-            linkText: 'Link'
+            linkText: 'Link',
+            results: ''
         },
         {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',
+            icon: 'assets/more-horizontal.svg#moreHorizontal',
             link: '/',
-            linkText: 'Link'
+            linkText: 'Link',
+            results: ''
         }
     ];
+
+    constructor(private headerService: HeaderService){}
+
+    ngOnInit(): void {
+        this.headerService.setTitle('Global Where Used');
+        this.headerService.setAppIcon('assets/apps-gwu.svg#inspect');
+    }
 }
