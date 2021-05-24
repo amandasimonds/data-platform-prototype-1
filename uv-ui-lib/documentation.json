@@ -1,10 +1,1589 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "IDropdown",
+            "id": "interface-IDropdown-8c241063812158171275031b06e74ed7",
+            "file": "projects/uv-ui-lib/src/lib/interfaces/dropdown-button.interfaces.ts",
+            "type": "interface",
+            "sourceCode": "export interface IDropdown{\r\n    name: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "IGwuTab",
+            "id": "interface-IGwuTab-ea266f103561a08e9f189c57f777f73e",
+            "file": "projects/uv-ui-lib/src/lib/interfaces/app-side-bar.interfaces.ts",
+            "type": "interface",
+            "sourceCode": "export interface IGwuTab {\r\n    icon: string;\r\n    link: string;\r\n    linkText: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "icon",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "link",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "linkText",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "INav",
+            "id": "interface-INav-b458688ba38cec31055d4425be26aac4",
+            "file": "projects/uv-ui-lib/src/lib/interfaces/navbar.interfaces.ts",
+            "type": "interface",
+            "sourceCode": "export interface INav {\r\n    icon: string;\r\n    navlink: string;\r\n    classes: string[];\r\n  }\r\n",
+            "properties": [
+                {
+                    "name": "classes",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "icon",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "navlink",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "INavBarSub",
+            "id": "interface-INavBarSub-428ee98b6e7cb19fa6d9f1bd7a68e03a",
+            "file": "projects/uv-ui-lib/src/lib/interfaces/navbar-sub.interfaces.ts",
+            "type": "interface",
+            "sourceCode": "export interface INavBarSub {\r\n    icon: string;\r\n    snippetHeading: string;\r\n    snippetTxt: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "icon",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "snippetHeading",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "snippetTxt",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "ITask",
+            "id": "interface-ITask-47f4f7417d015bedd771392e2699ee5a",
+            "file": "projects/uv-ui-lib/src/lib/interfaces/side-by-side.interfaces.ts",
+            "type": "interface",
+            "sourceCode": "export interface ITask{\r\n    started: string;\r\n    link: string;\r\n    title: string;\r\n    description: string;\r\n    date: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "date",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "link",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "started",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        }
+    ],
     "injectables": [],
-    "classes": [],
+    "classes": [
+        {
+            "name": "AppPage",
+            "id": "class-AppPage-6e1ba91687745452b09ef4b346ddf677",
+            "file": "projects/uv-ui-prototype/e2e/src/app.po.ts",
+            "type": "class",
+            "sourceCode": "import { browser, by, element } from 'protractor';\r\n\r\nexport class AppPage {\r\n  public async navigateTo(): Promise<unknown> {\r\n    return browser.get(browser.baseUrl);\r\n  }\r\n\r\n  public async getTitleText(): Promise<string> {\r\n    return element(by.css('app-root .content span')).getText();\r\n  }\r\n}\r\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getTitleText",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<string>",
+                    "typeParameters": [],
+                    "line": 8,
+                    "modifierKind": [
+                        114,
+                        120
+                    ]
+                },
+                {
+                    "name": "navigateTo",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<unknown>",
+                    "typeParameters": [],
+                    "line": 4,
+                    "modifierKind": [
+                        114,
+                        120
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
     "directives": [],
     "components": [
+        {
+            "name": "AppBarComponent",
+            "id": "component-AppBarComponent-8ae1c906a5a5bb66a38afdd1b01f0074",
+            "file": "projects/uv-ui-lib/src/lib/app-bar/app-bar.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-app-bar",
+            "styleUrls": [
+                "./app-bar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app-bar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-app-bar',\r\n    templateUrl: './app-bar.component.html',\r\n    styleUrls: ['./app-bar.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppBarComponent {\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/variables';\r\n\r\n.app-bar {\r\n    height: 100%;\r\n    width: 100%;\r\n    border-left: none;\r\n    border-top: none;\r\n    z-index: 0;\r\n}\r\n\r\n.tags-container {\r\n    align-self: flex-start;\r\n    position: relative;\r\n    width: 60%;\r\n    height: 100%;\r\n}\r\n\r\n.container-right {\r\n    width: 64px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    align-self: flex-end;\r\n    height: 100%;\r\n    margin-right: $md-size;\r\n}\r\n",
+                    "styleUrl": "./app-bar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"app-bar box flex-inline flex-row justify-content-space-between\">\r\n\r\n    <div class=\"tags-container\"></div>\r\n\r\n<div class=\"container-right\">\r\n\r\n    <lib-uv-ui-image-button src=\"http://dpzaq1wj21co3.cloudfront.net/icons/fullscreen.svg\"></lib-uv-ui-image-button>\r\n    <lib-uv-ui-image-button src=\"http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg\"></lib-uv-ui-image-button>\r\n\r\n</div>\r\n\r\n</div>\r\n"
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-60ad2892f6f153bfb91e4a0f9356de0f",
+            "file": "projects/uv-ui-prototype/src/app/app.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppComponent {\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<router-outlet></router-outlet>\r\n"
+        },
+        {
+            "name": "AppSideBarComponent",
+            "id": "component-AppSideBarComponent-ad0e969db890f78fad2ad33763fc469f",
+            "file": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-app-side-bar",
+            "styleUrls": [
+                "./app-side-bar-component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app-side-bar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "descriptionText",
+                    "defaultValue": "''",
+                    "line": 12
+                },
+                {
+                    "name": "tabs",
+                    "line": 13,
+                    "type": "IGwuTab[]"
+                },
+                {
+                    "name": "titleText",
+                    "defaultValue": "''",
+                    "line": 11
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "trackByFn",
+                    "args": [
+                        {
+                            "name": "_",
+                            "type": "number"
+                        },
+                        {
+                            "type": "IGwuTab"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 19,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "_",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "type": "IGwuTab",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\nimport { IGwuTab } from '../interfaces/app-side-bar.interfaces';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-app-side-bar',\r\n    templateUrl: './app-side-bar.component.html',\r\n    styleUrls: ['./app-side-bar-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppSideBarComponent {\r\n    @Input() public titleText = '';\r\n    @Input() public descriptionText = '';\r\n    @Input() public tabs: IGwuTab[];\r\n\r\n    constructor(){\r\n        this.tabs = [];\r\n    }\r\n\r\n    public trackByFn(_: number, {link}: IGwuTab): string {\r\n        return link;\r\n    }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".app-side-bar {\r\n    height: 100vh;\r\n    border-left: none;\r\n    border-top: none;\r\n\r\n    &__top-content {\r\n        padding: 24px;\r\n    }\r\n\r\n    &__bottom-content {\r\n        padding: 12px 0 0 0;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./app-side-bar-component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 13
+            },
+            "templateData": "<div class=\"box app-side-bar\">\r\n\r\n    <div class=\"app-side-bar__top-content\">\r\n\r\n        <lib-uv-ui-button buttonText=\"Back\" class=\"btn btn-blue margin-bottom-lg\" ></lib-uv-ui-button>\r\n\r\n        <p class=\"heading-4 margin-bottom-lg\">{{titleText}}</p>\r\n\r\n        <p class=\"paragraph margin-bottom-lg\">{{descriptionText}}</p>\r\n\r\n    </div>\r\n\r\n    <div class=\"divider\"></div>\r\n\r\n    <div class=\"app-side-bar__bottom-content\">\r\n\r\n        <div *ngFor=\"let tab of tabs trackBy: trackByFn\" class=\"tab\">\r\n            <lib-uv-ui-image-button class=\"margin-right-sm\" [src]=\"tab.icon\"></lib-uv-ui-image-button>\r\n            <a [href]=\"tab.link\">{{tab.linkText}}</a>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>\r\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-17d4858b89eb75d1427fa98608a43b48",
+            "file": "projects/uv-ui-lib/src/lib/button/button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-button",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "buttonText",
+                    "defaultValue": "''",
+                    "line": 10
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ButtonComponent {\r\n    @Input() public buttonText = '';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/variables';\r\n@import '../scss/styles';\r\n",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button class=\"btn\">{{buttonText}}</button>\r\n\r\n\r\n"
+        },
+        {
+            "name": "DropdownButtonComponent",
+            "id": "component-DropdownButtonComponent-fe1bf330a2c139cdac5a18ee85a7ac09",
+            "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-dropdown-button",
+            "styleUrls": [
+                "./dropdown-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dropdown-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "dropdownName",
+                    "defaultValue": "''",
+                    "line": 12
+                },
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "line": 13,
+                    "type": "IDropdown[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "trackByFn",
+                    "args": [
+                        {
+                            "name": "_",
+                            "type": "number"
+                        },
+                        {
+                            "type": "IDropdown"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 15,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "_",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "type": "IDropdown",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, Input } from '@angular/core';\r\nimport { IDropdown } from '../interfaces/dropdown-button.interfaces';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-dropdown-button',\r\n    templateUrl: './dropdown-button.component.html',\r\n    styleUrls: ['./dropdown-button.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class DropdownButtonComponent {\r\n\r\n    @Input() public dropdownName = '';\r\n    @Input() public items: IDropdown[] = [];\r\n\r\n    public trackByFn(_: number, {name}: IDropdown): string {\r\n        return name;\r\n    }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/styles';\r\n\r\n.btn-dropdown {\r\n    padding: 10px 16px;\r\n    font-weight: bold;\r\n    border: $border-gray-light;\r\n}\r\n",
+                    "styleUrl": "./dropdown-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<select class=\"btn btn-dropdown\" [name]=\"dropdownName\">\r\n    <option selected hidden>{{dropdownName}}</option>\r\n    <option *ngFor=\"let item of items trackBy: trackByFn\">\r\n        {{item.name}}\r\n    </option>\r\n</select>\r\n"
+        },
+        {
+            "name": "GlobalWhereUsedComponent",
+            "id": "component-GlobalWhereUsedComponent-ee8ef4fd8d123971925899d49d01fea7",
+            "file": "projects/uv-ui-prototype/src/app/global-where-used/global-where-used.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "prototype-uv-ui-global-where-used",
+            "styleUrls": [
+                "./global-where-used.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./global-where-used.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "gwuTabs",
+                    "defaultValue": "[\r\n        {\r\n            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',\r\n            link: '/',\r\n            linkText: 'Link'\r\n        },\r\n        {\r\n            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',\r\n            link: '/',\r\n            linkText: 'Link'\r\n        },\r\n        {\r\n            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',\r\n            link: '/',\r\n            linkText: 'Link'\r\n        }\r\n    ]",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'prototype-uv-ui-global-where-used',\r\n  templateUrl: './global-where-used.component.html',\r\n  styleUrls: ['./global-where-used.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class GlobalWhereUsedComponent {\r\n\r\n    public gwuTabs = [\r\n        {\r\n            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',\r\n            link: '/',\r\n            linkText: 'Link'\r\n        },\r\n        {\r\n            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',\r\n            link: '/',\r\n            linkText: 'Link'\r\n        },\r\n        {\r\n            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/actions/more-horizontal-blue.svg',\r\n            link: '/',\r\n            linkText: 'Link'\r\n        }\r\n    ];\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".grid{\r\n    position: relative;\r\n    height: 100vh;\r\n    display: grid;\r\n    grid-gap: 0;\r\n    grid-template-columns: [col1] 336px [col2] auto;\r\n    grid-template-rows: [row1] 68px [row2] auto;\r\n    grid-template-areas: \r\n    \"sidebar appbar\"\r\n    \"sidebar main\" ;\r\n}\r\n\r\n.appbar {\r\n    grid-column: col2;\r\n    grid-row: row1;\r\n    border-top: none;\r\n}\r\n.sidebar {\r\n    grid-column: col1;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n}\r\n.content {\r\n    grid-column: col2;\r\n    grid-row: row2;\r\n}\r\n",
+                    "styleUrl": "./global-where-used.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"grid\">\r\n\r\n    \r\n    <div class=\"appbar\">\r\n    <lib-uv-ui-app-bar></lib-uv-ui-app-bar>\r\n</div>\r\n\r\n<div class=\"sidebar\">\r\n    \r\n    <lib-uv-ui-app-side-bar\r\n        titleText=\"Title Can Go Here\"\r\n        [tabs]=\"gwuTabs\"\r\n        descriptionText=\"Lorem ipsum dolor sit amet consectetur eiusmod tempor adipiscing elit sed do incididunt ut labore\">\r\n    </lib-uv-ui-app-side-bar>\r\n    \r\n</div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-widget>widget</lib-uv-ui-widget>\r\n    \r\n</div>\r\n\r\n</div>\r\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-457ac39f9d85342859d3fac31e38bdd6",
+            "file": "projects/uv-ui-lib/src/lib/header/header.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-header",
+            "styleUrls": [
+                "./header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "headerText",
+                    "defaultValue": "''",
+                    "line": 10
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-header',\r\n    templateUrl: './header.component.html',\r\n    styleUrls: ['./header.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class HeaderComponent {\r\n    @Input() public headerText = '';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/variables';\r\n@import '../scss/styles';\r\n\r\n.header {\r\n    position: relative;\r\n    border-left: none;\r\n    height: 100%;\r\n    z-index: 100;\r\n}\r\n",
+                    "styleUrl": "./header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"header box flex justify-content-space-between\">\r\n\r\n    <div class=\"flex justify-content-center align-items-center\">\r\n\r\n        <img class=\"img-small margin-md\" src=\"http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg\">\r\n        <h1 class=\"heading\">{{headerText}}</h1>\r\n\r\n    </div>\r\n\r\n    <div class=\"flex justify-content-center align-items-center\">\r\n\r\n        <ng-content></ng-content>\r\n\r\n    </div>\r\n\r\n</div>\r\n"
+        },
+        {
+            "name": "HomeSplashComponent",
+            "id": "component-HomeSplashComponent-716ca83b7ab60a364050b657a127ef55",
+            "file": "projects/uv-ui-prototype/src/app/home-splash/home-splash.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "prototype-uv-ui-home-splash",
+            "styleUrls": [
+                "./home-splash.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home-splash.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'prototype-uv-ui-home-splash',\r\n  templateUrl: './home-splash.component.html',\r\n  styleUrls: ['./home-splash.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class HomeSplashComponent {\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".logo-splash-block {\r\n    text-align: center;\r\n    position: absolute;\r\n    width: 577px;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n\r\n    &__logo{\r\n    width: 100px;\r\n    margin: 30px;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./home-splash.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"logo-splash-block\">\r\n\r\n    <img class=\"logo-splash-block__logo\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading margin-bottom-xs\">Welcome to Ultraviolet</p>\r\n    <p class=\"heading-4\">Let's get you started! Click on a module below so we can get you to the right place.</p>\r\n\r\n</div>\r\n"
+        },
+        {
+            "name": "ImageButtonComponent",
+            "id": "component-ImageButtonComponent-b5e8abfe23b33e88e2e8897e0a09f5a1",
+            "file": "projects/uv-ui-lib/src/lib/image-button/image-button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-image-button",
+            "styleUrls": [
+                "./image-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./image-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "src",
+                    "defaultValue": "''",
+                    "line": 11
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-image-button',\r\n  templateUrl: './image-button.component.html',\r\n  styleUrls: ['./image-button.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ImageButtonComponent {\r\n\r\n    @Input() public src = '';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/variables';\r\n@import '../scss/styles';\r\n\r\n.btn-image {\r\n    cursor: pointer;\r\n    width: $sm-size;\r\n    height: $sm-size;\r\n\r\n    &-xs {\r\n        width: $xs-size;\r\n        height: $xs-size;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./image-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button class='btn btn-image'><img [src]=\"src\"></button>\r\n"
+        },
+        {
+            "name": "LoginComponent",
+            "id": "component-LoginComponent-241cd241375ec3dc0594c074fe64ad8a",
+            "file": "projects/uv-ui-prototype/src/app/login/login.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sandbox-uv-ui-login",
+            "styleUrls": [
+                "./login.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./login.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "login",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'sandbox-uv-ui-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class LoginComponent {\r\n\r\n  constructor(private route: Router) { }\r\n\r\n  public login() {\r\n    this.route.navigate(['/main']);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./login.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "route",
+                        "type": "Router"
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "route",
+                        "type": "Router",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<div class=\"login box flex flex-column align-items-center position-center padding-md\">\r\n\r\n    <img class=\"img-md margin-bottom-sm\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading-3\">Welcome to UV</p>\r\n\r\n        <lib-uv-ui-button\r\n            buttonText=\"Login\"\r\n            (click)=\"login()\"\r\n            class=\"btn btn-login\">\r\n        </lib-uv-ui-button>\r\n\r\n    </div>\r\n"
+        },
+        {
+            "name": "MainComponent",
+            "id": "component-MainComponent-6f09c5731d69bc062fff249d41da17d2",
+            "file": "projects/uv-ui-prototype/src/app/layouts/main/main.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "prototype-app-main",
+            "styleUrls": [
+                "./main.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./main.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isExpanded",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "nav",
+                    "defaultValue": "navItems",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "expandFilters",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "helpBtnClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "profileClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "snippetClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy } from '@angular/core';\r\nimport { navItems } from './navItems';\r\n\r\n@Component({\r\n    selector: 'prototype-app-main',\r\n    templateUrl: './main.component.html',\r\n    styleUrls: ['./main.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\n\r\nexport class MainComponent {\r\n\r\n    public isExpanded = false;\r\n    public nav = navItems;\r\n\r\n    public expandFilters(event: Event): void {\r\n        console.log('expand button clicked', event);\r\n        this.isExpanded = !this.isExpanded;\r\n    }\r\n\r\n    public snippetClick(event: Event): void {\r\n        console.log('snippet was clicked', event);\r\n    }\r\n\r\n    public profileClick(event: Event): void {\r\n    console.log('profile was clicked', event);\r\n    }\r\n\r\n    public helpBtnClick(event: Event): void {\r\n        console.log('help button was clicked', event);\r\n    }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".grid{\r\n    position: fixed;\r\n    height: 100vh;\r\n    width: 100vw;\r\n    display: grid;\r\n    grid-gap: 0;\r\n    grid-template-columns: [col1] 64px [col2] auto;\r\n    grid-template-rows: [row1] 64px [row2] auto;\r\n    grid-template-areas: \r\n    \"navbar header\"\r\n    \"navbar main\" ;\r\n}\r\n\r\n.header {\r\n    grid-column: col2;\r\n    grid-row: row1;\r\n}\r\n\r\n.navbar {\r\n    grid-column: col1;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n}\r\n\r\n.content {\r\n    grid-column: col2;\r\n    grid-row: row2;\r\n}\r\n\r\n",
+                    "styleUrl": "./main.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"grid\">\r\n    <div class=\"header\">\r\n        <lib-uv-ui-header\r\n            headerText=\"Dashboard\"\r\n            iconName=\"dashboard\">\r\n\r\n            <lib-uv-ui-svg-button (click)=\"profileClick($event)\" color='blue' svgPath='assets/profile.svg#profile' class=\"margin-right-sm\"></lib-uv-ui-svg-button>\r\n\r\n        </lib-uv-ui-header>\r\n    </div>\r\n\r\n    <div class=\"navbar\">\r\n        <lib-uv-ui-navbar-dashboard [navlinks]=\"nav\"></lib-uv-ui-navbar-dashboard>\r\n    </div>\r\n\r\n    <div class=\"content\">\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "NavbarDashboardComponent",
+            "id": "component-NavbarDashboardComponent-69101a8018fcdbe8ce5744baafdd014e",
+            "file": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar-dashboard.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-navbar-dashboard",
+            "styleUrls": [
+                "./navbar-dashboard-component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./navbar-dashboard.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "navlinks",
+                    "defaultValue": "[]",
+                    "line": 11,
+                    "type": "INav[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "trackByFn",
+                    "args": [
+                        {
+                            "name": "_",
+                            "type": "number"
+                        },
+                        {
+                            "type": "INav"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 13,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "_",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "type": "INav",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\nimport { INav } from '../interfaces/navbar.interfaces';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-navbar-dashboard',\r\n  templateUrl: './navbar-dashboard.component.html',\r\n  styleUrls: [ './navbar-dashboard-component.scss' ],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class NavbarDashboardComponent {\r\n  @Input() public navlinks: INav[] = [];\r\n\r\n  public trackByFn(_: number, {navlink}: INav): string {\r\n    return navlink;\r\n}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/variables';\r\n\r\n.navbar-dashboard {\r\n    height: 100%;\r\n    z-index: 200;\r\n    border: $border-gray-light;\r\n    border-bottom: none;\r\n    background-color: var(--color-white);\r\n    box-shadow: $box-shadow-light;\r\n\r\n    &__divider {\r\n        border-bottom: 1px solid $color-gray-light-2;\r\n        opacity: .31;\r\n    }\r\n}\r\n\r\n.navlink-wrapper {\r\n    width: $lg-size;\r\n    height: $lg-size;\r\n    margin: 18px auto 0;\r\n    border-radius: 50%;\r\n    padding: 10px;\r\n\r\n    &:hover {\r\n        background-color: $color-gray-light-4;\r\n    }\r\n}\r\n\r\n.navbar-logo {\r\n    width: $md-size;\r\n    margin: 0 auto;\r\n    height: 62px;\r\n}\r\n",
+                    "styleUrl": "./navbar-dashboard-component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"navbar-dashboard flex flex-column align-content-center\">\r\n\r\n    <img class=\"navbar-logo\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <div class=\"navbar-dashboard__divider\"></div>\r\n\r\n    <span *ngFor=\"let navlink of navlinks trackBy: trackByFn\" class=\"navlink-wrapper\">\r\n        <a [href]=\"navlink.navlink\"><img [src]=\"navlink.icon\"></a>\r\n    </span>\r\n\r\n</div>\r\n"
+        },
+        {
+            "name": "NavbarDashboardSubComponent",
+            "id": "component-NavbarDashboardSubComponent-434e2800118f5fa43b69c8e351d0b759",
+            "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-dashboard-sub.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-navbar-dashboard-sub",
+            "styleUrls": [
+                "./navbar-dashboard-sub-component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./navbar-dashboard-sub.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "headingTxt",
+                    "defaultValue": "''",
+                    "line": 10
+                },
+                {
+                    "name": "subHeadingTxt",
+                    "defaultValue": "''",
+                    "line": 11
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-navbar-dashboard-sub',\r\n  templateUrl: './navbar-dashboard-sub.component.html',\r\n  styleUrls: ['./navbar-dashboard-sub-component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class NavbarDashboardSubComponent {\r\n    @Input() public headingTxt = '';\r\n    @Input() public subHeadingTxt = '';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/variables';\r\n@import '../scss/styles';\r\n\r\n.navbar-dashboard-sub {\r\n    position: relative;\r\n    width: 212px;\r\n    height: 100vh;\r\n    z-index:100;\r\n    border: $border-gray-light;\r\n    border-left:none;\r\n    border-bottom: none;\r\n    background-color:var(--color-white);\r\n    box-shadow: $box-shadow-light;\r\n\r\n    &__heading-container {\r\n        padding: 18px 16px;\r\n        height: 88px;\r\n    }\r\n\r\n    &__snippets-scrollbar-padding {\r\n        padding: 0 16px 0 16px;\r\n        height: 100%;\r\n    }\r\n\r\n    &__snippets-flexbox {\r\n        height: 100%;\r\n        padding: 16px 16px 200px 0;\r\n        overflow: auto;\r\n        pointer-events: auto;\r\n\r\n        &:hover .navbar-dashboard-sub__snippets-flexbox__scrollbar-cover {\r\n            background-color: var(--color-white);\r\n            opacity: 0;\r\n        }\r\n\r\n        &__scrollbar-cover {\r\n            transition: all .5s;\r\n            display: inline-block;\r\n            position: absolute;\r\n            right: 0;\r\n            width: 15%;\r\n            height:100%;\r\n            background-color: rgba(var(--color-white), 1);\r\n            pointer-events: none;\r\n        }\r\n    }\r\n\r\n    &__icon {\r\n        width: 26px;\r\n        height: 26px;\r\n\r\n        &:hover {\r\n            background-color: $color-gray-light-4;\r\n            border-radius: 50%;\r\n        }\r\n    }\r\n}\r\n",
+                    "styleUrl": "./navbar-dashboard-sub-component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"navbar-dashboard-sub\">\r\n\r\n    <div class=\"navbar-dashboard-sub__heading-container flex justify-content-space-between\">\r\n        <div>\r\n            <p class=\"heading heading-5\">{{headingTxt}}</p>\r\n            <p class=\"heading heading-sub\">{{subHeadingTxt}}</p>\r\n        </div>\r\n        <lib-uv-ui-image-button\r\n            class=\"navbar-dashboard-sub__icon\"\r\n            src=\"http://dpzaq1wj21co3.cloudfront.net/icons/more-horizontal.svg\"\r\n            >\r\n        </lib-uv-ui-image-button>\r\n        <!-- <img class=\"navbar-dashboard-sub__icon\" src=\"http://dpzaq1wj21co3.cloudfront.net/icons/more-horizontal.svg\"> -->\r\n    </div>\r\n\r\n    <div class=\"divider\"></div>\r\n\r\n    <div class=\"navbar-dashboard-sub__snippets-scrollbar-padding\">\r\n        <div class=\"navbar-dashboard-sub__snippets-flexbox flex-column\">\r\n            <div class=\"navbar-dashboard-sub__snippets-flexbox__spacer\"></div>\r\n            <div class=\"navbar-dashboard-sub__snippets-flexbox__scrollbar-cover\"></div>\r\n            \r\n            <ng-content></ng-content>\r\n            \r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n"
+        },
+        {
+            "name": "SearchPanelComponent",
+            "id": "component-SearchPanelComponent-f62ab35f4d3c12189554dbe848a00111",
+            "file": "projects/uv-ui-lib/src/lib/search-panel/search-panel.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-search-panel",
+            "styleUrls": [
+                "./search-panel-component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./search-panel.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-search-panel',\r\n    templateUrl: './search-panel.component.html',\r\n    styleUrls: ['./search-panel-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchPanelComponent {\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/variables';\r\n@import '../scss/styles';\r\n\r\n.search-panel {\r\n    height: 56px;\r\n    width: 993px;\r\n    border: $border-gray-light;\r\n    border-radius: 28px;\r\n    background-color: #FFFFFF;\r\n    margin: 10px 23px;\r\n    transition: all .2s;\r\n\r\n    &__search-field {\r\n        margin-left: 16px;\r\n\r\n        &__input {\r\n            margin-left: 16px;\r\n            font-size: 16px;\r\n            font-family: inherit;\r\n            border: none;\r\n    \r\n            &:focus,\r\n            &:invalid {\r\n                outline: none;\r\n            }\r\n    \r\n            &::-webkit-input-placeholder {\r\n                color: $color-gray;\r\n                font-style: italic;\r\n            }\r\n        }\r\n    }\r\n}\r\n",
+                    "styleUrl": "./search-panel-component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"search-panel flex justify-content-space-between\">\r\n\r\n    <div class=\"search-panel__search-field flex align-items-center\">\r\n\r\n        <img class=\"img-small\" src=\"http://dpzaq1wj21co3.cloudfront.net/icons/search.svg\"/>\r\n        \r\n        <input type=\"text\"\r\n        placeholder=\"Search...\"\r\n        class=\"search-panel__search-field__input\">\r\n        \r\n    </div>\r\n    \r\n    <ng-content></ng-content>\r\n\r\n</div>\r\n\r\n\r\n"
+        },
+        {
+            "name": "SideBySideComponent",
+            "id": "component-SideBySideComponent-27d5cbf3b8126d6b3889571ee43dd600",
+            "file": "projects/uv-ui-prototype/src/app/side-by-side/side-by-side.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "prototype-uv-ui-side-by-side",
+            "styleUrls": [
+                "./side-by-side.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./side-by-side.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "compareTasks",
+                    "defaultValue": "compareTasksData",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "dropdownItems",
+                    "defaultValue": "dropdownItems",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "loadTask",
+                    "defaultValue": "true",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "addTaskClicked",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "switchFilterClicked",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\nimport { compareTasksData } from './compareTasks';\r\nimport { dropdownItems } from './dropdownItems';\r\n\r\n@Component({\r\n    selector: 'prototype-uv-ui-side-by-side',\r\n    templateUrl: './side-by-side.component.html',\r\n    styleUrls: ['./side-by-side.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SideBySideComponent {\r\n    public loadTask = true;\r\n    public compareTasks = compareTasksData;\r\n    public dropdownItems = dropdownItems;\r\n\r\n    public addTaskClicked(event: Event): void {\r\n        console.log(event, 'add task was clicked');\r\n    }\r\n\r\n    public switchFilterClicked(event: Event): void {\r\n        console.log(event, 'filter button was clicked');\r\n    }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".grid{\r\n    position: relative;\r\n    height: 100vh;\r\n    display: grid;\r\n    grid-template-rows: [row1] 68px [row2] auto;\r\n    grid-template-areas: \r\n    \"appbar\"\r\n    \"content\" ;\r\n}\r\n\r\n.appbar {\r\n    grid-row: row1;\r\n    padding: 20px;\r\n    border-top: none;\r\n    border-left: none;\r\n}\r\n\r\n.content {\r\n    grid-row: row2;\r\n    overflow: auto;\r\n    padding-left: 96px;\r\n    padding-top:20px;\r\n}\r\n",
+                    "styleUrl": "./side-by-side.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"grid\">\r\n\r\n    <div class=\"box appbar flex align-items-center justify-content-space-between\">\r\n\r\n        <p class=\"heading-4\">Comparison Tasks</p>\r\n        \r\n        <div>\r\n            <lib-uv-ui-button class=\"btn btn-round btn-add-task margin-right-md\" buttonText=\"+\" (click)=\"addTaskClicked($event)\"></lib-uv-ui-button>\r\n            <lib-uv-ui-dropdown-button [items]=\"dropdownItems\" dropdownName=\"Switch filter\" (click)=\"switchFilterClicked($event)\"></lib-uv-ui-dropdown-button>\r\n        </div>\r\n        \r\n    </div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-task-snippet [tasks]=\"compareTasks\">\r\n    </lib-uv-ui-task-snippet>\r\n    \r\n</div>\r\n\r\n</div>\r\n\r\n"
+        },
+        {
+            "name": "SnippetComponent",
+            "id": "component-SnippetComponent-8a22499c1bd25806abcc900d3a388b75",
+            "file": "projects/uv-ui-lib/src/lib/snippet/snippet.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-snippet",
+            "styleUrls": [
+                "./snippet.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./snippet.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "snippets",
+                    "defaultValue": "[]",
+                    "line": 12,
+                    "type": "INavBarSub[]"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "snippetEvent",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "snippetClicked",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "Event"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "Event",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "trackByFn",
+                    "args": [
+                        {
+                            "name": "_",
+                            "type": "number"
+                        },
+                        {
+                            "type": "INavBarSub"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 19,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "_",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "type": "INavBarSub",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';\r\nimport { INavBarSub } from '../interfaces/navbar-sub.interfaces';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-snippet',\r\n  templateUrl: './snippet.component.html',\r\n  styleUrls: ['./snippet.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SnippetComponent {\r\n\r\n    @Input() public snippets: INavBarSub[] = [];\r\n    @Output() public readonly snippetEvent = new EventEmitter<Event>();\r\n\r\n    public snippetClicked($event: Event): void {\r\n        this.snippetEvent.emit($event);\r\n    }\r\n\r\n    public trackByFn(_: number, {snippetHeading}: INavBarSub): string {\r\n        return snippetHeading;\r\n    }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/variables';\r\n@import '../scss/typography';\r\n@import '../scss/styles';\r\n\r\n\r\n.snippet-wrapper {\r\n    margin-bottom: $sm-size;\r\n\r\n    &:hover {\r\n        cursor: pointer;\r\n        background-color: $color-gray-light-4;\r\n        border-radius: 8px;\r\n    }\r\n}\r\n\r\n.snippet-container {\r\n    height: 73px;\r\n    position: relative;\r\n    min-height: 73px;\r\n    padding: 2px;\r\n\r\n    &-textbox {\r\n        margin-left: 8px;\r\n        width: 120px;\r\n        height: 68px;\r\n        display: inline-block;\r\n        overflow: hidden;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./snippet.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"snippet-wrapper\" *ngFor=\"let snippet of snippets trackBy: trackByFn\" (click)=\"snippetClicked($event)\">\r\n    <div class=\"snippet-container\">\r\n        <!-- <img class=\"btn-icon-xs\" [src]=\"snippet.icon\"> -->\r\n        <img class=\"img-small\" [src]=\"snippet.icon\">\r\n        <div class=\"snippet-container-textbox\">\r\n            <p class=\"heading heading-sub\">{{snippet.snippetHeading}}</p>\r\n            <p>{{snippet.snippetTxt}}</p>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "StartPageComponent",
+            "id": "component-StartPageComponent-fb4383e67f5652fa48658962809d67dc",
+            "file": "projects/uv-ui-prototype/src/app/start-page/start-page.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "prototype-uv-ui-start-page",
+            "styleUrls": [
+                "./start-page.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./start-page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "snippetBox",
+                    "defaultValue": "[\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    }\r\n  ]",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "snippetClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 84,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'prototype-uv-ui-start-page',\r\n    templateUrl: './start-page.component.html',\r\n    styleUrls: ['./start-page.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class StartPageComponent {\r\n\r\n  public snippetBox = [\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    },\r\n    {\r\n      icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',\r\n      snippetHeading: 'Heading',\r\n      snippetTxt: 'Snippet will go here on three lines. And is clickable'\r\n    }\r\n  ];\r\n\r\n  public snippetClick(event: Event): void {\r\n    console.log('snippet was clicked', event);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./start-page.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<lib-uv-ui-navbar-dashboard-sub\r\n    headingTxt=\"Heading\"\r\n    subHeadingTxt=\"Subheading\">\r\n\r\n    <lib-uv-ui-snippet\r\n    [snippets]=\"snippetBox\"\r\n    (snippetEvent)=\"snippetClick($event)\"></lib-uv-ui-snippet>\r\n    \r\n</lib-uv-ui-navbar-dashboard-sub>\r\n\r\n\r\n\r\n\r\n"
+        },
+        {
+            "name": "SvgButtonComponent",
+            "id": "component-SvgButtonComponent-2daf8f3be685f4e4400bf43fd5e3f9ae",
+            "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-svg-button",
+            "styleUrls": [
+                "./svg-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./svg-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "color",
+                    "defaultValue": "'black'",
+                    "line": 11,
+                    "type": "\"gray\" | \"blue\" | \"black\""
+                },
+                {
+                    "name": "svgPath",
+                    "defaultValue": "''",
+                    "line": 10
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "cssClasses",
+                    "defaultValue": "['btn', 'btn-svg']",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getCssClasses",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-svg-button',\r\n  templateUrl: './svg-button.component.html',\r\n  styleUrls: ['./svg-button.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SvgButtonComponent implements OnInit {\r\n    @Input() public svgPath = '';\r\n    @Input() public color: 'gray' | 'blue' | 'black' = 'black';\r\n\r\n    public cssClasses = ['btn', 'btn-svg'];\r\n\r\n    public getCssClasses(): void {\r\n        this.cssClasses.push(this.color);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.getCssClasses();\r\n    }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/styles';\r\n@import '../scss/variables';\r\n\r\n.btn-svg svg {\r\n    cursor: pointer;\r\n    width: $sm-size;\r\n    height: $sm-size;\r\n\r\n    &-xs {\r\n        width: $xs-size;\r\n        height: $xs-size;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./svg-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button [ngClass]=\"cssClasses\">\r\n    <svg><use [attr.href]=\"svgPath\"></use></svg>\r\n</button>\r\n"
+        },
+        {
+            "name": "TaskSnippetComponent",
+            "id": "component-TaskSnippetComponent-cb9cc227c08ddeafe8cf999790809203",
+            "file": "projects/uv-ui-lib/src/lib/task-snippet/task-snippet.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-task-snippet",
+            "styleUrls": [
+                "./task-snippet.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./task-snippet.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "tasks",
+                    "defaultValue": "[]",
+                    "line": 12,
+                    "type": "ITask[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "trackByFn",
+                    "args": [
+                        {
+                            "name": "_",
+                            "type": "number"
+                        },
+                        {
+                            "type": "ITask"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "_",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "type": "ITask",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, Input } from '@angular/core';\r\nimport { ITask } from '../interfaces/side-by-side.interfaces';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-task-snippet',\r\n  templateUrl: './task-snippet.component.html',\r\n  styleUrls: ['./task-snippet.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class TaskSnippetComponent {\r\n\r\n    @Input() public tasks: ITask[] = [];\r\n\r\n    public trackByFn(_: number, {title}: ITask): string {\r\n        return title;\r\n    }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/variables';\r\n\r\n.compare-task-box {\r\n    display: inline-block;\r\n    border: $border-gray-light;\r\n    padding: 24px;\r\n    background-color: var(--color-white);\r\n    min-height: 228px;\r\n    width: 200px;\r\n    margin: 0 32px 32px 0;\r\n    border-radius: 2px;\r\n\r\n    &:hover {\r\n        cursor: pointer;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./task-snippet.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div *ngFor=\"let task of tasks; trackBy:trackByFn\" class=\"compare-task-box\">\r\n    <p class=\"btn btn-chip margin-bottom-md\">{{task.started}}</p>\r\n    <p class=\"txt-sm bold margin-bottom-sm\">{{task.title}}</p>\r\n    <p class=\"txt-sm margin-bottom-md\">{{task.description}}</p>\r\n    <p class=\"chip-date\">{{task.date}}</p>\r\n  </div>\r\n"
+        },
         {
             "name": "UvUiButtonComponent",
             "id": "component-UvUiButtonComponent-3445dc3244748d08eeadc081354a077a",
@@ -92,7 +1671,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;\r\n}\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
+                    "data": ".storybook-button {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;\r\n}\r\n\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n\r\n.storybook-button--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n\r\n.storybook-button--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
                     "styleUrl": "./uv-ui-button.component.scss"
                 }
             ],
@@ -109,9 +1688,640 @@
                 }
             },
             "templateData": "<button type=\"button\"\r\n        (click)=\"onClick($event)\"\r\n        [ngClass]=\"classes\"\r\n        [ngStyle]=\"{ 'background-color': backgroundColor }\">\r\n    {{ label }}\r\n</button>\r\n"
+        },
+        {
+            "name": "WidgetComponent",
+            "id": "component-WidgetComponent-925734bc5cc9e6e8d8cea89f409bc56b",
+            "file": "projects/uv-ui-lib/src/lib/widget/widget.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-uv-ui-widget",
+            "styleUrls": [
+                "./widget-component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./widget.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-widget',\r\n  templateUrl: './widget.component.html',\r\n  styleUrls: ['./widget-component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class WidgetComponent {\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../scss/variables';\r\n\r\n.widget {\r\n    margin: $xs-size;\r\n    height: auto;\r\n    width: auto;\r\n    border-radius: 16px;\r\n    position: relative;\r\n    padding: 10px;\r\n    overflow: auto;\r\n}\r\n",
+                    "styleUrl": "./widget-component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"widget box flex-inline\">\r\n\r\n  <ng-content></ng-content>\r\n\r\n</div>\r\n"
         }
     ],
     "modules": [
+        {
+            "name": "AppBarModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppBarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "ImageButtonModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "AppBarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "GlobalWhereUsedComponent"
+                        },
+                        {
+                            "name": "HomeSplashComponent"
+                        },
+                        {
+                            "name": "LoginComponent"
+                        },
+                        {
+                            "name": "MainComponent"
+                        },
+                        {
+                            "name": "SideBySideComponent"
+                        },
+                        {
+                            "name": "StartPageComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppBarModule"
+                        },
+                        {
+                            "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "AppSideBarModule"
+                        },
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "DropdownButtonModule"
+                        },
+                        {
+                            "name": "HeaderModule"
+                        },
+                        {
+                            "name": "ImageButtonModule"
+                        },
+                        {
+                            "name": "NavbarDashboardModule"
+                        },
+                        {
+                            "name": "NavbarDashboardSubModule"
+                        },
+                        {
+                            "name": "SearchPanelModule"
+                        },
+                        {
+                            "name": "SnippetModule"
+                        },
+                        {
+                            "name": "SvgButtonModule"
+                        },
+                        {
+                            "name": "TaskSnippetModule"
+                        },
+                        {
+                            "name": "WidgetModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppSideBarModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppSideBarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "ImageButtonModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "AppSideBarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ButtonModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DropdownButtonModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "DropdownButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "DropdownButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "HeaderModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "HeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "HeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ImageButtonModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ImageButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ImageButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "NavbarDashboardModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NavbarDashboardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NavbarDashboardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "NavbarDashboardSubModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NavbarDashboardSubComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "ImageButtonModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NavbarDashboardSubComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SearchPanelModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SearchPanelComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SearchPanelComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SnippetModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SnippetComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SnippetComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SvgButtonModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SvgButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SvgButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TaskSnippetModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TaskSnippetComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "TaskSnippetComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
         {
             "name": "UvUiButtonModule",
             "children": [
@@ -148,10 +2358,63 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "WidgetModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "WidgetComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "WidgetComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "compareTasksData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-prototype/src/app/side-by-side/compareTasks.ts",
+                "type": "[]",
+                "defaultValue": "[\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  }\r\n]"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
             {
                 "name": "context",
                 "ctype": "miscellaneous",
@@ -161,10 +2424,58 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-prototype/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "dropdownItems",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-prototype/src/app/side-by-side/dropdownItems.ts",
+                "type": "[]",
+                "defaultValue": "[\r\n    {name: 'item 1'},\r\n    {name: 'item 2'},\r\n    {name: 'item 3'},\r\n    {name: 'item 4'},\r\n    {name: 'item 5'}\r\n]"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-prototype/src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-prototype/src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "navItems",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-prototype/src/app/layouts/main/navItems.ts",
+                "type": "[]",
+                "defaultValue": "[\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',\r\n        navlink: '/main/home-splash',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',\r\n        navlink: '/main/global-where-used',\r\n        classes: []\r\n    },\r\n\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',\r\n        navlink: '/main/side-by-side',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    }\r\n]"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button-lib.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -177,10 +2488,88 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/DropdownButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Header.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/ImageButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/NavbarDashboardSub.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/SearchPanel.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/NavbarDashboard.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Snippet.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/SvgButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/test.ts",
+                "type": "literal type"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/uv-ui-components/src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-prototype/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -203,15 +2592,114 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/Button-lib.stories.ts",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/Button.stories.ts",
                 "type": "Story<UvUiButtonComponent>",
                 "defaultValue": "(args: UvUiButtonComponent) => ({\r\n    component: UvUiButtonComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/DropdownButton.stories.ts",
+                "type": "Story<DropdownButtonComponent>",
+                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Header.stories.ts",
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/ImageButton.stories.ts",
+                "type": "Story<ImageButtonComponent>",
+                "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/NavbarDashboardSub.stories.ts",
+                "type": "Story<NavbarDashboardSubComponent>",
+                "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/SearchPanel.stories.ts",
+                "type": "Story<SearchPanelComponent>",
+                "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/NavbarDashboard.stories.ts",
+                "type": "Story<NavbarDashboardComponent>",
+                "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Snippet.stories.ts",
+                "type": "Story<SnippetComponent>",
+                "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/SvgButton.stories.ts",
+                "type": "Story<SvgButtonComponent>",
+                "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "projects/uv-ui-prototype/src/app/side-by-side/compareTasks.ts": [
+                {
+                    "name": "compareTasksData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/app/side-by-side/compareTasks.ts",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  }\r\n]"
+                }
+            ],
+            "projects/uv-ui-lib/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
             "projects/uv-ui-components/src/test.ts": [
                 {
                     "name": "context",
@@ -227,6 +2715,53 @@
                     "subtype": "variable",
                     "file": "projects/uv-ui-components/src/test.ts",
                     "type": "literal type"
+                }
+            ],
+            "projects/uv-ui-prototype/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/uv-ui-prototype/src/app/side-by-side/dropdownItems.ts": [
+                {
+                    "name": "dropdownItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/app/side-by-side/dropdownItems.ts",
+                    "type": "[]",
+                    "defaultValue": "[\r\n    {name: 'item 1'},\r\n    {name: 'item 2'},\r\n    {name: 'item 3'},\r\n    {name: 'item 4'},\r\n    {name: 'item 5'}\r\n]"
+                }
+            ],
+            "projects/uv-ui-prototype/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "projects/uv-ui-prototype/src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "stories/Button.stories.ts": [
@@ -270,13 +2805,226 @@
                     "type": "Story<UvUiButtonComponent>",
                     "defaultValue": "(args: UvUiButtonComponent) => ({\r\n    component: UvUiButtonComponent,\r\n    props: args,\r\n})"
                 }
+            ],
+            "projects/uv-ui-prototype/src/app/layouts/main/navItems.ts": [
+                {
+                    "name": "navItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/app/layouts/main/navItems.ts",
+                    "type": "[]",
+                    "defaultValue": "[\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',\r\n        navlink: '/main/home-splash',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',\r\n        navlink: '/main/global-where-used',\r\n        classes: []\r\n    },\r\n\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',\r\n        navlink: '/main/side-by-side',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    }\r\n]"
+                }
+            ],
+            "stories/Button-lib.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button-lib.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button-lib.stories.ts",
+                    "type": "Story<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "stories/DropdownButton.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/DropdownButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/DropdownButton.stories.ts",
+                    "type": "Story<DropdownButtonComponent>",
+                    "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "stories/Header.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Header.stories.ts",
+                    "type": "Story<HeaderComponent>",
+                    "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "stories/ImageButton.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ImageButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ImageButton.stories.ts",
+                    "type": "Story<ImageButtonComponent>",
+                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "stories/NavbarDashboardSub.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/NavbarDashboardSub.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/NavbarDashboardSub.stories.ts",
+                    "type": "Story<NavbarDashboardSubComponent>",
+                    "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "stories/SearchPanel.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/SearchPanel.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/SearchPanel.stories.ts",
+                    "type": "Story<SearchPanelComponent>",
+                    "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "stories/NavbarDashboard.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/NavbarDashboard.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/NavbarDashboard.stories.ts",
+                    "type": "Story<NavbarDashboardComponent>",
+                    "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "stories/Snippet.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Snippet.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Snippet.stories.ts",
+                    "type": "Story<SnippetComponent>",
+                    "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "stories/SvgButton.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/SvgButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/SvgButton.stories.ts",
+                    "type": "Story<SvgButtonComponent>",
+                    "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
+                }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {}
     },
-    "routes": [],
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "projects/uv-ui-prototype/src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "",
+                        "redirectTo": "/login",
+                        "pathMatch": "full"
+                    },
+                    {
+                        "path": "login",
+                        "component": "LoginComponent"
+                    },
+                    {
+                        "path": "main",
+                        "component": "MainComponent",
+                        "children": [
+                            {
+                                "path": "home-splash",
+                                "component": "HomeSplashComponent"
+                            },
+                            {
+                                "path": "side-by-side",
+                                "component": "SideBySideComponent"
+                            },
+                            {
+                                "path": "global-where-used",
+                                "component": "GlobalWhereUsedComponent"
+                            }
+                        ]
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
     "coverage": {
         "count": 0,
         "status": "low",
@@ -306,6 +3054,350 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/app-bar/app-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppSideBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DropdownButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/image-button/image-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ImageButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/interfaces/app-side-bar.interfaces.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IGwuTab",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/interfaces/dropdown-button.interfaces.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IDropdown",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/interfaces/navbar-sub.interfaces.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "INavBarSub",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/interfaces/navbar.interfaces.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "INav",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/interfaces/side-by-side.interfaces.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ITask",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-dashboard-sub.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavbarDashboardSubComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar-dashboard.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavbarDashboardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/search-panel/search-panel.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SearchPanelComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/snippet/snippet.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SnippetComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/svg-button/svg-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SvgButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/task-snippet/task-snippet.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TaskSnippetComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/widget/widget.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "WidgetComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/e2e/src/app.po.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AppPage",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/app/global-where-used/global-where-used.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GlobalWhereUsedComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/app/home-splash/home-splash.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeSplashComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/app/layouts/main/main.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/app/layouts/main/navItems.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "navItems",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/app/login/login.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LoginComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/app/side-by-side/compareTasks.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "compareTasksData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/app/side-by-side/dropdownItems.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "dropdownItems",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/app/side-by-side/side-by-side.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SideBySideComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/app/start-page/start-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StartPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-prototype/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button-lib.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button-lib.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -352,6 +3444,166 @@
             },
             {
                 "filePath": "stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/DropdownButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/DropdownButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/ImageButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/ImageButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/NavbarDashboard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/NavbarDashboard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/NavbarDashboardSub.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/NavbarDashboardSub.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/SearchPanel.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/SearchPanel.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Snippet.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Snippet.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/SvgButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/SvgButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
