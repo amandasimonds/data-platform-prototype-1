@@ -1,7 +1,9 @@
 import { Component,  ChangeDetectionStrategy, OnInit, EventEmitter } from '@angular/core';
 import { HeaderService } from '../services/header.service';
-import { SearchResult } from './search-result.model';
+import { MenuTab } from './models/menu-tab.model';
+import { SearchResult } from './models/search-result.model';
 // import { searchItems } from './search-results/searchItems';
+import { DEFAULT_SEARCH_MENU_STATE, SearchResultsSideMenuState } from './models/search-results-state';
 
 @Component({
   selector: 'lib-search',
@@ -15,43 +17,23 @@ export class SearchComponent implements OnInit {
     public searchItem: SearchResult = {category: '', title: '', description: ''};
     public searchCategory = '';
     public activeExample = true;
+    public showContent = false;
+    public searchTabs = DEFAULT_SEARCH_MENU_STATE.menuTabs;
+    categorySelected = true;
 
-    public searchTabs = [
-        {
-            icon: 'assets/filter.svg#filter',
-            link: '/',
-            linkText: 'Parts',
-            results: '49',
-            action: 'this.partsResults()'
-        },
-        {
-            icon: 'assets/filter.svg#filter',
-            link: '/',
-            linkText: 'Requirements',
-            results: '274',
-            action: 'this.partsResults()'
-        },
-        {
-            icon: 'assets/filter.svg#filter',
-            link: '/',
-            linkText: 'Documents',
-            results: '276',
-            action: 'this.partsResults()'
-        },
-        {
-            icon: 'assets/filter.svg#filter',
-            link: '/',
-            linkText: 'Recent Searches',
-            results: '',
-            action: 'this.partsResults()'
-        }
-    ];
-
-    constructor(private headerService: HeaderService){}
+    constructor(private headerService: HeaderService){
+        this.categorySelected = false;
+    }
 
     ngOnInit(): void {
         this.headerService.setTitle('Search');
         this.headerService.setAppIcon('assets/search.svg#search');
+    }
+
+    onTabClicked(category: string){
+        console.log('tab category: ' + category);
+        this.searchCategory = category;
+        this.categorySelected = true;
     }
 
     getPartsResults(){
@@ -88,7 +70,7 @@ export class SearchComponent implements OnInit {
     }
 
     clearResults(){
-        this.searchItemsArray = [];
+       this.categorySelected = false;
     }
 
     getTabState(){

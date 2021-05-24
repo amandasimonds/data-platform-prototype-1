@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { documentsResults } from './documentResults';
-import { SearchResult } from '../search-result.model';
+import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
+import { SearchResult } from '../models/search-result.model';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search-results',
@@ -8,10 +8,31 @@ import { SearchResult } from '../search-result.model';
   styleUrls: ['./search-results.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchResultsComponent {
+export class SearchResultsComponent implements OnInit {
 
     @Input() public searchResults: SearchResult[] = [];
+    @Input() public documentsSearchResults: SearchResult[] = [];
+    @Input() public partsSearchResults: SearchResult[] = [];
+    @Input() public requirementsSearchResults: SearchResult[] = [];
+    @Input() public category = '';
 
-    constructor() {}
+    constructor(private searchService: SearchService) {
+        this.documentsSearchResults = this.searchService.documentsSearchResults;
+        this.partsSearchResults = this.searchService.partsSearchResults;
+        this.requirementsSearchResults = this.searchService.requirementsSearchResults;
+    }
 
+    ngOnInit(): void {
+        this.getSearchResults();
+    }
+
+    getSearchResults(){
+        if (this.category === 'Documents') {
+            this.searchResults = this.documentsSearchResults
+        } else if (this.category === 'Requirements') {
+            this.searchResults = this.requirementsSearchResults
+        } else if (this.category === 'Parts') {
+            this.searchResults = this.partsSearchResults
+        }
+    }
 }
