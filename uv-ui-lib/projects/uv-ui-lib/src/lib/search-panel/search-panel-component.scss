@@ -2,12 +2,13 @@
 @import '../scss/styles';
 
 .search-panel {
-    height: 56px;
-    width: 993px;
+    height: 40px;
     border: $border-gray-light;
     border-radius: 28px;
+    display: flex;
+    width: 100%;
     background-color: #FFFFFF;
-    margin: 10px 23px;
+    padding-right: 12px;
     transition: all .2s;
 
     &__search-field {
@@ -15,7 +16,8 @@
 
         &__input {
             margin-left: 16px;
-            font-size: 16px;
+            margin-right: 150px;
+            font-size: 14px;
             font-family: inherit;
             border: none;
     

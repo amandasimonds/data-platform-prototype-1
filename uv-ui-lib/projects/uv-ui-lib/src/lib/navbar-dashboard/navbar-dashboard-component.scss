@@ -1,6 +1,7 @@
 @import '../scss/variables';
 
 .navbar-dashboard {
+    position: relative;
     height: 100%;
     z-index: 200;
     border: $border-gray-light;
