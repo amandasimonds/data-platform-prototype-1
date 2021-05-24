@@ -2,23 +2,20 @@
 
     <div class="app-side-bar__top-content">
 
-        <lib-uv-ui-button buttonText="Back" class="btn btn-blue margin-bottom-lg" ></lib-uv-ui-button>
+        <div class="margin-bottom-sm">
+            <ng-content select="[top]"></ng-content> 
+        </div>
 
-        <p class="heading-4 margin-bottom-lg">{{titleText}}</p>
+        <p class="heading-4 margin-bottom-sm">{{titleText}}</p>
 
-        <p class="paragraph margin-bottom-lg">{{descriptionText}}</p>
+        <p class="paragraph margin-bottom-sm">{{descriptionText}}</p>
 
     </div>
 
     <div class="divider"></div>
 
     <div class="app-side-bar__bottom-content">
-
-        <div *ngFor="let tab of tabs trackBy: trackByFn" class="tab">
-            <lib-uv-ui-image-button class="margin-right-sm" [src]="tab.icon"></lib-uv-ui-image-button>
-            <a [href]="tab.link">{{tab.linkText}}</a>
-        </div>
-
+        <ng-content select="[bottom]"></ng-content>
     </div>
 
 </div>

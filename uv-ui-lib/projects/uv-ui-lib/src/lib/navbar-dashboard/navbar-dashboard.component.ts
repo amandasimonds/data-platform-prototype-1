@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { INav } from '../interfaces/navbar.interfaces';
 
 @Component({
@@ -13,4 +14,11 @@ export class NavbarDashboardComponent {
   public trackByFn(_: number, {navlink}: INav): string {
     return navlink;
 }
+
+    constructor(private router: Router) {
+    }
+
+    public navigateToRoute(navlink: string) {
+        this.router.navigateByUrl(navlink);
+    }
 }
