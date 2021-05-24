@@ -1,6 +1,8 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Meta, Story } from '@storybook/angular/types-6-0';
 import { HeaderComponent } from '../projects/uv-ui-lib/src/lib/header/header.component';
+// import * as image  from './assets';
+var img = require('./assets/uvlogo.png');
 
 export default {
     title: 'Example/Header',
@@ -10,6 +12,11 @@ export default {
     },
 } as Meta;
 
+export const withAnImage = () => ({
+    // template: `<img src="/profile.svg#profile" alt="my image"/>`,
+    template: `<img src="/profile.svg#profile"/>`
+  });
+
 const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
     component: HeaderComponent,
     props: args,
@@ -17,5 +24,6 @@ const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-    headerText: 'new header'
+    headerText: 'new header',
+    headerSvgPath: '/profile.svg#profile'
 };
