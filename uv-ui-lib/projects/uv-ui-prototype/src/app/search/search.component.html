@@ -2,9 +2,15 @@
     <div class="sidebar">     
         <lib-uv-ui-app-side-bar titleText="600 Results">
 
-            <div top class="flex justify-content-space-between">
-                <lib-uv-ui-button buttonText="Back" type="btn-blue" (click)="clearResults()"></lib-uv-ui-button>
-                <lib-uv-ui-svg-button color='blue' svgPath='assets/filter.svg#filter'></lib-uv-ui-svg-button>
+            <div top class="top-content flex justify-content-space-between align-items-center align-items justify-items-center justify-items">
+                <div>
+                    <lib-uv-ui-svg-button size="xs" class="back-arrow" color='blue' svgPath='assets/back-arrow.svg#back-arrow'></lib-uv-ui-svg-button>
+                    <lib-uv-ui-button buttonText="Back" class="padding" type="btn-blue" (click)="clearResults()"></lib-uv-ui-button>
+                </div>
+                <div>
+                    <lib-uv-ui-svg-button color='blue' class="margin-right-xs" (click)="reOrderMode()" svgPath='assets/up-down-arrows.svg#up-down-arrows'></lib-uv-ui-svg-button>
+                    <lib-uv-ui-svg-button color='blue' svgPath='assets/filter.svg#filter'></lib-uv-ui-svg-button>
+                </div>
             </div>
 
             <div bottom>
@@ -14,12 +20,18 @@
                     (click)="onTabClicked(tab.category)"
                     [isDisabled]="tab.entitySearchCount === 0"
                     [isActive]="tab.selected"
+                    [isReorderMode]="reOrderModeActivated"
                     svgPath="{{tab.icon}}" 
                     label="{{tab.title}}" 
                     [routerLink]="tab.routeUri">
                     <span class="chip" *ngIf="categorySelected">{{tab.entitySearchCount}}</span>
                 </lib-uv-ui-tab>
                 </div> 
+
+                <div *ngIf="reOrderModeActivated" class="margin-xs flex justify-content-flex-end">
+                    <lib-uv-ui-button buttonText="Close" class="margin-right-sm" type="btn-blue" (click)="clearResults()"></lib-uv-ui-button>
+                    <lib-uv-ui-button buttonText="Save" type="btn-blue" (click)="clearResults()"></lib-uv-ui-button>
+                </div>
             </div>
 
         </lib-uv-ui-app-side-bar>
