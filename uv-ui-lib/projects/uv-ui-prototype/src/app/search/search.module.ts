@@ -5,6 +5,7 @@ import { SearchComponent } from './search.component';
 import { AppSideBarModule } from '../../../../uv-ui-lib/src/public-api';
 import { ButtonModule } from '../../../../uv-ui-lib/src/public-api';
 import { SvgButtonModule } from '../../../../uv-ui-lib/src/public-api';
+import { SearchPanelModule } from '../../../../uv-ui-lib/src/public-api';
 import { TabModule } from '../../../../uv-ui-lib/src/public-api';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { LandingComponent } from './landing/landing.component';
@@ -23,7 +24,8 @@ import { FilterResultsPipe } from './search-results/filter-results.pipe';
     AppSideBarModule, 
     TabModule, 
     ButtonModule, 
-    SvgButtonModule
+    SvgButtonModule,
+    SearchPanelModule
   ],
   exports: [ SearchComponent ]
 })

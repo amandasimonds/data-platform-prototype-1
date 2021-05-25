@@ -1,8 +1,6 @@
-import { Component,  ChangeDetectionStrategy, OnInit, EventEmitter } from '@angular/core';
+import { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { HeaderService } from '../services/header.service';
-import { MenuTab } from './models/menu-tab.model';
 import { SearchResult } from './models/search-result.model';
-// import { searchItems } from './search-results/searchItems';
 import { DEFAULT_SEARCH_MENU_STATE, SearchResultsSideMenuState } from './models/search-results-state';
 
 @Component({
@@ -21,6 +19,7 @@ export class SearchComponent implements OnInit {
     public searchTabs = DEFAULT_SEARCH_MENU_STATE.menuTabs;
     categorySelected = true;
     public reOrderModeActivated = false;
+    public filterBarActive = false;
 
     constructor(private headerService: HeaderService){
         this.categorySelected = false;
@@ -36,55 +35,24 @@ export class SearchComponent implements OnInit {
     }
 
     onTabClicked(category: string){
-        console.log('tab category: ' + category);
         this.searchCategory = category;
         this.categorySelected = true;
     }
 
-    getPartsResults(){
-        this.searchItemsArray.push({
-            category: 'Parts',
-            title: 'API 13M-4 / ISO 13503-4',
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        });
-        this.searchCategory = 'parts';
-    }
-
-    getRequirementsResults(){
-        this.searchItemsArray.push({
-            category: 'Parts',
-            title: 'API 13M-4 / ISO 13503-4',
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        });
-    }
-
-    getDocumentsResults(){
-        this.searchItemsArray.push({
-            category: 'Parts',
-            title: 'API 13M-4 / ISO 13503-4',
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        });
-    }
-
-    getRecentSearches(){
-        this.searchItemsArray.push({
-            category: 'Parts',
-            title: 'API 13M-4 / ISO 13503-4',
-            description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'
-        });
+    toggleFilterBar(){
+        this.filterBarActive = !this.filterBarActive
     }
 
     clearResults(){
        this.categorySelected = false;
     }
 
-    toggleActive(){
-        this.activeExample = !this.activeExample;
-        return this.activeExample;
-    }
-
-    onSelected(searchItem: SearchResult) {
-        this.searchItemsArray.push(searchItem)
+    onToggleTabActive(category: string){
+        if (this.searchCategory === category) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // public trackByFn(_: number, {link}: this.searchTabs): string {

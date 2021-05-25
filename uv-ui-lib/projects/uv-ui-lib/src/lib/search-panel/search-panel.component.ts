@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Output, EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
     selector: 'lib-uv-ui-search-panel',
@@ -9,9 +9,19 @@ import { ChangeDetectionStrategy, Component, Output, EventEmitter } from '@angul
 export class SearchPanelComponent {
 
     @Output() searchClicked = new EventEmitter<void>();
+    @Input() public type: 'basic' | 'full' = 'basic';
+    public cssClasses = ['search-panel']
 
-    onSearch() {
+    public onSearch() {
         this.searchClicked.emit();
+    }
+
+    ngOnInit(): void {
+        this.getCssClasses();
+    }
+
+    public getCssClasses() {
+        this.cssClasses.push(this.type)
     }
 
 }
