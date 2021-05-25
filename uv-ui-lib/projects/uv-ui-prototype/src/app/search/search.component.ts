@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
     public showContent = false;
     public searchTabs = DEFAULT_SEARCH_MENU_STATE.menuTabs;
     categorySelected = true;
+    public reOrderModeActivated = false;
 
     constructor(private headerService: HeaderService){
         this.categorySelected = false;
@@ -28,6 +29,10 @@ export class SearchComponent implements OnInit {
     ngOnInit(): void {
         this.headerService.setTitle('Search');
         this.headerService.setAppIcon('assets/search.svg#search');
+    }
+
+    reOrderMode() {
+        this.reOrderModeActivated = !this.reOrderModeActivated;
     }
 
     onTabClicked(category: string){

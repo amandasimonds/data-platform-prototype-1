@@ -12,5 +12,6 @@ export class TabComponent {
     @Input() label = '';
     @Input() isDisabled = false;
     @Input() isActive = false;
+    @Input() isReorderMode = false;
 
 }

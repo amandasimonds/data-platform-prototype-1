@@ -47,11 +47,21 @@
     &-center {
         justify-content: center;
     }
+
+    &-flex-end {
+        justify-content: flex-end;
+    }
 }
 
 .align-items {
     &-center {
         align-items: center;
+    }
+}
+
+.justify-items {
+    &-center {
+        justify-items: center;
     }
 }
 
@@ -99,6 +109,10 @@
     margin-left: $md-size;
 }
 
+.margin-right-xs {
+    margin-right: $xs-size;
+}
+
 .margin-right-sm {
     margin-right: $sm-size;
 }
@@ -121,5 +135,9 @@
 
 .gray {
     color: $color-gray-light-3;
+}
+
+.blue { 
+    color: $color-blue;
 }
 

@@ -1,8 +1,8 @@
 <div 
     class="tab justify-content-space-between" 
-    [ngClass]="{'disabled': isDisabled, 'active': isActive}">
+    [ngClass]="{'disabled': isDisabled, 'active': isActive, 'reorder-mode': isReorderMode}">
     <div>
-        <svg class="gray margin-right-sm position"><use [attr.href]="svgPath"></use></svg>
+        <svg class="gray margin-right-sm position" [ngClass]="{'blue': isReorderMode}"><use [attr.href]="isReorderMode ? 'assets/reorder.svg#reorder' : svgPath"></use></svg>
         {{label}}
     </div>
     <ng-content></ng-content>
