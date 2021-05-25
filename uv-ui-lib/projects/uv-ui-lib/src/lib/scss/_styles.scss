@@ -156,18 +156,6 @@ svg {
     width:100%;
 }
 
-.search-panel-side-container {
-    padding: 16px;
-    position: relative;
-    width:20%;
-    border-left: $border-gray-light;
-    transition: all ease-in-out .8s;
-
-    &--expanded {
-        width: 50%;
-    }
-}
-
 @media (max-width: 1700px) {
     .search-panel {
         width: 100%;
