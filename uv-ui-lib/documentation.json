@@ -4292,14 +4292,6 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-prototype/src/test.ts",
-                "type": "",
-                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
-                "name": "context",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/uv-ui-components/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
@@ -4309,6 +4301,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-prototype/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -4353,14 +4353,6 @@
                 "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
-                "name": "img",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "type": "",
-                "defaultValue": "require('./assets/uvlogo.png')"
-            },
-            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4396,6 +4388,14 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/DropdownButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/Button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -4412,23 +4412,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/DropdownButton.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/ImageButton.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/NavbarDashboard.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4444,7 +4428,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Snippet.stories.ts",
+                "file": "stories/SearchPanel.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4452,7 +4436,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/SearchPanel.stories.ts",
+                "file": "stories/Snippet.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4465,11 +4449,12 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "require",
+                "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-prototype/src/test.ts",
-                "type": "literal type"
+                "file": "stories/NavbarDashboard.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "require",
@@ -4483,6 +4468,13 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-prototype/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -4529,6 +4521,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/DropdownButton.stories.ts",
+                "type": "Story<DropdownButtonComponent>",
+                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/Button.stories.ts",
                 "type": "Story<UvUiButtonComponent>",
                 "defaultValue": "(args: UvUiButtonComponent) => ({\r\n    component: UvUiButtonComponent,\r\n    props: args,\r\n})"
@@ -4545,25 +4545,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/DropdownButton.stories.ts",
-                "type": "Story<DropdownButtonComponent>",
-                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/ImageButton.stories.ts",
                 "type": "Story<ImageButtonComponent>",
                 "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/NavbarDashboard.stories.ts",
-                "type": "Story<NavbarDashboardComponent>",
-                "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4577,17 +4561,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Snippet.stories.ts",
-                "type": "Story<SnippetComponent>",
-                "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
+                "file": "stories/SearchPanel.stories.ts",
+                "type": "Story<SearchPanelComponent>",
+                "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/SearchPanel.stories.ts",
-                "type": "Story<SearchPanelComponent>",
-                "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
+                "file": "stories/Snippet.stories.ts",
+                "type": "Story<SnippetComponent>",
+                "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4598,12 +4582,20 @@
                 "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
             },
             {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/NavbarDashboard.stories.ts",
+                "type": "Story<NavbarDashboardComponent>",
+                "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
+            },
+            {
                 "name": "withAnImage",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Header.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\r\n    template: `<img src=\"/uvlogo.png\" alt=\"my image\"/>`,\r\n    props: { img }\r\n  })"
+                "defaultValue": "() => ({\r\n    template: `<img src=\"/profile.svg#profile\"/>`\r\n  })"
             }
         ],
         "functions": [],
@@ -4628,23 +4620,6 @@
                     "file": "projects/uv-ui-prototype/src/app/side-by-side/compareTasks.ts",
                     "type": "[]",
                     "defaultValue": "[\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  }\r\n]"
-                }
-            ],
-            "projects/uv-ui-prototype/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-prototype/src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-prototype/src/test.ts",
-                    "type": "literal type"
                 }
             ],
             "projects/uv-ui-components/src/test.ts": [
@@ -4678,6 +4653,23 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/uv-ui-prototype/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/test.ts",
                     "type": "literal type"
                 }
             ],
@@ -4729,40 +4721,6 @@
                     "file": "projects/uv-ui-prototype/src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
-            "stories/Header.stories.ts": [
-                {
-                    "name": "img",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "require('./assets/uvlogo.png')"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
-                    "type": "Story<HeaderComponent>",
-                    "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
-                },
-                {
-                    "name": "withAnImage",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    template: `<img src=\"/uvlogo.png\" alt=\"my image\"/>`,\r\n    props: { img }\r\n  })"
                 }
             ],
             "stories/Button.stories.ts": [
@@ -4863,6 +4821,32 @@
                     "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
                 }
             ],
+            "stories/Header.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Header.stories.ts",
+                    "type": "Story<HeaderComponent>",
+                    "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
+                },
+                {
+                    "name": "withAnImage",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Header.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n    template: `<img src=\"/profile.svg#profile\"/>`\r\n  })"
+                }
+            ],
             "stories/ImageButton.stories.ts": [
                 {
                     "name": "Primary",
@@ -4879,24 +4863,6 @@
                     "file": "stories/ImageButton.stories.ts",
                     "type": "Story<ImageButtonComponent>",
                     "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "stories/NavbarDashboard.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/NavbarDashboard.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/NavbarDashboard.stories.ts",
-                    "type": "Story<NavbarDashboardComponent>",
-                    "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
                 }
             ],
             "stories/NavbarDashboardSub.stories.ts": [
@@ -4917,24 +4883,6 @@
                     "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
                 }
             ],
-            "stories/Snippet.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Snippet.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Snippet.stories.ts",
-                    "type": "Story<SnippetComponent>",
-                    "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
-                }
-            ],
             "stories/SearchPanel.stories.ts": [
                 {
                     "name": "Primary",
@@ -4953,6 +4901,24 @@
                     "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
                 }
             ],
+            "stories/Snippet.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Snippet.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Snippet.stories.ts",
+                    "type": "Story<SnippetComponent>",
+                    "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
+                }
+            ],
             "stories/SvgButton.stories.ts": [
                 {
                     "name": "Primary",
@@ -4969,6 +4935,24 @@
                     "file": "stories/SvgButton.stories.ts",
                     "type": "Story<SvgButtonComponent>",
                     "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "stories/NavbarDashboard.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/NavbarDashboard.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/NavbarDashboard.stories.ts",
+                    "type": "Story<NavbarDashboardComponent>",
+                    "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
                 }
             ],
             "projects/uv-ui-prototype/src/app/search/search-results/sample-search-results/requirementsResults.ts": [
@@ -5732,16 +5716,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "img",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
