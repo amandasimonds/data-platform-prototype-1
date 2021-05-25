@@ -1,4 +1,4 @@
-<div class="search-panel flex justify-content-space-between">
+<div [ngClass]="cssClasses" class="search-panel flex justify-content-space-between">
 
     <div class="search-panel__search-field flex align-items-center">
 
@@ -8,7 +8,7 @@
         placeholder="Search..."
         class="search-panel__search-field__input">
 
-        <lib-uv-ui-svg-button color='blue' size='xs' svgPath='assets/close.svg#close' ></lib-uv-ui-svg-button>
+        <lib-uv-ui-svg-button *ngIf="type === 'full'"color='blue' size='xs' svgPath='assets/close.svg#close' ></lib-uv-ui-svg-button>
         
     </div>
     

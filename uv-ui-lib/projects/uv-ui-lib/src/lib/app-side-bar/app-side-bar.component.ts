@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'lib-uv-ui-app-side-bar',
@@ -7,6 +7,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppSideBarComponent {
-    @Input() public titleText = '';
-    @Input() public descriptionText = '';
+
 }

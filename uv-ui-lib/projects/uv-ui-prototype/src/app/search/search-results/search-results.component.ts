@@ -24,12 +24,9 @@ export class SearchResultsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // this.getSearchResults();
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        console.log(this.category);
-        console.log(this.searchResults);
     }
 
     getSearchResults(){
