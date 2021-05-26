@@ -65,6 +65,10 @@
     }
 }
 
+.height-sm {
+    height: $sm-size;
+}
+
 .margin-xxs{
     margin: $xxs-size
 }
@@ -81,8 +85,16 @@
     margin: $md-size
 }
 
+.margin-top-xs {
+    margin-top: $xs-size;
+}
+
 .margin-top-sm {
     margin-top: $sm-size;
+}
+
+.margin-bottom-xxs {
+    margin-bottom: $xxs-size;
 }
 
 .margin-bottom-xs {

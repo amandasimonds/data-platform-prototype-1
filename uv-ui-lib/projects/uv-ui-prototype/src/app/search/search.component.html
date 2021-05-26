@@ -1,9 +1,9 @@
 <div class="grid">
     <div class="sidebar">     
-        <lib-uv-ui-app-side-bar titleText="600 Results">
+        <lib-uv-ui-app-side-bar>
 
             <div top>
-                <div class="top-content flex justify-content-space-between margin-bottom-sm">
+                <div class="height-sm top-content flex justify-content-space-between margin-bottom-sm">
                     <div>
                         <lib-uv-ui-svg-button size="xs" class="back-arrow" color='blue' svgPath='assets/back-arrow.svg#back-arrow'></lib-uv-ui-svg-button>
                         <lib-uv-ui-button buttonText="Back" type="btn-blue" (click)="clearResults()"></lib-uv-ui-button>
@@ -58,6 +58,7 @@
         </lib-uv-ui-app-side-bar>
         
     </div>
+    
     <div class="sidebar2" [ngClass]="{ 'filter-bar-width' : filterBarActive }">
         <lib-uv-ui-app-side-bar *ngIf="filterBarActive">
             <div top>
@@ -69,14 +70,37 @@
                 <lib-uv-ui-search-panel type="basic"></lib-uv-ui-search-panel>
             </div>
             <div bottom>
-                <div class="scroll-container flex flex-column">
-                    <p class="bold">Technology</p>
-                    <div *ngFor="let item of items" class="checkbox-container">
-                        <label for="">
+                <div class="filter-scroll-container flex flex-column">
+                    <!-- <p class="bold paragraph margin-bottom-xxs">Technology</p>
+                    <div *ngFor="let item of items" class="container">
+                        <label>
+                            <input type="checkbox" checked={{item.checked}}>
                             <span class="checkmark"></span>
-                            {{item.title}}
-                            <input type="checkbox" checked="checked">
-                            
+                            <p class="paragraph">{{item.title}}</p>
+                        </label>
+                    </div> -->
+                    <p class="bold paragraph margin-top-xs margin-bottom-xxs">Discipline</p>
+                    <div *ngFor="let item of items" class="container">
+                        <label>
+                            <input type="checkbox" checked={{item.checked}}>
+                            <span class="checkmark"></span>
+                            <p class="paragraph">{{item.title}}</p>
+                        </label>
+                    </div>
+                    <p class="bold paragraph margin-top-xs margin-bottom-xxs">Category</p>
+                    <div *ngFor="let item of items" class="container">
+                        <label>
+                            <input type="checkbox" checked={{item.checked}}>
+                            <span class="checkmark"></span>
+                            <p class="paragraph">{{item.title}}</p>
+                        </label>
+                    </div>
+                    <p class="bold paragraph margin-top-xs margin-bottom-xxs">Technology</p>
+                    <div *ngFor="let item of items" class="container">
+                        <label>
+                            <input type="checkbox" checked={{item.checked}}>
+                            <span class="checkmark"></span>
+                            <p class="paragraph">{{item.title}}</p>
                         </label>
                     </div>
                 </div>

@@ -2,24 +2,41 @@
 
     
     <div class="appbar">
-    <lib-uv-ui-app-bar></lib-uv-ui-app-bar>
-</div>
+        <lib-uv-ui-app-bar>
+            <div right>
+                <lib-uv-ui-svg-button class="margin-right-xs" color='blue' svgPath='assets/more-horizontal.svg#moreHorizontal'></lib-uv-ui-svg-button>
+                <lib-uv-ui-svg-button color='blue' svgPath='assets/fullscreen.svg#fullScreen'></lib-uv-ui-svg-button>
+            </div>
+        </lib-uv-ui-app-bar>
+    </div>
 
-<div class="sidebar">
-    
-    <lib-uv-ui-app-side-bar
-        titleText="Title Can Go Here"
-        descriptionText="Lorem ipsum dolor sit amet consectetur eiusmod tempor adipiscing elit sed do incididunt ut labore">
-        <div *ngFor="let tab of gwuTabs">
-            <lib-uv-ui-tab svgPath="{{tab.icon}}" label="{{tab.linkText}}"></lib-uv-ui-tab>
-        </div>
-    </lib-uv-ui-app-side-bar>
-    
-</div>
+    <div class="sidebar">
+        <lib-uv-ui-app-side-bar>
+            <div top>
+                <div class="height-sm top-content flex justify-content-space-between margin-bottom-sm">
+                    <div>
+                        <lib-uv-ui-svg-button size="xs" class="back-arrow" color='blue' svgPath='assets/back-arrow.svg#back-arrow'></lib-uv-ui-svg-button>
+                        <lib-uv-ui-button buttonText="Back" type="btn-blue"></lib-uv-ui-button>
+                    </div>
+                </div>
+                <p class="heading-4 margin-bottom-xs">Title Goes Here</p>
+                <p>Lorem ipsum dolor sit amet consectetur eiusmod tempor adipiscing elit sed do incididunt ut labore</p>
+            </div>
+
+            <div bottom>
+                    <div *ngFor="let tab of gwuTabs">
+                        <lib-uv-ui-tab 
+                        svgPath="{{tab.icon}}" 
+                        label="{{tab.linkText}}">
+                    </lib-uv-ui-tab>
+                </div> 
+            </div>
+        </lib-uv-ui-app-side-bar>
+    </div>
 
 <div class="content">
     
-    <lib-uv-ui-widget><img src='../../assets/graph.png'></lib-uv-ui-widget>
+    <lib-uv-ui-widget></lib-uv-ui-widget>
     
 </div>
 
