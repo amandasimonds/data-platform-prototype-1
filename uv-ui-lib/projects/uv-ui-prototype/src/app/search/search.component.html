@@ -18,21 +18,39 @@
 
             <div bottom>
                 
-                <div *ngFor="let tab of searchTabs">
-                <lib-uv-ui-tab 
-                    (click)="onTabClicked(tab.category)"
-                    [isDisabled]="tab.entitySearchCount === 0"
-                    [isActive]="onToggleTabActive(tab.category)"
-                    [isReorderMode]="reOrderModeActivated"
-                    svgPath="{{tab.icon}}" 
-                    label="{{tab.title}}" 
-                    [routerLink]="tab.routeUri">
-                    <span class="chip" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
-                </lib-uv-ui-tab>
+                <div *ngIf="!reOrderModeActivated">
+                    <div *ngFor="let tab of searchTabs">
+                        <lib-uv-ui-tab 
+                        (click)="onTabClicked(tab.category)"
+                        [isDisabled]="tab.entitySearchCount === 0"
+                        [isActive]="onToggleTabActive(tab.category)"
+                        [isReorderMode]="reOrderModeActivated"
+                        svgPath="{{tab.icon}}" 
+                        label="{{tab.title}}" 
+                        [routerLink]="tab.routeUri">
+                        <span class="chip" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
+                    </lib-uv-ui-tab>
                 </div> 
+            </div>
+
+                <div *ngIf="reOrderModeActivated" cdkDropList  (cdkDropListDropped)="drop($event)">
+                    <div *ngFor="let tab of searchTabs" cdkDrag>
+                        <lib-uv-ui-tab 
+                            
+                            (click)="onTabClicked(tab.category)"
+                            [isDisabled]="tab.entitySearchCount === 0"
+                            [isActive]="onToggleTabActive(tab.category)"
+                            [isReorderMode]="reOrderModeActivated"
+                            svgPath="{{tab.icon}}" 
+                            label="{{tab.title}}" 
+                            [routerLink]="tab.routeUri">
+                            <span class="chip" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
+                        </lib-uv-ui-tab>
+                    </div>
+                </div>
 
                 <div *ngIf="reOrderModeActivated" class="margin-xs flex justify-content-flex-end">
-                    <lib-uv-ui-button buttonText="Close" class="margin-right-sm" type="btn-blue" (click)="clearResults()"></lib-uv-ui-button>
+                    <lib-uv-ui-button buttonText="Close" class="margin-right-sm" type="btn-blue" (click)="reOrderMode()"></lib-uv-ui-button>
                     <lib-uv-ui-button buttonText="Save" type="btn-blue" (click)="clearResults()"></lib-uv-ui-button>
                 </div>
             </div>
@@ -49,6 +67,19 @@
                 </div>
                 
                 <lib-uv-ui-search-panel type="basic"></lib-uv-ui-search-panel>
+            </div>
+            <div bottom>
+                <div class="scroll-container flex flex-column">
+                    <p class="bold">Technology</p>
+                    <div *ngFor="let item of items" class="checkbox-container">
+                        <label for="">
+                            <span class="checkmark"></span>
+                            {{item.title}}
+                            <input type="checkbox" checked="checked">
+                            
+                        </label>
+                    </div>
+                </div>
             </div>
         </lib-uv-ui-app-side-bar>
     </div>

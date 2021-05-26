@@ -9,8 +9,8 @@ import { SearchPanelModule } from '../../../../uv-ui-lib/src/public-api';
 import { TabModule } from '../../../../uv-ui-lib/src/public-api';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { LandingComponent } from './landing/landing.component';
-import { SearchResult } from './models/search-result.model';
 import { FilterResultsPipe } from './search-results/filter-results.pipe';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { FilterResultsPipe } from './search-results/filter-results.pipe';
     TabModule, 
     ButtonModule, 
     SvgButtonModule,
-    SearchPanelModule
+    SearchPanelModule,
+    DragDropModule
   ],
   exports: [ SearchComponent ]
 })
