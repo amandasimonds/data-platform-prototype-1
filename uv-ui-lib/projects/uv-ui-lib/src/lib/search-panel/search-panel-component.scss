@@ -10,29 +10,31 @@
     padding-right: 12px;
     transition: all .2s;
 
-    &__search-field {
-        margin-left: 16px;
+    
 
-        &__input {
-            margin-left: 16px;
-            margin-right: 150px;
-            font-size: 14px;
-            font-family: inherit;
-            border: none;
-    
-            &:focus,
-            &:invalid {
-                outline: none;
-            }
-    
-            &::-webkit-input-placeholder {
-                color: $color-gray;
-                font-style: italic;
-            }
+    &__input {
+        margin-left: 16px;
+        margin-right: 150px;
+        font-size: 14px;
+        font-family: inherit;
+        border: none;
+
+        &:focus,
+        &:invalid {
+            outline: none;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-gray;
+            font-style: italic;
         }
     }
 }
 
 .full {
     border: $border-gray-light;
+
+    &__search-field {
+        margin-left: 16px;
+    }
 }
