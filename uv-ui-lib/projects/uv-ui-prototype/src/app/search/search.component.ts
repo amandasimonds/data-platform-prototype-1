@@ -15,19 +15,22 @@ export class SearchComponent implements OnInit {
     public searchItemsArray: SearchResult[] = [];
     public searchItem: SearchResult = {category: '', title: '', description: ''};
     public searchCategory = '';
-    public activeExample = true;
     public showContent = false;
     public searchTabs = DEFAULT_SEARCH_MENU_STATE.menuTabs;
-    categorySelected = true;
+    public categorySelected = true;
     public reOrderModeActivated = false;
-    public filterBarActive = true;
+    public filterBarActive = false;
 
     constructor(private headerService: HeaderService){
         this.categorySelected = false;
     }
 
     items = [
-        {title: "Checkbox"}
+        {title: "Lorem ipsum", checked: "checked"},
+        {title: "Ipsum sit amet", checked: ""},
+        {title: "Amet lorem", checked: ""},
+        {title: "Lorem ipsum sit", checked: "checked"},
+        {title: "Lorem ipsum amet", checked: "checked"},
     ]
 
     drop(event: CdkDragDrop<string[]>) {
