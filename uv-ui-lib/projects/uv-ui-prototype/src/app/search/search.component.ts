@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { HeaderService } from '../services/header.service';
 import { SearchResult } from './models/search-result.model';
@@ -19,11 +20,19 @@ export class SearchComponent implements OnInit {
     public searchTabs = DEFAULT_SEARCH_MENU_STATE.menuTabs;
     categorySelected = true;
     public reOrderModeActivated = false;
-    public filterBarActive = false;
+    public filterBarActive = true;
 
     constructor(private headerService: HeaderService){
         this.categorySelected = false;
     }
+
+    items = [
+        {title: "Checkbox"}
+    ]
+
+    drop(event: CdkDragDrop<string[]>) {
+        moveItemInArray(this.searchTabs, event.previousIndex, event.currentIndex);
+      }
 
     ngOnInit(): void {
         this.headerService.setTitle('Search');
