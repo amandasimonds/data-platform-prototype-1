@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { HeaderService } from '../services/header.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { HeaderService } from '../services/header.service';
   styleUrls: ['./global-where-used.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GlobalWhereUsedComponent {
+export class GlobalWhereUsedComponent implements OnInit{
 
     public gwuTabs = [
         {
@@ -32,7 +32,7 @@ export class GlobalWhereUsedComponent {
 
     constructor(private headerService: HeaderService){}
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.headerService.setTitle('Global Where Used');
         this.headerService.setAppIcon('assets/apps-gwu.svg#inspect');
     }

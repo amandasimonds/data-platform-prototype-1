@@ -16,11 +16,11 @@ export class HeaderService {
         return this.appIcon.asObservable();
     }
 
-    setTitle(title: string) {
+    public setTitle(title: string): void {
         this.title.next(title);
     }
 
-    setAppIcon(appIcon: string) {
+    public setAppIcon(appIcon: string): void {
         this.appIcon.next(appIcon);
     }
 }
