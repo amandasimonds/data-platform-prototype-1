@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'lib-uv-ui-button',
@@ -6,9 +6,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     styleUrls: ['./button.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ButtonComponent {
+export class ButtonComponent implements OnInit {
     @Input() public buttonText = 'Button';
-    @Input() public type: 'btn' | 'btn-login' | 'btn-chip' | 'btn-blue' | 'btn-round' = 'btn'
+    @Input() public type: 'btn' | 'btn-login' | 'btn-chip' | 'btn-blue' | 'btn-round' = 'btn';
 
     public cssClasses = ['btn'];
 

@@ -9,7 +9,7 @@ import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core
 export class SvgButtonComponent implements OnInit {
     @Input() public svgPath = '';
     @Input() public color: 'gray' | 'blue' | 'black' = 'black';
-    @Input() public size: 'small' | 'xs' | 'xxs' = 'small'
+    @Input() public size: 'small' | 'xs' | 'xxs' = 'small';
 
     public cssClasses = ['btn', 'btn-svg'];
 

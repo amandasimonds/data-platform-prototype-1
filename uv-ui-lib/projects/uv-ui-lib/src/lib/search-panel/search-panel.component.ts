@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'lib-uv-ui-search-panel',
@@ -6,22 +6,22 @@ import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input } from 
     styleUrls: ['./search-panel-component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchPanelComponent {
+export class SearchPanelComponent implements OnInit {
 
-    @Output() searchClicked = new EventEmitter<void>();
+    @Output() readonly searchClicked = new EventEmitter<void>();
     @Input() public type: 'basic' | 'full' = 'basic';
-    public cssClasses = ['search-panel']
+    public cssClasses = ['search-panel'];
 
     public onSearch() {
         this.searchClicked.emit();
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.getCssClasses();
     }
 
     public getCssClasses() {
-        this.cssClasses.push(this.type)
+        this.cssClasses.push(this.type);
     }
 
 }

@@ -11,7 +11,7 @@ export class SettingsComponent implements OnInit {
 
     constructor(private headerService: HeaderService){}
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.headerService.setTitle('Settings');
         this.headerService.setAppIcon('assets/apps-settings.svg#settings');
     }

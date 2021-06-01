@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
-import { navItems } from './navItems';
 import { HeaderService } from '../../services/header.service';
+import { navItems } from './navItems';
 
 @Component({
     selector: 'prototype-app-main',
@@ -17,8 +17,8 @@ export class MainComponent implements OnInit {
     @Input() public searchQuery = '';
 
     constructor(public headerService: HeaderService, private ref: ChangeDetectorRef) { }
-    
-    ngOnInit() {
+
+    public ngOnInit(): void {
         this.headerService.currentTitle$.subscribe(title => {
             this.title = title;
             this.ref.detectChanges();
@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
         });
     }
 
-    onSearchAction(query: string) {
-        // if (query === 'part')
+    public onSearchAction(data: string): void {
+        console.log(data, 'search clicked');
     }
 }

@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeSplashComponent } from './home-splash.component';
 
 const routes: Routes = [
-  { path: '', component: HomeSplashComponent },
+  { path: '', component: HomeSplashComponent }
 ];
 
 @NgModule({

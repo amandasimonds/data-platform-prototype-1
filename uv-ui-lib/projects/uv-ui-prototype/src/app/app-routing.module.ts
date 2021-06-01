@@ -12,11 +12,11 @@ const routes: Routes = [
     {
         path: '',
         component: AuthGuardComponent,
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuardService]
     },
     {
         path: 'login',
-        component: LoginComponent,
+        component: LoginComponent
     },
     {
         path: 'logout',
@@ -24,7 +24,7 @@ const routes: Routes = [
     },
     {
 		path: 'auth-callback',
-		component: AuthGuardComponent,
+		component: AuthGuardComponent
 	},
     {
         path: 'main',
@@ -49,7 +49,7 @@ const routes: Routes = [
             {
                 path: 'settings',
                 component: SettingsComponent
-            },
+            }
         ]
     }
 ];

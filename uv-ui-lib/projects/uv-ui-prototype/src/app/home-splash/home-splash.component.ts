@@ -11,9 +11,8 @@ export class HomeSplashComponent implements OnInit{
 
     constructor(private headerService: HeaderService){}
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.headerService.setTitle('Dashboard');
         this.headerService.setAppIcon('assets/apps-quad.svg#dashboard');
     }
-    
 }

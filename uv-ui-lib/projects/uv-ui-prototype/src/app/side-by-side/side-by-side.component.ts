@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { HeaderService } from '../services/header.service';
 import { compareTasksData } from './compareTasks';
 import { dropdownItems } from './dropdownItems';
-import { HeaderService } from '../services/header.service';
 
 @Component({
     selector: 'prototype-uv-ui-side-by-side',
@@ -14,7 +14,7 @@ export class SideBySideComponent implements OnInit{
     public compareTasks = compareTasksData;
     public dropdownItems = dropdownItems;
 
-    constructor( private headerService: HeaderService ) {}
+    constructor(private headerService: HeaderService) {}
 
     public addTaskClicked(event: Event): void {
         console.log(event, 'add task was clicked');
@@ -24,9 +24,8 @@ export class SideBySideComponent implements OnInit{
         console.log(event, 'filter button was clicked');
     }
 
-    ngOnInit(): void {
-        this.headerService.setTitle('Side By Side')
-        this.headerService.setAppIcon('assets/apps-sbs.svg#sideBySide')
+    public ngOnInit(): void {
+        this.headerService.setTitle('Side By Side');
+        this.headerService.setAppIcon('assets/apps-sbs.svg#sideBySide');
     }
-
 }
