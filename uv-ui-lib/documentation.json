@@ -4281,6 +4281,30 @@
                 "defaultValue": "[\r\n    {\r\n      category: \"Parts\",\r\n      title: \"PartABCD000001\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n\r\n    },\r\n    {\r\n      category: \"Parts\",\r\n      title: \"PartABCD000002\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n    {\r\n      category: \"Parts\",\r\n      title: \"PartABCD000003\",\r\n      description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\"\r\n    },\r\n    {\r\n      category: \"Parts\",\r\n      title: \"PartABCD000004\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n    {\r\n      category: \"Requirements\",\r\n      title: \"RequirementsABCD000001\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n    {\r\n      category: \"Requirements\",\r\n      title: \"RequirementsABCD000002\",\r\n      description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\"\r\n    },\r\n    {\r\n      category: \"Requirements\",\r\n      title: \"RequirementsABCD000003\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n    {\r\n      category: \"Requirements\",\r\n      title: \"RequirementsABCD000004\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n    {\r\n      category: \"Requirements\",\r\n      title: \"RequirementsABCD000005\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000001\",\r\n        description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n      },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000002\",\r\n        description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\"\r\n      },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000003\",\r\n        description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n      },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000004\",\r\n        description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n      },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000005\",\r\n        description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\"\r\n      },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000006\",\r\n        description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n      }\r\n    ]"
             },
             {
+                "name": "blueBtn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button-lib.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "btn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button-lib.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "chip",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button-lib.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "compareTasksData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4361,6 +4385,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "login",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button-lib.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "navItems",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4380,31 +4412,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button-lib.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/Button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/DropdownButton.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/ImageButton.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4420,7 +4428,15 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/NavbarDashboard.stories.ts",
+                "file": "stories/ImageButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/DropdownButton.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4429,6 +4445,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/NavbarDashboardSub.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/NavbarDashboard.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4486,6 +4510,14 @@
                 "defaultValue": "[\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'I am not a document, I am a part',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions Longer Text Can Go Here If Needed Longer Text Can Go Here If Needed Longer Text Can Go Here If Needed'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Requirements',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n]"
             },
             {
+                "name": "roundBtn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button-lib.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "searchItems",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4529,9 +4561,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/DropdownButton.stories.ts",
-                "type": "Story<DropdownButtonComponent>",
-                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
+                "file": "stories/Header.stories.ts",
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4545,17 +4577,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/NavbarDashboard.stories.ts",
-                "type": "Story<NavbarDashboardComponent>",
-                "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
+                "file": "stories/DropdownButton.stories.ts",
+                "type": "Story<DropdownButtonComponent>",
+                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4564,6 +4588,14 @@
                 "file": "stories/NavbarDashboardSub.stories.ts",
                 "type": "Story<NavbarDashboardSubComponent>",
                 "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/NavbarDashboard.stories.ts",
+                "type": "Story<NavbarDashboardComponent>",
+                "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4610,6 +4642,56 @@
                     "file": "projects/uv-ui-prototype/src/app/search/search-results/sample-search-results/allSearchResults.ts",
                     "type": "[]",
                     "defaultValue": "[\r\n    {\r\n      category: \"Parts\",\r\n      title: \"PartABCD000001\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n\r\n    },\r\n    {\r\n      category: \"Parts\",\r\n      title: \"PartABCD000002\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n    {\r\n      category: \"Parts\",\r\n      title: \"PartABCD000003\",\r\n      description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\"\r\n    },\r\n    {\r\n      category: \"Parts\",\r\n      title: \"PartABCD000004\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n    {\r\n      category: \"Requirements\",\r\n      title: \"RequirementsABCD000001\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n    {\r\n      category: \"Requirements\",\r\n      title: \"RequirementsABCD000002\",\r\n      description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\"\r\n    },\r\n    {\r\n      category: \"Requirements\",\r\n      title: \"RequirementsABCD000003\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n    {\r\n      category: \"Requirements\",\r\n      title: \"RequirementsABCD000004\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n    {\r\n      category: \"Requirements\",\r\n      title: \"RequirementsABCD000005\",\r\n      description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n    },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000001\",\r\n        description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n      },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000002\",\r\n        description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\"\r\n      },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000003\",\r\n        description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n      },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000004\",\r\n        description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n      },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000005\",\r\n        description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\"\r\n      },\r\n      {\r\n        category: \"Documents\",\r\n        title: \"DocumentsABCD000006\",\r\n        description: \"Screw, Hexagon Flange Head Cap v4.1\"\r\n      }\r\n    ]"
+                }
+            ],
+            "stories/Button-lib.stories.ts": [
+                {
+                    "name": "blueBtn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button-lib.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "btn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button-lib.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "chip",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button-lib.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "login",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button-lib.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "roundBtn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button-lib.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button-lib.stories.ts",
+                    "type": "Story<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args,\r\n})"
                 }
             ],
             "projects/uv-ui-prototype/src/app/side-by-side/compareTasks.ts": [
@@ -4785,60 +4867,6 @@
                     "defaultValue": "[\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'I am not a document, I am a part',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions Longer Text Can Go Here If Needed Longer Text Can Go Here If Needed Longer Text Can Go Here If Needed'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n    {\r\n        category: 'Parts',\r\n        title: 'API 13M-4 / ISO 13503-4',\r\n        description: 'Recommended Practice for Measuring Stimulation and Gravel-pack Fluid Leakoff Under Static Conditions'\r\n    },\r\n]"
                 }
             ],
-            "stories/Button-lib.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button-lib.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button-lib.stories.ts",
-                    "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "stories/DropdownButton.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/DropdownButton.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/DropdownButton.stories.ts",
-                    "type": "Story<DropdownButtonComponent>",
-                    "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "stories/ImageButton.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/ImageButton.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/ImageButton.stories.ts",
-                    "type": "Story<ImageButtonComponent>",
-                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
-                }
-            ],
             "stories/Header.stories.ts": [
                 {
                     "name": "Primary",
@@ -4865,12 +4893,12 @@
                     "defaultValue": "() => ({\r\n    template: `<img src=\"/profile.svg#profile\"/>`\r\n  })"
                 }
             ],
-            "stories/NavbarDashboard.stories.ts": [
+            "stories/ImageButton.stories.ts": [
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/NavbarDashboard.stories.ts",
+                    "file": "stories/ImageButton.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4878,9 +4906,27 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/NavbarDashboard.stories.ts",
-                    "type": "Story<NavbarDashboardComponent>",
-                    "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
+                    "file": "stories/ImageButton.stories.ts",
+                    "type": "Story<ImageButtonComponent>",
+                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "stories/DropdownButton.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/DropdownButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/DropdownButton.stories.ts",
+                    "type": "Story<DropdownButtonComponent>",
+                    "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
                 }
             ],
             "stories/NavbarDashboardSub.stories.ts": [
@@ -4899,6 +4945,24 @@
                     "file": "stories/NavbarDashboardSub.stories.ts",
                     "type": "Story<NavbarDashboardSubComponent>",
                     "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "stories/NavbarDashboard.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/NavbarDashboard.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/NavbarDashboard.stories.ts",
+                    "type": "Story<NavbarDashboardComponent>",
+                    "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
                 }
             ],
             "stories/SearchPanel.stories.ts": [
@@ -5635,7 +5699,47 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "blueBtn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button-lib.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "btn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button-lib.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "chip",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button-lib.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "login",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button-lib.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "roundBtn",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
