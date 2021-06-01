@@ -15,7 +15,32 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
     props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
-    buttonText: 'new button'
+export const btn = Template.bind({});
+btn.args = {
+    buttonText: 'new button',
+    type: 'btn'
+};
+
+export const login = Template.bind({});
+login.args = {
+    buttonText: 'login button',
+    type: 'btn-login'
+};
+
+export const chip = Template.bind({});
+chip.args = {
+    buttonText: 'chip button',
+    type: 'btn-chip'
+};
+
+export const blueBtn = Template.bind({});
+blueBtn.args = {
+    buttonText: 'blue button',
+    type: 'btn-blue'
+};
+
+export const roundBtn = Template.bind({});
+roundBtn.args = {
+    buttonText: '+',
+    type: 'btn-round'
 };
