@@ -1,6 +1,6 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Meta, Story } from '@storybook/angular/types-6-0';
-import { UvUiButtonComponent } from '../projects/uv-ui-components/src/lib/uv-ui-button/uv-ui-button.component';
+import { UvUiButtonComponent } from '../projects/uv-ui-lib/src/lib/uv-ui-button/uv-ui-button.component';
 
 export default {
     title: 'Example/Button',
