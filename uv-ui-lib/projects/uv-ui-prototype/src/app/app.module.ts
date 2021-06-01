@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {
     AppBarModule,
     ButtonModule,
@@ -29,7 +29,6 @@ import { MainComponent } from './layouts/main/main.component';
 import { SearchModule } from './search/search.module';
 import { HelperService } from './services/helper.service';
 import { AuthService } from './services/auth.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SearchService } from './services/search.service';
 
 @NgModule({
@@ -39,7 +38,7 @@ import { SearchService } from './services/search.service';
         StartPageComponent,
         SideBySideComponent,
         GlobalWhereUsedComponent,
-        MainComponent,
+        MainComponent
     ],
     imports: [
         BrowserModule,
