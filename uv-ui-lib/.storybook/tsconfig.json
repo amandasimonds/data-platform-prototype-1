@@ -1,5 +1,5 @@
 {
-  "extends": "../projects/uv-ui-components/tsconfig.lib.json",
+  "extends": "../projects/uv-ui-lib/tsconfig.lib.json",
   "compilerOptions": {
     "types": [
       "node"
@@ -8,11 +8,14 @@
   "exclude": [
     "../src/test.ts",
     "../src/**/*.spec.ts",
-    "../projects/**/*.spec.ts"
+    "../projects/**/*.spec.ts",
+    "../projects/uv-ui-prototype/"
   ],
   "include": [
     "../src/**/*",
     "../projects/**/*"
+    // "../projects/uv-ui-lib/*",
+    // "../projects/uv-ui-components/*"
   ],
   "files": [
     "./typings.d.ts"
