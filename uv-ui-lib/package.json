@@ -13,7 +13,7 @@
     "build-components": "ng build uv-ui-components",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006 -s ./stories/assets",
-    "build-storybook-watch": "npm run docs:json && build-storybook --watch -s ./stories/assets",
+    "build-storybook-watch": "npm run docs:json && build-storybook -w -s ./stories/assets",
     "build-storybook": "npm run docs:json && build-storybook -s ./stories/assets",
     "build-uv-ui-lib": "ng build uv-ui-lib",
     "build-uv-ui-lib:watch": "ng build uv-ui-lib --watch",
