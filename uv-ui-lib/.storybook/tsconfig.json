@@ -12,9 +12,9 @@
     "../projects/uv-ui-prototype/"
   ],
   "include": [
-    "../src/**/*",
-    "../projects/**/*"
-    // "../projects/uv-ui-lib/*",
+    // "../src/**/*",
+    // "../projects/**/*"
+    "../projects/uv-ui-lib/*",
     // "../projects/uv-ui-components/*"
   ],
   "files": [

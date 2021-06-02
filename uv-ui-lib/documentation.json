@@ -1101,7 +1101,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-208ba4783958d494b67c1c202dd471fc",
+            "id": "component-ButtonComponent-f4d389bc68647b8a721efb36cb88ebbc",
             "file": "projects/uv-ui-lib/src/lib/button/button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1174,7 +1174,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ButtonComponent implements OnInit {\r\n    @Input() public buttonText = 'Button';\r\n    @Input() public type: 'btn' | 'btn-login' | 'btn-chip' | 'btn-blue' | 'btn-round' = 'btn';\r\n\r\n    public cssClasses = ['btn'];\r\n\r\n    public getCssClasses(): void {\r\n        this.cssClasses.push(this.type);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.getCssClasses();\r\n    }\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ButtonComponent {\r\n    @Input() public buttonText = 'Button';\r\n    @Input() public type: 'btn' | 'btn-login' | 'btn-chip' | 'btn-blue' | 'btn-round' = 'btn';\r\n\r\n    public cssClasses = ['btn'];\r\n\r\n    public getCssClasses(): void {\r\n        this.cssClasses.push(this.type);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.getCssClasses();\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1183,9 +1183,6 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
             "templateData": "<button \r\n    [ngClass]=\"cssClasses\" >\r\n    {{buttonText}}\r\n</button>\r\n\r\n\r\n"
         },
         {
@@ -4398,7 +4395,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/DropdownButton.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4406,7 +4403,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/DropdownButton.stories.ts",
+                "file": "stories/Button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4523,17 +4520,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "type": "Story<UvUiButtonComponent>",
-                "defaultValue": "(args: UvUiButtonComponent) => ({\r\n    component: UvUiButtonComponent,\r\n    props: args,\r\n})"
+                "file": "stories/DropdownButton.stories.ts",
+                "type": "Story<DropdownButtonComponent>",
+                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/DropdownButton.stories.ts",
-                "type": "Story<DropdownButtonComponent>",
-                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
+                "file": "stories/Button.stories.ts",
+                "type": "Story<UvUiButtonComponent>",
+                "defaultValue": "(args: UvUiButtonComponent) => ({\r\n    component: UvUiButtonComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",

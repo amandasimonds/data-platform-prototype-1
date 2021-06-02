@@ -11,7 +11,7 @@ export class SvgButtonComponent implements OnInit {
     @Input() public color: 'gray' | 'blue' | 'black' = 'black';
     @Input() public size: 'small' | 'xs' | 'xxs' = 'small';
 
-    public cssClasses = ['btn', 'btn-svg'];
+    // public cssClasses = ['btn', 'btn-svg'];
 
     public getCssClasses(): void {
         this.cssClasses.push(this.color, this.size);
@@ -19,5 +19,10 @@ export class SvgButtonComponent implements OnInit {
 
     public ngOnInit(): void {
         this.getCssClasses();
+    }
+
+    public get cssClasses(): string[] {
+
+        return ['btn', 'btn-svg', this.color, this.size];
     }
 }
