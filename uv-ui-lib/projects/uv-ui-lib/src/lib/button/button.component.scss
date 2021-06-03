@@ -3,13 +3,11 @@
 .button {
     font-family: $font-family;
     border: 0;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
     display: inline-block;
     line-height: 1;
 }
-
-
 
 // .btn {
 //     &,
@@ -31,6 +29,63 @@
 //     }
 // }
 
+.basic {
+    line-height: 20px;
+    font-family: $font-family-bold;
+    font-weight: $font-bold;
+    background-color: transparent;
+}
+
+.basic--primary {
+    color: $color-blue;
+}
+
+.flat {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: $font-family-bold;
+    font-weight: $font-bold;
+    height: 40px;
+    padding: 0 25px;
+    border: 1px solid $color-gray;
+}
+
+.flat--primary {
+    color: white;
+    background-color: $color-blue;
+    border: 0;
+}
+
+.round {
+    width: 41px;
+    height: 41px;
+    padding: 10.5px;
+    border-radius: 100%;
+    border: $border-gray-light;
+
+    &-large{
+        width: 57px;
+        height: 57px;
+        color: $color-blue;
+        font-weight: bold;
+        font-size: 24px;
+        text-align:center;
+    }
+}
+
+.wrapper {
+    display: inline-block;
+}
+
+.position-svg {
+    // display: inline-flex;
+    // align-items: center;
+    // // background-color: red;
+    // position: relative;
+    width: 24px;
+    height: 24px;
+}
+
 .btn-login {
     margin:25px;
     padding: 12px;
@@ -48,23 +103,6 @@
     border: $border-gray-light;
 }
 
-.btn-round {
-    width: 41px;
-    height: 41px;
-    padding: 10.5px;
-    border-radius: 100%;
-    border: $border-gray-light;
-
-    &-large{
-        width: 57px;
-        height: 57px;
-        color: $color-blue;
-        font-weight: bold;
-        font-size: 24px;
-        text-align:center;
-    }
-}
-
 .btn-add-task {
     color: $color-blue;
     font-size: 18px;
@@ -72,9 +110,3 @@
     border: $border-gray-light;
 }
 
-.btn-blue {
-    color: $color-blue;
-    line-height: 20px;
-    font-family: $font-family-bold;
-    font-weight: $font-bold;
-}
