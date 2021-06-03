@@ -7,11 +7,12 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent {
-    @Input() public buttonText = 'Button';
+    @Input() public label = 'Button';
+    @Input() public size: 'small' | 'medium' | 'large' = 'medium';
     @Input() public type: 'btn' | 'btn-login' | 'btn-chip' | 'btn-blue' | 'btn-round' = 'btn';
 
-    public get cssClasses(): string[] {
+    public get classes(): string[] {
 
-        return ['btn', this.type];
+        return ['button', this.type];
     }
 }

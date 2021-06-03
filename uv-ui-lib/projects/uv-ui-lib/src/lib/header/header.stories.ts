@@ -1,9 +1,9 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Meta, Story } from '@storybook/angular/types-6-0';
-import { HeaderComponent } from '../projects/uv-ui-lib/src/lib/header/header.component';
+import { HeaderComponent } from './header.component';
 
 export default {
-    title: 'Example/Header',
+    title: 'Components/Header',
     component: HeaderComponent,
     argTypes: {
         backgroundColor: { control: 'color' },

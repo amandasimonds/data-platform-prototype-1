@@ -1,9 +1,9 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Meta, Story } from '@storybook/angular/types-6-0';
-import { NavbarDashboardComponent } from '../projects/uv-ui-lib/src/lib/navbar-dashboard/navbar-dashboard.component';
+import { NavbarDashboardComponent } from './navbar-dashboard.component';
 
 export default {
-    title: 'Example/NavbarDashboard',
+    title: 'Components/Navbar',
     component: NavbarDashboardComponent,
     argTypes: {
         backgroundColor: { control: 'color' },

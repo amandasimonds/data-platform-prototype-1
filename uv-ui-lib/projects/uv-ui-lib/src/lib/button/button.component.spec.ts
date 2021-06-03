@@ -17,7 +17,7 @@ describe('ButtonComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
-    component.buttonText = 'test text';
+    component.label = 'test text';
     fixture.detectChanges();
   });
 

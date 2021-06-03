@@ -1,9 +1,9 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Meta, Story } from '@storybook/angular/types-6-0';
-import { SnippetComponent } from '../projects/uv-ui-lib/src/lib/snippet/snippet.component';
+import { SnippetComponent } from './snippet.component';
 //uv-ui-lib\projects\uv-ui-lib\src\lib\snippet\snippet.component.ts
 export default {
-    title: 'Example/Snippet',
+    title: 'Components/Snippet',
     component: SnippetComponent,
     argTypes: {
         backgroundColor: { control: 'color' },

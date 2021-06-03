@@ -1,11 +1,11 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
-import { NavbarDashboardSubComponent } from '../projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-dashboard-sub.component';
-import { ImageButtonComponent } from '../projects/uv-ui-lib/src/lib/image-button/image-button.component';
+import { NavbarDashboardSubComponent } from './navbar-dashboard-sub.component';
+import { ImageButtonComponent } from '../image-button/image-button.component';
 import { CommonModule } from '@angular/common';
 
 export default {
-    title: 'Example/NavbarDashboardSub',
+    title: 'Components/Sidebar',
     component: NavbarDashboardSubComponent,
     decorators: [
         moduleMetadata({
