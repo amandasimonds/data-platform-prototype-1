@@ -1101,7 +1101,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-f4d389bc68647b8a721efb36cb88ebbc",
+            "id": "component-ButtonComponent-a32045858da2b0cb102429de12fcb8f6",
             "file": "projects/uv-ui-lib/src/lib/button/button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1120,70 +1120,52 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "buttonText",
+                    "name": "label",
                     "defaultValue": "'Button'",
                     "line": 10
                 },
                 {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "line": 11,
+                    "type": "\"small\" | \"medium\" | \"large\""
+                },
+                {
                     "name": "type",
                     "defaultValue": "'btn'",
-                    "line": 11,
+                    "line": 12,
                     "type": "\"btn\" | \"btn-login\" | \"btn-chip\" | \"btn-blue\" | \"btn-round\""
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "cssClasses",
-                    "defaultValue": "['btn']",
-                    "type": "[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 13,
-                    "modifierKind": [
-                        114
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "getCssClasses",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 19,
-                    "modifierKind": [
-                        114
-                    ]
-                }
-            ],
+            "propertiesClass": [],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ButtonComponent {\r\n    @Input() public buttonText = 'Button';\r\n    @Input() public type: 'btn' | 'btn-login' | 'btn-chip' | 'btn-blue' | 'btn-round' = 'btn';\r\n\r\n    public cssClasses = ['btn'];\r\n\r\n    public getCssClasses(): void {\r\n        this.cssClasses.push(this.type);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.getCssClasses();\r\n    }\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ButtonComponent {\r\n    @Input() public label = 'Button';\r\n    @Input() public size: 'small' | 'medium' | 'large' = 'medium';\r\n    @Input() public type: 'btn' | 'btn-login' | 'btn-chip' | 'btn-blue' | 'btn-round' = 'btn';\r\n\r\n    public get classes(): string[] {\r\n\r\n        return ['button', this.type];\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n\r\n.btn {\r\n    &,\r\n    &:link,\r\n    &:visited {\r\n        font-family: $font-family;\r\n        font-weight: $font-bold;\r\n        text-decoration: none;\r\n        display: inline-block;\r\n        border-radius: 8px;\r\n        border: none;\r\n        cursor: pointer;\r\n        background-color: transparent;\r\n    }\r\n\r\n    &:active,\r\n    &:focus {\r\n        outline: none;\r\n    }\r\n}\r\n\r\n.btn-login {\r\n    margin:25px;\r\n    padding: 12px;\r\n    width: 320px;\r\n    height: 48px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-chip {\r\n    color: $color-orange;\r\n    font-weight: bold;\r\n    letter-spacing: 0.2px;\r\n    line-height: 16px;\r\n    padding: 8px 13px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-round {\r\n    width: 41px;\r\n    height: 41px;\r\n    padding: 10.5px;\r\n    border-radius: 100%;\r\n    border: $border-gray-light;\r\n\r\n    &-large{\r\n        width: 57px;\r\n        height: 57px;\r\n        color: $color-blue;\r\n        font-weight: bold;\r\n        font-size: 24px;\r\n        text-align:center;\r\n    }\r\n}\r\n\r\n.btn-add-task {\r\n    color: $color-blue;\r\n    font-size: 18px;\r\n    padding: 6px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-blue {\r\n    color: $color-blue;\r\n    line-height: 20px;\r\n    font-family: $font-family-bold;\r\n    font-weight: $font-bold;\r\n}\r\n",
+                    "data": "@import '../scss/variables';\r\n\r\n.button {\r\n    font-family: $font-family;\r\n    border: 0;\r\n    border-radius: 8px;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    line-height: 1;\r\n}\r\n\r\n\r\n\r\n// .btn {\r\n//     &,\r\n//     &:link,\r\n//     &:visited {\r\n//         font-family: $font-family;\r\n//         font-weight: $font-bold;\r\n//         text-decoration: none;\r\n//         display: inline-block;\r\n//         border-radius: 8px;\r\n//         border: none;\r\n//         cursor: pointer;\r\n//         background-color: transparent;\r\n//     }\r\n\r\n//     &:active,\r\n//     &:focus {\r\n//         outline: none;\r\n//     }\r\n// }\r\n\r\n.btn-login {\r\n    margin:25px;\r\n    padding: 12px;\r\n    width: 320px;\r\n    height: 48px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-chip {\r\n    color: $color-orange;\r\n    font-weight: bold;\r\n    letter-spacing: 0.2px;\r\n    line-height: 16px;\r\n    padding: 8px 13px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-round {\r\n    width: 41px;\r\n    height: 41px;\r\n    padding: 10.5px;\r\n    border-radius: 100%;\r\n    border: $border-gray-light;\r\n\r\n    &-large{\r\n        width: 57px;\r\n        height: 57px;\r\n        color: $color-blue;\r\n        font-weight: bold;\r\n        font-size: 24px;\r\n        text-align:center;\r\n    }\r\n}\r\n\r\n.btn-add-task {\r\n    color: $color-blue;\r\n    font-size: 18px;\r\n    padding: 6px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-blue {\r\n    color: $color-blue;\r\n    line-height: 20px;\r\n    font-family: $font-family-bold;\r\n    font-weight: $font-bold;\r\n}\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<button \r\n    [ngClass]=\"cssClasses\" >\r\n    {{buttonText}}\r\n</button>\r\n\r\n\r\n"
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 14
+                    }
+                }
+            },
+            "templateData": "<button \r\n    [ngClass]=\"classes\" >\r\n    {{label}}\r\n</button>\r\n\r\n\r\n"
         },
         {
             "name": "DropdownButtonComponent",
@@ -1355,7 +1337,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n\r\n    \r\n    <div class=\"appbar\">\r\n        <lib-uv-ui-app-bar>\r\n            <div right>\r\n                <lib-uv-ui-svg-button class=\"margin-right-xs\" color='blue' svgPath='assets/more-horizontal.svg#moreHorizontal'></lib-uv-ui-svg-button>\r\n                <lib-uv-ui-svg-button color='blue' svgPath='assets/fullscreen.svg#fullScreen'></lib-uv-ui-svg-button>\r\n            </div>\r\n        </lib-uv-ui-app-bar>\r\n    </div>\r\n\r\n    <div class=\"sidebar\">\r\n        <lib-uv-ui-app-side-bar>\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-svg-button size=\"xs\" class=\"back-arrow\" color='blue' svgPath='assets/back-arrow.svg#back-arrow'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-button buttonText=\"Back\" type=\"btn-blue\"></lib-uv-ui-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Title Goes Here</p>\r\n                <p>Lorem ipsum dolor sit amet consectetur eiusmod tempor adipiscing elit sed do incididunt ut labore</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                    <div *ngFor=\"let tab of gwuTabs\">\r\n                        <lib-uv-ui-tab \r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.linkText}}\">\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-widget></lib-uv-ui-widget>\r\n    \r\n</div>\r\n\r\n</div>\r\n"
+            "templateData": "<div class=\"grid\">\r\n\r\n    \r\n    <div class=\"appbar\">\r\n        <lib-uv-ui-app-bar>\r\n            <div right>\r\n                <lib-uv-ui-svg-button class=\"margin-right-xs\" color='blue' svgPath='assets/more-horizontal.svg#moreHorizontal'></lib-uv-ui-svg-button>\r\n                <lib-uv-ui-svg-button color='blue' svgPath='assets/fullscreen.svg#fullScreen'></lib-uv-ui-svg-button>\r\n            </div>\r\n        </lib-uv-ui-app-bar>\r\n    </div>\r\n\r\n    <div class=\"sidebar\">\r\n        <lib-uv-ui-app-side-bar>\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-svg-button size=\"xs\" class=\"back-arrow\" color='blue' svgPath='assets/back-arrow.svg#back-arrow'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-button label=\"Back\" type=\"btn-blue\"></lib-uv-ui-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Title Goes Here</p>\r\n                <p>Lorem ipsum dolor sit amet consectetur eiusmod tempor adipiscing elit sed do incididunt ut labore</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                    <div *ngFor=\"let tab of gwuTabs\">\r\n                        <lib-uv-ui-tab \r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.linkText}}\">\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-widget></lib-uv-ui-widget>\r\n    \r\n</div>\r\n\r\n</div>\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -1634,7 +1616,7 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"login box flex flex-column align-items-center position-center padding-md\">\r\n\r\n    <img class=\"img-xl margin-bottom-sm\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading-3\">Welcome to UV</p>\r\n\r\n        <lib-uv-ui-button\r\n            buttonText=\"Login\"\r\n            (click)=\"login()\"\r\n            type=\"btn-login\">\r\n        </lib-uv-ui-button>\r\n\r\n    </div>\r\n"
+            "templateData": "<div class=\"login box flex flex-column align-items-center position-center padding-md\">\r\n\r\n    <img class=\"img-xl margin-bottom-sm\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading-3\">Welcome to UV</p>\r\n\r\n        <lib-uv-ui-button\r\n            label=\"Login\"\r\n            (click)=\"login()\"\r\n            type=\"btn-login\">\r\n        </lib-uv-ui-button>\r\n\r\n    </div>\r\n"
         },
         {
             "name": "MainComponent",
@@ -2252,7 +2234,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n    <div class=\"sidebar\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-svg-button size=\"xs\" class=\"back-arrow\" color='blue' svgPath='assets/back-arrow.svg#back-arrow'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-button buttonText=\"Back\" type=\"btn-blue\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" svgPath='assets/up-down-arrows.svg#up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' svgPath='assets/filter.svg#filter' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                \r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.title}}\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            svgPath=\"{{tab.icon}}\" \r\n                            label=\"{{tab.title}}\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button buttonText=\"Close\" class=\"margin-right-sm\" type=\"btn-blue\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button buttonText=\"Save\" type=\"btn-blue\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div class=\"sidebar2\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        <lib-uv-ui-app-side-bar *ngIf=\"filterBarActive\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" svgPath='assets/close.svg#close' size=\"xs\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel type=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n            <div bottom>\r\n                <div class=\"filter-scroll-container flex flex-column\">\r\n                    <!-- <p class=\"bold paragraph margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <label>\r\n                            <input type=\"checkbox\" checked={{item.checked}}>\r\n                            <span class=\"checkmark\"></span>\r\n                            <p class=\"paragraph\">{{item.title}}</p>\r\n                        </label>\r\n                    </div> -->\r\n                    <p class=\"bold paragraph margin-top-xs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <label>\r\n                            <input type=\"checkbox\" checked={{item.checked}}>\r\n                            <span class=\"checkmark\"></span>\r\n                            <p class=\"paragraph\">{{item.title}}</p>\r\n                        </label>\r\n                    </div>\r\n                    <p class=\"bold paragraph margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <label>\r\n                            <input type=\"checkbox\" checked={{item.checked}}>\r\n                            <span class=\"checkmark\"></span>\r\n                            <p class=\"paragraph\">{{item.title}}</p>\r\n                        </label>\r\n                    </div>\r\n                    <p class=\"bold paragraph margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <label>\r\n                            <input type=\"checkbox\" checked={{item.checked}}>\r\n                            <span class=\"checkmark\"></span>\r\n                            <p class=\"paragraph\">{{item.title}}</p>\r\n                        </label>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div class=\"content\">\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"grid\">\r\n    <div class=\"sidebar\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-svg-button size=\"xs\" class=\"back-arrow\" color='blue' svgPath='assets/back-arrow.svg#back-arrow'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-button label=\"Back\" type=\"btn-blue\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" svgPath='assets/up-down-arrows.svg#up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' svgPath='assets/filter.svg#filter' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                \r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.title}}\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            svgPath=\"{{tab.icon}}\" \r\n                            label=\"{{tab.title}}\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button label=\"Close\" class=\"margin-right-sm\" type=\"btn-blue\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button label=\"Save\" type=\"btn-blue\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div class=\"sidebar2\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        <lib-uv-ui-app-side-bar *ngIf=\"filterBarActive\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" svgPath='assets/close.svg#close' size=\"xs\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel type=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n            <div bottom>\r\n                <div class=\"filter-scroll-container flex flex-column\">\r\n                    <!-- <p class=\"bold paragraph margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <label>\r\n                            <input type=\"checkbox\" checked={{item.checked}}>\r\n                            <span class=\"checkmark\"></span>\r\n                            <p class=\"paragraph\">{{item.title}}</p>\r\n                        </label>\r\n                    </div> -->\r\n                    <p class=\"bold paragraph margin-top-xs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <label>\r\n                            <input type=\"checkbox\" checked={{item.checked}}>\r\n                            <span class=\"checkmark\"></span>\r\n                            <p class=\"paragraph\">{{item.title}}</p>\r\n                        </label>\r\n                    </div>\r\n                    <p class=\"bold paragraph margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <label>\r\n                            <input type=\"checkbox\" checked={{item.checked}}>\r\n                            <span class=\"checkmark\"></span>\r\n                            <p class=\"paragraph\">{{item.title}}</p>\r\n                        </label>\r\n                    </div>\r\n                    <p class=\"bold paragraph margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <label>\r\n                            <input type=\"checkbox\" checked={{item.checked}}>\r\n                            <span class=\"checkmark\"></span>\r\n                            <p class=\"paragraph\">{{item.title}}</p>\r\n                        </label>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div class=\"content\">\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "SearchPanelComponent",
@@ -2657,7 +2639,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n\r\n    <div class=\"box appbar flex align-items-center justify-content-space-between\">\r\n\r\n        <p class=\"heading-4\">Comparison Tasks</p>\r\n        \r\n        <div>\r\n            <lib-uv-ui-button type= \"btn-round\" class=\"btn-add-task margin-right-md\" buttonText=\"+\" (click)=\"addTaskClicked($event)\"></lib-uv-ui-button>\r\n            <lib-uv-ui-dropdown-button [items]=\"dropdownItems\" dropdownName=\"Switch filter\" (click)=\"switchFilterClicked($event)\"></lib-uv-ui-dropdown-button>\r\n        </div>\r\n        \r\n    </div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-task-snippet [tasks]=\"compareTasks\">\r\n    </lib-uv-ui-task-snippet>\r\n    \r\n</div>\r\n\r\n</div>\r\n\r\n"
+            "templateData": "<div class=\"grid\">\r\n\r\n    <div class=\"box appbar flex align-items-center justify-content-space-between\">\r\n\r\n        <p class=\"heading-4\">Comparison Tasks</p>\r\n        \r\n        <div>\r\n            <lib-uv-ui-button type= \"btn-round\" class=\"btn-add-task margin-right-md\" label=\"+\" (click)=\"addTaskClicked($event)\"></lib-uv-ui-button>\r\n            <lib-uv-ui-dropdown-button [items]=\"dropdownItems\" dropdownName=\"Switch filter\" (click)=\"switchFilterClicked($event)\"></lib-uv-ui-dropdown-button>\r\n        </div>\r\n        \r\n    </div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-task-snippet [tasks]=\"compareTasks\">\r\n    </lib-uv-ui-task-snippet>\r\n    \r\n</div>\r\n\r\n</div>\r\n\r\n"
         },
         {
             "name": "SnippetComponent",
@@ -2851,7 +2833,7 @@
         },
         {
             "name": "SvgButtonComponent",
-            "id": "component-SvgButtonComponent-343a9f2bbd20e68e13e9e9b2071620e7",
+            "id": "component-SvgButtonComponent-6e4763a64064ddc5a70d6048438a3472",
             "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2888,49 +2870,14 @@
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "cssClasses",
-                    "defaultValue": "['btn', 'btn-svg']",
-                    "type": "[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 14,
-                    "modifierKind": [
-                        114
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "getCssClasses",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 16,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 20,
-                    "modifierKind": [
-                        114
-                    ]
-                }
-            ],
+            "propertiesClass": [],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-svg-button',\r\n  templateUrl: './svg-button.component.html',\r\n  styleUrls: ['./svg-button.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SvgButtonComponent implements OnInit {\r\n    @Input() public svgPath = '';\r\n    @Input() public color: 'gray' | 'blue' | 'black' = 'black';\r\n    @Input() public size: 'small' | 'xs' | 'xxs' = 'small';\r\n\r\n    public cssClasses = ['btn', 'btn-svg'];\r\n\r\n    public getCssClasses(): void {\r\n        this.cssClasses.push(this.color, this.size);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.getCssClasses();\r\n    }\r\n}\r\n",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-svg-button',\r\n  templateUrl: './svg-button.component.html',\r\n  styleUrls: ['./svg-button.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SvgButtonComponent {\r\n    @Input() public svgPath = '';\r\n    @Input() public color: 'gray' | 'blue' | 'black' = 'black';\r\n    @Input() public size: 'small' | 'xs' | 'xxs' = 'small';\r\n\r\n    public get cssClasses(): string[] {\r\n\r\n        return ['btn', 'btn-svg', this.color, this.size];\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2939,9 +2886,17 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
+            "accessors": {
+                "cssClasses": {
+                    "name": "cssClasses",
+                    "getSignature": {
+                        "name": "cssClasses",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 14
+                    }
+                }
+            },
             "templateData": "<button [ngClass]=\"cssClasses\">\r\n    <svg><use [attr.href]=\"svgPath\"></use></svg>\r\n</button>\r\n"
         },
         {
@@ -4283,15 +4238,7 @@
                 "name": "blueBtn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button-lib.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "btn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button-lib.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4299,7 +4246,7 @@
                 "name": "chip",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button-lib.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4371,7 +4318,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/ButtonExample.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4379,7 +4326,7 @@
                 "name": "login",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button-lib.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4395,7 +4342,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/DropdownButton.stories.ts",
+                "file": "stories/ButtonExample.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4403,7 +4350,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4411,7 +4358,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Header.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4419,7 +4366,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/ImageButton.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4427,7 +4374,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/NavbarDashboardSub.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4435,7 +4382,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/NavbarDashboard.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4443,7 +4390,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/SearchPanel.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4451,7 +4398,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Snippet.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4459,7 +4406,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/SvgButton.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4488,7 +4435,7 @@
                 "name": "roundBtn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button-lib.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4496,7 +4443,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/ButtonExample.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4504,7 +4451,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/ButtonExample.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4512,23 +4459,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button-lib.stories.ts",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/DropdownButton.stories.ts",
-                "type": "Story<DropdownButtonComponent>",
-                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/ButtonExample.stories.ts",
                 "type": "Story<UvUiButtonComponent>",
                 "defaultValue": "(args: UvUiButtonComponent) => ({\r\n    component: UvUiButtonComponent,\r\n    props: args,\r\n})"
             },
@@ -4536,15 +4467,23 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/ImageButton.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                "type": "Story<DropdownButtonComponent>",
+                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
                 "type": "Story<ImageButtonComponent>",
                 "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
             },
@@ -4552,15 +4491,15 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/NavbarDashboardSub.stories.ts",
-                "type": "Story<NavbarDashboardSubComponent>",
-                "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/NavbarDashboard.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
                 "type": "Story<NavbarDashboardComponent>",
                 "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
             },
@@ -4568,7 +4507,15 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/SearchPanel.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                "type": "Story<NavbarDashboardSubComponent>",
+                "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
                 "type": "Story<SearchPanelComponent>",
                 "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
             },
@@ -4576,7 +4523,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Snippet.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
                 "type": "Story<SnippetComponent>",
                 "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
             },
@@ -4584,7 +4531,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/SvgButton.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                 "type": "Story<SvgButtonComponent>",
                 "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
             },
@@ -4592,7 +4539,7 @@
                 "name": "withAnImage",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Header.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
                 "type": "",
                 "defaultValue": "() => ({\r\n    template: `<img src=\"/profile.svg#profile\"/>`\r\n  })"
             }
@@ -4611,20 +4558,12 @@
                     "defaultValue": "[\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000001',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000002',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000003',\r\n      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000004',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000001',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000002',\r\n      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000003',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000004',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000005',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000001',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000002',\r\n        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000003',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000004',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000005',\r\n        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000006',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      }\r\n    ]"
                 }
             ],
-            "stories/Button-lib.stories.ts": [
+            "projects/uv-ui-lib/src/lib/button/button.stories.ts": [
                 {
                     "name": "blueBtn",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button-lib.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "btn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button-lib.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4632,7 +4571,7 @@
                     "name": "chip",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button-lib.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4640,7 +4579,15 @@
                     "name": "login",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button-lib.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4648,7 +4595,7 @@
                     "name": "roundBtn",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button-lib.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4656,7 +4603,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button-lib.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                     "type": "Story<ButtonComponent>",
                     "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args,\r\n})"
                 }
@@ -4762,12 +4709,12 @@
                     "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
-            "stories/Button.stories.ts": [
+            "stories/ButtonExample.stories.ts": [
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
+                    "file": "stories/ButtonExample.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4775,7 +4722,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
+                    "file": "stories/ButtonExample.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4783,7 +4730,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
+                    "file": "stories/ButtonExample.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4791,7 +4738,7 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
+                    "file": "stories/ButtonExample.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4799,7 +4746,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
+                    "file": "stories/ButtonExample.stories.ts",
                     "type": "Story<UvUiButtonComponent>",
                     "defaultValue": "(args: UvUiButtonComponent) => ({\r\n    component: UvUiButtonComponent,\r\n    props: args,\r\n})"
                 }
@@ -4814,12 +4761,12 @@
                     "defaultValue": "[\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',\r\n        navlink: 'home-splash',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',\r\n        navlink: 'global-where-used',\r\n        classes: []\r\n    },\r\n\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',\r\n        navlink: 'side-by-side',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',\r\n        navlink: 'settings',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg',\r\n        navlink: 'search',\r\n        classes: []\r\n    }\r\n]"
                 }
             ],
-            "stories/DropdownButton.stories.ts": [
+            "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts": [
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/DropdownButton.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4827,17 +4774,17 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/DropdownButton.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
                     "type": "Story<DropdownButtonComponent>",
                     "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
                 }
             ],
-            "stories/Header.stories.ts": [
+            "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4845,7 +4792,25 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                    "type": "Story<ImageButtonComponent>",
+                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/header/header.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
                     "type": "Story<HeaderComponent>",
                     "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
                 },
@@ -4853,17 +4818,17 @@
                     "name": "withAnImage",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
                     "type": "",
                     "defaultValue": "() => ({\r\n    template: `<img src=\"/profile.svg#profile\"/>`\r\n  })"
                 }
             ],
-            "stories/ImageButton.stories.ts": [
+            "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts": [
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/ImageButton.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4871,53 +4836,17 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/ImageButton.stories.ts",
-                    "type": "Story<ImageButtonComponent>",
-                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "stories/NavbarDashboardSub.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/NavbarDashboardSub.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/NavbarDashboardSub.stories.ts",
-                    "type": "Story<NavbarDashboardSubComponent>",
-                    "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "stories/NavbarDashboard.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/NavbarDashboard.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/NavbarDashboard.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
                     "type": "Story<NavbarDashboardComponent>",
                     "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
                 }
             ],
-            "stories/SearchPanel.stories.ts": [
+            "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts": [
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/SearchPanel.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4925,17 +4854,17 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/SearchPanel.stories.ts",
-                    "type": "Story<SearchPanelComponent>",
-                    "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
+                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                    "type": "Story<NavbarDashboardSubComponent>",
+                    "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
                 }
             ],
-            "stories/Snippet.stories.ts": [
+            "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts": [
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Snippet.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4943,17 +4872,17 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Snippet.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
                     "type": "Story<SnippetComponent>",
                     "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
                 }
             ],
-            "stories/SvgButton.stories.ts": [
+            "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts": [
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/SvgButton.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4961,9 +4890,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/SvgButton.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                     "type": "Story<SvgButtonComponent>",
                     "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts": [
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                    "type": "Story<SearchPanelComponent>",
+                    "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
                 }
             ]
         },
@@ -5126,7 +5065,67 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "blueBtn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "chip",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "login",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "roundBtn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -5139,6 +5138,26 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/uv-ui-lib/src/lib/header/header.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5148,12 +5167,62 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "withAnImage",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/uv-ui-lib/src/lib/image-button/image-button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ImageButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -5202,12 +5271,52 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar-dashboard.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "NavbarDashboardComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -5220,6 +5329,16 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/uv-ui-lib/src/lib/snippet/snippet.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5229,12 +5348,52 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/uv-ui-lib/src/lib/svg-button/svg-button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "SvgButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -5582,67 +5741,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button-lib.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "blueBtn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button-lib.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "btn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button-lib.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "chip",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button-lib.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "login",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button-lib.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "roundBtn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button-lib.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
+                "filePath": "stories/ButtonExample.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5652,7 +5751,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button.stories.ts",
+                "filePath": "stories/ButtonExample.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5662,7 +5761,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button.stories.ts",
+                "filePath": "stories/ButtonExample.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5672,7 +5771,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button.stories.ts",
+                "filePath": "stories/ButtonExample.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5682,177 +5781,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/DropdownButton.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/DropdownButton.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "withAnImage",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/ImageButton.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/ImageButton.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/NavbarDashboard.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/NavbarDashboard.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/NavbarDashboardSub.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/NavbarDashboardSub.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/SearchPanel.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/SearchPanel.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Snippet.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Snippet.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/SvgButton.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/SvgButton.stories.ts",
+                "filePath": "stories/ButtonExample.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

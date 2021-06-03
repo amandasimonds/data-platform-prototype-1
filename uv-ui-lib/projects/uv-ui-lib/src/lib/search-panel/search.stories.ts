@@ -1,9 +1,9 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Meta, Story } from '@storybook/angular/types-6-0';
-import { SearchPanelComponent } from '../projects/uv-ui-lib/src/lib/search-panel/search-panel.component';
+import { SearchPanelComponent } from './search-panel.component';
 
 export default {
-    title: 'Example/SearchPanel',
+    title: 'Components/Search',
     component: SearchPanelComponent,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -14,8 +14,3 @@ const Template: Story<SearchPanelComponent> = (args: SearchPanelComponent) => ({
     component: SearchPanelComponent,
     props: args,
 });
-
-export const Primary = Template.bind({});
-Primary.args = {
-    buttonText: 'new button'
-};

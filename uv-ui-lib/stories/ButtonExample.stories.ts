@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/angular/types-6-0';
 import { UvUiButtonComponent } from '../projects/uv-ui-lib/src/lib/uv-ui-button/uv-ui-button.component';
 
 export default {
-    title: 'Example/Button',
+    title: 'Components/Buttons/ExampleButton',
     component: UvUiButtonComponent,
     argTypes: {
         backgroundColor: { control: 'color' },

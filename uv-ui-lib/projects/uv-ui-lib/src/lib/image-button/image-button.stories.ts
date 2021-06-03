@@ -1,9 +1,9 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Meta, Story } from '@storybook/angular/types-6-0';
-import { ImageButtonComponent } from '../projects/uv-ui-lib/src/lib/image-button/image-button.component';
+import { ImageButtonComponent } from './image-button.component';
 
 export default {
-    title: 'Example/ImageButton',
+    title: 'Components/Buttons/ImageButton',
     component: ImageButtonComponent,
     argTypes: {
         backgroundColor: { control: 'color' },

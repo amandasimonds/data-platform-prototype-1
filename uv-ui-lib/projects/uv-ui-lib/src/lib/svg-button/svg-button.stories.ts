@@ -1,9 +1,9 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Meta, Story } from '@storybook/angular/types-6-0';
-import { SvgButtonComponent } from '../projects/uv-ui-lib/src/lib/svg-button/svg-button.component';
+import { SvgButtonComponent } from './svg-button.component';
 
 export default {
-    title: 'Example/SvgButton',
+    title: 'Components/Buttons/SvgButton',
     component: SvgButtonComponent,
     argTypes: {
         backgroundColor: { control: 'color' },
