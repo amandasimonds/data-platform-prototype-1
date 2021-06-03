@@ -9,10 +9,15 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class ButtonComponent {
     @Input() public label = 'Button';
     @Input() public size: 'small' | 'medium' | 'large' = 'medium';
-    @Input() public type: 'btn' | 'btn-login' | 'btn-chip' | 'btn-blue' | 'btn-round' = 'btn';
+    @Input() public type: 'basic' | 'flat' | 'round' = 'basic';
+    @Input() public color: 'primary' | 'none' = 'none';
+    @Input() public svgPath = '';
 
     public get classes(): string[] {
+        return ['button', this.type, this.type+'--'+this.color];
+    }
 
-        return ['button', this.type];
+    public get svg(): string {
+        return this.svgPath;
     }
 }
