@@ -15,32 +15,27 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
     props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
-    label: 'Button',
-    type: 'btn'
+export const Basic = Template.bind({});
+Basic.args = {
+    label: 'Basic',
+    type: 'basic'
 };
 
-export const login = Template.bind({});
-login.args = {
-    label: 'login button',
-    type: 'btn-login'
+export const BasicWithIcon = Template.bind({});
+BasicWithIcon.args = {
+    label: 'Basic With Icon',
+    type: 'basic',
+    svgPath: '/back-arrow.svg#back-arrow'
 };
 
-export const chip = Template.bind({});
-chip.args = {
-    label: 'chip button',
-    type: 'btn-chip'
+export const Flat = Template.bind({});
+Flat.args = {
+    label: 'Flat',
+    type: 'flat'
 };
 
-export const blueBtn = Template.bind({});
-blueBtn.args = {
-    label: 'blue button',
-    type: 'btn-blue'
-};
-
-export const roundBtn = Template.bind({});
-roundBtn.args = {
+export const Round = Template.bind({});
+Round.args = {
     label: '+',
-    type: 'btn-round'
+    type: 'round'
 };
