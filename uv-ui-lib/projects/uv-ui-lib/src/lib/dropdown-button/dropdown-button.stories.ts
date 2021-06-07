@@ -15,8 +15,8 @@ const Template: Story<DropdownButtonComponent> = (args: DropdownButtonComponent)
     props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
     dropdownName: 'new dropdown button',
     items: [{name: 'item1'}]
 };

@@ -15,8 +15,8 @@ const Template: Story<SvgButtonComponent> = (args: SvgButtonComponent) => ({
     props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
     svgPath: '/profile.svg#profile',
     color: 'blue'
 };
