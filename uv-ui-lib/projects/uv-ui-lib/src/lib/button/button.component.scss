@@ -9,26 +9,6 @@
     line-height: 1;
 }
 
-// .btn {
-//     &,
-//     &:link,
-//     &:visited {
-//         font-family: $font-family;
-//         font-weight: $font-bold;
-//         text-decoration: none;
-//         display: inline-block;
-//         border-radius: 8px;
-//         border: none;
-//         cursor: pointer;
-//         background-color: transparent;
-//     }
-
-//     &:active,
-//     &:focus {
-//         outline: none;
-//     }
-// }
-
 .basic {
     line-height: 20px;
     font-family: $font-family-bold;
@@ -38,6 +18,11 @@
 
 .basic--primary {
     color: $color-blue;
+}
+
+.basic--disabled {
+    color: $color-gray;
+    cursor: not-allowed;
 }
 
 .flat {
@@ -54,6 +39,14 @@
     color: white;
     background-color: $color-blue;
     border: 0;
+}
+
+.flat--disabled {
+    color: $color-gray-light-7;
+    background-color: $color-gray-light-5;
+    font-family: $font-family;
+    font-weight: none;
+    cursor: not-allowed;
 }
 
 .round {
