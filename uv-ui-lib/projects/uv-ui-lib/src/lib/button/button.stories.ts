@@ -18,20 +18,23 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
 export const Basic = Template.bind({});
 Basic.args = {
     label: 'Basic',
-    type: 'basic'
+    type: 'basic',
+    color: 'primary'
 };
 
 export const BasicWithIcon = Template.bind({});
 BasicWithIcon.args = {
     label: 'Basic With Icon',
     type: 'basic',
-    svgPath: '/back-arrow.svg#back-arrow'
+    svgPath: '/back-arrow.svg#back-arrow',
+    color: 'primary'
 };
 
 export const Flat = Template.bind({});
 Flat.args = {
     label: 'Flat',
-    type: 'flat'
+    type: 'flat',
+    color: 'primary'
 };
 
 export const Round = Template.bind({});

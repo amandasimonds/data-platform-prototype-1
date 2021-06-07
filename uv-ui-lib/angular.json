@@ -50,6 +50,11 @@
     },
     "uv-ui-lib": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/uv-ui-lib",
       "sourceRoot": "projects/uv-ui-lib/src",
       "prefix": "lib",

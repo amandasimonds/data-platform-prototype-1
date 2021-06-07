@@ -5,7 +5,7 @@
             <div top>
                 <div class="height-sm top-content flex justify-content-space-between margin-bottom-sm">
                     <div>
-                        <lib-uv-ui-button label="Back" svgPath='assets/back-arrow.svg#back-arrow' type="basic" (click)="clearResults()"></lib-uv-ui-button>
+                        <lib-uv-ui-button label="Back" svgPath='assets/back-arrow.svg#back-arrow' color='primary' type="basic" (click)="clearResults()"></lib-uv-ui-button>
                     </div>
                     <div>
                         <lib-uv-ui-svg-button color='blue' class="margin-right-xs" (click)="reOrderMode()" svgPath='assets/up-down-arrows.svg#up-down-arrows'></lib-uv-ui-svg-button>
@@ -70,36 +70,36 @@
             </div>
             <div bottom>
                 <div class="filter-scroll-container flex flex-column">
-                    <!-- <p class="bold paragraph margin-bottom-xxs">Technology</p>
+                    <!-- <p class="bold uv-type-body margin-bottom-xxs">Technology</p>
                     <div *ngFor="let item of items" class="container">
                         <label>
                             <input type="checkbox" checked={{item.checked}}>
                             <span class="checkmark"></span>
-                            <p class="paragraph">{{item.title}}</p>
+                            <p class="uv-type-body">{{item.title}}</p>
                         </label>
                     </div> -->
-                    <p class="bold paragraph margin-top-xs margin-bottom-xxs">Discipline</p>
+                    <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Discipline</p>
                     <div *ngFor="let item of items" class="container">
                         <label>
                             <input type="checkbox" checked={{item.checked}}>
                             <span class="checkmark"></span>
-                            <p class="paragraph">{{item.title}}</p>
+                            <p class="uv-type-body">{{item.title}}</p>
                         </label>
                     </div>
-                    <p class="bold paragraph margin-top-xs margin-bottom-xxs">Category</p>
+                    <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Category</p>
                     <div *ngFor="let item of items" class="container">
                         <label>
                             <input type="checkbox" checked={{item.checked}}>
                             <span class="checkmark"></span>
-                            <p class="paragraph">{{item.title}}</p>
+                            <p class="uv-type-body">{{item.title}}</p>
                         </label>
                     </div>
-                    <p class="bold paragraph margin-top-xs margin-bottom-xxs">Technology</p>
+                    <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Technology</p>
                     <div *ngFor="let item of items" class="container">
                         <label>
                             <input type="checkbox" checked={{item.checked}}>
                             <span class="checkmark"></span>
-                            <p class="paragraph">{{item.title}}</p>
+                            <p class="uv-type-body">{{item.title}}</p>
                         </label>
                     </div>
                 </div>

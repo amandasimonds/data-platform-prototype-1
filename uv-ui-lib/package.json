@@ -15,7 +15,7 @@
     "storybook": "npm run docs:json && start-storybook -p 6006 -s ./stories/assets",
     "build-storybook-watch": "npm run docs:json && build-storybook -w -s ./stories/assets",
     "build-storybook": "npm run docs:json && build-storybook -s ./stories/assets",
-    "build-uv-ui-lib": "ng build uv-ui-lib",
+    "build-uv-ui-lib": "ng build uv-ui-lib --prod",
     "build-uv-ui-lib:watch": "ng build uv-ui-lib --watch",
     "e2e": "ng e2e"
   },

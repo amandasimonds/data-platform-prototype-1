@@ -12,9 +12,10 @@ export class ButtonComponent {
     @Input() public type: 'basic' | 'flat' | 'round' = 'basic';
     @Input() public color: 'primary' | 'none' = 'none';
     @Input() public svgPath = '';
+    @Input() public state: 'active' | 'disabled' | 'normal' = 'normal';
 
     public get classes(): string[] {
-        return ['button', this.type, this.type+'--'+this.color];
+        return ['button', this.type, this.type+'--'+this.color, this.type+'--'+this.state];
     }
 
     public get svg(): string {
