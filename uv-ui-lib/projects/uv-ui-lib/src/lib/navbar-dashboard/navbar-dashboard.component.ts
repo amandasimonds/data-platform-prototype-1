@@ -17,6 +17,10 @@ export class NavbarDashboardComponent {
 
         return navlink;
     }
+    
+    // public get navlink(): string {
+    //     return this.navlink;
+    // }
 
     public navigateToRoute(navlink: string) {
         this.router.navigateByUrl(navlink);
