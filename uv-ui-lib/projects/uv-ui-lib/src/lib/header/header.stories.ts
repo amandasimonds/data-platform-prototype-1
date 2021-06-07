@@ -10,17 +10,13 @@ export default {
     },
 } as Meta;
 
-export const withAnImage = () => ({
-    template: `<img src="/profile.svg#profile"/>`
-  });
-
 const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
     component: HeaderComponent,
     props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
     headerText: 'new header',
-    headerSvgPath: '/profile.svg#profile'
+    headerSvgPath: '/apps-quad.svg#dashboard'
 };

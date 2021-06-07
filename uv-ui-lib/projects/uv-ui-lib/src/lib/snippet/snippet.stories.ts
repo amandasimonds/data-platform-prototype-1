@@ -15,11 +15,18 @@ const Template: Story<SnippetComponent> = (args: SnippetComponent) => ({
     props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
-    snippets: [{
-        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',
-        snippetHeading: 'Snippet Heading',
-        snippetTxt: 'Snippet will go here on three lines. And is clickable'
-    }]
+export const Default = Template.bind({});
+Default.args = {
+    snippets: [
+        {
+            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',
+            snippetHeading: 'Snippet Heading',
+            snippetTxt: 'Snippet will go here on three lines. And is clickable'
+        },
+        {
+            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/circle-gray.svg',
+            snippetHeading: 'Snippet Heading',
+            snippetTxt: 'Snippet will go here on three lines. And is clickable'
+        }
+    ]
 };

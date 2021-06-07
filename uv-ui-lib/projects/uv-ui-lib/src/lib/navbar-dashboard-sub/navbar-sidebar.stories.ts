@@ -24,8 +24,8 @@ const Template: Story<NavbarDashboardSubComponent> = (args: NavbarDashboardSubCo
     props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
     headingTxt: 'new heading',
     subHeadingTxt: 'new subheading text'
 };
