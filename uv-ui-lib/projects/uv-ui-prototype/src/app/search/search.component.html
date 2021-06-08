@@ -68,40 +68,25 @@
                 
                 <lib-uv-ui-search-panel type="basic"></lib-uv-ui-search-panel>
             </div>
+
             <div bottom>
                 <div class="filter-scroll-container flex flex-column">
-                    <!-- <p class="bold uv-type-body margin-bottom-xxs">Technology</p>
+
+                    <p class="bold uv-type-body margin-top-xxs margin-bottom-xxs">Discipline</p>
                     <div *ngFor="let item of items" class="container">
-                        <label>
-                            <input type="checkbox" checked={{item.checked}}>
-                            <span class="checkmark"></span>
-                            <p class="uv-type-body">{{item.title}}</p>
-                        </label>
-                    </div> -->
-                    <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Discipline</p>
-                    <div *ngFor="let item of items" class="container">
-                        <label>
-                            <input type="checkbox" checked={{item.checked}}>
-                            <span class="checkmark"></span>
-                            <p class="uv-type-body">{{item.title}}</p>
-                        </label>
+                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>
                     </div>
+
                     <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Category</p>
                     <div *ngFor="let item of items" class="container">
-                        <label>
-                            <input type="checkbox" checked={{item.checked}}>
-                            <span class="checkmark"></span>
-                            <p class="uv-type-body">{{item.title}}</p>
-                        </label>
+                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>
                     </div>
+
                     <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Technology</p>
                     <div *ngFor="let item of items" class="container">
-                        <label>
-                            <input type="checkbox" checked={{item.checked}}>
-                            <span class="checkmark"></span>
-                            <p class="uv-type-body">{{item.title}}</p>
-                        </label>
+                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>
                     </div>
+
                 </div>
             </div>
         </lib-uv-ui-app-side-bar>
