@@ -14,15 +14,14 @@ export class CheckboxComponent {
   public isChecked = false;
   public onChange: any = () => {};
 
-  @Input()
-  public set value(isChecked: boolean) {
+  @Input() public set value(isChecked: boolean) {
     if (!this.disabled) {
       this.isChecked = isChecked;
       this.onChange(isChecked);
     }
   }
 
-  public writeValue(checked: boolean): void {
+    public writeValue(checked: boolean): void {
     this.isChecked = checked;
   }
 
@@ -36,9 +35,4 @@ export class CheckboxComponent {
       this.onChange(this.isChecked);
     }
   }
-
-  public get classes(): string {
-    return ``;
-  }
-
 }
