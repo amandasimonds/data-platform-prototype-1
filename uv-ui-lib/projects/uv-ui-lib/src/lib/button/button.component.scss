@@ -50,6 +50,7 @@
 }
 
 .round {
+    background-color: white;
     width: 41px;
     height: 41px;
     padding: 10.5px;
@@ -66,25 +67,10 @@
     }
 }
 
-.wrapper {
-    display: inline-block;
-}
-
 .position-svg {
-    // display: inline-flex;
-    // align-items: center;
-    // // background-color: red;
-    // position: relative;
     width: 24px;
     height: 24px;
-}
-
-.btn-login {
-    margin:25px;
-    padding: 12px;
-    width: 320px;
-    height: 48px;
-    border: $border-gray-light;
+    vertical-align: middle;
 }
 
 .btn-chip {

@@ -1,5 +1,4 @@
-export interface INav {
+export interface INavlink {
     icon: string;
     navlink: string;
-    classes: string[];
   }

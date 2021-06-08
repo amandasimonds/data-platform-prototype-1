@@ -8,14 +8,15 @@ import {
     NavbarDashboardSubModule,
     SearchPanelModule,
     HeaderModule,
-    NavbarDashboardModule,
+    NavbarModule,
     WidgetModule,
     TaskSnippetModule,
     SnippetModule,
     DropdownButtonModule,
     ImageButtonModule,
     SvgButtonModule,
-    TabModule
+    TabModule,
+    CheckboxModule
 } from '../../../uv-ui-lib/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -49,7 +50,7 @@ import { SearchService } from './services/search.service';
         SearchPanelModule,
         NavbarDashboardSubModule,
         HeaderModule,
-        NavbarDashboardModule,
+        NavbarModule,
         WidgetModule,
         TaskSnippetModule,
         SnippetModule,
@@ -59,7 +60,8 @@ import { SearchService } from './services/search.service';
         HomeSplashModule,
         SearchModule,
         TabModule,
-        HttpClientModule
+        HttpClientModule,
+        CheckboxModule
     ],
     providers: [HelperService, AuthService, HttpClient, SearchService],
     bootstrap: [AppComponent]

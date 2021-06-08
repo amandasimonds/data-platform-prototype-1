@@ -5,9 +5,6 @@ import { HeaderComponent } from './header.component';
 export default {
     title: 'Components/Header',
     component: HeaderComponent,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
 } as Meta;
 
 const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
@@ -17,6 +14,6 @@ const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-    headerText: 'new header',
+    headerText: 'Header',
     headerSvgPath: '/apps-quad.svg#dashboard'
 };

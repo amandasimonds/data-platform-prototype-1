@@ -8,3 +8,7 @@ setCompodocJson(docJson);
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
 }
+
+// export const decorators = [
+//     componentWrapperDecorator((story) => `<div style="margin: 3em">${story}</div>`),
+// ];
