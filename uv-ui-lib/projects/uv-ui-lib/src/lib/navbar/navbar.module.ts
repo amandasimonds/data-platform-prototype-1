@@ -1,14 +1,14 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarDashboardComponent } from './navbar-dashboard.component';
+import { NavbarComponent } from './navbar.component';
 
 @NgModule({
-    declarations: [ NavbarDashboardComponent ],
+    declarations: [ NavbarComponent ],
     imports: [
         CommonModule, RouterModule
     ],
-    exports: [ NavbarDashboardComponent ]
+    exports: [ NavbarComponent ]
 })
-export class NavbarDashboardModule {
+export class NavbarModule {
 }

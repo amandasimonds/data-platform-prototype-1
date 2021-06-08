@@ -1,8 +1,8 @@
-<div class="navbar-dashboard flex flex-column align-content-center">
+<div class="navbar flex flex-column align-content-center">
 
     <img class="navbar-logo" src="http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg">
 
-    <div class="navbar-dashboard__divider"></div>
+    <div class="navbar__divider"></div>
 
     <span *ngFor="let navlink of navlinks trackBy: trackByFn" class="navlink-wrapper">
         <a [routerLink]="navlink.navlink"><img [src]="navlink.icon"></a>

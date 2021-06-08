@@ -5,9 +5,6 @@ import { DropdownButtonComponent } from './dropdown-button.component';
 export default {
     title: 'Components/Buttons/Dropdown',
     component: DropdownButtonComponent,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
 } as Meta;
 
 const Template: Story<DropdownButtonComponent> = (args: DropdownButtonComponent) => ({
@@ -17,6 +14,6 @@ const Template: Story<DropdownButtonComponent> = (args: DropdownButtonComponent)
 
 export const Default = Template.bind({});
 Default.args = {
-    dropdownName: 'new dropdown button',
+    dropdownName: 'Dropdown',
     items: [{name: 'item1'}]
 };

@@ -1,6 +1,4 @@
-<button 
-    class="flex justify-content-center align-items-center"
-    [ngClass]="classes" >
+<button [ngClass]="classes" >
         <svg *ngIf="svgPath != '' " class="position-svg"><use [attr.href]="svgPath"></use></svg>
     {{label}}
 </button>

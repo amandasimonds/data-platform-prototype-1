@@ -1,21 +1,14 @@
 @import '../scss/variables';
-@import '../scss/styles';
 
 .search-panel {
     height: 40px;
-    
-    border-radius: 28px;
     display: flex;
     width: 100%;
     background-color: #FFFFFF;
     padding-right: 12px;
-    transition: all .2s;
-
-    
 
     &__input {
         margin-left: 16px;
-        margin-right: 150px;
         font-size: 14px;
         font-family: inherit;
         border: none;
@@ -34,8 +27,15 @@
 
 .full {
     border: $border-gray-light;
+    border-radius: 28px;
 
     &__search-field {
         margin-left: 16px;
     }
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
