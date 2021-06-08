@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { AppSideBarModule, ButtonModule, SvgButtonModule, SearchPanelModule, TabModule } from '../../../../uv-ui-lib/src/public-api';
+import { AppSideBarModule, ButtonModule, SvgButtonModule, SearchPanelModule, TabModule, CheckboxModule } from '../../../../uv-ui-lib/src/public-api';
 import { SearchComponent } from './search.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { LandingComponent } from './landing/landing.component';
@@ -22,7 +22,8 @@ import { SearchRoutingModule } from './search-routing.module';
         ButtonModule,
         SvgButtonModule,
         SearchPanelModule,
-        DragDropModule
+        DragDropModule,
+        CheckboxModule
     ],
     exports: [ SearchComponent ]
 })
