@@ -70,39 +70,6 @@
             "methods": []
         },
         {
-            "name": "INav",
-            "id": "interface-INav-b458688ba38cec31055d4425be26aac4",
-            "file": "projects/uv-ui-lib/src/lib/interfaces/navbar.interfaces.ts",
-            "type": "interface",
-            "sourceCode": "export interface INav {\r\n    icon: string;\r\n    navlink: string;\r\n    classes: string[];\r\n  }\r\n",
-            "properties": [
-                {
-                    "name": "classes",
-                    "type": "string[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 4
-                },
-                {
-                    "name": "icon",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 2
-                },
-                {
-                    "name": "navlink",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 3
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 150,
-            "methods": []
-        },
-        {
             "name": "INavBarSub",
             "id": "interface-INavBarSub-428ee98b6e7cb19fa6d9f1bd7a68e03a",
             "file": "projects/uv-ui-lib/src/lib/interfaces/navbar-sub.interfaces.ts",
@@ -129,6 +96,32 @@
                     "optional": false,
                     "description": "",
                     "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "INavlink",
+            "id": "interface-INavlink-fa220d86b0e29bda86432631d58dd8fe",
+            "file": "projects/uv-ui-lib/src/lib/interfaces/navbar.interfaces.ts",
+            "type": "interface",
+            "sourceCode": "export interface INavlink {\r\n    icon: string;\r\n    navlink: string;\r\n  }\r\n",
+            "properties": [
+                {
+                    "name": "icon",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "navlink",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
                 }
             ],
             "indexSignatures": [],
@@ -1166,7 +1159,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n\r\n.button {\r\n    font-family: $font-family;\r\n    border: 0;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    line-height: 1;\r\n}\r\n\r\n.basic {\r\n    line-height: 20px;\r\n    font-family: $font-family-bold;\r\n    font-weight: $font-bold;\r\n    background-color: transparent;\r\n}\r\n\r\n.basic--primary {\r\n    color: $color-blue;\r\n}\r\n\r\n.basic--disabled {\r\n    color: $color-gray;\r\n    cursor: not-allowed;\r\n}\r\n\r\n.flat {\r\n    font-size: 14px;\r\n    line-height: 24px;\r\n    font-family: $font-family-bold;\r\n    font-weight: $font-bold;\r\n    height: 40px;\r\n    padding: 0 25px;\r\n    border: 1px solid $color-gray;\r\n}\r\n\r\n.flat--primary {\r\n    color: white;\r\n    background-color: $color-blue;\r\n    border: 0;\r\n}\r\n\r\n.flat--disabled {\r\n    color: $color-gray-light-7;\r\n    background-color: $color-gray-light-5;\r\n    font-family: $font-family;\r\n    font-weight: none;\r\n    cursor: not-allowed;\r\n}\r\n\r\n.round {\r\n    width: 41px;\r\n    height: 41px;\r\n    padding: 10.5px;\r\n    border-radius: 100%;\r\n    border: $border-gray-light;\r\n\r\n    &-large{\r\n        width: 57px;\r\n        height: 57px;\r\n        color: $color-blue;\r\n        font-weight: bold;\r\n        font-size: 24px;\r\n        text-align:center;\r\n    }\r\n}\r\n\r\n.wrapper {\r\n    display: inline-block;\r\n}\r\n\r\n.position-svg {\r\n    // display: inline-flex;\r\n    // align-items: center;\r\n    // // background-color: red;\r\n    // position: relative;\r\n    width: 24px;\r\n    height: 24px;\r\n}\r\n\r\n.btn-login {\r\n    margin:25px;\r\n    padding: 12px;\r\n    width: 320px;\r\n    height: 48px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-chip {\r\n    color: $color-orange;\r\n    font-weight: bold;\r\n    letter-spacing: 0.2px;\r\n    line-height: 16px;\r\n    padding: 8px 13px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-add-task {\r\n    color: $color-blue;\r\n    font-size: 18px;\r\n    padding: 6px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n",
+                    "data": "@import '../scss/variables';\r\n\r\n.button {\r\n    font-family: $font-family;\r\n    border: 0;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    line-height: 1;\r\n}\r\n\r\n.basic {\r\n    line-height: 20px;\r\n    font-family: $font-family-bold;\r\n    font-weight: $font-bold;\r\n    background-color: transparent;\r\n}\r\n\r\n.basic--primary {\r\n    color: $color-blue;\r\n}\r\n\r\n.basic--disabled {\r\n    color: $color-gray;\r\n    cursor: not-allowed;\r\n}\r\n\r\n.flat {\r\n    font-size: 14px;\r\n    line-height: 24px;\r\n    font-family: $font-family-bold;\r\n    font-weight: $font-bold;\r\n    height: 40px;\r\n    padding: 0 25px;\r\n    border: 1px solid $color-gray;\r\n}\r\n\r\n.flat--primary {\r\n    color: white;\r\n    background-color: $color-blue;\r\n    border: 0;\r\n}\r\n\r\n.flat--disabled {\r\n    color: $color-gray-light-7;\r\n    background-color: $color-gray-light-5;\r\n    font-family: $font-family;\r\n    font-weight: none;\r\n    cursor: not-allowed;\r\n}\r\n\r\n.round {\r\n    background-color: white;\r\n    width: 41px;\r\n    height: 41px;\r\n    padding: 10.5px;\r\n    border-radius: 100%;\r\n    border: $border-gray-light;\r\n\r\n    &-large{\r\n        width: 57px;\r\n        height: 57px;\r\n        color: $color-blue;\r\n        font-weight: bold;\r\n        font-size: 24px;\r\n        text-align:center;\r\n    }\r\n}\r\n\r\n.wrapper {\r\n    display: inline-block;\r\n}\r\n\r\n.position-svg {\r\n    // display: inline-flex;\r\n    // align-items: center;\r\n    // // background-color: red;\r\n    // position: relative;\r\n    width: 24px;\r\n    height: 24px;\r\n}\r\n\r\n.btn-chip {\r\n    color: $color-orange;\r\n    font-weight: bold;\r\n    letter-spacing: 0.2px;\r\n    line-height: 16px;\r\n    padding: 8px 13px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-add-task {\r\n    color: $color-blue;\r\n    font-size: 18px;\r\n    padding: 6px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -1802,25 +1795,25 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n    <div class=\"header\">\r\n        <lib-uv-ui-header\r\n            [headerText]=\"title\"\r\n            [headerSvgPath]=\"appIcon\">\r\n\r\n            <lib-uv-ui-search-panel type=\"full\" *ngIf=\"title === 'Search'\" (searchClicked)=\"onSearchAction(searchQuery)\"></lib-uv-ui-search-panel>\r\n\r\n            <lib-uv-ui-svg-button color='blue' svgPath='assets/profile.svg#profile' class=\"margin-left-sm margin-right-sm\"></lib-uv-ui-svg-button>\r\n\r\n        </lib-uv-ui-header>\r\n    </div>\r\n\r\n    <div class=\"navbar\">\r\n        <lib-uv-ui-navbar-dashboard [navlinks]=\"nav\"></lib-uv-ui-navbar-dashboard>\r\n    </div>\r\n\r\n    <div class=\"content\">\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"grid\">\r\n    <div class=\"header\">\r\n        <lib-uv-ui-header\r\n            [headerText]=\"title\"\r\n            [headerSvgPath]=\"appIcon\">\r\n\r\n            <lib-uv-ui-search-panel type=\"full\" *ngIf=\"title === 'Search'\" (searchClicked)=\"onSearchAction(searchQuery)\"></lib-uv-ui-search-panel>\r\n\r\n            <lib-uv-ui-svg-button color='blue' svgPath='assets/profile.svg#profile' class=\"margin-left-sm margin-right-sm\"></lib-uv-ui-svg-button>\r\n\r\n        </lib-uv-ui-header>\r\n    </div>\r\n\r\n    <div class=\"navbar\">\r\n        <lib-uv-ui-navbar [navlinks]=\"nav\"></lib-uv-ui-navbar>\r\n    </div>\r\n\r\n    <div class=\"content\">\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</div>\r\n"
         },
         {
-            "name": "NavbarDashboardComponent",
-            "id": "component-NavbarDashboardComponent-ae57abdea53415c484b703233ddeabda",
-            "file": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar-dashboard.component.ts",
+            "name": "NavbarComponent",
+            "id": "component-NavbarComponent-b14fb198513fedf6e7adbe62463b13a4",
+            "file": "projects/uv-ui-lib/src/lib/navbar/navbar.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "lib-uv-ui-navbar-dashboard",
+            "selector": "lib-uv-ui-navbar",
             "styleUrls": [
-                "./navbar-dashboard-component.scss"
+                "./navbar-component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./navbar-dashboard.component.html"
+                "./navbar.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [
@@ -1828,7 +1821,7 @@
                     "name": "navlinks",
                     "defaultValue": "[]",
                     "line": 12,
-                    "type": "INav[]"
+                    "type": "INavlink[]"
                 }
             ],
             "outputsClass": [],
@@ -1845,7 +1838,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 21,
                     "modifierKind": [
                         114
                     ],
@@ -1867,7 +1860,7 @@
                             "type": "number"
                         },
                         {
-                            "type": "INav"
+                            "type": "INavlink"
                         }
                     ],
                     "optional": false,
@@ -1886,7 +1879,7 @@
                             }
                         },
                         {
-                            "type": "INav",
+                            "type": "INavlink",
                             "tagName": {
                                 "text": "param"
                             }
@@ -1899,12 +1892,12 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { INav } from '../interfaces/navbar.interfaces';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-navbar-dashboard',\r\n    templateUrl: './navbar-dashboard.component.html',\r\n    styleUrls: [ './navbar-dashboard-component.scss' ],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class NavbarDashboardComponent {\r\n    @Input() public navlinks: INav[] = [];\r\n\r\n    constructor(private router: Router) {}\r\n\r\n    public trackByFn(_: number, {navlink}: INav): string {\r\n\r\n        return navlink;\r\n    }\r\n    \r\n    // public get navlink(): string {\r\n    //     return this.navlink;\r\n    // }\r\n\r\n    public navigateToRoute(navlink: string) {\r\n        this.router.navigateByUrl(navlink);\r\n    }\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { INavlink } from '../interfaces/navbar.interfaces';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-navbar',\r\n    templateUrl: './navbar.component.html',\r\n    styleUrls: [ './navbar-component.scss' ],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class NavbarComponent {\r\n    @Input() public navlinks: INavlink[] = [];\r\n\r\n    constructor(private router: Router) {}\r\n\r\n    public trackByFn(_: number, {navlink}: INavlink): string {\r\n\r\n        return navlink;\r\n    }\r\n\r\n    public navigateToRoute(navlink: string) {\r\n        this.router.navigateByUrl(navlink);\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n\r\n.navbar-dashboard {\r\n    position: relative;\r\n    height: 100%;\r\n    z-index: 200;\r\n    border: $border-gray-light;\r\n    border-bottom: none;\r\n    background-color: var(--color-white);\r\n    box-shadow: $box-shadow-light;\r\n\r\n    &__divider {\r\n        border-bottom: 1px solid $color-gray-light-2;\r\n        opacity: .31;\r\n    }\r\n}\r\n\r\n.navlink-wrapper {\r\n    width: $lg-size;\r\n    height: $lg-size;\r\n    margin: 18px auto 0;\r\n    border-radius: 50%;\r\n    padding: 10px;\r\n\r\n    &:hover {\r\n        background-color: $color-gray-light-4;\r\n    }\r\n}\r\n\r\n.navbar-logo {\r\n    width: $md-size;\r\n    margin: 0 auto;\r\n    height: 62px;\r\n}\r\n",
-                    "styleUrl": "./navbar-dashboard-component.scss"
+                    "data": "@import '../scss/variables';\r\n\r\n.navbar {\r\n    position: relative;\r\n    height: 100%;\r\n    z-index: 200;\r\n    border: $border-gray-light;\r\n    border-bottom: none;\r\n    background-color: var(--color-white);\r\n    box-shadow: $box-shadow-light;\r\n\r\n    &__divider {\r\n        border-bottom: 1px solid $color-gray-light-2;\r\n        opacity: .31;\r\n    }\r\n}\r\n\r\n.navlink-wrapper {\r\n    width: $lg-size;\r\n    height: $lg-size;\r\n    margin: 18px auto 0;\r\n    border-radius: 50%;\r\n    padding: 10px;\r\n\r\n    &:hover {\r\n        background-color: $color-gray-light-4;\r\n    }\r\n}\r\n\r\n.navbar-logo {\r\n    width: $md-size;\r\n    margin: 0 auto;\r\n    height: 62px;\r\n}\r\n",
+                    "styleUrl": "./navbar-component.scss"
                 }
             ],
             "stylesData": "",
@@ -1928,7 +1921,7 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"navbar-dashboard flex flex-column align-content-center\">\r\n\r\n    <img class=\"navbar-logo\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <div class=\"navbar-dashboard__divider\"></div>\r\n\r\n    <span *ngFor=\"let navlink of navlinks trackBy: trackByFn\" class=\"navlink-wrapper\">\r\n        <a [routerLink]=\"navlink.navlink\"><img [src]=\"navlink.icon\"></a>\r\n    </span>\r\n\r\n</div>\r\n"
+            "templateData": "<div class=\"navbar flex flex-column align-content-center\">\r\n\r\n    <img class=\"navbar-logo\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <div class=\"navbar__divider\"></div>\r\n\r\n    <span *ngFor=\"let navlink of navlinks trackBy: trackByFn\" class=\"navlink-wrapper\">\r\n        <a [routerLink]=\"navlink.navlink\"><img [src]=\"navlink.icon\"></a>\r\n    </span>\r\n\r\n</div>\r\n"
         },
         {
             "name": "NavbarDashboardSubComponent",
@@ -2264,7 +2257,7 @@
         },
         {
             "name": "SearchPanelComponent",
-            "id": "component-SearchPanelComponent-f4dbc947d87e3e36428344ad28e179c6",
+            "id": "component-SearchPanelComponent-2d6150a3c8ff1b51e1621856a54f69eb",
             "file": "projects/uv-ui-lib/src/lib/search-panel/search-panel.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2297,49 +2290,15 @@
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [
-                {
-                    "name": "cssClasses",
-                    "defaultValue": "['search-panel']",
-                    "type": "[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 13,
-                    "modifierKind": [
-                        114
-                    ]
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
-                {
-                    "name": "getCssClasses",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 23,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 19,
-                    "modifierKind": [
-                        114
-                    ]
-                },
                 {
                     "name": "onSearch",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 14,
                     "modifierKind": [
                         114
                     ]
@@ -2350,19 +2309,27 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-search-panel',\r\n    templateUrl: './search-panel.component.html',\r\n    styleUrls: ['./search-panel-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchPanelComponent implements OnInit {\r\n\r\n    @Output() readonly searchClicked = new EventEmitter<void>();\r\n    @Input() public type: 'basic' | 'full' = 'basic';\r\n    public cssClasses = ['search-panel'];\r\n\r\n    public onSearch() {\r\n        this.searchClicked.emit();\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.getCssClasses();\r\n    }\r\n\r\n    public getCssClasses() {\r\n        this.cssClasses.push(this.type);\r\n    }\r\n\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-search-panel',\r\n    templateUrl: './search-panel.component.html',\r\n    styleUrls: ['./search-panel-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchPanelComponent {\r\n\r\n    @Output() readonly searchClicked = new EventEmitter<void>();\r\n    @Input() public type: 'basic' | 'full' = 'basic';\r\n\r\n    public onSearch() {\r\n        this.searchClicked.emit();\r\n    }\r\n\r\n    public get classes(): string[] {\r\n        return ['search-panel', this.type ];\r\n    }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n@import '../scss/styles';\r\n\r\n.search-panel {\r\n    height: 40px;\r\n    \r\n    border-radius: 28px;\r\n    display: flex;\r\n    width: 100%;\r\n    background-color: #FFFFFF;\r\n    padding-right: 12px;\r\n    transition: all .2s;\r\n\r\n    \r\n\r\n    &__input {\r\n        margin-left: 16px;\r\n        margin-right: 150px;\r\n        font-size: 14px;\r\n        font-family: inherit;\r\n        border: none;\r\n\r\n        &:focus,\r\n        &:invalid {\r\n            outline: none;\r\n        }\r\n\r\n        &::-webkit-input-placeholder {\r\n            color: $color-gray;\r\n            font-style: italic;\r\n        }\r\n    }\r\n}\r\n\r\n.full {\r\n    border: $border-gray-light;\r\n\r\n    &__search-field {\r\n        margin-left: 16px;\r\n    }\r\n}\r\n",
+                    "data": "@import '../scss/variables';\r\n@import '../scss/styles';\r\n\r\n.search-panel {\r\n    height: 40px;\r\n    display: flex;\r\n    width: 100%;\r\n    background-color: #FFFFFF;\r\n    padding-right: 12px;\r\n    transition: all .2s;\r\n\r\n    &__input {\r\n        margin-left: 16px;\r\n        margin-right: 150px;\r\n        font-size: 14px;\r\n        font-family: inherit;\r\n        border: none;\r\n\r\n        &:focus,\r\n        &:invalid {\r\n            outline: none;\r\n        }\r\n\r\n        &::-webkit-input-placeholder {\r\n            color: $color-gray;\r\n            font-style: italic;\r\n        }\r\n    }\r\n}\r\n\r\n.full {\r\n    border: $border-gray-light;\r\n    border-radius: 28px;\r\n\r\n    &__search-field {\r\n        margin-left: 16px;\r\n    }\r\n}\r\n",
                     "styleUrl": "./search-panel-component.scss"
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div [ngClass]=\"cssClasses\" class=\"search-panel flex justify-content-space-between\">\r\n\r\n    <div class=\"flex align-items-center\" [ngClass]=\"type ==='full' ? 'full__search-field' : ''\">\r\n\r\n        <lib-uv-ui-svg-button color='blue' svgPath='assets/search.svg#search' (click)=\"onSearch()\" ></lib-uv-ui-svg-button>\r\n        \r\n        <input type=\"text\"\r\n        placeholder=\"Search...\"\r\n        class=\"search-panel__input\">\r\n\r\n        <lib-uv-ui-svg-button *ngIf=\"type === 'full'\"color='blue' size='xs' svgPath='assets/close.svg#close' ></lib-uv-ui-svg-button>\r\n        \r\n    </div>\r\n    \r\n    <ng-content></ng-content>\r\n\r\n</div>\r\n\r\n\r\n"
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 18
+                    }
+                }
+            },
+            "templateData": "<div [ngClass]=\"classes\" class=\"search-panel flex justify-content-space-between\">\r\n\r\n    <div class=\"flex align-items-center\" [ngClass]=\"type ==='full' ? 'full__search-field' : ''\">\r\n\r\n        <lib-uv-ui-svg-button color='blue' svgPath='assets/search.svg#search' (click)=\"onSearch()\" ></lib-uv-ui-svg-button>\r\n        \r\n        <input type=\"text\"\r\n        placeholder=\"Search...\"\r\n        class=\"search-panel__input\">\r\n\r\n        <lib-uv-ui-svg-button *ngIf=\"type === 'full'\"color='blue' size='xs' svgPath='assets/close.svg#close' ></lib-uv-ui-svg-button>\r\n        \r\n    </div>\r\n    \r\n    <ng-content></ng-content>\r\n\r\n</div>\r\n\r\n\r\n"
         },
         {
             "name": "SearchResultsComponent",
@@ -3074,7 +3041,7 @@
         {
             "name": "UvUiButtonComponent",
             "id": "component-UvUiButtonComponent-3445dc3244748d08eeadc081354a077a",
-            "file": "projects/uv-ui-lib/src/lib/uv-ui-button/uv-ui-button.component.ts",
+            "file": "projects/uv-ui-components/src/lib/uv-ui-button/uv-ui-button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
@@ -3179,7 +3146,7 @@
         {
             "name": "UvUiButtonComponent",
             "id": "component-UvUiButtonComponent-3445dc3244748d08eeadc081354a077a-1",
-            "file": "projects/uv-ui-components/src/lib/uv-ui-button/uv-ui-button.component.ts",
+            "file": "projects/uv-ui-lib/src/lib/uv-ui-button/uv-ui-button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
@@ -3434,10 +3401,10 @@
                             "name": "ImageButtonModule"
                         },
                         {
-                            "name": "NavbarDashboardModule"
+                            "name": "NavbarDashboardSubModule"
                         },
                         {
-                            "name": "NavbarDashboardSubModule"
+                            "name": "NavbarModule"
                         },
                         {
                             "name": "SearchModule"
@@ -3772,43 +3739,6 @@
             ]
         },
         {
-            "name": "NavbarDashboardModule",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "NavbarDashboardComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": [
-                        {
-                            "name": "NavbarDashboardComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        },
-        {
             "name": "NavbarDashboardSubModule",
             "children": [
                 {
@@ -3839,6 +3769,43 @@
                     "elements": [
                         {
                             "name": "NavbarDashboardSubComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "NavbarModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NavbarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NavbarComponent"
                         }
                     ]
                 },
@@ -4288,25 +4255,97 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
-                "type": "",
-                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
-                "name": "context",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
-                "type": "",
-                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
-                "name": "context",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/uv-ui-components/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-prototype/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "DEFAULT_SEARCH_MENU_STATE",
@@ -4328,17 +4367,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-prototype/src/environments/environment.ts",
+                "file": "projects/uv-ui-prototype/src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-prototype/src/environments/environment.prod.ts",
+                "file": "projects/uv-ui-prototype/src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "Flat",
@@ -4349,104 +4388,32 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/ButtonExample.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "navItems",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/uv-ui-prototype/src/app/layouts/main/navItems.ts",
                 "type": "[]",
-                "defaultValue": "[\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',\r\n        navlink: 'home-splash',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',\r\n        navlink: 'global-where-used',\r\n        classes: []\r\n    },\r\n\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',\r\n        navlink: 'side-by-side',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',\r\n        navlink: 'settings',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg',\r\n        navlink: 'search',\r\n        classes: []\r\n    }\r\n]"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/ButtonExample.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "require",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
-                "type": "literal type"
-            },
-            {
-                "name": "require",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
-                "type": "literal type"
+                "defaultValue": "[\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',\r\n        navlink: 'home-splash'\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',\r\n        navlink: 'global-where-used'\r\n    },\r\n\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',\r\n        navlink: 'side-by-side'\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',\r\n        navlink: '/main'\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',\r\n        navlink: '/main'\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',\r\n        navlink: 'settings'\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg',\r\n        navlink: 'search'\r\n    }\r\n]"
             },
             {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/uv-ui-components/src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-prototype/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -4458,28 +4425,12 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/ButtonExample.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/ButtonExample.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/ButtonExample.stories.ts",
-                "type": "Story<UvUiButtonComponent>",
-                "defaultValue": "(args: UvUiButtonComponent) => ({\r\n    component: UvUiButtonComponent,\r\n    props: args,\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
+                "type": "Story<AppSideBarComponent>",
+                "defaultValue": "(args: AppSideBarComponent) => ({\r\n    component: AppSideBarComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4517,14 +4468,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
-                "type": "Story<NavbarDashboardComponent>",
-                "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
                 "type": "Story<NavbarDashboardSubComponent>",
                 "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
@@ -4533,9 +4476,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
-                "type": "Story<SvgButtonComponent>",
-                "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                "type": "Story<NavbarComponent>",
+                "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4549,17 +4492,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
+                "type": "Story<SvgButtonComponent>",
+                "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
                 "type": "Story<SnippetComponent>",
                 "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "withAnImage",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                "type": "",
-                "defaultValue": "() => ({\r\n    template: `<img src=\"/profile.svg#profile\"/>`\r\n  })"
             }
         ],
         "functions": [],
@@ -4628,53 +4571,217 @@
                     "defaultValue": "[\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  }\r\n]"
                 }
             ],
-            "projects/uv-ui-lib/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/test.ts",
-                    "type": "literal type"
-                }
-            ],
-            "projects/uv-ui-lib/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/test.ts",
-                    "type": "literal type"
-                }
-            ],
             "projects/uv-ui-components/src/test.ts": [
                 {
                     "name": "context",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/uv-ui-components/src/test.ts",
-                    "file": "projects/uv-ui-prototype/src/test.ts",
                     "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
                     "name": "require",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/uv-ui-components/src/test.ts",
                     "type": "literal type"
+                }
+            ],
+            "projects/uv-ui-lib/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/uv-ui-prototype/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
+                    "type": "Story<AppSideBarComponent>",
+                    "defaultValue": "(args: AppSideBarComponent) => ({\r\n    component: AppSideBarComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                    "type": "Story<DropdownButtonComponent>",
+                    "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/header/header.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                    "type": "Story<HeaderComponent>",
+                    "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                    "type": "Story<ImageButtonComponent>",
+                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                    "type": "Story<NavbarDashboardSubComponent>",
+                    "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                    "type": "Story<NavbarComponent>",
+                    "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                    "type": "Story<SearchPanelComponent>",
+                    "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
+                    "type": "Story<SvgButtonComponent>",
+                    "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                    "type": "Story<SnippetComponent>",
+                    "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
                 }
             ],
             "projects/uv-ui-prototype/src/app/search/models/search-results-state.ts": [
@@ -4697,16 +4804,6 @@
                     "defaultValue": "[\r\n    {name: 'item 1'},\r\n    {name: 'item 2'},\r\n    {name: 'item 3'},\r\n    {name: 'item 4'},\r\n    {name: 'item 5'}\r\n]"
                 }
             ],
-            "projects/uv-ui-prototype/src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-prototype/src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
-                }
-            ],
             "projects/uv-ui-prototype/src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -4717,46 +4814,14 @@
                     "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
-            "stories/ButtonExample.stories.ts": [
+            "projects/uv-ui-prototype/src/environments/environment.ts": [
                 {
-                    "name": "Large",
+                    "name": "environment",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/ButtonExample.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/ButtonExample.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/ButtonExample.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/ButtonExample.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/ButtonExample.stories.ts",
-                    "type": "Story<UvUiButtonComponent>",
-                    "defaultValue": "(args: UvUiButtonComponent) => ({\r\n    component: UvUiButtonComponent,\r\n    props: args,\r\n})"
+                    "file": "projects/uv-ui-prototype/src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "projects/uv-ui-prototype/src/app/layouts/main/navItems.ts": [
@@ -4766,151 +4831,7 @@
                     "subtype": "variable",
                     "file": "projects/uv-ui-prototype/src/app/layouts/main/navItems.ts",
                     "type": "[]",
-                    "defaultValue": "[\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',\r\n        navlink: 'home-splash',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',\r\n        navlink: 'global-where-used',\r\n        classes: []\r\n    },\r\n\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',\r\n        navlink: 'side-by-side',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',\r\n        navlink: '/main',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',\r\n        navlink: 'settings',\r\n        classes: []\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg',\r\n        navlink: 'search',\r\n        classes: []\r\n    }\r\n]"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
-                    "type": "Story<DropdownButtonComponent>",
-                    "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/header/header.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                    "type": "Story<HeaderComponent>",
-                    "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
-                },
-                {
-                    "name": "withAnImage",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\r\n    template: `<img src=\"/profile.svg#profile\"/>`\r\n  })"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                    "type": "Story<ImageButtonComponent>",
-                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
-                    "type": "Story<NavbarDashboardComponent>",
-                    "defaultValue": "(args: NavbarDashboardComponent) => ({\r\n    component: NavbarDashboardComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
-                    "type": "Story<NavbarDashboardSubComponent>",
-                    "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
-                    "type": "Story<SvgButtonComponent>",
-                    "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                    "type": "Story<SnippetComponent>",
-                    "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts": [
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
-                    "type": "Story<SearchPanelComponent>",
-                    "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
+                    "defaultValue": "[\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',\r\n        navlink: 'home-splash'\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',\r\n        navlink: 'global-where-used'\r\n    },\r\n\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',\r\n        navlink: 'side-by-side'\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',\r\n        navlink: '/main'\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',\r\n        navlink: '/main'\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',\r\n        navlink: 'settings'\r\n    },\r\n    {\r\n        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg',\r\n        navlink: 'search'\r\n    }\r\n]"
                 }
             ]
         },
@@ -5068,6 +4989,26 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/uv-ui-lib/src/lib/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5140,7 +5081,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5169,7 +5110,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5180,16 +5121,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "withAnImage",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5208,7 +5139,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5245,9 +5176,9 @@
                 "filePath": "projects/uv-ui-lib/src/lib/interfaces/navbar.interfaces.ts",
                 "type": "interface",
                 "linktype": "interface",
-                "name": "INav",
+                "name": "INavlink",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -5273,7 +5204,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5289,26 +5220,26 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar-dashboard.component.ts",
+                "filePath": "projects/uv-ui-lib/src/lib/navbar/navbar.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "NavbarDashboardComponent",
+                "name": "NavbarComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"
             },
             {
-                "filePath": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
+                "filePath": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/uv-ui-lib/src/lib/navbar-dashboard/navbar.stories.ts",
+                "filePath": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5323,7 +5254,17 @@
                 "linktype": "component",
                 "name": "SearchPanelComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -5350,7 +5291,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5379,7 +5320,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5734,56 +5675,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "require",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/ButtonExample.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/ButtonExample.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/ButtonExample.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/ButtonExample.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/ButtonExample.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

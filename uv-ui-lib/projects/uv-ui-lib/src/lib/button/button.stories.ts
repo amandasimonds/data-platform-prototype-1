@@ -5,9 +5,6 @@ import { ButtonComponent } from './button.component';
 export default {
     title: 'Components/Buttons/Button',
     component: ButtonComponent,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
 } as Meta;
 
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
@@ -21,6 +18,14 @@ Basic.args = {
     type: 'basic',
     color: 'primary'
 };
+
+Basic.parameters = {
+    docs: {
+      source: {
+        type: 'auto',
+      },
+    },
+  };
 
 export const BasicWithIcon = Template.bind({});
 BasicWithIcon.args = {

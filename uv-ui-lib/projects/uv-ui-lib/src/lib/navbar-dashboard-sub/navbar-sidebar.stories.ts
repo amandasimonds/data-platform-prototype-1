@@ -5,18 +5,14 @@ import { ImageButtonComponent } from '../image-button/image-button.component';
 import { CommonModule } from '@angular/common';
 
 export default {
-    title: 'Components/Sidebar',
+    title: 'Components/Sidebar2',
     component: NavbarDashboardSubComponent,
     decorators: [
         moduleMetadata({
-          //👇 Imports both components to allow component composition with Storybook
           declarations: [NavbarDashboardSubComponent, ImageButtonComponent],
           imports: [CommonModule],
         })
       ],
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
 } as Meta;
 
 const Template: Story<NavbarDashboardSubComponent> = (args: NavbarDashboardSubComponent) => ({
@@ -26,6 +22,6 @@ const Template: Story<NavbarDashboardSubComponent> = (args: NavbarDashboardSubCo
 
 export const Default = Template.bind({});
 Default.args = {
-    headingTxt: 'new heading',
-    subHeadingTxt: 'new subheading text'
+    headingTxt: 'Heading',
+    subHeadingTxt: 'Subheading'
 };
