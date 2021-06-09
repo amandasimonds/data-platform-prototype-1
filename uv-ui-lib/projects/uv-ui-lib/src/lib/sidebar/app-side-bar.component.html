@@ -6,7 +6,7 @@
 
     <div class="divider"></div>
 
-    <div class="app-side-bar__bottom-content">
+    <div class="app-side-bar__bottom-content" [ngClass]="{'scroll' : type === 'scroll'}">
         <ng-content select="[bottom]"></ng-content>
     </div>
 
