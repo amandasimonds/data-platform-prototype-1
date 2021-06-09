@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {
-    AppBarModule,
+    ActionBarModule,
     ButtonModule,
     AppSideBarModule,
     NavbarDashboardSubModule,
@@ -44,7 +44,7 @@ import { SearchService } from './services/search.service';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        AppBarModule,
+        ActionBarModule,
         ButtonModule,
         AppSideBarModule,
         SearchPanelModule,

@@ -2,10 +2,10 @@
  * Public API Surface of uv-ui-lib
  */
 
-export * from './lib/app-bar/app-bar.component';
-export * from './lib/app-bar/app-bar.module';
-export * from './lib/app-side-bar/app-side-bar.component';
-export * from './lib/app-side-bar/app-side-bar.module';
+export * from './lib/action-bar/action-bar.component';
+export * from './lib/action-bar/action-bar.module';
+export * from './lib/sidebar/app-side-bar.component';
+export * from './lib/sidebar/app-side-bar.module';
 export * from './lib/button/button.component';
 export * from './lib/button/button.module';
 export * from './lib/checkbox/checkbox.component';
