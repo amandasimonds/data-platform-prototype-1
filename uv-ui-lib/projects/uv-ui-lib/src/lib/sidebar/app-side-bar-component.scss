@@ -12,8 +12,18 @@
 
     &__bottom-content {
         padding: 12px 0 0 0;
-        max-height: calc(100% - 150px);
-        // border:3px solid orange;
-        overflow: auto;
     }
+}
+
+.scroll-wrapper {
+    padding: 12px 12px 0 0;
+}
+
+.scroll {
+    width: 100%;
+    padding: 0 24px 0 24px;
+    margin-right: 10px;
+    overflow: auto;
+    position: relative;
+    height:calc(100vh - 246px);
 }

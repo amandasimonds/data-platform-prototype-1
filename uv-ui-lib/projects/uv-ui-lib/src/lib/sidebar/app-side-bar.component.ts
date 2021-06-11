@@ -8,6 +8,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class AppSideBarComponent {
 
-    @Input() public type: '' | 'scroll' = '';
+    @Input() public type: 'menu' | 'scroll' = 'menu';
 
+    public get scroll(): boolean {
+        return this.type === 'scroll' ? true : false;
+    }
 }
