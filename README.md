@@ -24,6 +24,10 @@ Please contact **Amanda Simonds** or **Arthi Kumar** for any questions.
 2. Install NPM packages `npm install`
 3. Run the prototype project on a local server `npm run start`
 
+#### Storybook
+
+- In the `uv-ui-lib` directory, run `npm run storybook` for a storybook playground. Navigate to `http://localhost:6006/`. The app will automatically reload if you change any of the source files.
+
 #### Auth Guard Info
 
 - uv-ui-prototype is protected by SSO authentication, powered by auth-guard.service.ts and auth.service.ts
