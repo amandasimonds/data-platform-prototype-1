@@ -4,12 +4,12 @@ import { DropdownButtonComponent } from './dropdown-button.component';
 
 export default {
     title: 'Components/Buttons/Dropdown',
-    component: DropdownButtonComponent,
+    component: DropdownButtonComponent
 } as Meta;
 
 const Template: Story<DropdownButtonComponent> = (args: DropdownButtonComponent) => ({
     component: DropdownButtonComponent,
-    props: args,
+    props: args
 });
 
 export const Default = Template.bind({});

@@ -6,13 +6,13 @@ export default {
     title: 'Components/Buttons/ImageButton',
     component: ImageButtonComponent,
     argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+        backgroundColor: { control: 'color' }
+    }
 } as Meta;
 
 const Template: Story<ImageButtonComponent> = (args: ImageButtonComponent) => ({
     component: ImageButtonComponent,
-    props: args,
+    props: args
 });
 
 export const Default = Template.bind({});

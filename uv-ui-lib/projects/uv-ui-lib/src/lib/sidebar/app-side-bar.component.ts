@@ -10,6 +10,10 @@ export class AppSideBarComponent {
 
     @Input() public type: 'menu' | 'scroll' = 'menu';
 
+    // for Storybook
+    public leftContent = '';
+    public rightContent = '';
+
     public get scroll(): boolean {
         return this.type === 'scroll' ? true : false;
     }

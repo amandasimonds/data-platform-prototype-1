@@ -4,12 +4,12 @@ import { SvgButtonComponent } from './svg-button.component';
 
 export default {
     title: 'Components/Buttons/SvgButton',
-    component: SvgButtonComponent,
+    component: SvgButtonComponent
 } as Meta;
 
 const Template: Story<SvgButtonComponent> = (args: SvgButtonComponent) => ({
     component: SvgButtonComponent,
-    props: args,
+    props: args
 });
 
 export const Default = Template.bind({});
