@@ -8,4 +8,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 })
 export class ActionBarComponent {
 
+    public leftcontent = ''
+
 }

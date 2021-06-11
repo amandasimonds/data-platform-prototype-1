@@ -9,7 +9,6 @@ export default {
     component: NavbarComponent,
     decorators: [
         moduleMetadata({
-          //👇 Imports both components to allow component composition with Storybook
           declarations: [NavbarComponent],
           imports: [CommonModule, RouterModule.forRoot([])],
           providers: [{provide: APP_BASE_HREF, useValue: '/'}]

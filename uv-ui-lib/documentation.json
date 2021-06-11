@@ -873,43 +873,55 @@
     "directives": [],
     "components": [
         {
-            "name": "AppBarComponent",
-            "id": "component-AppBarComponent-8ae1c906a5a5bb66a38afdd1b01f0074",
-            "file": "projects/uv-ui-lib/src/lib/app-bar/app-bar.component.ts",
+            "name": "ActionBarComponent",
+            "id": "component-ActionBarComponent-fc3c78e7d9e90ddc1de0017b2b29f2cb",
+            "file": "projects/uv-ui-lib/src/lib/action-bar/action-bar.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "lib-uv-ui-app-bar",
+            "selector": "lib-uv-ui-action-bar",
             "styleUrls": [
-                "./app-bar.component.scss"
+                "./action-bar.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./app-bar.component.html"
+                "./action-bar.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "leftcontent",
+                    "defaultValue": "''",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
             "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, ChangeDetectionStrategy } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-app-bar',\r\n    templateUrl: './app-bar.component.html',\r\n    styleUrls: ['./app-bar.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppBarComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, ChangeDetectionStrategy } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-action-bar',\r\n    templateUrl: './action-bar.component.html',\r\n    styleUrls: ['./action-bar.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ActionBarComponent {\r\n\r\n    public leftcontent = ''\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n\r\n.app-bar {\r\n    height: 100%;\r\n    width: 100%;\r\n    border-left: none;\r\n    border-top: none;\r\n    z-index: 0;\r\n}\r\n\r\n.tags-container {\r\n    align-self: flex-start;\r\n    position: relative;\r\n    width: 60%;\r\n    height: 100%;\r\n}\r\n\r\n.container-right {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    margin-right: $md-size;\r\n}\r\n",
-                    "styleUrl": "./app-bar.component.scss"
+                    "data": "@import '../scss/variables';\r\n\r\n.action-bar {\r\n    height: 100%;\r\n    width: 100%;\r\n    border-left: none;\r\n    border-top: none;\r\n    z-index: 0;\r\n}\r\n\r\n.container-left {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    margin-left: $md-size;\r\n}\r\n\r\n.container-right {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 100%;\r\n    margin-right: $md-size;\r\n}\r\n",
+                    "styleUrl": "./action-bar.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"app-bar box flex-inline flex-row justify-content-space-between\">\r\n\r\n    <div class=\"tags-container\"></div>\r\n\r\n<div class=\"container-right\">\r\n\r\n    <ng-content select=\"[right]\"></ng-content>\r\n\r\n</div>\r\n\r\n</div>\r\n"
+            "templateData": "<div class=\"action-bar box flex-inline flex-row justify-content-space-between\">\r\n\r\n    <div class=\"container-left\">\r\n\r\n        <ng-content select=\"[left]\"></ng-content>\r\n        \r\n    </div>\r\n\r\n    <div class=\"container-right\">\r\n\r\n        <ng-content select=\"[right]\"></ng-content>\r\n\r\n    </div>\r\n\r\n</div>\r\n"
         },
         {
             "name": "AppComponent",
@@ -952,8 +964,8 @@
         },
         {
             "name": "AppSideBarComponent",
-            "id": "component-AppSideBarComponent-5eb5ee50fc2bf09c278951db548a2035",
-            "file": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.component.ts",
+            "id": "component-AppSideBarComponent-039796861f193ee9153cce760dd90e8d",
+            "file": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
@@ -972,9 +984,9 @@
             "inputsClass": [
                 {
                     "name": "type",
-                    "defaultValue": "''",
+                    "defaultValue": "'menu'",
                     "line": 11,
-                    "type": "\"\" | \"scroll\""
+                    "type": "\"menu\" | \"scroll\""
                 }
             ],
             "outputsClass": [],
@@ -985,16 +997,27 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-app-side-bar',\r\n    templateUrl: './app-side-bar.component.html',\r\n    styleUrls: ['./app-side-bar-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppSideBarComponent {\r\n\r\n    @Input() public type: '' | 'scroll' = '';\r\n\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-app-side-bar',\r\n    templateUrl: './app-side-bar.component.html',\r\n    styleUrls: ['./app-side-bar-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppSideBarComponent {\r\n\r\n    @Input() public type: 'menu' | 'scroll' = 'menu';\r\n\r\n    public get scroll(): boolean {\r\n        if(this.type === 'scroll'){\r\n            return true\r\n        } return false\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n\r\n.app-side-bar {\r\n    height: 100%;\r\n    border-left: none;\r\n    border-top: none;\r\n\r\n    &__top-content {\r\n        padding: 24px;\r\n        min-height: 150px;\r\n    }\r\n\r\n    &__bottom-content {\r\n        padding: 12px 0 0 0;\r\n        max-height: calc(100% - 150px);\r\n        // border:3px solid orange;\r\n        overflow: auto;\r\n    }\r\n}\r\n",
+                    "data": "@import '../scss/variables';\r\n\r\n.app-side-bar {\r\n    height: 100%;\r\n    border-left: none;\r\n    border-top: none;\r\n\r\n    &__top-content {\r\n        padding: 24px;\r\n        min-height: 150px;\r\n    }\r\n\r\n    &__bottom-content {\r\n        padding: 12px 0 0 0;\r\n    }\r\n}\r\n\r\n.scroll-wrapper {\r\n    padding: 12px 12px 0 0;\r\n}\r\n\r\n.scroll {\r\n    width: 100%;\r\n    padding: 0 24px 0 24px;\r\n    margin-right: 10px;\r\n    overflow: auto;\r\n    position: relative;\r\n    height:calc(100vh - 246px);\r\n    border: 1px solid orange;\r\n}\r\n",
                     "styleUrl": "./app-side-bar-component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"box app-side-bar\">\r\n\r\n    <div class=\"app-side-bar__top-content\">\r\n        <ng-content select=\"[top]\"></ng-content> \r\n    </div>\r\n\r\n    <div class=\"divider\"></div>\r\n\r\n    <div class=\"app-side-bar__bottom-content\" [ngClass]=\"{'scroll' : type === 'scroll'}\">\r\n        <ng-content select=\"[bottom]\"></ng-content>\r\n    </div>\r\n\r\n</div>\r\n"
+            "accessors": {
+                "scroll": {
+                    "name": "scroll",
+                    "getSignature": {
+                        "name": "scroll",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 13
+                    }
+                }
+            },
+            "templateData": "<div class=\"box app-side-bar\">\r\n\r\n    <div class=\"app-side-bar__top-content\">\r\n        <ng-content select=\"[top]\"></ng-content> \r\n    </div>\r\n\r\n    <div class=\"divider\"></div>\r\n\r\n    <div class=\"app-side-bar__bottom-content\" [ngClass]=\"{'scroll-wrapper' : scroll}\">\r\n        <div  [ngClass]=\"{'scroll' : scroll}\">\r\n            <ng-content select=\"[bottom]\"></ng-content>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n"
         },
         {
             "name": "AuthGuardComponent",
@@ -1101,7 +1124,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-3192510c38a6eb0e4e500f011cf2ffa8",
+            "id": "component-ButtonComponent-7709dc6d95c30c49bb34c7ccf59d1ac6",
             "file": "projects/uv-ui-lib/src/lib/button/button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1122,7 +1145,7 @@
                 {
                     "name": "color",
                     "defaultValue": "'none'",
-                    "line": 13,
+                    "line": 12,
                     "type": "\"primary\" | \"none\""
                 },
                 {
@@ -1131,26 +1154,20 @@
                     "line": 10
                 },
                 {
-                    "name": "size",
-                    "defaultValue": "'medium'",
-                    "line": 11,
-                    "type": "\"small\" | \"medium\" | \"large\""
-                },
-                {
                     "name": "state",
                     "defaultValue": "'normal'",
-                    "line": 15,
+                    "line": 14,
                     "type": "\"active\" | \"disabled\" | \"normal\""
                 },
                 {
                     "name": "svgPath",
                     "defaultValue": "''",
-                    "line": 14
+                    "line": 13
                 },
                 {
                     "name": "type",
                     "defaultValue": "'basic'",
-                    "line": 12,
+                    "line": 11,
                     "type": "\"basic\" | \"flat\" | \"round\""
                 }
             ],
@@ -1162,7 +1179,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ButtonComponent {\r\n    @Input() public label = 'Button';\r\n    @Input() public size: 'small' | 'medium' | 'large' = 'medium';\r\n    @Input() public type: 'basic' | 'flat' | 'round' = 'basic';\r\n    @Input() public color: 'primary' | 'none' = 'none';\r\n    @Input() public svgPath = '';\r\n    @Input() public state: 'active' | 'disabled' | 'normal' = 'normal';\r\n\r\n    public get classes(): string[] {\r\n        return ['button', this.type, this.type+'--'+this.color, this.type+'--'+this.state];\r\n    }\r\n\r\n    public get svg(): string {\r\n        return this.svgPath;\r\n    }\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ButtonComponent {\r\n    @Input() public label = 'Button';\r\n    @Input() public type: 'basic' | 'flat' | 'round' = 'basic';\r\n    @Input() public color: 'primary' | 'none' = 'none';\r\n    @Input() public svgPath = '';\r\n    @Input() public state: 'active' | 'disabled' | 'normal' = 'normal';\r\n\r\n    public get classes(): string[] {\r\n        return ['button', this.type, this.type+'--'+this.color, this.type+'--'+this.state];\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1178,16 +1195,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 17
-                    }
-                },
-                "svg": {
-                    "name": "svg",
-                    "getSignature": {
-                        "name": "svg",
-                        "type": "string",
-                        "returnType": "string",
-                        "line": 21
+                        "line": 16
                     }
                 }
             },
@@ -1515,7 +1523,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".grid{\r\n    position: relative;\r\n    height: 100vh;\r\n    display: grid;\r\n    grid-gap: 0;\r\n    grid-template-columns: [col1] 336px [col2] auto;\r\n    grid-template-rows: [row1] 68px [row2] auto;\r\n    grid-template-areas: \r\n    \"sidebar appbar\"\r\n    \"sidebar main\" ;\r\n}\r\n\r\n.appbar {\r\n    grid-column: col2;\r\n    grid-row: row1;\r\n    border-top: none;\r\n}\r\n.sidebar {\r\n    grid-column: col1;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n}\r\n.content {\r\n    grid-column: col2;\r\n    grid-row: row2;\r\n}\r\n",
+                    "data": ".grid{\r\n    position: relative;\r\n    height: calc(100vh - 64px);\r\n    display: grid;\r\n    grid-gap: 0;\r\n    grid-template-columns: [col1] 336px [col2] auto;\r\n    grid-template-rows: [row1] 68px [row2] auto;\r\n    grid-template-areas: \r\n    \"sidebar appbar\"\r\n    \"sidebar main\" ;\r\n}\r\n\r\n.actionbar {\r\n    grid-column: col2;\r\n    grid-row: row1;\r\n    border-top: none;\r\n}\r\n.sidebar {\r\n    grid-column: col1;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n}\r\n.content {\r\n    grid-column: col2;\r\n    grid-row: row2;\r\n}\r\n",
                     "styleUrl": "./global-where-used.component.scss"
                 }
             ],
@@ -1543,7 +1551,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n\r\n    \r\n    <div class=\"appbar\">\r\n        <lib-uv-ui-app-bar>\r\n            <div right>\r\n                <lib-uv-ui-svg-button class=\"margin-right-xs\" color='blue' svgPath='assets/more-horizontal.svg#moreHorizontal'></lib-uv-ui-svg-button>\r\n                <lib-uv-ui-svg-button color='blue' svgPath='assets/fullscreen.svg#fullScreen'></lib-uv-ui-svg-button>\r\n            </div>\r\n        </lib-uv-ui-app-bar>\r\n    </div>\r\n\r\n    <div class=\"sidebar\">\r\n        <lib-uv-ui-app-side-bar>\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" type=\"basic\" svgPath='assets/back-arrow.svg#back-arrow' color=\"primary\"></lib-uv-ui-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Title Goes Here</p>\r\n                <p>Lorem ipsum dolor sit amet consectetur eiusmod tempor adipiscing elit sed do incididunt ut labore</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                    <div *ngFor=\"let tab of gwuTabs\">\r\n                        <lib-uv-ui-tab \r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.linkText}}\">\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-widget></lib-uv-ui-widget>\r\n    \r\n</div>\r\n\r\n</div>\r\n"
+            "templateData": "<div class=\"grid\">\r\n\r\n    \r\n    <div class=\"actionbar\">\r\n        <lib-uv-ui-action-bar>\r\n            <div right>\r\n                <lib-uv-ui-svg-button class=\"margin-right-xs\" color='blue' svgPath='assets/more-horizontal.svg#moreHorizontal'></lib-uv-ui-svg-button>\r\n                <lib-uv-ui-svg-button color='blue' svgPath='assets/fullscreen.svg#fullScreen'></lib-uv-ui-svg-button>\r\n            </div>\r\n        </lib-uv-ui-action-bar>\r\n    </div>\r\n\r\n    <div class=\"sidebar\">\r\n        <lib-uv-ui-app-side-bar>\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" type=\"basic\" svgPath='assets/back-arrow.svg#back-arrow' color=\"primary\"></lib-uv-ui-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Title Goes Here</p>\r\n                <p>Lorem ipsum dolor sit amet consectetur eiusmod tempor adipiscing elit sed do incididunt ut labore</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                    <div *ngFor=\"let tab of gwuTabs\">\r\n                        <lib-uv-ui-tab \r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.linkText}}\">\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-widget></lib-uv-ui-widget>\r\n    \r\n</div>\r\n\r\n</div>\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -2162,7 +2170,7 @@
         },
         {
             "name": "SearchComponent",
-            "id": "component-SearchComponent-09d7714567125569b61e7a65a1045185",
+            "id": "component-SearchComponent-de8172fc779fd13c06234819bfeaa8ee",
             "file": "projects/uv-ui-prototype/src/app/search/search.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2195,7 +2203,7 @@
                 },
                 {
                     "name": "filterBarActive",
-                    "defaultValue": "true",
+                    "defaultValue": "false",
                     "type": "",
                     "optional": false,
                     "description": "",
@@ -2408,11 +2416,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';\r\nimport { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\nimport { SearchResult } from './models/search-result.model';\r\nimport { DEFAULT_SEARCH_MENU_STATE } from './models/search-results-state';\r\n\r\n@Component({\r\n  selector: 'lib-search',\r\n  templateUrl: './search.component.html',\r\n  styleUrls: ['./search.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchComponent implements OnInit {\r\n\r\n    public searchItemsArray: SearchResult[] = [];\r\n    public searchItem: SearchResult = {category: '', title: '', description: ''};\r\n    public searchCategory = '';\r\n    public showContent = false;\r\n    public searchTabs = DEFAULT_SEARCH_MENU_STATE.menuTabs;\r\n    public categorySelected = true;\r\n    public reOrderModeActivated = false;\r\n    public filterBarActive = true;\r\n    public items = [\r\n        {title: 'Lorem ipsum', checked: 'checked'},\r\n        {title: 'Ipsum sit amet', checked: ''},\r\n        {title: 'Amet lorem', checked: ''},\r\n        {title: 'Lorem ipsum sit', checked: 'checked'},\r\n        {title: 'Lorem ipsum amet', checked: 'checked'}\r\n    ];\r\n\r\n    constructor(private headerService: HeaderService){\r\n        this.categorySelected = false;\r\n    }\r\n\r\n    public drop(event: CdkDragDrop<string[]>) {\r\n        moveItemInArray(this.searchTabs, event.previousIndex, event.currentIndex);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Search');\r\n        this.headerService.setAppIcon('assets/search.svg#search');\r\n    }\r\n\r\n    public reOrderMode() {\r\n        this.reOrderModeActivated = !this.reOrderModeActivated;\r\n    }\r\n\r\n    public onTabClicked(category: string) {\r\n        this.searchCategory = category;\r\n        this.categorySelected = true;\r\n    }\r\n\r\n    public toggleFilterBar() {\r\n        this.filterBarActive = !this.filterBarActive;\r\n    }\r\n\r\n    public clearResults() {\r\n       this.categorySelected = false;\r\n    }\r\n\r\n    public onToggleTabActive(category: string): boolean {\r\n        if (this.searchCategory === category) {\r\n            return true;\r\n        } else {\r\n            return false;\r\n        }\r\n    }\r\n\r\n    // public trackByFn(_: number, {link}: this.searchTabs): string {\r\n    //     return link;\r\n    // }\r\n}\r\n",
+            "sourceCode": "import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';\r\nimport { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\nimport { SearchResult } from './models/search-result.model';\r\nimport { DEFAULT_SEARCH_MENU_STATE } from './models/search-results-state';\r\n\r\n@Component({\r\n  selector: 'lib-search',\r\n  templateUrl: './search.component.html',\r\n  styleUrls: ['./search.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchComponent implements OnInit {\r\n\r\n    public searchItemsArray: SearchResult[] = [];\r\n    public searchItem: SearchResult = {category: '', title: '', description: ''};\r\n    public searchCategory = '';\r\n    public showContent = false;\r\n    public searchTabs = DEFAULT_SEARCH_MENU_STATE.menuTabs;\r\n    public categorySelected = true;\r\n    public reOrderModeActivated = false;\r\n    public filterBarActive = false;\r\n    public items = [\r\n        {title: 'Lorem ipsum', checked: 'checked'},\r\n        {title: 'Ipsum sit amet', checked: ''},\r\n        {title: 'Amet lorem', checked: ''},\r\n        {title: 'Lorem ipsum sit', checked: 'checked'},\r\n        {title: 'Lorem ipsum amet', checked: 'checked'}\r\n    ];\r\n\r\n    constructor(private headerService: HeaderService){\r\n        this.categorySelected = false;\r\n    }\r\n\r\n    public drop(event: CdkDragDrop<string[]>) {\r\n        moveItemInArray(this.searchTabs, event.previousIndex, event.currentIndex);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Search');\r\n        this.headerService.setAppIcon('assets/search.svg#search');\r\n    }\r\n\r\n    public reOrderMode() {\r\n        this.reOrderModeActivated = !this.reOrderModeActivated;\r\n    }\r\n\r\n    public onTabClicked(category: string) {\r\n        this.searchCategory = category;\r\n        this.categorySelected = true;\r\n    }\r\n\r\n    public toggleFilterBar() {\r\n        this.filterBarActive = !this.filterBarActive;\r\n    }\r\n\r\n    public clearResults() {\r\n       this.categorySelected = false;\r\n    }\r\n\r\n    public onToggleTabActive(category: string): boolean {\r\n        if (this.searchCategory === category) {\r\n            return true;\r\n        } else {\r\n            return false;\r\n        }\r\n    }\r\n\r\n    // public trackByFn(_: number, {link}: this.searchTabs): string {\r\n    //     return link;\r\n    // }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".grid{\r\n    position: relative;\r\n    height: 100%;\r\n    display: grid;\r\n    grid-template-rows: [row1] 68px [row2] auto;\r\n    grid-template-columns: [col1] 336px [col2] min-content [col3] auto;\r\n    grid-template-areas: \r\n    \"sidebar sidebar2 appbar\"\r\n    \"sidebar sidebar2 content\" ;\r\n}\r\n\r\n.sidebar {\r\n    grid-column: col1;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n    position: relative;\r\n    z-index: 150;\r\n}\r\n\r\n.sidebar2 {\r\n    grid-column: col2;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n    // border: 10px solid blue;\r\n}\r\n\r\n.appbar {\r\n    grid-row: row1;\r\n    padding: 20px;\r\n    border-top: none;\r\n    border-left: none;\r\n}\r\n\r\n.content {\r\n    grid-column: col3;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n    padding: 32px 32px 0 32px;\r\n    display: grid;\r\n    justify-content: center;\r\n    // border: 3px solid green;\r\n}\r\n\r\nrouter-outlet {\r\n    grid-column: col2;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n}\r\n\r\n.back-arrow {\r\n    margin-right: 5px;\r\n}\r\n\r\n.filter-bar-width {\r\n    width: 288px;\r\n}\r\n\r\n.close-button {\r\n    padding-top: 6px;\r\n}\r\n\r\n.container {\r\n    margin: 8px 0;\r\n}\r\n\r\n.filter-scroll-container {\r\n    padding: 12px 24px;\r\n    margin-right: 10px;\r\n    overflow: auto;\r\n    height: calc(100% - 150px);\r\n    // height: 300px;\r\n    position: relative;\r\n}\r\n\r\n// /* Hide the browser's default checkbox */\r\n// @supports(-webkit-appearance: none) or (-moz-appearance: none) {\r\n//     input[type='checkbox'],\r\n//     input[type='radio'] {\r\n//       -webkit-appearance: none;\r\n//       -moz-appearance: none;\r\n//     }\r\n//   }\r\n\r\n//   .wrapper {\r\n//       height: 100%;\r\n//   }\r\n\r\n// /* Hide the browser's default checkbox */\r\n// .container input {\r\n//     position: absolute;\r\n//     opacity: 0;\r\n//     cursor: pointer;\r\n//     height: 0;\r\n//     width: 0;\r\n// }\r\n\r\n// /* custom checkbox */\r\n// .checkmark {\r\n//     position: absolute;\r\n//     top: 0;\r\n//     left: 0;\r\n//     height: 16px;\r\n//     width: 16px;\r\n//     background-color: #F5F6FA;\r\n//     border: 1px solid #DBDBDB;\r\n//     border-radius: 3px;\r\n// }\r\n\r\n// /* on mouse-over */\r\n// .container:hover input ~ .checkmark {\r\n//     background-color: #F5F6FA;\r\n//     cursor: pointer;\r\n// }\r\n\r\n// /* when the checkbox is checked */\r\n// .container input:checked ~ .checkmark {\r\n//     background-color: #F5F6FA;\r\n// }\r\n\r\n// /* custom the checkmark/indicator */\r\n// .checkmark:after {\r\n//     content: \"\";\r\n//     position: relative;\r\n//     display: none;\r\n// }\r\n\r\n// /* Show the checkmark when checked */\r\n// .container input:checked ~ .checkmark:after {\r\n//     display: block;\r\n// }\r\n\r\n// /* custom checkmark/indicator */\r\n// .container .checkmark:after {\r\n//     left: 5px;\r\n//     top: 2px;\r\n//     width: 5px;\r\n//     height: 9px;\r\n//     border: solid #6E6D7A; //color-gray-light-6\r\n//     border-width: 0 2px 2px 0;\r\n//     -webkit-transform: rotate(45deg);\r\n//     -ms-transform: rotate(45deg);\r\n//     transform: rotate(45deg);\r\n// }\r\n\r\n\r\n",
+                    "data": ".grid{\r\n    position: relative;\r\n    height: calc(100vh - 64px);\r\n    display: grid;\r\n    grid-template-rows: [row1] 68px [row2] auto;\r\n    grid-template-columns: [col1] 336px [col2] min-content [col3] auto;\r\n    grid-template-areas: \r\n    \"sidebar sidebar2 appbar\"\r\n    \"sidebar sidebar2 content\" ;\r\n}\r\n\r\n.sidebar {\r\n    grid-column: col1;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n    position: relative;\r\n    z-index: 150;\r\n}\r\n\r\n.sidebar2 {\r\n    grid-column: col2;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n    position: relative;\r\n}\r\n\r\n.appbar {\r\n    grid-row: row1;\r\n    padding: 20px;\r\n    border-top: none;\r\n    border-left: none;\r\n}\r\n\r\n.content {\r\n    grid-column: col3;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n    padding: 32px 32px 0 32px;\r\n    display: grid;\r\n    justify-content: center;\r\n}\r\n\r\nrouter-outlet {\r\n    grid-column: col2;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n}\r\n\r\n.filter-bar-width {\r\n    width: 288px;\r\n}\r\n\r\n.container {\r\n    margin: 8px 0;\r\n}\r\n",
                     "styleUrl": "./search.component.scss"
                 }
             ],
@@ -2440,7 +2448,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n    <div class=\"sidebar\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" svgPath='assets/back-arrow.svg#back-arrow' color='primary' type=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" svgPath='assets/up-down-arrows.svg#up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' svgPath='assets/filter.svg#filter' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                \r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.title}}\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            svgPath=\"{{tab.icon}}\" \r\n                            label=\"{{tab.title}}\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button label=\"Close\" class=\"margin-right-sm\" type=\"basic\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button label=\"Save\" type=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div class=\"sidebar2\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        <lib-uv-ui-app-side-bar *ngIf=\"filterBarActive\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" svgPath='assets/close.svg#close' size=\"xs\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel type=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n\r\n            <div bottom>\r\n                <div class=\"filter-scroll-container flex flex-column\">\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xxs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                </div>\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div class=\"content\">\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"grid\">\r\n    <div class=\"sidebar\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" svgPath='assets/back-arrow.svg#back-arrow' color='primary' type=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" svgPath='assets/up-down-arrows.svg#up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' svgPath='assets/filter.svg#filter' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.title}}\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            svgPath=\"{{tab.icon}}\" \r\n                            label=\"{{tab.title}}\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button label=\"Close\" color=\"primary\" class=\"margin-right-sm\" type=\"basic\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button label=\"Save\" color=\"primary\" type=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div class=\"sidebar2\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        \r\n        <lib-uv-ui-app-side-bar *ngIf=\"filterBarActive\" type=\"scroll\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" svgPath='assets/close.svg#close' size=\"xs\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel type=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n\r\n            <div bottom>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xxs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div class=\"content\">\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "SearchPanelComponent",
@@ -2791,7 +2799,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".grid{\r\n    position: relative;\r\n    height: 100vh;\r\n    display: grid;\r\n    grid-template-rows: [row1] 68px [row2] auto;\r\n    grid-template-areas: \r\n    \"appbar\"\r\n    \"content\" ;\r\n}\r\n\r\n.appbar {\r\n    grid-row: row1;\r\n    padding: 20px;\r\n    border-top: none;\r\n    border-left: none;\r\n}\r\n\r\n.content {\r\n    grid-row: row2;\r\n    overflow: auto;\r\n    padding-left: 96px;\r\n    padding-top:20px;\r\n}\r\n",
+                    "data": ".grid{\r\n    position: relative;\r\n    height: calc(100vh - 64px);\r\n    display: grid;\r\n    grid-template-rows: [row1] 68px [row2] auto;\r\n    grid-template-areas: \r\n    \"appbar\"\r\n    \"content\" ;\r\n}\r\n\r\n.appbar {\r\n    grid-row: row1;\r\n    padding: 20px;\r\n    border-top: none;\r\n    border-left: none;\r\n}\r\n\r\n.content {\r\n    grid-row: row2;\r\n    overflow: auto;\r\n    padding-left: 96px;\r\n    padding-top:20px;\r\n}\r\n",
                     "styleUrl": "./side-by-side.component.scss"
                 }
             ],
@@ -3061,7 +3069,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/styles';\r\n@import '../scss/variables';\r\n\r\n.btn-svg {\r\n    &,\r\n    &:link,\r\n    &:visited {\r\n        font-family: $font-family;\r\n        font-weight: $font-bold;\r\n        text-decoration: none;\r\n        display: inline-block;\r\n        border-radius: 8px;\r\n        border: none;\r\n        cursor: pointer;\r\n        background-color: transparent;\r\n    }\r\n\r\n    &:active,\r\n    &:focus {\r\n        outline: none;\r\n    }\r\n\r\n    svg {\r\n        cursor: pointer;\r\n        width: $sm-size;\r\n        height: $sm-size;\r\n    \r\n        &-xs {\r\n            width: $xs-size;\r\n            height: $xs-size;\r\n        }\r\n    }\r\n}\r\n\r\n\r\n\r\n.small svg {\r\n    width: $sm-size;\r\n    height: $sm-size;\r\n}\r\n\r\n.xs svg {\r\n    width: $xs-size;\r\n    height: $xs-size;\r\n}\r\n\r\n.xxs svg {\r\n    width: $xxs-size;\r\n    height: $xxs-size;\r\n}\r\n\r\n.gray {\r\n    color: $color-gray-light-3;\r\n    \r\n    &:hover {\r\n        color: $color-blue;\r\n    }\r\n}\r\n\r\n.blue {\r\n    color: $color-blue;\r\n}\r\n",
+                    "data": "@import '../scss/styles';\r\n@import '../scss/variables';\r\n\r\n.btn-svg {\r\n    &,\r\n    &:link,\r\n    &:visited {\r\n        font-family: $font-family;\r\n        font-weight: $font-bold;\r\n        text-decoration: none;\r\n        display: inline-block;\r\n        border-radius: 8px;\r\n        border: none;\r\n        cursor: pointer;\r\n        background-color: transparent;\r\n    }\r\n\r\n    &:active,\r\n    &:focus {\r\n        outline: none;\r\n    }\r\n\r\n    svg {\r\n        cursor: pointer;\r\n        width: $sm-size;\r\n        height: $sm-size;\r\n        vertical-align: middle;\r\n    \r\n        &-xs {\r\n            width: $xs-size;\r\n            height: $xs-size;\r\n        }\r\n    }\r\n}\r\n\r\n\r\n\r\n.small svg {\r\n    width: $sm-size;\r\n    height: $sm-size;\r\n}\r\n\r\n.xs svg {\r\n    width: $xs-size;\r\n    height: $xs-size;\r\n}\r\n\r\n.xxs svg {\r\n    width: $xxs-size;\r\n    height: $xxs-size;\r\n}\r\n\r\n.gray {\r\n    color: $color-gray-light-3;\r\n    \r\n    &:hover {\r\n        color: $color-blue;\r\n    }\r\n}\r\n\r\n.blue {\r\n    color: $color-blue;\r\n}\r\n",
                     "styleUrl": "./svg-button.component.scss"
                 }
             ],
@@ -3228,7 +3236,7 @@
         {
             "name": "UvUiButtonComponent",
             "id": "component-UvUiButtonComponent-3445dc3244748d08eeadc081354a077a",
-            "file": "projects/uv-ui-lib/src/lib/uv-ui-button/uv-ui-button.component.ts",
+            "file": "projects/uv-ui-components/src/lib/uv-ui-button/uv-ui-button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
@@ -3333,7 +3341,7 @@
         {
             "name": "UvUiButtonComponent",
             "id": "component-UvUiButtonComponent-3445dc3244748d08eeadc081354a077a-1",
-            "file": "projects/uv-ui-components/src/lib/uv-ui-button/uv-ui-button.component.ts",
+            "file": "projects/uv-ui-lib/src/lib/uv-ui-button/uv-ui-button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
@@ -3480,7 +3488,7 @@
     ],
     "modules": [
         {
-            "name": "AppBarModule",
+            "name": "ActionBarModule",
             "children": [
                 {
                     "type": "providers",
@@ -3490,7 +3498,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "AppBarComponent"
+                            "name": "ActionBarComponent"
                         }
                     ]
                 },
@@ -3509,7 +3517,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "AppBarComponent"
+                            "name": "ActionBarComponent"
                         }
                     ]
                 },
@@ -3564,7 +3572,7 @@
                     "type": "imports",
                     "elements": [
                         {
-                            "name": "AppBarModule"
+                            "name": "ActionBarModule"
                         },
                         {
                             "name": "AppRoutingModule"
@@ -4493,7 +4501,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
+                "file": "projects/uv-ui-components/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -4509,7 +4517,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-components/src/test.ts",
+                "file": "projects/uv-ui-lib/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -4517,7 +4525,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/action-bar/action-bar.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4549,14 +4557,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -4573,7 +4573,31 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4590,14 +4614,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4669,7 +4685,7 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
+                "file": "projects/uv-ui-components/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -4683,7 +4699,7 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-components/src/test.ts",
+                "file": "projects/uv-ui-lib/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -4695,12 +4711,20 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Scroll",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
-                "type": "Story<AppSideBarComponent>",
-                "defaultValue": "(args: AppSideBarComponent) => ({\r\n    component: AppSideBarComponent,\r\n    props: args,\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/action-bar/action-bar.stories.ts",
+                "type": "Story<ActionBarComponent>",
+                "defaultValue": "(args: ActionBarComponent) => ({\r\n    component: ActionBarComponent,\r\n    props: args,\r\n    template: `\r\n    <lib-uv-ui-action-bar>\r\n        <div left>\r\n            ${args.leftContent}\r\n        </div>\r\n        <div right>\r\n        ${args.rightContent}\r\n        </div>\r\n    </lib-uv-ui-action-bar>`\r\n})"
             },
             {
                 "name": "Template",
@@ -4738,14 +4762,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
-                "type": "Story<NavbarDashboardSubComponent>",
-                "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
                 "type": "Story<ImageButtonComponent>",
                 "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
@@ -4762,9 +4778,33 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                "type": "Story<NavbarDashboardSubComponent>",
+                "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
                 "type": "Story<SearchPanelComponent>",
                 "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts",
+                "type": "Story<AppSideBarComponent>",
+                "defaultValue": "(args: AppSideBarComponent) => ({\r\n    component: AppSideBarComponent,\r\n    props: args,\r\n    template: `\r\n        <lib-uv-ui-app-side-bar>\r\n            <div top>\r\n                ${args.topContent}\r\n            </div>\r\n            <div bottom>\r\n                ${args.bottomContent}\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>`\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
+                "type": "Story<SvgButtonComponent>",
+                "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -4781,14 +4821,6 @@
                 "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
                 "type": "Story<TabComponent>",
                 "defaultValue": "(args: TabComponent) => ({\r\n    component: TabComponent,\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
-                "type": "Story<SvgButtonComponent>",
-                "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -4891,12 +4923,12 @@
                     "defaultValue": "[\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  }\r\n]"
                 }
             ],
-            "projects/uv-ui-lib/src/test.ts": [
+            "projects/uv-ui-components/src/test.ts": [
                 {
                     "name": "context",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/test.ts",
+                    "file": "projects/uv-ui-components/src/test.ts",
                     "type": "",
                     "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
                 },
@@ -4904,7 +4936,7 @@
                     "name": "require",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/test.ts",
+                    "file": "projects/uv-ui-components/src/test.ts",
                     "type": "literal type"
                 }
             ],
@@ -4925,12 +4957,12 @@
                     "type": "literal type"
                 }
             ],
-            "projects/uv-ui-components/src/test.ts": [
+            "projects/uv-ui-lib/src/test.ts": [
                 {
                     "name": "context",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-components/src/test.ts",
+                    "file": "projects/uv-ui-lib/src/test.ts",
                     "type": "",
                     "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
                 },
@@ -4938,16 +4970,16 @@
                     "name": "require",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-components/src/test.ts",
+                    "file": "projects/uv-ui-lib/src/test.ts",
                     "type": "literal type"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts": [
+            "projects/uv-ui-lib/src/lib/action-bar/action-bar.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/action-bar/action-bar.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4955,9 +4987,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
-                    "type": "Story<AppSideBarComponent>",
-                    "defaultValue": "(args: AppSideBarComponent) => ({\r\n    component: AppSideBarComponent,\r\n    props: args,\r\n})"
+                    "file": "projects/uv-ui-lib/src/lib/action-bar/action-bar.stories.ts",
+                    "type": "Story<ActionBarComponent>",
+                    "defaultValue": "(args: ActionBarComponent) => ({\r\n    component: ActionBarComponent,\r\n    props: args,\r\n    template: `\r\n    <lib-uv-ui-action-bar>\r\n        <div left>\r\n            ${args.leftContent}\r\n        </div>\r\n        <div right>\r\n        ${args.rightContent}\r\n        </div>\r\n    </lib-uv-ui-action-bar>`\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/header/header.stories.ts": [
@@ -4996,24 +5028,6 @@
                     "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
-                    "type": "Story<NavbarDashboardSubComponent>",
-                    "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
-                }
-            ],
             "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
                 {
                     "name": "Default",
@@ -5050,6 +5064,24 @@
                     "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args,\r\n})"
                 }
             ],
+            "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                    "type": "Story<NavbarDashboardSubComponent>",
+                    "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
+                }
+            ],
             "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts": [
                 {
                     "name": "Default",
@@ -5066,6 +5098,50 @@
                     "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
                     "type": "Story<SearchPanelComponent>",
                     "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Scroll",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts",
+                    "type": "Story<AppSideBarComponent>",
+                    "defaultValue": "(args: AppSideBarComponent) => ({\r\n    component: AppSideBarComponent,\r\n    props: args,\r\n    template: `\r\n        <lib-uv-ui-app-side-bar>\r\n            <div top>\r\n                ${args.topContent}\r\n            </div>\r\n            <div bottom>\r\n                ${args.bottomContent}\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>`\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
+                    "type": "Story<SvgButtonComponent>",
+                    "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts": [
@@ -5110,24 +5186,6 @@
                     "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
                     "type": "Story<TabComponent>",
                     "defaultValue": "(args: TabComponent) => ({\r\n    component: TabComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
-                    "type": "Story<SvgButtonComponent>",
-                    "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
                 }
             ],
             "projects/uv-ui-prototype/src/app/search/models/search-results-state.ts": [
@@ -5317,25 +5375,16 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/uv-ui-lib/src/lib/app-bar/app-bar.component.ts",
+                "filePath": "projects/uv-ui-lib/src/lib/action-bar/action-bar.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "AppBarComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "AppSideBarComponent",
+                "name": "ActionBarComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
                 "status": "low"
             },
             {
-                "filePath": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
+                "filePath": "projects/uv-ui-lib/src/lib/action-bar/action-bar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5345,7 +5394,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/uv-ui-lib/src/lib/app-side-bar/app-side-bar.stories.ts",
+                "filePath": "projects/uv-ui-lib/src/lib/action-bar/action-bar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5360,7 +5409,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -5664,6 +5713,45 @@
             },
             {
                 "filePath": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppSideBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Scroll",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

@@ -8,11 +8,11 @@
     z-index: 0;
 }
 
-.tags-container {
-    align-self: flex-start;
-    position: relative;
-    width: 60%;
+.container-left {
+    display: flex;
+    align-items: center;
     height: 100%;
+    margin-left: $md-size;
 }
 
 .container-right {

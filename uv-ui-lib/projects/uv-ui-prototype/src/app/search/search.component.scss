@@ -1,6 +1,6 @@
 .grid{
     position: relative;
-    height: 100%;
+    height: calc(100vh - 64px);
     display: grid;
     grid-template-rows: [row1] 68px [row2] auto;
     grid-template-columns: [col1] 336px [col2] min-content [col3] auto;
@@ -21,7 +21,7 @@
     grid-column: col2;
     grid-row-start: row1;
     grid-row-end: 3;
-    // border: 10px solid blue;
+    position: relative;
 }
 
 .appbar {
@@ -38,7 +38,6 @@
     padding: 32px 32px 0 32px;
     display: grid;
     justify-content: center;
-    // border: 3px solid green;
 }
 
 router-outlet {
@@ -47,99 +46,10 @@ router-outlet {
     grid-row-end: 3;
 }
 
-.back-arrow {
-    margin-right: 5px;
-}
-
 .filter-bar-width {
     width: 288px;
-}
-
-.close-button {
-    padding-top: 6px;
 }
 
 .container {
     margin: 8px 0;
 }
-
-.filter-scroll-container {
-    padding: 12px 24px;
-    margin-right: 10px;
-    overflow: auto;
-    height: calc(100% - 150px);
-    // height: 300px;
-    position: relative;
-}
-
-// /* Hide the browser's default checkbox */
-// @supports(-webkit-appearance: none) or (-moz-appearance: none) {
-//     input[type='checkbox'],
-//     input[type='radio'] {
-//       -webkit-appearance: none;
-//       -moz-appearance: none;
-//     }
-//   }
-
-//   .wrapper {
-//       height: 100%;
-//   }
-
-// /* Hide the browser's default checkbox */
-// .container input {
-//     position: absolute;
-//     opacity: 0;
-//     cursor: pointer;
-//     height: 0;
-//     width: 0;
-// }
-
-// /* custom checkbox */
-// .checkmark {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     height: 16px;
-//     width: 16px;
-//     background-color: #F5F6FA;
-//     border: 1px solid #DBDBDB;
-//     border-radius: 3px;
-// }
-
-// /* on mouse-over */
-// .container:hover input ~ .checkmark {
-//     background-color: #F5F6FA;
-//     cursor: pointer;
-// }
-
-// /* when the checkbox is checked */
-// .container input:checked ~ .checkmark {
-//     background-color: #F5F6FA;
-// }
-
-// /* custom the checkmark/indicator */
-// .checkmark:after {
-//     content: "";
-//     position: relative;
-//     display: none;
-// }
-
-// /* Show the checkmark when checked */
-// .container input:checked ~ .checkmark:after {
-//     display: block;
-// }
-
-// /* custom checkmark/indicator */
-// .container .checkmark:after {
-//     left: 5px;
-//     top: 2px;
-//     width: 5px;
-//     height: 9px;
-//     border: solid #6E6D7A; //color-gray-light-6
-//     border-width: 0 2px 2px 0;
-//     -webkit-transform: rotate(45deg);
-//     -ms-transform: rotate(45deg);
-//     transform: rotate(45deg);
-// }
-
-
