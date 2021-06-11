@@ -16,7 +16,6 @@
             </div>
 
             <div bottom>
-                
                 <div *ngIf="!reOrderModeActivated">
                     <div *ngFor="let tab of searchTabs">
                         <lib-uv-ui-tab 
@@ -59,7 +58,8 @@
     </div>
     
     <div class="sidebar2" [ngClass]="{ 'filter-bar-width' : filterBarActive }">
-        <lib-uv-ui-app-side-bar *ngIf="filterBarActive">
+        
+        <lib-uv-ui-app-side-bar *ngIf="filterBarActive" type="scroll">
             <div top>
                 <div class="margin-bottom-sm flex justify-content-space-between" >
                     <p class="heading-4">Filters</p>
@@ -70,7 +70,6 @@
             </div>
 
             <div bottom>
-                <div class="filter-scroll-container flex flex-column">
 
                     <p class="bold uv-type-body margin-top-xxs margin-bottom-xxs">Discipline</p>
                     <div *ngFor="let item of items" class="container">
@@ -87,7 +86,11 @@
                         <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>
                     </div>
 
-                </div>
+                    <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Technology</p>
+                    <div *ngFor="let item of items" class="container">
+                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>
+                    </div>
+
             </div>
         </lib-uv-ui-app-side-bar>
     </div>

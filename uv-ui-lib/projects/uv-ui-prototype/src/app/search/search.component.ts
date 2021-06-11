@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit {
     public searchTabs = DEFAULT_SEARCH_MENU_STATE.menuTabs;
     public categorySelected = true;
     public reOrderModeActivated = false;
-    public filterBarActive = true;
+    public filterBarActive = false;
     public items = [
         {title: 'Lorem ipsum', checked: 'checked'},
         {title: 'Ipsum sit amet', checked: ''},

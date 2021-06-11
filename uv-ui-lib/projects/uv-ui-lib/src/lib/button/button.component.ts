@@ -8,7 +8,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
     @Input() public label = 'Button';
-    @Input() public size: 'small' | 'medium' | 'large' = 'medium';
     @Input() public type: 'basic' | 'flat' | 'round' = 'basic';
     @Input() public color: 'primary' | 'none' = 'none';
     @Input() public svgPath = '';
@@ -16,9 +15,5 @@ export class ButtonComponent {
 
     public get classes(): string[] {
         return ['button', this.type, this.type+'--'+this.color, this.type+'--'+this.state];
-    }
-
-    public get svg(): string {
-        return this.svgPath;
     }
 }
