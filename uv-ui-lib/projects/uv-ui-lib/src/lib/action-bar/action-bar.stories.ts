@@ -11,7 +11,7 @@ export default {
         moduleMetadata({
             declarations: [SvgButtonComponent],
           }),
-        componentWrapperDecorator((story) => `<div style="height: 68px;">${story}</div>`),
+        componentWrapperDecorator((story) => `<div style="height: 68px;">${story}</div>`)
     ]
 } as Meta;
 

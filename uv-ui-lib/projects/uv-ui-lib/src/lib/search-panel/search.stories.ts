@@ -17,13 +17,13 @@ export default {
                     ${story}
                 </div>
             `
-        ),
-      ],
+        )
+      ]
 } as Meta;
 
 const Template: Story<SearchPanelComponent> = (args: SearchPanelComponent) => ({
     component: SearchPanelComponent,
-    props: args,
+    props: args
 });
 
 export const Default = Template.bind({});

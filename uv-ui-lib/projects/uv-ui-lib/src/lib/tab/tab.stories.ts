@@ -8,18 +8,18 @@ export default {
     component: TabComponent,
     decorators: [
         componentWrapperDecorator((story) => `<div style="width: 336px; height: 500px; background-color: white;">${story}</div>`),
-      ],
+      ]
 } as Meta;
 
 const Template: Story<TabComponent> = (args: TabComponent) => ({
     component: TabComponent,
-    props: args,
+    props: args
 });
 
 export const Default = Template.bind({});
 Default.args = {
     svgPath: '/parts.svg#parts',
-    label: 'Label',
+    label: 'Label'
 };
 
 export const ReorderMode = Template.bind({});

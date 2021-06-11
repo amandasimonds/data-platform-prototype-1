@@ -4,12 +4,12 @@ import { HeaderComponent } from './header.component';
 
 export default {
     title: 'Components/Header',
-    component: HeaderComponent,
+    component: HeaderComponent
 } as Meta;
 
 const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
     component: HeaderComponent,
-    props: args,
+    props: args
 });
 
 export const Default = Template.bind({});

@@ -14,12 +14,12 @@ export default {
           providers: [{provide: APP_BASE_HREF, useValue: '/'}]
         }),
         componentWrapperDecorator((story) => `<div style="width: 64px;">${story}</div>`),
-      ],
+      ]
 } as Meta;
 
 const Template: Story<NavbarComponent> = (args: NavbarComponent) => ({
     component: NavbarComponent,
-    props: args,
+    props: args
 });
 
 export const Default = Template.bind({});
@@ -48,7 +48,7 @@ Default.args = {
         {
             icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',
             navlink: '/'
-        },
+        }
         // {
         //     icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg',
         //     navlink: '/',

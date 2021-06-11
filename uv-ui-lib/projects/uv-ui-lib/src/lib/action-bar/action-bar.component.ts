@@ -8,6 +8,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 })
 export class ActionBarComponent {
 
-    public leftcontent = ''
-
+    // for Storybook
+    public leftContent = '';
+    public rightContent = '';
 }

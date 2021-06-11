@@ -4,12 +4,12 @@ import { ButtonComponent } from './button.component';
 
 export default {
     title: 'Components/Buttons/Button',
-    component: ButtonComponent,
+    component: ButtonComponent
 } as Meta;
 
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
     component: ButtonComponent,
-    props: args,
+    props: args
 });
 
 export const Basic = Template.bind({});
@@ -22,7 +22,7 @@ Basic.args = {
 Basic.parameters = {
     docs: {
       source: {
-        type: 'auto',
+        type: 'auto'
       },
     },
   };
