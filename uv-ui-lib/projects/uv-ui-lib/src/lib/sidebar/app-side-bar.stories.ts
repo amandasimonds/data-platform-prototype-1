@@ -14,7 +14,7 @@ export default {
             declarations: [TabComponent, SvgButtonComponent, ButtonComponent],
           }),
         componentWrapperDecorator((story) => `<div style="width: 336px; height: 100vh;">${story}</div>`),
-      ],
+      ]
 } as Meta;
 
 const Template: Story<AppSideBarComponent> = (args: AppSideBarComponent) => ({

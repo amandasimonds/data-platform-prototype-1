@@ -17,7 +17,7 @@
 
             <div bottom>
                 <div *ngIf="!reOrderModeActivated">
-                    <div *ngFor="let tab of searchTabs">
+                    <div *ngFor="let tab of searchTabs; trackBy:trackByFn">
                         <lib-uv-ui-tab 
                         (click)="onTabClicked(tab.category)"
                         [isDisabled]="tab.entitySearchCount === 0"

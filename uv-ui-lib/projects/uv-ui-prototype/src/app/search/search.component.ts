@@ -1,8 +1,9 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { HeaderService } from '../services/header.service';
+import { MenuTab } from './models/menu-tab.model';
 import { SearchResult } from './models/search-result.model';
-import { DEFAULT_SEARCH_MENU_STATE } from './models/search-results-state';
+import { DEFAULT_SEARCH_MENU_STATE, SearchResultsSideMenuState } from './models/search-results-state';
 
 @Component({
   selector: 'lib-search',
@@ -16,7 +17,7 @@ export class SearchComponent implements OnInit {
     public searchItem: SearchResult = {category: '', title: '', description: ''};
     public searchCategory = '';
     public showContent = false;
-    public searchTabs = DEFAULT_SEARCH_MENU_STATE.menuTabs;
+    public searchTabs: MenuTab[] = DEFAULT_SEARCH_MENU_STATE.menuTabs;
     public categorySelected = true;
     public reOrderModeActivated = false;
     public filterBarActive = false;
@@ -32,7 +33,7 @@ export class SearchComponent implements OnInit {
         this.categorySelected = false;
     }
 
-    public drop(event: CdkDragDrop<string[]>) {
+    public drop(event: CdkDragDrop<string[]>): void {
         moveItemInArray(this.searchTabs, event.previousIndex, event.currentIndex);
     }
 
@@ -41,20 +42,20 @@ export class SearchComponent implements OnInit {
         this.headerService.setAppIcon('assets/search.svg#search');
     }
 
-    public reOrderMode() {
+    public reOrderMode(): void {
         this.reOrderModeActivated = !this.reOrderModeActivated;
     }
 
-    public onTabClicked(category: string) {
+    public onTabClicked(category: string): void {
         this.searchCategory = category;
         this.categorySelected = true;
     }
 
-    public toggleFilterBar() {
+    public toggleFilterBar(): void {
         this.filterBarActive = !this.filterBarActive;
     }
 
-    public clearResults() {
+    public clearResults(): void {
        this.categorySelected = false;
     }
 
@@ -66,7 +67,7 @@ export class SearchComponent implements OnInit {
         }
     }
 
-    // public trackByFn(_: number, {link}: this.searchTabs): string {
-    //     return link;
-    // }
+    public trackByFn(_: number, {title}: MenuTab): string {
+        return title;
+    }
 }

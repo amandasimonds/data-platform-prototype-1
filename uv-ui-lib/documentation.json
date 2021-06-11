@@ -874,7 +874,7 @@
     "components": [
         {
             "name": "ActionBarComponent",
-            "id": "component-ActionBarComponent-fc3c78e7d9e90ddc1de0017b2b29f2cb",
+            "id": "component-ActionBarComponent-f9246d6515ef054de3af39db30439344",
             "file": "projects/uv-ui-lib/src/lib/action-bar/action-bar.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -895,12 +895,23 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "leftcontent",
+                    "name": "leftContent",
                     "defaultValue": "''",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 12,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "rightContent",
+                    "defaultValue": "''",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
                     "modifierKind": [
                         114
                     ]
@@ -912,7 +923,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, ChangeDetectionStrategy } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-action-bar',\r\n    templateUrl: './action-bar.component.html',\r\n    styleUrls: ['./action-bar.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ActionBarComponent {\r\n\r\n    public leftcontent = ''\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, ChangeDetectionStrategy } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-action-bar',\r\n    templateUrl: './action-bar.component.html',\r\n    styleUrls: ['./action-bar.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ActionBarComponent {\r\n\r\n    // for Storybook\r\n    public leftContent = '';\r\n    public rightContent = '';\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -964,7 +975,7 @@
         },
         {
             "name": "AppSideBarComponent",
-            "id": "component-AppSideBarComponent-039796861f193ee9153cce760dd90e8d",
+            "id": "component-AppSideBarComponent-894c1b0f874b87e36f4067ff3cb69c07",
             "file": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -990,18 +1001,41 @@
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "leftContent",
+                    "defaultValue": "''",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "rightContent",
+                    "defaultValue": "''",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
             "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-app-side-bar',\r\n    templateUrl: './app-side-bar.component.html',\r\n    styleUrls: ['./app-side-bar-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppSideBarComponent {\r\n\r\n    @Input() public type: 'menu' | 'scroll' = 'menu';\r\n\r\n    public get scroll(): boolean {\r\n        if(this.type === 'scroll'){\r\n            return true\r\n        } return false\r\n    }\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-app-side-bar',\r\n    templateUrl: './app-side-bar.component.html',\r\n    styleUrls: ['./app-side-bar-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppSideBarComponent {\r\n\r\n    @Input() public type: 'menu' | 'scroll' = 'menu';\r\n\r\n    // for Storybook\r\n    public leftContent = '';\r\n    public rightContent = '';\r\n\r\n    public get scroll(): boolean {\r\n        return this.type === 'scroll' ? true : false;\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n\r\n.app-side-bar {\r\n    height: 100%;\r\n    border-left: none;\r\n    border-top: none;\r\n\r\n    &__top-content {\r\n        padding: 24px;\r\n        min-height: 150px;\r\n    }\r\n\r\n    &__bottom-content {\r\n        padding: 12px 0 0 0;\r\n    }\r\n}\r\n\r\n.scroll-wrapper {\r\n    padding: 12px 12px 0 0;\r\n}\r\n\r\n.scroll {\r\n    width: 100%;\r\n    padding: 0 24px 0 24px;\r\n    margin-right: 10px;\r\n    overflow: auto;\r\n    position: relative;\r\n    height:calc(100vh - 246px);\r\n    border: 1px solid orange;\r\n}\r\n",
+                    "data": "@import '../scss/variables';\r\n\r\n.app-side-bar {\r\n    height: 100%;\r\n    border-left: none;\r\n    border-top: none;\r\n\r\n    &__top-content {\r\n        padding: 24px;\r\n        min-height: 150px;\r\n    }\r\n\r\n    &__bottom-content {\r\n        padding: 12px 0 0 0;\r\n    }\r\n}\r\n\r\n.scroll-wrapper {\r\n    padding: 12px 12px 0 0;\r\n}\r\n\r\n.scroll {\r\n    width: 100%;\r\n    padding: 0 24px 0 24px;\r\n    margin-right: 10px;\r\n    overflow: auto;\r\n    position: relative;\r\n    height:calc(100vh - 246px);\r\n}\r\n",
                     "styleUrl": "./app-side-bar-component.scss"
                 }
             ],
@@ -1013,7 +1047,7 @@
                         "name": "scroll",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 13
+                        "line": 17
                     }
                 }
             },
@@ -2170,7 +2204,7 @@
         },
         {
             "name": "SearchComponent",
-            "id": "component-SearchComponent-de8172fc779fd13c06234819bfeaa8ee",
+            "id": "component-SearchComponent-6a6baf42d7b14038afb43bea592eea84",
             "file": "projects/uv-ui-prototype/src/app/search/search.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2196,7 +2230,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 20,
+                    "line": 21,
                     "modifierKind": [
                         114
                     ]
@@ -2207,7 +2241,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 22,
+                    "line": 23,
                     "modifierKind": [
                         114
                     ]
@@ -2218,7 +2252,7 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 23,
+                    "line": 24,
                     "modifierKind": [
                         114
                     ]
@@ -2229,7 +2263,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 21,
+                    "line": 22,
                     "modifierKind": [
                         114
                     ]
@@ -2240,7 +2274,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 18,
                     "modifierKind": [
                         114
                     ]
@@ -2251,7 +2285,7 @@
                     "type": "SearchResult",
                     "optional": false,
                     "description": "",
-                    "line": 16,
+                    "line": 17,
                     "modifierKind": [
                         114
                     ]
@@ -2262,7 +2296,7 @@
                     "type": "SearchResult[]",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 16,
                     "modifierKind": [
                         114
                     ]
@@ -2270,10 +2304,10 @@
                 {
                     "name": "searchTabs",
                     "defaultValue": "DEFAULT_SEARCH_MENU_STATE.menuTabs",
-                    "type": "",
+                    "type": "MenuTab[]",
                     "optional": false,
                     "description": "",
-                    "line": 19,
+                    "line": 20,
                     "modifierKind": [
                         114
                     ]
@@ -2284,7 +2318,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 18,
+                    "line": 19,
                     "modifierKind": [
                         114
                     ]
@@ -2297,7 +2331,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 57,
+                    "line": 58,
                     "modifierKind": [
                         114
                     ]
@@ -2313,7 +2347,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 35,
+                    "line": 36,
                     "modifierKind": [
                         114
                     ],
@@ -2333,7 +2367,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39,
+                    "line": 40,
                     "modifierKind": [
                         114
                     ]
@@ -2349,7 +2383,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 48,
+                    "line": 49,
                     "modifierKind": [
                         114
                     ],
@@ -2374,7 +2408,7 @@
                     "optional": false,
                     "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 61,
+                    "line": 62,
                     "modifierKind": [
                         114
                     ],
@@ -2394,7 +2428,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44,
+                    "line": 45,
                     "modifierKind": [
                         114
                     ]
@@ -2405,9 +2439,43 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 53,
+                    "line": 54,
                     "modifierKind": [
                         114
+                    ]
+                },
+                {
+                    "name": "trackByFn",
+                    "args": [
+                        {
+                            "name": "_",
+                            "type": "number"
+                        },
+                        {
+                            "type": "MenuTab"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 70,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "_",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "type": "MenuTab",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
                     ]
                 }
             ],
@@ -2416,7 +2484,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';\r\nimport { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\nimport { SearchResult } from './models/search-result.model';\r\nimport { DEFAULT_SEARCH_MENU_STATE } from './models/search-results-state';\r\n\r\n@Component({\r\n  selector: 'lib-search',\r\n  templateUrl: './search.component.html',\r\n  styleUrls: ['./search.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchComponent implements OnInit {\r\n\r\n    public searchItemsArray: SearchResult[] = [];\r\n    public searchItem: SearchResult = {category: '', title: '', description: ''};\r\n    public searchCategory = '';\r\n    public showContent = false;\r\n    public searchTabs = DEFAULT_SEARCH_MENU_STATE.menuTabs;\r\n    public categorySelected = true;\r\n    public reOrderModeActivated = false;\r\n    public filterBarActive = false;\r\n    public items = [\r\n        {title: 'Lorem ipsum', checked: 'checked'},\r\n        {title: 'Ipsum sit amet', checked: ''},\r\n        {title: 'Amet lorem', checked: ''},\r\n        {title: 'Lorem ipsum sit', checked: 'checked'},\r\n        {title: 'Lorem ipsum amet', checked: 'checked'}\r\n    ];\r\n\r\n    constructor(private headerService: HeaderService){\r\n        this.categorySelected = false;\r\n    }\r\n\r\n    public drop(event: CdkDragDrop<string[]>) {\r\n        moveItemInArray(this.searchTabs, event.previousIndex, event.currentIndex);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Search');\r\n        this.headerService.setAppIcon('assets/search.svg#search');\r\n    }\r\n\r\n    public reOrderMode() {\r\n        this.reOrderModeActivated = !this.reOrderModeActivated;\r\n    }\r\n\r\n    public onTabClicked(category: string) {\r\n        this.searchCategory = category;\r\n        this.categorySelected = true;\r\n    }\r\n\r\n    public toggleFilterBar() {\r\n        this.filterBarActive = !this.filterBarActive;\r\n    }\r\n\r\n    public clearResults() {\r\n       this.categorySelected = false;\r\n    }\r\n\r\n    public onToggleTabActive(category: string): boolean {\r\n        if (this.searchCategory === category) {\r\n            return true;\r\n        } else {\r\n            return false;\r\n        }\r\n    }\r\n\r\n    // public trackByFn(_: number, {link}: this.searchTabs): string {\r\n    //     return link;\r\n    // }\r\n}\r\n",
+            "sourceCode": "import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';\r\nimport { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\nimport { MenuTab } from './models/menu-tab.model';\r\nimport { SearchResult } from './models/search-result.model';\r\nimport { DEFAULT_SEARCH_MENU_STATE, SearchResultsSideMenuState } from './models/search-results-state';\r\n\r\n@Component({\r\n  selector: 'lib-search',\r\n  templateUrl: './search.component.html',\r\n  styleUrls: ['./search.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchComponent implements OnInit {\r\n\r\n    public searchItemsArray: SearchResult[] = [];\r\n    public searchItem: SearchResult = {category: '', title: '', description: ''};\r\n    public searchCategory = '';\r\n    public showContent = false;\r\n    public searchTabs: MenuTab[] = DEFAULT_SEARCH_MENU_STATE.menuTabs;\r\n    public categorySelected = true;\r\n    public reOrderModeActivated = false;\r\n    public filterBarActive = false;\r\n    public items = [\r\n        {title: 'Lorem ipsum', checked: 'checked'},\r\n        {title: 'Ipsum sit amet', checked: ''},\r\n        {title: 'Amet lorem', checked: ''},\r\n        {title: 'Lorem ipsum sit', checked: 'checked'},\r\n        {title: 'Lorem ipsum amet', checked: 'checked'}\r\n    ];\r\n\r\n    constructor(private headerService: HeaderService){\r\n        this.categorySelected = false;\r\n    }\r\n\r\n    public drop(event: CdkDragDrop<string[]>): void {\r\n        moveItemInArray(this.searchTabs, event.previousIndex, event.currentIndex);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Search');\r\n        this.headerService.setAppIcon('assets/search.svg#search');\r\n    }\r\n\r\n    public reOrderMode(): void {\r\n        this.reOrderModeActivated = !this.reOrderModeActivated;\r\n    }\r\n\r\n    public onTabClicked(category: string): void {\r\n        this.searchCategory = category;\r\n        this.categorySelected = true;\r\n    }\r\n\r\n    public toggleFilterBar(): void {\r\n        this.filterBarActive = !this.filterBarActive;\r\n    }\r\n\r\n    public clearResults(): void {\r\n       this.categorySelected = false;\r\n    }\r\n\r\n    public onToggleTabActive(category: string): boolean {\r\n        if (this.searchCategory === category) {\r\n            return true;\r\n        } else {\r\n            return false;\r\n        }\r\n    }\r\n\r\n    public trackByFn(_: number, {title}: MenuTab): string {\r\n        return title;\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2434,7 +2502,7 @@
                         "type": "HeaderService"
                     }
                 ],
-                "line": 29,
+                "line": 30,
                 "jsdoctags": [
                     {
                         "name": "headerService",
@@ -2448,7 +2516,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n    <div class=\"sidebar\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" svgPath='assets/back-arrow.svg#back-arrow' color='primary' type=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" svgPath='assets/up-down-arrows.svg#up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' svgPath='assets/filter.svg#filter' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.title}}\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            svgPath=\"{{tab.icon}}\" \r\n                            label=\"{{tab.title}}\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button label=\"Close\" color=\"primary\" class=\"margin-right-sm\" type=\"basic\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button label=\"Save\" color=\"primary\" type=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div class=\"sidebar2\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        \r\n        <lib-uv-ui-app-side-bar *ngIf=\"filterBarActive\" type=\"scroll\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" svgPath='assets/close.svg#close' size=\"xs\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel type=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n\r\n            <div bottom>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xxs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div class=\"content\">\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"grid\">\r\n    <div class=\"sidebar\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" svgPath='assets/back-arrow.svg#back-arrow' color='primary' type=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" svgPath='assets/up-down-arrows.svg#up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' svgPath='assets/filter.svg#filter' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs; trackBy:trackByFn\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.title}}\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            svgPath=\"{{tab.icon}}\" \r\n                            label=\"{{tab.title}}\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button label=\"Close\" color=\"primary\" class=\"margin-right-sm\" type=\"basic\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button label=\"Save\" color=\"primary\" type=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div class=\"sidebar2\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        \r\n        <lib-uv-ui-app-side-bar *ngIf=\"filterBarActive\" type=\"scroll\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" svgPath='assets/close.svg#close' size=\"xs\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel type=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n\r\n            <div bottom>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xxs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div class=\"content\">\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "SearchPanelComponent",
@@ -4463,7 +4531,7 @@
                 "subtype": "variable",
                 "file": "projects/uv-ui-prototype/src/app/search/search-results/sample-search-results/allSearchResults.ts",
                 "type": "[]",
-                "defaultValue": "[\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000001',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000002',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000003',\r\n      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000004',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000001',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000002',\r\n      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000003',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000004',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000005',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000001',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000002',\r\n        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000003',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000004',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000005',\r\n        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000006',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      }\r\n    ]"
+                "defaultValue": "[\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000001',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000002',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000003',\r\n      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, \r\n        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \r\n        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000004',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000001',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000002',\r\n      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000003',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000004',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000005',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000001',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000002',\r\n        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000003',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000004',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000005',\r\n        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000006',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      }\r\n    ]"
             },
             {
                 "name": "Basic",
@@ -4509,7 +4577,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-prototype/src/test.ts",
+                "file": "projects/uv-ui-lib/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -4517,7 +4585,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
+                "file": "projects/uv-ui-prototype/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -4533,7 +4601,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4549,15 +4617,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4581,7 +4641,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4597,6 +4657,14 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -4605,7 +4673,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4613,7 +4681,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4692,14 +4760,14 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-prototype/src/test.ts",
+                "file": "projects/uv-ui-lib/src/test.ts",
                 "type": "literal type"
             },
             {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
+                "file": "projects/uv-ui-prototype/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -4732,23 +4800,7 @@
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                 "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/checkbox/checkbox.stories.ts",
-                "type": "Story<CheckboxComponent>",
-                "defaultValue": "(args: CheckboxComponent) => ({\r\n    component: CheckboxComponent,\r\n    props: args,\r\n})"
+                "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -4756,15 +4808,23 @@
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
                 "type": "Story<DropdownButtonComponent>",
-                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
+                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                "type": "Story<ImageButtonComponent>",
-                "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/checkbox/checkbox.stories.ts",
+                "type": "Story<CheckboxComponent>",
+                "defaultValue": "(args: CheckboxComponent) => ({\r\n    component: CheckboxComponent,\r\n    props: args\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -4772,7 +4832,7 @@
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
                 "type": "Story<NavbarComponent>",
-                "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args,\r\n})"
+                "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -4780,15 +4840,15 @@
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
                 "type": "Story<NavbarDashboardSubComponent>",
-                "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
+                "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
-                "type": "Story<SearchPanelComponent>",
-                "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                "type": "Story<SnippetComponent>",
+                "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -4802,17 +4862,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
-                "type": "Story<SvgButtonComponent>",
-                "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                "type": "Story<ImageButtonComponent>",
+                "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                "type": "Story<SnippetComponent>",
-                "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
+                "type": "Story<SvgButtonComponent>",
+                "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -4820,7 +4880,15 @@
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
                 "type": "Story<TabComponent>",
-                "defaultValue": "(args: TabComponent) => ({\r\n    component: TabComponent,\r\n    props: args,\r\n})"
+                "defaultValue": "(args: TabComponent) => ({\r\n    component: TabComponent,\r\n    props: args\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "type": "Story<SearchPanelComponent>",
+                "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args\r\n})"
             }
         ],
         "functions": [],
@@ -4834,7 +4902,7 @@
                     "subtype": "variable",
                     "file": "projects/uv-ui-prototype/src/app/search/search-results/sample-search-results/allSearchResults.ts",
                     "type": "[]",
-                    "defaultValue": "[\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000001',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000002',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000003',\r\n      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000004',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000001',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000002',\r\n      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000003',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000004',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000005',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000001',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000002',\r\n        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000003',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000004',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000005',\r\n        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000006',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      }\r\n    ]"
+                    "defaultValue": "[\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000001',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000002',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000003',\r\n      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, \r\n        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \r\n        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`\r\n    },\r\n    {\r\n      category: 'Parts',\r\n      title: 'PartABCD000004',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000001',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000002',\r\n      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000003',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000004',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n    {\r\n      category: 'Requirements',\r\n      title: 'RequirementsABCD000005',\r\n      description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n    },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000001',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000002',\r\n        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000003',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000004',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000005',\r\n        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'\r\n      },\r\n      {\r\n        category: 'Documents',\r\n        title: 'DocumentsABCD000006',\r\n        description: 'Screw, Hexagon Flange Head Cap v4.1'\r\n      }\r\n    ]"
                 }
             ],
             "projects/uv-ui-lib/src/lib/button/button.stories.ts": [
@@ -4876,7 +4944,7 @@
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/lib/button/button.stories.ts",
                     "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args,\r\n})"
+                    "defaultValue": "(args: ButtonComponent) => ({\r\n    component: ButtonComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/checkbox/checkbox.stories.ts": [
@@ -4910,7 +4978,7 @@
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/lib/checkbox/checkbox.stories.ts",
                     "type": "Story<CheckboxComponent>",
-                    "defaultValue": "(args: CheckboxComponent) => ({\r\n    component: CheckboxComponent,\r\n    props: args,\r\n})"
+                    "defaultValue": "(args: CheckboxComponent) => ({\r\n    component: CheckboxComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-prototype/src/app/side-by-side/compareTasks.ts": [
@@ -4940,23 +5008,6 @@
                     "type": "literal type"
                 }
             ],
-            "projects/uv-ui-prototype/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-prototype/src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-prototype/src/test.ts",
-                    "type": "literal type"
-                }
-            ],
             "projects/uv-ui-lib/src/test.ts": [
                 {
                     "name": "context",
@@ -4971,6 +5022,23 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/uv-ui-prototype/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-prototype/src/test.ts",
                     "type": "literal type"
                 }
             ],
@@ -4992,24 +5060,6 @@
                     "defaultValue": "(args: ActionBarComponent) => ({\r\n    component: ActionBarComponent,\r\n    props: args,\r\n    template: `\r\n    <lib-uv-ui-action-bar>\r\n        <div left>\r\n            ${args.leftContent}\r\n        </div>\r\n        <div right>\r\n        ${args.rightContent}\r\n        </div>\r\n    </lib-uv-ui-action-bar>`\r\n})"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/header/header.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                    "type": "Story<HeaderComponent>",
-                    "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args,\r\n})"
-                }
-            ],
             "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts": [
                 {
                     "name": "Default",
@@ -5025,15 +5075,15 @@
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
                     "type": "Story<DropdownButtonComponent>",
-                    "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args,\r\n})"
+                    "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args\r\n})"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
+            "projects/uv-ui-lib/src/lib/header/header.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5041,9 +5091,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                    "type": "Story<ImageButtonComponent>",
-                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args,\r\n})"
+                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                    "type": "Story<HeaderComponent>",
+                    "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts": [
@@ -5061,7 +5111,7 @@
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
                     "type": "Story<NavbarComponent>",
-                    "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args,\r\n})"
+                    "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts": [
@@ -5079,15 +5129,15 @@
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
                     "type": "Story<NavbarDashboardSubComponent>",
-                    "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args,\r\n})"
+                    "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args\r\n})"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts": [
+            "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5095,9 +5145,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
-                    "type": "Story<SearchPanelComponent>",
-                    "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args,\r\n})"
+                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                    "type": "Story<SnippetComponent>",
+                    "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts": [
@@ -5126,6 +5176,24 @@
                     "defaultValue": "(args: AppSideBarComponent) => ({\r\n    component: AppSideBarComponent,\r\n    props: args,\r\n    template: `\r\n        <lib-uv-ui-app-side-bar>\r\n            <div top>\r\n                ${args.topContent}\r\n            </div>\r\n            <div bottom>\r\n                ${args.bottomContent}\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>`\r\n})"
                 }
             ],
+            "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                    "type": "Story<ImageButtonComponent>",
+                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args\r\n})"
+                }
+            ],
             "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts": [
                 {
                     "name": "Default",
@@ -5141,25 +5209,7 @@
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                     "type": "Story<SvgButtonComponent>",
-                    "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args,\r\n})"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                    "type": "Story<SnippetComponent>",
-                    "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args,\r\n})"
+                    "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/tab/tab.stories.ts": [
@@ -5185,7 +5235,25 @@
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
                     "type": "Story<TabComponent>",
-                    "defaultValue": "(args: TabComponent) => ({\r\n    component: TabComponent,\r\n    props: args,\r\n})"
+                    "defaultValue": "(args: TabComponent) => ({\r\n    component: TabComponent,\r\n    props: args\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                    "type": "Story<SearchPanelComponent>",
+                    "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-prototype/src/app/search/models/search-results-state.ts": [
@@ -5255,10 +5323,7 @@
                 "children": [
                     {
                         "path": "",
-                        "component": "AuthGuardComponent",
-                        "canActivate": [
-                            "AuthGuardService"
-                        ]
+                        "component": "AuthGuardComponent"
                     },
                     {
                         "path": "login",
@@ -5380,7 +5445,7 @@
                 "linktype": "component",
                 "name": "ActionBarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -5727,7 +5792,7 @@
                 "linktype": "component",
                 "name": "AppSideBarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -6057,7 +6122,7 @@
                 "linktype": "component",
                 "name": "SearchComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/18",
+                "coverageCount": "0/19",
                 "status": "low"
             },
             {
