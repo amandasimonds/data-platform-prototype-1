@@ -13,6 +13,6 @@ export class HomeSplashComponent implements OnInit{
 
     public ngOnInit(): void {
         this.headerService.setTitle('Dashboard');
-        this.headerService.setAppIcon('assets/apps-quad.svg#dashboard');
+        this.headerService.setAppIcon('icons/apps-quad.svg#dashboard');
     }
 }

@@ -32,6 +32,6 @@ const Template: Story<ActionBarComponent> = (args: ActionBarComponent) => ({
 export const Default = Template.bind({});
 Default.args = {
     leftContent: 'Left Content',
-    rightContent: `<lib-uv-ui-svg-button class="margin-right-xs" color='blue' svgPath='assets/more-horizontal.svg#moreHorizontal'></lib-uv-ui-svg-button>
-    <lib-uv-ui-svg-button color='blue' svgPath='assets/fullscreen.svg#fullScreen'></lib-uv-ui-svg-button>`
+    rightContent: `<lib-uv-ui-svg-button class="margin-right-xs" color='blue' svgPath='icons/more-horizontal.svg#moreHorizontal'></lib-uv-ui-svg-button>
+    <lib-uv-ui-svg-button color='blue' svgPath='icons/fullscreen.svg#fullScreen'></lib-uv-ui-svg-button>`
 };

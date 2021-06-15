@@ -8,12 +8,12 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
     @Input() public label = 'Button';
-    @Input() public type: 'basic' | 'flat' | 'round' = 'basic';
+    @Input() public mode: 'basic' | 'flat' | 'round' = 'basic';
     @Input() public color: 'primary' | 'none' = 'none';
     @Input() public svgPath = '';
     @Input() public state: 'active' | 'disabled' | 'normal' = 'normal';
 
     public get classes(): string[] {
-        return ['button', this.type, this.type+'--'+this.color, this.type+'--'+this.state];
+        return ['button', this.mode, this.mode+'--'+this.color, this.mode+'--'+this.state];
     }
 }
