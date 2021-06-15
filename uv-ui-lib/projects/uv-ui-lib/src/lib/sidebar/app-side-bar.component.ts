@@ -8,13 +8,13 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class AppSideBarComponent {
 
-    @Input() public type: 'menu' | 'scroll' = 'menu';
+    @Input() public mode: 'menu' | 'scroll' = 'menu';
 
     // for Storybook
     public leftContent = '';
     public rightContent = '';
 
     public get scroll(): boolean {
-        return this.type === 'scroll' ? true : false;
+        return this.mode === 'scroll' ? true : false;
     }
 }

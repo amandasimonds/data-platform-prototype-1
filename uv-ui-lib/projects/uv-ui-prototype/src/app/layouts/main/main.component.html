@@ -4,7 +4,7 @@
             [headerText]="title"
             [headerSvgPath]="appIcon">
 
-            <lib-uv-ui-search-panel type="full" *ngIf="title === 'Search'" (searchClicked)="onSearchAction(searchQuery)"></lib-uv-ui-search-panel>
+            <lib-uv-ui-search-panel mode="full" *ngIf="title === 'Search'" (searchClicked)="onSearchAction(searchQuery)"></lib-uv-ui-search-panel>
 
             <lib-uv-ui-svg-button color='blue' svgPath='assets/profile.svg#profile' class="margin-left-sm margin-right-sm"></lib-uv-ui-svg-button>
 
