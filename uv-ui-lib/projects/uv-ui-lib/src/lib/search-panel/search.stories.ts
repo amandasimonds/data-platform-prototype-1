@@ -28,5 +28,5 @@ const Template: Story<SearchPanelComponent> = (args: SearchPanelComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-    type: 'basic'
+    mode: 'basic'
 };

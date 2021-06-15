@@ -15,14 +15,14 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
 export const Basic = Template.bind({});
 Basic.args = {
     label: 'Basic',
-    type: 'basic',
+    mode: 'basic',
     color: 'primary'
 };
 
 Basic.parameters = {
     docs: {
       source: {
-        type: 'auto'
+        mode: 'auto'
       },
     },
   };
@@ -30,20 +30,20 @@ Basic.parameters = {
 export const BasicWithIcon = Template.bind({});
 BasicWithIcon.args = {
     label: 'Basic With Icon',
-    type: 'basic',
-    svgPath: '/back-arrow.svg#back-arrow',
+    mode: 'basic',
+    svgPath: 'icons/back-arrow.svg#back-arrow',
     color: 'primary'
 };
 
 export const Flat = Template.bind({});
 Flat.args = {
     label: 'Flat',
-    type: 'flat',
+    mode: 'flat',
     color: 'primary'
 };
 
 export const Round = Template.bind({});
 Round.args = {
     label: '+',
-    type: 'round'
+    mode: 'round'
 };

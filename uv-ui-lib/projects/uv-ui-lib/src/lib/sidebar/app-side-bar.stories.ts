@@ -33,7 +33,7 @@ const Template: Story<AppSideBarComponent> = (args: AppSideBarComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-    type: 'menu',
+    mode: 'menu',
     topContent: 'Title',
     bottomContent: 
         `
@@ -48,7 +48,7 @@ Default.args = {
 
 export const Scroll = Template.bind({});
 Scroll.args = {
-    type: 'scroll',
+    mode: 'scroll',
     topContent: 'Title',
     bottomContent: 
         `

@@ -9,14 +9,14 @@ import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input } from 
 export class SearchPanelComponent {
 
     @Output() readonly searchClicked = new EventEmitter<void>();
-    @Input() public type: 'basic' | 'full' = 'basic';
+    @Input() public mode: 'basic' | 'full' = 'basic';
 
     public onSearch() {
         this.searchClicked.emit();
     }
 
     public get classes(): string[] {
-        return ['search-panel', this.type ];
+        return ['search-panel', this.mode ];
     }
 
 }

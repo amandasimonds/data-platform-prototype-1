@@ -15,5 +15,5 @@ const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
 export const Default = Template.bind({});
 Default.args = {
     headerText: 'Header',
-    headerSvgPath: '/apps-quad.svg#dashboard'
+    headerSvgPath: 'icons/apps-quad.svg#dashboard'
 };

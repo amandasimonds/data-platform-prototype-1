@@ -14,6 +14,6 @@ const Template: Story<SvgButtonComponent> = (args: SvgButtonComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-    svgPath: '/profile.svg#profile',
+    svgPath: 'icons/profile.svg#profile',
     color: 'blue'
 };
