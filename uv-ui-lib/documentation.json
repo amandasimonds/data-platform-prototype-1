@@ -4577,7 +4577,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
+                "file": "projects/uv-ui-prototype/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -4585,7 +4585,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-prototype/src/test.ts",
+                "file": "projects/uv-ui-lib/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -4601,7 +4601,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/checkbox/checkbox.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4609,7 +4609,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/checkbox/checkbox.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4625,7 +4625,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4641,7 +4641,15 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4657,14 +4665,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -4673,7 +4673,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4681,7 +4681,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4760,14 +4760,14 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
+                "file": "projects/uv-ui-prototype/src/test.ts",
                 "type": "literal type"
             },
             {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-prototype/src/test.ts",
+                "file": "projects/uv-ui-lib/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -4806,17 +4806,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
-                "type": "Story<DropdownButtonComponent>",
-                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/checkbox/checkbox.stories.ts",
+                "type": "Story<CheckboxComponent>",
+                "defaultValue": "(args: CheckboxComponent) => ({\r\n    component: CheckboxComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/checkbox/checkbox.stories.ts",
-                "type": "Story<CheckboxComponent>",
-                "defaultValue": "(args: CheckboxComponent) => ({\r\n    component: CheckboxComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                "type": "Story<DropdownButtonComponent>",
+                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -4830,9 +4830,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
-                "type": "Story<NavbarComponent>",
-                "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                "type": "Story<ImageButtonComponent>",
+                "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -4846,9 +4846,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                "type": "Story<SnippetComponent>",
-                "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                "type": "Story<NavbarComponent>",
+                "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "type": "Story<SearchPanelComponent>",
+                "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -4862,14 +4870,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                "type": "Story<ImageButtonComponent>",
-                "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                 "type": "Story<SvgButtonComponent>",
                 "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args\r\n})"
@@ -4878,17 +4878,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
-                "type": "Story<TabComponent>",
-                "defaultValue": "(args: TabComponent) => ({\r\n    component: TabComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                "type": "Story<SnippetComponent>",
+                "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
-                "type": "Story<SearchPanelComponent>",
-                "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
+                "type": "Story<TabComponent>",
+                "defaultValue": "(args: TabComponent) => ({\r\n    component: TabComponent,\r\n    props: args\r\n})"
             }
         ],
         "functions": [],
@@ -5008,23 +5008,6 @@
                     "type": "literal type"
                 }
             ],
-            "projects/uv-ui-lib/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/test.ts",
-                    "type": "literal type"
-                }
-            ],
             "projects/uv-ui-prototype/src/test.ts": [
                 {
                     "name": "context",
@@ -5039,6 +5022,23 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/uv-ui-prototype/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/uv-ui-lib/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/test.ts",
                     "type": "literal type"
                 }
             ],
@@ -5096,12 +5096,12 @@
                     "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args\r\n})"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts": [
+            "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5109,9 +5109,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
-                    "type": "Story<NavbarComponent>",
-                    "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
+                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                    "type": "Story<ImageButtonComponent>",
+                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts": [
@@ -5132,12 +5132,12 @@
                     "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args\r\n})"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts": [
+            "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5145,9 +5145,27 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                    "type": "Story<SnippetComponent>",
-                    "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args\r\n})"
+                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                    "type": "Story<NavbarComponent>",
+                    "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                    "type": "Story<SearchPanelComponent>",
+                    "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts": [
@@ -5176,24 +5194,6 @@
                     "defaultValue": "(args: AppSideBarComponent) => ({\r\n    component: AppSideBarComponent,\r\n    props: args,\r\n    template: `\r\n        <lib-uv-ui-app-side-bar>\r\n            <div top>\r\n                ${args.topContent}\r\n            </div>\r\n            <div bottom>\r\n                ${args.bottomContent}\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>`\r\n})"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                    "type": "Story<ImageButtonComponent>",
-                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args\r\n})"
-                }
-            ],
             "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts": [
                 {
                     "name": "Default",
@@ -5210,6 +5210,24 @@
                     "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                     "type": "Story<SvgButtonComponent>",
                     "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                    "type": "Story<SnippetComponent>",
+                    "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/tab/tab.stories.ts": [
@@ -5236,24 +5254,6 @@
                     "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
                     "type": "Story<TabComponent>",
                     "defaultValue": "(args: TabComponent) => ({\r\n    component: TabComponent,\r\n    props: args\r\n})"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
-                    "type": "Story<SearchPanelComponent>",
-                    "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-prototype/src/app/search/models/search-results-state.ts": [

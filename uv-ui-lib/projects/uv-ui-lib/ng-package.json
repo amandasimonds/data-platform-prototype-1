@@ -5,7 +5,7 @@
     "CHANGELOG.md",
     "./styles/**/*.theme.scss",
     "./src/lib/scss/*",
-    "./src/lib/assets/*"
+    "./src/lib/assets/**/*"
   ],
   "lib": {
     "entryFile": "src/public-api.ts"
