@@ -975,7 +975,7 @@
         },
         {
             "name": "AppSideBarComponent",
-            "id": "component-AppSideBarComponent-894c1b0f874b87e36f4067ff3cb69c07",
+            "id": "component-AppSideBarComponent-beae8956603c4916c1aad7b7ad9246e5",
             "file": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -994,7 +994,7 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "type",
+                    "name": "mode",
                     "defaultValue": "'menu'",
                     "line": 11,
                     "type": "\"menu\" | \"scroll\""
@@ -1031,7 +1031,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-app-side-bar',\r\n    templateUrl: './app-side-bar.component.html',\r\n    styleUrls: ['./app-side-bar-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppSideBarComponent {\r\n\r\n    @Input() public type: 'menu' | 'scroll' = 'menu';\r\n\r\n    // for Storybook\r\n    public leftContent = '';\r\n    public rightContent = '';\r\n\r\n    public get scroll(): boolean {\r\n        return this.type === 'scroll' ? true : false;\r\n    }\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-app-side-bar',\r\n    templateUrl: './app-side-bar.component.html',\r\n    styleUrls: ['./app-side-bar-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppSideBarComponent {\r\n\r\n    @Input() public mode: 'menu' | 'scroll' = 'menu';\r\n\r\n    // for Storybook\r\n    public leftContent = '';\r\n    public rightContent = '';\r\n\r\n    public get scroll(): boolean {\r\n        return this.mode === 'scroll' ? true : false;\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1158,7 +1158,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-7709dc6d95c30c49bb34c7ccf59d1ac6",
+            "id": "component-ButtonComponent-02ade4ea67deae96827480df12546766",
             "file": "projects/uv-ui-lib/src/lib/button/button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1188,6 +1188,12 @@
                     "line": 10
                 },
                 {
+                    "name": "mode",
+                    "defaultValue": "'basic'",
+                    "line": 11,
+                    "type": "\"basic\" | \"flat\" | \"round\""
+                },
+                {
                     "name": "state",
                     "defaultValue": "'normal'",
                     "line": 14,
@@ -1197,12 +1203,6 @@
                     "name": "svgPath",
                     "defaultValue": "''",
                     "line": 13
-                },
-                {
-                    "name": "type",
-                    "defaultValue": "'basic'",
-                    "line": 11,
-                    "type": "\"basic\" | \"flat\" | \"round\""
                 }
             ],
             "outputsClass": [],
@@ -1213,7 +1213,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ButtonComponent {\r\n    @Input() public label = 'Button';\r\n    @Input() public type: 'basic' | 'flat' | 'round' = 'basic';\r\n    @Input() public color: 'primary' | 'none' = 'none';\r\n    @Input() public svgPath = '';\r\n    @Input() public state: 'active' | 'disabled' | 'normal' = 'normal';\r\n\r\n    public get classes(): string[] {\r\n        return ['button', this.type, this.type+'--'+this.color, this.type+'--'+this.state];\r\n    }\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class ButtonComponent {\r\n    @Input() public label = 'Button';\r\n    @Input() public mode: 'basic' | 'flat' | 'round' = 'basic';\r\n    @Input() public color: 'primary' | 'none' = 'none';\r\n    @Input() public svgPath = '';\r\n    @Input() public state: 'active' | 'disabled' | 'normal' = 'normal';\r\n\r\n    public get classes(): string[] {\r\n        return ['button', this.mode, this.mode+'--'+this.color, this.mode+'--'+this.state];\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1237,7 +1237,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-68384f0f74b34ab9f3f598b60113f2aa",
+            "id": "component-CheckboxComponent-ccedbf3c915d4af8c0642efda65c934c",
             "file": "projects/uv-ui-lib/src/lib/checkbox/checkbox.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1256,6 +1256,11 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "checked",
+                    "line": 17,
+                    "type": "boolean"
+                },
+                {
                     "name": "disabled",
                     "defaultValue": "false",
                     "line": 12
@@ -1264,11 +1269,6 @@
                     "name": "label",
                     "defaultValue": "''",
                     "line": 11
-                },
-                {
-                    "name": "value",
-                    "line": 17,
-                    "type": "boolean"
                 }
             ],
             "outputsClass": [],
@@ -1324,27 +1324,13 @@
                 },
                 {
                     "name": "toggleChecked",
-                    "args": [
-                        {
-                            "name": "isChecked",
-                            "type": "boolean"
-                        }
-                    ],
+                    "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
                     "line": 32,
                     "modifierKind": [
                         114
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "isChecked",
-                            "type": "boolean",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
                     ]
                 },
                 {
@@ -1378,7 +1364,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, ChangeDetectionStrategy, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class CheckboxComponent {\r\n\r\n  @Input() public label = '';\r\n  @Input() public disabled = false;\r\n\r\n  public isChecked = false;\r\n  public onChange: any = () => {};\r\n\r\n  @Input() public set value(isChecked: boolean) {\r\n    if (!this.disabled) {\r\n      this.isChecked = isChecked;\r\n      this.onChange(isChecked);\r\n    }\r\n  }\r\n\r\n    public writeValue(checked: boolean): void {\r\n    this.isChecked = checked;\r\n  }\r\n\r\n  public setDisabledState(isDisabled: boolean): void {\r\n    this.disabled = isDisabled;\r\n  }\r\n\r\n  public toggleChecked(isChecked: boolean): void {\r\n    if (!this.disabled) {\r\n      this.isChecked = !this.isChecked;\r\n      this.onChange(this.isChecked);\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class CheckboxComponent {\r\n\r\n  @Input() public label = '';\r\n  @Input() public disabled = false;\r\n\r\n  public isChecked = false;\r\n  public onChange: any = () => {};\r\n\r\n  @Input() public set checked(isChecked: boolean) {\r\n    if (!this.disabled) {\r\n      this.isChecked = isChecked;\r\n      this.onChange(isChecked);\r\n    }\r\n  }\r\n\r\n    public writeValue(checked: boolean): void {\r\n    this.isChecked = checked;\r\n  }\r\n\r\n  public setDisabledState(isDisabled: boolean): void {\r\n    this.disabled = isDisabled;\r\n  }\r\n\r\n  public toggleChecked(): void {\r\n    if (!this.disabled) {\r\n      this.isChecked = !this.isChecked;\r\n      this.onChange(this.isChecked);\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1388,10 +1374,10 @@
             ],
             "stylesData": "",
             "accessors": {
-                "value": {
-                    "name": "value",
+                "checked": {
+                    "name": "checked",
                     "setSignature": {
-                        "name": "value",
+                        "name": "checked",
                         "type": "void",
                         "args": [
                             {
@@ -1413,7 +1399,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"checkbox-container\">\r\n    <div class=\"checkbox\" \r\n        [ngClass]=\"{ 'checked' : isChecked, 'disabled' : disabled }\" \r\n        (click)=\"toggleChecked(isChecked)\">\r\n        <div class=\"checkmark\">&#10003;</div>\r\n    </div>\r\n    <label class=\"checkbox-label\" [ngClass]=\"{ 'disabled' : disabled }\">{{ label || '' }}</label>\r\n</div>\r\n"
+            "templateData": "<div class=\"checkbox-container\">\r\n    <div class=\"checkbox\" \r\n        [ngClass]=\"{ 'checked' : isChecked, 'disabled' : disabled }\" \r\n        (click)=\"toggleChecked()\">\r\n        <div class=\"checkmark\">&#10003;</div>\r\n    </div>\r\n    <label class=\"checkbox-label\" [ngClass]=\"{ 'disabled' : disabled }\">{{ label || '' }}</label>\r\n</div>\r\n"
         },
         {
             "name": "DropdownButtonComponent",
@@ -1503,7 +1489,7 @@
         },
         {
             "name": "GlobalWhereUsedComponent",
-            "id": "component-GlobalWhereUsedComponent-0d9ff6339eb3fccb833ea49de8db78a4",
+            "id": "component-GlobalWhereUsedComponent-83b236708e3957e0690653893ada3c18",
             "file": "projects/uv-ui-prototype/src/app/global-where-used/global-where-used.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1525,7 +1511,7 @@
             "propertiesClass": [
                 {
                     "name": "gwuTabs",
-                    "defaultValue": "[\r\n        {\r\n            icon: 'assets/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        },\r\n        {\r\n            icon: 'assets/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        },\r\n        {\r\n            icon: 'assets/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        }\r\n    ]",
+                    "defaultValue": "[\r\n        {\r\n            icon: 'icons/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        },\r\n        {\r\n            icon: 'icons/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        },\r\n        {\r\n            icon: 'icons/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        }\r\n    ]",
                     "type": "[]",
                     "optional": false,
                     "description": "",
@@ -1553,7 +1539,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\n\r\n@Component({\r\n  selector: 'prototype-uv-ui-global-where-used',\r\n  templateUrl: './global-where-used.component.html',\r\n  styleUrls: ['./global-where-used.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class GlobalWhereUsedComponent implements OnInit{\r\n\r\n    public gwuTabs = [\r\n        {\r\n            icon: 'assets/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        },\r\n        {\r\n            icon: 'assets/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        },\r\n        {\r\n            icon: 'assets/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        }\r\n    ];\r\n\r\n    constructor(private headerService: HeaderService){}\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Global Where Used');\r\n        this.headerService.setAppIcon('assets/apps-gwu.svg#inspect');\r\n    }\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\n\r\n@Component({\r\n  selector: 'prototype-uv-ui-global-where-used',\r\n  templateUrl: './global-where-used.component.html',\r\n  styleUrls: ['./global-where-used.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class GlobalWhereUsedComponent implements OnInit{\r\n\r\n    public gwuTabs = [\r\n        {\r\n            icon: 'icons/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        },\r\n        {\r\n            icon: 'icons/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        },\r\n        {\r\n            icon: 'icons/more-horizontal.svg#moreHorizontal',\r\n            link: '/',\r\n            linkText: 'Link',\r\n            results: ''\r\n        }\r\n    ];\r\n\r\n    constructor(private headerService: HeaderService){}\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Global Where Used');\r\n        this.headerService.setAppIcon('icons/apps-gwu.svg#inspect');\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1639,7 +1625,7 @@
         },
         {
             "name": "HomeSplashComponent",
-            "id": "component-HomeSplashComponent-ef5509473d97d9163741c4c92aaf6636",
+            "id": "component-HomeSplashComponent-6d55bcb13eee86591507772cab424e75",
             "file": "projects/uv-ui-prototype/src/app/home-splash/home-splash.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1677,7 +1663,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\n\r\n@Component({\r\n  selector: 'prototype-uv-ui-home-splash',\r\n  templateUrl: './home-splash.component.html',\r\n  styleUrls: ['./home-splash.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class HomeSplashComponent implements OnInit{\r\n\r\n    constructor(private headerService: HeaderService){}\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Dashboard');\r\n        this.headerService.setAppIcon('assets/apps-quad.svg#dashboard');\r\n    }\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\n\r\n@Component({\r\n  selector: 'prototype-uv-ui-home-splash',\r\n  templateUrl: './home-splash.component.html',\r\n  styleUrls: ['./home-splash.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class HomeSplashComponent implements OnInit{\r\n\r\n    constructor(private headerService: HeaderService){}\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Dashboard');\r\n        this.headerService.setAppIcon('icons/apps-quad.svg#dashboard');\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1864,7 +1850,7 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"box flex flex-column align-items-center position-center padding-md\">\r\n\r\n    <img class=\"img-xl margin-bottom-sm\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading-3 margin-bottom-sm\">Welcome to UV</p>\r\n\r\n    <lib-uv-ui-button type='flat' color='primary' label=\"Login\" (click)=\"login()\"></lib-uv-ui-button>\r\n\r\n    </div>\r\n"
+            "templateData": "<div class=\"box flex flex-column align-items-center position-center padding-md\">\r\n\r\n    <img class=\"img-xl margin-bottom-sm\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading-3 margin-bottom-sm\">Welcome to UV</p>\r\n\r\n    <lib-uv-ui-button mode='flat' color='primary' label=\"Login\" (click)=\"login()\"></lib-uv-ui-button>\r\n\r\n    </div>\r\n"
         },
         {
             "name": "MainComponent",
@@ -2024,7 +2010,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n    <div class=\"header\">\r\n        <lib-uv-ui-header\r\n            [headerText]=\"title\"\r\n            [headerSvgPath]=\"appIcon\">\r\n\r\n            <lib-uv-ui-search-panel type=\"full\" *ngIf=\"title === 'Search'\" (searchClicked)=\"onSearchAction(searchQuery)\"></lib-uv-ui-search-panel>\r\n\r\n            <lib-uv-ui-svg-button color='blue' svgPath='assets/profile.svg#profile' class=\"margin-left-sm margin-right-sm\"></lib-uv-ui-svg-button>\r\n\r\n        </lib-uv-ui-header>\r\n    </div>\r\n\r\n    <div class=\"navbar\">\r\n        <lib-uv-ui-navbar [navlinks]=\"nav\"></lib-uv-ui-navbar>\r\n    </div>\r\n\r\n    <div class=\"content\">\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"grid\">\r\n    <div class=\"header\">\r\n        <lib-uv-ui-header\r\n            [headerText]=\"title\"\r\n            [headerSvgPath]=\"appIcon\">\r\n\r\n            <lib-uv-ui-search-panel mode=\"full\" *ngIf=\"title === 'Search'\" (searchClicked)=\"onSearchAction(searchQuery)\"></lib-uv-ui-search-panel>\r\n\r\n            <lib-uv-ui-svg-button color='blue' svgPath='assets/profile.svg#profile' class=\"margin-left-sm margin-right-sm\"></lib-uv-ui-svg-button>\r\n\r\n        </lib-uv-ui-header>\r\n    </div>\r\n\r\n    <div class=\"navbar\">\r\n        <lib-uv-ui-navbar [navlinks]=\"nav\"></lib-uv-ui-navbar>\r\n    </div>\r\n\r\n    <div class=\"content\">\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "NavbarComponent",
@@ -2204,7 +2190,7 @@
         },
         {
             "name": "SearchComponent",
-            "id": "component-SearchComponent-6a6baf42d7b14038afb43bea592eea84",
+            "id": "component-SearchComponent-b478c315137715345bbffbef65538ad4",
             "file": "projects/uv-ui-prototype/src/app/search/search.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2484,7 +2470,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';\r\nimport { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\nimport { MenuTab } from './models/menu-tab.model';\r\nimport { SearchResult } from './models/search-result.model';\r\nimport { DEFAULT_SEARCH_MENU_STATE, SearchResultsSideMenuState } from './models/search-results-state';\r\n\r\n@Component({\r\n  selector: 'lib-search',\r\n  templateUrl: './search.component.html',\r\n  styleUrls: ['./search.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchComponent implements OnInit {\r\n\r\n    public searchItemsArray: SearchResult[] = [];\r\n    public searchItem: SearchResult = {category: '', title: '', description: ''};\r\n    public searchCategory = '';\r\n    public showContent = false;\r\n    public searchTabs: MenuTab[] = DEFAULT_SEARCH_MENU_STATE.menuTabs;\r\n    public categorySelected = true;\r\n    public reOrderModeActivated = false;\r\n    public filterBarActive = false;\r\n    public items = [\r\n        {title: 'Lorem ipsum', checked: 'checked'},\r\n        {title: 'Ipsum sit amet', checked: ''},\r\n        {title: 'Amet lorem', checked: ''},\r\n        {title: 'Lorem ipsum sit', checked: 'checked'},\r\n        {title: 'Lorem ipsum amet', checked: 'checked'}\r\n    ];\r\n\r\n    constructor(private headerService: HeaderService){\r\n        this.categorySelected = false;\r\n    }\r\n\r\n    public drop(event: CdkDragDrop<string[]>): void {\r\n        moveItemInArray(this.searchTabs, event.previousIndex, event.currentIndex);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Search');\r\n        this.headerService.setAppIcon('assets/search.svg#search');\r\n    }\r\n\r\n    public reOrderMode(): void {\r\n        this.reOrderModeActivated = !this.reOrderModeActivated;\r\n    }\r\n\r\n    public onTabClicked(category: string): void {\r\n        this.searchCategory = category;\r\n        this.categorySelected = true;\r\n    }\r\n\r\n    public toggleFilterBar(): void {\r\n        this.filterBarActive = !this.filterBarActive;\r\n    }\r\n\r\n    public clearResults(): void {\r\n       this.categorySelected = false;\r\n    }\r\n\r\n    public onToggleTabActive(category: string): boolean {\r\n        if (this.searchCategory === category) {\r\n            return true;\r\n        } else {\r\n            return false;\r\n        }\r\n    }\r\n\r\n    public trackByFn(_: number, {title}: MenuTab): string {\r\n        return title;\r\n    }\r\n}\r\n",
+            "sourceCode": "import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';\r\nimport { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\nimport { MenuTab } from './models/menu-tab.model';\r\nimport { SearchResult } from './models/search-result.model';\r\nimport { DEFAULT_SEARCH_MENU_STATE, SearchResultsSideMenuState } from './models/search-results-state';\r\n\r\n@Component({\r\n  selector: 'lib-search',\r\n  templateUrl: './search.component.html',\r\n  styleUrls: ['./search.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchComponent implements OnInit {\r\n\r\n    public searchItemsArray: SearchResult[] = [];\r\n    public searchItem: SearchResult = {category: '', title: '', description: ''};\r\n    public searchCategory = '';\r\n    public showContent = false;\r\n    public searchTabs: MenuTab[] = DEFAULT_SEARCH_MENU_STATE.menuTabs;\r\n    public categorySelected = true;\r\n    public reOrderModeActivated = false;\r\n    public filterBarActive = false;\r\n    public items = [\r\n        {title: 'Lorem ipsum', checked: 'checked'},\r\n        {title: 'Ipsum sit amet', checked: ''},\r\n        {title: 'Amet lorem', checked: ''},\r\n        {title: 'Lorem ipsum sit', checked: 'checked'},\r\n        {title: 'Lorem ipsum amet', checked: 'checked'}\r\n    ];\r\n\r\n    constructor(private headerService: HeaderService){\r\n        this.categorySelected = false;\r\n    }\r\n\r\n    public drop(event: CdkDragDrop<string[]>): void {\r\n        moveItemInArray(this.searchTabs, event.previousIndex, event.currentIndex);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Search');\r\n        this.headerService.setAppIcon('icons/search.svg#search');\r\n    }\r\n\r\n    public reOrderMode(): void {\r\n        this.reOrderModeActivated = !this.reOrderModeActivated;\r\n    }\r\n\r\n    public onTabClicked(category: string): void {\r\n        this.searchCategory = category;\r\n        this.categorySelected = true;\r\n    }\r\n\r\n    public toggleFilterBar(): void {\r\n        this.filterBarActive = !this.filterBarActive;\r\n    }\r\n\r\n    public clearResults(): void {\r\n       this.categorySelected = false;\r\n    }\r\n\r\n    public onToggleTabActive(category: string): boolean {\r\n        if (this.searchCategory === category) {\r\n            return true;\r\n        } else {\r\n            return false;\r\n        }\r\n    }\r\n\r\n    public trackByFn(_: number, {title}: MenuTab): string {\r\n        return title;\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2516,11 +2502,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n    <div class=\"sidebar\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" svgPath='icons/back-arrow.svg#back-arrow' color='primary' type=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" svgPath='icons/up-down-arrows.svg#up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' svgPath='icons/filter.svg#filter' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs; trackBy:trackByFn\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.title}}\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            svgPath=\"{{tab.icon}}\" \r\n                            label=\"{{tab.title}}\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button label=\"Close\" color=\"primary\" class=\"margin-right-sm\" type=\"basic\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button label=\"Save\" color=\"primary\" type=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div class=\"sidebar2\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        \r\n        <lib-uv-ui-app-side-bar *ngIf=\"filterBarActive\" type=\"scroll\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" svgPath='icons/close.svg#close' size=\"xs\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel type=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n\r\n            <div bottom>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xxs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div class=\"content\">\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"grid\">\r\n    <div class=\"sidebar\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" svgPath='icons/back-arrow.svg#back-arrow' color='primary' mode=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" svgPath='icons/up-down-arrows.svg#up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' svgPath='icons/filter.svg#filter' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs; trackBy:trackByFn\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        svgPath=\"{{tab.icon}}\" \r\n                        label=\"{{tab.title}}\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            svgPath=\"{{tab.icon}}\" \r\n                            label=\"{{tab.title}}\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button label=\"Close\" color=\"primary\" class=\"margin-right-sm\" mode=\"basic\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button label=\"Save\" color=\"primary\" mode=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div class=\"sidebar2\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        \r\n        <lib-uv-ui-app-side-bar *ngIf=\"filterBarActive\" mode=\"scroll\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" svgPath='icons/close.svg#close' size=\"xs\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel mode=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n\r\n            <div bottom>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xxs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div class=\"content\">\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "SearchPanelComponent",
-            "id": "component-SearchPanelComponent-2d6150a3c8ff1b51e1621856a54f69eb",
+            "id": "component-SearchPanelComponent-34257820b417fce364acb03441233606",
             "file": "projects/uv-ui-lib/src/lib/search-panel/search-panel.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2539,7 +2525,7 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "type",
+                    "name": "mode",
                     "defaultValue": "'basic'",
                     "line": 12,
                     "type": "\"basic\" | \"full\""
@@ -2572,7 +2558,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-search-panel',\r\n    templateUrl: './search-panel.component.html',\r\n    styleUrls: ['./search-panel-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchPanelComponent {\r\n\r\n    @Output() readonly searchClicked = new EventEmitter<void>();\r\n    @Input() public type: 'basic' | 'full' = 'basic';\r\n\r\n    public onSearch() {\r\n        this.searchClicked.emit();\r\n    }\r\n\r\n    public get classes(): string[] {\r\n        return ['search-panel', this.type ];\r\n    }\r\n\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-search-panel',\r\n    templateUrl: './search-panel.component.html',\r\n    styleUrls: ['./search-panel-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchPanelComponent {\r\n\r\n    @Output() readonly searchClicked = new EventEmitter<void>();\r\n    @Input() public mode: 'basic' | 'full' = 'basic';\r\n\r\n    public onSearch() {\r\n        this.searchClicked.emit();\r\n    }\r\n\r\n    public get classes(): string[] {\r\n        return ['search-panel', this.mode ];\r\n    }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2592,7 +2578,7 @@
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"classes\" class=\"search-panel flex justify-content-space-between\">\r\n\r\n    <div class=\"wrapper flex align-items-center\" [ngClass]=\"type ==='full' ? 'full__search-field' : ''\">\r\n\r\n        <div class=\"flex align-items-center\">\r\n            <lib-uv-ui-svg-button color='blue' svgPath='icons/search.svg#search' (click)=\"onSearch()\" ></lib-uv-ui-svg-button>\r\n            \r\n            <input type=\"text\"\r\n            placeholder=\"Search...\"\r\n            class=\"search-panel__input\">\r\n        </div>\r\n\r\n        <lib-uv-ui-svg-button *ngIf=\"type === 'full'\"color='blue' size='xs' svgPath='icons/close.svg#close' ></lib-uv-ui-svg-button>\r\n        \r\n    </div>\r\n    \r\n    <ng-content></ng-content>\r\n\r\n</div>\r\n\r\n\r\n"
+            "templateData": "<div [ngClass]=\"classes\" class=\"search-panel flex justify-content-space-between\">\r\n\r\n    <div class=\"wrapper flex align-items-center\" [ngClass]=\"mode ==='full' ? 'full__search-field' : ''\">\r\n\r\n        <div class=\"flex align-items-center\">\r\n            <lib-uv-ui-svg-button color='blue' svgPath='icons/search.svg#search' (click)=\"onSearch()\" ></lib-uv-ui-svg-button>\r\n            \r\n            <input type=\"text\"\r\n            placeholder=\"Search...\"\r\n            class=\"search-panel__input\">\r\n        </div>\r\n\r\n        <lib-uv-ui-svg-button *ngIf=\"mode === 'full'\"color='blue' size='xs' svgPath='icons/close.svg#close' ></lib-uv-ui-svg-button>\r\n        \r\n    </div>\r\n    \r\n    <ng-content></ng-content>\r\n\r\n</div>\r\n\r\n\r\n"
         },
         {
             "name": "SearchResultsComponent",
@@ -2667,7 +2653,7 @@
         },
         {
             "name": "SettingsComponent",
-            "id": "component-SettingsComponent-61e07b96d15781857360088326f6572b",
+            "id": "component-SettingsComponent-f84910339713879d5bf25308104d7588",
             "file": "projects/uv-ui-prototype/src/app/settings/settings.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2705,7 +2691,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\n\r\n@Component({\r\n  selector: 'app-settings',\r\n  templateUrl: './settings.component.html',\r\n  styleUrls: ['./settings.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SettingsComponent implements OnInit {\r\n\r\n    constructor(private headerService: HeaderService){}\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Settings');\r\n        this.headerService.setAppIcon('assets/apps-settings.svg#settings');\r\n    }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\n\r\n@Component({\r\n  selector: 'app-settings',\r\n  templateUrl: './settings.component.html',\r\n  styleUrls: ['./settings.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SettingsComponent implements OnInit {\r\n\r\n    constructor(private headerService: HeaderService){}\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Settings');\r\n        this.headerService.setAppIcon('icons/apps-settings.svg#settings');\r\n    }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2741,7 +2727,7 @@
         },
         {
             "name": "SideBySideComponent",
-            "id": "component-SideBySideComponent-01d459f21e3ca4306c0be0c93ab29870",
+            "id": "component-SideBySideComponent-9e3fc8aa07beeea868829c3e4b7a72e3",
             "file": "projects/uv-ui-prototype/src/app/side-by-side/side-by-side.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2863,7 +2849,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\nimport { compareTasksData } from './compareTasks';\r\nimport { dropdownItems } from './dropdownItems';\r\n\r\n@Component({\r\n    selector: 'prototype-uv-ui-side-by-side',\r\n    templateUrl: './side-by-side.component.html',\r\n    styleUrls: ['./side-by-side.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SideBySideComponent implements OnInit{\r\n    public loadTask = true;\r\n    public compareTasks = compareTasksData;\r\n    public dropdownItems = dropdownItems;\r\n\r\n    constructor(private headerService: HeaderService) {}\r\n\r\n    public addTaskClicked(event: Event): void {\r\n        console.log(event, 'add task was clicked');\r\n    }\r\n\r\n    public switchFilterClicked(event: Event): void {\r\n        console.log(event, 'filter button was clicked');\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Side By Side');\r\n        this.headerService.setAppIcon('assets/apps-sbs.svg#sideBySide');\r\n    }\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\nimport { compareTasksData } from './compareTasks';\r\nimport { dropdownItems } from './dropdownItems';\r\n\r\n@Component({\r\n    selector: 'prototype-uv-ui-side-by-side',\r\n    templateUrl: './side-by-side.component.html',\r\n    styleUrls: ['./side-by-side.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SideBySideComponent implements OnInit{\r\n    public loadTask = true;\r\n    public compareTasks = compareTasksData;\r\n    public dropdownItems = dropdownItems;\r\n\r\n    constructor(private headerService: HeaderService) {}\r\n\r\n    public addTaskClicked(event: Event): void {\r\n        console.log(event, 'add task was clicked');\r\n    }\r\n\r\n    public switchFilterClicked(event: Event): void {\r\n        console.log(event, 'filter button was clicked');\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Side By Side');\r\n        this.headerService.setAppIcon('icons/apps-sbs.svg#sideBySide');\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2895,7 +2881,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n\r\n    <div class=\"box appbar flex align-items-center justify-content-space-between\">\r\n\r\n        <p class=\"heading-4\">Comparison Tasks</p>\r\n        \r\n        <div>\r\n            <lib-uv-ui-button type= \"round\" class=\"btn-add-task margin-right-md\" label=\"+\" (click)=\"addTaskClicked($event)\"></lib-uv-ui-button>\r\n            <lib-uv-ui-dropdown-button [items]=\"dropdownItems\" dropdownName=\"Switch filter\" (click)=\"switchFilterClicked($event)\"></lib-uv-ui-dropdown-button>\r\n        </div>\r\n        \r\n    </div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-task-snippet [tasks]=\"compareTasks\">\r\n    </lib-uv-ui-task-snippet>\r\n    \r\n</div>\r\n\r\n</div>\r\n\r\n"
+            "templateData": "<div class=\"grid\">\r\n\r\n    <div class=\"box appbar flex align-items-center justify-content-space-between\">\r\n\r\n        <p class=\"heading-4\">Comparison Tasks</p>\r\n        \r\n        <div>\r\n            <lib-uv-ui-button mode=\"round\" class=\"btn-add-task margin-right-md\" label=\"+\" (click)=\"addTaskClicked($event)\"></lib-uv-ui-button>\r\n            <lib-uv-ui-dropdown-button [items]=\"dropdownItems\" dropdownName=\"Switch filter\" (click)=\"switchFilterClicked($event)\"></lib-uv-ui-dropdown-button>\r\n        </div>\r\n        \r\n    </div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-task-snippet [tasks]=\"compareTasks\">\r\n    </lib-uv-ui-task-snippet>\r\n    \r\n</div>\r\n\r\n</div>\r\n\r\n"
         },
         {
             "name": "SnippetComponent",
@@ -4625,7 +4611,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4633,7 +4619,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4649,6 +4635,14 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -4657,7 +4651,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4674,14 +4668,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4830,17 +4816,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                "type": "Story<ImageButtonComponent>",
-                "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                "type": "Story<NavbarComponent>",
+                "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
-                "type": "Story<NavbarComponent>",
-                "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                "type": "Story<ImageButtonComponent>",
+                "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -4854,6 +4840,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                "type": "Story<SearchPanelComponent>",
+                "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts",
                 "type": "Story<AppSideBarComponent>",
                 "defaultValue": "(args: AppSideBarComponent) => ({\r\n    component: AppSideBarComponent,\r\n    props: args,\r\n    template: `\r\n        <lib-uv-ui-app-side-bar>\r\n            <div top>\r\n                ${args.topContent}\r\n            </div>\r\n            <div bottom>\r\n                ${args.bottomContent}\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>`\r\n})"
@@ -4862,9 +4856,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
-                "type": "Story<SearchPanelComponent>",
-                "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                "type": "Story<SnippetComponent>",
+                "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -4881,14 +4875,6 @@
                 "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                 "type": "Story<SvgButtonComponent>",
                 "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                "type": "Story<SnippetComponent>",
-                "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args\r\n})"
             }
         ],
         "functions": [],
@@ -5096,24 +5082,6 @@
                     "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args\r\n})"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
-                    "type": "Story<ImageButtonComponent>",
-                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args\r\n})"
-                }
-            ],
             "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts": [
                 {
                     "name": "Default",
@@ -5132,6 +5100,24 @@
                     "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
                 }
             ],
+            "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts",
+                    "type": "Story<ImageButtonComponent>",
+                    "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args\r\n})"
+                }
+            ],
             "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts": [
                 {
                     "name": "Default",
@@ -5148,6 +5134,24 @@
                     "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
                     "type": "Story<NavbarDashboardSubComponent>",
                     "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                    "type": "Story<SearchPanelComponent>",
+                    "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/sidebar/app-side-bar.stories.ts": [
@@ -5176,12 +5180,12 @@
                     "defaultValue": "(args: AppSideBarComponent) => ({\r\n    component: AppSideBarComponent,\r\n    props: args,\r\n    template: `\r\n        <lib-uv-ui-app-side-bar>\r\n            <div top>\r\n                ${args.topContent}\r\n            </div>\r\n            <div bottom>\r\n                ${args.bottomContent}\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>`\r\n})"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts": [
+            "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5189,9 +5193,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts",
-                    "type": "Story<SearchPanelComponent>",
-                    "defaultValue": "(args: SearchPanelComponent) => ({\r\n    component: SearchPanelComponent,\r\n    props: args\r\n})"
+                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
+                    "type": "Story<SnippetComponent>",
+                    "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/tab/tab.stories.ts": [
@@ -5236,24 +5240,6 @@
                     "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
                     "type": "Story<SvgButtonComponent>",
                     "defaultValue": "(args: SvgButtonComponent) => ({\r\n    component: SvgButtonComponent,\r\n    props: args\r\n})"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                    "type": "Story<SnippetComponent>",
-                    "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-prototype/src/app/search/models/search-results-state.ts": [
