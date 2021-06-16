@@ -14,7 +14,7 @@ export class CheckboxComponent {
   public isChecked = false;
   public onChange: any = () => {};
 
-  @Input() public set value(isChecked: boolean) {
+  @Input() public set checked(isChecked: boolean) {
     if (!this.disabled) {
       this.isChecked = isChecked;
       this.onChange(isChecked);
@@ -29,7 +29,7 @@ export class CheckboxComponent {
     this.disabled = isDisabled;
   }
 
-  public toggleChecked(isChecked: boolean): void {
+  public toggleChecked(): void {
     if (!this.disabled) {
       this.isChecked = !this.isChecked;
       this.onChange(this.isChecked);
