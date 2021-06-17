@@ -16,7 +16,12 @@ export class SearchPanelComponent {
     }
 
     public get classes(): string[] {
-        return ['search-panel', this.mode ];
+        return [ this.mode ];
+    }
+
+    public getMode(): string {
+
+        return this.mode === 'full' ? 'full-search-field' : '';
     }
 
 }

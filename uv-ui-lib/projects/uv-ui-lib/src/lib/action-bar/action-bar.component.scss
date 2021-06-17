@@ -2,22 +2,17 @@
 
 .action-bar {
     height: 100%;
-    width: 100%;
     border-left: none;
     border-top: none;
     z-index: 0;
 }
 
 .container-left {
-    display: flex;
-    align-items: center;
     height: 100%;
     margin-left: $md-size;
 }
 
 .container-right {
-    display: flex;
-    align-items: center;
     height: 100%;
     margin-right: $md-size;
 }
