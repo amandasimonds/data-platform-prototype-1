@@ -49,10 +49,5 @@ Default.args = {
             icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',
             navlink: '/'
         }
-        // {
-        //     icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg',
-        //     navlink: '/',
-        //
-        // }
     ]
 };

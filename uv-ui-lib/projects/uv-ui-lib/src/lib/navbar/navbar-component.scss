@@ -1,7 +1,6 @@
 @import '../scss/variables';
 
 .navbar {
-    position: relative;
     height: 100%;
     z-index: 200;
     border: $border-gray-light;
@@ -9,7 +8,7 @@
     background-color: var(--color-white);
     box-shadow: $box-shadow-light;
 
-    &__divider {
+    &-divider {
         border-bottom: 1px solid $color-gray-light-2;
         opacity: .31;
     }

@@ -13,6 +13,6 @@ export class SvgButtonComponent {
 
     public get cssClasses(): string[] {
 
-        return ['btn', 'btn-svg', this.color, this.size];
+        return [this.color, this.size];
     }
 }
