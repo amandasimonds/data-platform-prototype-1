@@ -1,5 +1,5 @@
 <div class="grid">
-    <div class="sidebar">     
+    <div class="sidebar position-relative">     
         <lib-uv-ui-app-side-bar>
 
             <div top>
@@ -23,8 +23,8 @@
                         [isDisabled]="tab.entitySearchCount === 0"
                         [isActive]="onToggleTabActive(tab.category)"
                         [isReorderMode]="reOrderModeActivated"
-                        svgPath="{{tab.icon}}" 
-                        label="{{tab.title}}" 
+                        [svgPath]="tab.icon" 
+                        [label]="tab.title" 
                         [routerLink]="tab.routeUri">
                         <span class="chip" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
                     </lib-uv-ui-tab>
@@ -34,13 +34,12 @@
                 <div *ngIf="reOrderModeActivated" cdkDropList  (cdkDropListDropped)="drop($event)">
                     <div *ngFor="let tab of searchTabs" cdkDrag>
                         <lib-uv-ui-tab 
-                            
                             (click)="onTabClicked(tab.category)"
                             [isDisabled]="tab.entitySearchCount === 0"
                             [isActive]="onToggleTabActive(tab.category)"
                             [isReorderMode]="reOrderModeActivated"
-                            svgPath="{{tab.icon}}" 
-                            label="{{tab.title}}" 
+                            [svgPath]="tab.icon" 
+                            [label]="tab.title" 
                             [routerLink]="tab.routeUri">
                             <span class="chip" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
                         </lib-uv-ui-tab>
@@ -57,7 +56,7 @@
         
     </div>
     
-    <div class="sidebar2" [ngClass]="{ 'filter-bar-width' : filterBarActive }">
+    <div class="sidebar2 position-relative" [ngClass]="{ 'filter-bar-width' : filterBarActive }">
         
         <lib-uv-ui-app-side-bar *ngIf="filterBarActive" mode="scroll">
             <div top>
@@ -73,22 +72,22 @@
 
                     <p class="bold uv-type-body margin-top-xxs margin-bottom-xxs">Discipline</p>
                     <div *ngFor="let item of items" class="container">
-                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>
+                        <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
                     </div>
 
                     <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Category</p>
                     <div *ngFor="let item of items" class="container">
-                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>
+                        <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
                     </div>
 
                     <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Technology</p>
                     <div *ngFor="let item of items" class="container">
-                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>
+                        <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
                     </div>
 
                     <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Technology</p>
                     <div *ngFor="let item of items" class="container">
-                        <lib-uv-ui-checkbox label={{item.title}}></lib-uv-ui-checkbox>
+                        <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
                     </div>
 
             </div>
