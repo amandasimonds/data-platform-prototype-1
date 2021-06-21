@@ -3,7 +3,7 @@ import { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { HeaderService } from '../services/header.service';
 import { MenuTab } from './models/menu-tab.model';
 import { SearchResult } from './models/search-result.model';
-import { DEFAULT_SEARCH_MENU_STATE, SearchResultsSideMenuState } from './models/search-results-state';
+import { DEFAULT_SEARCH_MENU_STATE } from './models/search-results-state';
 
 @Component({
   selector: 'lib-search',
@@ -60,11 +60,7 @@ export class SearchComponent implements OnInit {
     }
 
     public onToggleTabActive(category: string): boolean {
-        if (this.searchCategory === category) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.searchCategory === category
     }
 
     public trackByFn(_: number, {title}: MenuTab): string {

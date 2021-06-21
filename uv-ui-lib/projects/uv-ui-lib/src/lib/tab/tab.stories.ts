@@ -18,7 +18,7 @@ const Template: Story<TabComponent> = (args: TabComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-    svgPath: '/parts.svg#parts',
+    svgPath: 'icons/parts.svg#parts',
     label: 'Label'
 };
 
