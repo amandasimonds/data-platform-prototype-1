@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
         });
     }
 
-    public onSearchAction(data: string): void {
-        console.log(data, 'search clicked');
-    }
+    get checkifSearch(): boolean {
+        return this.title === 'Search'
+    } 
 }

@@ -11,42 +11,33 @@
 
 .basic {
     line-height: 20px;
-    font-family: $font-family-bold;
     font-weight: $font-bold;
     background-color: transparent;
-}
-
-.basic--primary {
     color: $color-blue;
+
+    &.disabled {
+        color: $color-gray;
+        cursor: not-allowed;
+    }
 }
 
-.basic--disabled {
-    color: $color-gray;
-    cursor: not-allowed;
-}
-
-.flat {
+.primary {
     font-size: 14px;
     line-height: 24px;
-    font-family: $font-family-bold;
     font-weight: $font-bold;
     height: 40px;
     padding: 0 25px;
-    border: 1px solid $color-gray;
-}
-
-.flat--primary {
     color: white;
     background-color: $color-blue;
     border: 0;
-}
 
-.flat--disabled {
-    color: $color-gray-light-7;
-    background-color: $color-gray-light-5;
-    font-family: $font-family;
-    font-weight: none;
-    cursor: not-allowed;
+    &.disabled {
+        color: $color-gray-light-7;
+        background-color: $color-gray-light-5;
+        font-family: $font-family;
+        font-weight: none;
+        cursor: not-allowed;
+    }
 }
 
 .round {
