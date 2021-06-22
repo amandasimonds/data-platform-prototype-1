@@ -7,7 +7,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SvgButtonComponent {
-    @Input() public svgPath = '';
+    @Input() public icon = '';
     @Input() public color: 'gray' | 'blue' | 'black' = 'black';
     @Input() public size: 'small' | 'xs' | 'xxs' = 'small';
 

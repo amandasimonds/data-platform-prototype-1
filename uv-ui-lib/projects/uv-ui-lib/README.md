@@ -19,5 +19,3 @@
 ]
 
 ``` 
-
-Now, you should be able to access the icons from the library with `"icons/<svg path here>"`

@@ -4,7 +4,7 @@
     [class.basic]="mode === 'basic'"
     [class.round]="mode === 'round'"
     [class.disabled]="disabled">
-        <svg *ngIf="svgPath != '' " class="position-svg"><use [attr.href]="svgPath"></use></svg>
+        <mat-icon *ngIf="icon != '' " class="position-svg" svgIcon="{{icon}}"></mat-icon>
     {{label}}
 </button>
 

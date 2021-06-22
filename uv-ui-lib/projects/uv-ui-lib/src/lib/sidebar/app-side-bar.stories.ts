@@ -2,6 +2,8 @@
 import { componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
 import { Meta, Story } from '@storybook/angular/types-6-0';
 import { ButtonComponent } from '../button/button.component';
+import { ICON_SET } from '../register-icon/icon-set';
+import { RegisterIconModule } from '../register-icon/register-icon.module';
 import { SvgButtonComponent } from '../svg-button/svg-button.component';
 import { TabComponent } from '../tab/tab.component';
 import { AppSideBarComponent } from './app-side-bar.component';
@@ -12,8 +14,9 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [TabComponent, SvgButtonComponent, ButtonComponent],
+            imports: [RegisterIconModule.forRoot(ICON_SET)]
           }),
-        componentWrapperDecorator((story) => `<div style="width: 336px; height: 100vh;">${story}</div>`),
+        componentWrapperDecorator((story) => `<div uvUiLibRegisterIcon><div style="width: 336px; height: 100vh;">${story}</div></div>`)
       ]
 } as Meta;
 
@@ -35,13 +38,13 @@ export const Default = Template.bind({});
 Default.args = {
     mode: 'menu',
     topContent: 'Title',
-    bottomContent: 
+    bottomContent:
         `
             <lib-uv-ui-tab label="Tab 1" 
-            svgPath="/assets/parts.svg#parts">
+            icon="parts">
             </lib-uv-ui-tab>
             <lib-uv-ui-tab label="Tab 2" 
-            svgPath="/assets/parts.svg#parts">
+            icon="parts">
             </lib-uv-ui-tab>
         `
 };
@@ -50,7 +53,7 @@ export const Scroll = Template.bind({});
 Scroll.args = {
     mode: 'scroll',
     topContent: 'Title',
-    bottomContent: 
+    bottomContent:
         `
         <ul>
             <li>bottom content</li>

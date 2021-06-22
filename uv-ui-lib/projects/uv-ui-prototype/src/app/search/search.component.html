@@ -5,11 +5,11 @@
             <div top>
                 <div class="height-sm top-content flex justify-content-space-between margin-bottom-sm">
                     <div>
-                        <lib-uv-ui-button label="Back" svgPath='icons/back-arrow.svg#back-arrow' color='primary' mode="basic" (click)="clearResults()"></lib-uv-ui-button>
+                        <lib-uv-ui-button label="Back" icon='back' color='primary' mode="basic" (click)="clearResults()"></lib-uv-ui-button>
                     </div>
                     <div>
-                        <lib-uv-ui-svg-button color='blue' class="margin-right-xs" (click)="reOrderMode()" svgPath='icons/up-down-arrows.svg#up-down-arrows'></lib-uv-ui-svg-button>
-                        <lib-uv-ui-svg-button color='blue' svgPath='icons/filter.svg#filter' (click)="toggleFilterBar()"></lib-uv-ui-svg-button>
+                        <lib-uv-ui-svg-button color='blue' class="margin-right-xs" (click)="reOrderMode()" icon='up-down-arrows'></lib-uv-ui-svg-button>
+                        <lib-uv-ui-svg-button color='blue' icon='filter2' (click)="toggleFilterBar()"></lib-uv-ui-svg-button>
                     </div>
                 </div>
                 <p class="heading-4 margin-bottom-xs">Results</p>
@@ -23,7 +23,7 @@
                         [isDisabled]="tab.entitySearchCount === 0"
                         [isActive]="onToggleTabActive(tab.category)"
                         [isReorderMode]="reOrderModeActivated"
-                        [svgPath]="tab.icon" 
+                        [icon]="tab.icon" 
                         [label]="tab.title" 
                         [routerLink]="tab.routeUri">
                         <span class="chip" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
@@ -38,7 +38,7 @@
                             [isDisabled]="tab.entitySearchCount === 0"
                             [isActive]="onToggleTabActive(tab.category)"
                             [isReorderMode]="reOrderModeActivated"
-                            [svgPath]="tab.icon" 
+                            [icon]="tab.icon" 
                             [label]="tab.title" 
                             [routerLink]="tab.routeUri">
                             <span class="chip" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
@@ -62,7 +62,7 @@
             <div top>
                 <div class="margin-bottom-sm flex justify-content-space-between" >
                     <p class="heading-4">Filters</p>
-                    <lib-uv-ui-svg-button color='blue' class="close-button" svgPath='icons/close.svg#close' size="xs" (click)="toggleFilterBar()"></lib-uv-ui-svg-button>
+                    <lib-uv-ui-svg-button color='blue' class="close-button" icon="close" (click)="toggleFilterBar()"></lib-uv-ui-svg-button>
                 </div>
                 
                 <lib-uv-ui-search-panel mode="basic"></lib-uv-ui-search-panel>

@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
         });
     }
 
-    get checkifSearch(): boolean {
-        return this.title === 'Search'
-    } 
+    public get checkifSearch(): boolean {
+        return this.title === 'Search';
+    }
 }

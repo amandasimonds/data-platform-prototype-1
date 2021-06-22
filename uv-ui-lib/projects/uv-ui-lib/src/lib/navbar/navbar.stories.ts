@@ -1,8 +1,8 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { moduleMetadata, Meta, Story, componentWrapperDecorator } from '@storybook/angular';
-import { NavbarComponent } from './navbar.component';
 import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './navbar.component';
 
 export default {
     title: 'Components/Navbar',
@@ -13,7 +13,7 @@ export default {
           imports: [CommonModule, RouterModule.forRoot([])],
           providers: [{provide: APP_BASE_HREF, useValue: '/'}]
         }),
-        componentWrapperDecorator((story) => `<div style="width: 64px;">${story}</div>`),
+        componentWrapperDecorator((story) => `<div style="width: 64px;">${story}</div>`)
       ]
 } as Meta;
 

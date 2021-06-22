@@ -13,7 +13,7 @@ export class SettingsComponent implements OnInit {
 
     public ngOnInit(): void {
         this.headerService.setTitle('Settings');
-        this.headerService.setAppIcon('icons/apps-settings.svg#settings');
+        this.headerService.setAppIcon('apps-settings');
     }
 
 }

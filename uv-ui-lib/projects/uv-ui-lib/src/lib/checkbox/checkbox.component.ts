@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, forwardRef } from '@angular/core';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'lib-uv-ui-checkbox',
@@ -27,7 +27,7 @@ export class CheckboxComponent implements ControlValueAccessor {
 
     public isChecked = false;
     public onChange: any = () => {};
-    onTouch: any = () => {}
+    public onTouch: any = () => {};
 
     public registerOnChange(fn: any): void {
         this.onChange = fn;
