@@ -11,7 +11,7 @@ export const DEFAULT_SEARCH_MENU_STATE: SearchResultsSideMenuState = {
     totalCount: 0,
     menuTabs:  [
       {
-        icon: 'icons/parts.svg#parts',
+        icon: 'parts',
         routeUri: 'landing',
         title: 'Parts',
         selected: false,
@@ -20,7 +20,7 @@ export const DEFAULT_SEARCH_MENU_STATE: SearchResultsSideMenuState = {
         showEntitySearchCount: true
       },
       {
-        icon: 'icons/document.svg#document',
+        icon: 'document',
         routeUri: 'search-results',
         title: 'Requirements',
         selected: false,
@@ -29,7 +29,7 @@ export const DEFAULT_SEARCH_MENU_STATE: SearchResultsSideMenuState = {
         showEntitySearchCount: true
       },
       {
-        icon: 'icons/apps-sbs.svg#sideBySide',
+        icon: 'apps-sbs',
         routeUri: 'search-results',
         title: 'Documents   ',
         selected: false,
@@ -38,7 +38,7 @@ export const DEFAULT_SEARCH_MENU_STATE: SearchResultsSideMenuState = {
         showEntitySearchCount: true
       },
       {
-        icon: 'icons/clock.svg#clock',
+        icon: 'clock',
         routeUri: 'search-results',
         title: 'Recent Searches',
         selected: false,

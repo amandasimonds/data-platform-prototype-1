@@ -9,6 +9,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class ButtonComponent {
     @Input() public label = 'Button';
     @Input() public mode: 'basic' | 'primary' | 'round' = 'basic';
-    @Input() public svgPath = '';
+    @Input() public icon = '';
     @Input() public disabled = false;
 }

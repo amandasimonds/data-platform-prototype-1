@@ -39,7 +39,7 @@ export class SearchComponent implements OnInit {
 
     public ngOnInit(): void {
         this.headerService.setTitle('Search');
-        this.headerService.setAppIcon('icons/search.svg#search');
+        this.headerService.setAppIcon('search');
     }
 
     public reOrderMode(): void {
@@ -60,7 +60,7 @@ export class SearchComponent implements OnInit {
     }
 
     public onToggleTabActive(category: string): boolean {
-        return this.searchCategory === category
+        return this.searchCategory === category;
     }
 
     public trackByFn(_: number, {title}: MenuTab): string {

@@ -18,6 +18,6 @@ export class SideBySideComponent implements OnInit{
 
     public ngOnInit(): void {
         this.headerService.setTitle('Side By Side');
-        this.headerService.setAppIcon('icons/apps-sbs.svg#sideBySide');
+        this.headerService.setAppIcon('apps-sbs');
     }
 }

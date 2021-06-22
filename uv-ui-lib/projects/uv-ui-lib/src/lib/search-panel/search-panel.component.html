@@ -3,14 +3,14 @@
     <div class="w-100 justify-content-space-between flex align-items-center" [ngClass]="getMode()">
 
         <div class="flex align-items-center">
-            <lib-uv-ui-svg-button color='blue' svgPath='icons/search.svg#search' (click)="onSearch()" ></lib-uv-ui-svg-button>
+            <lib-uv-ui-svg-button color='blue' icon='search' (click)="onSearch()" ></lib-uv-ui-svg-button>
             
             <input type="text"
             placeholder="Search..."
             class="search-panel-input">
         </div>
 
-        <lib-uv-ui-svg-button *ngIf="mode === 'full'" color='blue' size='xs' svgPath='icons/close.svg#close' ></lib-uv-ui-svg-button>
+        <lib-uv-ui-svg-button *ngIf="mode === 'full'" color='blue' icon='close' ></lib-uv-ui-svg-button>
         
     </div>
     
