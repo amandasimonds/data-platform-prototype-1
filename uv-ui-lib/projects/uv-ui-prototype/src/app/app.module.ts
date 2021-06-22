@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ICON_SET } from 'projects/uv-ui-lib/src/lib/register-icon/icon-set';
 import {
     ActionBarModule,
     ButtonModule,
@@ -16,7 +17,8 @@ import {
     ImageButtonModule,
     SvgButtonModule,
     TabModule,
-    CheckboxModule
+    CheckboxModule,
+    RegisterIconModule
 } from '../../../uv-ui-lib/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -61,7 +63,9 @@ import { SearchService } from './services/search.service';
         SearchModule,
         TabModule,
         HttpClientModule,
-        CheckboxModule
+        CheckboxModule,
+        RegisterIconModule,
+        RegisterIconModule.forRoot(ICON_SET)
     ],
     providers: [HelperService, AuthService, HttpClient, SearchService],
     bootstrap: [AppComponent]
