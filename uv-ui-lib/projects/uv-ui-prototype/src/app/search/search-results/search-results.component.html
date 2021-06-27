@@ -1,14 +1,17 @@
 <div class="documents box flex">
+
     <div class="heading-container flex justify-content-space-between">
-    <p class="heading-3">{{category}}</p>
-    <span class="chip">{{searchResults.length}}</span>
-</div>
-    
-<div class="divider"></div>
-    
-<div class="content-container">
-    <div class="margin-bottom-md" *ngFor="let item of searchResults | filterResults: category">
-        <p class="heading-5">{{item.title}}</p>
-        <p class="uv-type-body">{{item.description}}</p>
+        <p class="heading-3">{{category}}</p>
+        <span class="chip">{{searchResults.length}}</span>
     </div>
+    
+    <div class="divider"></div>
+    
+    <div class="content-container">
+        <div class="margin-bottom-md" *ngFor="let item of searchResults | filterResults: category">
+            <p class="heading-5">{{item.title}}</p>
+            <p class="uv-body">{{item.description}}</p>
+        </div>
+    </div>
+
 </div>

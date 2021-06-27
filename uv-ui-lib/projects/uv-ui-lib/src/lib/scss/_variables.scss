@@ -11,12 +11,15 @@
 }
 
 :root {
-    --color-white: #ffffff;
-    --color-black: black;
-    --background-color: #f1f1f1;
+    --uv-color-primary: var(--uv-color-blue);
+    --uv-color-blue: #00A3E5;
+    --uv-color-white: #ffffff;
+    --uv-color-black: black;
+    --uv-background-color: #f1f1f1;
 }
 
 //colors
+$uv-color-primary: var(--uv-color-blue);
 $color-gray: #7D7D7D;
 $color-gray-light: #d7dfeb;
 $color-gray-light-2: #B1B1B1;
@@ -25,22 +28,22 @@ $color-gray-light-4: #d8d8d821;
 $color-gray-light-5: #F3F3F4;
 $color-gray-light-6: #6E6D7A;
 $color-gray-light-7: #D2D2D6;
-$color-blue: #00A3E5;
 $color-orange: #FF6969;
 $scrollbar-color: $color-gray-light-7;
 
 //typography
 $font-family: 'Noto Sans', sans-serif !default;
-$default-text-color-black: #32363B;
+$default-text-color-black: #0D0C22;
 $highlight-text-color-gray: #EAF1FE;
 $font-bold: 700 !default;
 $font-size-xs: 12px;
 $font-size-sm: 14px;
+$font-size-sm-md: 16px;
 $font-size-md: 18px;
 $font-size-md-lg: 20px;
 $font-size-lg: 24px;
 $font-size-xl: 28px;
-$font-size-xxl: 32px;
+$font-size-xxl: 36px;
 
 //sizes
 $xxs-size: 8px;
@@ -51,10 +54,14 @@ $lg-size: 48px;
 $xl-size: 64px;
 
 //height
-$header-height: 60px;
-$footer-height: 24px;
+$header-height: 64px;
 $grid-item-height: 78px;
 $grid-header-height: 56px;
+
+//width
+$navbar-width: 64px;
+$sidebar-width-md: 336px;
+$sidebar-width-sm: 288px;
 
 //styling
 $border-gray: 1px solid #8694A7;

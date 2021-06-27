@@ -74,6 +74,19 @@
     width: 100%;
 }
 
+.h-100 {
+    height: 100%;
+}
+
+.sidebar-width-md {
+    width: $sidebar-width-md;
+    border: 3px solid green;
+}
+
+.sidebar-width-sm {
+    width: $sidebar-width-sm;
+}
+
 .height-sm {
     height: $sm-size;
 }
@@ -175,6 +188,6 @@
 }
 
 .blue { 
-    color: $color-blue;
+    color: $uv-color-primary;
 }
 
