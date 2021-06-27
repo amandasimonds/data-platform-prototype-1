@@ -238,10 +238,10 @@
         },
         {
             "name": "RegisterIcon",
-            "id": "interface-RegisterIcon-8d46bb3a673438f7b8455c1a6747809a",
+            "id": "interface-RegisterIcon-1823e5f46c7936d29f4ff0e4fe747e31",
             "file": "projects/uv-ui-lib/src/lib/register-icon/register-icon.directive.ts",
             "type": "interface",
-            "sourceCode": "import { Directive, Inject } from '@angular/core';\r\nimport { MatIconRegistry } from '@angular/material/icon';\r\nimport { DomSanitizer } from '@angular/platform-browser';\r\nimport { REGISTER_ICON_TOKEN } from './register-icon.token';\r\n\r\nexport interface RegisterIcon {\r\n\tname: Readonly<string>;\r\n\turl: Readonly<string>;\r\n}\r\n\r\n@Directive({\r\n\tselector: '[uvSbsRegisterIcon]'\r\n})\r\nexport class RegisterIconDirective {\r\n\r\n    \r\n\tconstructor(\r\n\t\t@Inject(REGISTER_ICON_TOKEN) private readonly iconSet: ReadonlyArray<RegisterIcon>,\r\n\t\tprivate readonly matIconRegistry: MatIconRegistry,\r\n\t\tprivate readonly domSanitizer: DomSanitizer\r\n\t) {\r\n\t\tthis.registryIcons();\r\n\t}\r\n\r\n\tprivate registryIcons(): void {\r\n        const iconsUrl = 'https://dpzaq1wj21co3.cloudfront.net/icons/'\r\n\t\tthis.iconSet.forEach(({ url, name }) => {\r\n\t\t\tthis.matIconRegistry.addSvgIcon(\r\n\t\t\t\tname,\r\n\t\t\t\tthis.domSanitizer.bypassSecurityTrustResourceUrl(iconsUrl + url)\r\n\t\t\t);\r\n\t\t});\r\n\t}\r\n}\r\n",
+            "sourceCode": "import { Directive, Inject } from '@angular/core';\r\nimport { MatIconRegistry } from '@angular/material/icon';\r\nimport { DomSanitizer } from '@angular/platform-browser';\r\nimport { REGISTER_ICON_TOKEN } from './register-icon.token';\r\n\r\nexport interface RegisterIcon {\r\n\tname: Readonly<string>;\r\n\turl: Readonly<string>;\r\n}\r\n\r\n@Directive({\r\n\tselector: '[uvUiLibRegisterIcon]'\r\n})\r\n\r\nexport class RegisterIconDirective {\r\n\tconstructor(\r\n\t\t@Inject(REGISTER_ICON_TOKEN) private readonly iconSet: ReadonlyArray<RegisterIcon>,\r\n\t\tprivate readonly matIconRegistry: MatIconRegistry,\r\n\t\tprivate readonly domSanitizer: DomSanitizer\r\n\t) {\r\n\t\tthis.registryIcons();\r\n\t}\r\n\r\n\tprivate registryIcons(): void {\r\n        const iconsUrl = 'https://dpzaq1wj21co3.cloudfront.net/icons/';\r\n\t\tthis.iconSet.forEach(({ url, name }) => {\r\n\t\t\tthis.matIconRegistry.addSvgIcon(\r\n\t\t\t\tname,\r\n\t\t\t\tthis.domSanitizer.bypassSecurityTrustResourceUrl(iconsUrl + url)\r\n\t\t\t);\r\n\t\t});\r\n\t}\r\n}\r\n",
             "properties": [
                 {
                     "name": "name",
@@ -299,7 +299,7 @@
     "injectables": [
         {
             "name": "AuthService",
-            "id": "injectable-AuthService-b075515a1d61a3af0d6a849bca253f3a",
+            "id": "injectable-AuthService-716df44d25830d52d7cf1e4df03c852c",
             "file": "projects/uv-ui-prototype/src/app/services/auth.service.ts",
             "properties": [
                 {
@@ -494,7 +494,7 @@
                 }
             ],
             "description": "",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpHeaders, HttpClient } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\nimport { HelperService } from '../services/helper.service';\r\n\r\n@Injectable({\r\nprovidedIn: 'root'\r\n})\r\nexport class AuthService {\r\n    // TODO: get this info from pipeline eventually\r\n    private settings: {authority: string; clientId: string; redirectUri: string} = {\r\n        authority: 'https://gwu.auth.us-east-1.amazoncognito.com',\r\n        // TODO: These values will be based on the subdomain\r\n        clientId: '2fakcqk6ihkmk78h8h0o7vs0bq',\r\n        // redirectUri: 'https://uvuiprototype.z13.web.core.windows.net/auth-callback',\r\n        redirectUri: 'http://localhost:4200/auth-callback'\r\n    };\r\n    constructor(private http: HttpClient, private helper: HelperService) {}\r\n\r\n    public isLoggedIn(): boolean {\r\n        const jwt = localStorage.getItem('id_token');\r\n        if (jwt) {\r\n\r\n            return true;\r\n        }\r\n\r\n        return false;\r\n    }\r\n\r\n    public startAuthentication(): void {\r\n        // Create random \"state\"\r\n        const state = this.helper.getRandomString();\r\n        sessionStorage.setItem('pkce_state', state);\r\n\r\n        // Create PKCE code verifier\r\n        const codeVerifier = this.helper.getRandomString();\r\n        sessionStorage.setItem('codeVerifier', codeVerifier);\r\n        console.log(`codeVerifier: ${codeVerifier}`);\r\n        this.helper.encryptStringWithSHA256(codeVerifier).then(arrayHash => {\r\n            const codeChallenge = this.helper.hashToBase64url(arrayHash);\r\n            sessionStorage.setItem('codeChallenge', codeChallenge);\r\n            console.log(`codeChallenge: ${codeChallenge}`);\r\n            this.helper.navigateToUrl(\r\n                `${this.settings.authority}/oauth2/authorize?response_type=code&client_id=${this.settings.clientId}&redirect_uri=${this.settings.redirectUri}&code_challenge_method=S256&code_challenge=${codeChallenge}&state=${state}`\r\n            );\r\n        });\r\n    }\r\n\r\n    public logout(): void {\r\n        localStorage.clear();\r\n        this.helper.navigateToUrl(\r\n            `${this.settings.authority}/logout?client_id=${this.settings.clientId}&logout_uri=http://localhost:4200/logout`\r\n            // `${this.settings.authority}/logout?client_id=${this.settings.clientId}&logout_uri=https://uvuiprototype.z13.web.core.windows.net/logout`\r\n        );\r\n    }\r\n\r\n    public isValidState(state: string | null): boolean {\r\n        // Verify state matches\r\n        const sentState = sessionStorage.getItem('pkce_state');\r\n        if(sentState !== state) {\r\n            console.log(`State is invalid.\\nReceived state: ${state}\\nSent state: ${sentState}`);\r\n\r\n            return false;\r\n        } else {\r\n            \r\n            return true;\r\n        }\r\n    }\r\n\r\n    public getToken(code: string | null): Observable<object> {\r\n        // Fetch OAuth2 tokens from Cognito\r\n        const codeVerifier = sessionStorage.getItem('codeVerifier');\r\n        const headers: HttpHeaders = new HttpHeaders()\r\n            .set('Content-Type', 'application/x-www-form-urlencoded'\r\n        );\r\n\r\n        return this.http.post(\r\n            `${this.settings.authority}/oauth2/token?grant_type=authorization_code&code=${code}&client_id=${this.settings.clientId}&redirect_uri=${this.settings.redirectUri}&code_verifier=${codeVerifier}`,\r\n            {},\r\n            { headers }\r\n        );\r\n    }\r\n\r\n    public getUserInfo(jwt: string): Observable<boolean> {\r\n        console.log('get user info', jwt);\r\n\r\n        return new Observable((subscriber) => {\r\n            try {\r\n                const jwtData: any = JSON.parse(atob(jwt.split('.')[1]));\r\n                localStorage.setItem('userName', jwtData.name);\r\n                localStorage.setItem('principal', jwtData['custom:principal_id']);\r\n                localStorage.setItem('groups', jwtData['custom:groups']);\r\n                localStorage.setItem(\r\n                    'userName',\r\n                    jwtData.identities[0].userId.split('@')[0]\r\n                );\r\n                localStorage.setItem('jwtExp', jwtData.exp);\r\n                subscriber.next(true);\r\n                subscriber.complete();\r\n            } catch (err) {\r\n                subscriber.next(false);\r\n                subscriber.complete();\r\n            }\r\n        });\r\n    }\r\n\r\n    public getUserEmail(jwt: string): string {\r\n        const jwtData: any = JSON.parse(atob(jwt.split('.')[1]));\r\n        const email = jwtData.identities[0].userId;\r\n        localStorage.setItem('userEmail', email);\r\n\r\n        return email;\r\n    }\r\n\r\n    public getGroups(): string {\r\n\r\n        return localStorage.getItem('groups') || '{}';\r\n    }\r\n\r\n    public getPrincipalID(): string {\r\n\r\n        return localStorage.getItem('principal') || '{}';\r\n    }\r\n\r\n    public isJwtValid(): boolean {\r\n        const expDate = new Date(0);\r\n        expDate.setUTCMilliseconds(+localStorage.getItem('jwtExp')! * 1000);\r\n        const today = new Date();\r\n\r\n        return expDate >= today ? true : false;\r\n    }\r\n\r\n    public getJWT(): string {\r\n\r\n        return 'Bearer ' + localStorage.getItem('id_token');\r\n    }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpHeaders, HttpClient } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\nimport { HelperService } from '../services/helper.service';\r\n\r\n@Injectable({\r\nprovidedIn: 'root'\r\n})\r\nexport class AuthService {\r\n    // TODO: get this info from pipeline eventually\r\n    private settings: {authority: string; clientId: string; redirectUri: string} = {\r\n        authority: 'https://gwu.auth.us-east-1.amazoncognito.com',\r\n        // TODO: These values will be based on the subdomain\r\n        clientId: '2fakcqk6ihkmk78h8h0o7vs0bq',\r\n        // redirectUri: 'https://uvuiprototype.z13.web.core.windows.net/auth-callback',\r\n        redirectUri: 'http://localhost:4200/auth-callback'\r\n    };\r\n    constructor(private http: HttpClient, private helper: HelperService) {}\r\n\r\n    public isLoggedIn(): boolean {\r\n        const jwt = localStorage.getItem('id_token');\r\n        if (jwt) {\r\n\r\n            return true;\r\n        }\r\n\r\n        return false;\r\n    }\r\n\r\n    public startAuthentication(): void {\r\n        // Create random \"state\"\r\n        const state = this.helper.getRandomString();\r\n        sessionStorage.setItem('pkce_state', state);\r\n\r\n        // Create PKCE code verifier\r\n        const codeVerifier = this.helper.getRandomString();\r\n        sessionStorage.setItem('codeVerifier', codeVerifier);\r\n        console.log(`codeVerifier: ${codeVerifier}`);\r\n        this.helper.encryptStringWithSHA256(codeVerifier).then(arrayHash => {\r\n            const codeChallenge = this.helper.hashToBase64url(arrayHash);\r\n            sessionStorage.setItem('codeChallenge', codeChallenge);\r\n            console.log(`codeChallenge: ${codeChallenge}`);\r\n            this.helper.navigateToUrl(\r\n                `${this.settings.authority}/oauth2/authorize?response_type=code&client_id=${this.settings.clientId}&redirect_uri=${this.settings.redirectUri}&code_challenge_method=S256&code_challenge=${codeChallenge}&state=${state}`\r\n            );\r\n        });\r\n    }\r\n\r\n    public logout(): void {\r\n        localStorage.clear();\r\n        this.helper.navigateToUrl(\r\n            `${this.settings.authority}/logout?client_id=${this.settings.clientId}&logout_uri=http://localhost:4200/logout`\r\n            // `${this.settings.authority}/logout?client_id=${this.settings.clientId}&logout_uri=https://uvuiprototype.z13.web.core.windows.net/logout`\r\n        );\r\n    }\r\n\r\n    public isValidState(state: string | null): boolean {\r\n        // Verify state matches\r\n        const sentState = sessionStorage.getItem('pkce_state');\r\n        if(sentState !== state) {\r\n            console.log(`State is invalid.\\nReceived state: ${state}\\nSent state: ${sentState}`);\r\n\r\n            return false;\r\n        } else {\r\n\r\n            return true;\r\n        }\r\n    }\r\n\r\n    public getToken(code: string | null): Observable<object> {\r\n        // Fetch OAuth2 tokens from Cognito\r\n        const codeVerifier = sessionStorage.getItem('codeVerifier');\r\n        const headers: HttpHeaders = new HttpHeaders()\r\n            .set('Content-Type', 'application/x-www-form-urlencoded'\r\n        );\r\n\r\n        return this.http.post(\r\n            `${this.settings.authority}/oauth2/token?grant_type=authorization_code&code=${code}&client_id=${this.settings.clientId}&redirect_uri=${this.settings.redirectUri}&code_verifier=${codeVerifier}`,\r\n            {},\r\n            { headers }\r\n        );\r\n    }\r\n\r\n    public getUserInfo(jwt: string): Observable<boolean> {\r\n        console.log('get user info', jwt);\r\n\r\n        return new Observable((subscriber) => {\r\n            try {\r\n                const jwtData: any = JSON.parse(atob(jwt.split('.')[1]));\r\n                localStorage.setItem('userName', jwtData.name);\r\n                localStorage.setItem('principal', jwtData['custom:principal_id']);\r\n                localStorage.setItem('groups', jwtData['custom:groups']);\r\n                localStorage.setItem(\r\n                    'userName',\r\n                    jwtData.identities[0].userId.split('@')[0]\r\n                );\r\n                localStorage.setItem('jwtExp', jwtData.exp);\r\n                subscriber.next(true);\r\n                subscriber.complete();\r\n            } catch (err) {\r\n                subscriber.next(false);\r\n                subscriber.complete();\r\n            }\r\n        });\r\n    }\r\n\r\n    public getUserEmail(jwt: string): string {\r\n        const jwtData: any = JSON.parse(atob(jwt.split('.')[1]));\r\n        const email = jwtData.identities[0].userId;\r\n        localStorage.setItem('userEmail', email);\r\n\r\n        return email;\r\n    }\r\n\r\n    public getGroups(): string {\r\n\r\n        return localStorage.getItem('groups') || '{}';\r\n    }\r\n\r\n    public getPrincipalID(): string {\r\n\r\n        return localStorage.getItem('principal') || '{}';\r\n    }\r\n\r\n    public isJwtValid(): boolean {\r\n        const expDate = new Date(0);\r\n        expDate.setUTCMilliseconds(+localStorage.getItem('jwtExp')! * 1000);\r\n        const today = new Date();\r\n\r\n        return expDate >= today ? true : false;\r\n    }\r\n\r\n    public getJWT(): string {\r\n\r\n        return 'Bearer ' + localStorage.getItem('id_token');\r\n    }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -899,12 +899,12 @@
     "directives": [
         {
             "name": "RegisterIconDirective",
-            "id": "directive-RegisterIconDirective-8d46bb3a673438f7b8455c1a6747809a",
+            "id": "directive-RegisterIconDirective-1823e5f46c7936d29f4ff0e4fe747e31",
             "file": "projects/uv-ui-lib/src/lib/register-icon/register-icon.directive.ts",
             "type": "directive",
             "description": "",
-            "sourceCode": "import { Directive, Inject } from '@angular/core';\r\nimport { MatIconRegistry } from '@angular/material/icon';\r\nimport { DomSanitizer } from '@angular/platform-browser';\r\nimport { REGISTER_ICON_TOKEN } from './register-icon.token';\r\n\r\nexport interface RegisterIcon {\r\n\tname: Readonly<string>;\r\n\turl: Readonly<string>;\r\n}\r\n\r\n@Directive({\r\n\tselector: '[uvSbsRegisterIcon]'\r\n})\r\nexport class RegisterIconDirective {\r\n\r\n    \r\n\tconstructor(\r\n\t\t@Inject(REGISTER_ICON_TOKEN) private readonly iconSet: ReadonlyArray<RegisterIcon>,\r\n\t\tprivate readonly matIconRegistry: MatIconRegistry,\r\n\t\tprivate readonly domSanitizer: DomSanitizer\r\n\t) {\r\n\t\tthis.registryIcons();\r\n\t}\r\n\r\n\tprivate registryIcons(): void {\r\n        const iconsUrl = 'https://dpzaq1wj21co3.cloudfront.net/icons/'\r\n\t\tthis.iconSet.forEach(({ url, name }) => {\r\n\t\t\tthis.matIconRegistry.addSvgIcon(\r\n\t\t\t\tname,\r\n\t\t\t\tthis.domSanitizer.bypassSecurityTrustResourceUrl(iconsUrl + url)\r\n\t\t\t);\r\n\t\t});\r\n\t}\r\n}\r\n",
-            "selector": "[uvSbsRegisterIcon]",
+            "sourceCode": "import { Directive, Inject } from '@angular/core';\r\nimport { MatIconRegistry } from '@angular/material/icon';\r\nimport { DomSanitizer } from '@angular/platform-browser';\r\nimport { REGISTER_ICON_TOKEN } from './register-icon.token';\r\n\r\nexport interface RegisterIcon {\r\n\tname: Readonly<string>;\r\n\turl: Readonly<string>;\r\n}\r\n\r\n@Directive({\r\n\tselector: '[uvUiLibRegisterIcon]'\r\n})\r\n\r\nexport class RegisterIconDirective {\r\n\tconstructor(\r\n\t\t@Inject(REGISTER_ICON_TOKEN) private readonly iconSet: ReadonlyArray<RegisterIcon>,\r\n\t\tprivate readonly matIconRegistry: MatIconRegistry,\r\n\t\tprivate readonly domSanitizer: DomSanitizer\r\n\t) {\r\n\t\tthis.registryIcons();\r\n\t}\r\n\r\n\tprivate registryIcons(): void {\r\n        const iconsUrl = 'https://dpzaq1wj21co3.cloudfront.net/icons/';\r\n\t\tthis.iconSet.forEach(({ url, name }) => {\r\n\t\t\tthis.matIconRegistry.addSvgIcon(\r\n\t\t\t\tname,\r\n\t\t\t\tthis.domSanitizer.bypassSecurityTrustResourceUrl(iconsUrl + url)\r\n\t\t\t);\r\n\t\t});\r\n\t}\r\n}\r\n",
+            "selector": "[uvUiLibRegisterIcon]",
             "providers": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -918,7 +918,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 24,
                     "modifierKind": [
                         112
                     ]
@@ -941,7 +941,7 @@
                         "type": "DomSanitizer"
                     }
                 ],
-                "line": 14,
+                "line": 15,
                 "jsdoctags": [
                     {
                         "name": "iconSet",
@@ -1068,7 +1068,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div uvSbsRegisterIcon>\r\n    <router-outlet></router-outlet>\r\n</div>\r\n"
+            "templateData": "<div uvUiLibRegisterIcon>\r\n    <router-outlet></router-outlet>\r\n</div>\r\n"
         },
         {
             "name": "AppSideBarComponent",
@@ -1307,7 +1307,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n\r\n.button {\r\n    font-family: $font-family;\r\n    border: 0;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    line-height: 1;\r\n}\r\n\r\n.basic {\r\n    line-height: 20px;\r\n    font-weight: $font-bold;\r\n    background-color: transparent;\r\n    color: $color-blue;\r\n\r\n    &.disabled {\r\n        color: $color-gray;\r\n        cursor: not-allowed;\r\n    }\r\n}\r\n\r\n.primary {\r\n    font-size: 14px;\r\n    line-height: 24px;\r\n    font-weight: $font-bold;\r\n    height: 40px;\r\n    padding: 0 25px;\r\n    color: white;\r\n    background-color: $color-blue;\r\n    border: 0;\r\n\r\n    &.disabled {\r\n        color: $color-gray-light-7;\r\n        background-color: $color-gray-light-5;\r\n        font-family: $font-family;\r\n        font-weight: none;\r\n        cursor: not-allowed;\r\n    }\r\n}\r\n\r\n.round {\r\n    background-color: white;\r\n    width: 41px;\r\n    height: 41px;\r\n    padding: 10.5px;\r\n    border-radius: 100%;\r\n    border: $border-gray-light;\r\n\r\n    &-large{\r\n        width: 57px;\r\n        height: 57px;\r\n        color: $color-blue;\r\n        font-weight: bold;\r\n        font-size: 24px;\r\n        text-align:center;\r\n    }\r\n}\r\n\r\n.position-svg {\r\n    width: 24px;\r\n    height: 24px;\r\n    vertical-align: middle;\r\n}\r\n\r\n.btn-chip {\r\n    color: $color-orange;\r\n    font-weight: bold;\r\n    letter-spacing: 0.2px;\r\n    line-height: 16px;\r\n    padding: 8px 13px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-add-task {\r\n    color: $color-blue;\r\n    font-size: 18px;\r\n    padding: 6px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n",
+                    "data": "@import '../scss/variables';\r\n\r\n.button {\r\n    font-family: $font-family;\r\n    border: 0;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    line-height: 1;\r\n}\r\n\r\n.basic {\r\n    line-height: 20px;\r\n    font-weight: $font-bold;\r\n    background-color: transparent;\r\n    color: $uv-color-primary;\r\n\r\n    &.disabled {\r\n        color: $color-gray;\r\n        cursor: not-allowed;\r\n    }\r\n}\r\n\r\n.primary {\r\n    font-size: 14px;\r\n    line-height: 24px;\r\n    font-weight: $font-bold;\r\n    height: 40px;\r\n    padding: 0 25px;\r\n    color: white;\r\n    background-color: $uv-color-primary;\r\n    border: 0;\r\n\r\n    &.disabled {\r\n        color: $color-gray-light-7;\r\n        background-color: $color-gray-light-5;\r\n        font-family: $font-family;\r\n        font-weight: none;\r\n        cursor: not-allowed;\r\n    }\r\n}\r\n\r\n.round {\r\n    background-color: white;\r\n    width: 41px;\r\n    height: 41px;\r\n    padding: 10.5px;\r\n    border-radius: 100%;\r\n    border: $border-gray-light;\r\n\r\n    &-large{\r\n        width: 57px;\r\n        height: 57px;\r\n        color: $uv-color-primary;\r\n        font-weight: bold;\r\n        font-size: 24px;\r\n        text-align:center;\r\n    }\r\n}\r\n\r\n.position-svg {\r\n    width: 24px;\r\n    height: 24px;\r\n    vertical-align: middle;\r\n}\r\n\r\n.btn-chip {\r\n    color: $color-orange;\r\n    font-weight: bold;\r\n    letter-spacing: 0.2px;\r\n    line-height: 16px;\r\n    padding: 8px 13px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-add-task {\r\n    color: $uv-color-primary;\r\n    font-size: 18px;\r\n    padding: 6px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -1316,7 +1316,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-8374bc8db8e894c3239d342fcca5396d",
+            "id": "component-CheckboxComponent-ce3375647a47838e8d46c057f9affe25",
             "file": "projects/uv-ui-lib/src/lib/checkbox/checkbox.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1385,7 +1385,10 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 30
+                    "line": 30,
+                    "modifierKind": [
+                        114
+                    ]
                 }
             ],
             "methodsClass": [
@@ -1506,7 +1509,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, ChangeDetectionStrategy, Input, forwardRef } from '@angular/core';\r\nimport { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss'],\r\n  providers: [\r\n    {\r\n      provide: NG_VALUE_ACCESSOR,\r\n      useExisting: forwardRef(() => CheckboxComponent),\r\n      multi: true\r\n    }\r\n  ],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class CheckboxComponent implements ControlValueAccessor {\r\n\r\n    @Input() public label = '';\r\n    @Input() public disabled = false;\r\n    @Input() public set value(isChecked: boolean) {\r\n        if (!this.disabled) {\r\n            this.isChecked = isChecked;\r\n            this.onChange(isChecked);\r\n        }\r\n    }\r\n\r\n    public isChecked = false;\r\n    public onChange: any = () => {};\r\n    onTouch: any = () => {}\r\n\r\n    public registerOnChange(fn: any): void {\r\n        this.onChange = fn;\r\n    }\r\n\r\n    public registerOnTouched(fn: any): void {\r\n        this.onTouch = fn;\r\n    }\r\n\r\n    public writeValue(checked: boolean): void {\r\n        this.isChecked = checked;\r\n    }\r\n\r\n    public setDisabledState(isDisabled: boolean): void {\r\n        this.disabled = isDisabled;\r\n    }\r\n\r\n    public toggleChecked(): void {\r\n        if (!this.disabled) {\r\n            this.isChecked = !this.isChecked;\r\n            this.onChange(this.isChecked);\r\n        }\r\n    }\r\n}\r\n",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, Input, forwardRef } from '@angular/core';\r\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'lib-uv-ui-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss'],\r\n  providers: [\r\n    {\r\n      provide: NG_VALUE_ACCESSOR,\r\n      useExisting: forwardRef(() => CheckboxComponent),\r\n      multi: true\r\n    }\r\n  ],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class CheckboxComponent implements ControlValueAccessor {\r\n\r\n    @Input() public label = '';\r\n    @Input() public disabled = false;\r\n    @Input() public set value(isChecked: boolean) {\r\n        if (!this.disabled) {\r\n            this.isChecked = isChecked;\r\n            this.onChange(isChecked);\r\n        }\r\n    }\r\n\r\n    public isChecked = false;\r\n    public onChange: any = () => {};\r\n    public onTouch: any = () => {};\r\n\r\n    public registerOnChange(fn: any): void {\r\n        this.onChange = fn;\r\n    }\r\n\r\n    public registerOnTouched(fn: any): void {\r\n        this.onTouch = fn;\r\n    }\r\n\r\n    public writeValue(checked: boolean): void {\r\n        this.isChecked = checked;\r\n    }\r\n\r\n    public setDisabledState(isDisabled: boolean): void {\r\n        this.disabled = isDisabled;\r\n    }\r\n\r\n    public toggleChecked(): void {\r\n        if (!this.disabled) {\r\n            this.isChecked = !this.isChecked;\r\n            this.onChange(this.isChecked);\r\n        }\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1840,7 +1843,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"logo-splash-block\">\r\n\r\n    <img class=\"logo-splash-block__logo\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading margin-bottom-xs\">Welcome to Ultraviolet</p>\r\n    <p class=\"heading-4\">Let's get you started! Click on a module below so we can get you to the right place.</p>\r\n\r\n</div>\r\n"
+            "templateData": "<!-- <div class=\"logo-splash-block\">\r\n\r\n    <img class=\"logo-splash-block__logo\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading margin-bottom-xs\">Welcome to Ultraviolet</p>\r\n    <p class=\"heading-4\">Let's get you started! Click on a module below so we can get you to the right place.</p>\r\n\r\n</div> -->\r\n\r\n<!-- <div class=\"section group\">\r\n<div class=\"col span_1_of_12\">hello</div>\r\n<div class=\"section\">section</div>\r\n</div> -->\r\n"
         },
         {
             "name": "ImageButtonComponent",
@@ -1999,7 +2002,7 @@
         },
         {
             "name": "MainComponent",
-            "id": "component-MainComponent-a4932585b438b8d6a536932748cad35e",
+            "id": "component-MainComponent-59a9ba71031e8ee217147568296fec18",
             "file": "projects/uv-ui-prototype/src/app/layouts/main/main.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2087,7 +2090,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';\r\nimport { HeaderService } from '../../services/header.service';\r\nimport { navItems } from './navItems';\r\n\r\n@Component({\r\n    selector: 'prototype-app-main',\r\n    templateUrl: './main.component.html',\r\n    styleUrls: ['./main.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\n\r\nexport class MainComponent implements OnInit {\r\n\r\n    public nav = navItems;\r\n    public title = '';\r\n    public appIcon = '';\r\n    @Input() public searchQuery = '';\r\n\r\n    constructor(public headerService: HeaderService, private ref: ChangeDetectorRef) { }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.currentTitle$.subscribe(title => {\r\n            this.title = title;\r\n            this.ref.detectChanges();\r\n        });\r\n        this.headerService.currentIcon$.subscribe(icon => {\r\n            this.appIcon = icon;\r\n            this.ref.detectChanges();\r\n        });\r\n    }\r\n\r\n    get checkifSearch(): boolean {\r\n        return this.title === 'Search'\r\n    } \r\n}\r\n",
+            "sourceCode": "import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';\r\nimport { HeaderService } from '../../services/header.service';\r\nimport { navItems } from './navItems';\r\n\r\n@Component({\r\n    selector: 'prototype-app-main',\r\n    templateUrl: './main.component.html',\r\n    styleUrls: ['./main.component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\n\r\nexport class MainComponent implements OnInit {\r\n\r\n    public nav = navItems;\r\n    public title = '';\r\n    public appIcon = '';\r\n    @Input() public searchQuery = '';\r\n\r\n    constructor(public headerService: HeaderService, private ref: ChangeDetectorRef) { }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.currentTitle$.subscribe(title => {\r\n            this.title = title;\r\n            this.ref.detectChanges();\r\n        });\r\n        this.headerService.currentIcon$.subscribe(icon => {\r\n            this.appIcon = icon;\r\n            this.ref.detectChanges();\r\n        });\r\n    }\r\n\r\n    public get checkifSearch(): boolean {\r\n        return this.title === 'Search';\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2321,7 +2324,7 @@
         },
         {
             "name": "SearchComponent",
-            "id": "component-SearchComponent-7b86d0cc694fb6546ca357a54f957e20",
+            "id": "component-SearchComponent-9c00d7ccd38ee0469dd5281da2f192e3",
             "file": "projects/uv-ui-prototype/src/app/search/search.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2601,7 +2604,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';\r\nimport { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\nimport { MenuTab } from './models/menu-tab.model';\r\nimport { SearchResult } from './models/search-result.model';\r\nimport { DEFAULT_SEARCH_MENU_STATE } from './models/search-results-state';\r\n\r\n@Component({\r\n  selector: 'lib-search',\r\n  templateUrl: './search.component.html',\r\n  styleUrls: ['./search.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchComponent implements OnInit {\r\n\r\n    public searchItemsArray: SearchResult[] = [];\r\n    public searchItem: SearchResult = {category: '', title: '', description: ''};\r\n    public searchCategory = '';\r\n    public showContent = false;\r\n    public searchTabs: MenuTab[] = DEFAULT_SEARCH_MENU_STATE.menuTabs;\r\n    public categorySelected = true;\r\n    public reOrderModeActivated = false;\r\n    public filterBarActive = false;\r\n    public items = [\r\n        {title: 'Lorem ipsum', checked: 'checked'},\r\n        {title: 'Ipsum sit amet', checked: ''},\r\n        {title: 'Amet lorem', checked: ''},\r\n        {title: 'Lorem ipsum sit', checked: 'checked'},\r\n        {title: 'Lorem ipsum amet', checked: 'checked'}\r\n    ];\r\n\r\n    constructor(private headerService: HeaderService){\r\n        this.categorySelected = false;\r\n    }\r\n\r\n    public drop(event: CdkDragDrop<string[]>): void {\r\n        moveItemInArray(this.searchTabs, event.previousIndex, event.currentIndex);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Search');\r\n        this.headerService.setAppIcon('search');\r\n    }\r\n\r\n    public reOrderMode(): void {\r\n        this.reOrderModeActivated = !this.reOrderModeActivated;\r\n    }\r\n\r\n    public onTabClicked(category: string): void {\r\n        this.searchCategory = category;\r\n        this.categorySelected = true;\r\n    }\r\n\r\n    public toggleFilterBar(): void {\r\n        this.filterBarActive = !this.filterBarActive;\r\n    }\r\n\r\n    public clearResults(): void {\r\n       this.categorySelected = false;\r\n    }\r\n\r\n    public onToggleTabActive(category: string): boolean {\r\n        return this.searchCategory === category\r\n    }\r\n\r\n    public trackByFn(_: number, {title}: MenuTab): string {\r\n        return title;\r\n    }\r\n}\r\n",
+            "sourceCode": "import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';\r\nimport { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';\r\nimport { HeaderService } from '../services/header.service';\r\nimport { MenuTab } from './models/menu-tab.model';\r\nimport { SearchResult } from './models/search-result.model';\r\nimport { DEFAULT_SEARCH_MENU_STATE } from './models/search-results-state';\r\n\r\n@Component({\r\n  selector: 'lib-search',\r\n  templateUrl: './search.component.html',\r\n  styleUrls: ['./search.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchComponent implements OnInit {\r\n\r\n    public searchItemsArray: SearchResult[] = [];\r\n    public searchItem: SearchResult = {category: '', title: '', description: ''};\r\n    public searchCategory = '';\r\n    public showContent = false;\r\n    public searchTabs: MenuTab[] = DEFAULT_SEARCH_MENU_STATE.menuTabs;\r\n    public categorySelected = true;\r\n    public reOrderModeActivated = false;\r\n    public filterBarActive = false;\r\n    public items = [\r\n        {title: 'Lorem ipsum', checked: 'checked'},\r\n        {title: 'Ipsum sit amet', checked: ''},\r\n        {title: 'Amet lorem', checked: ''},\r\n        {title: 'Lorem ipsum sit', checked: 'checked'},\r\n        {title: 'Lorem ipsum amet', checked: 'checked'}\r\n    ];\r\n\r\n    constructor(private headerService: HeaderService){\r\n        this.categorySelected = false;\r\n    }\r\n\r\n    public drop(event: CdkDragDrop<string[]>): void {\r\n        moveItemInArray(this.searchTabs, event.previousIndex, event.currentIndex);\r\n    }\r\n\r\n    public ngOnInit(): void {\r\n        this.headerService.setTitle('Search');\r\n        this.headerService.setAppIcon('search');\r\n    }\r\n\r\n    public reOrderMode(): void {\r\n        this.reOrderModeActivated = !this.reOrderModeActivated;\r\n    }\r\n\r\n    public onTabClicked(category: string): void {\r\n        this.searchCategory = category;\r\n        this.categorySelected = true;\r\n    }\r\n\r\n    public toggleFilterBar(): void {\r\n        this.filterBarActive = !this.filterBarActive;\r\n    }\r\n\r\n    public clearResults(): void {\r\n       this.categorySelected = false;\r\n    }\r\n\r\n    public onToggleTabActive(category: string): boolean {\r\n        return this.searchCategory === category;\r\n    }\r\n\r\n    public trackByFn(_: number, {title}: MenuTab): string {\r\n        return title;\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2633,11 +2636,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n    <div class=\"sidebar position-relative\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" icon='back' color='primary' mode=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" icon='up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' icon='filter2' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs; trackBy:trackByFn\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        [icon]=\"tab.icon\" \r\n                        [label]=\"tab.title\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            [icon]=\"tab.icon\" \r\n                            [label]=\"tab.title\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button label=\"Close\" color=\"primary\" class=\"margin-right-sm\" mode=\"basic\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button label=\"Save\" color=\"primary\" mode=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div class=\"sidebar2 position-relative\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        \r\n        <lib-uv-ui-app-side-bar *ngIf=\"filterBarActive\" mode=\"scroll\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" icon=\"close\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel mode=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n\r\n            <div bottom>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xxs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-type-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div class=\"content\">\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"grid\">\r\n    <div class=\"sidebar position-relative\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" icon='back' color='primary' mode=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" icon='up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' icon='filter2' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs; trackBy:trackByFn\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        [icon]=\"tab.icon\" \r\n                        [label]=\"tab.title\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            [icon]=\"tab.icon\" \r\n                            [label]=\"tab.title\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button label=\"Close\" color=\"primary\" class=\"margin-right-sm\" mode=\"basic\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button label=\"Save\" color=\"primary\" mode=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div class=\"sidebar2 position-relative\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        \r\n        <lib-uv-ui-app-side-bar *ngIf=\"filterBarActive\" mode=\"scroll\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" icon=\"close\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel mode=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n\r\n            <div bottom>\r\n\r\n                    <p class=\"bold uv-body margin-top-xxs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-body margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div class=\"content\">\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "SearchPanelComponent",
-            "id": "component-SearchPanelComponent-2332fdd8d1389d334c98f070ce93419e",
+            "id": "component-SearchPanelComponent-aa2283b463caca7586db9b2f2283d81e",
             "file": "projects/uv-ui-lib/src/lib/search-panel/search-panel.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2700,7 +2703,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-search-panel',\r\n    templateUrl: './search-panel.component.html',\r\n    styleUrls: ['./search-panel-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchPanelComponent {\r\n\r\n    @Output() readonly searchClicked = new EventEmitter<void>();\r\n    @Input() public mode: 'basic' | 'full' = 'basic';\r\n\r\n    public onSearch() {\r\n        this.searchClicked.emit();\r\n    }\r\n\r\n    public get classes(): string[] {\r\n        return [ this.mode ];\r\n    }\r\n\r\n    public getMode(): string {\r\n\r\n        return this.mode === 'full' ? 'full-search-field' : '';\r\n    }\r\n\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-search-panel',\r\n    templateUrl: './search-panel.component.html',\r\n    styleUrls: ['./search-panel-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class SearchPanelComponent {\r\n\r\n    @Output() public readonly searchClicked = new EventEmitter<void>();\r\n    @Input() public mode: 'basic' | 'full' = 'basic';\r\n\r\n    public onSearch(): void {\r\n        this.searchClicked.emit();\r\n    }\r\n\r\n    public get classes(): string[] {\r\n        return [ this.mode ];\r\n    }\r\n\r\n    public getMode(): string {\r\n\r\n        return this.mode === 'full' ? 'full-search-field' : '';\r\n    }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2791,7 +2794,7 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"documents box flex\">\r\n    <div class=\"heading-container flex justify-content-space-between\">\r\n    <p class=\"heading-3\">{{category}}</p>\r\n    <span class=\"chip\">{{searchResults.length}}</span>\r\n</div>\r\n    \r\n<div class=\"divider\"></div>\r\n    \r\n<div class=\"content-container\">\r\n    <div class=\"margin-bottom-md\" *ngFor=\"let item of searchResults | filterResults: category\">\r\n        <p class=\"heading-5\">{{item.title}}</p>\r\n        <p class=\"uv-type-body\">{{item.description}}</p>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"documents box flex\">\r\n    <div class=\"heading-container flex justify-content-space-between\">\r\n    <p class=\"heading-3\">{{category}}</p>\r\n    <span class=\"chip\">{{searchResults.length}}</span>\r\n</div>\r\n    \r\n<div class=\"divider\"></div>\r\n    \r\n<div class=\"content-container\">\r\n    <div class=\"margin-bottom-md\" *ngFor=\"let item of searchResults | filterResults: category\">\r\n        <p class=\"heading-5\">{{item.title}}</p>\r\n        <p class=\"uv-body\">{{item.description}}</p>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "SettingsComponent",
@@ -3215,7 +3218,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/styles';\r\n@import '../scss/variables';\r\n\r\n.btn-svg {\r\n    &,\r\n    &:link,\r\n    &:visited {\r\n        font-family: $font-family;\r\n        font-weight: $font-bold;\r\n        text-decoration: none;\r\n        display: inline-block;\r\n        border-radius: 8px;\r\n        border: none;\r\n        cursor: pointer;\r\n        background-color: transparent;\r\n    }\r\n\r\n    &:active,\r\n    &:focus {\r\n        outline: none;\r\n    }\r\n\r\n    svg {\r\n        cursor: pointer;\r\n        width: $sm-size;\r\n        height: $sm-size;\r\n        vertical-align: middle;\r\n    \r\n        &-xs {\r\n            width: $xs-size;\r\n            height: $xs-size;\r\n        }\r\n    }\r\n}\r\n\r\n.small svg {\r\n    width: $sm-size;\r\n    height: $sm-size;\r\n}\r\n\r\n.xs svg {\r\n    width: $xs-size;\r\n    height: $xs-size;\r\n}\r\n\r\n.xxs svg {\r\n    width: $xxs-size;\r\n    height: $xxs-size;\r\n}\r\n\r\n.gray {\r\n    color: $color-gray-light-3;\r\n    \r\n    &:hover {\r\n        color: $color-blue;\r\n    }\r\n}\r\n\r\n.blue {\r\n    color: $color-blue;\r\n}\r\n",
+                    "data": "@import '../scss/styles';\r\n@import '../scss/variables';\r\n\r\n.btn-svg {\r\n    &,\r\n    &:link,\r\n    &:visited {\r\n        font-family: $font-family;\r\n        font-weight: $font-bold;\r\n        text-decoration: none;\r\n        display: inline-block;\r\n        border-radius: 8px;\r\n        border: none;\r\n        cursor: pointer;\r\n        background-color: transparent;\r\n    }\r\n\r\n    &:active,\r\n    &:focus {\r\n        outline: none;\r\n    }\r\n\r\n    svg {\r\n        cursor: pointer;\r\n        width: $sm-size;\r\n        height: $sm-size;\r\n        vertical-align: middle;\r\n    \r\n        &-xs {\r\n            width: $xs-size;\r\n            height: $xs-size;\r\n        }\r\n    }\r\n}\r\n\r\n.small svg {\r\n    width: $sm-size;\r\n    height: $sm-size;\r\n}\r\n\r\n.xs svg {\r\n    width: $xs-size;\r\n    height: $xs-size;\r\n}\r\n\r\n.xxs svg {\r\n    width: $xxs-size;\r\n    height: $xxs-size;\r\n}\r\n\r\n.gray {\r\n    color: $color-gray-light-3;\r\n    \r\n    &:hover {\r\n        color: $uv-color-primary;\r\n    }\r\n}\r\n\r\n.blue {\r\n    color: $uv-color-primary;\r\n}\r\n",
                     "styleUrl": "./svg-button.component.scss"
                 }
             ],
@@ -3291,7 +3294,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n\r\n.tab {\r\n    padding: 14px 24px;\r\n    background-color: white;\r\n\r\n    &:hover {\r\n        cursor: pointer;\r\n        color: $color-blue;\r\n        font-weight: bold;\r\n        background-color: $color-gray-light-5;\r\n        box-shadow: inset -4px 0 0 $color-blue;\r\n            a, svg, span {\r\n                color: $color-blue;\r\n            }\r\n    }\r\n}\r\n\r\n.disabled {\r\n    color: $color-gray-light;\r\n    pointer-events: none;\r\n    cursor: not-allowed;\r\n    a, svg, span {\r\n        color: $color-gray-light;\r\n        pointer-events: none;\r\n    }\r\n    &:hover {\r\n        cursor: not-allowed;\r\n        color: $color-gray-light;\r\n        font-weight: none;\r\n        background-color: white;\r\n        box-shadow: none;\r\n        pointer-events: none;\r\n        a, svg, span {\r\n            color: $color-gray-light;\r\n            pointer-events: none;\r\n        }\r\n    }\r\n}\r\n\r\n.active {\r\n    color: $color-blue;\r\n        font-weight: bold;\r\n        background-color: $color-gray-light-5;\r\n        box-shadow: inset -4px 0 0 $color-blue;\r\n            a, svg, span {\r\n                color: $color-blue;\r\n            }\r\n}\r\n\r\n.position {\r\n    top: 4px;\r\n}\r\n\r\n.reorder-mode {\r\n    border-bottom: 1px solid $color-gray-light;\r\n    background-color: white;\r\n    &:hover {\r\n        cursor: move;\r\n        border: 1px solid $color-gray-light;\r\n    }\r\n    &:active:hover{\r\n        border: 1px solid $color-gray-light;\r\n    }\r\n}\r\n\r\n.cdk-drag {\r\n    box-sizing: border-box;\r\n    border-radius: 4px;\r\n    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),\r\n                0 8px 10px 1px rgba(0, 0, 0, 0.14),\r\n                0 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n}\r\n",
+                    "data": "@import '../scss/variables';\r\n\r\n.tab {\r\n    padding: 14px 24px;\r\n    background-color: white;\r\n\r\n    &:hover {\r\n        cursor: pointer;\r\n        color: $uv-color-primary;\r\n        font-weight: bold;\r\n        background-color: $color-gray-light-5;\r\n        box-shadow: inset -4px 0 0 $uv-color-primary;\r\n            a, svg, span {\r\n                color: $uv-color-primary;\r\n            }\r\n    }\r\n}\r\n\r\n.disabled {\r\n    color: $color-gray-light;\r\n    pointer-events: none;\r\n    cursor: not-allowed;\r\n    a, svg, span {\r\n        color: $color-gray-light;\r\n        pointer-events: none;\r\n    }\r\n    &:hover {\r\n        cursor: not-allowed;\r\n        color: $color-gray-light;\r\n        font-weight: none;\r\n        background-color: white;\r\n        box-shadow: none;\r\n        pointer-events: none;\r\n        a, svg, span {\r\n            color: $color-gray-light;\r\n            pointer-events: none;\r\n        }\r\n    }\r\n}\r\n\r\n.active {\r\n    color: $uv-color-primary;\r\n        font-weight: bold;\r\n        background-color: $color-gray-light-5;\r\n        box-shadow: inset -4px 0 0 $uv-color-primary;\r\n            a, svg, span {\r\n                color: $uv-color-primary;\r\n            }\r\n}\r\n\r\n.position {\r\n    top: 4px;\r\n}\r\n\r\n.reorder-mode {\r\n    border-bottom: 1px solid $color-gray-light;\r\n    background-color: white;\r\n    &:hover {\r\n        cursor: move;\r\n        border: 1px solid $color-gray-light;\r\n    }\r\n    &:active:hover{\r\n        border: 1px solid $color-gray-light;\r\n    }\r\n}\r\n\r\n.cdk-drag {\r\n    box-sizing: border-box;\r\n    border-radius: 4px;\r\n    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),\r\n                0 8px 10px 1px rgba(0, 0, 0, 0.14),\r\n                0 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n}\r\n",
                     "styleUrl": "./tab.component.scss"
                 }
             ],
@@ -3382,7 +3385,7 @@
         {
             "name": "UvUiButtonComponent",
             "id": "component-UvUiButtonComponent-3445dc3244748d08eeadc081354a077a",
-            "file": "projects/uv-ui-components/src/lib/uv-ui-button/uv-ui-button.component.ts",
+            "file": "projects/uv-ui-lib/src/lib/uv-ui-button/uv-ui-button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
@@ -3487,7 +3490,7 @@
         {
             "name": "UvUiButtonComponent",
             "id": "component-UvUiButtonComponent-3445dc3244748d08eeadc081354a077a-1",
-            "file": "projects/uv-ui-lib/src/lib/uv-ui-button/uv-ui-button.component.ts",
+            "file": "projects/uv-ui-components/src/lib/uv-ui-button/uv-ui-button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
@@ -4706,7 +4709,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-components/src/test.ts",
+                "file": "projects/uv-ui-lib/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -4714,7 +4717,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
+                "file": "projects/uv-ui-components/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -4746,7 +4749,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4754,7 +4757,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4876,7 +4879,7 @@
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/register-icon/icon-set.ts",
                 "type": "",
-                "defaultValue": "[\r\n    {\r\n\t\tname: 'apps-gwu',\r\n\t\turl: 'apps-gwu.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-quad',\r\n\t\turl: 'apps-quad.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-sbs',\r\n\t\turl: 'apps-sbs.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-sbs-gradient',\r\n\t\turl: 'gradient/apps-sbs-gradient.svg'\r\n\t},\r\n    {\r\n\t\tname: 'uv-logo2',\r\n\t\turl: 'gradient/uv-logo.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-settings',\r\n\t\turl: 'apps-settings.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-settings-gradient',\r\n\t\turl: 'gradient/apps-settings-gradient.svg'\r\n\t},\r\n    {\r\n\t\tname: 'arrow_expand',\r\n\t\turl: 'system/Arrow expand.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'arrow_collapse',\r\n\t\turl: 'system/Arrow collapse.svg'\r\n\t},\r\n    {\r\n        name: 'back',\r\n        url: 'back-arrow.svg'\r\n    },\r\n\t{\r\n\t\tname: 'checked',\r\n\t\turl: 'entity_state/Checked.svg'\r\n\t},\r\n    {\r\n\t\tname: 'clock',\r\n\t\turl: 'clock.svg'\r\n\t},\r\n    {\r\n\t\tname: 'close',\r\n\t\turl: 'system/Close.svg'\r\n\t},\r\n    {\r\n\t\tname: 'compare',\r\n\t\turl: 'system/Compare.svg'\r\n\t},\r\n    {\r\n\t\tname: 'copy',\r\n\t\turl: 'system/Copy.svg'\r\n\t},\r\n    {\r\n\t\tname: 'digital_view',\r\n\t\turl: 'system/Degital view.svg'\r\n\t},\r\n    {\r\n\t\tname: 'document',\r\n\t\turl: 'document.svg'\r\n\t},\r\n    {\r\n\t\tname: 'document_view',\r\n\t\turl: 'system/Document view.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'double_checked',\r\n\t\turl: 'entity_state/Double checked New.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'empty',\r\n\t\turl: 'entity_state/Empty.svg'\r\n\t},\r\n    {\r\n\t\tname: 'expand',\r\n\t\turl: 'system/Expand.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'filter',\r\n\t\turl: 'system/Filter.svg'\r\n\t},\r\n    {\r\n        name: 'filter2',\r\n        url: 'filter.svg'\r\n    },\r\n    {\r\n        name: 'fullscreen',\r\n        url: 'fullscreen.svg'\r\n    },\r\n    {\r\n\t\tname: 'apps-settings-gradient',\r\n\t\turl: 'gradient/apps-settings-gradient.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'link',\r\n\t\turl: 'entity_state/Link.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'menu',\r\n\t\turl: 'system/Menu.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'more_dots',\r\n\t\turl: 'system/More dots.svg'\r\n\t},\r\n    {\r\n\t\tname: 'parts',\r\n\t\turl: 'parts.svg'\r\n\t},\r\n    {\r\n\t\tname: 'profile',\r\n\t\turl: 'profile.svg'\r\n\t},\r\n    {\r\n\t\tname: 'reorder',\r\n\t\turl: 'reorder.svg'\r\n\t},\r\n    {\r\n\t\tname: 'search',\r\n\t\turl: 'search.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'settings',\r\n\t\turl: 'system/Settings.svg'\r\n\t},\r\n    {\r\n\t\tname: 'unlink',\r\n\t\turl: 'entity_state/Unlink New.svg'\r\n\t},\r\n    {\r\n\t\tname: 'unlink_alt',\r\n\t\turl: 'system/Unlink alt.svg'\r\n\t},\r\n    {\r\n        name: 'up-down-arrows',\r\n        url: 'up-down-arrows.svg'\r\n    },\r\n    {\r\n        name: 'uv-logo',\r\n        url: 'uv-logo.svg'\r\n    },\r\n\r\n] as const"
+                "defaultValue": "[\r\n    {\r\n\t\tname: 'apps-gwu',\r\n\t\turl: 'apps-gwu.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-quad',\r\n\t\turl: 'apps-quad.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-sbs',\r\n\t\turl: 'apps-sbs.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-sbs-gradient',\r\n\t\turl: 'gradient/apps-sbs-gradient.svg'\r\n\t},\r\n    {\r\n\t\tname: 'uv-logo2',\r\n\t\turl: 'gradient/uv-logo.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-settings',\r\n\t\turl: 'apps-settings.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-settings-gradient',\r\n\t\turl: 'gradient/apps-settings-gradient.svg'\r\n\t},\r\n    {\r\n\t\tname: 'arrow_expand',\r\n\t\turl: 'system/Arrow expand.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'arrow_collapse',\r\n\t\turl: 'system/Arrow collapse.svg'\r\n\t},\r\n    {\r\n        name: 'back',\r\n        url: 'back-arrow.svg'\r\n    },\r\n\t{\r\n\t\tname: 'checked',\r\n\t\turl: 'entity_state/Checked.svg'\r\n\t},\r\n    {\r\n\t\tname: 'clock',\r\n\t\turl: 'clock.svg'\r\n\t},\r\n    {\r\n\t\tname: 'close',\r\n\t\turl: 'system/Close.svg'\r\n\t},\r\n    {\r\n\t\tname: 'compare',\r\n\t\turl: 'system/Compare.svg'\r\n\t},\r\n    {\r\n\t\tname: 'copy',\r\n\t\turl: 'system/Copy.svg'\r\n\t},\r\n    {\r\n\t\tname: 'digital_view',\r\n\t\turl: 'system/Degital view.svg'\r\n\t},\r\n    {\r\n\t\tname: 'document',\r\n\t\turl: 'document.svg'\r\n\t},\r\n    {\r\n\t\tname: 'document_view',\r\n\t\turl: 'system/Document view.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'double_checked',\r\n\t\turl: 'entity_state/Double checked New.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'empty',\r\n\t\turl: 'entity_state/Empty.svg'\r\n\t},\r\n    {\r\n\t\tname: 'expand',\r\n\t\turl: 'system/Expand.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'filter',\r\n\t\turl: 'system/Filter.svg'\r\n\t},\r\n    {\r\n        name: 'filter2',\r\n        url: 'filter.svg'\r\n    },\r\n    {\r\n        name: 'fullscreen',\r\n        url: 'fullscreen.svg'\r\n    },\r\n    {\r\n\t\tname: 'apps-settings-gradient',\r\n\t\turl: 'gradient/apps-settings-gradient.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'link',\r\n\t\turl: 'entity_state/Link.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'menu',\r\n\t\turl: 'system/Menu.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'more_dots',\r\n\t\turl: 'system/More dots.svg'\r\n\t},\r\n    {\r\n\t\tname: 'parts',\r\n\t\turl: 'parts.svg'\r\n\t},\r\n    {\r\n\t\tname: 'profile',\r\n\t\turl: 'profile.svg'\r\n\t},\r\n    {\r\n\t\tname: 'reorder',\r\n\t\turl: 'reorder.svg'\r\n\t},\r\n    {\r\n\t\tname: 'search',\r\n\t\turl: 'search.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'settings',\r\n\t\turl: 'system/Settings.svg'\r\n\t},\r\n    {\r\n\t\tname: 'unlink',\r\n\t\turl: 'entity_state/Unlink New.svg'\r\n\t},\r\n    {\r\n\t\tname: 'unlink_alt',\r\n\t\turl: 'system/Unlink alt.svg'\r\n\t},\r\n    {\r\n        name: 'up-down-arrows',\r\n        url: 'up-down-arrows.svg'\r\n    },\r\n    {\r\n        name: 'uv-logo',\r\n        url: 'uv-logo.svg'\r\n    }\r\n] as const"
             },
             {
                 "name": "navItems",
@@ -4906,14 +4909,14 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-components/src/test.ts",
+                "file": "projects/uv-ui-lib/src/test.ts",
                 "type": "literal type"
             },
             {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
+                "file": "projects/uv-ui-components/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -4967,17 +4970,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
-                "type": "Story<DropdownButtonComponent>",
-                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                "type": "Story<DropdownButtonComponent>",
+                "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -5154,23 +5157,6 @@
                     "defaultValue": "[\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  }\r\n]"
                 }
             ],
-            "projects/uv-ui-components/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-components/src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-components/src/test.ts",
-                    "type": "literal type"
-                }
-            ],
             "projects/uv-ui-lib/src/test.ts": [
                 {
                     "name": "context",
@@ -5185,6 +5171,23 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/uv-ui-components/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-components/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-components/src/test.ts",
                     "type": "literal type"
                 }
             ],
@@ -5223,24 +5226,6 @@
                     "defaultValue": "(args: ActionBarComponent) => ({\r\n    component: ActionBarComponent,\r\n    props: args,\r\n    template: `\r\n    <lib-uv-ui-action-bar>\r\n        <div left>\r\n            ${args.leftContent}\r\n        </div>\r\n        <div right>\r\n        ${args.rightContent}\r\n        </div>\r\n    </lib-uv-ui-action-bar>`\r\n})"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
-                    "type": "Story<DropdownButtonComponent>",
-                    "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args\r\n})"
-                }
-            ],
             "projects/uv-ui-lib/src/lib/header/header.stories.ts": [
                 {
                     "name": "Default",
@@ -5257,6 +5242,24 @@
                     "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
                     "type": "Story<HeaderComponent>",
                     "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
+                    "type": "Story<DropdownButtonComponent>",
+                    "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
@@ -5466,7 +5469,7 @@
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/lib/register-icon/icon-set.ts",
                     "type": "",
-                    "defaultValue": "[\r\n    {\r\n\t\tname: 'apps-gwu',\r\n\t\turl: 'apps-gwu.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-quad',\r\n\t\turl: 'apps-quad.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-sbs',\r\n\t\turl: 'apps-sbs.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-sbs-gradient',\r\n\t\turl: 'gradient/apps-sbs-gradient.svg'\r\n\t},\r\n    {\r\n\t\tname: 'uv-logo2',\r\n\t\turl: 'gradient/uv-logo.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-settings',\r\n\t\turl: 'apps-settings.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-settings-gradient',\r\n\t\turl: 'gradient/apps-settings-gradient.svg'\r\n\t},\r\n    {\r\n\t\tname: 'arrow_expand',\r\n\t\turl: 'system/Arrow expand.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'arrow_collapse',\r\n\t\turl: 'system/Arrow collapse.svg'\r\n\t},\r\n    {\r\n        name: 'back',\r\n        url: 'back-arrow.svg'\r\n    },\r\n\t{\r\n\t\tname: 'checked',\r\n\t\turl: 'entity_state/Checked.svg'\r\n\t},\r\n    {\r\n\t\tname: 'clock',\r\n\t\turl: 'clock.svg'\r\n\t},\r\n    {\r\n\t\tname: 'close',\r\n\t\turl: 'system/Close.svg'\r\n\t},\r\n    {\r\n\t\tname: 'compare',\r\n\t\turl: 'system/Compare.svg'\r\n\t},\r\n    {\r\n\t\tname: 'copy',\r\n\t\turl: 'system/Copy.svg'\r\n\t},\r\n    {\r\n\t\tname: 'digital_view',\r\n\t\turl: 'system/Degital view.svg'\r\n\t},\r\n    {\r\n\t\tname: 'document',\r\n\t\turl: 'document.svg'\r\n\t},\r\n    {\r\n\t\tname: 'document_view',\r\n\t\turl: 'system/Document view.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'double_checked',\r\n\t\turl: 'entity_state/Double checked New.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'empty',\r\n\t\turl: 'entity_state/Empty.svg'\r\n\t},\r\n    {\r\n\t\tname: 'expand',\r\n\t\turl: 'system/Expand.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'filter',\r\n\t\turl: 'system/Filter.svg'\r\n\t},\r\n    {\r\n        name: 'filter2',\r\n        url: 'filter.svg'\r\n    },\r\n    {\r\n        name: 'fullscreen',\r\n        url: 'fullscreen.svg'\r\n    },\r\n    {\r\n\t\tname: 'apps-settings-gradient',\r\n\t\turl: 'gradient/apps-settings-gradient.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'link',\r\n\t\turl: 'entity_state/Link.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'menu',\r\n\t\turl: 'system/Menu.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'more_dots',\r\n\t\turl: 'system/More dots.svg'\r\n\t},\r\n    {\r\n\t\tname: 'parts',\r\n\t\turl: 'parts.svg'\r\n\t},\r\n    {\r\n\t\tname: 'profile',\r\n\t\turl: 'profile.svg'\r\n\t},\r\n    {\r\n\t\tname: 'reorder',\r\n\t\turl: 'reorder.svg'\r\n\t},\r\n    {\r\n\t\tname: 'search',\r\n\t\turl: 'search.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'settings',\r\n\t\turl: 'system/Settings.svg'\r\n\t},\r\n    {\r\n\t\tname: 'unlink',\r\n\t\turl: 'entity_state/Unlink New.svg'\r\n\t},\r\n    {\r\n\t\tname: 'unlink_alt',\r\n\t\turl: 'system/Unlink alt.svg'\r\n\t},\r\n    {\r\n        name: 'up-down-arrows',\r\n        url: 'up-down-arrows.svg'\r\n    },\r\n    {\r\n        name: 'uv-logo',\r\n        url: 'uv-logo.svg'\r\n    },\r\n\r\n] as const"
+                    "defaultValue": "[\r\n    {\r\n\t\tname: 'apps-gwu',\r\n\t\turl: 'apps-gwu.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-quad',\r\n\t\turl: 'apps-quad.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-sbs',\r\n\t\turl: 'apps-sbs.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-sbs-gradient',\r\n\t\turl: 'gradient/apps-sbs-gradient.svg'\r\n\t},\r\n    {\r\n\t\tname: 'uv-logo2',\r\n\t\turl: 'gradient/uv-logo.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-settings',\r\n\t\turl: 'apps-settings.svg'\r\n\t},\r\n    {\r\n\t\tname: 'apps-settings-gradient',\r\n\t\turl: 'gradient/apps-settings-gradient.svg'\r\n\t},\r\n    {\r\n\t\tname: 'arrow_expand',\r\n\t\turl: 'system/Arrow expand.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'arrow_collapse',\r\n\t\turl: 'system/Arrow collapse.svg'\r\n\t},\r\n    {\r\n        name: 'back',\r\n        url: 'back-arrow.svg'\r\n    },\r\n\t{\r\n\t\tname: 'checked',\r\n\t\turl: 'entity_state/Checked.svg'\r\n\t},\r\n    {\r\n\t\tname: 'clock',\r\n\t\turl: 'clock.svg'\r\n\t},\r\n    {\r\n\t\tname: 'close',\r\n\t\turl: 'system/Close.svg'\r\n\t},\r\n    {\r\n\t\tname: 'compare',\r\n\t\turl: 'system/Compare.svg'\r\n\t},\r\n    {\r\n\t\tname: 'copy',\r\n\t\turl: 'system/Copy.svg'\r\n\t},\r\n    {\r\n\t\tname: 'digital_view',\r\n\t\turl: 'system/Degital view.svg'\r\n\t},\r\n    {\r\n\t\tname: 'document',\r\n\t\turl: 'document.svg'\r\n\t},\r\n    {\r\n\t\tname: 'document_view',\r\n\t\turl: 'system/Document view.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'double_checked',\r\n\t\turl: 'entity_state/Double checked New.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'empty',\r\n\t\turl: 'entity_state/Empty.svg'\r\n\t},\r\n    {\r\n\t\tname: 'expand',\r\n\t\turl: 'system/Expand.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'filter',\r\n\t\turl: 'system/Filter.svg'\r\n\t},\r\n    {\r\n        name: 'filter2',\r\n        url: 'filter.svg'\r\n    },\r\n    {\r\n        name: 'fullscreen',\r\n        url: 'fullscreen.svg'\r\n    },\r\n    {\r\n\t\tname: 'apps-settings-gradient',\r\n\t\turl: 'gradient/apps-settings-gradient.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'link',\r\n\t\turl: 'entity_state/Link.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'menu',\r\n\t\turl: 'system/Menu.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'more_dots',\r\n\t\turl: 'system/More dots.svg'\r\n\t},\r\n    {\r\n\t\tname: 'parts',\r\n\t\turl: 'parts.svg'\r\n\t},\r\n    {\r\n\t\tname: 'profile',\r\n\t\turl: 'profile.svg'\r\n\t},\r\n    {\r\n\t\tname: 'reorder',\r\n\t\turl: 'reorder.svg'\r\n\t},\r\n    {\r\n\t\tname: 'search',\r\n\t\turl: 'search.svg'\r\n\t},\r\n\t{\r\n\t\tname: 'settings',\r\n\t\turl: 'system/Settings.svg'\r\n\t},\r\n    {\r\n\t\tname: 'unlink',\r\n\t\turl: 'entity_state/Unlink New.svg'\r\n\t},\r\n    {\r\n\t\tname: 'unlink_alt',\r\n\t\turl: 'system/Unlink alt.svg'\r\n\t},\r\n    {\r\n        name: 'up-down-arrows',\r\n        url: 'up-down-arrows.svg'\r\n    },\r\n    {\r\n        name: 'uv-logo',\r\n        url: 'uv-logo.svg'\r\n    }\r\n] as const"
                 }
             ],
             "projects/uv-ui-prototype/src/app/layouts/main/navItems.ts": [
