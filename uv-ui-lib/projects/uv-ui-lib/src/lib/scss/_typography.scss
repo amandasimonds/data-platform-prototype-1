@@ -1,6 +1,6 @@
 body, p {
     font-family: $font-family;
-    color: $default-text-color-black;
+    color: var(--uv-font-color);
     font-size: inherit;
     line-height: 20px;
 }
@@ -65,7 +65,7 @@ a:active,
 a:visited {
     font-size: $font-size-sm;
     font-weight: $font-bold;
-    color: $uv-color-primary;
+    color: var(--uv-color-primary);
 }
 
 .chip-date {

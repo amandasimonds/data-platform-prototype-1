@@ -52,10 +52,10 @@
     color: $color-gray-light-3;
     
     &:hover {
-        color: $uv-color-primary;
+        color: var(--uv-color-primary);
     }
 }
 
 .blue {
-    color: $uv-color-primary;
+    color: var(--uv-color-primary);
 }

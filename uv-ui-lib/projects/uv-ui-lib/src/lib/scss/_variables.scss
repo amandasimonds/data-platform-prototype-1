@@ -12,14 +12,14 @@
 
 :root {
     --uv-color-primary: var(--uv-color-blue);
+    --uv-font-color: var(--uv-color-black);
     --uv-color-blue: #00A3E5;
     --uv-color-white: #ffffff;
-    --uv-color-black: black;
+    --uv-color-black: #0D0C22;
     --uv-background-color: #f1f1f1;
 }
 
 //colors
-$uv-color-primary: var(--uv-color-blue);
 $color-gray: #7D7D7D;
 $color-gray-light: #d7dfeb;
 $color-gray-light-2: #B1B1B1;
@@ -33,7 +33,6 @@ $scrollbar-color: $color-gray-light-7;
 
 //typography
 $font-family: 'Noto Sans', sans-serif !default;
-$default-text-color-black: #0D0C22;
 $highlight-text-color-gray: #EAF1FE;
 $font-bold: 700 !default;
 $font-size-xs: 12px;
