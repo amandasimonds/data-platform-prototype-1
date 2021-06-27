@@ -1,6 +1,7 @@
 @import "./variables";
 @import "./typography";
 @import "./utils";
+@import './grid';
 
 //base
 * {
@@ -110,12 +111,12 @@ svg {
 
     &:hover {
         cursor: pointer;
-        color: $color-blue;
+        color: $uv-color-primary;
         font-weight: bold;
         background-color: $color-gray-light-5;
-        box-shadow: inset -4px 0 0 $color-blue;
+        box-shadow: inset -4px 0 0 $uv-color-primary;
             a, svg, span {
-                color: $color-blue;
+                color: $uv-color-primary;
             }
     }
 }
@@ -129,7 +130,7 @@ svg {
     font-size: $font-size-sm;
 
     &:hover {
-        color: $color-blue;
+        color: $uv-color-primary;
     }
 }
 

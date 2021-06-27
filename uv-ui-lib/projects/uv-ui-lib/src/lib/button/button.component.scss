@@ -13,7 +13,7 @@
     line-height: 20px;
     font-weight: $font-bold;
     background-color: transparent;
-    color: $color-blue;
+    color: $uv-color-primary;
 
     &.disabled {
         color: $color-gray;
@@ -28,7 +28,7 @@
     height: 40px;
     padding: 0 25px;
     color: white;
-    background-color: $color-blue;
+    background-color: $uv-color-primary;
     border: 0;
 
     &.disabled {
@@ -51,7 +51,7 @@
     &-large{
         width: 57px;
         height: 57px;
-        color: $color-blue;
+        color: $uv-color-primary;
         font-weight: bold;
         font-size: 24px;
         text-align:center;
@@ -74,7 +74,7 @@
 }
 
 .btn-add-task {
-    color: $color-blue;
+    color: $uv-color-primary;
     font-size: 18px;
     padding: 6px;
     border: $border-gray-light;

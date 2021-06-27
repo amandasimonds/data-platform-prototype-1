@@ -1,5 +1,5 @@
-<div class="grid">
-    <div class="sidebar position-relative">     
+<div class="uv-grid">
+    <div class="col-2 sidebar-width-md">     
         <lib-uv-ui-app-side-bar>
 
             <div top>
@@ -56,9 +56,9 @@
         
     </div>
     
-    <div class="sidebar2 position-relative" [ngClass]="{ 'filter-bar-width' : filterBarActive }">
+    <div  *ngIf="filterBarActive" class="col-2" [ngClass]="{ 'filter-bar-width' : filterBarActive }">
         
-        <lib-uv-ui-app-side-bar *ngIf="filterBarActive" mode="scroll">
+        <lib-uv-ui-app-side-bar mode="scroll">
             <div top>
                 <div class="margin-bottom-sm flex justify-content-space-between" >
                     <p class="heading-4">Filters</p>
@@ -70,23 +70,23 @@
 
             <div bottom>
 
-                    <p class="bold uv-type-body margin-top-xxs margin-bottom-xxs">Discipline</p>
-                    <div *ngFor="let item of items" class="container">
+                    <p class="bold uv-body margin-top-xxs margin-bottom-xxs">Discipline</p>
+                    <div *ngFor="let item of items" class="item-container">
                         <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
                     </div>
 
-                    <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Category</p>
-                    <div *ngFor="let item of items" class="container">
+                    <p class="bold uv-body margin-top-xs margin-bottom-xxs">Category</p>
+                    <div *ngFor="let item of items" class="item-container">
                         <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
                     </div>
 
-                    <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Technology</p>
-                    <div *ngFor="let item of items" class="container">
+                    <p class="bold uv-body margin-top-xs margin-bottom-xxs">Technology</p>
+                    <div *ngFor="let item of items" class="item-container">
                         <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
                     </div>
 
-                    <p class="bold uv-type-body margin-top-xs margin-bottom-xxs">Technology</p>
-                    <div *ngFor="let item of items" class="container">
+                    <p class="bold uv-body margin-top-xs margin-bottom-xxs">Technology</p>
+                    <div *ngFor="let item of items" class="item-container">
                         <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
                     </div>
 
@@ -94,7 +94,7 @@
         </lib-uv-ui-app-side-bar>
     </div>
     
-    <div class="content">
+    <div [ngClass]="filterBarActive ? 'col-8' : 'col-10'" class="justify-content-center justify-items-center align-content-center align-items-center" >
         <app-search-results *ngIf="categorySelected" [category]="searchCategory"></app-search-results>
         <app-landing *ngIf="!categorySelected"></app-landing>
     </div>
