@@ -6,12 +6,12 @@
 
     &:hover {
         cursor: pointer;
-        color: $uv-color-primary;
+        color: var(--uv-color-primary);
         font-weight: bold;
         background-color: $color-gray-light-5;
-        box-shadow: inset -4px 0 0 $uv-color-primary;
+        box-shadow: inset -4px 0 0 var(--uv-color-primary);
             a, svg, span {
-                color: $uv-color-primary;
+                color: var(--uv-color-primary);
             }
     }
 }
@@ -39,12 +39,12 @@
 }
 
 .active {
-    color: $uv-color-primary;
+    color: var(--uv-color-primary);
         font-weight: bold;
         background-color: $color-gray-light-5;
-        box-shadow: inset -4px 0 0 $uv-color-primary;
+        box-shadow: inset -4px 0 0 var(--uv-color-primary);
             a, svg, span {
-                color: $uv-color-primary;
+                color: var(--uv-color-primary);
             }
 }
 
