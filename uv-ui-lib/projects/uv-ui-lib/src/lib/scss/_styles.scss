@@ -160,20 +160,6 @@ svg {
     width:100%;
 }
 
-ul, ol {
-    list-style-position:inside;
-}
-
-@media (max-width: 1700px) {
-    .search-panel {
-        width: 100%;
-    }
-
-    .search-panel__filters-container {
-        display: none;
-    }
-}
-
 
 
 
