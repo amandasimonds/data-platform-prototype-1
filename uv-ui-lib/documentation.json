@@ -1307,7 +1307,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n\r\n.button {\r\n    font-family: $font-family;\r\n    border: 0;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    line-height: 1;\r\n}\r\n\r\n.basic {\r\n    line-height: 20px;\r\n    font-weight: $font-bold;\r\n    background-color: transparent;\r\n    color: $uv-color-primary;\r\n\r\n    &.disabled {\r\n        color: $color-gray;\r\n        cursor: not-allowed;\r\n    }\r\n}\r\n\r\n.primary {\r\n    font-size: 14px;\r\n    line-height: 24px;\r\n    font-weight: $font-bold;\r\n    height: 40px;\r\n    padding: 0 25px;\r\n    color: white;\r\n    background-color: $uv-color-primary;\r\n    border: 0;\r\n\r\n    &.disabled {\r\n        color: $color-gray-light-7;\r\n        background-color: $color-gray-light-5;\r\n        font-family: $font-family;\r\n        font-weight: none;\r\n        cursor: not-allowed;\r\n    }\r\n}\r\n\r\n.round {\r\n    background-color: white;\r\n    width: 41px;\r\n    height: 41px;\r\n    padding: 10.5px;\r\n    border-radius: 100%;\r\n    border: $border-gray-light;\r\n\r\n    &-large{\r\n        width: 57px;\r\n        height: 57px;\r\n        color: $uv-color-primary;\r\n        font-weight: bold;\r\n        font-size: 24px;\r\n        text-align:center;\r\n    }\r\n}\r\n\r\n.position-svg {\r\n    width: 24px;\r\n    height: 24px;\r\n    vertical-align: middle;\r\n}\r\n\r\n.btn-chip {\r\n    color: $color-orange;\r\n    font-weight: bold;\r\n    letter-spacing: 0.2px;\r\n    line-height: 16px;\r\n    padding: 8px 13px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-add-task {\r\n    color: $uv-color-primary;\r\n    font-size: 18px;\r\n    padding: 6px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n",
+                    "data": "@import '../scss/variables';\r\n\r\n.button {\r\n    font-family: $font-family;\r\n    border: 0;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    line-height: 1;\r\n}\r\n\r\n.basic {\r\n    line-height: 20px;\r\n    font-weight: $font-bold;\r\n    background-color: transparent;\r\n    color: var(--uv-color-primary);\r\n\r\n    &.disabled {\r\n        color: $color-gray;\r\n        cursor: not-allowed;\r\n    }\r\n}\r\n\r\n.primary {\r\n    font-size: 14px;\r\n    line-height: 24px;\r\n    font-weight: $font-bold;\r\n    height: 40px;\r\n    padding: 0 25px;\r\n    color: white;\r\n    background-color: var(--uv-color-primary);\r\n    border: 0;\r\n\r\n    &.disabled {\r\n        color: $color-gray-light-7;\r\n        background-color: $color-gray-light-5;\r\n        font-family: $font-family;\r\n        font-weight: none;\r\n        cursor: not-allowed;\r\n    }\r\n}\r\n\r\n.round {\r\n    background-color: white;\r\n    width: 41px;\r\n    height: 41px;\r\n    padding: 10.5px;\r\n    border-radius: 100%;\r\n    border: $border-gray-light;\r\n\r\n    &-large{\r\n        width: 57px;\r\n        height: 57px;\r\n        color: var(--uv-color-primary);\r\n        font-weight: bold;\r\n        font-size: 24px;\r\n        text-align:center;\r\n    }\r\n}\r\n\r\n.position-svg {\r\n    width: 24px;\r\n    height: 24px;\r\n    vertical-align: middle;\r\n}\r\n\r\n.btn-chip {\r\n    color: $color-orange;\r\n    font-weight: bold;\r\n    letter-spacing: 0.2px;\r\n    line-height: 16px;\r\n    padding: 8px 13px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n.btn-add-task {\r\n    color: var(--uv-color-primary);\r\n    font-size: 18px;\r\n    padding: 6px;\r\n    border: $border-gray-light;\r\n}\r\n\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -1843,7 +1843,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!-- <div class=\"logo-splash-block\">\r\n\r\n    <img class=\"logo-splash-block__logo\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading margin-bottom-xs\">Welcome to Ultraviolet</p>\r\n    <p class=\"heading-4\">Let's get you started! Click on a module below so we can get you to the right place.</p>\r\n\r\n</div> -->\r\n\r\n<!-- <div class=\"section group\">\r\n<div class=\"col span_1_of_12\">hello</div>\r\n<div class=\"section\">section</div>\r\n</div> -->\r\n"
+            "templateData": "<!-- <div class=\"logo-splash-block\">\r\n\r\n    <img class=\"logo-splash-block__logo\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading margin-bottom-xs\">Welcome to Ultraviolet</p>\r\n    <p class=\"heading-4\">Let's get you started! Click on a module below so we can get you to the right place.</p>\r\n\r\n</div> -->\r\n\r\n<div class=\"section group\">\r\n<div class=\"col span_1_of_12\">hello</div>\r\n<div class=\"section\">section</div>\r\n</div>\r\n"
         },
         {
             "name": "ImageButtonComponent",
@@ -1922,7 +1922,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".search-landing { \r\n    position: relative;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n\r\n    &--logo {\r\n        display: block;\r\n        opacity: .3;\r\n        width: 123px;\r\n        height: 123px;\r\n        margin: 0 auto 30px auto;\r\n    }\r\n}\r\n",
+                    "data": ".search-landing { \r\n    position: relative;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    text-align: center;\r\n\r\n    &--logo {\r\n        opacity: .3;\r\n        width: 123px;\r\n        height: 123px;\r\n        margin: 0 auto 30px auto;\r\n    }\r\n}\r\n",
                     "styleUrl": "./landing.component.scss"
                 }
             ],
@@ -1998,7 +1998,7 @@
                     }
                 ]
             },
-            "templateData": "\r\n<div class=\"box flex flex-column align-items-center position-center padding-md\">\r\n\r\n    <img class=\"img-xl margin-bottom-sm\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading-3 margin-bottom-sm\">Welcome to UV</p>\r\n\r\n    <lib-uv-ui-button mode='primary' color='primary' label=\"Login\" (click)=\"login()\"></lib-uv-ui-button>\r\n\r\n</div>\r\n"
+            "templateData": "\r\n<div class=\"box flex flex-column align-items-center position-center padding-md\">\r\n\r\n    <img class=\"img-xl margin-bottom-sm\" src=\"http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg\">\r\n\r\n    <p class=\"heading-3 margin-bottom-sm\">Welcome to UV</p>\r\n\r\n    <lib-uv-ui-button mode='primary' color='primary' label=\"Login\" (click)=\"login()\"></lib-uv-ui-button>\r\n\r\n    <a href=\"#\">link</a>\r\n\r\n</div>\r\n"
         },
         {
             "name": "MainComponent",
@@ -2094,7 +2094,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".grid{\r\n    position: fixed;\r\n    height: 100vh;\r\n    width: 100vw;\r\n    display: grid;\r\n    grid-gap: 0;\r\n    grid-template-columns: [col1] 64px [col2] auto;\r\n    grid-template-rows: [row1] 64px [row2] auto;\r\n    grid-template-areas: \r\n    \"navbar header\"\r\n    \"navbar main\" ;\r\n}\r\n\r\n.header {\r\n    grid-column: col2;\r\n    grid-row: row1;\r\n}\r\n\r\n.navbar {\r\n    grid-column: col1;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n}\r\n\r\n.content {\r\n    grid-column: col2;\r\n    grid-row: row2;\r\n}\r\n\r\n",
+                    "data": "\r\n",
                     "styleUrl": "./main.component.scss"
                 }
             ],
@@ -2144,7 +2144,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"grid\">\r\n    <div class=\"header\">\r\n        <lib-uv-ui-header\r\n            [headerText]=\"title\"\r\n            [icon]=\"appIcon\">\r\n\r\n            <lib-uv-ui-search-panel mode=\"full\" *ngIf=\"checkifSearch\"></lib-uv-ui-search-panel>\r\n\r\n            <lib-uv-ui-svg-button color='blue' icon=\"profile\" class=\"margin-left-sm margin-right-sm\"></lib-uv-ui-svg-button>\r\n\r\n        </lib-uv-ui-header>\r\n    </div>\r\n\r\n    <div class=\"navbar\">\r\n        <lib-uv-ui-navbar [navlinks]=\"nav\"></lib-uv-ui-navbar>\r\n    </div>\r\n\r\n    <div class=\"content\">\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"uv-app-shell\">\r\n    <div class=\"grid-header\">\r\n        <lib-uv-ui-header\r\n            [headerText]=\"title\"\r\n            [icon]=\"appIcon\">\r\n\r\n            <lib-uv-ui-search-panel mode=\"full\" *ngIf=\"checkifSearch\"></lib-uv-ui-search-panel>\r\n\r\n            <lib-uv-ui-svg-button color='blue' icon=\"profile\" class=\"margin-left-sm margin-right-sm\"></lib-uv-ui-svg-button>\r\n\r\n        </lib-uv-ui-header>\r\n    </div>\r\n\r\n    <div class=\"navbar\">\r\n        <lib-uv-ui-navbar [navlinks]=\"nav\"></lib-uv-ui-navbar>\r\n    </div>\r\n\r\n    <div class=\"content\">\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "NavbarComponent",
@@ -2608,7 +2608,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".grid{\r\n    position: relative;\r\n    height: calc(100vh - 64px);\r\n    display: grid;\r\n    grid-template-rows: [row1] 68px [row2] auto;\r\n    grid-template-columns: [col1] 336px [col2] min-content [col3] auto;\r\n    grid-template-areas: \r\n    \"sidebar sidebar2 appbar\"\r\n    \"sidebar sidebar2 content\" ;\r\n}\r\n\r\n.sidebar {\r\n    grid-column: col1;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n    z-index: 150;\r\n}\r\n\r\n.sidebar2 {\r\n    grid-column: col2;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n}\r\n\r\n.appbar {\r\n    grid-row: row1;\r\n    padding: 20px;\r\n    border-top: none;\r\n    border-left: none;\r\n}\r\n\r\n.content {\r\n    grid-column: col3;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n    padding: 32px 32px 0 32px;\r\n    display: grid;\r\n    justify-content: center;\r\n}\r\n\r\nrouter-outlet {\r\n    grid-column: col2;\r\n    grid-row-start: row1;\r\n    grid-row-end: 3;\r\n}\r\n\r\n.filter-bar-width {\r\n    width: 288px;\r\n}\r\n\r\n.container {\r\n    margin: 8px 0;\r\n}\r\n",
+                    "data": "// .grid{\r\n//     position: relative;\r\n//     height: calc(100vh - 64px);\r\n//     display: grid;\r\n//     grid-template-rows: [row1] 68px [row2] auto;\r\n//     grid-template-columns: [col1] 336px [col2] min-content [col3] auto;\r\n//     grid-template-areas: \r\n//     \"sidebar sidebar2 appbar\"\r\n//     \"sidebar sidebar2 content\" ;\r\n// }\r\n\r\n// .sidebar {\r\n//     grid-column: col1;\r\n//     grid-row-start: row1;\r\n//     grid-row-end: 3;\r\n//     z-index: 150;\r\n// }\r\n\r\n// .sidebar2 {\r\n//     grid-column: col2;\r\n//     grid-row-start: row1;\r\n//     grid-row-end: 3;\r\n// }\r\n\r\n// .appbar {\r\n//     grid-row: row1;\r\n//     padding: 20px;\r\n//     border-top: none;\r\n//     border-left: none;\r\n// }\r\n\r\n// .content {\r\n//     grid-column: col3;\r\n//     grid-row-start: row1;\r\n//     grid-row-end: 3;\r\n//     padding: 32px 32px 0 32px;\r\n//     display: grid;\r\n//     justify-content: center;\r\n// }\r\n\r\n// router-outlet {\r\n//     grid-column: col2;\r\n//     grid-row-start: row1;\r\n//     grid-row-end: 3;\r\n// }\r\n\r\n// .filter-bar-width {\r\n//     width: 288px;\r\n// }\r\n\r\n.item-container {\r\n    margin: 8px 0;\r\n}\r\n",
                     "styleUrl": "./search.component.scss"
                 }
             ],
@@ -2636,7 +2636,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n    <div class=\"sidebar position-relative\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" icon='back' color='primary' mode=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" icon='up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' icon='filter2' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs; trackBy:trackByFn\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        [icon]=\"tab.icon\" \r\n                        [label]=\"tab.title\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            [icon]=\"tab.icon\" \r\n                            [label]=\"tab.title\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button label=\"Close\" color=\"primary\" class=\"margin-right-sm\" mode=\"basic\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button label=\"Save\" color=\"primary\" mode=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div class=\"sidebar2 position-relative\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        \r\n        <lib-uv-ui-app-side-bar *ngIf=\"filterBarActive\" mode=\"scroll\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" icon=\"close\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel mode=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n\r\n            <div bottom>\r\n\r\n                    <p class=\"bold uv-body margin-top-xxs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-body margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div class=\"content\">\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"uv-grid\">\r\n    <div class=\"col-2 sidebar-width-md\">     \r\n        <lib-uv-ui-app-side-bar>\r\n\r\n            <div top>\r\n                <div class=\"height-sm top-content flex justify-content-space-between margin-bottom-sm\">\r\n                    <div>\r\n                        <lib-uv-ui-button label=\"Back\" icon='back' color='primary' mode=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                    </div>\r\n                    <div>\r\n                        <lib-uv-ui-svg-button color='blue' class=\"margin-right-xs\" (click)=\"reOrderMode()\" icon='up-down-arrows'></lib-uv-ui-svg-button>\r\n                        <lib-uv-ui-svg-button color='blue' icon='filter2' (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                    </div>\r\n                </div>\r\n                <p class=\"heading-4 margin-bottom-xs\">Results</p>\r\n            </div>\r\n\r\n            <div bottom>\r\n                <div *ngIf=\"!reOrderModeActivated\">\r\n                    <div *ngFor=\"let tab of searchTabs; trackBy:trackByFn\">\r\n                        <lib-uv-ui-tab \r\n                        (click)=\"onTabClicked(tab.category)\"\r\n                        [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                        [isActive]=\"onToggleTabActive(tab.category)\"\r\n                        [isReorderMode]=\"reOrderModeActivated\"\r\n                        [icon]=\"tab.icon\" \r\n                        [label]=\"tab.title\" \r\n                        [routerLink]=\"tab.routeUri\">\r\n                        <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                    </lib-uv-ui-tab>\r\n                </div> \r\n            </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" cdkDropList  (cdkDropListDropped)=\"drop($event)\">\r\n                    <div *ngFor=\"let tab of searchTabs\" cdkDrag>\r\n                        <lib-uv-ui-tab \r\n                            (click)=\"onTabClicked(tab.category)\"\r\n                            [isDisabled]=\"tab.entitySearchCount === 0\"\r\n                            [isActive]=\"onToggleTabActive(tab.category)\"\r\n                            [isReorderMode]=\"reOrderModeActivated\"\r\n                            [icon]=\"tab.icon\" \r\n                            [label]=\"tab.title\" \r\n                            [routerLink]=\"tab.routeUri\">\r\n                            <span class=\"chip\" *ngIf=\"categorySelected && tab.entitySearchCount > 1\">{{tab.entitySearchCount}}</span>\r\n                        </lib-uv-ui-tab>\r\n                    </div>\r\n                </div>\r\n\r\n                <div *ngIf=\"reOrderModeActivated\" class=\"margin-xs flex justify-content-flex-end\">\r\n                    <lib-uv-ui-button label=\"Close\" color=\"primary\" class=\"margin-right-sm\" mode=\"basic\" (click)=\"reOrderMode()\"></lib-uv-ui-button>\r\n                    <lib-uv-ui-button label=\"Save\" color=\"primary\" mode=\"basic\" (click)=\"clearResults()\"></lib-uv-ui-button>\r\n                </div>\r\n            </div>\r\n\r\n        </lib-uv-ui-app-side-bar>\r\n        \r\n    </div>\r\n    \r\n    <div  *ngIf=\"filterBarActive\" class=\"col-2\" [ngClass]=\"{ 'filter-bar-width' : filterBarActive }\">\r\n        \r\n        <lib-uv-ui-app-side-bar mode=\"scroll\">\r\n            <div top>\r\n                <div class=\"margin-bottom-sm flex justify-content-space-between\" >\r\n                    <p class=\"heading-4\">Filters</p>\r\n                    <lib-uv-ui-svg-button color='blue' class=\"close-button\" icon=\"close\" (click)=\"toggleFilterBar()\"></lib-uv-ui-svg-button>\r\n                </div>\r\n                \r\n                <lib-uv-ui-search-panel mode=\"basic\"></lib-uv-ui-search-panel>\r\n            </div>\r\n\r\n            <div bottom>\r\n\r\n                    <p class=\"bold uv-body margin-top-xxs margin-bottom-xxs\">Discipline</p>\r\n                    <div *ngFor=\"let item of items\" class=\"item-container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-body margin-top-xs margin-bottom-xxs\">Category</p>\r\n                    <div *ngFor=\"let item of items\" class=\"item-container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"item-container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n                    <p class=\"bold uv-body margin-top-xs margin-bottom-xxs\">Technology</p>\r\n                    <div *ngFor=\"let item of items\" class=\"item-container\">\r\n                        <lib-uv-ui-checkbox [label]=\"item.title\"></lib-uv-ui-checkbox>\r\n                    </div>\r\n\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>\r\n    </div>\r\n    \r\n    <div [ngClass]=\"filterBarActive ? 'col-8' : 'col-10'\" class=\"justify-content-center justify-items-center align-content-center align-items-center\" >\r\n        <app-search-results *ngIf=\"categorySelected\" [category]=\"searchCategory\"></app-search-results>\r\n        <app-landing *ngIf=\"!categorySelected\"></app-landing>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "SearchPanelComponent",
@@ -2794,7 +2794,7 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"documents box flex\">\r\n    <div class=\"heading-container flex justify-content-space-between\">\r\n    <p class=\"heading-3\">{{category}}</p>\r\n    <span class=\"chip\">{{searchResults.length}}</span>\r\n</div>\r\n    \r\n<div class=\"divider\"></div>\r\n    \r\n<div class=\"content-container\">\r\n    <div class=\"margin-bottom-md\" *ngFor=\"let item of searchResults | filterResults: category\">\r\n        <p class=\"heading-5\">{{item.title}}</p>\r\n        <p class=\"uv-body\">{{item.description}}</p>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"documents box flex\">\r\n\r\n    <div class=\"heading-container flex justify-content-space-between\">\r\n        <p class=\"heading-3\">{{category}}</p>\r\n        <span class=\"chip\">{{searchResults.length}}</span>\r\n    </div>\r\n    \r\n    <div class=\"divider\"></div>\r\n    \r\n    <div class=\"content-container\">\r\n        <div class=\"margin-bottom-md\" *ngFor=\"let item of searchResults | filterResults: category\">\r\n            <p class=\"heading-5\">{{item.title}}</p>\r\n            <p class=\"uv-body\">{{item.description}}</p>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n"
         },
         {
             "name": "SettingsComponent",
@@ -2948,7 +2948,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".grid{\r\n    position: relative;\r\n    height: calc(100vh - 64px);\r\n    display: grid;\r\n    grid-template-rows: [row1] 68px [row2] auto;\r\n    grid-template-areas: \r\n    \"appbar\"\r\n    \"content\" ;\r\n}\r\n\r\n.appbar {\r\n    grid-row: row1;\r\n    padding: 20px;\r\n    border-top: none;\r\n    border-left: none;\r\n}\r\n\r\n.content {\r\n    grid-row: row2;\r\n    overflow: auto;\r\n    padding-left: 96px;\r\n    padding-top:20px;\r\n}\r\n",
+                    "data": "// .grid{\r\n//     position: relative;\r\n//     height: calc(100vh - 64px);\r\n//     display: grid;\r\n//     grid-template-rows: [row1] 68px [row2] auto;\r\n//     grid-template-areas: \r\n//     \"appbar\"\r\n//     \"content\" ;\r\n// }\r\n\r\n// .appbar {\r\n//     grid-row: row1;\r\n//     padding: 20px;\r\n//     border-top: none;\r\n//     border-left: none;\r\n// }\r\n\r\n.content {\r\n    grid-row: row2;\r\n    overflow: auto;\r\n    padding-left: 96px;\r\n    padding-top:20px;\r\n}\r\n",
                     "styleUrl": "./side-by-side.component.scss"
                 }
             ],
@@ -2976,7 +2976,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\r\n\r\n    <div class=\"box appbar flex align-items-center justify-content-space-between\">\r\n\r\n        <p class=\"heading-4\">Comparison Tasks</p>\r\n        \r\n        <div>\r\n            <lib-uv-ui-button mode=\"round\" class=\"btn-add-task margin-right-md\" label=\"+\"></lib-uv-ui-button>\r\n            <lib-uv-ui-dropdown-button [items]=\"dropdownItems\" dropdownName=\"Switch filter\"></lib-uv-ui-dropdown-button>\r\n        </div>\r\n        \r\n    </div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-task-snippet [tasks]=\"compareTasks\">\r\n    </lib-uv-ui-task-snippet>\r\n    \r\n</div>\r\n\r\n</div>\r\n\r\n"
+            "templateData": "<div class=\"uv-grid\">\r\n\r\n    <div class=\"box appbar flex align-items-center justify-content-space-between\">\r\n\r\n        <p class=\"heading-4\">Comparison Tasks</p>\r\n        \r\n        <div>\r\n            <lib-uv-ui-button mode=\"round\" class=\"btn-add-task margin-right-md\" label=\"+\"></lib-uv-ui-button>\r\n            <lib-uv-ui-dropdown-button [items]=\"dropdownItems\" dropdownName=\"Switch filter\"></lib-uv-ui-dropdown-button>\r\n        </div>\r\n        \r\n    </div>\r\n\r\n<div class=\"content\">\r\n    \r\n    <lib-uv-ui-task-snippet [tasks]=\"compareTasks\">\r\n    </lib-uv-ui-task-snippet>\r\n    \r\n</div>\r\n\r\n</div>\r\n\r\n"
         },
         {
             "name": "SnippetComponent",
@@ -3218,7 +3218,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/styles';\r\n@import '../scss/variables';\r\n\r\n.btn-svg {\r\n    &,\r\n    &:link,\r\n    &:visited {\r\n        font-family: $font-family;\r\n        font-weight: $font-bold;\r\n        text-decoration: none;\r\n        display: inline-block;\r\n        border-radius: 8px;\r\n        border: none;\r\n        cursor: pointer;\r\n        background-color: transparent;\r\n    }\r\n\r\n    &:active,\r\n    &:focus {\r\n        outline: none;\r\n    }\r\n\r\n    svg {\r\n        cursor: pointer;\r\n        width: $sm-size;\r\n        height: $sm-size;\r\n        vertical-align: middle;\r\n    \r\n        &-xs {\r\n            width: $xs-size;\r\n            height: $xs-size;\r\n        }\r\n    }\r\n}\r\n\r\n.small svg {\r\n    width: $sm-size;\r\n    height: $sm-size;\r\n}\r\n\r\n.xs svg {\r\n    width: $xs-size;\r\n    height: $xs-size;\r\n}\r\n\r\n.xxs svg {\r\n    width: $xxs-size;\r\n    height: $xxs-size;\r\n}\r\n\r\n.gray {\r\n    color: $color-gray-light-3;\r\n    \r\n    &:hover {\r\n        color: $uv-color-primary;\r\n    }\r\n}\r\n\r\n.blue {\r\n    color: $uv-color-primary;\r\n}\r\n",
+                    "data": "@import '../scss/styles';\r\n@import '../scss/variables';\r\n\r\n.btn-svg {\r\n    &,\r\n    &:link,\r\n    &:visited {\r\n        font-family: $font-family;\r\n        font-weight: $font-bold;\r\n        text-decoration: none;\r\n        display: inline-block;\r\n        border-radius: 8px;\r\n        border: none;\r\n        cursor: pointer;\r\n        background-color: transparent;\r\n    }\r\n\r\n    &:active,\r\n    &:focus {\r\n        outline: none;\r\n    }\r\n\r\n    svg {\r\n        cursor: pointer;\r\n        width: $sm-size;\r\n        height: $sm-size;\r\n        vertical-align: middle;\r\n    \r\n        &-xs {\r\n            width: $xs-size;\r\n            height: $xs-size;\r\n        }\r\n    }\r\n}\r\n\r\n.small svg {\r\n    width: $sm-size;\r\n    height: $sm-size;\r\n}\r\n\r\n.xs svg {\r\n    width: $xs-size;\r\n    height: $xs-size;\r\n}\r\n\r\n.xxs svg {\r\n    width: $xxs-size;\r\n    height: $xxs-size;\r\n}\r\n\r\n.gray {\r\n    color: $color-gray-light-3;\r\n    \r\n    &:hover {\r\n        color: var(--uv-color-primary);\r\n    }\r\n}\r\n\r\n.blue {\r\n    color: var(--uv-color-primary);\r\n}\r\n",
                     "styleUrl": "./svg-button.component.scss"
                 }
             ],
@@ -3294,7 +3294,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n\r\n.tab {\r\n    padding: 14px 24px;\r\n    background-color: white;\r\n\r\n    &:hover {\r\n        cursor: pointer;\r\n        color: $uv-color-primary;\r\n        font-weight: bold;\r\n        background-color: $color-gray-light-5;\r\n        box-shadow: inset -4px 0 0 $uv-color-primary;\r\n            a, svg, span {\r\n                color: $uv-color-primary;\r\n            }\r\n    }\r\n}\r\n\r\n.disabled {\r\n    color: $color-gray-light;\r\n    pointer-events: none;\r\n    cursor: not-allowed;\r\n    a, svg, span {\r\n        color: $color-gray-light;\r\n        pointer-events: none;\r\n    }\r\n    &:hover {\r\n        cursor: not-allowed;\r\n        color: $color-gray-light;\r\n        font-weight: none;\r\n        background-color: white;\r\n        box-shadow: none;\r\n        pointer-events: none;\r\n        a, svg, span {\r\n            color: $color-gray-light;\r\n            pointer-events: none;\r\n        }\r\n    }\r\n}\r\n\r\n.active {\r\n    color: $uv-color-primary;\r\n        font-weight: bold;\r\n        background-color: $color-gray-light-5;\r\n        box-shadow: inset -4px 0 0 $uv-color-primary;\r\n            a, svg, span {\r\n                color: $uv-color-primary;\r\n            }\r\n}\r\n\r\n.position {\r\n    top: 4px;\r\n}\r\n\r\n.reorder-mode {\r\n    border-bottom: 1px solid $color-gray-light;\r\n    background-color: white;\r\n    &:hover {\r\n        cursor: move;\r\n        border: 1px solid $color-gray-light;\r\n    }\r\n    &:active:hover{\r\n        border: 1px solid $color-gray-light;\r\n    }\r\n}\r\n\r\n.cdk-drag {\r\n    box-sizing: border-box;\r\n    border-radius: 4px;\r\n    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),\r\n                0 8px 10px 1px rgba(0, 0, 0, 0.14),\r\n                0 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n}\r\n",
+                    "data": "@import '../scss/variables';\r\n\r\n.tab {\r\n    padding: 14px 24px;\r\n    background-color: white;\r\n\r\n    &:hover {\r\n        cursor: pointer;\r\n        color: var(--uv-color-primary);\r\n        font-weight: bold;\r\n        background-color: $color-gray-light-5;\r\n        box-shadow: inset -4px 0 0 var(--uv-color-primary);\r\n            a, svg, span {\r\n                color: var(--uv-color-primary);\r\n            }\r\n    }\r\n}\r\n\r\n.disabled {\r\n    color: $color-gray-light;\r\n    pointer-events: none;\r\n    cursor: not-allowed;\r\n    a, svg, span {\r\n        color: $color-gray-light;\r\n        pointer-events: none;\r\n    }\r\n    &:hover {\r\n        cursor: not-allowed;\r\n        color: $color-gray-light;\r\n        font-weight: none;\r\n        background-color: white;\r\n        box-shadow: none;\r\n        pointer-events: none;\r\n        a, svg, span {\r\n            color: $color-gray-light;\r\n            pointer-events: none;\r\n        }\r\n    }\r\n}\r\n\r\n.active {\r\n    color: var(--uv-color-primary);\r\n        font-weight: bold;\r\n        background-color: $color-gray-light-5;\r\n        box-shadow: inset -4px 0 0 var(--uv-color-primary);\r\n            a, svg, span {\r\n                color: var(--uv-color-primary);\r\n            }\r\n}\r\n\r\n.position {\r\n    top: 4px;\r\n}\r\n\r\n.reorder-mode {\r\n    border-bottom: 1px solid $color-gray-light;\r\n    background-color: white;\r\n    &:hover {\r\n        cursor: move;\r\n        border: 1px solid $color-gray-light;\r\n    }\r\n    &:active:hover{\r\n        border: 1px solid $color-gray-light;\r\n    }\r\n}\r\n\r\n.cdk-drag {\r\n    box-sizing: border-box;\r\n    border-radius: 4px;\r\n    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),\r\n                0 8px 10px 1px rgba(0, 0, 0, 0.14),\r\n                0 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n}\r\n",
                     "styleUrl": "./tab.component.scss"
                 }
             ],
@@ -3385,7 +3385,7 @@
         {
             "name": "UvUiButtonComponent",
             "id": "component-UvUiButtonComponent-3445dc3244748d08eeadc081354a077a",
-            "file": "projects/uv-ui-lib/src/lib/uv-ui-button/uv-ui-button.component.ts",
+            "file": "projects/uv-ui-components/src/lib/uv-ui-button/uv-ui-button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
@@ -3490,7 +3490,7 @@
         {
             "name": "UvUiButtonComponent",
             "id": "component-UvUiButtonComponent-3445dc3244748d08eeadc081354a077a-1",
-            "file": "projects/uv-ui-components/src/lib/uv-ui-button/uv-ui-button.component.ts",
+            "file": "projects/uv-ui-lib/src/lib/uv-ui-button/uv-ui-button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
@@ -4709,14 +4709,6 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
-                "type": "",
-                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
-                "name": "context",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/uv-ui-components/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
@@ -4726,6 +4718,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/uv-ui-prototype/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
@@ -4749,14 +4749,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -4773,7 +4765,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4782,6 +4774,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4909,13 +4909,6 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/test.ts",
-                "type": "literal type"
-            },
-            {
-                "name": "require",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/uv-ui-components/src/test.ts",
                 "type": "literal type"
             },
@@ -4924,6 +4917,13 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/uv-ui-prototype/src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/test.ts",
                 "type": "literal type"
             },
             {
@@ -4970,14 +4970,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts",
                 "type": "Story<DropdownButtonComponent>",
                 "defaultValue": "(args: DropdownButtonComponent) => ({\r\n    component: DropdownButtonComponent,\r\n    props: args\r\n})"
@@ -4994,9 +4986,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
-                "type": "Story<NavbarComponent>",
-                "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
+                "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -5005,6 +4997,14 @@
                 "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
                 "type": "Story<NavbarDashboardSubComponent>",
                 "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                "type": "Story<NavbarComponent>",
+                "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
             },
             {
                 "name": "Template",
@@ -5157,23 +5157,6 @@
                     "defaultValue": "[\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  },\r\n\r\n  {\r\n    started: 'Not Started',\r\n    link: '',\r\n    title: 'Gasket Aluminum Exchangers',\r\n    description: 'Lorem ipsum dolor sit amet consectetur ',\r\n    date: 'Mar, 02'\r\n  }\r\n]"
                 }
             ],
-            "projects/uv-ui-lib/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/test.ts",
-                    "type": "literal type"
-                }
-            ],
             "projects/uv-ui-components/src/test.ts": [
                 {
                     "name": "context",
@@ -5208,6 +5191,23 @@
                     "type": "literal type"
                 }
             ],
+            "projects/uv-ui-lib/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
             "projects/uv-ui-lib/src/lib/action-bar/action-bar.stories.ts": [
                 {
                     "name": "Default",
@@ -5224,24 +5224,6 @@
                     "file": "projects/uv-ui-lib/src/lib/action-bar/action-bar.stories.ts",
                     "type": "Story<ActionBarComponent>",
                     "defaultValue": "(args: ActionBarComponent) => ({\r\n    component: ActionBarComponent,\r\n    props: args,\r\n    template: `\r\n    <lib-uv-ui-action-bar>\r\n        <div left>\r\n            ${args.leftContent}\r\n        </div>\r\n        <div right>\r\n        ${args.rightContent}\r\n        </div>\r\n    </lib-uv-ui-action-bar>`\r\n})"
-                }
-            ],
-            "projects/uv-ui-lib/src/lib/header/header.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
-                    "type": "Story<HeaderComponent>",
-                    "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/dropdown-button/dropdown-button.stories.ts": [
@@ -5280,12 +5262,12 @@
                     "defaultValue": "(args: ImageButtonComponent) => ({\r\n    component: ImageButtonComponent,\r\n    props: args\r\n})"
                 }
             ],
-            "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts": [
+            "projects/uv-ui-lib/src/lib/header/header.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5293,9 +5275,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
-                    "type": "Story<NavbarComponent>",
-                    "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
+                    "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                    "type": "Story<HeaderComponent>",
+                    "defaultValue": "(args: HeaderComponent) => ({\r\n    component: HeaderComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts": [
@@ -5314,6 +5296,24 @@
                     "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
                     "type": "Story<NavbarDashboardSubComponent>",
                     "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args\r\n})"
+                }
+            ],
+            "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                    "type": "Story<NavbarComponent>",
+                    "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
                 }
             ],
             "projects/uv-ui-lib/src/lib/search-panel/search.stories.ts": [

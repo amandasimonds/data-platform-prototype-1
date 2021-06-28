@@ -66,6 +66,11 @@ a:visited {
     font-size: $font-size-sm;
     font-weight: $font-bold;
     color: var(--uv-color-primary);
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style-position:inside;
 }
 
 .chip-date {
