@@ -17,6 +17,7 @@
     "build-storybook": "npm run docs:json && build-storybook -s -s ./projects/uv-ui-lib/src/lib/assets",
     "build-uv-ui-lib": "ng build uv-ui-lib --prod",
     "build-publish-lib": "ng build uv-ui-lib --prod && cd ./dist/uv-ui-lib/ && npm publish",
+    "pack-uv-ui-lib": "ng build uv-ui-lib --prod && cd ./dist/uv-ui-lib/ && npm pack",
     "build-uv-ui-lib:watch": "ng build uv-ui-lib --watch",
     "e2e": "ng e2e"
   },
