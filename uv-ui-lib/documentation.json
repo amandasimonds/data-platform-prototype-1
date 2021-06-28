@@ -1128,11 +1128,9 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-app-side-bar',\r\n    templateUrl: './app-side-bar.component.html',\r\n    styleUrls: ['./app-side-bar-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppSideBarComponent {\r\n\r\n    @Input() public mode: 'menu' | 'scroll' = 'menu';\r\n\r\n    // for Storybook\r\n    public leftContent = '';\r\n    public rightContent = '';\r\n\r\n    public get scroll(): boolean {\r\n        return this.mode === 'scroll' ? true : false;\r\n    }\r\n}\r\n",
             "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'lib-uv-ui-app-side-bar',\r\n    templateUrl: './app-side-bar.component.html',\r\n    styleUrls: ['./app-side-bar-component.scss'],\r\n    changeDetection: ChangeDetectionStrategy.OnPush\r\n})\r\nexport class AppSideBarComponent {\r\n\r\n    @Input() public mode: 'menu' | 'scroll' = 'menu';\r\n\r\n    // for Storybook\r\n    public leftContent = '';\r\n    public rightContent = '';\r\n\r\n    public get scroll(): boolean {\r\n        return this.mode === 'scroll';\r\n    }\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
                 {
-                    "data": "@import '../scss/variables';\r\n\r\n.app-side-bar {\r\n    height: 100%;\r\n    border-left: none;\r\n    border-top: none;\r\n\r\n    &-top-content {\r\n        padding: 24px;\r\n        min-height: 150px;\r\n    }\r\n\r\n    &-bottom-content {\r\n        padding: 12px 0 0 0;\r\n    }\r\n}\r\n\r\n.scroll-wrapper {\r\n    padding: 12px 12px 0 0;\r\n}\r\n\r\n.scroll {\r\n    width: 100%;\r\n    padding: 0 24px;\r\n    margin-right: 10px;\r\n    overflow: auto;\r\n    position: relative;\r\n    height:calc(100vh - 246px);\r\n}\r\n",
                     "styleUrl": "./app-side-bar-component.scss"
                 }
             ],
@@ -1255,6 +1253,7 @@
         },
         {
             "name": "ButtonComponent",
+            "id": "component-ButtonComponent-02ade4ea67deae96827480df12546766",
             "id": "component-ButtonComponent-10ecfd468534cace030265d04a92b09a",
             "file": "projects/uv-ui-lib/src/lib/button/button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
@@ -1339,6 +1338,11 @@
             ],
             "viewProviders": [],
             "inputsClass": [
+                {
+                    "name": "checked",
+                    "line": 17,
+                    "type": "boolean"
+                },
                 {
                     "name": "disabled",
                     "defaultValue": "false",
@@ -1522,10 +1526,10 @@
                 "ControlValueAccessor"
             ],
             "accessors": {
-                "value": {
-                    "name": "value",
+                "checked": {
+                    "name": "checked",
                     "setSignature": {
-                        "name": "value",
+                        "name": "checked",
                         "type": "void",
                         "args": [
                             {
@@ -2872,11 +2876,9 @@
         },
         {
             "name": "SideBySideComponent",
+            "id": "component-SideBySideComponent-9e3fc8aa07beeea868829c3e4b7a72e3",
             "id": "component-SideBySideComponent-ca1572844bbb20c469795dfd53da08e7",
-            "file": "projects/uv-ui-prototype/src/app/side-by-side/side-by-side.component.ts",
-            "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
-            "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
@@ -4813,7 +4815,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
+                "file": "projects/uv-ui-lib/src/lib/tab/tab.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4994,15 +4996,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts",
                 "type": "Story<NavbarDashboardSubComponent>",
                 "defaultValue": "(args: NavbarDashboardSubComponent) => ({\r\n    component: NavbarDashboardSubComponent,\r\n    props: args\r\n})"
             },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
                 "type": "Story<NavbarComponent>",
                 "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
             },
@@ -5023,15 +5019,9 @@
                 "defaultValue": "(args: AppSideBarComponent) => ({\r\n    component: AppSideBarComponent,\r\n    props: args,\r\n    template: `\r\n        <lib-uv-ui-app-side-bar>\r\n            <div top>\r\n                ${args.topContent}\r\n            </div>\r\n            <div bottom>\r\n                ${args.bottomContent}\r\n            </div>\r\n        </lib-uv-ui-app-side-bar>`\r\n})"
             },
             {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/uv-ui-lib/src/lib/snippet/snippet.stories.ts",
-                "type": "Story<SnippetComponent>",
                 "defaultValue": "(args: SnippetComponent) => ({\r\n    component: SnippetComponent,\r\n    props: args\r\n})"
             },
             {
-                "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/uv-ui-lib/src/lib/svg-button/svg-button.stories.ts",
@@ -5268,10 +5258,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/uv-ui-lib/src/lib/header/header.stories.ts",
+                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -5281,6 +5269,11 @@
                 }
             ],
             "projects/uv-ui-lib/src/lib/navbar-dashboard-sub/navbar-sidebar.stories.ts": [
+                    "file": "projects/uv-ui-lib/src/lib/navbar/navbar.stories.ts",
+                    "type": "Story<NavbarComponent>",
+                    "defaultValue": "(args: NavbarComponent) => ({\r\n    component: NavbarComponent,\r\n    props: args\r\n})"
+            ],
+            "projects/uv-ui-lib/src/lib/image-button/image-button.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
