@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Noto Sans';
     src: url(../assets/fonts/NotoSans-Regular.ttf) format("truetype");
-    font-weight:300;
+    font-weight:400;
 }
 
 @font-face {
-    font-family: 'Noto Sans Bold';
+    font-family: 'Noto Sans';
     src: url(../assets/fonts/NotoSans-Bold.ttf) format("truetype");
-    font-weight:300;
+    font-weight:700;
 }
 
 :root {
@@ -31,10 +31,9 @@ $scrollbar-color: $color-gray-light-7;
 
 //typography
 $font-family: 'Noto Sans', sans-serif !default;
-$font-family-bold: 'Noto Sans Bold';
 $default-text-color-black: #32363B;
 $highlight-text-color-gray: #EAF1FE;
-$font-bold: 500 !default;
+$font-bold: 700 !default;
 $font-size-xs: 12px;
 $font-size-sm: 14px;
 $font-size-md: 18px;

@@ -8,7 +8,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 })
 export class TabComponent {
 
-    @Input() public svgPath = '';
+    @Input() public icon = '';
     @Input() public label = '';
     @Input() public isDisabled = false;
     @Input() public isActive = false;

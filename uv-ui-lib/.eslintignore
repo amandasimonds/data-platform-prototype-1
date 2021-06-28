@@ -1,5 +1,4 @@
 /.eslintrc.js
 **/*.spec.ts
 test.ts
-icons.ts
 polyfills.ts

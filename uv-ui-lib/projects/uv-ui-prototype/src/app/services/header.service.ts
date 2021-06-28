@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class HeaderService {
     public title = new BehaviorSubject<string>('Title');
-    public appIcon = new BehaviorSubject<string>('assets/apps-quad.svg#dashboard');
+    public appIcon = new BehaviorSubject<string>('apps-quad');
 
     public get currentTitle$(): Observable<string> {
         return this.title.asObservable();
