@@ -16,16 +16,8 @@ export class SideBySideComponent implements OnInit{
 
     constructor(private headerService: HeaderService) {}
 
-    public addTaskClicked(event: Event): void {
-        console.log(event, 'add task was clicked');
-    }
-
-    public switchFilterClicked(event: Event): void {
-        console.log(event, 'filter button was clicked');
-    }
-
     public ngOnInit(): void {
         this.headerService.setTitle('Side By Side');
-        this.headerService.setAppIcon('icons/apps-sbs.svg#sideBySide');
+        this.headerService.setAppIcon('apps-sbs');
     }
 }

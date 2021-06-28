@@ -1,9 +1,6 @@
 @import '../scss/variables';
 
 .tab {
-    display: flex;
-    align-content: center;
-    align-items: center;
     padding: 14px 24px;
     background-color: white;
 
@@ -52,7 +49,6 @@
 }
 
 .position {
-    position: relative;
     top: 4px;
 }
 

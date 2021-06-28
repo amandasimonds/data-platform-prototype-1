@@ -2,12 +2,10 @@
 
 .search-panel {
     height: 40px;
-    display: flex;
-    width: 100%;
     background-color: #FFFFFF;
     padding-right: 12px;
 
-    &__input {
+    &-input {
         margin-left: 16px;
         font-size: 14px;
         font-family: inherit;
@@ -29,13 +27,7 @@
     border: $border-gray-light;
     border-radius: 28px;
 
-    &__search-field {
+    &-search-field {
         margin-left: 16px;
     }
-}
-
-.wrapper {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
 }

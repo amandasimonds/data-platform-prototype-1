@@ -15,6 +15,6 @@ export class AppSideBarComponent {
     public rightContent = '';
 
     public get scroll(): boolean {
-        return this.mode === 'scroll' ? true : false;
+        return this.mode === 'scroll';
     }
 }

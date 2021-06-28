@@ -8,5 +8,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class HeaderComponent {
     @Input() public headerText = '' ;
-    @Input() public headerSvgPath = '';
+    @Input() public icon = '';
 }
