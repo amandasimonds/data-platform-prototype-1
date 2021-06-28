@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RegisterIconModule } from '../register-icon/register-icon.module';
 import { ButtonComponent } from './button.component';
 
 @NgModule({
     declarations: [ ButtonComponent ],
     imports: [
-        CommonModule
+        CommonModule,
+        RegisterIconModule
     ],
     exports: [ ButtonComponent ]
 })

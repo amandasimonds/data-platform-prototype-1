@@ -1,8 +1,8 @@
 <div 
-    class="tab justify-content-space-between" 
+    class="tab flex justify-content-space-between align-content-center align-items-center" 
     [ngClass]="{'disabled': isDisabled, 'active': isActive, 'reorder-mode': isReorderMode}">
     <div>
-        <svg class="gray margin-right-sm position" [ngClass]="{'blue': isReorderMode}"><use [attr.href]="isReorderMode ? 'icons/reorder.svg#reorder' : svgPath"></use></svg>
+        <mat-icon class="gray margin-right-sm position-relative position" [class.blue]="isReorderMode" [svgIcon]="isReorderMode ? 'reorder' : icon"></mat-icon>
         {{label}}
     </div>
     <ng-content></ng-content>

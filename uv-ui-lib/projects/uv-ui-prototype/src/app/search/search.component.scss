@@ -13,7 +13,6 @@
     grid-column: col1;
     grid-row-start: row1;
     grid-row-end: 3;
-    position: relative;
     z-index: 150;
 }
 
@@ -21,7 +20,6 @@
     grid-column: col2;
     grid-row-start: row1;
     grid-row-end: 3;
-    position: relative;
 }
 
 .appbar {

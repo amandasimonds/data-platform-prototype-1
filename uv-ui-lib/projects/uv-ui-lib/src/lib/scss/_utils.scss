@@ -1,7 +1,7 @@
 .block{
     display: block;
 
-    &-inline{
+    &-inline {
         display: inline-block;
     }
 }
@@ -70,6 +70,10 @@
     }
 }
 
+.w-100 {
+    width: 100%;
+}
+
 .height-sm {
     height: $sm-size;
 }
@@ -86,23 +90,23 @@
     padding: $md-size
 }
 
-.margin-xxs{
+.margin-xxs {
     margin: $xxs-size
 }
 
-.margin-xs{
+.margin-xs {
     margin: $xs-size
 }
 
-.margin-sm{
+.margin-sm {
     margin: $sm-size
 }
 
-.margin-md{
+.margin-md {
     margin: $md-size
 }
 
-.margin-md{
+.margin-lg {
     margin: $lg-size
 }
 
@@ -152,6 +156,10 @@
 
 .margin-right-md {
     margin-right: $md-size;
+}
+
+.position-relative {
+    position: relative;
 }
 
 .position-center {

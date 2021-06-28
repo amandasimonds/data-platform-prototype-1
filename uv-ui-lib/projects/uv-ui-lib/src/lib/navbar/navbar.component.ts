@@ -14,7 +14,6 @@ export class NavbarComponent {
     constructor(private router: Router) {}
 
     public trackByFn(_: number, {navlink}: INavlink): string {
-
         return navlink;
     }
 

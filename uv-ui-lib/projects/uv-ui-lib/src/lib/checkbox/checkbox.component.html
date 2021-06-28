@@ -2,7 +2,7 @@
     <div class="checkbox" 
         [ngClass]="{ 'checked' : isChecked, 'disabled' : disabled }" 
         (click)="toggleChecked()">
-        <div class="checkmark">&#10003;</div>
+        <div class="checkmark w-100">&#10003;</div>
     </div>
-    <label class="checkbox-label" [ngClass]="{ 'disabled' : disabled }">{{ label || '' }}</label>
+    <label class="checkbox-label" [class.disabled]="disabled">{{ label || '' }}</label>
 </div>

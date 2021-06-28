@@ -11,19 +11,19 @@ export class GlobalWhereUsedComponent implements OnInit{
 
     public gwuTabs = [
         {
-            icon: 'icons/more-horizontal.svg#moreHorizontal',
+            icon: 'more_dots',
             link: '/',
             linkText: 'Link',
             results: ''
         },
         {
-            icon: 'icons/more-horizontal.svg#moreHorizontal',
+            icon: 'more_dots',
             link: '/',
             linkText: 'Link',
             results: ''
         },
         {
-            icon: 'icons/more-horizontal.svg#moreHorizontal',
+            icon: 'more_dots',
             link: '/',
             linkText: 'Link',
             results: ''
@@ -34,6 +34,6 @@ export class GlobalWhereUsedComponent implements OnInit{
 
     public ngOnInit(): void {
         this.headerService.setTitle('Global Where Used');
-        this.headerService.setAppIcon('icons/apps-gwu.svg#inspect');
+        this.headerService.setAppIcon('apps-gwu');
     }
 }
