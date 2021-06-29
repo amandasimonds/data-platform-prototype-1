@@ -1,0 +1,47 @@
+import { Meta, Story, ArgsTable, Source, Typeset, Preview, Canvas } from '@storybook/addon-docs/blocks';
+import { moduleMetadata } from '@storybook/angular';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { ICON_SET, NavbarComponent, HeaderComponent, RegisterIconModule, HeaderModule, NavbarModule } from 'projects/uv-ui-lib/src/public-api';
+import UvUiShellComponent from './uv-ui-shell.component';
+import dedent from 'ts-dedent';
+
+<Meta
+    title='Layouts/MDX UI Shell'
+    component={UvUiShellComponent}
+    decorators={[
+        moduleMetadata({
+            imports: [HeaderModule, NavbarModule, RegisterIconModule.forRoot(ICON_SET), RouterModule.forRoot([])],
+            providers: [{provide: APP_BASE_HREF, useValue: '/'}],
+            path: 'iframe.html'
+        }),
+    ]}
+/>
+
+# UV UI Shell
+
+<Canvas>
+    <Story height="100vh" name="UI Shell">
+  {{
+    template: 
+    `
+        <div class='uv-app-shell'>
+            <div class='header'><lib-uv-ui-header></lib-uv-ui-header></div>
+            <div class='navbar'><lib-uv-ui-navbar></lib-uv-ui-navbar></div>
+            <div class='content'>Router Outlet/ Microfrontends go here</div>
+        </div>
+    `
+  }}
+</Story>
+</Canvas>
+
+<Source
+  language='ts'
+  code={dedent`
+     <div class='uv-app-shell'>
+        <div class='header'><lib-uv-ui-header></lib-uv-ui-header></div>
+        <div class='navbar'><lib-uv-ui-navbar></lib-uv-ui-navbar></div>
+    </div>
+  `}
+/>
+
