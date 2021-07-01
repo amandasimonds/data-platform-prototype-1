@@ -7,7 +7,7 @@
     grid-template-areas: 
     "navbar header"
     "navbar main" ;
-    border: 2px solid green;
+    // border: 2px solid green;
 }
 
 .uv-ui-shell-header {
@@ -24,7 +24,8 @@
 .uv-ui-shell-content {
     grid-column: col2;
     grid-row: row2;
-    height: 100%;
+    height: calc(100vh - var(--uv-header-height));
+    overflow: auto;
 }
 
 $columns: 12; // Number of columns in the grid system
