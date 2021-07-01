@@ -1,11 +1,24 @@
 .content {
     padding-left: 96px;
     padding-top:20px;
-    height: 100vh;
+    height: 92%;
     overflow: auto;
     position: relative;
 }
 
+.sbs-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
 .taskbox {
     width: 200px;
+}
+
+
+:host {
+    padding: 0;
+    margin: 0;
+    height: 100%;
 }
