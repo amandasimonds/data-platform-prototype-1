@@ -11,12 +11,28 @@
 }
 
 :root {
+    --uv-font-family: 'Noto Sans', sans-serif;
+
+    //colors
     --uv-color-primary: var(--uv-color-blue);
     --uv-font-color: var(--uv-color-black);
+    --uv-scrollbar-color: var(--uv-color-gray);
+
     --uv-color-blue: #00A3E5;
+    --uv-color-orange: #FF6969;
     --uv-color-white: #ffffff;
+    --uv-color-gray: #D2D2D6;
     --uv-color-black: #0D0C22;
     --uv-background-color: #f1f1f1;
+
+    //sizes
+    --uv-header-height: 64px;
+    --uv-navbar-width: 64px;
+    --uv-sidebar-width-md: 336px;
+    --uv-sidebar-width-sm: 288px;
+
+    //styles
+    --uv-box-shadow: 0 2px 14px 0 rgba(215,215,215,0.5);
 }
 
 //colors
@@ -27,12 +43,8 @@ $color-gray-light-3: #dddddd;
 $color-gray-light-4: #d8d8d821;
 $color-gray-light-5: #F3F3F4;
 $color-gray-light-6: #6E6D7A;
-$color-gray-light-7: #D2D2D6;
-$color-orange: #FF6969;
-$scrollbar-color: $color-gray-light-7;
 
 //typography
-$font-family: 'Noto Sans', sans-serif !default;
 $highlight-text-color-gray: #EAF1FE;
 $font-bold: 700 !default;
 $font-size-xs: 12px;
@@ -53,14 +65,8 @@ $lg-size: 48px;
 $xl-size: 64px;
 
 //height
-$header-height: 64px;
 $grid-item-height: 78px;
 $grid-header-height: 56px;
-
-//width
-$navbar-width: 64px;
-$sidebar-width-md: 336px;
-$sidebar-width-sm: 288px;
 
 //styling
 $border-gray: 1px solid #8694A7;

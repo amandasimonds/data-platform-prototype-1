@@ -8,6 +8,10 @@
     margin: 0;
     padding: 0;
 }
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
 
 *,
 *::after,
@@ -17,11 +21,9 @@
 
 body {
     box-sizing: border-box;
-    background-color: var(--background-color);
-}
-
-html, body {
     height: 100%;
+    background-color: var(--background-color);
+    font-family: var(--uv-font-family);
 }
 
  //scrollbar
@@ -37,7 +39,7 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: $scrollbar-color;
+    background-color: var(--uv-scrollbar-color);
     border-radius: 100px;
     background-clip: padding-box;
     max-height: 20px;
@@ -135,7 +137,7 @@ svg {
 }
 
 .btn-chip {
-    color: $color-orange;
+    color: var(--uv-color-orange);
     font-weight: bold;
     letter-spacing: 0.2px;
     line-height: 16px;

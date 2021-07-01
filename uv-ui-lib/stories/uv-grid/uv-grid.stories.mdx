@@ -1,0 +1,109 @@
+import { Meta, Story, ArgsTable, Source, Typeset, Preview, Canvas } from '@storybook/addon-docs/blocks';
+import { moduleMetadata } from '@storybook/angular';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { SvgButtonModule, ICON_SET, NavbarComponent, HeaderComponent, RegisterIconModule, HeaderModule, NavbarModule } from 'projects/uv-ui-lib/src/public-api';
+import UvGridComponent from './uv-grid.component';
+import dedent from 'ts-dedent';
+
+<Meta
+    title='Layouts/UV Grid'
+    component={UvGridComponent}
+    decorators={[
+        moduleMetadata({
+            imports: [HeaderModule, SvgButtonModule, NavbarModule, RegisterIconModule.forRoot(ICON_SET), RouterModule.forRoot([], { useHash: true }), RegisterIconModule.forRoot(ICON_SET)],
+            providers: [{provide: APP_BASE_HREF, useValue: '/'}],
+        }),
+    ]}
+/>
+
+# UV Grid
+
+<Canvas>
+    <Story height="100vh" width="100vw" name="UV Grid">
+  {{
+    template: 
+    `
+        <div class='uv-container--fluid'>
+            <div class="row">
+                <div class="col-12"><div class="column-placeholder">col-12</div></div>
+            </div>
+            <div class="row">
+                <div class="col-6"><div class="column-placeholder">col-6</div></div>
+                <div class="col-6"><div class="column-placeholder">col-6</div></div>
+            </div>
+            <div class="row">
+                <div class="col-4"><div class="column-placeholder">col-4</div></div>
+                <div class="col-4"><div class="column-placeholder">col-4</div></div>
+                <div class="col-4"><div class="column-placeholder">col-4</div></div>
+            </div>
+            <div class="row">
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+            </div>
+            <div class="row">
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+            </div>
+            <div class="row">
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+            </div>
+        </div>
+    `
+  }}
+</Story>
+</Canvas>
+
+<Source
+  language='html'
+  code={dedent`
+     <div class='uv-container--fluid'>
+            <div class="row">
+                <div class="col-12"><div class="column-placeholder">col-12</div></div>
+            </div>
+            <div class="row">
+                <div class="col-6"><div class="column-placeholder">col-6</div></div>
+                <div class="col-6"><div class="column-placeholder">col-6</div></div>
+            </div>
+            <div class="row">
+                <div class="col-4"><div class="column-placeholder">col-4</div></div>
+                <div class="col-4"><div class="column-placeholder">col-4</div></div>
+                <div class="col-4"><div class="column-placeholder">col-4</div></div>
+            </div>
+            <div class="row">
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+            </div>
+            <div class="row">
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+            </div>
+            <div class="row">
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+            </div>
+        </div>
+  `}
+/>
+

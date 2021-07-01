@@ -1,22 +1,31 @@
-<div class="uv-grid">
+<div class="uv-container--fluid">
 
-    <div class="box appbar flex align-items-center justify-content-space-between">
-
-        <p class="heading-4">Comparison Tasks</p>
-        
-        <div>
-            <lib-uv-ui-button mode="round" class="btn-add-task margin-right-md" label="+"></lib-uv-ui-button>
-            <lib-uv-ui-dropdown-button [items]="dropdownItems" dropdownName="Switch filter"></lib-uv-ui-dropdown-button>
+    <div class="row">
+        <div class="col-12">
+            <lib-uv-ui-action-bar>
+                <div left>
+                    <p class="heading-4">Comparison Tasks</p>
+                </div>
+                <div right>
+                    <lib-uv-ui-button mode="round" class="btn-add-task margin-right-md" label="+"></lib-uv-ui-button>
+                    <lib-uv-ui-dropdown-button [items]="dropdownItems" dropdownName="Switch filter"></lib-uv-ui-dropdown-button>
+                </div>
+            </lib-uv-ui-action-bar>
         </div>
-        
     </div>
 
-<div class="content">
-    
-    <lib-uv-ui-task-snippet [tasks]="compareTasks">
-    </lib-uv-ui-task-snippet>
+    <div class="row">
+        <div class="col-12">
+            <div class="content flex flex-wrap">
+                <lib-uv-ui-card *ngFor="let task of tasks; trackBy:trackByFn" class="taskbox margin-sm">
+                    <p class="btn btn-chip margin-bottom-md">{{task.started}}</p>
+                    <p class="txt-sm bold margin-bottom-sm">{{task.title}}</p>
+                    <p class="txt-sm margin-bottom-md">{{task.description}}</p>
+                    <p class="chip-date">{{task.date}}</p>
+                  </lib-uv-ui-card>
+                <lib-uv-ui-card>hello</lib-uv-ui-card>
+            </div>
+        </div>
+    </div>
     
 </div>
-
-</div>
-
