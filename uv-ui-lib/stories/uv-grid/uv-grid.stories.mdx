@@ -17,33 +17,40 @@ import dedent from 'ts-dedent';
     ]}
 />
 
-# UV Grid
+# UV Grid System
 
+The grid system enables rows and columns to be defined for layout. 
+This is useful for controlling the organization of items as well as a responsive layout. 
+- The grid layout by default is a 12 column grid. 
+- The default vertical gap between rows can be implemented by the utility class `row-gap`
+- Start with the container class `uv-container` or `uv-container-fluid`. `uv-container` will keep items next to each other horizontally. `uv-container-fluid` will stack rows.
+
+## uv-container-fluid
 <Canvas>
-    <Story height="100vh" width="100vw" name="UV Grid">
+    <Story height="100vh" width="100vw" name="uv-container-fluid">
   {{
     template: 
     `
-        <div class='uv-container--fluid'>
-            <div class="row">
+        <div class='uv-container-fluid'>
+            <div class="row row-gap">
                 <div class="col-12"><div class="column-placeholder">col-12</div></div>
             </div>
-            <div class="row">
+            <div class="row row-gap">
                 <div class="col-6"><div class="column-placeholder">col-6</div></div>
                 <div class="col-6"><div class="column-placeholder">col-6</div></div>
             </div>
-            <div class="row">
+            <div class="row row-gap">
                 <div class="col-4"><div class="column-placeholder">col-4</div></div>
                 <div class="col-4"><div class="column-placeholder">col-4</div></div>
                 <div class="col-4"><div class="column-placeholder">col-4</div></div>
             </div>
-            <div class="row">
+            <div class="row row-gap">
                 <div class="col-3"><div class="column-placeholder">col-3</div></div>
                 <div class="col-3"><div class="column-placeholder">col-3</div></div>
                 <div class="col-3"><div class="column-placeholder">col-3</div></div>
                 <div class="col-3"><div class="column-placeholder">col-3</div></div>
             </div>
-            <div class="row">
+            <div class="row row-gap">
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
@@ -51,7 +58,7 @@ import dedent from 'ts-dedent';
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
             </div>
-            <div class="row">
+            <div class="row row-gap">
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
@@ -68,26 +75,26 @@ import dedent from 'ts-dedent';
 <Source
   language='html'
   code={dedent`
-     <div class='uv-container--fluid'>
-            <div class="row">
+     <div class='uv-container-fluid'>
+            <div class="row row-gap">
                 <div class="col-12"><div class="column-placeholder">col-12</div></div>
             </div>
-            <div class="row">
+            <div class="row row-gap">
                 <div class="col-6"><div class="column-placeholder">col-6</div></div>
                 <div class="col-6"><div class="column-placeholder">col-6</div></div>
             </div>
-            <div class="row">
+            <div class="row row-gap">
                 <div class="col-4"><div class="column-placeholder">col-4</div></div>
                 <div class="col-4"><div class="column-placeholder">col-4</div></div>
                 <div class="col-4"><div class="column-placeholder">col-4</div></div>
             </div>
-            <div class="row">
+            <div class="row row-gap">
                 <div class="col-3"><div class="column-placeholder">col-3</div></div>
                 <div class="col-3"><div class="column-placeholder">col-3</div></div>
                 <div class="col-3"><div class="column-placeholder">col-3</div></div>
                 <div class="col-3"><div class="column-placeholder">col-3</div></div>
             </div>
-            <div class="row">
+            <div class="row row-gap">
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
@@ -95,7 +102,7 @@ import dedent from 'ts-dedent';
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
             </div>
-            <div class="row">
+            <div class="row row-gap">
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
                 <div class="col-2"><div class="column-placeholder">col-2</div></div>
@@ -106,4 +113,63 @@ import dedent from 'ts-dedent';
         </div>
   `}
 />
+
+## uv-container
+<Canvas>
+    <Story height="100vh" width="100vw" name="uv-container">
+  {{
+    template: 
+    `
+        <div class='uv-container'>
+           <div class="col-2"><div class="column-placeholder">col-2</div></div>
+           <div class="col-8"><div class="column-placeholder">col-8</div></div>
+           <div class="col-2"><div class="column-placeholder">col-2</div></div>
+        </div>
+    `
+  }}
+</Story>
+</Canvas>
+
+<Source
+  language='html'
+  code={dedent`
+     <div class='uv-container-fluid'>
+            <div class="row row-gap">
+                <div class="col-12"><div class="column-placeholder">col-12</div></div>
+            </div>
+            <div class="row row-gap">
+                <div class="col-6"><div class="column-placeholder">col-6</div></div>
+                <div class="col-6"><div class="column-placeholder">col-6</div></div>
+            </div>
+            <div class="row row-gap">
+                <div class="col-4"><div class="column-placeholder">col-4</div></div>
+                <div class="col-4"><div class="column-placeholder">col-4</div></div>
+                <div class="col-4"><div class="column-placeholder">col-4</div></div>
+            </div>
+            <div class="row row-gap">
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+                <div class="col-3"><div class="column-placeholder">col-3</div></div>
+            </div>
+            <div class="row row-gap">
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+            </div>
+            <div class="row row-gap">
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+                <div class="col-2"><div class="column-placeholder">col-2</div></div>
+            </div>
+        </div>
+  `}
+/>
+
 
