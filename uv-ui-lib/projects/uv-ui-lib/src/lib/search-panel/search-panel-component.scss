@@ -1,6 +1,7 @@
 @import '../scss/variables';
 
 .search-panel {
+    min-width: 10rem;
     height: 40px;
     background-color: #FFFFFF;
     padding-right: 12px;
@@ -24,6 +25,7 @@
 }
 
 .full {
+    min-width: 20rem;
     border: $border-gray-light;
     border-radius: 28px;
 

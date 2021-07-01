@@ -99,7 +99,7 @@
     </lib-uv-ui-app-side-bar>
 </div>
 
-<div [ngClass]="filterBarActive ? 'col-8' : 'col-10'" class="justify-content-center justify-items-center align-content-center align-items-center" >
+<div [ngClass]="filterBarActive ? 'col-8' : 'col-10'" class="" >
     <app-search-results *ngIf="categorySelected" [category]="searchCategory"></app-search-results>
     <app-landing *ngIf="!categorySelected"></app-landing>
 </div>
