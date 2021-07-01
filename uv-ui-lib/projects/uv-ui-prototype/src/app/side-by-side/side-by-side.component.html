@@ -1,4 +1,4 @@
-<div class="uv-container--fluid">
+<div class="uv-container--fluid sbs-container">
 
     <div class="row">
         <div class="col-12">
@@ -14,9 +14,9 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row content">
         <div class="col-12">
-            <div class="content flex flex-wrap">
+            <div class=" flex flex-wrap">
                 <lib-uv-ui-card *ngFor="let task of tasks; trackBy:trackByFn" class="taskbox margin-sm">
                     <p class="btn btn-chip margin-bottom-md">{{task.started}}</p>
                     <p class="txt-sm bold margin-bottom-sm">{{task.title}}</p>

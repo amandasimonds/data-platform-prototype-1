@@ -23,6 +23,7 @@ export * from './lib/navbar/navbar.module';
 export * from './lib/navbar-dashboard-sub/navbar-dashboard-sub.component';
 export * from './lib/navbar-dashboard-sub/navbar-dashboard-sub.module';
 export * from './lib/register-icon/register-icon.module';
+export * from './lib/register-icon/register-icon.directive';
 export * from './lib/register-icon/icon-set';
 export * from './lib/search-panel/search-panel.component';
 export * from './lib/search-panel/search-panel.module';
