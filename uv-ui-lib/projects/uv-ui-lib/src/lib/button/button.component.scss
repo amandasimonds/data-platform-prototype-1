@@ -1,7 +1,7 @@
 @import '../scss/variables';
 
 .button {
-    font-family: $font-family;
+    font-family: var(--uv-font-family);
     border: 0;
     border-radius: 4px;
     cursor: pointer;
@@ -32,9 +32,8 @@
     border: 0;
 
     &.disabled {
-        color: $color-gray-light-7;
+        color: var(--uv-color-gray);
         background-color: $color-gray-light-5;
-        font-family: $font-family;
         font-weight: none;
         cursor: not-allowed;
     }
@@ -65,7 +64,7 @@
 }
 
 .btn-chip {
-    color: $color-orange;
+    color: var(--uv-color-orange);
     font-weight: bold;
     letter-spacing: 0.2px;
     line-height: 16px;

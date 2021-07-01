@@ -32,6 +32,10 @@
     &-end {
         flex: end;
     }
+
+    &-wrap{
+        flex-wrap: wrap;
+    }
 }
 
 .justify-content {
@@ -79,12 +83,11 @@
 }
 
 .sidebar-width-md {
-    width: $sidebar-width-md;
-    border: 3px solid green;
+    min-width: var(--uv-sidebar-width-md);
 }
 
 .sidebar-width-sm {
-    width: $sidebar-width-sm;
+    min-width: var(--uv-sidebar-width-sm);
 }
 
 .height-sm {
