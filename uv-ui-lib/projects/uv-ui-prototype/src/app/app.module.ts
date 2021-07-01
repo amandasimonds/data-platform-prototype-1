@@ -11,14 +11,14 @@ import {
     HeaderModule,
     NavbarModule,
     WidgetModule,
-    TaskSnippetModule,
     SnippetModule,
     DropdownButtonModule,
     ImageButtonModule,
     SvgButtonModule,
     TabModule,
     CheckboxModule,
-    RegisterIconModule
+    RegisterIconModule,
+    CardModule
 } from '../../../uv-ui-lib/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -54,7 +54,6 @@ import { SearchService } from './services/search.service';
         HeaderModule,
         NavbarModule,
         WidgetModule,
-        TaskSnippetModule,
         SnippetModule,
         DropdownButtonModule,
         ImageButtonModule,
@@ -65,6 +64,7 @@ import { SearchService } from './services/search.service';
         HttpClientModule,
         CheckboxModule,
         RegisterIconModule,
+        CardModule,
         RegisterIconModule.forRoot(ICON_SET)
     ],
     providers: [HelperService, AuthService, HttpClient, SearchService],

@@ -15,12 +15,7 @@ export class SearchPanelComponent {
         this.searchClicked.emit();
     }
 
-    public get classes(): string[] {
-        return [ this.mode ];
-    }
-
     public getMode(): string {
-
         return this.mode === 'full' ? 'full-search-field' : '';
     }
 

@@ -1,23 +1,11 @@
-// .grid{
-//     position: relative;
-//     height: calc(100vh - 64px);
-//     display: grid;
-//     grid-template-rows: [row1] 68px [row2] auto;
-//     grid-template-areas: 
-//     "appbar"
-//     "content" ;
-// }
-
-// .appbar {
-//     grid-row: row1;
-//     padding: 20px;
-//     border-top: none;
-//     border-left: none;
-// }
-
 .content {
-    grid-row: row2;
-    overflow: auto;
     padding-left: 96px;
     padding-top:20px;
+    height: 100vh;
+    overflow: auto;
+    position: relative;
+}
+
+.taskbox {
+    width: 200px;
 }
