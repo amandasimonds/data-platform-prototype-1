@@ -7,7 +7,7 @@
                     <p class="heading-4">Comparison Tasks</p>
                 </div>
                 <div right>
-                    <lib-uv-ui-button mode="round" class="btn-add-task margin-right-md" label="+"></lib-uv-ui-button>
+                    <uv-button mode="round" class="btn-add-task margin-right-md" label="+"></uv-button>
                     <lib-uv-ui-dropdown-button [items]="dropdownItems" dropdownName="Switch filter"></lib-uv-ui-dropdown-button>
                 </div>
             </lib-uv-ui-action-bar>
@@ -17,12 +17,12 @@
     <div class="row content">
         <div class="col-12">
             <div class=" flex flex-wrap">
-                <lib-uv-ui-card *ngFor="let task of tasks; trackBy:trackByFn" class="taskbox margin-sm">
+                <uv-card *ngFor="let task of tasks; trackBy:trackByFn" class="taskbox margin-sm">
                     <p class="btn btn-chip margin-bottom-md">{{task.started}}</p>
                     <p class="txt-sm bold margin-bottom-sm">{{task.title}}</p>
                     <p class="txt-sm margin-bottom-md">{{task.description}}</p>
                     <p class="chip-date">{{task.date}}</p>
-                  </lib-uv-ui-card>
+                  </uv-card>
             </div>
         </div>
     </div>
