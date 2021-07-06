@@ -11,12 +11,12 @@
 
 .basic {
     line-height: 20px;
-    font-weight: $font-bold;
+    font-weight: var(--uv-font-bold);
     background-color: transparent;
     color: var(--uv-color-primary);
 
     &.disabled {
-        color: $color-gray;
+        color: var(--uv-color-gray);
         cursor: not-allowed;
     }
 }
@@ -24,7 +24,7 @@
 .primary {
     font-size: 14px;
     line-height: 24px;
-    font-weight: $font-bold;
+    font-weight: var(--uv-font-bold);
     height: 40px;
     padding: 0 25px;
     color: white;
@@ -32,8 +32,8 @@
     border: 0;
 
     &.disabled {
-        color: var(--uv-color-gray);
-        background-color: $color-gray-light-5;
+        color: var(--uv-color-white);
+        background-color: var(--uv-color-gray);
         font-weight: none;
         cursor: not-allowed;
     }
@@ -45,7 +45,7 @@
     height: 41px;
     padding: 10.5px;
     border-radius: 100%;
-    border: $border-gray-light;
+    border: var(--uv-border-gray);
 
     &-large{
         width: 57px;
@@ -69,13 +69,13 @@
     letter-spacing: 0.2px;
     line-height: 16px;
     padding: 8px 13px;
-    border: $border-gray-light;
+    border: var(--uv-border-gray);
 }
 
 .btn-add-task {
     color: var(--uv-color-primary);
     font-size: 18px;
     padding: 6px;
-    border: $border-gray-light;
+    border: var(--uv-border-gray);
 }
 

@@ -1,14 +1,11 @@
 @import '../scss/variables';
-@import '../scss/typography';
-@import '../scss/styles';
-
 
 .snippet-wrapper {
-    margin-bottom: $sm-size;
+    margin-bottom: var(--uv-sm-size);
 
     &:hover {
         cursor: pointer;
-        background-color: $color-gray-light-4;
+        background-color: var(--uv-color-gray-light);
         border-radius: 8px;
     }
 }

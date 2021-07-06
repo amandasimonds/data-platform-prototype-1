@@ -6,11 +6,11 @@
     width: 212px;
     height: 100vh;
     z-index:100;
-    border: $border-gray-light;
+    border: var(--uv-border-gray);
     border-left:none;
     border-bottom: none;
     background-color:var(--color-white);
-    box-shadow: $box-shadow-light;
+    box-shadow: var(--uv-box-shadow);
 
     &__heading-container {
         padding: 18px 16px;
@@ -50,7 +50,7 @@
         height: 26px;
 
         &:hover {
-            background-color: $color-gray-light-4;
+            background-color: var(--uv-color-gray-light);
             border-radius: 50%;
         }
     }

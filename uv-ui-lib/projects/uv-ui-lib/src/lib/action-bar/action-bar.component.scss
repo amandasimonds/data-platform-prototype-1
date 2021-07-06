@@ -10,10 +10,10 @@
 
 .container-left {
     height: 100%;
-    margin-left: $md-size;
+    margin-left: var(--uv-md-size);
 }
 
 .container-right {
     height: 100%;
-    margin-right: $md-size;
+    margin-right: var(--uv-md-size);
 }
