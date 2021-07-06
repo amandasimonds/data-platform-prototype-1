@@ -1,3 +1,5 @@
-<div class="box card">
+<div class="box card" 
+    [class.card-sm]="size === 'sm'"
+    [class.card-md]="size === 'md'">
     <ng-content></ng-content>
 </div>
