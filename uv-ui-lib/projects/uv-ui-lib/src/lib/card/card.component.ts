@@ -1,11 +1,13 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-uv-ui-card',
+  selector: 'uv-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CardComponent  {
+
+    @Input() size: 'auto' | 'sm' | 'md' = 'auto';
 
 }
