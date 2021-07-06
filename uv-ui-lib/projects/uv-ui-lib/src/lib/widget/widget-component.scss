@@ -1,7 +1,7 @@
 @import '../scss/variables';
 
 .widget {
-    margin: $xs-size;
+    margin: var(--uv-xs-size);
     height: auto;
     width: auto;
     border-radius: 16px;

@@ -2,7 +2,7 @@
 
     <img class="navbar-logo" src="http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg">
 
-    <div class="navbar-divider"></div>
+    <div class="divider"></div>
 
     <span *ngFor="let navlink of navlinks trackBy: trackByFn" class="navlink-wrapper">
         <a [routerLink]="navlink.navlink"><img [src]="navlink.icon"></a>

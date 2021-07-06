@@ -8,15 +8,15 @@
     height: 16px;
     width: 16px;
     box-sizing: border-box;
-    background-color: $color-gray-light-5;
-    border: $border-gray-light;
+    background-color: var(--uv-color-gray-light);
+    border: var(--uv-border-gray);
     border-radius: 3px;
     cursor: pointer;
 }
 
 .checkmark {
     line-height: 14px;
-    font-size: $font-size-sm;
+    font-size: var(--uv-font-size-sm);
     visibility: hidden;
     height: 100%;
     text-align: center;
@@ -24,7 +24,7 @@
 }
 
 .checkbox-label {
-    font-size: $font-size-sm;
+    font-size: var(--uv-font-size-sm);
     line-height: 16px;
     margin-left: 12px;
 }
@@ -37,5 +37,5 @@
 
 .disabled {
     cursor: not-allowed;
-    color: $color-gray;
+    color: var(--uv-color-gray);
 }

@@ -7,60 +7,60 @@ body, p {
 
 .uv-body {
     font-family: var(--uv-font-family);
-    font-size: $font-size-sm;
+    font-size: var(--uv-font-size-sm);
 }
 
 h1 {
     font-weight: bold;
-    font-size: $font-size-lg;
+    font-size: var(--uv-font-size-lg);
     line-height: 48px;
     letter-spacing: -0.25;
 }
 
 h2 {
-    font-size: $font-size-xl;
+    font-size: var(--uv-font-size-xl);
     line-height: 40px;
     letter-spacing: -0.1;
 }
 
 h3 {
     font-weight: 100;
-    font-size: $font-size-lg;
+    font-size: var(--uv-font-size-lg);
     line-height: 36px;
 }
 
 h4 {
     font-weight: 100;
-    font-size: $font-size-md-lg;
+    font-size: var(--uv-font-size-md);
     line-height: 32px;
 }
 
 h5 {
     font-weight: 100;
-    font-size: $font-size-md;
+    font-size: var(--uv-font-size-md);
     line-height: 24px;
 }
 
 .heading {
     &-sub{
-        font-size: $font-size-sm-md;
+        font-size: var(--uv-font-size-sm);
     }
 }
 
 .uv-label {
-    font-size: $font-size-sm-md;
+    font-size: var(--uv-font-size-sm);
 }
 
 .uv-placeholder {
-    font-size: $font-size-sm;
+    font-size: var(--uv-font-size-sm);
 }
 
 .bold {
-    font-weight: $font-bold;
+    font-weight: var(--uv-font-bold);
 }
 
 .highlight {
-    background-color: $highlight-text-color-gray;
+    background-color: var(--uv-color-gray-light);
 }
 
 .uv-link,
@@ -68,8 +68,8 @@ a,
 a:hover,
 a:active,
 a:visited {
-    font-size: $font-size-sm;
-    font-weight: $font-bold;
+    font-size: var(--uv-font-size-sm);
+    font-weight: var(--uv-font-bold);
     color: var(--uv-color-primary);
     text-decoration: none;
 }
@@ -80,8 +80,8 @@ ul, ol {
 
 .chip-date {
     border-radius: 8px;
-    background-color: $color-gray-light-5;
+    background-color: var(--uv-color-gray-light);
     padding: 5px 7px 7px 5px;
-    color: $color-gray-light-6;
+    color: var(--uv-color-gray-dark);
     display: inline-block;
 }

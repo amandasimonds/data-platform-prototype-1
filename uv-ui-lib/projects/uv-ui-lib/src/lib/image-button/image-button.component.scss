@@ -5,7 +5,7 @@
     &,
     &:link,
     &:visited {
-        font-weight: $font-bold;
+        font-weight: var(--uv-font-bold);
         text-decoration: none;
         display: inline-block;
         border-radius: 8px;
@@ -19,11 +19,11 @@
         outline: none;
     }
 
-    width: $sm-size;
-    height: $sm-size;
+    width: var(--uv-sm-size);
+    height: var(--uv-sm-size);
 
     &-xs {
-        width: $xs-size;
-        height: $xs-size;
+        width: var(--uv-xs-size);
+        height: var(--uv-xs-size);
     }
 }
