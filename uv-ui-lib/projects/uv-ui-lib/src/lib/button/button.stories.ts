@@ -20,13 +20,13 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
     props: args
 });
 
-export const Basic = Template.bind({});
-Basic.args = {
-    label: 'Basic Button',
-    mode: 'basic'
+export const Text = Template.bind({});
+Text.args = {
+    label: 'Text Button',
+    mode: 'text'
 };
 
-Basic.parameters = {
+Text.parameters = {
     docs: {
       source: {
         mode: 'auto'
@@ -34,21 +34,15 @@ Basic.parameters = {
     }
   };
 
-export const BasicWithIcon = Template.bind({});
-BasicWithIcon.args = {
-    label: 'Basic With Icon',
-    mode: 'basic',
+export const TextWithIcon = Template.bind({});
+TextWithIcon.args = {
+    label: 'Text With Icon',
+    mode: 'text',
     icon: 'back'
 };
 
-export const Flat = Template.bind({});
-Flat.args = {
+export const Primary = Template.bind({});
+Primary.args = {
     label: 'Primary Button',
     mode: 'primary'
-};
-
-export const Round = Template.bind({});
-Round.args = {
-    label: '+',
-    mode: 'round'
 };
