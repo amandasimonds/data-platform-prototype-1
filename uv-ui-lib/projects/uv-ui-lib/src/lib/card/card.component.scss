@@ -1,5 +1,7 @@
+@import '../scss/variables';
+
 .card {
-    padding: $sm-size;
+    padding: var(--uv-sm-size);
     width: auto;
     height: auto;
     display: inline-flex;

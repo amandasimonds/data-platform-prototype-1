@@ -20,34 +20,34 @@
 
     svg {
         cursor: pointer;
-        width: $sm-size;
-        height: $sm-size;
+        width: var(--uv-sm-size);
+        height: var(--uv-sm-size);
         vertical-align: middle;
     
         &-xs {
-            width: $xs-size;
-            height: $xs-size;
+            width: var(--uv-xs-size);
+            height: var(--uv-xs-size);
         }
     }
 }
 
 .small svg {
-    width: $sm-size;
-    height: $sm-size;
+    width: var(--uv-sm-size);
+    height: var(--uv-sm-size);
 }
 
 .xs svg {
-    width: $xs-size;
-    height: $xs-size;
+    width: var(--uv-xs-size);
+    height: var(--uv-xs-size);
 }
 
 .xxs svg {
-    width: $xxs-size;
-    height: $xxs-size;
+    width: var(--uv-xxs-size);
+    height: var(--uv-xxs-size);
 }
 
 .gray {
-    color: $color-gray-light-3;
+    color: var(--uv-svg-color-gray);
     
     &:hover {
         color: var(--uv-color-primary);

@@ -8,7 +8,7 @@
         cursor: pointer;
         color: var(--uv-color-primary);
         font-weight: bold;
-        background-color: $color-gray-light-5;
+        background-color: var(--uv-color-gray-light);
         box-shadow: inset -4px 0 0 var(--uv-color-primary);
             a, svg, span {
                 color: var(--uv-color-primary);
@@ -17,22 +17,22 @@
 }
 
 .disabled {
-    color: $color-gray-light;
+    color: var(--uv-color-gray);
     pointer-events: none;
     cursor: not-allowed;
     a, svg, span {
-        color: $color-gray-light;
+        color: var(--uv-color-gray);
         pointer-events: none;
     }
     &:hover {
         cursor: not-allowed;
-        color: $color-gray-light;
+        color: var(--uv-color-gray);
         font-weight: none;
         background-color: white;
         box-shadow: none;
         pointer-events: none;
         a, svg, span {
-            color: $color-gray-light;
+            color: var(--uv-color-gray);
             pointer-events: none;
         }
     }
@@ -41,7 +41,7 @@
 .active {
     color: var(--uv-color-primary);
         font-weight: bold;
-        background-color: $color-gray-light-5;
+        background-color: var(--uv-color-gray-light);
         box-shadow: inset -4px 0 0 var(--uv-color-primary);
             a, svg, span {
                 color: var(--uv-color-primary);
@@ -53,14 +53,14 @@
 }
 
 .reorder-mode {
-    border-bottom: 1px solid $color-gray-light;
+    border-bottom: 1px solid var(--uv-color-gray);
     background-color: white;
     &:hover {
         cursor: move;
-        border: 1px solid $color-gray-light;
+        border: 1px solid var(--uv-color-gray);
     }
     &:active:hover{
-        border: 1px solid $color-gray-light;
+        border: 1px solid var(--uv-color-gray);
     }
 }
 

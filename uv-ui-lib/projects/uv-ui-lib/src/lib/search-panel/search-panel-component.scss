@@ -18,7 +18,7 @@
         }
 
         &::-webkit-input-placeholder {
-            color: $color-gray;
+            color: var(--uv-color-gray-dark);
             font-style: italic;
         }
     }
@@ -26,7 +26,7 @@
 
 .full {
     min-width: 20rem;
-    border: $border-gray-light;
+    border: var(--uv-border-gray);
     border-radius: 28px;
 
     &-search-field {

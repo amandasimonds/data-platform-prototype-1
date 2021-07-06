@@ -3,31 +3,26 @@
 .navbar {
     height: 100%;
     z-index: 200;
-    border: $border-gray-light;
+    border: var(--uv-border-gray);
     border-bottom: none;
-    background-color: var(--color-white);
-    box-shadow: $box-shadow-light;
-
-    &-divider {
-        border-bottom: 1px solid $color-gray-light-2;
-        opacity: .31;
-    }
+    background-color: var(--uv-color-white);
+    box-shadow: var(--uv-box-shadow);
 }
 
 .navlink-wrapper {
-    width: $lg-size;
-    height: $lg-size;
+    width: var(--uv-lg-size);
+    height: var(--uv-lg-size);
     margin: 18px auto 0;
     border-radius: 50%;
     padding: 10px;
 
     &:hover {
-        background-color: $color-gray-light-4;
+        background-color: var(--uv-color-gray-light);
     }
 }
 
 .navbar-logo {
-    width: $md-size;
+    width: var(--uv-md-size);
     margin: 0 auto;
     height: 62px;
 }

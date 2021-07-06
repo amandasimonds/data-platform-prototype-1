@@ -22,7 +22,7 @@ html {
 body {
     box-sizing: border-box;
     height: 100%;
-    background-color: var(--background-color);
+    background-color: var(--uv-background-color);
     font-family: var(--uv-font-family);
 }
 
@@ -64,18 +64,17 @@ body {
     flex-wrap: wrap;
     overflow: auto;
     height: 100%;
-    margin: 0 $sm-size;
+    margin: 0 var(--uv-sm-size);
 }
 
 .box {
-    background-color: var(--color-white);
-    border: $border-gray-light;
-    box-shadow: $box-shadow-light;
+    background-color: var(--uv-color-white);
+    border: var(--uv-border-gray);
+    box-shadow: var(--uv-box-shadow);
 }
 
 .divider {
-    border-bottom: 1px solid $color-gray-light-2;
-    opacity: .31;
+    border-bottom: 1px solid var(--uv-border-color-gray);
 }
 
 .img-small {
@@ -89,21 +88,21 @@ body {
 }
 
 .img-md {
-    width: $md-size;
+    width: var(--uv-md-size);
 }
 
 .img-lg {
-    width: $lg-size;
+    width: var(--uv-lg-size);
 }
 
 .img-xl {
-    width: $xl-size;
+    width: var(--uv-xl-size);
 }
 
 svg {
     color: currentColor;
-    width: $sm-size;
-    height: $sm-size;
+    width: var(--uv-sm-size);
+    height: var(--uv-sm-size);
 }
 
 .tab {
@@ -115,7 +114,7 @@ svg {
         cursor: pointer;
         color: var(--uv-color-primary);
         font-weight: bold;
-        background-color: $color-gray-light-5;
+        background-color: var(--uv-color-gray-light);
         box-shadow: inset -4px 0 0 var(--uv-color-primary);
             a, svg, span {
                 color: var(--uv-color-primary);
@@ -124,12 +123,12 @@ svg {
 }
 
 .chip {
-    border: $border-gray-light;
+    border: var(--uv-border-gray);
     border-radius: 4px;
-    color: $color-gray-light-2;
-    font-weight: $font-bold;
+    color: var(--uv-color-gray-dark);
+    font-weight: var(--uv-font-bold);
     padding: 2px 10px;
-    font-size: $font-size-sm;
+    font-size: var(--uv-font-size-sm);
 
     &:hover {
         color: var(--uv-color-primary);
@@ -144,19 +143,19 @@ svg {
     padding: 8px 13px;
     border-radius: 4px;
     display: inline-block;
-    border: $border-gray-light;
+    border: var(--uv-border-gray);
 }
 
 .header-sbs {
     background-color: var(--color-white);
-    border: $border-gray;
+    border: var(--uv-border-gray);
     height: 4.8rem;
     width:100%;
 }
 
 .header-sbs-sub {
     background-color: var(--color-white);
-    border: $border-gray;
+    border: var(--uv-border-gray);
     border-top: none;
     height: 4.8rem;
     width:100%;
