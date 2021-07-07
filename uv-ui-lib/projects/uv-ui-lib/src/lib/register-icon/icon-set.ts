@@ -127,6 +127,10 @@ export const ICON_SET = [
 		name: 'search',
 		url: 'search.svg'
 	},
+    {
+		name: 'search-gradient',
+		url: 'gradient/apps-search-gradient.svg'
+	},
 	{
 		name: 'settings',
 		url: 'system/Settings.svg'
@@ -146,7 +150,7 @@ export const ICON_SET = [
     {
         name: 'uv-logo',
         url: 'uv-logo.svg'
-    }
+    },
 ] as const;
 
 export type SBSMatIconName = typeof ICON_SET[number]['name'];
