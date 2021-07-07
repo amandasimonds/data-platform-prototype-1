@@ -8,7 +8,23 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   options: {
     storySort: {
-      order: ['Intro', 'Theme', 'Components', ['ActionBar', 'Buttons', ['Button'], 'Card', 'Checkbox', 'Header', 'Navbar', 'Search', '']],
+      order: [
+          'Intro', 
+          'Theme', 
+          'Components', [
+              'ActionBar', 
+              'Buttons', [
+                  'Button'
+                ], 
+                'Card', 
+                'Checkbox', 
+                'Header', 
+                'Navbar', 
+                'Search', 
+                'Sidebar', 
+                'Tab'
+            ]
+        ],
     },
   },
 }

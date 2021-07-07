@@ -7,12 +7,12 @@
     display: inline-flex;
     gap: 8px;
     flex-direction: column;
-}
 
-.card-sm {
-    width: 200px;
-}
+    &-sm {
+        width: 200px;
+    }
 
-.card-md {
-    width: 365px;
+    &-md {
+        width: 365px;
+    }
 }
