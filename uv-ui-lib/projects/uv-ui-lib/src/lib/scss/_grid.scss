@@ -46,7 +46,7 @@ $columns: 12; // Number of columns in the grid system
     flex-direction: row;
     width: 100%;
     margin: 0 auto;
-    
+
     &-gap {
         &:not(:last-child){
             margin-bottom: var(--uv-grid-gap-vertical);
