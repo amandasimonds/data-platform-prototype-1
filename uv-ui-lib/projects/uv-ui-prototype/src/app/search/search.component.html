@@ -5,7 +5,7 @@
                 <div top>
                     <div class="height-sm top-content flex justify-content-space-between margin-bottom-sm">
                         <div>
-                            <uv-button label="Back" icon='back' color='primary' mode="basic" (click)="clearResults()"></uv-button>
+                            <uv-button label="Back" icon='back' color='primary' mode="text" (click)="clearResults()"></uv-button>
                         </div>
                         <div>
                             <lib-uv-ui-svg-button color='blue' class="margin-right-xs" (click)="reOrderMode()" icon='up-down-arrows'></lib-uv-ui-svg-button>
@@ -47,8 +47,8 @@
             </div>
             
             <div *ngIf="reOrderModeActivated" class="margin-xs flex justify-content-flex-end">
-                <uv-button label="Close" color="primary" class="margin-right-sm" mode="basic" (click)="reOrderMode()"></uv-button>
-                <uv-button label="Save" color="primary" mode="basic" (click)="clearResults()"></uv-button>
+                <uv-button label="Close" color="primary" class="margin-right-sm" mode="text" (click)="reOrderMode()"></uv-button>
+                <uv-button label="Save" color="primary" mode="text" (click)="clearResults()"></uv-button>
             </div>
         </div>
         

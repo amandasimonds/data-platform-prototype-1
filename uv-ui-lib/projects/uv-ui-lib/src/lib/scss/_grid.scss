@@ -1,4 +1,4 @@
-.uv-ui-shell{
+.uv-ui-shell {
     height: 100vh;
     width: 100%;
     position: fixed;
@@ -9,23 +9,23 @@
     grid-template-areas: 
     "navbar header"
     "navbar main" ;
-}
 
-.uv-ui-shell-header {
-    grid-column: col2;
-    grid-row: row1;
-}
+    &-header {
+        grid-column: col2;
+        grid-row: row1;
+    }
 
-.uv-ui-shell-navbar {
-    grid-column: col1;
-    grid-row-start: row1;
-    grid-row-end: 3;
-}
-
-.uv-ui-shell-content {
-    grid-column: col2;
-    grid-row: row2;
-    height: calc(100vh - var(--uv-header-height));
+    &-navbar {
+        grid-column: col1;
+        grid-row-start: row1;
+        grid-row-end: 3;
+    }
+    
+    &-content {
+        grid-column: col2;
+        grid-row: row2;
+        height: calc(100vh - var(--uv-header-height));
+    }
 }
 
 $columns: 12; // Number of columns in the grid system
@@ -46,13 +46,14 @@ $columns: 12; // Number of columns in the grid system
     flex-direction: row;
     width: 100%;
     margin: 0 auto;
-}
-
-.row-gap {
-    &:not(:last-child){
-        margin-bottom: var(--uv-grid-gap-vertical);
+    
+    &-gap {
+        &:not(:last-child){
+            margin-bottom: var(--uv-grid-gap-vertical);
+        }
     }
 }
+
 .scroll {
     overflow: auto;
 }

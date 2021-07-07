@@ -24,5 +24,5 @@
 .navbar-logo {
     width: var(--uv-md-size);
     margin: 0 auto;
-    height: 62px;
+    height: calc(var(--uv-header-height) - 2px);
 }
