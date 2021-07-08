@@ -1,10 +1,44 @@
-import { Meta, Story, ArgsTable, Source, Typeset, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Source, Typeset, Preview, Canvas } from '@storybook/addon-docs/blocks';
+import dedent from 'ts-dedent';
 
-<Meta 
-    title='Theme/Typography' 
+<Meta
+    title='Theme/Typography'
 />
 
 # Typography
-<Preview>
-<Typeset fontSizes={['12px', '14px']} sampleText="Heading" />
-</Preview>
+
+<Canvas>
+    <Story name="Typography" height="500px">
+        {{template: 
+        `<div class="flex gap-10 flex-column">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <p class="heading-sub">Subheading</p>
+            <p class="uv-label">Label</p>
+            <p class="uv-placeholder">Placeholder</p>
+            <a href="#" class="uv-link">Link</a>
+            <p class="uv-body">Body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+        `}}
+    </Story>
+</Canvas>
+
+<Source
+    language='html'
+    code={dedent
+    `
+        <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <p class="heading-sub">Subheading</p>
+            <p class="uv-label">Label</p>
+            <p class="uv-placeholder">Placeholder</p>
+            <a href="#" class="uv-link">Link</a>
+            <p class="uv-body">Body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    `}
+/>

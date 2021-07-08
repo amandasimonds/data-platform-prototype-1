@@ -9,7 +9,7 @@ import { TabComponent } from '../tab/tab.component';
 import { AppSideBarComponent } from './app-side-bar.component';
 
 export default {
-    title: 'Components/SideBar',
+    title: 'Components/Sidebar',
     component: AppSideBarComponent,
     decorators: [
         moduleMetadata({
