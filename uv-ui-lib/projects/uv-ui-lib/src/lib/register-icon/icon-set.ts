@@ -4,6 +4,10 @@ export const ICON_SET = [
 		url: 'apps-gwu.svg'
 	},
     {
+		name: 'apps-design-ripple',
+		url: 'apps-design-ripple.svg'
+	},
+    {
 		name: 'apps-quad',
 		url: 'apps-quad.svg'
 	},

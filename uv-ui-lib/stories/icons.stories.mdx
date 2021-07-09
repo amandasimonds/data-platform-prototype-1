@@ -1,0 +1,90 @@
+import { Meta, Story, ArgsTable, Source, Canvas } from '@storybook/addon-docs/blocks';
+import { moduleMetadata } from '@storybook/angular';
+import { SidePanelModule, TabModule, RegisterIconModule, ICON_SET, CheckboxModule } from 'projects/uv-ui-lib/src/public-api';
+import dedent from 'ts-dedent';
+
+<Meta
+  title='Theme/Icons'
+  decorators={[
+        moduleMetadata({
+            imports: [SidePanelModule, CheckboxModule, TabModule, RegisterIconModule.forRoot(ICON_SET)],
+        }),
+    ]}
+/>
+
+# Icons
+
+Icons are used through the MatIconRegistry. Icons used by UV are loaded in through the CDN.
+- The syntax is `<mat-icon svgIcon="<icon name>"></mat-icon>`
+- Icons can come in 2 colors - gray or primary. To apply a color, apply the utility class `primary` or `gray`. For example: `<mat-icon class="primary" svgIcon="back"></mat-icon>`
+
+export const AppIcons = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  template: 
+    `
+    <div uvUiLibRegisterIcon>
+    <div class="flex gap-sm">
+    <mat-icon svgIcon="apps-gwu"></mat-icon>apps-gwu
+    <mat-icon svgIcon="apps-quad"></mat-icon>apps-quad
+    <mat-icon svgIcon="apps-sbs"></mat-icon>apps-sbs
+    <mat-icon svgIcon="apps-settings"></mat-icon>apps-settings
+    <mat-icon svgIcon="apps-design-ripple"></mat-icon>apps-design-ripple
+    </div>
+    </div>
+    `
+});
+
+<Canvas>
+  <Story
+    name="App Icons"
+  >
+    { AppIcons.bind({}) }
+  </Story>
+</Canvas>
+
+<Source
+  language='html'
+  code={dedent
+    `
+    `
+  }
+/>
+
+export const ActionIcons = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  template: 
+    `
+    <div uvUiLibRegisterIcon>
+    <div class="flex gap-sm">
+    <mat-icon svgIcon="arrow_expand"></mat-icon>arrow_expand
+    <mat-icon svgIcon="arrow_collapse"></mat-icon>arrow_collapse
+    <mat-icon svgIcon="back"></mat-icon>back
+    <mat-icon svgIcon="close"></mat-icon>close
+    <mat-icon svgIcon="copy"></mat-icon>copy
+    <mat-icon svgIcon="filter"></mat-icon>filter
+    <mat-icon svgIcon="filter2"></mat-icon>filter2
+    <mat-icon svgIcon="fullscreen"></mat-icon>fullscreen
+    <mat-icon svgIcon="reorder"></mat-icon>reorder
+    <mat-icon svgIcon="search"></mat-icon>search
+    </div>
+    </div>
+    `
+});
+
+<Canvas>
+  <Story
+    name="Action Icons"
+  >
+    { ActionIcons.bind({}) }
+  </Story>
+</Canvas>
+
+<Source
+  language='html'
+  code={dedent
+    `
+    `
+  }
+/>
+
+

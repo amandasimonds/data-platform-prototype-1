@@ -8,6 +8,9 @@ export default {
     title: 'Components/Tab',
     component: TabComponent,
     decorators: [
+        moduleMetadata({
+            imports: [RegisterIconModule.forRoot(ICON_SET)]
+        }),
         componentWrapperDecorator((story) =>
             `
                 <div uvSbsRegisterIcon>
@@ -17,9 +20,7 @@ export default {
                 </div>
             `
         ),
-        moduleMetadata({
-            imports: [RegisterIconModule.forRoot(ICON_SET)]
-        })
+        
       ]
 } as Meta;
 

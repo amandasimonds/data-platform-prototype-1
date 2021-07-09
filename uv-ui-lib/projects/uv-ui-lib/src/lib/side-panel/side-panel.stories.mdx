@@ -1,0 +1,106 @@
+import { Meta, Story, ArgsTable, Source, Typeset, Preview, Canvas } from '@storybook/addon-docs/blocks';
+import { moduleMetadata } from '@storybook/angular';
+import { CommonModule } from '@angular/common';
+import { SidePanelModule, TabModule, RegisterIconModule, ICON_SET, CheckboxModule } from 'projects/uv-ui-lib/src/public-api';
+import dedent from 'ts-dedent';
+
+<Meta
+    title='Components/Side Panel'
+    decorators={[
+        moduleMetadata({
+            imports: [SidePanelModule, CheckboxModule, TabModule, RegisterIconModule.forRoot(ICON_SET)],
+        }),
+    ]}
+/>
+
+# Side Panels
+
+<Canvas>
+    <Story height="600px" name="Side Panel Basic">
+  {{
+    template: 
+    `
+    <div uvUiLibRegisterIcon>
+    <div class="uv-container h-100">
+    <div class="col-3">
+    <uv-side-panel>
+        <div top>
+            <h3>Title</h3>
+            </div>
+            <div bottom>
+                <lib-uv-ui-tab icon="parts">Label</lib-uv-ui-tab>
+                <lib-uv-ui-tab icon="document">Label</lib-uv-ui-tab>
+                <lib-uv-ui-tab icon="apps-sbs">Label</lib-uv-ui-tab>
+                <lib-uv-ui-tab icon="clock">Label</lib-uv-ui-tab>
+                </div>
+    </uv-side-panel>
+    </div>
+    </div>
+        <div uvUiLibRegisterIcon>
+    `
+  }}
+</Story>
+</Canvas>
+
+<Source
+  language='html'
+  code={dedent`
+         <div class="uv-container h-100">
+    <div class="col-3">
+    <uv-side-panel>
+        <div top>
+            <h3>Title</h3>
+            </div>
+            <div bottom>
+                <lib-uv-ui-tab>Label</lib-uv-ui-tab>
+                <lib-uv-ui-tab>Label</lib-uv-ui-tab>
+                <lib-uv-ui-tab>Label</lib-uv-ui-tab>
+                <lib-uv-ui-tab>Label</lib-uv-ui-tab>
+                <lib-uv-ui-tab>Label</lib-uv-ui-tab>
+                </div>
+    </uv-side-panel>
+    </div>
+    </div>
+  `}
+/>
+
+<Canvas>
+    <Story height="600px" name="Side Panel with Scroll">
+  {{
+    template: 
+    `
+    <div class="uv-container h-100">
+    <div class="col-3">
+    <uv-side-panel mode="scroll">
+        <div top>
+            <h3>Title</h3>
+            </div>
+            <div bottom>
+                <div class="flex flex-column gap-sm">
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                  <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                  <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                <lib-uv-ui-checkbox label="Checkbox"></lib-uv-ui-checkbox>
+                </div>
+                </div>
+    </uv-side-panel>
+    </div>
+    </div>
+        
+    `
+  }}
+</Story>
+</Canvas>
+
+

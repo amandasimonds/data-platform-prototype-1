@@ -1,6 +1,6 @@
 <div class="uv-container">
         <div class="col-2 sidebar-width-md">     
-            <lib-uv-ui-app-side-bar>
+            <uv-side-panel>
                 
                 <div top>
                     <div class="height-sm top-content flex justify-content-space-between margin-bottom-sm">
@@ -52,13 +52,13 @@
             </div>
         </div>
         
-    </lib-uv-ui-app-side-bar>
+    </uv-side-panel>
     
 </div>
 
 <div  *ngIf="filterBarActive" class="sidebar-width-sm">
     
-    <lib-uv-ui-app-side-bar mode="scroll">
+    <uv-side-panel mode="scroll">
         <div top>
             <div class="margin-bottom-sm flex justify-content-space-between" >
                 <h4>Filters</h4>
@@ -96,7 +96,7 @@
             </div>
             
         </div>
-    </lib-uv-ui-app-side-bar>
+    </uv-side-panel>
 </div>
 
 <div [ngClass]="filterBarActive ? 'col-8' : 'col-10'" class="" >

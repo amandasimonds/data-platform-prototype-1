@@ -38,7 +38,7 @@ export const parameters = {
                 'Header', 
                 'Navbar', 
                 'Search', 
-                'Sidebar', 
+                'Side Panel', 
                 'Tab'
             ]
         ],

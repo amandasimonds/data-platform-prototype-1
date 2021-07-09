@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'lib-uv-ui-app-side-bar',
-    templateUrl: './app-side-bar.component.html',
-    styleUrls: ['./app-side-bar-component.scss'],
+    selector: 'uv-side-panel',
+    templateUrl: './side-panel.component.html',
+    styleUrls: ['./side-panel-component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppSideBarComponent {
+export class SidePanelComponent {
 
     @Input() public mode: 'menu' | 'scroll' = 'menu';
 

@@ -78,6 +78,10 @@
     gap: 10px;
 }
 
+.gap-sm {
+    gap: 16px;
+}
+
 .w-100 {
     width: 100%;
 }
@@ -198,7 +202,7 @@
     color: var(--uv-svg-color-gray);
 }
 
-.blue { 
+.blue, .primary { 
     color: var(--uv-color-primary);
 }
 
