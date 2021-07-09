@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from '../button/button.module';
 import { SvgButtonModule } from '../svg-button/svg-button.module';
-import { AppSideBarComponent } from './app-side-bar.component';
+import { SidePanelComponent } from './side-panel.component';
 
 @NgModule({
-    declarations: [ AppSideBarComponent],
+    declarations: [ SidePanelComponent],
     imports: [
         CommonModule, ButtonModule, SvgButtonModule
     ],
-    exports: [ AppSideBarComponent ]
+    exports: [ SidePanelComponent ]
 })
-export class AppSideBarModule {
+export class SidePanelModule {
 }

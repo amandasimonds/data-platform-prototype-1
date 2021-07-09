@@ -5,7 +5,7 @@ import { ICON_SET } from 'projects/uv-ui-lib/src/lib/register-icon/icon-set';
 import {
     ActionBarModule,
     ButtonModule,
-    AppSideBarModule,
+    SidePanelModule,
     NavbarDashboardSubModule,
     SearchPanelModule,
     HeaderModule,
@@ -48,7 +48,7 @@ import { SearchService } from './services/search.service';
         AppRoutingModule,
         ActionBarModule,
         ButtonModule,
-        AppSideBarModule,
+        SidePanelModule,
         SearchPanelModule,
         NavbarDashboardSubModule,
         HeaderModule,
