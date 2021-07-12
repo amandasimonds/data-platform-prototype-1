@@ -18,7 +18,8 @@ import {
     TabModule,
     CheckboxModule,
     RegisterIconModule,
-    CardModule
+    CardModule,
+    UvxIconModule
 } from '../../../uv-ui-lib/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -65,6 +66,7 @@ import { SearchService } from './services/search.service';
         CheckboxModule,
         RegisterIconModule,
         CardModule,
+        UvxIconModule,
         RegisterIconModule.forRoot(ICON_SET)
     ],
     providers: [HelperService, AuthService, HttpClient, SearchService],
