@@ -33,5 +33,7 @@ export * from './lib/svg-button/svg-button.component';
 export * from './lib/svg-button/svg-button.module';
 export * from './lib/tab/tab.component';
 export * from './lib/tab/tab.module';
+export * from './lib/uvx-icon/uvx-icon.component';
+export * from './lib/uvx-icon/uvx-icon.module';
 export * from './lib/widget/widget.component';
 export * from './lib/widget/widget.module';

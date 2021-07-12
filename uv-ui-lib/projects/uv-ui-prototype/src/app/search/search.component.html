@@ -26,7 +26,7 @@
                             [icon]="tab.icon" 
                             [label]="tab.title" 
                             [routerLink]="tab.routeUri">
-                            <span class="chip" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
+                            <span class="results-number" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
                         </lib-uv-ui-tab>
                     </div> 
                 </div>
@@ -41,7 +41,7 @@
                         [icon]="tab.icon" 
                         [label]="tab.title" 
                         [routerLink]="tab.routeUri">
-                        <span class="chip" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
+                        <span class="results-number" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
                     </lib-uv-ui-tab>
                 </div>
             </div>

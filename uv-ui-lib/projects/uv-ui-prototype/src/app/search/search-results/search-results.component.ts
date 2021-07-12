@@ -5,7 +5,7 @@ import { SearchService } from '../../services/search.service';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
-  styleUrls: ['./search-results.component.scss'],
+  styleUrls: ['./search-results.component.scss', '../search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchResultsComponent {
