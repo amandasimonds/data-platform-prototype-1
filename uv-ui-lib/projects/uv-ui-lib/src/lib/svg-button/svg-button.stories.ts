@@ -5,7 +5,7 @@ import { RegisterIconModule } from '../register-icon/register-icon.module';
 import { SvgButtonComponent } from './svg-button.component';
 
 export default {
-    title: 'Components/Buttons/SvgButton',
+    title: 'Components/Buttons/Svg Button',
     component: SvgButtonComponent,
     decorators: [
         moduleMetadata({
