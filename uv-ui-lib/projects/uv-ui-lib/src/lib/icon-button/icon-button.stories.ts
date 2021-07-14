@@ -2,22 +2,22 @@ import { componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
 import { Meta, Story } from '@storybook/angular/types-6-0';
 import { ICON_SET } from '../register-icon/icon-set';
 import { RegisterIconModule } from '../register-icon/register-icon.module';
-import { SvgButtonComponent } from './svg-button.component';
+import { IconButtonComponent } from './icon-button.component';
 
 export default {
-    title: 'Components/Buttons/Svg Button',
-    component: SvgButtonComponent,
+    title: 'Components/Buttons/Icon Button',
+    component: IconButtonComponent,
     decorators: [
         moduleMetadata({
-            declarations: [SvgButtonComponent],
+            declarations: [IconButtonComponent],
             imports: [RegisterIconModule.forRoot(ICON_SET)]
           }),
-        componentWrapperDecorator((story) => `<div uvUiLibRegisterIcon>${story}</div>`)
+        componentWrapperDecorator((story) => `<div uvxRegisterIcon>${story}</div>`)
     ]
 } as Meta;
 
-const Template: Story<SvgButtonComponent> = (args: SvgButtonComponent) => ({
-    component: SvgButtonComponent,
+const Template: Story<IconButtonComponent> = (args: IconButtonComponent) => ({
+    component: IconButtonComponent,
     props: args
 });
 

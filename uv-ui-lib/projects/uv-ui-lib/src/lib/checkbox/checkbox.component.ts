@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, Input, forwardRef } from '@angular/
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'lib-uv-ui-checkbox',
+  selector: 'uvx-checkbox',
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
   providers: [

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { INavlink } from '../interfaces/navbar.interfaces';
 
 @Component({
-    selector: 'lib-uv-ui-navbar',
+    selector: 'uvx-navbar',
     templateUrl: './navbar.component.html',
     styleUrls: [ './navbar-component.scss' ],
     changeDetection: ChangeDetectionStrategy.OnPush

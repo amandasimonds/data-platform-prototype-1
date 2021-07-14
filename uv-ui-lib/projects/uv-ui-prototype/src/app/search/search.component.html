@@ -1,15 +1,15 @@
 <div class="uv-container">
         <div class="col-2 sidebar-width-md">     
-            <uv-side-panel>
+            <uvx-side-panel>
                 
                 <div top>
                     <div class="height-sm top-content flex justify-content-space-between margin-bottom-sm">
                         <div>
-                            <uv-button label="Back" icon='back' color='primary' mode="text" (click)="clearResults()"></uv-button>
+                            <uvx-button label="Back" icon='back' color='primary' mode="text" (click)="clearResults()"></uvx-button>
                         </div>
                         <div>
-                            <lib-uv-ui-svg-button color='blue' class="margin-right-xs" (click)="reOrderMode()" icon='up-down-arrows'></lib-uv-ui-svg-button>
-                            <lib-uv-ui-svg-button color='blue' icon='filter2' (click)="toggleFilterBar()"></lib-uv-ui-svg-button>
+                            <uvx-icon-button color='blue' class="margin-right-xs" (click)="reOrderMode()" icon='up-down-arrows'></uvx-icon-button>
+                            <uvx-icon-button color='blue' icon='filter2' (click)="toggleFilterBar()"></uvx-icon-button>
                         </div>
                     </div>
                     <h4 class="margin-bottom-xs">Results</h4>
@@ -18,7 +18,7 @@
                 <div bottom>
                     <div *ngIf="!reOrderModeActivated">
                         <div *ngFor="let tab of searchTabs; trackBy:trackByFn">
-                            <lib-uv-ui-tab 
+                            <uvx-tab 
                             (click)="onTabClicked(tab.category)"
                             [isDisabled]="tab.entitySearchCount === 0"
                             [isActive]="onToggleTabActive(tab.category)"
@@ -27,13 +27,13 @@
                             [label]="tab.title" 
                             [routerLink]="tab.routeUri">
                             <span class="results-number" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
-                        </lib-uv-ui-tab>
+                        </uvx-tab>
                     </div> 
                 </div>
                 
                 <div *ngIf="reOrderModeActivated" cdkDropList  (cdkDropListDropped)="drop($event)">
                     <div *ngFor="let tab of searchTabs" cdkDrag>
-                        <lib-uv-ui-tab 
+                        <uvx-tab 
                         (click)="onTabClicked(tab.category)"
                         [isDisabled]="tab.entitySearchCount === 0"
                         [isActive]="onToggleTabActive(tab.category)"
@@ -42,61 +42,61 @@
                         [label]="tab.title" 
                         [routerLink]="tab.routeUri">
                         <span class="results-number" *ngIf="categorySelected && tab.entitySearchCount > 1">{{tab.entitySearchCount}}</span>
-                    </lib-uv-ui-tab>
+                    </uvx-tab>
                 </div>
             </div>
             
             <div *ngIf="reOrderModeActivated" class="margin-xs flex justify-content-flex-end">
-                <uv-button label="Close" color="primary" class="margin-right-sm" mode="text" (click)="reOrderMode()"></uv-button>
-                <uv-button label="Save" color="primary" mode="text" (click)="clearResults()"></uv-button>
+                <uvx-button label="Close" color="primary" class="margin-right-sm" mode="text" (click)="reOrderMode()"></uvx-button>
+                <uvx-button label="Save" color="primary" mode="text" (click)="clearResults()"></uvx-button>
             </div>
         </div>
         
-    </uv-side-panel>
+    </uvx-side-panel>
     
 </div>
 
 <div  *ngIf="filterBarActive" class="sidebar-width-sm">
     
-    <uv-side-panel mode="scroll">
+    <uvx-side-panel mode="scroll">
         <div top>
             <div class="margin-bottom-sm flex justify-content-space-between" >
                 <h4>Filters</h4>
-                <lib-uv-ui-svg-button color='blue' class="close-button" icon="close" (click)="toggleFilterBar()"></lib-uv-ui-svg-button>
+                <uvx-icon-button color='blue' class="close-button" icon="close" (click)="toggleFilterBar()"></uvx-icon-button>
             </div>
             
-            <lib-uv-ui-search-panel mode="basic"></lib-uv-ui-search-panel>
+            <uvx-search-panel mode="basic"></uvx-search-panel>
         </div>
         
         <div bottom>
             
             <p class="bold uv-body margin-top-xxs margin-bottom-xxs">Discipline</p>
             <div *ngFor="let item of items" class="item-container">
-                <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
+                <uvx-checkbox [label]="item.title"></uvx-checkbox>
             </div>
             
             <p class="bold uv-body margin-top-xs margin-bottom-xxs">Category</p>
             <div *ngFor="let item of items" class="item-container">
-                <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
+                <uvx-checkbox [label]="item.title"></uvx-checkbox>
             </div>
             
             <p class="bold uv-body margin-top-xs margin-bottom-xxs">Category</p>
             <div *ngFor="let item of items" class="item-container">
-                <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
+                <uvx-checkbox [label]="item.title"></uvx-checkbox>
             </div>
             
             <p class="bold uv-body margin-top-xs margin-bottom-xxs">Technology</p>
             <div *ngFor="let item of items" class="item-container">
-                <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
+                <uvx-checkbox [label]="item.title"></uvx-checkbox>
             </div>
             
             <p class="bold uv-body margin-top-xs margin-bottom-xxs">Technology</p>
             <div *ngFor="let item of items" class="item-container">
-                <lib-uv-ui-checkbox [label]="item.title"></lib-uv-ui-checkbox>
+                <uvx-checkbox [label]="item.title"></uvx-checkbox>
             </div>
             
         </div>
-    </uv-side-panel>
+    </uvx-side-panel>
 </div>
 
 <div [ngClass]="filterBarActive ? 'col-8' : 'col-10'" class="" >

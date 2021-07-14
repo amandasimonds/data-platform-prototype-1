@@ -1,18 +1,18 @@
 <div class="uv-ui-shell">
     <div class="uv-ui-shell-header">
-        <lib-uv-ui-header
+        <uvx-header
             [headerText]="title"
             [icon]="appIcon">
 
-            <lib-uv-ui-search-panel mode="full" *ngIf="checkifSearch"></lib-uv-ui-search-panel>
+            <uvx-search-panel mode="full" *ngIf="checkifSearch"></uvx-search-panel>
 
-            <lib-uv-ui-svg-button color='blue' icon="profile" class="margin-left-sm margin-right-sm"></lib-uv-ui-svg-button>
+            <uvx-icon-button color='blue' icon="profile" class="margin-left-sm margin-right-sm"></uvx-icon-button>
 
-        </lib-uv-ui-header>
+        </uvx-header>
     </div>
 
     <div class="uv-ui-shell-navbar">
-        <lib-uv-ui-navbar [navlinks]="nav"></lib-uv-ui-navbar>
+        <uvx-navbar [navlinks]="nav"></uvx-navbar>
     </div>
 
     <div class="uv-ui-shell-content">

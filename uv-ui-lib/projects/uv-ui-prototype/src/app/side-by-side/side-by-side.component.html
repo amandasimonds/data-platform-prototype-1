@@ -2,27 +2,27 @@
 
     <div class="row">
         <div class="col-12">
-            <lib-uv-ui-action-bar>
+            <uvx-action-bar>
                 <div left>
                     <p class="heading-4">Comparison Tasks</p>
                 </div>
                 <div right>
-                    <uv-button mode="round" class="btn-add-task margin-right-md" label="+"></uv-button>
-                    <lib-uv-ui-dropdown-button [items]="dropdownItems" dropdownName="Switch filter"></lib-uv-ui-dropdown-button>
+                    <uvx-button mode="round" class="btn-add-task margin-right-md" label="+"></uvx-button>
+                    <uvx-dropdown [items]="dropdownItems" dropdownName="Switch filter"></uvx-dropdown>
                 </div>
-            </lib-uv-ui-action-bar>
+            </uvx-action-bar>
         </div>
     </div>
 
     <div class="row content">
         <div class="col-12">
             <div class=" flex flex-wrap">
-                <uv-card *ngFor="let task of tasks; trackBy:trackByFn" class="taskbox margin-sm">
+                <uvx-card *ngFor="let task of tasks; trackBy:trackByFn" class="taskbox margin-sm">
                     <p class="btn btn-chip margin-bottom-md">{{task.started}}</p>
                     <p class="txt-sm bold margin-bottom-sm">{{task.title}}</p>
                     <p class="txt-sm margin-bottom-md">{{task.description}}</p>
                     <p class="chip-date">{{task.date}}</p>
-                  </uv-card>
+                  </uvx-card>
             </div>
         </div>
     </div>

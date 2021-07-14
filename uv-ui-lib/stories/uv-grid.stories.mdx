@@ -2,14 +2,14 @@ import { Meta, Story, ArgsTable, Source, Typeset, Preview, Canvas } from '@story
 import { moduleMetadata } from '@storybook/angular';
 import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { SvgButtonModule, ICON_SET, NavbarComponent, HeaderComponent, RegisterIconModule, HeaderModule, NavbarModule } from 'projects/uv-ui-lib/src/public-api';
+import { IconButtonModule, ICON_SET, NavbarComponent, HeaderComponent, RegisterIconModule, HeaderModule, NavbarModule } from 'projects/uv-ui-lib/src/public-api';
 import dedent from 'ts-dedent';
 
 <Meta
     title='Layouts/UV Grid'
     decorators={[
         moduleMetadata({
-            imports: [HeaderModule, SvgButtonModule, NavbarModule, RegisterIconModule.forRoot(ICON_SET), RouterModule.forRoot([], { useHash: true }), RegisterIconModule.forRoot(ICON_SET)],
+            imports: [HeaderModule, IconButtonModule, NavbarModule, RegisterIconModule.forRoot(ICON_SET), RouterModule.forRoot([], { useHash: true }), RegisterIconModule.forRoot(ICON_SET)],
             providers: [{provide: APP_BASE_HREF, useValue: '/'}],
         }),
     ]}

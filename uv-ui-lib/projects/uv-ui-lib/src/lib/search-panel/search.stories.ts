@@ -3,7 +3,7 @@ import { componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
 import { Meta, Story } from '@storybook/angular/types-6-0';
 import { ICON_SET } from '../register-icon/icon-set';
 import { RegisterIconModule } from '../register-icon/register-icon.module';
-import { SvgButtonComponent } from '../svg-button/svg-button.component';
+import { IconButtonComponent } from '../icon-button/icon-button.component';
 import { SearchPanelComponent } from './search-panel.component';
 
 export default {
@@ -11,12 +11,12 @@ export default {
     component: SearchPanelComponent,
     decorators: [
         moduleMetadata({
-          declarations: [SvgButtonComponent],
+          declarations: [IconButtonComponent],
         imports: [RegisterIconModule.forRoot(ICON_SET)]
         }),
         componentWrapperDecorator((story) =>
             `
-                <div uvUiLibRegisterIcon>
+                <div uvxRegisterIcon>
                     <div style="width: 600px;">
                         ${story}
                     </div>
