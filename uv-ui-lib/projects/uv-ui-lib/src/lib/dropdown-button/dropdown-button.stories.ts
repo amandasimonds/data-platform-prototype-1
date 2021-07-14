@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/angular/types-6-0';
 import { DropdownButtonComponent } from './dropdown-button.component';
 
 export default {
-    title: 'Components/Buttons/Dropdown',
+    title: 'Components/Dropdown',
     component: DropdownButtonComponent
 } as Meta;
 
