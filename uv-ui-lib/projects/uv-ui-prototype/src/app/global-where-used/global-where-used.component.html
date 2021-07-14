@@ -2,20 +2,20 @@
 
     
     <div class="actionbar">
-        <lib-uv-ui-action-bar>
+        <uvx-action-bar>
             <div right>
-                <lib-uv-ui-svg-button class="margin-right-xs" color='blue' icon='more_dots'></lib-uv-ui-svg-button>
-                <lib-uv-ui-svg-button color='blue' icon='fullscreen'></lib-uv-ui-svg-button>
+                <uvx-icon-button class="margin-right-xs" color='blue' icon='more_dots'></uvx-icon-button>
+                <uvx-icon-button color='blue' icon='fullscreen'></uvx-icon-button>
             </div>
-        </lib-uv-ui-action-bar>
+        </uvx-action-bar>
     </div>
 
     <div class="sidebar">
-        <uv-side-panel>
+        <uvx-side-panel>
             <div top>
                 <div class="height-sm top-content flex justify-content-space-between margin-bottom-sm">
                     <div>
-                        <uv-button label="Back" mode="text" icon="back" color="primary"></uv-button>
+                        <uvx-button label="Back" mode="text" icon="back" color="primary"></uvx-button>
                     </div>
                 </div>
                 <h4 class="margin-bottom-xs">Title Goes Here</h4>
@@ -24,18 +24,16 @@
 
             <div bottom>
                     <div *ngFor="let tab of gwuTabs">
-                        <lib-uv-ui-tab 
+                        <uvx-tab 
                         icon="{{tab.icon}}" 
                         label="{{tab.linkText}}">
-                    </lib-uv-ui-tab>
+                    </uvx-tab>
                 </div> 
             </div>
-        </uv-side-panel>
+        </uvx-side-panel>
     </div>
 
 <div class="content">
-    
-    <lib-uv-ui-widget></lib-uv-ui-widget>
     
 </div>
 

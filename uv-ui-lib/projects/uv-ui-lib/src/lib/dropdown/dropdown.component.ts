@@ -1,13 +1,13 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { IDropdown } from '../interfaces/dropdown-button.interfaces';
+import { IDropdown } from '../interfaces/dropdown.interfaces';
 
 @Component({
-    selector: 'lib-uv-ui-dropdown-button',
-    templateUrl: './dropdown-button.component.html',
-    styleUrls: ['./dropdown-button.component.scss'],
+    selector: 'uvx-dropdown',
+    templateUrl: './dropdown.component.html',
+    styleUrls: ['./dropdown.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DropdownButtonComponent {
+export class DropdownComponent {
 
     @Input() public dropdownName = '';
     @Input() public items: IDropdown[] = [];

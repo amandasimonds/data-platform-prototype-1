@@ -11,7 +11,7 @@ export default {
         moduleMetadata({
             imports: [RegisterIconModule.forRoot(ICON_SET)]
         }),
-        componentWrapperDecorator((story) => `<div uvUiLibRegisterIcon><div style="height: 68px;">${story}</div></div>`)
+        componentWrapperDecorator((story) => `<div uvxRegisterIcon><div style="height: 68px;">${story}</div></div>`)
     ]
 } as Meta;
 

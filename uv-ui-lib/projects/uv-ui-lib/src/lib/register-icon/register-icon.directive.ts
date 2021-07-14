@@ -9,7 +9,7 @@ export interface RegisterIcon {
 }
 
 @Directive({
-	selector: '[uvUiLibRegisterIcon]'
+	selector: '[uvxRegisterIcon]'
 })
 
 export class RegisterIconDirective {

@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from 
 import { INavBarSub } from '../interfaces/navbar-sub.interfaces';
 
 @Component({
-  selector: 'lib-uv-ui-snippet',
+  selector: 'uvx-snippet',
   templateUrl: './snippet.component.html',
   styleUrls: ['./snippet.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

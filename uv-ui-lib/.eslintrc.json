@@ -75,7 +75,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "lib-uv-ui",
+            "prefix": "uvx",
             "style": "kebab-case"
           }
         ],
@@ -83,7 +83,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "lib-uv-ui",
+            "prefix": "uvx",
             "style": "camelCase"
           }
         ],

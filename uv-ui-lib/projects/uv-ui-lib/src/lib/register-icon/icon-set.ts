@@ -157,4 +157,4 @@ export const ICON_SET = [
     },
 ] as const;
 
-export type SBSMatIconName = typeof ICON_SET[number]['name'];
+export type UvxMatIconName = typeof ICON_SET[number]['name'];

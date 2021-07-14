@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'uv-side-panel',
+    selector: 'uvx-side-panel',
     templateUrl: './side-panel.component.html',
     styleUrls: ['./side-panel-component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
