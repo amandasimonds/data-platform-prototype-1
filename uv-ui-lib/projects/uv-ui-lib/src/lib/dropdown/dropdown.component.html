@@ -1,4 +1,4 @@
-<select class="btn btn-dropdown" [name]="dropdownName">
+<select class="dropdown" [name]="dropdownName">
     <option selected hidden>{{dropdownName}}</option>
     <option *ngFor="let item of items trackBy: trackByFn">
         {{item.name}}

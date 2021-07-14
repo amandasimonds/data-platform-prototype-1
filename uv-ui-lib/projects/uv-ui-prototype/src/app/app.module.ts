@@ -6,15 +6,13 @@ import {
     ActionBarModule,
     ButtonModule,
     SidePanelModule,
-    NavbarDashboardSubModule,
     SearchPanelModule,
     HeaderModule,
     NavbarModule,
-    WidgetModule,
     SnippetModule,
-    DropdownButtonModule,
+    DropdownModule,
     ImageButtonModule,
-    SvgButtonModule,
+    IconButtonModule,
     TabModule,
     CheckboxModule,
     RegisterIconModule,
@@ -25,7 +23,6 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { StartPageComponent } from './start-page/start-page.component';
 import { SideBySideComponent } from './side-by-side/side-by-side.component';
 import { HomeSplashModule } from './home-splash/home-splash.module';
 import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
@@ -39,7 +36,6 @@ import { SearchService } from './services/search.service';
     declarations: [
         AppComponent,
         LoginComponent,
-        StartPageComponent,
         SideBySideComponent,
         GlobalWhereUsedComponent,
         MainComponent
@@ -51,14 +47,12 @@ import { SearchService } from './services/search.service';
         ButtonModule,
         SidePanelModule,
         SearchPanelModule,
-        NavbarDashboardSubModule,
         HeaderModule,
         NavbarModule,
-        WidgetModule,
         SnippetModule,
-        DropdownButtonModule,
+        DropdownModule,
         ImageButtonModule,
-        SvgButtonModule,
+        IconButtonModule,
         HomeSplashModule,
         SearchModule,
         TabModule,

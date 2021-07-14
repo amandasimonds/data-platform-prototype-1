@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavbarDashboardSubComponent } from './navbar-dashboard-sub.component';
+import { DropdownComponent } from './dropdown.component';
 
-describe('NavbarDashboardSubComponent', () => {
-  let component: NavbarDashboardSubComponent;
-  let fixture: ComponentFixture<NavbarDashboardSubComponent>;
+describe('DropdownComponent', () => {
+  let component: DropdownComponent;
+  let fixture: ComponentFixture<DropdownComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarDashboardSubComponent ]
+      declarations: [ DropdownComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarDashboardSubComponent);
+    fixture = TestBed.createComponent(DropdownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

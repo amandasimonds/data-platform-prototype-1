@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegisterIconModule } from '../register-icon/register-icon.module';
-import { SvgButtonComponent } from './svg-button.component';
+import { IconButtonComponent } from './icon-button.component';
 
 @NgModule({
-    declarations: [ SvgButtonComponent ],
+    declarations: [ IconButtonComponent ],
     imports: [
         CommonModule,
         RegisterIconModule
     ],
-    exports: [ SvgButtonComponent ]
+    exports: [ IconButtonComponent ]
 })
-export class SvgButtonModule {
+export class IconButtonModule {
 }

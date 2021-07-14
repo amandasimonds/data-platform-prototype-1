@@ -13,7 +13,7 @@ export default {
         }),
         componentWrapperDecorator((story) =>
             `
-                <div uvSbsRegisterIcon>
+                <div uvxRegisterIcon>
                     <div style="width: 336px; height: 500px; background-color: white;">
                         ${story}
                     </div>

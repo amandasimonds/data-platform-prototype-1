@@ -2,14 +2,14 @@ import { Meta, Story, ArgsTable, Source, Typeset, Preview, Canvas } from '@story
 import { moduleMetadata } from '@storybook/angular';
 import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { SvgButtonModule, ICON_SET, NavbarComponent, HeaderComponent, RegisterIconModule, HeaderModule, NavbarModule } from 'projects/uv-ui-lib/src/public-api';
+import { IconButtonModule, ICON_SET, NavbarComponent, HeaderComponent, RegisterIconModule, HeaderModule, NavbarModule } from 'projects/uv-ui-lib/src/public-api';
 import dedent from 'ts-dedent';
 
 <Meta
     title='Layouts/UI Shell'
     decorators={[
         moduleMetadata({
-            imports: [HeaderModule, SvgButtonModule, NavbarModule, RegisterIconModule.forRoot(ICON_SET), RouterModule.forRoot([], { useHash: true }), RegisterIconModule.forRoot(ICON_SET)],
+            imports: [HeaderModule, IconButtonModule, NavbarModule, RegisterIconModule.forRoot(ICON_SET), RouterModule.forRoot([], { useHash: true }), RegisterIconModule.forRoot(ICON_SET)],
             providers: [{provide: APP_BASE_HREF, useValue: '/'}],
         }),
     ]}
@@ -18,7 +18,7 @@ import dedent from 'ts-dedent';
 # UV UI Shell
 
 - This shell should go in the host application and act as a shell for all microfrontends to live inside.
-- In order to use the icons, you must use the uvUiLibRegisterIcon provider.
+- In order to use the icons, you must use the uvxRegisterIcon provider.
 - This shell will be fixed and stretch to the size of any screen.
 
 <Canvas>
@@ -26,13 +26,13 @@ import dedent from 'ts-dedent';
   {{
     template: 
     `
-    <div uvUiLibRegisterIcon>
+    <div uvxRegisterIcon>
         <div class='uv-ui-shell'>
             <div class='uv-ui-shell-header'>
-                <lib-uv-ui-header headerText='Title' icon='apps-quad'></lib-uv-ui-header>
+                <uvx-header headerText='Title' icon='apps-quad'></uvx-header>
             </div>
             <div class='uv-ui-shell-navbar'>
-                <lib-uv-ui-navbar></lib-uv-ui-navbar>
+                <uvx-navbar></uvx-navbar>
             </div>
             <div class='uv-ui-shell-content'>
                 Router Outlet/ Microfrontends go here
@@ -47,13 +47,13 @@ import dedent from 'ts-dedent';
 <Source
   language='html'
   code={dedent`
-     <div uvUiLibRegisterIcon>
+     <div uvxRegisterIcon>
         <div class='uv-ui-shell'>
             <div class='uv-ui-shell-header'>
-                <lib-uv-ui-header headerText='Title' icon='apps-quad'></lib-uv-ui-header>
+                <uvx-header headerText='Title' icon='apps-quad'></uvx-header>
             </div>
             <div class='uv-ui-shell-navbar'>
-                <lib-uv-ui-navbar></lib-uv-ui-navbar>
+                <uvx-navbar></uvx-navbar>
             </div>
             <div class='uv-ui-shell-content'>
                 Router Outlet/ Microfrontends go here

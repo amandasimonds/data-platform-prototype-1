@@ -1,14 +1,14 @@
 import { Meta, Story, ArgsTable, Source, Typeset, Preview, Canvas } from '@storybook/addon-docs/blocks';
 import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
-import { SvgButtonModule, ActionBarModule, ButtonModule, RegisterIconModule, ICON_SET, } from 'projects/uv-ui-lib/src/public-api';
+import { IconButtonModule, ActionBarModule, ButtonModule, RegisterIconModule, ICON_SET, } from 'projects/uv-ui-lib/src/public-api';
 import dedent from 'ts-dedent';
 
 <Meta
     title='Components/Action Bar'
     decorators={[
         moduleMetadata({
-            imports: [ SvgButtonModule, ActionBarModule, ButtonModule, RegisterIconModule.forRoot(ICON_SET)],
+            imports: [ IconButtonModule, ActionBarModule, ButtonModule, RegisterIconModule.forRoot(ICON_SET)],
         }),
     ]}
 />
@@ -17,7 +17,7 @@ import dedent from 'ts-dedent';
 
 Action Bars are flexible and have 2 sections within them - left and right.<br /> 
 
-Use `<div left></div>` and `<div right></div>` inside `<lib-uv-ui-action-bar></lib-uv-ui-action-bar>` to distinguish where your content will be.<br />
+Use `<div left></div>` and `<div right></div>` inside `<uvx-action-bar></uvx-action-bar>` to distinguish where your content will be.<br />
 
 For spacing, please use margin utility classes such as `margin-right-sm`, `margin-left-md` as you see fit.
 
@@ -26,19 +26,19 @@ For spacing, please use margin utility classes such as `margin-right-sm`, `margi
   {{
     template: 
     `
-    <div uvUiLibRegisterIcon>
-        <lib-uv-ui-action-bar>
+    <div uvxRegisterIcon>
+        <uvx-action-bar>
             <div left class="flex flex-row">
-                <lib-uv-ui-svg-button icon="back" color="blue" class="margin-right-sm"></lib-uv-ui-svg-button>
+                <uvx-icon-button icon="back" color="blue" class="margin-right-sm"></uvx-icon-button>
                 <div class="flex flex-column">
                     <h4>Title Will Go Here</h4>
                     <p class="uv-body">Lorem ipsum dolor sit amet consectetur eiusmod</p>
                 </div>
             </div>
             <div right>
-                <uv-button mode="primary"></uv-button>
+                <uvx-button mode="primary"></uvx-button>
             </div>
-        </lib-uv-ui-action-bar>
+        </uvx-action-bar>
     </div>
     `
   }}
@@ -48,19 +48,19 @@ For spacing, please use margin utility classes such as `margin-right-sm`, `margi
 <Source
   language='html'
   code={dedent`
-    <div uvUiLibRegisterIcon>
-        <lib-uv-ui-action-bar>
+    <div uvxRegisterIcon>
+        <uvx-action-bar>
             <div left class="flex flex-row">
-                <lib-uv-ui-svg-button icon="back" color="blue" class="margin-right-sm"></lib-uv-ui-svg-button>
+                <uvx-icon-button icon="back" color="blue" class="margin-right-sm"></uvx-icon-button>
                 <div class="flex flex-column">
                     <h4>Title Will Go Here</h4>
                     <p class="uv-body">Lorem ipsum dolor sit amet consectetur eiusmod</p>
                 </div>
             </div>
             <div right>
-                <uv-button mode="primary"></uv-button>
+                <uvx-button mode="primary"></uvx-button>
             </div>
-        </lib-uv-ui-action-bar>
+        </uvx-action-bar>
     </div>
   `}
 />
