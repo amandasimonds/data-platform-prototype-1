@@ -29,12 +29,13 @@ export const parameters = {
           'Intro', 
           'Theme', 
           'Components', [
-              'ActionBar', 
+              'Action Bar', 
               'Buttons', [
                   'Button'
                 ], 
                 'Card', 
-                'Checkbox', 
+                'Checkbox',
+                'Dropdown', 
                 'Header', 
                 'Navbar', 
                 'Search', 

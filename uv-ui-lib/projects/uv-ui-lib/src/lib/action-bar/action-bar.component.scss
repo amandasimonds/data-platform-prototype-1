@@ -1,17 +1,9 @@
 .action-bar {
+    position: relative;
+    z-index: var(--uv-z-index-action-bar);
     height: 100%;
     border-left: none;
     border-top: none;
-    z-index: 0;
-    padding: 12px;
-}
-
-.container-left {
-    height: 100%;
-    margin-left: var(--uv-md-size);
-}
-
-.container-right {
-    height: 100%;
-    margin-right: var(--uv-md-size);
+    border-right: none;
+    padding: 16px;
 }
