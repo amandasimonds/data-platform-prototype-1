@@ -23,7 +23,6 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { SideBySideComponent } from './side-by-side/side-by-side.component';
 import { HomeSplashModule } from './home-splash/home-splash.module';
 import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
 import { MainComponent } from './layouts/main/main.component';
@@ -31,12 +30,12 @@ import { SearchModule } from './search/search.module';
 import { HelperService } from './services/helper.service';
 import { AuthService } from './services/auth.service';
 import { SearchService } from './services/search.service';
+import { SideBySideModule } from './side-by-side/side-by-side.module';
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
-        SideBySideComponent,
         GlobalWhereUsedComponent,
         MainComponent
     ],
@@ -55,6 +54,7 @@ import { SearchService } from './services/search.service';
         IconButtonModule,
         HomeSplashModule,
         SearchModule,
+        SideBySideModule,
         TabModule,
         HttpClientModule,
         CheckboxModule,

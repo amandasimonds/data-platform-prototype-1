@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './layouts/main/main.component';
-import { SideBySideComponent } from './side-by-side/side-by-side.component';
 import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AuthGuardService } from './services/auth-guard.service';
@@ -36,7 +35,7 @@ const routes: Routes = [
             },
             {
                 path: 'side-by-side',
-                component: SideBySideComponent
+                loadChildren: () => import('./side-by-side/side-by-side.module').then(m => m.SideBySideModule)
             },
             {
                 path: 'global-where-used',

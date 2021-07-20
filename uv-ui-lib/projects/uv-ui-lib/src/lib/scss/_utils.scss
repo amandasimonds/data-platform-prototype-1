@@ -132,6 +132,26 @@
     padding: var(--uv-md-size);
 }
 
+.padding-right-sm {
+    padding-right: var(--uv-sm-size);
+}
+
+.padding-left-sm {
+    padding-left: var(--uv-sm-size);
+}
+
+.padding-right-md {
+    padding-right: var(--uv-md-size);
+}
+
+.padding-left-md {
+    padding-left: var(--uv-md-size);
+}
+
+.margin-right-md {
+    padding-right: var(--uv-md-size);
+}
+
 .margin-xxs {
     margin: var(--uv-xxs-size);
 }
@@ -244,5 +264,9 @@
 
 .divider {
     border-bottom: 1px solid var(--uv-border-color-gray);
+}
+
+.divider-left {
+    border-left: 1px solid var(--uv-border-color-gray);
 }
 
