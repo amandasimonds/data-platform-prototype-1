@@ -24,5 +24,5 @@ const Template: Story<IconButtonComponent> = (args: IconButtonComponent) => ({
 export const Default = Template.bind({});
 Default.args = {
     icon: 'profile',
-    color: 'blue'
+    color: 'primary'
 };

@@ -30,6 +30,7 @@
     --uv-color-gray-dark: #6E6D7A;
     --uv-color-gray-light: #F3F3F4;
     --uv-color-gray-light-2: #f1f1f1;
+    --uv-color-gray-light-3: #f7f7f7;
     --uv-color-black: #0D0C22;
     
 
@@ -43,7 +44,9 @@
 
     //styles
     --uv-box-shadow: 0 2px 12px 0 rgba(234,234,234,0.5);
+    --uv-box-shadow-hover: 0 4px 8px 0 rgba(0,0,0,0.16);
     --uv-border-gray: 1px solid var(--uv-border-color-gray);
+    --uv-linear-gradient: linear-gradient(180deg, #84439971 0%, #4acaf571 100%);
 
     //typography
     --uv-font-size-xs: 12px;
