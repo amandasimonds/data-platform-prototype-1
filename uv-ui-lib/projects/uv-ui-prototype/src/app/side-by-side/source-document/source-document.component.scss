@@ -1,3 +1,20 @@
-.box {
-    min-height: 200px;
+.sbs-document-card {
+    border-radius: 2px;
+    margin: 8px 0 auto;
+    transition: all .2s;
+
+    &-top {
+        padding: 16px;
+    }
+
+    &-bottom {
+        padding: 8px;
+        background-color: var(--uv-color-gray-light-3);
+    }
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: var(--uv-box-shadow-hover);
+        transform: translateY(-1px);
+    }
 }

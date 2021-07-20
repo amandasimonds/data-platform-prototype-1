@@ -3,14 +3,14 @@
     <div class="w-100 justify-content-space-between flex align-items-center" [ngClass]="getMode()">
 
         <div class="flex align-items-center">
-            <uvx-icon-button color='blue' icon='search' (click)="onSearch()" ></uvx-icon-button>
+            <uvx-icon-button color='primary' icon='search' (click)="onSearch()" ></uvx-icon-button>
             
             <input type="text"
             placeholder="Search..."
             class="search-panel-input">
         </div>
 
-        <uvx-icon-button *ngIf="mode === 'full'" color='blue' icon='close' ></uvx-icon-button>
+        <uvx-icon-button *ngIf="mode === 'full'" color='primary' icon='close' ></uvx-icon-button>
         
     </div>
     

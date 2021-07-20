@@ -7,7 +7,7 @@
     <div class="divider"></div>
 
     <div class="uv-side-panel-bottom-content" [class.scroll-wrapper]="scroll">
-        <div  [class.scroll]="scroll">
+        <div [class.scroll]="scroll" [ngStyle]="{'height':'calc(100% - var(--uv-side-panel-top-height));'}">
             <ng-content select="[bottom]"></ng-content>
         </div>
     </div>

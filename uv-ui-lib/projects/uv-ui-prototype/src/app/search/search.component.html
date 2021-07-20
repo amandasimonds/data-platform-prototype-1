@@ -8,8 +8,8 @@
                             <uvx-button label="Back" icon='back' color='primary' mode="text" (click)="clearResults()"></uvx-button>
                         </div>
                         <div>
-                            <uvx-icon-button color='blue' class="margin-right-xs" (click)="reOrderMode()" icon='up-down-arrows'></uvx-icon-button>
-                            <uvx-icon-button color='blue' icon='filter2' (click)="toggleFilterBar()"></uvx-icon-button>
+                            <uvx-icon-button color='primary' class="margin-right-xs" (click)="reOrderMode()" icon='up-down-arrows'></uvx-icon-button>
+                            <uvx-icon-button color='primary' icon='filter2' (click)="toggleFilterBar()"></uvx-icon-button>
                         </div>
                     </div>
                     <h4 class="margin-bottom-xs">Results</h4>
@@ -62,24 +62,24 @@
         <div top>
             <div class="margin-bottom-sm flex justify-content-space-between" >
                 <h4>Filters</h4>
-                <uvx-icon-button color='blue' class="close-button" icon="close" (click)="toggleFilterBar()"></uvx-icon-button>
+                <uvx-icon-button color='primary' class="close-button" icon="close" (click)="toggleFilterBar()"></uvx-icon-button>
             </div>
             
             <uvx-search-panel mode="basic"></uvx-search-panel>
         </div>
         
-        <div bottom>
-            
-            <p class="bold uv-body margin-top-xxs margin-bottom-xxs">Discipline</p>
-            <div *ngFor="let item of items" class="item-container">
-                <uvx-checkbox [label]="item.title"></uvx-checkbox>
-            </div>
-            
-            <p class="bold uv-body margin-top-xs margin-bottom-xxs">Category</p>
-            <div *ngFor="let item of items" class="item-container">
-                <uvx-checkbox [label]="item.title"></uvx-checkbox>
-            </div>
-            
+        <div bottom class="search-filter-scroll-height">
+
+                <p class="bold uv-body margin-top-xxs margin-bottom-xxs">Discipline</p>
+                <div *ngFor="let item of items" class="item-container">
+                    <uvx-checkbox [label]="item.title"></uvx-checkbox>
+                </div>
+                
+                <p class="bold uv-body margin-top-xs margin-bottom-xxs">Category</p>
+                <div *ngFor="let item of items" class="item-container">
+                    <uvx-checkbox [label]="item.title"></uvx-checkbox>
+                </div>
+                
             <p class="bold uv-body margin-top-xs margin-bottom-xxs">Category</p>
             <div *ngFor="let item of items" class="item-container">
                 <uvx-checkbox [label]="item.title"></uvx-checkbox>
@@ -94,8 +94,8 @@
             <div *ngFor="let item of items" class="item-container">
                 <uvx-checkbox [label]="item.title"></uvx-checkbox>
             </div>
-            
         </div>
+            
     </uvx-side-panel>
 </div>
 
