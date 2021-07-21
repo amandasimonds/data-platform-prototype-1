@@ -2,13 +2,14 @@
     border-radius: 2px;
     margin: 8px 0 auto;
     transition: all .2s;
+    background-color: var(--uv-color-white-2);
 
     &-top {
         padding: 16px;
     }
 
     &-bottom {
-        padding: 8px;
+        padding: 6px;
         background-color: var(--uv-color-gray-light-3);
     }
 
@@ -16,5 +17,38 @@
         cursor: pointer;
         box-shadow: var(--uv-box-shadow-hover);
         transform: translateY(-1px);
+        background-color: var(--uv-color-white);
+    }
+}
+
+.sbs {
+    &-tag {
+        background-color: var(--uv-color-gray-light-4);
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin: 2px 2px;
+        display: inline-block;
+
+        &:hover {
+            background-color: var(--uv-color-gray-3);
+        }
+    }
+
+    &-block {
+        border: var(--uv-border-gray);
+        padding: 8px 12px;
+        display: inline-flex;
+        border-radius: 4px;
+    }
+
+    &-chip {
+        border: var(--uv-border-gray);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 8px;
     }
 }
