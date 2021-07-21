@@ -8,6 +8,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class SideBySideLandingComponent implements OnInit {
 
+    public sourceDocumentSelected = false;
+
   constructor() { }
 
   ngOnInit(): void {

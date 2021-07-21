@@ -7,7 +7,7 @@
                 </div>
                 
                 <div right>
-                    <uvx-button mode="primary" [disabled]="true" label="Compare"></uvx-button>
+                    <uvx-button mode="primary" [disabled]="!sourceDocumentSelected" label="Compare"></uvx-button>
                 </div>
 
                 <div bottom>
@@ -36,14 +36,14 @@
         <div class="col-6 h-100">
             <div class="scroll-spacing h-100">
                 <div class="source-document-container h-100">
-                    <app-source-document></app-source-document>
+                    <app-source-document (click)="sourceDocumentSelected = true"></app-source-document>
                 </div>
             </div>
         </div>
             <div class="col-6 h-100">
                 <div class="scroll-spacing h-100">
                     <div class="source-document-container h-100">
-                        <app-source-document></app-source-document>
+                        <app-target-document *ngIf="sourceDocumentSelected" ></app-target-document>
                     </div>
                 </div>
             </div>
