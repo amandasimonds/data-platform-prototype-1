@@ -52,12 +52,24 @@ h5 {
 
 .uv-label {
     font-size: var(--uv-font-size-sm-md);
+
+    &-sbs {
+        font-size: var(--uv-font-size-xs);
+
+        &-primary {
+            font-weight: 600;
+        }
+    }
 }
 
 .uv-placeholder {
     font-size: var(--uv-font-size-sm);
     color: var(--uv-color-gray-dark);
     font-style: italic;
+
+    &-sbs {
+        font-style: none;
+    }
 }
 
 .bold {
@@ -81,12 +93,4 @@ a:visited {
 
 ul, ol {
     list-style-position:inside;
-}
-
-.chip-date {
-    border-radius: 8px;
-    background-color: var(--uv-color-gray-light);
-    padding: 5px 7px 7px 5px;
-    color: var(--uv-color-gray-dark);
-    display: inline-block;
 }
