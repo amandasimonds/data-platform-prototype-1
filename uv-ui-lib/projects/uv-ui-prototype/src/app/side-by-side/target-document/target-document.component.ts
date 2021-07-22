@@ -1,20 +1,17 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ISbsDocument } from '../models/sbs-document.model';
-import { sourceDocumentSamples } from '../sample-data/source-documents';
+import { ISbsTargetDocument } from '../models/sbs-target-document.model';
+import { targetDocumentSamples } from '../sample-data/target-documents';
 
 @Component({
   selector: 'app-target-document',
   templateUrl: './target-document.component.html',
-  styleUrls: ['../source-document/source-document.component.scss'],
+  styleUrls: ['../source-document/source-document.component.scss', './target-document.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TargetDocumentComponent implements OnInit {
 
-    public sourceDocuments: ISbsDocument[] = sourceDocumentSamples;
+    public targetDocuments: ISbsTargetDocument[] = targetDocumentSamples;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {}
 
 }

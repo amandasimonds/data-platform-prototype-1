@@ -10,6 +10,10 @@
     color: var(--uv-color-gray);
 }
 
+.uvx-icon-white {
+    color: var(--uv-color-white);
+}
+
 .uvx-icon-xs {
     width: var(--uv-xs-size);
     height: var(--uv-xs-size);
@@ -23,4 +27,9 @@
 .uvx-icon-md {
     width: var(--uv-md-size);
     height: var(--uv-md-size);
+}
+
+.uvx-icon-checkmark {
+    width: 20px;
+    height: 20px;
 }

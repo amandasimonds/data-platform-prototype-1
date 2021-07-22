@@ -1,0 +1,58 @@
+export const targetDocumentSamples = [
+    {
+        title: 'EXH-SU-5110-B',
+        description: 'Lorem upsum door sit amet consectetur',
+        active: false,
+        tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum'],
+        progress: 100,
+    },
+    {
+        title: 'EXH-SU-5110-B',
+        description: 'Lorem upsum door sit amet consectetur',
+        active: false,
+        tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum'],
+        progress: 86,
+    },
+    {
+        title: 'EXH-SU-5110-B',
+        description: 'Lorem upsum door sit amet consectetur',
+        active: false,
+        tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum'],
+        progress: 72,
+    },
+    {
+        title: 'EXH-SU-5110-B',
+        description: 'Lorem upsum door sit amet consectetur',
+        active: false,
+        tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum'],
+        progress: 69,
+    },
+    {
+        title: 'EXH-SU-5110-B',
+        description: 'Lorem upsum door sit amet consectetur',
+        active: false,
+        tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum'],
+        progress: 57,
+    },
+    {
+        title: 'EXH-SU-5110-B',
+        description: 'Lorem upsum door sit amet consectetur',
+        active: false,
+        tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum'],
+        progress: 54,
+    },
+    {
+        title: 'EXH-SU-5110-B',
+        description: 'Lorem upsum door sit amet consectetur',
+        active: false,
+        tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum'],
+        progress: 48,
+    },
+    {
+        title: 'EXH-SU-5110-B',
+        description: 'Lorem upsum door sit amet consectetur',
+        active: false,
+        tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum'],
+        progress: 40,
+    },
+]

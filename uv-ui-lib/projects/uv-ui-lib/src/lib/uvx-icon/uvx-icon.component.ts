@@ -9,7 +9,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 export class UvxIconComponent {
 
     @Input() icon = '';
-    @Input() color: 'black' | 'primary' | 'gray' = 'black';
-    @Input() size: 'xs' | 'sm' | 'md' = 'sm';
+    @Input() color: 'black' | 'primary' | 'gray' | 'white' = 'black';
+    @Input() size: 'xs' | 'sm' | 'md' | 'checkmark' = 'sm';
 
 }

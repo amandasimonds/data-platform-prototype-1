@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { sourceDocumentSamples } from '../sample-data/source-documents';
+import { targetDocumentSamples } from '../sample-data/target-documents';
 
 @Component({
   selector: 'uv-prototype-sbs-landing',
@@ -9,6 +11,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 export class SideBySideLandingComponent implements OnInit {
 
     public sourceDocumentSelected = false;
+
+    sourceDocumentsCount = sourceDocumentSamples.length;
+    targetDocumentsCount = targetDocumentSamples.length;
 
   constructor() { }
 

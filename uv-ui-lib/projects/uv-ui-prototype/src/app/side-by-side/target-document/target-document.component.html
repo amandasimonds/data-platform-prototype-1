@@ -1,18 +1,18 @@
-<div *ngFor="let item of sourceDocuments" class="sbs-document-card">
+<div *ngFor="let item of targetDocuments" class="sbs-document-card">
     <div class="sbs-document-card-top flex flex-column gap-sm">
-        <div class="flex flex-row">
+        <div class="flex flex-row align-items-center">
+            <uvx-checkbox></uvx-checkbox>
+            <span class="progress-chip margin-right-xxs" 
+                [class.progress-chip-success]="item.progress > 60"
+                [class.progress-chip-danger]="item.progress < 60">
+                {{item.progress}}%
+            </span>
             <p class="bold uv-body margin-right-xxs">{{item.title}}</p> 
             <p class="uv-body">{{item.description}}</p>
         </div>
-        <div class="flex flex-row align-items-center">
-            <p class ="sbs-block uv-label-sbs margin-right-xs">Not started</p>
-            <p class ="sbs-chip uv-label-sbs">AD</p>
-            <p class ="sbs-chip uv-label-sbs">SF</p>
-            <p class ="sbs-chip uv-label-sbs">EF</p> 
-        </div>
 
     </div>
-        <div class="divider"></div>
+        <div class="divider-light"></div>
 
     <div class="sbs-document-card-bottom">
         <div *ngFor="let tag of item.tags" class="sbs-tag uv-label-sbs">
