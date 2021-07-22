@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ISbsDocument } from '../models/sbs-document.model';
+import { ISbsSourceDocument } from '../models/sbs-source-document.model';
 import { sourceDocumentSamples } from '../sample-data/source-documents';
 
 @Component({
@@ -10,7 +10,7 @@ import { sourceDocumentSamples } from '../sample-data/source-documents';
 })
 export class SourceDocumentComponent implements OnInit {
 
-    public sourceDocuments: ISbsDocument[] = sourceDocumentSamples;
+    public sourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
 
   constructor() { }
 

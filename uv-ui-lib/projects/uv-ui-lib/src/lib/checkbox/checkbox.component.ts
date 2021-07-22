@@ -18,7 +18,7 @@ export class CheckboxComponent implements ControlValueAccessor {
 
     @Input() public label = '';
     @Input() public disabled = false;
-    @Input() public set value(isChecked: boolean) {
+    @Input() public set checked(isChecked: boolean) {
         if (!this.disabled) {
             this.isChecked = isChecked;
             this.onChange(isChecked);
