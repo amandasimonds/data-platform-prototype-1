@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActionBarModule, ButtonModule, DropdownModule, IconButtonModule, UvxIconModule } from '../../../../../uv-ui-lib/src/public-api';
+import { ActionBarModule, ButtonModule, IconButtonModule, UvxIconModule } from '../../../../../uv-ui-lib/src/public-api';
 import { SideBySideLandingComponent } from './landing.component';
 import { SourceDocumentModule } from '../source-document/source-document.module';
 import { TargetDocumentModule } from '../target-document/target-document.module';
@@ -16,7 +16,7 @@ import { TargetDocumentModule } from '../target-document/target-document.module'
         UvxIconModule,
         IconButtonModule,
         SourceDocumentModule,
-        TargetDocumentModule
+        TargetDocumentModule,
     ],
     exports: [ SideBySideLandingComponent ]
 })

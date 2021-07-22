@@ -16,6 +16,12 @@
 
     //colors
     --uv-color-primary: var(--uv-color-blue);
+    --uv-color-primary-active:  #0375a4;
+    --uv-color-success: #03a474;
+    --uv-color-success-active: #007b56;
+    --uv-color-success-light: #D6F0E9;
+    --uv-color-danger: #E28003;
+    --uv-color-danger-light: #FAEAD6;
     --uv-font-color: var(--uv-color-black);
     --uv-scrollbar-color: var(--uv-color-gray);
     --uv-background-color: var(--uv-color-gray-light-2);
@@ -23,7 +29,6 @@
     --uv-border-color-gray: var(--uv-color-gray-2);
 
     --uv-color-blue: #00A3E5;
-    --uv-color-orange: #FF6969;
     --uv-color-white: #ffffff;
     --uv-color-white-2: rgba(251,251,251,0.9);
     --uv-color-gray: #D2D2D6;
@@ -36,7 +41,6 @@
     --uv-color-gray-light-4: #EDEDEE;
     --uv-color-black: #0D0C22;
     
-
     //sizes
     --uv-header-height: 64px;
     --uv-navbar-width: 64px;
@@ -48,6 +52,7 @@
     //styles
     --uv-box-shadow: 0 2px 12px 0 rgba(234,234,234,0.5);
     --uv-box-shadow-hover: 0 4px 8px 0 rgba(0,0,0,0.16);
+    --uv-box-shadow-hover-2: 0 4px 8px 0 rgba(0,0,0,0.16);
     --uv-border-gray: 1px solid var(--uv-border-color-gray);
     --uv-linear-gradient: linear-gradient(180deg, #84439971 0%, #4acaf571 100%);
 

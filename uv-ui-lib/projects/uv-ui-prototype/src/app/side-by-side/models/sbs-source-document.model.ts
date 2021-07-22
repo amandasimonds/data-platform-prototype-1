@@ -1,4 +1,4 @@
-export interface ISbsDocument { 
+export interface ISbsSourceDocument { 
 	title: string;
 	description: string;
 	active: boolean;

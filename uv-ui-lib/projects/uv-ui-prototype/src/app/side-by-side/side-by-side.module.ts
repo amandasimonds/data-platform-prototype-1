@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SideBySideComponent } from './side-by-side.component';
 import { SideBySideRoutingModule } from './side-by-side-routing.module';
-import { ActionBarModule, SidePanelModule, ButtonModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule } from '../../../../uv-ui-lib/src/public-api';
+import { ActionBarModule, SidePanelModule, ButtonModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule, UvxIconModule } from '../../../../uv-ui-lib/src/public-api';
 import { TasksModule } from './tasks/tasks.module';
 import { SideBySideLandingModule } from './landing/landing.module';
 import { SourceDocumentModule } from './source-document/source-document.module';
@@ -17,7 +17,8 @@ import { SourceDocumentModule } from './source-document/source-document.module';
         ActionBarModule,
         TasksModule,
         SideBySideLandingModule,
-        SourceDocumentModule
+        SourceDocumentModule,
+        CheckboxModule,
     ],
     exports: [ SideBySideComponent ]
 })
