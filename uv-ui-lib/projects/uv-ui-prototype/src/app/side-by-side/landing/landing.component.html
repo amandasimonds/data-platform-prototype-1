@@ -1,34 +1,9 @@
 <div class="uv-container--fluid h-100">
     <div class="row">
         <div class="col-12">
-            <uvx-action-bar>
-                <div left>
-                    Select documents to get started
-                </div>
-                
-                <div right>
-                    <uvx-button mode="primary" [disabled]="!sourceDocumentSelected" label="Compare"></uvx-button>
-                </div>
-
-                <div bottom>
-                    <div class="row">
-                        <div class="col-6 flex flex-row justify-content-space-between padding-right-md">
-                            <p>{{sourceDocumentsCount}} documents</p>
-                            <div>
-                                <uvx-icon-button icon="more_dots" color="primary" class="margin-right-xs"></uvx-icon-button>
-                                <uvx-icon-button icon="filter" color="primary"></uvx-icon-button>
-                            </div>
-                        </div>
-                        <div class="col-6 flex flex-row justify-content-space-between divider-left padding-left-md">
-                            <p>{{targetDocumentsCount}} documents</p>
-                            <div>
-                                <uvx-icon-button icon="more_dots" color="primary" class="margin-right-xs"></uvx-icon-button>
-                                <uvx-icon-button icon="filter" color="primary"></uvx-icon-button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </uvx-action-bar>
+            <sbs-action-bar 
+                [showTargetDocuments]="sourceDocumentSelected">
+            </sbs-action-bar>
         </div>
     </div>
 
@@ -36,14 +11,16 @@
         <div class="col-6 h-100">
             <div class="scroll-spacing h-100">
                 <div class="source-document-container h-100">
-                    <app-source-document (click)="sourceDocumentSelected = true"></app-source-document>
+                    <app-source-document (click)="onSourceDocumentClick()">
+                    </app-source-document>
                 </div>
             </div>
         </div>
             <div class="col-6 h-100">
                 <div class="scroll-spacing h-100">
                     <div class="source-document-container h-100">
-                        <app-target-document *ngIf="sourceDocumentSelected" ></app-target-document>
+                        <app-target-document *ngIf="sourceDocumentSelected" >
+                        </app-target-document>
                     </div>
                 </div>
             </div>

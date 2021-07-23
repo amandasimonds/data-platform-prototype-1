@@ -6,13 +6,33 @@
 
 @font-face {
     font-family: 'Noto Sans';
+    src: url("https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Medium.ttf") format("truetype");
+    font-weight:500;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url("https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-SemiBold.ttf") format("truetype");
+    font-weight:600;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
     src: url("https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Bold.ttf") format("truetype");
     font-weight:700;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url("https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Italic.ttf") format("truetype");
+    font-style:italic;
 }
 
 :root {
     --uv-font-family: 'Noto Sans', sans-serif;
     --uv-font-bold: 700;
+    --uv-font-semibold: 600;
+    --uv-font-medium-bold: 500;
 
     //colors
     --uv-color-primary: var(--uv-color-blue);
@@ -34,6 +54,7 @@
     --uv-color-gray: #D2D2D6;
     --uv-color-gray-2: #dddddd;
     --uv-color-gray-3: #DBDBDB;
+    --uv-color-gray-4: #4a4a4a;
     --uv-color-gray-dark: #6E6D7A;
     --uv-color-gray-light: #F3F3F4;
     --uv-color-gray-light-2: #f1f1f1;
