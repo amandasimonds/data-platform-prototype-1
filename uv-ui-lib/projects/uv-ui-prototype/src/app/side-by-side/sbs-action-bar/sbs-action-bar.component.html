@@ -1,0 +1,33 @@
+<uvx-action-bar>
+    <div left>
+        <p *ngIf="!showTargetDocuments" class="italic uv-font-gray">Select documents to get started</p>
+        <div *ngIf="showTargetDocuments" class="flex flex-row align-items-center">
+            <span class="sbs-block medium-bold uv-body margin-right-xs">{{loadedSourceDocuments[0].title}}</span> 
+            <uvx-icon icon="compare" class="margin-right-xs"></uvx-icon>
+            <p class="italic uv-font-gray">Collection: 0 documents selected</p>
+        </div>
+    </div>
+    
+    <div right>
+        <uvx-button mode="primary" [disabled]="!showTargetDocuments" label="Compare"></uvx-button>
+    </div>
+
+    <div bottom>
+        <div class="row">
+            <div class="col-6 flex flex-row justify-content-space-between padding-right-md">
+                <p class="uv-body medium-bold">{{sourceDocumentsCount}} documents</p>
+                <div>
+                    <uvx-icon-button icon="more_dots" color="primary" class="margin-right-xs"></uvx-icon-button>
+                    <uvx-icon-button icon="filter" color="primary"></uvx-icon-button>
+                </div>
+            </div>
+            <div class="col-6 flex flex-row justify-content-space-between divider-left padding-left-md">
+                <p class="uv-body medium-bold">{{targetDocumentsCount}} documents</p>
+                <div>
+                    <uvx-icon-button icon="more_dots" [color]="showTargetDocuments ? 'primary' : 'gray'" class="margin-right-xs"></uvx-icon-button>
+                    <uvx-icon-button icon="filter" [color]="showTargetDocuments ? 'primary' : 'gray'"></uvx-icon-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</uvx-action-bar>

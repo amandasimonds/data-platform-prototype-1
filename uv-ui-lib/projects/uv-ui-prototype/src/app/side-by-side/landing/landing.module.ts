@@ -4,6 +4,7 @@ import { ActionBarModule, ButtonModule, IconButtonModule, UvxIconModule } from '
 import { SideBySideLandingComponent } from './landing.component';
 import { SourceDocumentModule } from '../source-document/source-document.module';
 import { TargetDocumentModule } from '../target-document/target-document.module';
+import { SbsActionBarModule } from '../sbs-action-bar/sbs-action-bar.module';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { TargetDocumentModule } from '../target-document/target-document.module'
         IconButtonModule,
         SourceDocumentModule,
         TargetDocumentModule,
+        SbsActionBarModule
     ],
     exports: [ SideBySideLandingComponent ]
 })

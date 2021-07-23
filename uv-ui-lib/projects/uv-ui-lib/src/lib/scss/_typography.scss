@@ -76,6 +76,22 @@ h5 {
     font-weight: var(--uv-font-bold);
 }
 
+.semibold {
+    font-weight: var(--uv-font-semibold);
+}
+
+.medium-bold {
+    font-weight: var(--uv-font-medium-bold);
+}
+
+.italic {
+    font-style: italic;
+}
+
+.uv-font-gray {
+    color: var(--uv-color-gray-4)
+}
+
 .highlight {
     background-color: var(--uv-color-gray-light);
 }

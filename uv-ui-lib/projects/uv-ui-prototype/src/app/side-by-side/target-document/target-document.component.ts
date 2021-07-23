@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { ISbsTargetDocument } from '../models/sbs-target-document.model';
 import { targetDocumentSamples } from '../sample-data/target-documents';
 
@@ -11,6 +11,12 @@ import { targetDocumentSamples } from '../sample-data/target-documents';
 export class TargetDocumentComponent implements OnInit {
 
     public targetDocuments: ISbsTargetDocument[] = targetDocumentSamples;
+    @Output() onSourceDocumentSelected = new EventEmitter<any>();
+
+    onTargetDocumentSelected(item: ISbsTargetDocument){
+        item.active = !item.active;
+        this.onSourceDocumentSelected.emit(item);
+    }
 
     ngOnInit(): void {}
 

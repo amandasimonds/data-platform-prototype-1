@@ -31,6 +31,7 @@ import { HelperService } from './services/helper.service';
 import { AuthService } from './services/auth.service';
 import { SearchService } from './services/search.service';
 import { SideBySideModule } from './side-by-side/side-by-side.module';
+import { SidebySideService } from './services/side-by-side.service';
 
 @NgModule({
     declarations: [
@@ -63,7 +64,7 @@ import { SideBySideModule } from './side-by-side/side-by-side.module';
         UvxIconModule,
         RegisterIconModule.forRoot(ICON_SET)
     ],
-    providers: [HelperService, AuthService, HttpClient, SearchService],
+    providers: [HelperService, AuthService, HttpClient, SearchService, SidebySideService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
