@@ -1,6 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { sourceDocumentSamples } from '../sample-data/source-documents';
-import { targetDocumentSamples } from '../sample-data/target-documents';
+import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter, OnChanges, Input, DoCheck } from '@angular/core';
+import { SidebySideService } from '../../services/side-by-side.service';
+import { ISbsSourceDocument } from '../models/sbs-source-document.model';
 
 @Component({
   selector: 'uv-prototype-sbs-landing',
@@ -8,16 +8,39 @@ import { targetDocumentSamples } from '../sample-data/target-documents';
   styleUrls: ['./landing.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SideBySideLandingComponent implements OnInit {
+export class SideBySideLandingComponent implements OnInit, DoCheck {
 
-    public sourceDocumentSelected = false;
+    @Output() onSourceDocumentSelected = new EventEmitter<boolean>();
+    @Output() emitSourceDocument = new EventEmitter<any>();
 
-    sourceDocumentsCount = sourceDocumentSamples.length;
-    targetDocumentsCount = targetDocumentSamples.length;
+    @Input() public sourceDocumentSelected = false;
 
-  constructor() { }
+    selectedSourceDocument: ISbsSourceDocument = {
+        id: 1,
+        title:'',
+        description: 'string',
+        active: false,
+        tags: []
+    };
 
-  ngOnInit(): void {
-  }
+    onSourceDocumentClick() {
+        this.onSourceDocumentSelected.emit(true);
+        this.sourceDocumentSelected = true;
+    }
+
+    constructor(private sbsService: SidebySideService) { }
+
+    ngOnInit(): void {
+        this.sbsService.sourceDocumentSelected
+            .subscribe(
+                (document: ISbsSourceDocument) => {
+                    this.selectedSourceDocument = document;
+                }
+            )
+    }
+
+    ngDoCheck(): void {
+        console.log('landing', this.sourceDocumentSelected);
+    }
 
 }
