@@ -1,21 +1,26 @@
-<div *ngFor="let item of sourceDocuments" class="sbs-document-card">
+<div *ngFor="let item of sourceDocuments" 
+    class="sbs-document-card" 
+    (click)="onSourceDocumentSelected(item)" 
+    [class.sbs-document-card-active]="item.active">
+
     <div class="sbs-document-card-top flex flex-column gap-sm">
         <div class="options-button box"><uvx-icon-button icon="more_dots" color="primary"></uvx-icon-button></div>
         <div class="flex flex-row sbs-document-card-top-document-heading">
+            <uvx-icon *ngIf="item.active" icon="checked" color="primary" size="checkmark" class="margin-right-xxs"></uvx-icon>
             <p class="bold uv-body margin-right-xxs">{{item.title}}</p> 
             <p class="uv-body">{{item.description}}</p>
         </div>
         <div class="flex flex-row align-items-center">
-            <p class ="sbs-block uv-label-sbs margin-right-xs">Not started</p>
+            <p class ="sbs-block uv-label-sbs margin-right-xs semibold">Not started</p>
             <div class="sbs-chips-container flex flex-row">
                 <span class ="sbs-chip uv-label-sbs">AD</span>
                 <span class ="sbs-chip uv-label-sbs">SF</span>
                 <span class ="sbs-chip uv-label-sbs">EF</span> 
             </div>
         </div>
-
     </div>
-        <div class="divider-light"></div>
+
+    <div class="divider-light"></div>
 
     <div class="sbs-document-card-bottom flex flex-row align-items-center justify-content-space-between">
         <div>
@@ -27,4 +32,5 @@
             <a class="sbs-link" href="#">Show more <uvx-icon color="primary" size="xs" icon="arrow_collapse"></uvx-icon></a>
         </div>
     </div>
+
 </div>
