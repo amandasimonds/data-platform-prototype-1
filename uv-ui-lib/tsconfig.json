@@ -21,9 +21,7 @@
       "dom"
     ],
     "paths": {
-      "uv-ui-components": [
-        "dist/uv-ui-components/uv-ui-components",
-        "dist/uv-ui-components",
+      "uv-ui-lib": [
         "dist/uv-ui-lib"
       ]
     }
