@@ -28,10 +28,11 @@ import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.
 import { MainComponent } from './layouts/main/main.component';
 import { SearchModule } from './search/search.module';
 import { HelperService } from './services/helper.service';
-import { AuthService } from './services/auth.service';
 import { SearchService } from './services/search.service';
 import { SideBySideModule } from './side-by-side/side-by-side.module';
 import { SidebySideService } from './services/side-by-side.service';
+import { AuthConfigModule } from './auth/auth-config.module';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
     declarations: [
@@ -62,7 +63,8 @@ import { SidebySideService } from './services/side-by-side.service';
         RegisterIconModule,
         CardModule,
         UvxIconModule,
-        RegisterIconModule.forRoot(ICON_SET)
+        RegisterIconModule.forRoot(ICON_SET),
+        AuthConfigModule
     ],
     providers: [HelperService, AuthService, HttpClient, SearchService, SidebySideService],
     bootstrap: [AppComponent]

@@ -70,7 +70,6 @@
             "main": "projects/uv-ui-prototype/src/main.ts",
             "polyfills": "projects/uv-ui-prototype/src/polyfills.ts",
             "tsConfig": "projects/uv-ui-prototype/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/uv-ui-prototype/src/favicon.ico",
               "projects/uv-ui-prototype/src/assets/",
@@ -83,7 +82,13 @@
             "styles": [
               "projects/uv-ui-prototype/src/scss/main.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -113,7 +118,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",

@@ -4,26 +4,27 @@ import { LoginComponent } from './login/login.component';
 import { MainComponent } from './layouts/main/main.component';
 import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
 import { SettingsComponent } from './settings/settings.component';
-import { AuthGuardService } from './services/auth-guard.service';
-import { AuthGuardComponent } from './layouts/auth-guard/auth-guard.component';
+import { AutoLoginAllRoutesGuard } from 'angular-auth-oidc-client';
+import { AuthCallbackComponent } from './layouts/auth-callback/auth-callback.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: AuthGuardComponent,
-        // canActivate: [AuthGuardService]
+        component: AuthCallbackComponent,
     },
     {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        canActivate: [AutoLoginAllRoutesGuard]
     },
     {
         path: 'logout',
-        component: LoginComponent
+        component: LoginComponent,
+        canActivate: [AutoLoginAllRoutesGuard]
     },
     {
 		path: 'auth-callback',
-		component: AuthGuardComponent
+		component: AuthCallbackComponent
 	},
     {
         path: 'main',
@@ -49,8 +50,10 @@ const routes: Routes = [
                 path: 'settings',
                 component: SettingsComponent
             }
-        ]
-    }
+        ],
+        canActivate: [AutoLoginAllRoutesGuard]
+    },
+    
 ];
 
 @NgModule({

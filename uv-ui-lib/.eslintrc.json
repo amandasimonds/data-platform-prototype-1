@@ -13,7 +13,8 @@
         "@angular-eslint/template/banana-in-a-box": "error",
         "@angular-eslint/template/cyclomatic-complexity": "error",
         "@angular-eslint/template/no-call-expression": "error",
-        "@angular-eslint/template/no-negated-async": "error"
+        "@angular-eslint/template/no-negated-async": "error",
+        "@angular-eslint/template/eqeqeq": "error"
       }
     },
     {
@@ -69,7 +70,6 @@
         "@angular-eslint/use-component-view-encapsulation": "error",
         "@angular-eslint/use-injectable-provided-in": "off",
         "@angular-eslint/use-lifecycle-interface": "error",
-        "@angular-eslint/use-pipe-decorator": "error",
         "@angular-eslint/use-pipe-transform-interface": "error",
         "@angular-eslint/component-selector": [
           "error",
