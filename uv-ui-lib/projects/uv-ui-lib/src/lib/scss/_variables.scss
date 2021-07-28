@@ -36,7 +36,7 @@
 
     //colors
     --uv-color-primary: var(--uv-color-blue);
-    --uv-color-primary-active:  #0375a4;
+    --uv-color-primary-active: var(--uv-color-blue-2) ;
     --uv-color-success: #03a474;
     --uv-color-success-active: #007b56;
     --uv-color-success-light: #D6F0E9;
@@ -49,6 +49,7 @@
     --uv-border-color-gray: var(--uv-color-gray-2);
 
     --uv-color-blue: #00A3E5;
+    --uv-color-blue-2:#0375a4;
     --uv-color-white: #ffffff;
     --uv-color-white-2: rgba(251,251,251,0.9);
     --uv-color-gray: #D2D2D6;
@@ -88,6 +89,7 @@
     --uv-font-size-xxl: 36px;
 
     //sizes
+    --uv-xxxs-size: 4px;
     --uv-xxs-size: 8px;
     --uv-xs-size: 16px;
     --uv-sm-size: 24px;
