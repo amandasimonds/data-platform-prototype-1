@@ -53,4 +53,18 @@
 
 .primary {
     color: var(--uv-color-primary);
+
+    &:hover {
+        color: var(--uv-color-primary-active);
+    }
+}
+
+.disabled {
+    color: var(--uv-svg-color-gray);
+    cursor: not-allowed;
+
+    &:hover {
+        color: var(--uv-svg-color-gray);
+        cursor: not-allowed;
+    }
 }

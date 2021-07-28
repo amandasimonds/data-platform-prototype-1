@@ -1,16 +1,15 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Output } from '@angular/core';
 import { SidebySideService } from '../../services/side-by-side.service';
 import { ISbsSourceDocument } from '../models/sbs-source-document.model';
-import { ISbsTargetDocument } from '../models/sbs-target-document.model';
 import { sourceDocumentSamples } from '../sample-data/source-documents';
 
 @Component({
   selector: 'app-source-document',
   templateUrl: './source-document.component.html',
-  styleUrls: ['./source-document.component.scss'],
+  styleUrls: ['./source-document.component.scss', '../side-by-side.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SourceDocumentComponent implements OnInit {
+export class SourceDocumentComponent {
 
     public sourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
 
@@ -22,24 +21,10 @@ export class SourceDocumentComponent implements OnInit {
         tags: []
     };
 
+    constructor(private sbsService: SidebySideService) { }
+
     onSourceDocumentSelected(item: ISbsSourceDocument){
-        this.sbsService.sourceDocumentSelected.emit(this.selectedSourceDocument);
+        this.sbsService.selectSourceDocuments(item);
         item.active = !item.active;
     }
-
-    // onTargetDocumentSelected(event: boolean) {
-    //     this.sbsService.sourceDocumentSelected
-    //         .subscribe(
-    //             (document: ISbsSourceDocument) => {
-    //                 this.selectedSourceDocument = document;
-    //                 this.selectedSourceDocument.active = true;
-    //             }
-    //         )
-    // }
-
-  constructor(private sbsService: SidebySideService) { }
-
-  ngOnInit(): void {
-  }
-
 }
