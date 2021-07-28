@@ -1,0 +1,27 @@
+.sbs-action-bar{
+    
+    &-link {
+        font-weight: 100;
+        padding: 8px 8px 8px 16px;
+        border-radius: 4px;
+        height: min-content;
+
+        &:hover {
+            background-color:var(--uv-color-gray-light);
+        }
+    }
+
+    &-left-container {
+        min-width: 10.9rem;
+    }
+
+    &-right-container {
+        min-width: 25.3rem;
+    }
+}
+
+.selected-target-docs-container {
+    gap: 4px;
+}
+
+

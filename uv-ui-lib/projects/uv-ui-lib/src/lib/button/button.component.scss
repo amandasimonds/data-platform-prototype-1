@@ -31,9 +31,19 @@
 
     &.disabled {
         color: var(--uv-color-white);
-        background-color: var(--uv-color-gray);
-        font-weight: none;
-        cursor: not-allowed;
+            background-color: var(--uv-color-gray);
+            font-weight: none;
+            cursor: not-allowed;
+        &:hover{
+            color: var(--uv-color-white);
+            background-color: var(--uv-color-gray);
+            font-weight: none;
+            cursor: not-allowed;
+        }
+    }
+
+    &:hover {
+        background-color: var(--uv-color-primary-active);
     }
 }
 

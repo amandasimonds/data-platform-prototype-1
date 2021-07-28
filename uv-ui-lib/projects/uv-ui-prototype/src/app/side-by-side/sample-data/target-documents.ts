@@ -7,14 +7,14 @@ export const targetDocumentSamples = [
         progress: 100,
     },
     {
-        title: 'EXH-SU-5110-B',
+        title: 'EXH-SU-5110-C',
         description: 'Lorem upsum door sit amet consectetur',
         active: false,
         tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum'],
         progress: 86,
     },
     {
-        title: 'EXH-SU-5110-B',
+        title: 'EXH-SU-5110-D',
         description: 'Lorem upsum door sit amet consectetur',
         active: false,
         tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum'],
