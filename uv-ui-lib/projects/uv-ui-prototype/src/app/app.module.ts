@@ -9,14 +9,9 @@ import {
     SearchPanelModule,
     HeaderModule,
     NavbarModule,
-    SnippetModule,
-    DropdownModule,
-    ImageButtonModule,
     IconButtonModule,
     TabModule,
-    CheckboxModule,
     RegisterIconModule,
-    CardModule,
     UvxIconModule
 } from '../../../uv-ui-lib/src/public-api';
 
@@ -50,18 +45,13 @@ import { AuthService } from './auth/auth.service';
         SearchPanelModule,
         HeaderModule,
         NavbarModule,
-        SnippetModule,
-        DropdownModule,
-        ImageButtonModule,
         IconButtonModule,
         HomeSplashModule,
         SearchModule,
         SideBySideModule,
         TabModule,
         HttpClientModule,
-        CheckboxModule,
         RegisterIconModule,
-        CardModule,
         UvxIconModule,
         RegisterIconModule.forRoot(ICON_SET),
         AuthConfigModule

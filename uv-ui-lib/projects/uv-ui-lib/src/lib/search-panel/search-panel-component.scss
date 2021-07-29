@@ -4,27 +4,9 @@
     height: 40px;
     background-color: #FFFFFF;
     padding-right: 12px;
-
-    &-input {
-        margin-left: 16px;
-        font-size: 14px;
-        font-family: inherit;
-        border: none;
-        width: 100%;
-
-        &:focus,
-        &:invalid {
-            outline: none;
-        }
-
-        &::-webkit-input-placeholder {
-            color: var(--uv-color-gray-dark);
-            font-style: italic;
-        }
-    }
 }
 
-.full {
+.global {
     min-width: 20rem;
     border: var(--uv-border-gray);
     border-radius: 28px;
@@ -32,4 +14,10 @@
     &-search-field {
         margin-left: 16px;
     }
+}
+
+.component-border {
+    padding-left: 8px;
+    border: var(--uv-border-gray);
+    border-radius: 4px;
 }

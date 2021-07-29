@@ -11,6 +11,7 @@ export class IconButtonComponent {
     @Input() public color: 'gray' | 'primary' | 'black' = 'black';
     @Input() public size: 'small' | 'xs' | 'xxs' = 'small';
     @Input() public disabled = false;
+    @Input() public active = false;
 
     public get cssClasses(): string[] {
 

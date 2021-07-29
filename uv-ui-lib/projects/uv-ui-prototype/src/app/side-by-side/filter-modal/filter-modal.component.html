@@ -1,0 +1,26 @@
+<div class="sbs-filter-modal">
+    <div class="sbs-filter-modal-top">
+        <div class="flex justify-content-space-between align-items-center margin-bottom-xs">
+            <h5>Filter</h5> <a class="sbs-link-md" href="#">Expand</a>
+        </div>
+        <uvx-text-input placeholder="Keywords"></uvx-text-input>
+    </div>
+    <div class="divider"></div>
+    <div class="scroll-wrapper">
+        <div class="sbs-filter-modal-middle">
+            <div class="margin-bottom-sm">
+                <uvx-search-panel placeholder="Search" mode="component-border" class="margin-bottom-sm"></uvx-search-panel>
+            </div>
+            <div class="flex flex-column gap-12 padding-right-xxs">
+                <div *ngFor="let item of filterKeywords" class="flex justify-content-space-between">
+                    <p class="uv-body">{{item}}</p><uvx-icon color="primary" size="xs" icon="arrow_right"></uvx-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sbs-filter-modal-bottom flex justify-content-flex-end align-items-center">
+        <uvx-button label="Clear" mode="text" [disabled]="true" class="margin-right-sm"></uvx-button>
+        <uvx-button label="Apply" mode="primary"></uvx-button>
+    </div>
+</div>

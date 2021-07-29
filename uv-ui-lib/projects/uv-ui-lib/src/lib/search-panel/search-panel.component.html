@@ -1,16 +1,19 @@
-<div [class.full]="mode === 'full'" class="search-panel w-100 flex justify-content-space-between">
+<div class="search-panel w-100 flex justify-content-space-between"
+    [class.global]="mode === 'global'"
+    [class.component-border]="mode === 'component-border'">
 
-    <div class="w-100 justify-content-space-between flex align-items-center" [ngClass]="getMode()">
+    <div class="w-100 justify-content-space-between flex align-items-center" 
+        [ngClass]="getMode()">
 
         <div class="flex align-items-center">
             <uvx-icon-button color='primary' icon='search' (click)="onSearch()" ></uvx-icon-button>
             
             <input type="text"
-            placeholder="Search..."
-            class="search-panel-input">
+            [placeholder]="placeholder"
+            class="uv-input margin-left-xs">
         </div>
 
-        <uvx-icon-button *ngIf="mode === 'full'" color='primary' icon='close' ></uvx-icon-button>
+        <uvx-icon-button *ngIf="mode === 'global'" color='primary' icon='close' ></uvx-icon-button>
         
     </div>
     

@@ -31,5 +31,7 @@ export * from './lib/icon-button/icon-button.component';
 export * from './lib/icon-button/icon-button.module';
 export * from './lib/tab/tab.component';
 export * from './lib/tab/tab.module';
+export * from './lib/text-input/text-input.component';
+export * from './lib/text-input/text-input.module';
 export * from './lib/uvx-icon/uvx-icon.component';
 export * from './lib/uvx-icon/uvx-icon.module';
