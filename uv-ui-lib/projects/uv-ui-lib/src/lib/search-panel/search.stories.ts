@@ -33,5 +33,5 @@ const Template: Story<SearchPanelComponent> = (args: SearchPanelComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-    mode: 'basic'
+    mode: 'component'
 };

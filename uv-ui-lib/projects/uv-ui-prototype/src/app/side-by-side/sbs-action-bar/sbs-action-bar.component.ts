@@ -21,9 +21,14 @@ export class SbsActionBarComponent implements OnInit, OnChanges, DoCheck {
     loadedSourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
 
     showMoreSelections = false;
+    showFilterModal = false;
 
     toggleShowMoreSelections() {
         this.showMoreSelections = !this.showMoreSelections;
+    }
+
+    toggleFilterModal() {
+        this.showFilterModal = !this.showFilterModal;
     }
 
     constructor(private sbsService: SidebySideService, private ref: ChangeDetectorRef) { }

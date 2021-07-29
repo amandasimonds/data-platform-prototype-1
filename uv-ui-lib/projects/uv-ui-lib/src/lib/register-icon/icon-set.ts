@@ -40,6 +40,10 @@ export const ICON_SET = [
 		url: 'system/Arrow collapse.svg'
 	},
     {
+        name: 'arrow_right',
+        url: 'system/Arrow right.svg'
+    },
+    {
         name: 'back',
         url: 'back-arrow.svg'
     },
