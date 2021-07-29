@@ -12,7 +12,7 @@
             </div>
 
             <div *ngIf="selectedTargetDocuments.length > 0" class="flex align-items-center">
-                <div class="selected-target-docs-container flex flex-wrap margin-right-xs">
+                <div class="flex flex-wrap gap-4 margin-right-xs">
                     <span 
                     *ngFor="let item of selectedTargetDocuments" 
                     class="sbs-block sbs-block-selection medium-bold uv-body flex align-items-center">
@@ -47,16 +47,17 @@
         <div class="row">
             <div class="col-6 flex flex-row justify-content-space-between padding-right-md">
                 <p class="uv-body medium-bold">{{loadedSourceDocuments.length}} documents</p>
-                <div>
-                    <uvx-icon-button icon="more_dots" color="primary" class="margin-right-xs"></uvx-icon-button>
-                    <uvx-icon-button icon="filter" color="primary"></uvx-icon-button>
+                <div class="position-relative">
+                    <uvx-icon-button icon="more_dots" color="primary" class="margin-right-xxxs"></uvx-icon-button>
+                    <uvx-icon-button icon="filter" color="primary" (click)="toggleFilterModal()" [active]="showFilterModal"></uvx-icon-button>
+                    <sbs-filter-modal *ngIf="showFilterModal"></sbs-filter-modal>
                 </div>
             </div>
             <div class="col-6 flex flex-row justify-content-space-between divider-left padding-left-md">
                 <p class="uv-body medium-bold">
                     {{ showTargetDocuments ? loadedTargetDocuments.length : '0'}} documents</p>
                 <div>
-                    <uvx-icon-button icon="more_dots" color="primary" [disabled]="!showTargetDocuments" class="margin-right-xs"></uvx-icon-button>
+                    <uvx-icon-button icon="more_dots" color="primary" [disabled]="!showTargetDocuments" class="margin-right-xxxs"></uvx-icon-button>
                     <uvx-icon-button icon="filter" color="primary" [disabled]="!showTargetDocuments"></uvx-icon-button>
                 </div>
             </div>

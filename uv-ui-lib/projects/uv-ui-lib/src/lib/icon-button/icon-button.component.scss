@@ -2,12 +2,12 @@
     &,
     &:link,
     &:visited {
-        text-decoration: none;
         display: inline-block;
-        border-radius: 8px;
+        border-radius: 4px;
         border: none;
         cursor: pointer;
         background-color: transparent;
+        padding: 4px;
     }
 
     &:active,
@@ -67,4 +67,9 @@
         color: var(--uv-svg-color-gray);
         cursor: not-allowed;
     }
+}
+
+.active {
+    color: var(--uv-color-primary-active);
+    background-color: var(--uv-color-gray-light);
 }

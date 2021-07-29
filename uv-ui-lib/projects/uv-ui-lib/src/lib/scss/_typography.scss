@@ -37,7 +37,7 @@ h4 {
 }
 
 h5 {
-    font-weight: 100;
+    font-weight: var(--uv-font-medium-bold);
     font-size: var(--uv-font-size-md);
     line-height: 24px;
 }
@@ -63,7 +63,7 @@ h5 {
 }
 
 .uv-placeholder {
-    font-size: var(--uv-font-size-sm);
+    font-size: var(--uv-font-size-sm-md);
     color: var(--uv-color-gray-dark);
     font-style: italic;
 
@@ -110,4 +110,21 @@ a:visited {
 
 ul, ol {
     list-style-position:inside;
+}
+
+.uv-input, input {
+    font-size: var(--uv-font-size-sm);
+    font-family: inherit;
+    border: none;
+
+        &:focus,
+        &:invalid {
+            outline: none;
+        }
+}
+
+::-webkit-input-placeholder {
+    color: var(--uv-color-gray-dark);
+    font-style: italic;
+    font-size: var(--uv-font-size-sm-md);
 }
