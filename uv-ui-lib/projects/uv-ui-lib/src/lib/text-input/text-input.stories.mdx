@@ -1,0 +1,37 @@
+import { Meta, Story, ArgsTable, Source, Typeset, Preview, Canvas } from '@storybook/addon-docs/blocks';
+import { moduleMetadata } from '@storybook/angular';
+import { CommonModule } from '@angular/common';
+import { TextInputModule } from '../../public-api';
+import dedent from 'ts-dedent';
+
+<Meta
+    title='Components/Input'
+    decorators={[
+        moduleMetadata({
+            imports: [TextInputModule],
+        }),
+    ]}
+/>
+
+# Text Input
+
+<Canvas>
+    <Story name="Text Input">
+        {{
+            template: 
+                `
+                    <uvx-text-input placeholder="Placeholder" label="Label"></uvx-text-input>
+                `
+        }}
+    </Story>
+</Canvas>
+
+<Source
+  language='html'
+  code=
+    {dedent
+        `
+            <uvx-text-input placeholder="Placeholder" label="Label"></uvx-text-input>
+        `
+    }
+/>

@@ -1,0 +1,14 @@
+.uv-tooltip {
+    background-color: var(--uv-color-black);
+    color: var(--uv-color-gray);
+    font-size: var(--uv-font-size-xs);
+    position: absolute;
+    padding: 3px 8px 5px 8px;
+    border-radius: 4px;
+    bottom: 110%;
+    text-align: center;
+    transform: translateX(50%, -50%);
+    transition: opacity ease-in 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}

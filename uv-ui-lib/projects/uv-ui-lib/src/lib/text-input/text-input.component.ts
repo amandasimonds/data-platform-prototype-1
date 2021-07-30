@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TextInputComponent {
 
- @Input() placeholder = '';
-
+    @Input() placeholder = '';
+    @Input() id = '';
+    @Input() label = '';
 }

@@ -20,7 +20,8 @@
 
     <div class="sbs-document-card-bottom flex flex-row align-items-center justify-content-space-between">
         <div>
-            <div *ngFor="let tag of item.tags" class="sbs-tag uv-label-sbs">
+            <div *ngFor="let tag of item.tags" class="tooltip-parent sbs-tag uv-label-sbs position-relative">
+                <uvx-tooltip label="Industry"></uvx-tooltip>
                 {{tag}}
             </div>
         </div>

@@ -62,6 +62,13 @@ h5 {
     }
 }
 
+.tooltip-parent:hover {
+    .uv-tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
 .uv-placeholder {
     font-size: var(--uv-font-size-sm-md);
     color: var(--uv-color-gray-dark);
@@ -120,6 +127,13 @@ ul, ol {
         &:focus,
         &:invalid {
             outline: none;
+        }
+    
+        &-label {
+            font-weight: var(--uv-font-bold);
+            font-size: var(--uv-font-size-xs);
+            color: var(--uv-color-gray-dark);
+            line-height: 28px;
         }
 }
 
