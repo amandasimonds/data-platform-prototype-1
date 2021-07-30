@@ -19,8 +19,6 @@ export class TargetDocumentComponent {
 
     onTargetDocumentSelected(item: ISbsTargetDocument){
         item.active = !item.active;
-        if(item.active === true){
             this.sbsService.selectTargetDocument(item);
-        }
     }
 }

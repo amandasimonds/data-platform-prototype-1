@@ -10,11 +10,12 @@ export class SidebySideService {
 
     private targetDocumentSelectedEvent = new BehaviorSubject<ISbsTargetDocument[]>([]);
     private sourceDocumentSelectedEvent = new BehaviorSubject<ISbsSourceDocument[]>([]);
-    readonly selectedTargetDocuments$ = this.targetDocumentSelectedEvent.asObservable();
-    readonly sourceDocuments$ = this.sourceDocumentSelectedEvent.asObservable();
 
-    public targetDocuments: ISbsTargetDocument[] = targetDocumentSamples;
-    public sourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
+    readonly selectedTargetDocuments$ = this.targetDocumentSelectedEvent.asObservable();
+    readonly selectedSourceDocuments$ = this.sourceDocumentSelectedEvent.asObservable();
+
+    private targetDocuments: ISbsTargetDocument[] = targetDocumentSamples;
+    private sourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
 
     public getTargetDocuments(): ISbsTargetDocument[]{
         return this.targetDocumentSelectedEvent.value.slice();
@@ -30,7 +31,13 @@ export class SidebySideService {
     }
 
     public selectTargetDocument(document: ISbsTargetDocument){
-        const selectedTargetDocs = [...this.targetDocumentSelectedEvent.value, document]
+        const selectedTargetDocs = [...this.targetDocumentSelectedEvent.value, document].filter(item => item.active === true);
+        console.log(selectedTargetDocs);
+        this.targetDocumentSelectedEvent.next(selectedTargetDocs);
+    }
+
+    public clearTargetDocumentSelections(){
+        const selectedTargetDocs: ISbsTargetDocument[] = [];
         this.targetDocumentSelectedEvent.next(selectedTargetDocs);
     }
 
