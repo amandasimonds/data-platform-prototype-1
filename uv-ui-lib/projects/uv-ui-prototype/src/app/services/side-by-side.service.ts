@@ -18,7 +18,7 @@ export class SidebySideService {
     private sourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
 
     public getTargetDocuments(): ISbsTargetDocument[]{
-        return this.targetDocumentSelectedEvent.value.slice();
+        return this.targetDocuments.slice();
     }
 
     public getSourceDocuments(): ISbsSourceDocument[]{
@@ -32,13 +32,24 @@ export class SidebySideService {
 
     public selectTargetDocument(document: ISbsTargetDocument){
         const selectedTargetDocs = [...this.targetDocumentSelectedEvent.value, document].filter(item => item.active === true);
-        console.log(selectedTargetDocs);
         this.targetDocumentSelectedEvent.next(selectedTargetDocs);
     }
 
-    public clearTargetDocumentSelections(){
-        const selectedTargetDocs: ISbsTargetDocument[] = [];
+    unselectTargetDocument(document: ISbsTargetDocument) {
+        document.active = !document.active;
+        const selectedTargetDocs = [...this.targetDocumentSelectedEvent.value, document].filter(item => item.active === true);
         this.targetDocumentSelectedEvent.next(selectedTargetDocs);
     }
 
+    public getSelectedTargetDocuments(): ISbsTargetDocument[]{
+        return this.targetDocumentSelectedEvent.value.slice();
+    }
+
+    public clearTargetDocumentSelections(items: ISbsTargetDocument[]){
+        let selectedTargetDocs = items.map(item => {
+            return {...item, active: item.active = false};
+        });
+        selectedTargetDocs = selectedTargetDocs.filter(item => item.active === true);
+        this.targetDocumentSelectedEvent.next(selectedTargetDocs);
+    }
 }
