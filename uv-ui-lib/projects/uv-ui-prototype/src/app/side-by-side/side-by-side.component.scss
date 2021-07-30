@@ -13,17 +13,22 @@
 
     &-block {
         border: var(--uv-border-gray);
-        padding: 0 12px;
+        padding: 0 14px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         border-radius: 4px;
+        min-width: max-content;
         height: 2.5rem;
 
         &-selection:hover {
             border: 1px solid var(--uv-color-gray-light);
             cursor: pointer;
             background-color: var(--uv-color-gray-light);
+        }
+
+        &-with-icon {
+            padding: 0 6px 0 14px
         }
     }
 
@@ -81,6 +86,21 @@
 
         &-bottom {
             padding: 12px 16px 12px 12px;
+        }
+    }
+
+    &-target-doc-selections-container {
+        display: flex;
+        flex-wrap: nowrap;
+        max-height: 50px;
+        overflow: hidden;
+        gap: 4px;
+        min-width: 0;
+
+        &-expanded {
+            width: auto;
+            flex-wrap: wrap;
+            height: auto;
         }
     }
 }
