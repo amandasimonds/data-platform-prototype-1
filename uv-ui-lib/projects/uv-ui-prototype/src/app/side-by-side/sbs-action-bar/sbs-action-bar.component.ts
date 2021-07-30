@@ -40,12 +40,11 @@ export class SbsActionBarComponent implements OnInit, OnChanges, DoCheck {
     }
 
     unselectTargetDocument(item: ISbsTargetDocument) {
-        item.active = !item.active;
-        this.sbsService.selectTargetDocument(item);
+        this.sbsService.unselectTargetDocument(item);
     }
 
-    clearSelections() {
-        this.sbsService.clearTargetDocumentSelections();
+    clearSelections(items: ISbsTargetDocument[]) {
+        this.sbsService.clearTargetDocumentSelections(items);
     }
 
     ngOnInit(): void {
