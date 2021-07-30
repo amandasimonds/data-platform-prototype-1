@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TargetDocumentComponent } from './target-document.component';
-import { CheckboxModule, IconButtonModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { CheckboxModule, IconButtonModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
 
 @NgModule({
   declarations: [TargetDocumentComponent],
@@ -9,7 +9,8 @@ import { CheckboxModule, IconButtonModule, UvxIconModule } from 'projects/uv-ui-
     CommonModule,
     CheckboxModule,
     IconButtonModule,
-    UvxIconModule
+    UvxIconModule,
+    TooltipModule
   ],
   exports: [ TargetDocumentComponent ]
 })

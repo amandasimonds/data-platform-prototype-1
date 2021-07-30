@@ -1,13 +1,13 @@
-.grid{
+.grid {
     position: relative;
     height: calc(100vh - 64px);
     display: grid;
     grid-gap: 0;
     grid-template-columns: [col1] 336px [col2] auto;
     grid-template-rows: [row1] 68px [row2] auto;
-    grid-template-areas: 
-    "sidebar appbar"
-    "sidebar main" ;
+    grid-template-areas:
+        "sidebar appbar"
+        "sidebar main" ;
 }
 
 .actionbar {

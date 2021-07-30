@@ -37,6 +37,7 @@ export const parameters = {
                 'Checkbox',
                 'Dropdown', 
                 'Header', 
+                'Input',
                 'Navbar', 
                 'Search', 
                 'Side Panel', 

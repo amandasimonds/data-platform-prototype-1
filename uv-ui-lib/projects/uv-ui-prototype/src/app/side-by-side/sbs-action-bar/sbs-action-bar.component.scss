@@ -1,5 +1,4 @@
-.sbs-action-bar{
-    
+.sbs-action-bar {
     &-link {
         font-weight: 100;
         padding: 8px 8px 8px 16px;
@@ -7,7 +6,7 @@
         height: min-content;
 
         &:hover {
-            background-color:var(--uv-color-gray-light);
+            background-color: var(--uv-color-gray-light);
         }
     }
 
@@ -19,5 +18,3 @@
         min-width: 25.3rem;
     }
 }
-
-

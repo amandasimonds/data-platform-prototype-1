@@ -28,6 +28,7 @@ import { SideBySideModule } from './side-by-side/side-by-side.module';
 import { SidebySideService } from './services/side-by-side.service';
 import { AuthConfigModule } from './auth/auth-config.module';
 import { AuthService } from './auth/auth.service';
+import { NgOnDestroyService } from './services/on-destroy.service';
 
 @NgModule({
     declarations: [
@@ -56,7 +57,14 @@ import { AuthService } from './auth/auth.service';
         RegisterIconModule.forRoot(ICON_SET),
         AuthConfigModule
     ],
-    providers: [HelperService, AuthService, HttpClient, SearchService, SidebySideService],
+    providers: [
+        HelperService, 
+        AuthService, 
+        HttpClient, 
+        SearchService, 
+        SidebySideService,
+        NgOnDestroyService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
