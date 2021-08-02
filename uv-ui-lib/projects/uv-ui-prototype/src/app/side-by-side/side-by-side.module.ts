@@ -9,11 +9,13 @@ import {
     CheckboxModule } from '../../../../uv-ui-lib/src/public-api';
 import { TasksModule } from './tasks/tasks.module';
 import { SideBySideLandingModule } from './landing/landing.module';
-import { SourceDocumentModule } from './source-document/source-document.module';
+import { SourceDocumentModule } from './sbs-document/source-document/source-document.module';
+import { SbsDocumentComponent } from './sbs-document/sbs-document.component';
 
 @NgModule({
     declarations: [
         SideBySideComponent,
+        SbsDocumentComponent,
     ],
     imports: [
         CommonModule,

@@ -1,6 +1,6 @@
 <uvx-action-bar>
     <div left>
-        <p *ngIf="!showTargetDocuments" class="italic uv-font-gray">Select documents to get started</p>
+        <p *ngIf="!showTargetDocuments" class="italic uv-font-gray flex align-items-center" style="height: 50px;">Select documents to get started</p>
 
         <div *ngIf="showTargetDocuments" class="flex flex-row">
             <div>
@@ -14,7 +14,7 @@
             <div *ngIf="selectedTargetDocuments.length > 0" 
                 [class.sbs-target-doc-selections-container-expanded]="showMoreSelections"
                 class="flex align-items-center sbs-target-doc-selections-container margin-right-xs">
-                <div [class.sbs-target-doc-selections-container-expanded]="showMoreSelections"class="">
+                <div [ngClass]="showMoreSelections ? 'flex flex-wrap' : 'sbs-target-doc-selections-container-inner'" >
                     <span 
                     *ngFor="let item of selectedTargetDocuments" 
                     class="sbs-block margin-4 sbs-block-with-icon sbs-block-selection medium-bold uv-body flex align-items-center padding-right-sm">

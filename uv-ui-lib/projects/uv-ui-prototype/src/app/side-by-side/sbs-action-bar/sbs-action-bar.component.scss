@@ -12,9 +12,27 @@
 
     &-left-container {
         min-width: 10.9rem;
+        height: 50px;
     }
 
     &-right-container {
         min-width: 25.3rem;
+    }
+}
+
+.sbs-target-doc-selections-container {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 50px;
+    overflow: hidden;
+    gap: 4px;
+    min-width: 0;
+
+    &-expanded {
+        height: auto;
+    }
+
+    &-inner {
+        height: 50px;
     }
 }
