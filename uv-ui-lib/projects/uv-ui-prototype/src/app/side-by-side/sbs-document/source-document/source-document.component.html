@@ -1,5 +1,5 @@
 <div *ngFor="let item of sourceDocuments" 
-    class="sbs-document-card" 
+    class="sbs-document-card"
     (click)="onSourceDocumentSelected(item)" 
     [class.sbs-document-card-active]="item.active">
 
@@ -30,7 +30,14 @@
             </div>
         </div>
         <div class="sbs-document-card-bottom-show-more">
-            <a class="sbs-link" href="#">Show more <uvx-icon color="primary" size="xs" icon="arrow_collapse"></uvx-icon></a>
+            <a class="sbs-link z-1000" (click)="onShowMoreDocumentDetails()">
+                <span *ngIf="!showMoreDocumentDetails">
+                    Show more <uvx-icon color="primary" size="xs" icon="arrow_collapse"></uvx-icon>
+                </span>
+                <span *ngIf="showMoreDocumentDetails">
+                    Show less <uvx-icon color="primary" size="xs" icon="arrow_expand"></uvx-icon>
+                </span>
+            </a>
         </div>
     </div>
 

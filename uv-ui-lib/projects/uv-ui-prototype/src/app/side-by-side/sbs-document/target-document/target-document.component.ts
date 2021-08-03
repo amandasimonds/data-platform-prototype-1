@@ -8,7 +8,7 @@ import { targetDocumentSamples } from '../../sample-data/target-documents';
 @Component({
   selector: 'app-target-document',
   templateUrl: './target-document.component.html',
-  styleUrls: ['./target-document.component.scss', '../../side-by-side.component.scss'],
+  styleUrls: ['../sbs-document.component.scss', '../../side-by-side.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TargetDocumentComponent implements OnInit {
