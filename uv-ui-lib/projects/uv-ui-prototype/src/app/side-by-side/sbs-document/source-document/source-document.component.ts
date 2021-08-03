@@ -13,21 +13,9 @@ export class SourceDocumentComponent {
 
     public sourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
 
-    showMoreDocumentDetails = false;
-
-    @Output() selectedSourceDocument: ISbsSourceDocument = {
-        id: 1,
-        title:'',
-        description: 'string',
-        active: false,
-        tags: []
-    };
-
-    @Output() onSourceDocumentClickedEvent: EventEmitter<boolean> = new EventEmitter();
-
-    onShowMoreDocumentDetails() {
-        this.showMoreDocumentDetails = !this.showMoreDocumentDetails;
-        console.log('click event');
+    onShowMoreDocumentDetails(event: any, item: ISbsSourceDocument) {
+        item.showDetails = !item.showDetails;
+        event.stopPropagation();
     }
 
     constructor(private sbsService: SidebySideService) { }
@@ -35,6 +23,5 @@ export class SourceDocumentComponent {
     onSourceDocumentSelected(item: ISbsSourceDocument){
         this.sbsService.selectSourceDocuments(item);
         item.active = !item.active;
-        this.onSourceDocumentClickedEvent.emit(true);
     }
 }

@@ -12,11 +12,25 @@
         padding: 6px 16px;
         background-color: var(--uv-color-gray-light-3);
 
+        &-details-container {
+            overflow: hidden;
+            height: 1.875rem;
+            transition: ease-in-out .2s;
+
+            &-expanded {
+                height: auto;
+                margin-bottom: 16px;
+            }
+        }
+
         &-show-more {
             opacity: 0;
             transition: all 0.2s;
             padding: 3px 6px 5px 12px;
             border-radius: 4px;
+            min-width: max-content;
+            align-self: flex-end;
+            display: inline-block;
 
             &:hover {
                 background-color: var(--uv-color-gray-light);
