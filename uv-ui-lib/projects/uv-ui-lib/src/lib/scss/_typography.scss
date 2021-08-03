@@ -8,6 +8,8 @@ body, p {
 .uv-body {
     font-family: var(--uv-font-family);
     font-size: var(--uv-font-size-sm);
+    line-height: 24px;
+    color: var(--uv-font-color);
 }
 
 h1 {
@@ -58,6 +60,10 @@ h5 {
 
         &-primary {
             font-weight: 600;
+        }
+
+        &-secondary {
+            color: var(--uv-font-color-secondary)
         }
     }
 }
