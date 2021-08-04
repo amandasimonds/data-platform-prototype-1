@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve uv-ui-prototype",
-    "build": "ng build",
+    "build": "ng build uv-ui-prototype",
     "test": "ng test",
     "lint": "ng lint",
     "lint-scss": "npx stylelint **/*.scss",

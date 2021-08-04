@@ -18,7 +18,7 @@ export class SbsActionBarComponent implements OnInit, OnChanges, DoCheck {
     @Input() public showTargetDocuments = false;
 
     selectedTargetDocuments: ISbsTargetDocument[] = [];
-    selectedSourceDocuments: ISbsSourceDocument[] = [];
+    sourceDocumentsList: ISbsSourceDocument[] = [];
     loadedTargetDocuments: ISbsTargetDocument[] = targetDocumentSamples;
     loadedSourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
 
@@ -48,8 +48,8 @@ export class SbsActionBarComponent implements OnInit, OnChanges, DoCheck {
     }
 
     ngOnInit(): void {
-        this.sbsService.selectedSourceDocuments$.subscribe(sourceDocs => {
-            this.selectedSourceDocuments = sourceDocs;
+        this.sbsService.sourceDocumentsList$.subscribe(sourceDocs => {
+            this.sourceDocumentsList = sourceDocs;
             this.ref.detectChanges();
             takeUntil(this.destroy$);
         })

@@ -13,15 +13,14 @@ export class SourceDocumentComponent {
 
     public sourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
 
-    onShowMoreDocumentDetails(event: any, item: ISbsSourceDocument) {
+    onShowMoreDocumentDetails(event: Event, item: ISbsSourceDocument) {
         item.showDetails = !item.showDetails;
         event.stopPropagation();
     }
 
     constructor(private sbsService: SidebySideService) { }
 
-    onSourceDocumentSelected(item: ISbsSourceDocument){
-        this.sbsService.selectSourceDocuments(item);
-        item.active = !item.active;
+    onSourceDocumentSelected(item: ISbsSourceDocument, i: number){
+        this.sbsService.selectSourceDocument(item, i);
     }
 }

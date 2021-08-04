@@ -59,6 +59,25 @@
         box-shadow: var(--uv-box-shadow-hover);
         background-color: var(--uv-color-white);
     }
+
+    &-disabled, &-disabled:hover {
+        cursor: not-allowed;
+        transform: none;
+        color: var(--uv-color-gray-dark);
+        background-color: var(--uv-color-white-2);
+        box-shadow: none;
+        pointer-events: none;
+
+        .options-button, .sbs-document-card-bottom-show-more {
+            opacity: 0;
+        }
+
+        .sbs-document-card-top-document-heading {
+            p {
+                color: inherit;
+            }
+        }
+    }
 }
 
 .progress-chip {
