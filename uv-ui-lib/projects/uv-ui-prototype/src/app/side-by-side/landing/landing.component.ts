@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy, Input, } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, OnInit, } from '@angular/core';
+import { SidebySideService } from '../../services/side-by-side.service';
 
 @Component({
   selector: 'uv-prototype-sbs-landing',
@@ -6,12 +7,17 @@ import { Component, ChangeDetectionStrategy, Input, } from '@angular/core';
   styleUrls: ['./landing.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SideBySideLandingComponent {
+export class SideBySideLandingComponent implements OnInit {
 
     @Input() public sourceDocumentSelected = false;
 
-    onSourceDocumentClick() {
-        this.sourceDocumentSelected = !this.sourceDocumentSelected;
+    constructor(private sbsService: SidebySideService) {
     }
 
+    ngOnInit(): void {
+        this.sbsService.sourceDocumentSelected
+      .subscribe((sourceDocumentSelected: boolean) => {
+        this.sourceDocumentSelected = sourceDocumentSelected;
+      })        
+    }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ISbsSourceDocument } from '../side-by-side/models/sbs-source-document.model';
 import { ISbsTargetDocument } from '../side-by-side/models/sbs-target-document.model';
@@ -12,10 +12,12 @@ export class SidebySideService {
     private sourceDocumentSelectedEvent = new BehaviorSubject<ISbsSourceDocument[]>([]);
 
     readonly selectedTargetDocuments$ = this.targetDocumentSelectedEvent.asObservable();
-    readonly selectedSourceDocuments$ = this.sourceDocumentSelectedEvent.asObservable();
+    readonly sourceDocumentsList$ = this.sourceDocumentSelectedEvent.asObservable();
 
     private targetDocuments: ISbsTargetDocument[] = targetDocumentSamples;
     private sourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
+
+    @Output() sourceDocumentSelected = new EventEmitter<boolean>();
 
     public getTargetDocuments(): ISbsTargetDocument[]{
         return this.targetDocuments.slice();
@@ -25,9 +27,26 @@ export class SidebySideService {
         return this.sourceDocuments.slice();
     }
 
-    public selectSourceDocuments(document: ISbsSourceDocument){
-        const sourceDocs = [...this.sourceDocumentSelectedEvent.value, document]
-        this.sourceDocumentSelectedEvent.next(sourceDocs);
+    public selectSourceDocument(document: ISbsSourceDocument, i: number){
+        document.active = !document.active;
+        this.sourceDocumentSelected.emit(true);
+        let unselectedSourceDocs: ISbsSourceDocument[] = [];
+        const exceptIndex = i;
+        console.log(document.active);
+        if (document.active) {
+            unselectedSourceDocs = this.getSourceDocuments()
+            .filter((item, index) => exceptIndex !== index)
+            .map(item => {
+                return {...item, disabled: item.disabled = true};
+            });
+        } else {
+            unselectedSourceDocs = this.getSourceDocuments()
+            .map(item => {
+                return {...item, disabled: item.disabled = false};
+            });
+        }
+        console.log(unselectedSourceDocs);
+        this.sourceDocumentSelectedEvent.next(unselectedSourceDocs);
     }
 
     public selectTargetDocument(document: ISbsTargetDocument){

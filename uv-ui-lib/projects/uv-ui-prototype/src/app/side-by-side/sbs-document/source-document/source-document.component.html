@@ -1,7 +1,8 @@
-<div *ngFor="let item of sourceDocuments" 
+<div *ngFor="let item of sourceDocuments; let i = index" 
     class="sbs-document-card"
-    (click)="onSourceDocumentSelected(item)" 
-    [class.sbs-document-card-active]="item.active">
+    (click)="!item.disabled && onSourceDocumentSelected(item, i)" 
+    [class.sbs-document-card-active]="item.active"
+    [class.sbs-document-card-disabled]="item.disabled">
 
     <div class="sbs-document-card-top flex flex-column gap-sm">
         <div class="options-button box"><uvx-icon-button icon="more_dots" color="primary"></uvx-icon-button></div>

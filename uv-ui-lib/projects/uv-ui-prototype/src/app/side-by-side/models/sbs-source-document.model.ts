@@ -6,4 +6,5 @@ export interface ISbsSourceDocument {
     showDetails: boolean;
     tags: string[];
     details: string;
+    disabled: boolean;
 }
