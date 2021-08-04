@@ -29,17 +29,18 @@ export class SidebySideService {
 
     public selectSourceDocument(document: ISbsSourceDocument, i: number){
         document.active = !document.active;
-        this.sourceDocumentSelected.emit(true);
         let unselectedSourceDocs: ISbsSourceDocument[] = [];
         const exceptIndex = i;
         console.log(document.active);
         if (document.active) {
+            this.sourceDocumentSelected.emit(true);
             unselectedSourceDocs = this.getSourceDocuments()
             .filter((item, index) => exceptIndex !== index)
             .map(item => {
                 return {...item, disabled: item.disabled = true};
             });
         } else {
+            this.sourceDocumentSelected.emit(false);
             unselectedSourceDocs = this.getSourceDocuments()
             .map(item => {
                 return {...item, disabled: item.disabled = false};

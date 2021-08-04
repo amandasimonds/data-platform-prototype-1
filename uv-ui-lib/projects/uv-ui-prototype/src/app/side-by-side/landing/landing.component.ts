@@ -15,9 +15,8 @@ export class SideBySideLandingComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.sbsService.sourceDocumentSelected
-      .subscribe((sourceDocumentSelected: boolean) => {
-        this.sourceDocumentSelected = sourceDocumentSelected;
-      })        
+        this.sbsService.sourceDocumentSelected.subscribe((sourceDocumentSelected: boolean) => {
+                this.sourceDocumentSelected = sourceDocumentSelected;
+        })        
     }
 }
