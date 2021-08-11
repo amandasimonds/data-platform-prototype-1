@@ -29,25 +29,23 @@ export class SidebySideService {
 
     public selectSourceDocument(document: ISbsSourceDocument, i: number){
         document.active = !document.active;
-        let unselectedSourceDocs: ISbsSourceDocument[] = [];
+        let sourceDocsList: ISbsSourceDocument[] = [];
         const exceptIndex = i;
-        console.log(document.active);
         if (document.active) {
             this.sourceDocumentSelected.emit(true);
-            unselectedSourceDocs = this.getSourceDocuments()
+            sourceDocsList = this.getSourceDocuments()
             .filter((item, index) => exceptIndex !== index)
             .map(item => {
                 return {...item, disabled: item.disabled = true};
             });
         } else {
             this.sourceDocumentSelected.emit(false);
-            unselectedSourceDocs = this.getSourceDocuments()
+            sourceDocsList = this.getSourceDocuments()
             .map(item => {
                 return {...item, disabled: item.disabled = false};
             });
         }
-        console.log(unselectedSourceDocs);
-        this.sourceDocumentSelectedEvent.next(unselectedSourceDocs);
+        this.sourceDocumentSelectedEvent.next(sourceDocsList);
     }
 
     public selectTargetDocument(document: ISbsTargetDocument){

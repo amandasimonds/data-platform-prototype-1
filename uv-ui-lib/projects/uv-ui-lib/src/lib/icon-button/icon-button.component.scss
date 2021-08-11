@@ -7,7 +7,6 @@
         border: none;
         cursor: pointer;
         background-color: transparent;
-        padding: 4px;
     }
 
     &:active,
@@ -28,19 +27,19 @@
     }
 }
 
-.small svg {
-    width: var(--uv-sm-size);
-    height: var(--uv-sm-size);
-}
-
-.xs svg {
+.uvx-icon-xs {
     width: var(--uv-xs-size);
     height: var(--uv-xs-size);
 }
 
-.xxs svg {
-    width: var(--uv-xxs-size);
-    height: var(--uv-xxs-size);
+.uvx-icon-sm {
+    width: var(--uv-sm-size);
+    height: var(--uv-sm-size);
+}
+
+.uvx-icon-md {
+    width: var(--uv-md-size);
+    height: var(--uv-md-size);
 }
 
 .gray {

@@ -9,12 +9,11 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 export class IconButtonComponent {
     @Input() public icon = '';
     @Input() public color: 'gray' | 'primary' | 'black' = 'black';
-    @Input() public size: 'small' | 'xs' | 'xxs' = 'small';
+    @Input() public size: 'md' | 'sm' | 'xs' | 'xxs' = 'sm';
     @Input() public disabled = false;
     @Input() public active = false;
 
     public get cssClasses(): string[] {
-
-        return [this.color, this.size];
+        return [this.color];
     }
 }

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'
 import { 
     ActionBarModule, 
     ButtonModule, 
     IconButtonModule, 
-    UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+    UvxIconModule,
+    SearchPanelModule } from 'projects/uv-ui-lib/src/public-api';
 import { SbsActionBarComponent } from './sbs-action-bar.component';
 import { FilterModalModule } from '../filter-modal/filter-modal.module';
 
@@ -16,7 +18,9 @@ import { FilterModalModule } from '../filter-modal/filter-modal.module';
     ActionBarModule,
     IconButtonModule,
     UvxIconModule,
-    FilterModalModule
+    FilterModalModule,
+    SearchPanelModule,
+    FormsModule
   ],
   exports: [ SbsActionBarComponent]
 })

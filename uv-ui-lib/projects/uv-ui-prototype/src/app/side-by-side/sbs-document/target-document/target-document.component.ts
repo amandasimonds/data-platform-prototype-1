@@ -26,6 +26,11 @@ export class TargetDocumentComponent implements OnInit {
         this.sbsService.selectTargetDocument(item);
     }
 
+    onShowMoreDocumentDetails(event: Event, item: ISbsTargetDocument) {
+        item.showDetails = !item.showDetails;
+        event.stopPropagation();
+    }
+
     ngOnInit(): void {
         this.sbsService.selectedTargetDocuments$.subscribe(targetDocs => {
             this.selectedTargetDocuments = targetDocs;
