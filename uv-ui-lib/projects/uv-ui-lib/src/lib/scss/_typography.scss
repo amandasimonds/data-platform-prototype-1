@@ -13,10 +13,9 @@ body, p {
 }
 
 h1 {
-    font-weight: bold;
+    font-weight: var(--uv-font-semibold);
     font-size: var(--uv-font-size-lg);
-    line-height: 48px;
-    letter-spacing: -0.25;
+    line-height: 36px;
 }
 
 h2 {
@@ -72,6 +71,7 @@ h5 {
     .uv-tooltip {
         visibility: visible;
         opacity: 1;
+        display: block;
     }
 }
 

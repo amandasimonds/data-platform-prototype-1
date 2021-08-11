@@ -19,7 +19,7 @@
                     *ngFor="let item of selectedTargetDocuments" 
                     class="sbs-block margin-4 sbs-block-with-icon sbs-block-selection medium-bold uv-body flex align-items-center padding-right-sm">
                     {{item.title}}
-                    <uvx-icon-button icon="close" size="xs" color="primary" class="margin-left-xxxs" (click)="unselectTargetDocument(item)"></uvx-icon-button>
+                    <uvx-icon-button icon="close"  color="primary" class="margin-left-xxxs" (click)="unselectTargetDocument(item)"></uvx-icon-button>
                     </span>
                 </div>
             </div>
@@ -47,20 +47,27 @@
 
     <div bottom>
         <div class="row">
-            <div class="col-6 flex flex-row justify-content-space-between padding-right-md">
+            <div class="col-6 flex justify-content-space-between padding-right-sm">
                 <p class="uv-body medium-bold">{{loadedSourceDocuments.length}} documents</p>
-                <div class="position-relative">
-                    <uvx-icon-button icon="more_dots" color="primary" class="margin-right-xxxs"></uvx-icon-button>
-                    <uvx-icon-button icon="filter" color="primary" (click)="toggleFilterModal()" [active]="showFilterModal"></uvx-icon-button>
-                    <sbs-filter-modal *ngIf="showFilterModal"></sbs-filter-modal>
+                <div class="position-relative flex">
+                    <uvx-icon-button icon="search" *ngIf="!showFilterModal" color="primary" (click)="toggleFilterModal()" [active]="showFilterModal"></uvx-icon-button>
+                    <uvx-search-panel 
+                        (searchCloseClick)="toggleFilterModal(); clearSearch()"
+                        *ngIf="showFilterModal"
+                        mode="component-border" 
+                        class="z-index-front">
+                        <input [(ngModel)]="searchText" class="margin-left-xs">
+                    </uvx-search-panel>
+                    <uvx-icon-button icon="more_dots" color="primary" class="margin-left-xxs"></uvx-icon-button>
+                    <sbs-filter-modal *ngIf="showFilterModal" [searchText]="searchText"></sbs-filter-modal>
                 </div>
             </div>
             <div class="col-6 flex flex-row justify-content-space-between divider-left padding-left-md">
                 <p class="uv-body medium-bold">
                     {{ showTargetDocuments ? loadedTargetDocuments.length : '0'}} documents</p>
                 <div>
-                    <uvx-icon-button icon="more_dots" color="primary" [disabled]="!showTargetDocuments" class="margin-right-xxxs"></uvx-icon-button>
-                    <uvx-icon-button icon="filter" color="primary" [disabled]="!showTargetDocuments"></uvx-icon-button>
+                    <uvx-icon-button icon="search" color="primary" [disabled]="!showTargetDocuments"></uvx-icon-button>
+                    <uvx-icon-button icon="more_dots" color="primary" [disabled]="!showTargetDocuments" class="margin-left-xxs"></uvx-icon-button>
                 </div>
             </div>
         </div>

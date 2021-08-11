@@ -2,5 +2,9 @@
     [ngClass]="cssClasses" 
     [class.disabled]="disabled"
     [class.active]="active">
-    <mat-icon svgIcon="{{icon}}"></mat-icon>
+    <mat-icon svgIcon="{{icon}}" 
+        [class.uvx-icon-xs]="size === 'xs'" 
+        [class.uvx-icon-sm]="size === 'sm'"
+        [class.uvx-icon-md]="size === 'md'">
+    </mat-icon>
 </button>

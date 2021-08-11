@@ -280,6 +280,10 @@
     position: relative;
 }
 
+.position-absolute {
+    position: absolute;
+}
+
 .position-center {
     position: absolute;
     top: 50%;
@@ -297,6 +301,10 @@
 
     &-sidebar-2 {
         z-index: var(--uv-z-index-sidebar-2);
+    }
+
+    &-front {
+        z-index: 2000;
     }
 }
 
