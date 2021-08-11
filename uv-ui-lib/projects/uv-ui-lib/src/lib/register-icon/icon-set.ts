@@ -128,6 +128,10 @@ export const ICON_SET = [
 		url: 'profile.svg'
 	},
     {
+		name: 'plus',
+		url: 'system/Plus.svg'
+	},
+    {
 		name: 'reorder',
 		url: 'reorder.svg'
 	},

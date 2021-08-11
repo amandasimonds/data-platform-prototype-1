@@ -4,7 +4,11 @@
             [headerText]="title"
             [icon]="appIcon">
 
-            <uvx-search-panel mode="global" *ngIf="checkifSearch"></uvx-search-panel>
+            <uvx-search-panel mode="global" *ngIf="checkifSearch">
+                <input type="text"
+                placeholder="Search"
+                class="uv-input margin-left-xs">
+            </uvx-search-panel>
 
             <uvx-icon-button color='primary' icon="profile" class="margin-left-sm margin-right-sm"></uvx-icon-button>
 

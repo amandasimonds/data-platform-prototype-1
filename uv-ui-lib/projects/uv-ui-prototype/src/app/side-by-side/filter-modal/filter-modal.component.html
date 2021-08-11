@@ -1,26 +1,48 @@
 <div class="sbs-filter-modal">
     <div class="sbs-filter-modal-top">
-        <div class="flex justify-content-space-between align-items-center margin-bottom-xs">
-            <h5>Filter</h5> <a class="sbs-link-md" href="#">Expand</a>
-        </div>
-        <uvx-text-input placeholder="Keywords"></uvx-text-input>
+       <p *ngIf="appliedFilterList.length === 1" class="uv-body">
+        {{appliedFilterList.length}} Filter Applied
+       </p> 
+       <p *ngIf="appliedFilterList.length != 1" class="uv-body">
+        {{appliedFilterList.length}} Filters Applied
+       </p> 
     </div>
     <div class="divider"></div>
     <div class="scroll-wrapper">
         <div class="sbs-filter-modal-middle">
-            <div class="margin-bottom-sm">
-                <uvx-search-panel placeholder="Search" mode="component-border" class="margin-bottom-sm"></uvx-search-panel>
+            <div *ngIf="searchText === ''" class="flex flex-column gap-12 padding-right-xxs">
+                <div *ngFor="let item of filterCategoriesList; let i = index" class="flex justify-content-space-between">
+                    <div class="flex align-items-center">
+                        <uvx-checkbox (click)="onFilterApplied(item, i)"
+                        [checked]="item.active"></uvx-checkbox>
+                        <p class="uv-body">{{item.name}}</p>
+                    </div>
+                    <uvx-icon-button color="primary" size="xs" icon="arrow_right"></uvx-icon-button>
+                </div>
             </div>
-            <div class="flex flex-column gap-12 padding-right-xxs">
-                <div *ngFor="let item of filterKeywords" class="flex justify-content-space-between">
-                    <p class="uv-body">{{item}}</p><uvx-icon color="primary" size="xs" icon="arrow_right"></uvx-icon>
+            <div *ngIf="customKeywordMode" class="flex flex-column gap-12 padding-right-xxs">
+                <div *ngFor="let item of customKeywordSearch | search: searchText; let i = index" class="flex justify-content-space-between">
+                    <div class="flex align-items-center">
+                        <uvx-checkbox (click)="onFilterKeywordApplied(item, i)" [checked]="item.active"></uvx-checkbox>
+                        <p class="uv-body">{{item.name}}</p>
+                    </div>
+                    <uvx-icon-button color="primary" size="xs" icon="arrow_right"></uvx-icon-button>
                 </div>
             </div>
         </div>
     </div>
     <div class="divider"></div>
-    <div class="sbs-filter-modal-bottom flex justify-content-flex-end align-items-center">
-        <uvx-button label="Clear" mode="text" [disabled]="true" class="margin-right-sm"></uvx-button>
-        <uvx-button label="Apply" mode="primary"></uvx-button>
+    <div class="sbs-filter-modal-bottom">
+        <span *ngIf="customKeywordMode" class="flex">
+            <uvx-icon-button color="primary" icon="plus" (click)="applyCustomKeyword(searchText)"></uvx-icon-button>
+            <p class="uv-body">Custom Keyword</p>
+        </span>
+        <div *ngIf="!customKeywordMode" class="flex justify-content-space-between"> 
+            <div class="flex align-items-center">
+                <uvx-checkbox ></uvx-checkbox> 
+                <p class="uv-body">Custom Keyword</p>
+            </div>
+            <uvx-icon color="primary" size="xs" icon="arrow_right"></uvx-icon>
+        </div>
     </div>
 </div>
