@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ISbsFilter } from '../side-by-side/models/sbs-filter.model';
-import { ISbsKeyword } from '../side-by-side/models/sbs-keyword.model';
+import { ISbsFilter } from '../models/sbs-filter.model';
 
 @Injectable()
 export class SbsFilterService {
 
     private filterAppliedEvent = new BehaviorSubject<ISbsFilter[]>([]);
-    private filterKeywordAppliedEvent = new BehaviorSubject<ISbsKeyword[]>([]);
+    private keywordSearchedEvent = new BehaviorSubject<ISbsFilter[]>([]);
 
     readonly appliedFilters$ = this.filterAppliedEvent.asObservable();
-    readonly appliedFilterKeywords$ = this.filterKeywordAppliedEvent.asObservable();
+    // readonly appliedFilterKeywords$ = this.filterKeywordAppliedEvent.asObservable();
+    readonly keywordSearchResults$ = this.keywordSearchedEvent.asObservable();
+
+    keywordSearchResults: ISbsFilter[] = [];
 
     public applyFilter(filter: ISbsFilter, i: number){
         filter.active = !filter.active;
@@ -18,28 +20,54 @@ export class SbsFilterService {
         this.filterAppliedEvent.next(appliedFilters);
     }
 
-    public applyFilterKeyword(filter: ISbsKeyword, i: number){
+    public applyFilterKeyword(filter: ISbsFilter, i: number){
         filter.active = !filter.active;
-        let appliedFilterKeywords = [...this.filterKeywordAppliedEvent.value, filter].filter(item => item.active === true);
-        this.filterKeywordAppliedEvent.next(appliedFilterKeywords);
+        let appliedFilters = [...this.filterAppliedEvent.value, filter].filter(item => item.active === true);
+        this.filterAppliedEvent.next(appliedFilters);
+    }
+
+    public searchMatchingKeywords(filters: ISbsFilter[], searchInput: string) {
+        for (let i = 0; i <= filters.length; i++){
+            for (let j = 0; j < filters[i].keywords.length; j++){
+                let keyword = filters[i].keywords[j].name;
+                if(keyword.toLowerCase().includes(searchInput.toLowerCase())) {
+                    this.keywordSearchResults.push({
+                        name: filters[i].name,
+                        active: false,
+                        keywords: [
+                            {
+                                name: keyword,
+                                active: false,
+                            }
+                        ]
+                    })
+                } else {
+                    this.keywordSearchResults.splice(j, 1)
+                }
+            }
+            console.log(this.keywordSearchResults);
+            // return this.keywordSearchResults;
+        }
     }
 
     public getAppliedFilters(): ISbsFilter[]{
         return this.filterAppliedEvent.value.slice();
     }
 
-    public applyCustomKeyword(text: string) {
-        let appliedFilterKeywords = [
-            ...this.filterKeywordAppliedEvent.value,  
-            {
-                name: text,
-                active: true,
-                category: 'custom'
-            }].filter(item => item.active === true);
-        this.filterKeywordAppliedEvent.next(appliedFilterKeywords);
-    }
+    // public applyCustomKeyword(text: string) {
+    //     let appliedFilters = [
+    //         ...this.filterAppliedEvent.value,  
+    //         {
+    //             name: text,
+    //             active: true,
+
+    //         }].filter(item => item.active === true);
+    //     this.filterAppliedEvent.next(appliedFilters);
+    // }
 
     // public sortFilterCategories(){
     //     let author = this.getAppliedFilters().filter((item: ISbsFilter) => item.category === 'author')
     // }
+
+    
 }

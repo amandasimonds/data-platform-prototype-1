@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef, OnInit } from '@
 import { takeUntil } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../../services/on-destroy.service';
 import { SidebySideService } from '../../../services/side-by-side.service';
-import { ISbsTargetDocument } from '../../models/sbs-target-document.model';
+import { ISbsTargetDocument } from '../../../models/sbs-target-document.model';
 import { targetDocumentSamples } from '../../sample-data/target-documents';
 
 @Component({

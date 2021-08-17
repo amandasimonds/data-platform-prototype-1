@@ -9,26 +9,6 @@ import { HeaderService } from '../services/header.service';
 })
 export class GlobalWhereUsedComponent implements OnInit{
 
-    public gwuTabs = [
-        {
-            icon: 'more_dots',
-            link: '/',
-            linkText: 'Link',
-            results: ''
-        },
-        {
-            icon: 'more_dots',
-            link: '/',
-            linkText: 'Link',
-            results: ''
-        },
-        {
-            icon: 'more_dots',
-            link: '/',
-            linkText: 'Link',
-            results: ''
-        }
-    ];
 
     constructor(private headerService: HeaderService){}
 

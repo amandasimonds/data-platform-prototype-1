@@ -1,0 +1,33 @@
+.form-page-container {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    height: 50%;
+    width: 50%;
+    border-radius: 8px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.step-page-container {
+    flex: 1;
+    margin: 0px 32px;
+}
+
+.form-continue-btn {
+    color: white;
+    background: var(--uv-color-primary);
+    padding: 20px;
+    border-radius: 50px;
+    font-size: 1.15em;
+    cursor: pointer;
+    border: none !important;
+    margin: 32px;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed !important;
+    }
+}
