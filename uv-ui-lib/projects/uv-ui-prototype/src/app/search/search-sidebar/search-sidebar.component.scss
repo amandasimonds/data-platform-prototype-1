@@ -1,0 +1,16 @@
+.backdrop {
+    top: calc(0px - var(--uv-header-height));
+    height: calc(100% + var(--uv-header-height));
+    width: 100vw;
+    background-color: rgba(13,12,34,0.16);
+    position: absolute;
+    z-index: var(--uv-z-index-search-backdrop);
+}
+
+.search-sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: var(--uv-navbar-width);
+    z-index: var(--uv-z-index-search-sidebar);
+}
