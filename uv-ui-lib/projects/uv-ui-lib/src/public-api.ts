@@ -18,6 +18,8 @@ export * from './lib/header/header.component';
 export * from './lib/header/header.module';
 export * from './lib/image-button/image-button.component';
 export * from './lib/image-button/image-button.module';
+export * from './lib/modal/modal.component';
+export * from './lib/modal/modal.module';
 export * from './lib/navbar/navbar.component';
 export * from './lib/navbar/navbar.module';
 export * from './lib/register-icon/register-icon.module';

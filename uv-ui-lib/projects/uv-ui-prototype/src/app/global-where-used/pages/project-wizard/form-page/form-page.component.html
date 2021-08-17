@@ -1,4 +1,4 @@
-<div class="form-page-container box">
+<uvx-modal class="form-page-container padding-sm">
   <app-steps></app-steps>
 <div class="step-page-container">
   <div class="form-step">
@@ -18,4 +18,4 @@
 <button (click)="onNextStep()" [disabled]="!(currentStep | async)?.isComplete" class="form-continue-btn">
   {{ showButtonLabel() }}
 </button>
-</div>
+</uvx-modal>

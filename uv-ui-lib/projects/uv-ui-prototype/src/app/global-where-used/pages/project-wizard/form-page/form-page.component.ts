@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { StepModel } from '../../../models/step.model';
+import { StepModel } from '../../../../models/step.model';
 import { Observable } from 'rxjs';
-import { StepsService } from '../../../services/steps.service';
-import { Router } from '@angular/router';
+import { StepsService } from '../../../../services/steps.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-page',
@@ -15,7 +15,8 @@ export class FormPageComponent implements OnInit {
 
   constructor(
     private stepsService: StepsService,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.currentStep = this.stepsService.getCurrentStep();
@@ -34,6 +35,6 @@ export class FormPageComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.router.navigate(['/complete']);
+    this.router.navigate(['complete'], {relativeTo: this.route});
   }
 }
