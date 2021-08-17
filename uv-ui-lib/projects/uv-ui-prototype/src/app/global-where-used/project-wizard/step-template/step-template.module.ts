@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { IconButtonModule } from 'projects/uv-ui-lib/src/public-api';
+import { ButtonModule, IconButtonModule } from 'projects/uv-ui-lib/src/public-api';
 import { StepsService } from '../../../services/steps.service';
 import { StepTemplateComponent } from './step-template.component';
 
@@ -10,7 +10,8 @@ import { StepTemplateComponent } from './step-template.component';
     ],
     imports: [
         CommonModule,
-        IconButtonModule
+        IconButtonModule,
+        ButtonModule
     ],
     exports: [ StepTemplateComponent ],
     providers: [ StepsService ]

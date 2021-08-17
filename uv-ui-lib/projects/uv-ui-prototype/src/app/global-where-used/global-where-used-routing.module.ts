@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormPageComponent } from './pages/project-wizard/form-page/form-page.component';
-import { CompletePageComponent } from './pages/project-wizard/complete-page/complete-page.component';
+import { FormPageComponent } from './project-wizard/form-page/form-page.component';
+import { CompletePageComponent } from './project-wizard/complete-page/complete-page.component';
 import { GlobalWhereUsedComponent } from './global-where-used.component';
+import { WizardContainerComponent } from './project-wizard/wizard-container/wizard-container.component';
+import { StartPageComponent } from './project-wizard/start-page/start-page.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
     { 
@@ -10,17 +13,37 @@ const routes: Routes = [
         component: GlobalWhereUsedComponent, 
         children: [
             {
-                path: 'form',
-                component: FormPageComponent
+                path: '', 
+                redirectTo: 'landing', 
+                pathMatch: 'full' 
             },
             {
-                path: 'complete',
-                component: CompletePageComponent
+                path: 'landing',
+                component: LandingComponent
             },
             {
-                path: '',
-                component: FormPageComponent
-            }
+                path: 'project-wizard',
+                component: WizardContainerComponent,
+                children: [
+                    {
+                        path: '', 
+                        redirectTo: 'start', 
+                        pathMatch: 'full' 
+                    },
+                    {
+                        path: 'start',
+                        component: StartPageComponent
+                    },
+                    {
+                        path: 'form',
+                        component: FormPageComponent
+                    },
+                    {
+                        path: 'complete',
+                        component: CompletePageComponent
+                    },
+                ]
+            },
         ]
     }
 ];

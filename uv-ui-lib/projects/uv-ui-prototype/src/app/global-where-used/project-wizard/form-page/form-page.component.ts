@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { StepModel } from '../../../../models/step.model';
+import { StepModel } from '../../../models/step.model';
 import { Observable } from 'rxjs';
-import { StepsService } from '../../../../services/steps.service';
+import { StepsService } from '../../../services/steps.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

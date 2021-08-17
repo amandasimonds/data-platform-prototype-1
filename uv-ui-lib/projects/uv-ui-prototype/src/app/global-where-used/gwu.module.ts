@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { SidePanelModule, ButtonModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule, ActionBarModule } from '../../../../uv-ui-lib/src/public-api';
-import { CompletePageComponent } from './pages/project-wizard/complete-page/complete-page.component';
+import { SidePanelModule, ButtonModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule, ActionBarModule, ModalModule } from '../../../../uv-ui-lib/src/public-api';
+import { CompletePageComponent } from './project-wizard/complete-page/complete-page.component';
 import { GlobalWhereUsedComponent } from './global-where-used.component';
 import { StepsService } from '../services/steps.service';
 import { GwuRoutingModule } from './global-where-used-routing.module';
-import { FormPageModule } from './pages/project-wizard/form-page/form-page.module';
+import { FormPageModule } from './project-wizard/form-page/form-page.module';
 import { LandingComponent } from './pages/landing/landing.component';
-import { StartPageModule } from './pages/project-wizard/start-page/start-page.module';
-import { WizardContainerComponent } from './components/wizard-container/wizard-container.component';
-import { WizardContainerModule } from './components/wizard-container/wizard-container.module';
+import { StartPageModule } from './project-wizard/start-page/start-page.module';
+// import { WizardContainerModule } from './project-wizard/wizard-container/wizard-container.module';
+import { WizardContainerComponent } from './project-wizard/wizard-container/wizard-container.component';
 
 @NgModule({
     declarations: [
         CompletePageComponent,
         GlobalWhereUsedComponent,
         LandingComponent,
+        WizardContainerComponent
     ],
     imports: [
         CommonModule,
@@ -31,7 +32,7 @@ import { WizardContainerModule } from './components/wizard-container/wizard-cont
         FormPageModule,
         ActionBarModule,
         StartPageModule,
-        WizardContainerModule
+        ModalModule
     ],
     exports: [ GlobalWhereUsedComponent ],
     providers: [ StepsService ]
