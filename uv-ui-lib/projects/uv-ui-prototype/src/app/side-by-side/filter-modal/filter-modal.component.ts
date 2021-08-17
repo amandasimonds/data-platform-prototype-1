@@ -2,9 +2,7 @@ import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { SbsFilterService } from '../../services/sbs-filter.service';
-import { ISbsFilter } from '../models/sbs-filter.model';
-import { ISbsKeyword } from '../models/sbs-keyword.model';
-import { customKeywords } from '../sample-data/custom-keywords';
+import { ISbsFilter } from '../../models/sbs-filter.model';
 import { sbsFilters } from '../sample-data/sbs-filters';
 
 @Component({
@@ -15,18 +13,13 @@ import { sbsFilters } from '../sample-data/sbs-filters';
 export class FilterModalComponent implements OnInit {
 
     @Input() searchText = '';
+    @Input() searchFilters: ISbsFilter[] = [];
 
     public appliedFilterList: ISbsFilter[] = [];
-    public appliedFilterKeywordsList: ISbsKeyword[] = [];
     public filterCategoriesList: ISbsFilter[] = sbsFilters;
-    public customKeywordSearch: ISbsKeyword[] = customKeywords;
     public customKeywordMode = false;
-
-    // keyword: ISbsFilter = {
-    //     name: '',
-    //     active: false,
-    //     category: ''
-    // };
+    // searchCategoriesList = [];
+    keywordSearchResults: ISbsFilter[] = [];
 
     constructor(
         private filterService: SbsFilterService,
@@ -38,13 +31,13 @@ export class FilterModalComponent implements OnInit {
         this.filterService.applyFilter(item, i);
     }
 
-    onFilterKeywordApplied (item: ISbsKeyword, i: number) {
+    onFilterKeywordApplied (item: ISbsFilter, i: number) {
         this.filterService.applyFilterKeyword(item, i);
     }
 
-    applyCustomKeyword(text: string) {
-        this.filterService.applyCustomKeyword(text);
-    }
+    // applyCustomKeyword(text: string) {
+    //     this.filterService.applyCustomKeyword(text);
+    // }
 
     ngOnInit(): void {
         this.filterService.appliedFilters$.subscribe(filters => {
@@ -53,15 +46,12 @@ export class FilterModalComponent implements OnInit {
             console.log(filters);
             takeUntil(this.destroy$);
         })
-
-        if (this.searchText != ''){
-            this.customKeywordMode = true;
-        }
     }
 
     ngOnChanges(): void {
         if (this.searchText != ''){
             this.customKeywordMode = true;
+            // this.keywordSearchResults = this.filterService.searchMatchingKeywords(this.filterCategoriesList, this.searchText);
         } else {
             this.customKeywordMode = false;
         }
