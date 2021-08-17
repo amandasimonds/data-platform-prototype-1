@@ -7,13 +7,16 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { LandingComponent } from './landing/landing.component';
 import { FilterResultsPipe } from './search-results/filter-results.pipe';
 import { SearchRoutingModule } from './search-routing.module';
+import { SearchSidebarComponent } from './search-sidebar/search-sidebar.component';
+import { SearchSidebarModule } from './search-sidebar/search-sidebar.module';
 
 @NgModule({
     declarations: [
         SearchComponent,
         SearchResultsComponent,
         LandingComponent,
-        FilterResultsPipe],
+        FilterResultsPipe,
+    ],
     imports: [
         CommonModule,
         SearchRoutingModule,
@@ -23,7 +26,8 @@ import { SearchRoutingModule } from './search-routing.module';
         IconButtonModule,
         SearchPanelModule,
         DragDropModule,
-        CheckboxModule
+        CheckboxModule,
+        SearchSidebarModule
     ],
     exports: [ SearchComponent ]
 })
