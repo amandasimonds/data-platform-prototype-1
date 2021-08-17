@@ -40,7 +40,7 @@ const routes: Routes = [
             },
             {
                 path: 'global-where-used',
-                component: GlobalWhereUsedComponent
+                loadChildren: () => import('./global-where-used/gwu.module').then(m => m.GwuModule)
             },
             {
                 path: 'search',

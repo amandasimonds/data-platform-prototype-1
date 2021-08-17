@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, Output, Input, EventEmitter } from '@angular/core';
 import { SidebySideService } from '../../../services/side-by-side.service';
-import { ISbsSourceDocument } from '../../models/sbs-source-document.model';
+import { ISbsSourceDocument } from '../../../models/sbs-source-document.model';
 import { sourceDocumentSamples } from '../../sample-data/source-documents';
 
 @Component({

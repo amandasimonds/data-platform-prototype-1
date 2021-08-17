@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ISbsTargetDocument } from './models/sbs-target-document.model';
+import { ISbsTargetDocument } from '../models/sbs-target-document.model';
 
 @Pipe({
     name: 'filterActiveDocuments'

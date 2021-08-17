@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ISbsSourceDocument } from '../side-by-side/models/sbs-source-document.model';
-import { ISbsTargetDocument } from '../side-by-side/models/sbs-target-document.model';
+import { ISbsSourceDocument } from '../models/sbs-source-document.model';
+import { ISbsTargetDocument } from '../models/sbs-target-document.model';
 import { sourceDocumentSamples } from '../side-by-side/sample-data/source-documents';
 import { targetDocumentSamples } from '../side-by-side/sample-data/target-documents';
 

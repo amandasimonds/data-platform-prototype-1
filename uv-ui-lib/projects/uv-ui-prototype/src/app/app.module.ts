@@ -19,7 +19,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeSplashModule } from './home-splash/home-splash.module';
-import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
 import { MainComponent } from './layouts/main/main.component';
 import { SearchModule } from './search/search.module';
 import { HelperService } from './services/helper.service';
@@ -34,7 +33,6 @@ import { NgOnDestroyService } from './services/on-destroy.service';
     declarations: [
         AppComponent,
         LoginComponent,
-        GlobalWhereUsedComponent,
         MainComponent
     ],
     imports: [

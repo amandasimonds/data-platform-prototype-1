@@ -4,9 +4,36 @@ export const sbsFilters = [
         active: false,
         keywords: [
             {
-                name: '',
+                name: 'Sullivan Campbell',
                 active: false,
-                category: ''
+            },
+            {
+                name: 'Sullivan Ford',
+                active: false,
+            },
+            {
+                name: 'Sullivan Murphy',
+                active: false,
+            },
+            {
+                name: 'Sullivan Smith',
+                active: false,
+            },
+            {
+                name: 'Alexander Myron',
+                active: false,
+            },
+            {
+                name: 'Barnett Silas',
+                active: false,
+            },
+            {
+                name: 'Cross Jack',
+                active: false,
+            },
+            {
+                name: 'Flynn WIllis',
+                active: false,
             }
         ]
     },
@@ -15,9 +42,8 @@ export const sbsFilters = [
         active: false,
         keywords: [
             {
-                name: '',
+                name: 'Engineering',
                 active: false,
-                category: ''
             }
         ]
     },
@@ -26,9 +52,8 @@ export const sbsFilters = [
         active: false,
         keywords: [
             {
-                name: '',
+                name: 'Sales',
                 active: false,
-                category: ''
             }
         ]
     },
@@ -37,9 +62,8 @@ export const sbsFilters = [
         active: false,
         keywords: [
             {
-                name: '',
+                name: 'Metal',
                 active: false,
-                category: ''
             }
         ]
     },
@@ -48,9 +72,8 @@ export const sbsFilters = [
         active: false,
         keywords: [
             {
-                name: '',
+                name: 'Steel',
                 active: false,
-                category: ''
             }
         ]
     },
@@ -59,9 +82,8 @@ export const sbsFilters = [
         active: false,
         keywords: [
             {
-                name: '',
+                name: 'Materials',
                 active: false,
-                category: ''
             }
         ]
     },
@@ -70,9 +92,8 @@ export const sbsFilters = [
         active: false,
         keywords: [
             {
-                name: '',
+                name: 'Design',
                 active: false,
-                category: ''
             }
         ]
     },
@@ -81,9 +102,16 @@ export const sbsFilters = [
         active: false,
         keywords: [
             {
-                name: '',
+                name: 'Parts',
                 active: false,
-                category: ''
+            },
+            {
+                name: 'Documents',
+                active: false,
+            },
+            {
+                name: 'Requirements',
+                active: false,
             }
         ]
     },
@@ -92,9 +120,16 @@ export const sbsFilters = [
         active: false,
         keywords: [
             {
-                name: '',
+                name: 'High',
                 active: false,
-                category: ''
+            },
+            {
+                name: 'Medium',
+                active: false,
+            },
+            {
+                name: 'Low',
+                active: false,
             }
         ]
     },
@@ -103,9 +138,22 @@ export const sbsFilters = [
         active: false,
         keywords: [
             {
+                name: 'Standards',
+                active: false,
+            },
+            {
+                name: 'Certification',
+                active: false,
+            }
+        ]
+    },
+    {
+        name: 'Custom',
+        active: false,
+        keywords: [
+            {
                 name: '',
                 active: false,
-                category: ''
             }
         ]
     }

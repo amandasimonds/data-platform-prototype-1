@@ -1,0 +1,9 @@
+<div class="step-template">
+  
+  <div class="step-content-label">Here's where you show content for step {{ step.stepIndex }}</div>
+  <uvx-icon-button class="step-complete-btn" (click)="onCompleteStep()">
+      <span class="completed-step-check material-icons">
+          {{ step.isComplete ? 'check_circle' : 'panorama_fish_eye' }}
+      </span>Complete Step {{ step.stepIndex }}
+    </uvx-icon-button>
+</div>
