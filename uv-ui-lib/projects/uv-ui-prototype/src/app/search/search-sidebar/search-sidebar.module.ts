@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchSidebarComponent } from './search-sidebar.component';
-import { IconButtonModule, SearchPanelModule, SidePanelModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { BackdropModule, IconButtonModule, SearchPanelModule, SidePanelModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
 
 @NgModule({
   declarations: [SearchSidebarComponent],
@@ -10,7 +10,8 @@ import { IconButtonModule, SearchPanelModule, SidePanelModule, UvxIconModule } f
     SidePanelModule,
     UvxIconModule,
     SearchPanelModule,
-    IconButtonModule
+    IconButtonModule,
+    BackdropModule
   ],
   exports: [SearchSidebarComponent]
 })
