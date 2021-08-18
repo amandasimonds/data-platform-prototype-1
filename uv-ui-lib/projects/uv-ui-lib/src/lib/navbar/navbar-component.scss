@@ -1,6 +1,6 @@
 .navbar {
     height: 100%;
-    z-index: 200;
+    z-index: var(--uv-z-index-navbar);
     border: var(--uv-border-gray);
     border-bottom: none;
     background-color: var(--uv-color-white);
