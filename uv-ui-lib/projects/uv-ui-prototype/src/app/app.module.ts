@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ICON_SET } from 'projects/uv-ui-lib/src/lib/register-icon/icon-set';
@@ -37,6 +38,7 @@ import { NgOnDestroyService } from './services/on-destroy.service';
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         ActionBarModule,
         ButtonModule,
