@@ -16,7 +16,9 @@ export class MainComponent implements OnInit {
     public appIcon = '';
     @Input() public searchQuery = '';
 
-    constructor(public headerService: HeaderService, private ref: ChangeDetectorRef) { }
+    constructor(
+        public headerService: HeaderService, 
+        private ref: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
         this.headerService.currentTitle$.subscribe(title => {

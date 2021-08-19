@@ -9,7 +9,6 @@ import { HeaderService } from '../services/header.service';
 })
 export class GlobalWhereUsedComponent implements OnInit{
 
-
     constructor(private headerService: HeaderService){}
 
     public ngOnInit(): void {
