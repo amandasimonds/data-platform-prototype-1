@@ -13,7 +13,8 @@ import {
     IconButtonModule,
     TabModule,
     RegisterIconModule,
-    UvxIconModule
+    UvxIconModule,
+    BackdropModule
 } from '../../../uv-ui-lib/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,7 @@ import { SidebySideService } from './services/side-by-side.service';
 import { AuthConfigModule } from './auth/auth-config.module';
 import { AuthService } from './auth/auth.service';
 import { NgOnDestroyService } from './services/on-destroy.service';
+import { BackdropService } from './services/backdrop.service';
 
 @NgModule({
     declarations: [
@@ -41,6 +43,7 @@ import { NgOnDestroyService } from './services/on-destroy.service';
         BrowserAnimationsModule,
         AppRoutingModule,
         ActionBarModule,
+        BackdropModule,
         ButtonModule,
         SidePanelModule,
         SearchPanelModule,
@@ -63,7 +66,8 @@ import { NgOnDestroyService } from './services/on-destroy.service';
         HttpClient, 
         SearchService, 
         SidebySideService,
-        NgOnDestroyService
+        NgOnDestroyService,
+        BackdropService
     ],
     bootstrap: [AppComponent]
 })
