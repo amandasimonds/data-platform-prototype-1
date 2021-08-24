@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
 import { SearchResult } from '../models/search-result.model';
 import { SearchService } from '../../services/search.service';
 
@@ -8,12 +8,23 @@ import { SearchService } from '../../services/search.service';
   styleUrls: ['./search-results.component.scss', '../search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchResultsComponent {
+export class SearchResultsComponent implements OnInit {
 
     @Input() public searchResults: SearchResult[] = [];
     @Input() public category = '';
+    @Input() public searchText = '';
 
     constructor(private searchService: SearchService) {
-        this.searchResults = this.searchService.allSearchResults;
+        // this.searchResults = this.searchService.allSearchResults;
+        // this.searchResults = this.searchService.typeAheadSearch(this.searchText);
+    }
+
+    ngOnInit() {
+        console.log('search results', this.searchResults);
+    }
+
+    ngOnChanges(): void {
+        console.log('search results', this.searchResults);
+        this.searchResults = this.searchService.typeAheadSearch(this.searchText);
     }
 }
