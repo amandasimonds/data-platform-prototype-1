@@ -1,11 +1,11 @@
 <div class="select-wrapper" (click)="toggle()">
     <div class="select" [class.open]="open">
         <div class="select__trigger">
-            <span>{{dropdownName}}</span>
+            <ng-content select="[title]"></ng-content>
             <div class="arrow"></div>
         </div>
         <div class="custom-options flex flex-column">
-            <ng-content></ng-content>
+            <ng-content select="[options]"></ng-content>
         </div>
     </div>
 </div>

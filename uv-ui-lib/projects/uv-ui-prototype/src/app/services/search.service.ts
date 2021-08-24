@@ -7,4 +7,13 @@ export class SearchService {
     public getAllSearchResults(): SearchResult[]{
         return this.allSearchResults.slice();
     }
+
+    public typeAheadSearch(input: string) {
+        let results = this.allSearchResults.slice();
+        results = results.filter(item => 
+            item.title.toLowerCase().includes(input.toLowerCase())
+        );
+
+        return results;
+    }
 }
