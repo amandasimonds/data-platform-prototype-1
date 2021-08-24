@@ -1,11 +1,4 @@
-<div class="documents box flex">
-
-    <div class="heading-container flex justify-content-space-between align-items-center">
-        <h3>{{category}}</h3>
-        <span class="results-number">{{searchResults.length}}</span>
-    </div>
-    
-    <div class="divider"></div>
+<div class="documents flex flex-column">
     
     <div class="content-container">
         <div class="margin-bottom-md" *ngFor="let item of searchResults | filterResults: category">
