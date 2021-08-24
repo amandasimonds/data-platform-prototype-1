@@ -1,6 +1,11 @@
-<select class="dropdown" [name]="dropdownName">
-    <option selected hidden>{{dropdownName}}</option>
-    <option *ngFor="let item of items trackBy: trackByFn">
-        {{item.name}}
-    </option>
-</select>
+<div class="select-wrapper" (click)="toggle()">
+    <div class="select" [class.open]="open">
+        <div class="select__trigger">
+            <span>{{dropdownName}}</span>
+            <div class="arrow"></div>
+        </div>
+        <div class="custom-options flex flex-column">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

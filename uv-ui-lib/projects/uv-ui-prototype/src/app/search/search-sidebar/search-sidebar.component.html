@@ -4,15 +4,39 @@
     <div top>
         <div class="flex align-items-center justify-content-space-between  margin-bottom-sm">
             <div class="flex align-items-center">
-                <uvx-icon icon="search" class="margin-right-xxs"></uvx-icon>
-                <h2>Global Search</h2>
+                <uvx-icon icon="search" color="gray" class="margin-right-xxs"></uvx-icon>
+                <h3>Global Search</h3>
             </div>
-            <uvx-icon-button icon="close" size="md"></uvx-icon-button>
+            <uvx-icon-button 
+            icon="close" 
+            color="gray" 
+            size="md"
+            (click)="goBack()"></uvx-icon-button>
         </div>
-        <uvx-search-panel mode="global"></uvx-search-panel>
+        <div class="margin-bottom-sm">
+            <uvx-search-panel mode="component-border">
+                <input type="text"
+                    placeholder="Search..."
+                    class="uv-input margin-left-xs">
+            </uvx-search-panel>
+        </div>
+        
+        <uvx-dropdown
+            [dropdownName]="searchCategory">
+            <span *ngFor="let item of categories"
+            class="custom-option flex justify-content-space-between" 
+            (click)="selectCategory(item.name)">
+            <div class="flex align-items-center">
+                <uvx-icon icon={{item.icon}} class="margin-right-xs"></uvx-icon>
+                {{item.name}}
+            </div>
+            <span class="results-number">{{getCategoryResultsNumber(item.name)}}</span>
+            </span>
+        </uvx-dropdown>
     </div>
 
     <div bottom class="padding-sm">
-        <h3>Recent Searches</h3>
+        <h4>Recent Searches</h4>
+        <app-search-results [category]="searchCategory"></app-search-results>
     </div>
 </uvx-side-panel>

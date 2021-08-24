@@ -111,6 +111,10 @@ export const ICON_SET = [
 		name: 'link',
 		url: 'entity_state/Link.svg'
 	},
+    {
+		name: 'list-right',
+		url: 'list-right.svg'
+	},
 	{
 		name: 'menu',
 		url: 'system/Menu.svg'
