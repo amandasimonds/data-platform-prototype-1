@@ -76,5 +76,25 @@ export const allSearchResults = [
         category: 'Documents',
         title: 'DocumentsABCD000006',
         description: 'Screw, Hexagon Flange Head Cap v4.1'
+      },
+      {
+        category: 'Integrity',
+        title: 'IntegrityABCD000003',
+        description: 'Screw, Hexagon Flange Head Cap v4.1'
+      },
+      {
+        category: 'Entity',
+        title: 'EntityABCD000004',
+        description: 'Screw, Hexagon Flange Head Cap v4.1'
+      },
+      {
+        category: 'Industry',
+        title: 'IndustryABCD000005',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+      },
+      {
+        category: 'Materials',
+        title: 'MaterialsABCD000006',
+        description: 'Screw, Hexagon Flange Head Cap v4.1'
       }
     ];

@@ -9,8 +9,14 @@ import { IDropdown } from '../interfaces/dropdown.interfaces';
 })
 export class DropdownComponent {
 
+    public open = false;
+    @Input() public selectId = '';
     @Input() public dropdownName = '';
     @Input() public items: IDropdown[] = [];
+
+    public toggle() {
+       this.open = !this.open
+    }
 
     public trackByFn(_: number, {name}: IDropdown): string {
         return name;
