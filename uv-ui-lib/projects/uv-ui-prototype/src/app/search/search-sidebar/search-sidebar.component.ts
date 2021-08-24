@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { Location } from '@angular/common';
 import { BackdropService } from '../../services/backdrop.service';
 import { SearchService } from '../../services/search.service';
@@ -11,11 +11,13 @@ import { SearchResult } from '../models/search-result.model';
 })
 export class SearchSidebarComponent implements OnInit {
 
-    @Input() public searchCategory = 'Parts';
+    @Input() public searchCategory = 'All';
     searchResults: SearchResult[] = [];
     categoryOption: SearchResult[] = [];
+    searchText = '';
 
     categories = [
+        {name: 'All', icon: 'list-right'},
         {name: 'Requirements', icon: 'list-right'},
         {name: 'Parts', icon: 'parts'}, 
         {name: 'Documents', icon: 'document'},
@@ -34,12 +36,17 @@ export class SearchSidebarComponent implements OnInit {
 
     getCategoryResultsNumber(category: string): number {
         let categoryArray = []
+        if (category === 'All') {
+            return this.searchResults.length
+        }
         if(category === 'Requirements' || 'Documents' || 'Parts') {
             categoryArray = this.searchResults.filter(item => item.category === category)
+            return categoryArray.length;
         } else {
             categoryArray = this.searchResults.filter(item => item.category != 'Requirements' || 'Documents' || 'Parts')
+            return categoryArray.length;
         }
-        return categoryArray.length;
+        
     }
 
     goBack(){

@@ -17,26 +17,39 @@
             <uvx-search-panel mode="component-border">
                 <input type="text"
                     placeholder="Search..."
-                    class="uv-input margin-left-xs">
+                    class="uv-input margin-left-xs"
+                    [(ngModel)]="searchText">
             </uvx-search-panel>
         </div>
         
-        <uvx-dropdown
-            [dropdownName]="searchCategory">
-            <span *ngFor="let item of categories"
+        <uvx-dropdown>
+            <span title class="flex align-items center justify-content-space-between w-100">
+                <div>
+                    <uvx-icon icon="list-right" class="margin-right-xs"></uvx-icon>
+                    {{searchCategory}} 
+                </div>
+                <div class="divider-right margin-right-xs">
+                    <span class="results-number margin-right-xxs">{{getCategoryResultsNumber(searchCategory)}}</span> 
+                </div>
+            </span>
+            
+            <span options *ngFor="let item of categories"
             class="custom-option flex justify-content-space-between" 
             (click)="selectCategory(item.name)">
-            <div class="flex align-items-center">
-                <uvx-icon icon={{item.icon}} class="margin-right-xs"></uvx-icon>
-                {{item.name}}
-            </div>
-            <span class="results-number">{{getCategoryResultsNumber(item.name)}}</span>
+                <div class="flex align-items-center">
+                    <uvx-icon icon={{item.icon}} class="margin-right-xs"></uvx-icon>
+                    {{item.name}}
+                </div>
+                <span class="results-number">{{getCategoryResultsNumber(item.name)}}</span>
             </span>
         </uvx-dropdown>
     </div>
 
     <div bottom class="padding-sm">
-        <h4>Recent Searches</h4>
-        <app-search-results [category]="searchCategory"></app-search-results>
+        <h4>{{searchText === '' ? 'Recent Searches' : searchResults.length + ' Results for ' + searchText}}</h4>
+        <app-search-results 
+            [category]="searchCategory" 
+            [searchText]="searchText">
+        </app-search-results>
     </div>
 </uvx-side-panel>
