@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { HeaderService } from '../services/header.service';
+import { AppShellService } from '../services/app-shell.service';
 
 @Component({
   selector: 'prototype-uv-ui-home-splash',
@@ -9,10 +9,11 @@ import { HeaderService } from '../services/header.service';
 })
 export class HomeSplashComponent implements OnInit{
 
-    constructor(private headerService: HeaderService){}
+    constructor(private appShellService: AppShellService){}
 
     public ngOnInit(): void {
-        this.headerService.setTitle('Dashboard');
-        this.headerService.setAppIcon('apps-quad');
+        this.appShellService.setTitle('Dashboard');
+        this.appShellService.setAppIcon('apps-quad');
+        this.appShellService.setActiveAppNav('home');
     }
 }

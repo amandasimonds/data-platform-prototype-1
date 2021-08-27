@@ -9,7 +9,7 @@ import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input } from 
 export class SearchPanelComponent {
 
     @Output() public readonly searchClicked = new EventEmitter<void>();
-    @Output() public readonly searchCloseClick = new EventEmitter<void>();
+    @Output() public readonly searchCloseClicked = new EventEmitter<Event>();
     @Input() public mode: 'global' | 'component' | 'component-border' | 'component' = 'component';
     @Input() public placeholder = '';
 
@@ -17,8 +17,8 @@ export class SearchPanelComponent {
         this.searchClicked.emit();
     }
 
-    public onSearchCloseClicked(): void {
-        this.searchCloseClick.emit();
+    public onSearchCloseClicked($event: Event): void {
+        this.searchCloseClicked.emit($event);
     }
 
     public getMode(): string {

@@ -17,7 +17,11 @@
     <div class="divider"></div>
     <div class="compare-warning-bottom flex justify-content-space-between align-items-center">
         <uvx-checkbox label="Do not show again"></uvx-checkbox>
-        <uvx-button mode="text" color="gray" label="Cancel"></uvx-button>
+        <uvx-button 
+        mode="text" 
+        color="gray" 
+        label="Cancel"
+        (click)="compareWarning = false"></uvx-button>
         <uvx-button mode="primary" label="Launch"></uvx-button>
     </div>
 </div>
@@ -35,11 +39,12 @@
             (click)="goBack()"></uvx-icon-button>
         </div>
         <div class="margin-bottom-sm">
-            <uvx-search-panel mode="component-border">
+            <uvx-search-panel mode="component-border" (searchCloseClicked)="searchText = ''">
                 <input type="text"
                     placeholder="Search..."
                     class="uv-input margin-left-xs"
-                    [(ngModel)]="searchText">
+                    [(ngModel)]="searchText"
+                    >
             </uvx-search-panel>
         </div>
         

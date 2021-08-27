@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ITask } from 'projects/uv-ui-lib/src/lib/interfaces/side-by-side.interfaces';
-import { HeaderService } from '../services/header.service';
+import { AppShellService } from '../services/app-shell.service';
 import { compareTasksData } from './compareTasks';
 import { dropdownItems } from './dropdownItems';
 
@@ -15,14 +15,15 @@ export class SideBySideComponent implements OnInit{
     public tasks = compareTasksData;
     public dropdownItems = dropdownItems;
 
-    constructor(private headerService: HeaderService) {}
+    constructor(private appShellService: AppShellService) {}
 
     public trackByFn(_: number, {title}: ITask): string {
         return title;
     }
 
     public ngOnInit(): void {
-        this.headerService.setTitle('Side By Side');
-        this.headerService.setAppIcon('apps-sbs');
+        this.appShellService.setTitle('Side By Side');
+        this.appShellService.setAppIcon('apps-sbs');
+        this.appShellService.setActiveAppNav('sbs');
     }
 }

@@ -4,8 +4,6 @@
 
     <div class="divider"></div>
 
-    <span *ngFor="let navlink of navlinks trackBy: trackByFn" class="navlink-wrapper">
-        <a [routerLink]="navlink.navlink"><img [src]="navlink.icon"></a>
-    </span>
+    <ng-content></ng-content>
 
 </div>

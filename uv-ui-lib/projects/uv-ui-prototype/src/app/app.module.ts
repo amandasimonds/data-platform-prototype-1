@@ -31,6 +31,7 @@ import { AuthConfigModule } from './auth/auth-config.module';
 import { AuthService } from './auth/auth.service';
 import { NgOnDestroyService } from './services/on-destroy.service';
 import { BackdropService } from './services/backdrop.service';
+import { AppShellService } from './services/app-shell.service';
 
 @NgModule({
     declarations: [
@@ -62,6 +63,7 @@ import { BackdropService } from './services/backdrop.service';
     ],
     providers: [
         HelperService, 
+        AppShellService,
         AuthService, 
         HttpClient, 
         SearchService, 

@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { HeaderService } from '../services/header.service';
+import { AppShellService } from '../services/app-shell.service';
 
 @Component({
   selector: 'app-settings',
@@ -9,11 +9,12 @@ import { HeaderService } from '../services/header.service';
 })
 export class SettingsComponent implements OnInit {
 
-    constructor(private headerService: HeaderService){}
+    constructor(private appShellService: AppShellService){}
 
     public ngOnInit(): void {
-        this.headerService.setTitle('Settings');
-        this.headerService.setAppIcon('apps-settings');
+        this.appShellService.setTitle('Settings');
+        this.appShellService.setAppIcon('apps-settings');
+        this.appShellService.setActiveAppNav('settings');
     }
 
 }

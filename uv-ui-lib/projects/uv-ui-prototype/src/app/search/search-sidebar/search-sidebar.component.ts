@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { BackdropService } from '../../services/backdrop.service';
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../models/search-result.model';
+import { AppShellService } from '../../services/app-shell.service';
 
 @Component({
     selector: 'app-search-sidebar',
@@ -28,6 +29,7 @@ export class SearchSidebarComponent implements OnInit {
     constructor(
         private backdropService: BackdropService,
         private searchService: SearchService,
+        private appShellService: AppShellService,
         private location: Location) {     
         }
 
@@ -62,6 +64,7 @@ export class SearchSidebarComponent implements OnInit {
     ngOnInit(): void {
         this.backdropService.setBackdrop(true);
         this.searchResults = this.searchService.getAllSearchResults();
+        this.appShellService.setActiveAppNav('search');
     }
 
 }
