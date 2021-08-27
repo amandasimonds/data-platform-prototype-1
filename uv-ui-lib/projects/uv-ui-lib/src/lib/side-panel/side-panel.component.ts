@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class SidePanelComponent {
 
-    @Input() public mode: 'menu' | 'scroll' = 'menu';
+    @Input() public mode: 'menu' | 'scroll' | 'scroll-gradient' = 'menu';
 
     // for Storybook
     public leftContent = '';
@@ -16,5 +16,9 @@ export class SidePanelComponent {
 
     public get scroll(): boolean {
         return this.mode === 'scroll';
+    }
+
+    public get scrollGradient(): boolean {
+        return this.mode === 'scroll-gradient';
     }
 }

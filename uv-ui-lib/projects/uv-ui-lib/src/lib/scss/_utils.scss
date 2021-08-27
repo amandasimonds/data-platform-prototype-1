@@ -132,6 +132,10 @@
     height: var(--uv-sm-size);
 }
 
+.padding-xxs {
+    padding: var(--uv-xxs-size);
+}
+
 .padding-xs {
     padding: var(--uv-xs-size);
 }
@@ -289,7 +293,6 @@
     top: 50%;
     left:50%;
     transform: translate(-50%, -50%);
-    border-radius: 6px;
 }
 
 .z-index {
@@ -324,7 +327,7 @@
 
 .scroll-wrapper {
     height: 100%;
-    padding: 0 6px 0 0;
+    padding: 0 4px 0 0;
 }
 
 .divider {
