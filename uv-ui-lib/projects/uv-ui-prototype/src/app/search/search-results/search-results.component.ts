@@ -15,6 +15,7 @@ export class SearchResultsComponent implements OnInit {
     public recentSearches = recentSearches;
     @Input() public category = '';
     @Input() public searchText = '';
+    showToolbar = false;
 
     @Output() activateCompare = new EventEmitter<boolean>();
 

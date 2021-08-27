@@ -13,6 +13,5 @@ export class BackdropService {
 
     public setBackdrop(backdropActive: boolean): void {
         this.backdropActive.next(backdropActive);
-        console.log('backdrop service', backdropActive);
     }
 }

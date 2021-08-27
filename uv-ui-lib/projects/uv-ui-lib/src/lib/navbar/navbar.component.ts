@@ -1,6 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
-import { INavlink } from '../interfaces/navbar.interfaces';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'uvx-navbar',
@@ -9,15 +7,5 @@ import { INavlink } from '../interfaces/navbar.interfaces';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent {
-    @Input() public navlinks: INavlink[] = [];
 
-    constructor(private router: Router) {}
-
-    public trackByFn(_: number, {navlink}: INavlink): string {
-        return navlink;
-    }
-
-    public navigateToRoute(navlink: string) {
-        this.router.navigateByUrl(navlink);
-    }
 }

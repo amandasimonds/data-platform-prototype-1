@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { HeaderService } from '../services/header.service';
+import { AppShellService } from '../services/app-shell.service';
 
 @Component({
   selector: 'prototype-uv-ui-global-where-used',
@@ -9,10 +9,11 @@ import { HeaderService } from '../services/header.service';
 })
 export class GlobalWhereUsedComponent implements OnInit{
 
-    constructor(private headerService: HeaderService){}
+    constructor(private appShellService: AppShellService){}
 
     public ngOnInit(): void {
-        this.headerService.setTitle('Global Where Used');
-        this.headerService.setAppIcon('apps-gwu');
+        this.appShellService.setTitle('Global Where Used');
+        this.appShellService.setAppIcon('apps-gwu');
+        this.appShellService.setActiveAppNav('gwu');
     }
 }

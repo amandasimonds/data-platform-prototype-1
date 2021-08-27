@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
-import { HeaderService } from '../../services/header.service';
+import { AppShellService } from '../../services/app-shell.service';
 import { navItems } from './navItems';
 
 @Component({
@@ -11,22 +11,27 @@ import { navItems } from './navItems';
 
 export class MainComponent implements OnInit {
 
-    public nav = navItems;
+    public navlinks = navItems;
     public title = '';
     public appIcon = '';
+    public activeAppIcon = '';
     @Input() public searchQuery = '';
 
     constructor(
-        public headerService: HeaderService, 
+        public appShellService: AppShellService, 
         private ref: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
-        this.headerService.currentTitle$.subscribe(title => {
+        this.appShellService.currentTitle$.subscribe(title => {
             this.title = title;
             this.ref.detectChanges();
         });
-        this.headerService.currentIcon$.subscribe(icon => {
+        this.appShellService.currentIcon$.subscribe(icon => {
             this.appIcon = icon;
+            this.ref.detectChanges();
+        });
+        this.appShellService.currentApp$.subscribe(icon => {
+            this.activeAppIcon = icon;
             this.ref.detectChanges();
         });
     }
