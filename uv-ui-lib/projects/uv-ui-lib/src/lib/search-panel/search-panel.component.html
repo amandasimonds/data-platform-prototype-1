@@ -6,17 +6,13 @@
         [ngClass]="getMode()">
 
         <div class="flex align-items-center">
-            <uvx-icon-button color='primary' icon='search' (click)="onSearch()" ></uvx-icon-button>
-            
-            <!-- <input type="text"
-            [placeholder]="placeholder"
-            class="uv-input margin-left-xs"> -->
+            <uvx-icon-button color='primary' icon='search' (click)="onSearch()"></uvx-icon-button>
 
             <ng-content></ng-content>
             
         </div>
 
-        <uvx-icon-button *ngIf="mode === 'global' || 'component-border'" color='primary' icon='close' (click)="onSearchCloseClicked()"></uvx-icon-button>
+        <uvx-icon-button *ngIf="mode === 'global' || 'component-border'" color='primary' icon='close' (click)="onSearchCloseClicked($event)"></uvx-icon-button>
         
     </div>
 

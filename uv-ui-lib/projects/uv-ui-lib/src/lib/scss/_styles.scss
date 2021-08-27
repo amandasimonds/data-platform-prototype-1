@@ -61,6 +61,28 @@ body {
     display: block;
 }
 
+.nav-icon {
+    width: var(--uv-lg-size);
+    height: var(--uv-lg-size);
+    margin: 18px auto 0;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+
+    &-active {
+        background-color: var(--uv-color-gray-light);
+    }
+
+    &:hover {
+        background-color: var(--uv-color-gray-light);
+    }
+
+    img, a {
+        width: 24px;
+        height: 24px;
+    }
+}
 
 
 

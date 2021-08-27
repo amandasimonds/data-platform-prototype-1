@@ -1,6 +1,6 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component,  ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { HeaderService } from '../services/header.service';
+import { AppShellService } from '../services/app-shell.service';
 import { MenuTab } from './models/menu-tab.model';
 import { SearchResult } from './models/search-result.model';
 import { DEFAULT_SEARCH_MENU_STATE } from './models/search-results-state';
@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit {
         {title: 'Lorem ipsum amet', checked: 'checked'}
     ];
 
-    constructor(private headerService: HeaderService){
+    constructor(private appShellService: AppShellService){
         this.categorySelected = false;
     }
 
@@ -38,8 +38,8 @@ export class SearchComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.headerService.setTitle('Search');
-        this.headerService.setAppIcon('search');
+        this.appShellService.setTitle('Search');
+        this.appShellService.setAppIcon('search');
     }
 
     public reOrderMode(): void {
