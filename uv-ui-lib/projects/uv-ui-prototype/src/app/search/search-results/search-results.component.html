@@ -1,8 +1,37 @@
 <div class="documents flex flex-column">
-    
-    <div class="content-container">
-        <div class="margin-bottom-md" *ngFor="let item of searchResults | filterResults: category">
-            <h5>{{item.title}}</h5>
+
+    <div *ngIf="searchText === ''">
+        <div class="search-result" 
+        *ngFor="let item of recentSearches">
+            <div class="search-result-tool-menu flex">
+                <uvx-icon-button icon="compare" 
+                (click)="compareClicked(true)"
+                class="margin-left-xxs padding-xxs"></uvx-icon-button>
+                <uvx-icon-button icon="apps-gwu" class="padding-xxs"></uvx-icon-button>
+                <uvx-icon-button icon="apps-design-ripple" class="padding-xxs"></uvx-icon-button>
+                <div style="height: 16px; margin: 0 8px;" class="divider-left"></div>
+                <uvx-icon-button icon="more_dots" class="padding-xxs margin-right-xxs" ></uvx-icon-button>
+            </div>
+            <h5 class="margin-bottom-xxs">{{item.title}}</h5>
+            <p class="uv-label-sbs-secondary">{{item.date}}</p>
+        </div>
+    </div>
+
+    <div *ngIf="searchText != ''">
+        <div class="search-result" *ngFor="let item of searchResults | filterResults: category">
+            <div class="search-result-tool-menu">
+                <div class="search-result-tool-menu flex">
+                    <uvx-icon-button icon="compare" 
+                    class="margin-left-xxs padding-xxs"
+                    (click)="compareClicked(true)">
+                    </uvx-icon-button>
+                    <uvx-icon-button icon="apps-gwu" class="padding-xxs"></uvx-icon-button>
+                    <uvx-icon-button icon="apps-design-ripple" class="padding-xxs"></uvx-icon-button>
+                    <div style="height: 16px; margin: 0 8px;" class="divider-left"></div>
+                    <uvx-icon-button icon="more_dots" class="padding-xxs margin-right-xxs" ></uvx-icon-button>
+                </div>
+            </div>
+            <h5 class="margin-bottom-xxs">{{item.title}}</h5>
             <p class="uv-body">{{item.description}}</p>
         </div>
     </div>
