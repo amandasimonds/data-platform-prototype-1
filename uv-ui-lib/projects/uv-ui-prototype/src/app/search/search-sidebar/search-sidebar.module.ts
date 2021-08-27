@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchSidebarComponent } from './search-sidebar.component';
-import { BackdropModule, DropdownModule, IconButtonModule, SearchPanelModule, SidePanelModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { BackdropModule, ButtonModule, CheckboxModule, DropdownModule, IconButtonModule, SearchPanelModule, SidePanelModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
 import { SearchResultsModule } from '../search-results/search-results.module';
 import { FormsModule } from '@angular/forms';
 
@@ -17,6 +17,8 @@ import { FormsModule } from '@angular/forms';
     BackdropModule,
     DropdownModule,
     SearchResultsModule,
+    ButtonModule,
+    CheckboxModule
   ],
   exports: [SearchSidebarComponent]
 })

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './layouts/main/main.component';
-import { GlobalWhereUsedComponent } from './global-where-used/global-where-used.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AutoLoginAllRoutesGuard } from 'angular-auth-oidc-client';
 import { AuthCallbackComponent } from './layouts/auth-callback/auth-callback.component';

@@ -9,6 +9,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class ButtonComponent {
     @Input() public label = 'Button';
     @Input() public mode: 'text' | 'primary' | 'round' = 'text';
+    @Input() public color: 'primary' | 'gray' | '' = '';
     @Input() public icon = '';
     @Input() public disabled = false;
 }

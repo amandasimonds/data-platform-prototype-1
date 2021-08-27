@@ -44,7 +44,7 @@
     --uv-color-danger-light: #FAEAD6;
     --uv-font-color: var(--uv-color-black);
     --uv-font-color-secondary: var(--uv-color-gray-dark);
-    --uv-scrollbar-color: var(--uv-color-gray);
+    --uv-scrollbar-color: var(--uv-color-gray-light-5);
     --uv-background-color: var(--uv-color-gray-light-2);
     --uv-svg-color-gray: var(--uv-color-gray);
     --uv-border-color-gray: var(--uv-color-gray-2);
@@ -62,6 +62,7 @@
     --uv-color-gray-light-2: #f1f1f1;
     --uv-color-gray-light-3: #f7f7f7;
     --uv-color-gray-light-4: #EDEDEE;
+    --uv-color-gray-light-5: #E7E7E9;
     --uv-color-black: #0D0C22;
 
     //sizes
@@ -77,6 +78,7 @@
     --uv-box-shadow-2: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
     --uv-box-shadow-hover: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
     --uv-box-shadow-hover-2: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    --uv-box-shadow-big: 0 24px 144px 0 rgba(0,0,0,0.12);
     --uv-border-gray: 1px solid var(--uv-border-color-gray);
     --uv-linear-gradient: linear-gradient(180deg, #84439971 0%, #4acaf571 100%);
 
@@ -100,6 +102,7 @@
     --uv-xl-size: 64px;
 
     //z-index
+    --uv-z-index-popup: 2000;
     --uv-z-index-navbar: 1070;
     --uv-z-index-search-sidebar: 1060;
     --uv-z-index-search-backdrop: 1050;

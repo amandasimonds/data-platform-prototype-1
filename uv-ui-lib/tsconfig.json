@@ -9,6 +9,7 @@
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
     "sourceMap": true,
     "strictPropertyInitialization": false,
     "strictNullChecks": false,

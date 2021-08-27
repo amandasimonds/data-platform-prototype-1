@@ -42,6 +42,14 @@
     height: var(--uv-md-size);
 }
 
+.black {
+    color: var(--uv-svg-color-black);
+    
+    &:hover {
+        color: var(--uv-color-primary);
+    }
+}
+
 .gray {
     color: var(--uv-svg-color-gray);
     

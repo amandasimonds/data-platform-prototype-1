@@ -1,6 +1,7 @@
-import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { SearchResult } from '../models/search-result.model';
 import { SearchService } from '../../services/search.service';
+import { recentSearches } from './sample-search-results/recent-searches';
 
 @Component({
   selector: 'app-search-results',
@@ -11,8 +12,16 @@ import { SearchService } from '../../services/search.service';
 export class SearchResultsComponent implements OnInit {
 
     @Input() public searchResults: SearchResult[] = [];
+    public recentSearches = recentSearches;
     @Input() public category = '';
     @Input() public searchText = '';
+
+    @Output() activateCompare = new EventEmitter<boolean>();
+
+    compareClicked(value: boolean) {
+        console.log('clicky');
+        this.activateCompare.emit(true);
+    }
 
     constructor(private searchService: SearchService) {
         // this.searchResults = this.searchService.allSearchResults;

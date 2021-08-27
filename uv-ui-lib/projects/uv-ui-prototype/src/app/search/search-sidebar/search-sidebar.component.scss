@@ -10,7 +10,7 @@
 }
 
 .search-sidebar {
-    height: 100vh;
+    height: 100%;
     position: fixed;
     top: 0;
     left: var(--uv-navbar-width);
@@ -18,6 +18,27 @@
     animation-name: slide-in;
     animation-duration: .6s;
     animation-timing-function: ease-in-out;
+    width: 431px;
+
+    &-bottom {
+        padding: 32px 4px 32px 0;
+    }
+}
+
+.compare-warning {
+    width: 432px;
+    border-radius: 8px;
+    background-color: var(--uv-color-white);
+    box-shadow: var(--uv-box-shadow-big);
+    z-index: var(--uv-z-index-popup);
+
+    &-top{
+        padding: 32px;
+    }
+
+    &-bottom{
+        padding: 32px;
+    }
 }
 
 @keyframes backdrop-fade-in {

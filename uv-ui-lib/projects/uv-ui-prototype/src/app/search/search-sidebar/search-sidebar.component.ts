@@ -15,6 +15,7 @@ export class SearchSidebarComponent implements OnInit {
     searchResults: SearchResult[] = [];
     categoryOption: SearchResult[] = [];
     searchText = '';
+    compareWarning = false;
 
     categories = [
         {name: 'All', icon: 'list-right'},
@@ -32,6 +33,11 @@ export class SearchSidebarComponent implements OnInit {
 
         selectCategory(category: string) {
         this.searchCategory = category;
+        }
+
+        activateCompare(value: boolean) {
+            this.compareWarning = value;
+            console.log(this.compareWarning);
         }
 
     getCategoryResultsNumber(category: string): number {

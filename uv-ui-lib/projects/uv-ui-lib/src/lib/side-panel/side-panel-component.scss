@@ -13,22 +13,22 @@
 }
 
 .scroll-wrapper {
-    padding: 0 8px 0 0;
-    height: 100%;
+    padding: 0 4px 0 0;
+    height: calc(100% - (var(--uv-side-panel-top-height) + 90px));
     display: flex;
 }
 
 .scroll {
     width: 100%;
-    padding: 12px 24px;
     overflow: auto;
-    height:calc(100% - (var(--uv-side-panel-top-height) + 20px));
-    
-    &::-webkit-scrollbar {
-        width: 6px;
-    }
 
-    &::-webkit-scrollbar-thumb {
-        background: var(--uv-linear-gradient);
+    &-gradient {
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: var(--uv-linear-gradient);
+        }
     }
 }

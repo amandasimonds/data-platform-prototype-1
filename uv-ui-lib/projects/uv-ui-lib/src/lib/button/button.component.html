@@ -3,6 +3,7 @@
     [class.primary]="mode === 'primary'"
     [class.text]="mode === 'text'"
     [class.round]="mode === 'round'"
+    [class.gray]="color === 'gray'"
     [class.disabled]="disabled">
         <mat-icon *ngIf="icon != '' " class="position-svg" svgIcon="{{icon}}"></mat-icon>
     {{label}}
