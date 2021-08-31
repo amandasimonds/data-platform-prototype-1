@@ -39,6 +39,6 @@ export const navItems = [
         app: 'search',
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg',
         active: false,
-        navlink: 'search'
+        navlink: null
     }
 ];

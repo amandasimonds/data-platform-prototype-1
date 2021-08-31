@@ -4,7 +4,35 @@
     width: 100vw;
     background-color: rgba(13,12,34,0.16);
     position: absolute;
-    z-index: var(--uv-z-index-search-backdrop);
-    // animation-name: backdrop-fade-in;
-    // animation-duration: .7s;
+
+    &-search {
+        z-index: var(--uv-z-index-search-backdrop);
+    }
+
+    &-popup {
+        z-index: var(--uv-z-index-popup-backdrop);
+    }
+
+    &-logo {
+        opacity: .2;
+        width: 200px;
+
+        &-search {
+            opacity: .2;
+            left: 60%;
+            top: 56%;
+        }
+    }
+    
+    animation-name: backdrop-fade-in;
+    // animation-duration: all .7s;
+    animation-timing-function: ease-in-out;
+    // transition: all 1s;
+}
+
+@keyframes backdrop-fade-in {
+    from {opacity: 0;}
+    to {
+        opacity: 100;
+    }
 }

@@ -1,1 +1,10 @@
-<div @fadeInOut class="backdrop"></div>
+<div @fadeInOut class="backdrop" 
+    [class.backdrop-popup]="mode === 'popup'">
+    <img *ngIf="logo === 'uv-logo'" 
+    class="position-center backdrop-logo" 
+    src="https://dpzaq1wj21co3.cloudfront.net/uv-logo.svg">
+    <uvx-icon *ngIf="logo === 'search'" 
+    class="position-center backdrop-logo-search" 
+    icon="search"
+    size="bg"></uvx-icon>
+</div>

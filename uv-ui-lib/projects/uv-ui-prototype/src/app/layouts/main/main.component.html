@@ -24,7 +24,7 @@
             <span *ngFor="let navlink of navlinks" 
                 class="nav-icon"
                 [class.nav-icon-active]="activeAppIcon === navlink.app">
-                <a [routerLink]="navlink.navlink">
+                <a [routerLink]="navlink.navlink" (click)="navlink.app === 'search' && toggleSearchSidebar()">
                     <img [src]="navlink.icon">
                 </a>
             </span>
@@ -34,4 +34,7 @@
     <div class="uv-ui-shell-content">
         <router-outlet></router-outlet>
     </div>
+    <uvx-backdrop *ngIf="showSearchSidebar" [mode]="compareWarning ? 'popup' : ''">
+    </uvx-backdrop>
+    <app-search-sidebar *ngIf="showSearchSidebar"></app-search-sidebar>
 </div>

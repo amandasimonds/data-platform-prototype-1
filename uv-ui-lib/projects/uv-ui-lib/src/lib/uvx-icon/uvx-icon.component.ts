@@ -10,6 +10,6 @@ export class UvxIconComponent {
 
     @Input() icon = '';
     @Input() color: 'black' | 'primary' | 'gray' | 'white' = 'black';
-    @Input() size: 'xs' | 'sm' | 'md' | 'checkmark' = 'sm';
+    @Input() size: 'xs' | 'sm' | 'md' | 'xl' | 'bg' | 'checkmark' = 'sm';
 
 }

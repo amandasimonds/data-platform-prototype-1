@@ -72,6 +72,7 @@
     --uv-sidebar-width-sm: 288px;
     --uv-grid-gap-vertical: 24px;
     --uv-grid-gap-horizontal: 24px;
+    --uv-icon-bg: 400px;
 
     //styles
     --uv-box-shadow: 0 2px 12px 0 rgba(234, 234, 234, 0.5);
@@ -103,6 +104,7 @@
 
     //z-index
     --uv-z-index-popup: 2000;
+    --uv-z-index-popup-backdrop: 1080;
     --uv-z-index-navbar: 1070;
     --uv-z-index-search-sidebar: 1060;
     --uv-z-index-search-backdrop: 1050;

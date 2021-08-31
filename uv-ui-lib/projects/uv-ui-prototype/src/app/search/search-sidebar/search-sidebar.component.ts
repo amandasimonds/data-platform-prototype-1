@@ -4,11 +4,15 @@ import { BackdropService } from '../../services/backdrop.service';
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../models/search-result.model';
 import { AppShellService } from '../../services/app-shell.service';
+import { SlideInOutAnimation } from '../../animations';
 
 @Component({
     selector: 'app-search-sidebar',
     templateUrl: './search-sidebar.component.html',
-    styleUrls: ['./search-sidebar.component.scss']
+    styleUrls: ['./search-sidebar.component.scss'],
+    animations: [
+        SlideInOutAnimation
+      ]
 })
 export class SearchSidebarComponent implements OnInit {
 

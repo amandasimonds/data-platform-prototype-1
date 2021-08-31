@@ -52,7 +52,7 @@
                 <div class="position-relative flex">
                     <uvx-icon-button icon="search" *ngIf="!showFilterModal" color="primary" (click)="toggleFilterModal()" [active]="showFilterModal"></uvx-icon-button>
                     <uvx-search-panel 
-                        (searchCloseClick)="toggleFilterModal(); clearSearch()"
+                        (searchCloseClicked)="toggleFilterModal(); clearSearch()"
                         *ngIf="showFilterModal"
                         mode="component-border" 
                         class="z-index-front">
