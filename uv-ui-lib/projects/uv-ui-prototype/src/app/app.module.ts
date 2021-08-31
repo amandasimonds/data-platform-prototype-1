@@ -32,6 +32,7 @@ import { AuthService } from './auth/auth.service';
 import { NgOnDestroyService } from './services/on-destroy.service';
 import { BackdropService } from './services/backdrop.service';
 import { AppShellService } from './services/app-shell.service';
+import { SearchSidebarModule } from './search/search-sidebar/search-sidebar.module';
 
 @NgModule({
     declarations: [
@@ -48,6 +49,7 @@ import { AppShellService } from './services/app-shell.service';
         ButtonModule,
         SidePanelModule,
         SearchPanelModule,
+        SearchSidebarModule,
         HeaderModule,
         NavbarModule,
         IconButtonModule,

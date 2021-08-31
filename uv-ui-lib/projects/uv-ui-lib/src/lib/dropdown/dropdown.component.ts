@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, HostListener, ElementRef, ViewChild } from '@angular/core';
 import { IDropdown } from '../interfaces/dropdown.interfaces';
 
 @Component({
@@ -13,6 +13,15 @@ export class DropdownComponent {
     @Input() public selectId = '';
     @Input() public dropdownName = '';
     @Input() public items: IDropdown[] = [];
+
+    constructor(private elementRef: ElementRef) {}
+
+    @HostListener('document:click', ['$event'])
+    clickOutside(event: any) {
+        if (!this.elementRef.nativeElement.contains(event.target)) {
+            this.open = false;
+        }
+    }
 
     public toggle() {
        this.open = !this.open

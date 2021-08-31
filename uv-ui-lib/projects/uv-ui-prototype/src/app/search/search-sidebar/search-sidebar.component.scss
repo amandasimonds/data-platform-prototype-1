@@ -1,14 +1,3 @@
-.backdrop {
-    top: calc(0px - var(--uv-header-height));
-    height: calc(100% + var(--uv-header-height));
-    width: 100vw;
-    background-color: rgba(13,12,34,0.16);
-    position: absolute;
-    z-index: var(--uv-z-index-search-backdrop);
-    animation-name: backdrop-fade-in;
-    animation-duration: .7s;
-}
-
 .search-sidebar {
     height: 100%;
     position: fixed;
@@ -21,7 +10,16 @@
     width: 431px;
 
     &-bottom {
-        padding: 32px 4px 32px 0;
+
+        &-header {
+            position: sticky; 
+            padding: 32px 4px 40px 32px;
+            top: 0; 
+            background-color: var(--uv-color-white);
+            height: 50px;
+            display: block;
+            z-index: 1;
+        }
     }
 }
 
@@ -41,19 +39,12 @@
     }
 }
 
-@keyframes backdrop-fade-in {
-    from {opacity: 0;}
-    to {
-        opacity: 100;
-    }
-}
-
-@keyframes slide-in {
-    from {
-        left: -500px;
-    }
-    to {
-        left: var(--uv-navbar-width);
-    }
-}
+// @keyframes slide-in {
+//     from {
+//         left: -500px;
+//     }
+//     to {
+//         left: var(--uv-navbar-width);
+//     }
+// }
 
