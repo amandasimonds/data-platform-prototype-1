@@ -11,6 +11,21 @@ export const SlideInOutAnimation = [
             transform: 'translateX(-500px)'
         })),
 
-        transition('hidden <=> visible', animate(300)),
+        transition('hidden <=> visible', animate(200)),
+    ]),
+]
+
+export const FadeInOutAnimation = [
+    trigger('fadeInOut', [
+
+        state('visible', style({
+            opacity: '1'
+        })),
+
+        state('hidden', style({
+            opacity: '0'
+        })),
+
+        transition('hidden <=> visible', animate(200)),
     ]),
 ]

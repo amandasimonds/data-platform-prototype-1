@@ -1,7 +1,6 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { AppShellService } from '../../services/app-shell.service';
 import { navItems } from './navItems';
-import { FadeInOutAnimation } from '../../animations';
 import { SearchService } from '../../services/search.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,7 +8,6 @@ import { ActivatedRoute } from '@angular/router';
     selector: 'prototype-app-main',
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss'],
-    animations: [ FadeInOutAnimation ],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
