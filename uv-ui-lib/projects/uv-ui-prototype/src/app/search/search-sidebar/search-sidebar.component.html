@@ -1,5 +1,3 @@
-
-<!-- <uvx-backdrop></uvx-backdrop> -->
 <div class="compare-warning position-center" *ngIf="compareWarning">
     <div class="compare-warning-top">
         <div class="flex justify-content-space-between margin-bottom-xs">
@@ -25,7 +23,7 @@
         <uvx-button mode="primary" label="Launch"></uvx-button>
     </div>
 </div>
-<uvx-side-panel mode="scroll" class="search-sidebar">
+<uvx-side-panel mode="scroll" class="search-sidebar" @slideInOut>
     <div top class="search-sidebar-top">
         <div class="flex align-items-center justify-content-space-between  margin-bottom-sm">
             <div class="flex align-items-center">
@@ -72,7 +70,7 @@
     </div>
 
     <div bottom class="search-sidebar-bottom">
-        <h4 class="margin-left-md">{{searchText === '' ? 'Recent Searches' : searchResults.length + ' Results for ' + searchText}}</h4>
+        <h4 class="search-sidebar-bottom-header">{{searchText === '' ? 'Recent Searches' : searchResults.length + ' Results for ' + searchText}}</h4>
         <app-search-results 
             [category]="searchCategory" 
             [searchText]="searchText"

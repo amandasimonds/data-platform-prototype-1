@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
     trigger,
     state,
@@ -45,6 +45,8 @@ import {
 export class BackdropComponent implements OnInit {
 
     isVisible = true;
+    @Input() mode: '' | 'popup' = '';
+    @Input() logo: 'uv-logo' | 'search' | '' = '';
 
     toggle() {
       this.isVisible = !this.isVisible;
