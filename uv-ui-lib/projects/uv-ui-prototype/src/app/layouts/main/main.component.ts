@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
+import { Location } from '@angular/common';
 import { AppShellService } from '../../services/app-shell.service';
 import { navItems } from './navItems';
 import { FadeInOutAnimation, SlideInOutAnimation } from '../../animations';
@@ -28,10 +29,11 @@ export class MainComponent implements OnInit {
         public appShellService: AppShellService, 
         public searchService: SearchService,
         private ref: ChangeDetectorRef,
+        private location: Location,
         private route: ActivatedRoute) { }
 
     public ngOnInit(): void {
-        console.log(+this.route.snapshot.params['id']);
+        console.log(this.location);
         this.appShellService.currentTitle$.subscribe(title => {
             this.title = title;
             this.ref.detectChanges();

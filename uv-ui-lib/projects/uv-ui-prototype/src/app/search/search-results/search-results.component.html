@@ -3,7 +3,8 @@
     <div *ngIf="searchText === ''">
         <div class="search-result" 
         *ngFor="let item of recentSearches">
-            <div class="search-result-tool-menu flex">
+
+            <div class="search-result-tool-menu">
                 <uvx-icon-button icon="compare" 
                 (click)="compareClicked(true)"
                 class="margin-left-xxs padding-xxs"></uvx-icon-button>
@@ -12,6 +13,7 @@
                 <div style="height: 16px; margin: 0 8px;" class="divider-left"></div>
                 <uvx-icon-button icon="more_dots" class="padding-xxs margin-right-xxs" ></uvx-icon-button>
             </div>
+            
             <h5 class="margin-bottom-xxs">{{item.title}}</h5>
             <p class="uv-label-sbs-secondary">{{item.date}}</p>
         </div>
@@ -19,8 +21,8 @@
 
     <div *ngIf="searchText != ''">
         <div class="search-result" *ngFor="let item of searchResults | filterResults: category">
-            <div class="search-result-tool-menu">
-                <div class="search-result-tool-menu flex">
+            
+                <div class="search-result-tool-menu">
                     <uvx-icon-button icon="compare" 
                     (click)="compareClicked(true)"
                     class="margin-left-xxs padding-xxs"></uvx-icon-button>
@@ -29,7 +31,7 @@
                     <div style="height: 16px; margin: 0 8px;" class="divider-left"></div>
                     <uvx-icon-button icon="more_dots" class="padding-xxs margin-right-xxs" ></uvx-icon-button>
                 </div>
-            </div>
+            
             <h5 class="margin-bottom-xxs">{{item.title}}</h5>
             <p class="uv-body">{{item.description}}</p>
         </div>
