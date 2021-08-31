@@ -1,8 +1,7 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
-import { Location } from '@angular/common';
 import { AppShellService } from '../../services/app-shell.service';
 import { navItems } from './navItems';
-import { FadeInOutAnimation, SlideInOutAnimation } from '../../animations';
+import { FadeInOutAnimation } from '../../animations';
 import { SearchService } from '../../services/search.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -22,6 +21,7 @@ export class MainComponent implements OnInit {
     public activeAppIcon = '';
     public compareWarning = false;
     public searchSidebarState = 'hidden';
+    public currentApp = '';
 
     @Input() public searchQuery = '';
 
@@ -29,11 +29,10 @@ export class MainComponent implements OnInit {
         public appShellService: AppShellService, 
         public searchService: SearchService,
         private ref: ChangeDetectorRef,
-        private location: Location,
-        private route: ActivatedRoute) { }
+        private route: ActivatedRoute) { 
+        }
 
     public ngOnInit(): void {
-        console.log(this.location);
         this.appShellService.currentTitle$.subscribe(title => {
             this.title = title;
             this.ref.detectChanges();
@@ -50,6 +49,11 @@ export class MainComponent implements OnInit {
             this.searchSidebarState = state;
             this.ref.detectChanges();
         });
+        this.route.queryParams.subscribe(
+            params => {
+                this.currentApp =  params['app'];
+            }
+        )
     }
 
     public get checkifSearch(): boolean {
@@ -61,6 +65,11 @@ export class MainComponent implements OnInit {
             (this.searchService.setSearchSidebarState('visible'),
             this.appShellService.setActiveAppNav('search')) : 
             (this.searchService.setSearchSidebarState('hidden'),
-            this.appShellService.setActiveAppNav(''));
+            this.appShellService.setActiveAppNav(this.currentApp));
+    }
+
+    closeSearchSidebar() {
+            this.searchService.setSearchSidebarState('hidden');
+            this.appShellService.setActiveAppNav(this.currentApp);
     }
 }

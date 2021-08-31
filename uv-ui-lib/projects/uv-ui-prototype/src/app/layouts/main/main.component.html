@@ -24,8 +24,18 @@
             <span *ngFor="let navlink of navlinks" 
                 class="nav-icon"
                 [class.nav-icon-active]="activeAppIcon === navlink.app">
-                <a [routerLink]="navlink.navlink" (click)="navlink.app === 'search' && toggleSearchSidebar()">
-                    <img [src]="navlink.icon">
+                <a [routerLink]="navlink.navlink"
+                [queryParams]="{app: navlink.app}"
+                (click)="closeSearchSidebar()">
+                    <img app-icon="app-icon" [src]="navlink.icon">
+                </a>
+            </span>
+            <span class="nav-icon"
+            [class.nav-icon-active]="activeAppIcon === 'search'">
+                <a (click)="toggleSearchSidebar()">
+                    <img
+                    app-icon="app-icon" 
+                    src="http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg">
                 </a>
             </span>
         </uvx-navbar>
@@ -36,5 +46,5 @@
     </div>
     <uvx-backdrop *ngIf="searchSidebarState === 'visible'" [@fadeInOut]="searchSidebarState" [mode]="compareWarning ? 'popup' : ''">
     </uvx-backdrop>
-    <app-search-sidebar></app-search-sidebar>
+    <app-search-sidebar (searchCloseEvent)="toggleSearchSidebar()"></app-search-sidebar>
 </div>

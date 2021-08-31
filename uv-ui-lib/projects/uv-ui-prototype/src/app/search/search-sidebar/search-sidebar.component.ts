@@ -1,9 +1,7 @@
-import { ChangeDetectorRef, Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { Location } from '@angular/common';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { BackdropService } from '../../services/backdrop.service';
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../models/search-result.model';
-import { AppShellService } from '../../services/app-shell.service';
 import { SlideInOutAnimation } from '../../animations';
 
 @Component({
@@ -17,6 +15,7 @@ import { SlideInOutAnimation } from '../../animations';
 export class SearchSidebarComponent implements OnInit {
 
     @Input() public searchCategory = 'All';
+    @Output() public searchCloseEvent = new EventEmitter<string>();
     searchResults: SearchResult[] = [];
     categoryOption: SearchResult[] = [];
     searchText = '';
@@ -34,7 +33,15 @@ export class SearchSidebarComponent implements OnInit {
     constructor(
         private backdropService: BackdropService,
         private searchService: SearchService,
-        private ref: ChangeDetectorRef) {     
+        private ref: ChangeDetectorRef,
+        private elementRef: ElementRef) {     
+        }
+
+        @HostListener('document:click', ['$event'])
+        clickOutside(event: any) {
+            if (!this.elementRef.nativeElement.contains(event.target) && event.target.getAttribute("app-icon") != "app-icon") {
+                this.searchCloseEvent.emit('hidden');
+            }
         }
 
     selectCategory(category: string) {
@@ -61,8 +68,8 @@ export class SearchSidebarComponent implements OnInit {
         
     }
 
-    closeSearchSidebar(){
-        this.searchService.setSearchSidebarState('hidden');
+    closeSearchSidebar(value: string){
+        this.searchCloseEvent.emit(value);
     }
 
     ngOnInit(): void {

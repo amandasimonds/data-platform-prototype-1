@@ -71,7 +71,7 @@ import { SearchSidebarModule } from './search/search-sidebar/search-sidebar.modu
         SearchService, 
         SidebySideService,
         NgOnDestroyService,
-        BackdropService
+        BackdropService,
     ],
     bootstrap: [AppComponent]
 })

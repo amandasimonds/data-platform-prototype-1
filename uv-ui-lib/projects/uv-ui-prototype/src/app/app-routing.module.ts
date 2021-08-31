@@ -34,11 +34,11 @@ const routes: Routes = [
                 loadChildren: () => import('./home-splash/home-splash.module').then(m => m.HomeSplashModule)
             },
             {
-                path: 'side-by-side',
+                path: 'sbs',
                 loadChildren: () => import('./side-by-side/side-by-side.module').then(m => m.SideBySideModule)
             },
             {
-                path: 'global-where-used',
+                path: 'gwu',
                 loadChildren: () => import('./global-where-used/gwu.module').then(m => m.GwuModule)
             },
             {

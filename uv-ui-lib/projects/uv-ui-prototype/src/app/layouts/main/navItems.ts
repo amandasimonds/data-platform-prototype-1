@@ -1,5 +1,5 @@
 export const navItems = [
-    {   app: 'home',
+    {   app: 'home-splash',
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',
         active: false,
         navlink: 'home-splash'
@@ -8,14 +8,14 @@ export const navItems = [
         app: 'gwu',
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',
         active: false,
-        navlink: 'global-where-used'
+        navlink: 'gwu'
     },
 
     {
         app: 'sbs',
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',
         active: false,
-        navlink: 'side-by-side'
+        navlink: 'sbs'
     },
     {
         app: 'design-ripple',
@@ -34,11 +34,5 @@ export const navItems = [
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',
         active: false,
         navlink: 'settings'
-    },
-    {
-        app: 'search',
-        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg',
-        active: false,
-        navlink: null
     }
 ];
