@@ -1,24 +1,31 @@
-import { trigger, state, style, transition,
-    animate, group, query, stagger, keyframes
-} from '@angular/animations';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 export const SlideInOutAnimation = [
     trigger('slideInOut', [
 
-        state('in', style({
-           'left': 'var(--uv-navbar-width)'
+        state('visible', style({
+            transform: 'translateX(0)'
         })),
 
-        state('out', style({
-            'left': '-500px'
+        state('hidden', style({
+            transform: 'translateX(-500px)'
         })),
 
-        transition('in => out', [
-            animate('1s')
-        ]),
+        transition('hidden <=> visible', animate(300)),
+    ]),
+]
 
-        transition('out => in', [
-            animate('1s')
-        ]),
+export const FadeInOutAnimation = [
+    trigger('fadeInOut', [
+
+        state('visible', style({
+            opacity: '1'
+        })),
+
+        state('hidden', style({
+            opacity: '0'
+        })),
+
+        transition('hidden <=> visible', animate(300)),
     ]),
 ]

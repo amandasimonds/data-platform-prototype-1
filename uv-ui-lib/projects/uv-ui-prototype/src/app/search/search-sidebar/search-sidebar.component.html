@@ -23,7 +23,8 @@
         <uvx-button mode="primary" label="Launch"></uvx-button>
     </div>
 </div>
-<uvx-side-panel mode="scroll" class="search-sidebar" @slideInOut>
+
+<uvx-side-panel mode="scroll" class="search-sidebar" [@slideInOut]="searchSidebarState">
     <div top class="search-sidebar-top">
         <div class="flex align-items-center justify-content-space-between  margin-bottom-sm">
             <div class="flex align-items-center">
@@ -34,7 +35,7 @@
             icon="close" 
             color="gray" 
             size="md"
-            (click)="goBack()"></uvx-icon-button>
+            (click)="closeSearchSidebar()"></uvx-icon-button>
         </div>
         <div class="margin-bottom-sm">
             <uvx-search-panel mode="component-border" (searchCloseClicked)="searchText = ''">

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { Location } from '@angular/common';
 import { BackdropService } from '../../services/backdrop.service';
 import { SearchService } from '../../services/search.service';
@@ -21,6 +21,7 @@ export class SearchSidebarComponent implements OnInit {
     categoryOption: SearchResult[] = [];
     searchText = '';
     compareWarning = false;
+    searchSidebarState = 'hidden';
 
     categories = [
         {name: 'All', icon: 'list-right'},
@@ -33,18 +34,17 @@ export class SearchSidebarComponent implements OnInit {
     constructor(
         private backdropService: BackdropService,
         private searchService: SearchService,
-        private appShellService: AppShellService,
-        private location: Location) {     
+        private ref: ChangeDetectorRef) {     
         }
 
-        selectCategory(category: string) {
+    selectCategory(category: string) {
         this.searchCategory = category;
-        }
+    }
 
-        activateCompare(value: boolean) {
-            this.compareWarning = value;
-            console.log(this.compareWarning);
-        }
+    activateCompare(value: boolean) {
+        this.compareWarning = value;
+        console.log(this.compareWarning);
+    }
 
     getCategoryResultsNumber(category: string): number {
         let categoryArray = []
@@ -61,14 +61,17 @@ export class SearchSidebarComponent implements OnInit {
         
     }
 
-    goBack(){
-        this.location.back();
+    closeSearchSidebar(){
+        this.searchService.setSearchSidebarState('hidden');
     }
 
     ngOnInit(): void {
         this.backdropService.setBackdrop(true);
         this.searchResults = this.searchService.getAllSearchResults();
-        this.appShellService.setActiveAppNav('search');
+        this.searchService.searchState$.subscribe(state => {
+            this.searchSidebarState = state;
+            this.ref.detectChanges();
+        });
+        
     }
-
 }
