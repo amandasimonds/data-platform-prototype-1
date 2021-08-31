@@ -37,12 +37,13 @@ export class SearchSidebarComponent implements OnInit {
         private elementRef: ElementRef) {     
         }
 
-        @HostListener('document:click', ['$event'])
-        clickOutside(event: any) {
-            if (!this.elementRef.nativeElement.contains(event.target) && event.target.getAttribute("app-icon") != "app-icon") {
-                this.searchCloseEvent.emit('hidden');
-            }
-        }
+        // @HostListener('document:click', ['$event'])
+        // clickOutside(event: any) {
+        //     if (!this.elementRef.nativeElement.contains(event.target) 
+        //     && event.target.getAttribute("app-icon") != "app-icon") {
+        //         this.searchCloseEvent.emit('hidden');
+        //     }
+        // }
 
     selectCategory(category: string) {
         this.searchCategory = category;
@@ -73,11 +74,13 @@ export class SearchSidebarComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        console.log(this.searchSidebarState);
         this.backdropService.setBackdrop(true);
         this.searchResults = this.searchService.getAllSearchResults();
         this.searchService.searchState$.subscribe(state => {
             this.searchSidebarState = state;
             this.ref.detectChanges();
+            console.log(this.searchSidebarState);
         });
         
     }
