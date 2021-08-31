@@ -4,6 +4,7 @@
     width: 100vw;
     background-color: rgba(13,12,34,0.16);
     position: absolute;
+    z-index: var(--uv-z-index-search-backdrop);
 
     &-search {
         z-index: var(--uv-z-index-search-backdrop);
@@ -23,16 +24,11 @@
             top: 56%;
         }
     }
-    
-    animation-name: backdrop-fade-in;
-    // animation-duration: all .7s;
-    animation-timing-function: ease-in-out;
-    // transition: all 1s;
-}
 
-@keyframes backdrop-fade-in {
-    from {opacity: 0;}
-    to {
-        opacity: 100;
+    &-not-active {
+        transform: translateX(-1000px);
+        transition-duration: 0s;
+        transition-delay: .3s;
     }
 }
+

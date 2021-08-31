@@ -1,5 +1,6 @@
-<div @fadeInOut class="backdrop" 
-    [class.backdrop-popup]="mode === 'popup'">
+<div [@fadeInOut]="backdropState" class="backdrop" 
+    [class.backdrop-popup]="mode === 'popup'"
+    [class.backdrop-not-active]="backdropState === 'hidden'">
     <img *ngIf="logo === 'uv-logo'" 
     class="position-center backdrop-logo" 
     src="https://dpzaq1wj21co3.cloudfront.net/uv-logo.svg">
