@@ -34,7 +34,7 @@
     <div class="uv-ui-shell-content">
         <router-outlet></router-outlet>
     </div>
-    <uvx-backdrop *ngIf="showSearchSidebar" [mode]="compareWarning ? 'popup' : ''">
+    <uvx-backdrop *ngIf="searchSidebarState === 'visible'" [@fadeInOut]="searchSidebarState" [mode]="compareWarning ? 'popup' : ''">
     </uvx-backdrop>
-    <app-search-sidebar *ngIf="showSearchSidebar"></app-search-sidebar>
+    <app-search-sidebar></app-search-sidebar>
 </div>
