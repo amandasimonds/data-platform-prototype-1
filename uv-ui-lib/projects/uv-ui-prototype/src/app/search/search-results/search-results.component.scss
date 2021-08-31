@@ -45,5 +45,26 @@
         }
     }
 
+    .search-result-tool-menu {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 201px;
+        top: -1.75rem;
+        right: 16px;
+        border-radius: 4px;
+        box-shadow: var(--uv-box-shadow-hover-2);
+        transition: all .3s;
+        background-color: var(--uv-color-white);
+        z-index: 9999;
+    
+        uvx-icon-button {
+            &:hover {
+                background-color: var(--uv-color-gray-light);
+                color: var(--uv-color-primary);
+            }
+        }
+    }
     
 }
