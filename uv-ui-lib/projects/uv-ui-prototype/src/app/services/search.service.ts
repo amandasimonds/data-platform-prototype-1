@@ -7,13 +7,22 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class SearchService {
     public allSearchResults: SearchResult[] = allSearchResults;
     public searchSidebarState = new BehaviorSubject<string>('hidden');
+    public compareWarningState = new BehaviorSubject<boolean>(false);
 
     public get searchState$(): Observable<string> {
         return this.searchSidebarState.asObservable();
     }
 
+    public get compareWarning$(): Observable<boolean> {
+        return this.compareWarningState.asObservable();
+    }
+
     public setSearchSidebarState(state: string): void {
         this.searchSidebarState.next(state);
+    }
+
+    public setCompareWarningState(state: boolean): void {
+        this.compareWarningState.next(state);
     }
 
     public getAllSearchResults(): SearchResult[]{

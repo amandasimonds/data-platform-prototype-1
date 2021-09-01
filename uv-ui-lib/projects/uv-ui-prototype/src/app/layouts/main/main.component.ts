@@ -31,20 +31,19 @@ export class MainComponent implements OnInit {
         }
 
     public ngOnInit(): void {
-        this.appShellService.currentTitle$.subscribe(title => {
-            this.title = title;
+        this.appShellService.currentTitle$.subscribe(title => { this.title = title;
             this.ref.detectChanges();
         });
-        this.appShellService.currentIcon$.subscribe(icon => {
-            this.appIcon = icon;
+        this.appShellService.currentIcon$.subscribe(icon => { this.appIcon = icon;
             this.ref.detectChanges();
         });
-        this.appShellService.currentApp$.subscribe(icon => {
-            this.activeAppIcon = icon;
+        this.appShellService.currentApp$.subscribe(icon => { this.activeAppIcon = icon;
             this.ref.detectChanges();
         });
-        this.searchService.searchState$.subscribe(state => {
-            this.searchSidebarState = state;
+        this.searchService.searchState$.subscribe(state => { this.searchSidebarState = state;
+            this.ref.detectChanges();
+        });
+        this.searchService.compareWarning$.subscribe(state => { this.compareWarning = state;
             this.ref.detectChanges();
         });
         this.route.queryParams.subscribe(
