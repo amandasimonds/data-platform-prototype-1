@@ -1,0 +1,25 @@
+<div class="compare-warning position-center">
+    <div class="compare-warning-top">
+        <div class="flex justify-content-space-between margin-bottom-xs">
+            <h3>Warning</h3>
+            <uvx-icon-button 
+            (click)="closeCompareWarning()"
+            icon="close" 
+            size="md" 
+            color="gray"></uvx-icon-button>
+        </div>
+        <p class="uv-body">
+            You are are about to launch EXH-SU-5110-B into Compare, leaving your current workstation. Don’t worry, we will save you work. 
+        </p>
+        </div>
+    <div class="divider"></div>
+    <div class="compare-warning-bottom flex justify-content-space-between align-items-center">
+        <uvx-checkbox label="Do not show again"></uvx-checkbox>
+        <uvx-button 
+        mode="text" 
+        color="gray" 
+        label="Cancel"
+        (click)="closeCompareWarning()"></uvx-button>
+        <uvx-button mode="primary" label="Launch" (click)="refresh();"></uvx-button>
+    </div>
+</div>

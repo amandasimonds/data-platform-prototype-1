@@ -1,0 +1,15 @@
+.compare-warning {
+    width: 432px;
+    border-radius: 8px;
+    background-color: var(--uv-color-white);
+    box-shadow: var(--uv-box-shadow-big);
+    z-index: var(--uv-z-index-popup);
+
+    &-top{
+        padding: 32px;
+    }
+
+    &-bottom{
+        padding: 32px;
+    }
+}

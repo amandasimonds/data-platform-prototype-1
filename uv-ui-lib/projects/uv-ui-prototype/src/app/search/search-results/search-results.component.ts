@@ -12,16 +12,13 @@ import { recentSearches } from './sample-search-results/recent-searches';
 export class SearchResultsComponent implements OnInit {
 
     @Input() public searchResults: SearchResult[] = [];
-    public recentSearches = recentSearches;
     @Input() public category = '';
     @Input() public searchText = '';
-    showToolbar = false;
-
-    @Output() activateCompare = new EventEmitter<boolean>();
+    public recentSearches = recentSearches;
+    public showToolbar = false;
 
     compareClicked(value: boolean) {
-        console.log('clicky');
-        this.activateCompare.emit(true);
+        this.searchService.setCompareWarningState(true);
     }
 
     constructor(private searchService: SearchService) {
