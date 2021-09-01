@@ -57,7 +57,7 @@
         box-shadow: var(--uv-box-shadow-hover-2);
         transition: all .3s;
         background-color: var(--uv-color-white);
-        z-index: 9999;
+        z-index: var(--uv-z-index-search-sidebar-toolmenu);
     
         uvx-icon-button {
             &:hover {
