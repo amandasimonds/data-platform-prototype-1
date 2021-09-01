@@ -39,7 +39,7 @@ export class SearchComponent implements OnInit {
 
     public ngOnInit(): void {
         this.appShellService.setTitle('Search');
-        this.appShellService.setAppIcon('search');
+        this.appShellService.setHeaderIcon('search');
     }
 
     public reOrderMode(): void {

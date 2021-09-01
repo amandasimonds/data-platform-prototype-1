@@ -3,6 +3,9 @@ import { AppShellService } from '../../services/app-shell.service';
 import { navItems } from './navItems';
 import { SearchService } from '../../services/search.service';
 import { ActivatedRoute } from '@angular/router';
+import { takeUntil, tap } from 'rxjs/operators';
+import { NgOnDestroyService } from '../../services/on-destroy.service';
+import { combineLatest } from 'rxjs';
 
 @Component({
     selector: 'prototype-app-main',
@@ -15,8 +18,8 @@ export class MainComponent implements OnInit {
 
     public navlinks = navItems;
     public title = '';
-    public appIcon = '';
-    public activeAppIcon = '';
+    public headerIcon = '';
+    public navActiveIcon = '';
     public compareWarning = false;
     public searchSidebarState = 'hidden';
     public currentApp = '';
@@ -27,29 +30,23 @@ export class MainComponent implements OnInit {
         public appShellService: AppShellService, 
         public searchService: SearchService,
         private ref: ChangeDetectorRef,
-        private route: ActivatedRoute) { 
+        private route: ActivatedRoute,
+        private destroy$: NgOnDestroyService) { 
         }
 
     public ngOnInit(): void {
-        this.appShellService.currentTitle$.subscribe(title => { this.title = title;
-            this.ref.detectChanges();
-        });
-        this.appShellService.currentIcon$.subscribe(icon => { this.appIcon = icon;
-            this.ref.detectChanges();
-        });
-        this.appShellService.currentApp$.subscribe(icon => { this.activeAppIcon = icon;
-            this.ref.detectChanges();
-        });
-        this.searchService.searchState$.subscribe(state => { this.searchSidebarState = state;
-            this.ref.detectChanges();
-        });
-        this.searchService.compareWarning$.subscribe(state => { this.compareWarning = state;
-            this.ref.detectChanges();
-        });
+        combineLatest([
+            this.appShellService.currentAppTitle$.pipe(tap(title => this.title = title)),
+            this.appShellService.currentAppHeaderIcon$.pipe(tap(icon => this.headerIcon = icon)),
+            this.appShellService.currentAppNavIcon$.pipe(tap(icon => this.navActiveIcon = icon)),
+            this.searchService.searchState$.pipe(tap(state => this.searchSidebarState = state)),
+            this.searchService.compareWarning$.pipe(tap(state => this.compareWarning = state))
+        ]).pipe( 
+            // do other things if you want
+            takeUntil(this.destroy$)
+        ).subscribe( () => this.ref.detectChanges());
         this.route.queryParams.subscribe(
-            params => {
-                this.currentApp =  params['app'];
-            }
+            params => { this.currentApp =  params['app'];}
         )
     }
 
@@ -60,13 +57,13 @@ export class MainComponent implements OnInit {
     toggleSearchSidebar() {
         this.searchSidebarState == 'hidden' ? 
             (this.searchService.setSearchSidebarState('visible'),
-            this.appShellService.setActiveAppNav('search')) : 
+            this.appShellService.setNavIcon('search')) : 
             (this.searchService.setSearchSidebarState('hidden'),
-            this.appShellService.setActiveAppNav(this.currentApp));
+            this.appShellService.setNavIcon(this.currentApp));
     }
 
     closeSearchSidebar() {
-            this.searchService.setSearchSidebarState('hidden');
-            this.appShellService.setActiveAppNav(this.currentApp);
+        this.searchService.setSearchSidebarState('hidden');
+        this.appShellService.setNavIcon(this.currentApp);
     }
 }

@@ -6,30 +6,30 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AppShellService {
     public title = new BehaviorSubject<string>('Title');
-    public appIcon = new BehaviorSubject<string>('apps-quad');
-    public activeAppNav = new BehaviorSubject<string>('');
+    public headerIcon = new BehaviorSubject<string>('apps-quad');
+    public navIcon = new BehaviorSubject<string>('');
 
-    public get currentApp$(): Observable<string> {
-        return this.activeAppNav.asObservable();
+    public get currentAppNavIcon$(): Observable<string> {
+        return this.navIcon.asObservable();
     }
 
-    public get currentTitle$(): Observable<string> {
+    public get currentAppTitle$(): Observable<string> {
         return this.title.asObservable();
     }
 
-    public get currentIcon$(): Observable<string> {
-        return this.appIcon.asObservable();
+    public get currentAppHeaderIcon$(): Observable<string> {
+        return this.headerIcon.asObservable();
     }
 
     public setTitle(title: string): void {
         this.title.next(title);
     }
 
-    public setAppIcon(appIcon: string): void {
-        this.appIcon.next(appIcon);
+    public setHeaderIcon(headerIcon: string): void {
+        this.headerIcon.next(headerIcon);
     }
 
-    public setActiveAppNav(appIcon: string): void {
-        this.activeAppNav.next(appIcon);
+    public setNavIcon(navIcon: string): void {
+        this.navIcon.next(navIcon);
     }
 }

@@ -2,7 +2,7 @@
     <div class="uv-ui-shell-header">
         <uvx-header
             [headerText]="title"
-            [icon]="appIcon">
+            [icon]="headerIcon">
 
             <uvx-search-panel mode="global" *ngIf="checkifSearch">
                 <input type="text"
@@ -23,15 +23,15 @@
         <uvx-navbar>
             <span *ngFor="let navlink of navlinks" 
                 class="nav-icon"
-                [class.nav-icon-active]="activeAppIcon === navlink.app">
+                [class.nav-icon-active]="navActiveIcon === navlink.app">
                 <a [routerLink]="navlink.navlink"
-                [queryParams]="{app: navlink.app}"
-                (click)="closeSearchSidebar()">
+                    [queryParams]="{app: navlink.app}"
+                    (click)="closeSearchSidebar()">
                     <img app-icon="app-icon" [src]="navlink.icon">
                 </a>
             </span>
             <span class="nav-icon"
-            [class.nav-icon-active]="activeAppIcon === 'search'">
+            [class.nav-icon-active]="navActiveIcon === 'search'">
                 <a (click)="toggleSearchSidebar()">
                     <img
                     app-icon="app-icon" 
