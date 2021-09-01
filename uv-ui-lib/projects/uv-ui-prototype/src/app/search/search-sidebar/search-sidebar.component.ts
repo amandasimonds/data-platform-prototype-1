@@ -31,7 +31,6 @@ export class SearchSidebarComponent implements OnInit {
     ]
     
     constructor(
-        private backdropService: BackdropService,
         private searchService: SearchService,
         private ref: ChangeDetectorRef,
         private elementRef: ElementRef) {     
@@ -50,8 +49,7 @@ export class SearchSidebarComponent implements OnInit {
     }
 
     activateCompare(value: boolean) {
-        this.compareWarning = value;
-        console.log(this.compareWarning);
+        this.searchService.setCompareWarningState(false);
     }
 
     getCategoryResultsNumber(category: string): number {
@@ -74,14 +72,9 @@ export class SearchSidebarComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(this.searchSidebarState);
-        this.backdropService.setBackdrop(true);
         this.searchResults = this.searchService.getAllSearchResults();
-        this.searchService.searchState$.subscribe(state => {
-            this.searchSidebarState = state;
+        this.searchService.searchState$.subscribe(state => { this.searchSidebarState = state;
             this.ref.detectChanges();
-            console.log(this.searchSidebarState);
         });
-        
     }
 }
