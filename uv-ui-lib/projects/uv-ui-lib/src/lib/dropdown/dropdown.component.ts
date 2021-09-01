@@ -25,7 +25,6 @@ export class DropdownComponent {
 
     @HostListener('document:mouseout', ['$event'])
     mouseOutside(event: any) {
-        console.log('mouseymouse');
         if (!this.elementRef.nativeElement.contains(event.target)) {
             this.open = false;
         }

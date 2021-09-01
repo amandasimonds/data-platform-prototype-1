@@ -13,7 +13,7 @@ export class GlobalWhereUsedComponent implements OnInit{
 
     public ngOnInit(): void {
         this.appShellService.setTitle('Global Where Used');
-        this.appShellService.setAppIcon('apps-gwu');
-        this.appShellService.setActiveAppNav('gwu');
+        this.appShellService.setHeaderIcon('apps-gwu');
+        this.appShellService.setNavIcon('gwu');
     }
 }
