@@ -16,8 +16,7 @@
                 <input type="text"
                     placeholder="Search..."
                     class="uv-input margin-left-xs"
-                    [(ngModel)]="searchText"
-                    >
+                    [(ngModel)]="searchText">
             </uvx-search-panel>
         </div>
         
@@ -45,7 +44,10 @@
     </div>
 
     <div bottom class="search-sidebar-bottom">
-        <h4 class="search-sidebar-bottom-header">{{searchText === '' ? 'Recent Searches' : searchResults.length + ' Results for ' + searchText}}</h4>
+        <h4 class="search-sidebar-bottom-header">
+            {{searchText === '' ? 'Recent Searches' : 
+            searchResults.length + ' Results for ' + searchText}}
+        </h4>
         <app-search-results 
             [category]="searchCategory" 
             [searchText]="searchText">

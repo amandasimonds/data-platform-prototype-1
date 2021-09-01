@@ -1,8 +1,9 @@
 import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
-import { BackdropService } from '../../services/backdrop.service';
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../models/search-result.model';
 import { SlideInOutAnimation } from '../../animations';
+import { takeUntil } from 'rxjs/operators';
+import { NgOnDestroyService } from '../../services/on-destroy.service';
 
 @Component({
     selector: 'app-search-sidebar',
@@ -10,15 +11,15 @@ import { SlideInOutAnimation } from '../../animations';
     styleUrls: ['./search-sidebar.component.scss'],
     animations: [
         SlideInOutAnimation
-      ]
+    ]
 })
 export class SearchSidebarComponent implements OnInit {
 
     @Input() public searchCategory = 'All';
     @Output() public searchCloseEvent = new EventEmitter<string>();
-    searchResults: SearchResult[] = [];
+    @Input() searchResults: SearchResult[] = [];
+    @Input() searchText = '';
     categoryOption: SearchResult[] = [];
-    searchText = '';
     compareWarning = false;
     searchSidebarState = 'hidden';
 
@@ -26,14 +27,14 @@ export class SearchSidebarComponent implements OnInit {
         {name: 'All', icon: 'list-right'},
         {name: 'Requirements', icon: 'list-right'},
         {name: 'Parts', icon: 'parts'}, 
-        {name: 'Documents', icon: 'document'},
-        {name: 'Other', icon: 'more_dots'}
+        {name: 'Documents', icon: 'document'}
     ]
     
     constructor(
         private searchService: SearchService,
         private ref: ChangeDetectorRef,
-        private elementRef: ElementRef) {     
+        private elementRef: ElementRef,
+        private destroy$: NgOnDestroyService) {     
         }
 
         // @HostListener('document:click', ['$event'])
@@ -64,17 +65,26 @@ export class SearchSidebarComponent implements OnInit {
             categoryArray = this.searchResults.filter(item => item.category != 'Requirements' || 'Documents' || 'Parts')
             return categoryArray.length;
         }
-        
     }
 
     closeSearchSidebar(value: string){
         this.searchCloseEvent.emit(value);
     }
 
+    updateResults(e: Event) {
+        this.searchResults = this.searchService.typeAheadSearch(this.searchText);
+    }
+
     ngOnInit(): void {
         this.searchResults = this.searchService.getAllSearchResults();
-        this.searchService.searchState$.subscribe(state => { this.searchSidebarState = state;
-            this.ref.detectChanges();
-        });
+        this.searchService.searchState$
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(state => { this.searchSidebarState = state;
+                this.ref.detectChanges();
+            });
+    }
+
+    ngAfterViewChecked(): void {
+        this.searchResults = this.searchService.typeAheadSearch(this.searchText);
     }
 }

@@ -40,11 +40,12 @@ export class FilterModalComponent implements OnInit {
     // }
 
     ngOnInit(): void {
-        this.filterService.appliedFilters$.subscribe(filters => {
+        this.filterService.appliedFilters$
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(filters => {
             this.appliedFilterList = filters;
             this.ref.detectChanges();
             console.log(filters);
-            takeUntil(this.destroy$);
         })
     }
 
