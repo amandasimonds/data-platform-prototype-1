@@ -9,7 +9,7 @@ import { recentSearches } from './sample-search-results/recent-searches';
   styleUrls: ['./search-results.component.scss', '../search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchResultsComponent implements OnInit {
+export class SearchResultsComponent {
 
     @Input() public searchResults: SearchResult[] = [];
     @Input() public category = '';
@@ -24,10 +24,6 @@ export class SearchResultsComponent implements OnInit {
     constructor(private searchService: SearchService) {
         // this.searchResults = this.searchService.allSearchResults;
         // this.searchResults = this.searchService.typeAheadSearch(this.searchText);
-    }
-
-    ngOnInit() {
-        console.log('search results', this.searchResults);
     }
 
     ngOnChanges(): void {

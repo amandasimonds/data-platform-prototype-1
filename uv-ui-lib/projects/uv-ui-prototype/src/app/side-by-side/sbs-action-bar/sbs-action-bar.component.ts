@@ -58,15 +58,17 @@ export class SbsActionBarComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.sbsService.sourceDocumentsList$.subscribe(sourceDocs => {
+        this.sbsService.sourceDocumentsList$
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(sourceDocs => {
             this.sourceDocumentsList = sourceDocs;
             this.ref.detectChanges();
-            takeUntil(this.destroy$);
         })
-        this.sbsService.selectedTargetDocuments$.subscribe(targetDocs => {
+        this.sbsService.selectedTargetDocuments$
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(targetDocs => {
             this.selectedTargetDocuments = targetDocs;
             this.ref.detectChanges();
-            takeUntil(this.destroy$);
         })
     }
 }
