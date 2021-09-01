@@ -32,10 +32,11 @@ export class TargetDocumentComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.sbsService.selectedTargetDocuments$.subscribe(targetDocs => {
+        this.sbsService.selectedTargetDocuments$
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(targetDocs => {
             this.selectedTargetDocuments = targetDocs;
             this.ref.detectChanges();
-            takeUntil(this.destroy$);
         })
     }
 }
