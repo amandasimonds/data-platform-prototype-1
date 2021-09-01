@@ -13,8 +13,8 @@ export class SettingsComponent implements OnInit {
 
     public ngOnInit(): void {
         this.appShellService.setTitle('Settings');
-        this.appShellService.setAppIcon('apps-settings');
-        this.appShellService.setActiveAppNav('settings');
+        this.appShellService.setHeaderIcon('apps-settings');
+        this.appShellService.setNavIcon('settings');
     }
 
 }
