@@ -1,35 +1,32 @@
 export const recentSearches = 
 [
     {
-        title: 'Lorem ipsum dolor sit amet consectetur',
+        category: 'Parts',
+        title: 'EXH-SU-5110-B1',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+        active: false,
         date: 'Today at 08:45 PM'
     },
     {
-        title: 'Dolor sit amet consectetur',
+        category: 'Parts',
+        title: 'EXH-A-SU-5110-B2',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+        active: false,
         date: 'Today at 08:42 PM'
     },
     {
-        title: 'EXH',
+        category: 'Parts',
+        title: 'EXH-B-SU-5110-B1',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+        active: false,
         date: 'Yesterday at 04:21 PM'
     },
+
     {
-        title: 'EXH 210349',
-        date: '21 June at 04:21 PM'
-    },
-    {
-        title: 'EXH 210251',
+        category: 'Parts',
+        title: 'EXH-C-SU-5110-B2',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+        active: false,
         date: '21 June at 02:15 PM'
-    },
-    {
-        title: 'Dolor sit consectetur',
-        date: '21 June at 02:13 PM'
-    },
-    {
-        title: 'Lorem ipsum dolor sit amet consectetur',
-        date: '19 June at 04:21 PM'
-    },
-    {
-        title: 'Lorem ipsum dolor sit amet consectetur',
-        date: '19 June at 01:12 PM'
     },
 ]
