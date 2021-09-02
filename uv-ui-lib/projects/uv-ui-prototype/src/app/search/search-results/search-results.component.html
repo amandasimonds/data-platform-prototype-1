@@ -10,7 +10,7 @@
         <div class="flex justify-content-space-between align-content-center align-items-center">
             <h5 class="margin-bottom-xxs">{{item.title}}</h5>
             <uvx-icon-button icon="close" color="primary"
-                (click)="deleteRecentSearch()">
+                (click)="deleteRecentSearch(item.date)">
             </uvx-icon-button>
         </div>
             <p class="uv-label-sbs-secondary">{{item.date}}</p>
