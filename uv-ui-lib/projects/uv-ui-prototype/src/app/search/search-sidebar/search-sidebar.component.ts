@@ -18,6 +18,7 @@ export class SearchSidebarComponent implements OnInit {
     @Input() public searchCategory = 'All';
     @Output() public searchCloseEvent = new EventEmitter<string>();
     @Input() searchResults: SearchResult[] = [];
+    recentSearches: SearchResult[] = [];
     @Input() searchText = '';
     categoryOption: SearchResult[] = [];
     compareWarning = false;
@@ -54,18 +55,20 @@ export class SearchSidebarComponent implements OnInit {
     }
 
     getCategoryResultsNumber(category: string): number {
-        let categoryArray = []
+        let results: SearchResult[] = []
+        this.searchText === '' ? results = this.recentSearches : results = this.searchResults;
         if (category === 'All') {
-            return this.searchResults.length
+            return results.length
         }
         if(category === 'Requirements' || 'Documents' || 'Parts') {
-            categoryArray = this.searchResults.filter(item => item.category === category)
-            return categoryArray.length;
+            results = results.filter(item => item.category === category)
+            return results.length;
         } else {
-            categoryArray = this.searchResults.filter(item => item.category != 'Requirements' || 'Documents' || 'Parts')
-            return categoryArray.length;
+            results = results.filter(item => item.category != 'Requirements' || 'Documents' || 'Parts')
+            return results.length;
         }
     }
+
 
     closeSearchSidebar(value: string){
         this.searchCloseEvent.emit(value);
@@ -79,7 +82,8 @@ export class SearchSidebarComponent implements OnInit {
         this.searchText = item;
     }
 
-    ngOnInit(): void {
+    ngOnInit(): void {  
+        this.recentSearches = this.searchService.getRecentSearches();
         this.searchResults = this.searchService.getAllSearchResults();
         this.searchService.searchState$
             .pipe(takeUntil(this.destroy$))

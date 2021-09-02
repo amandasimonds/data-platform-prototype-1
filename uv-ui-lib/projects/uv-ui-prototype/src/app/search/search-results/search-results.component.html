@@ -5,7 +5,7 @@
         [ngClass]="classes" 
         (mouseleave)="mouseLeaveClass()"
         (click)="searchRecent(item.title)"
-        *ngFor="let item of recentSearches">
+        *ngFor="let item of recentSearches | filterResults: category">
             
         <div class="flex justify-content-space-between align-content-center align-items-center">
             <h5 class="margin-bottom-xxs">{{item.title}}</h5>
@@ -18,12 +18,14 @@
     </div>
 
     <div *ngIf="searchText != ''">
-        <div class="search-result" *ngFor="let item of searchResults | filterResults: category">
+        <div class="search-result"
+         *ngFor="let item of searchResults | filterResults: category">
             
                 <div class="search-result-tool-menu">
                     <uvx-icon-button icon="compare" 
-                    (click)="compareClicked(true, item.title)"
-                    class="margin-left-xxs padding-xxs"></uvx-icon-button>
+                        (click)="compareClicked(true, item)"
+                        class="margin-left-xxs padding-xxs">
+                    </uvx-icon-button>
                     <uvx-icon-button icon="apps-gwu" class="padding-xxs"></uvx-icon-button>
                     <uvx-icon-button icon="apps-design-ripple" class="padding-xxs"></uvx-icon-button>
                     <div style="height: 16px; margin: 0 8px;" class="divider-left"></div>

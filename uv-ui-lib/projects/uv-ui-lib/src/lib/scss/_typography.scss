@@ -130,6 +130,8 @@ ul, ol {
     font-size: var(--uv-font-size-sm);
     font-family: inherit;
     border: none;
+    height: 100%;
+    width: 100%;
 
         &:focus,
         &:invalid {

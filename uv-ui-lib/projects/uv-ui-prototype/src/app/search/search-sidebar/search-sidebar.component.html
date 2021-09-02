@@ -16,6 +16,7 @@
                 <input type="text"
                     placeholder="Search..."
                     class="uv-input margin-left-xs"
+                    maxlength="40"
                     [(ngModel)]="searchText">
             </uvx-search-panel>
         </div>
@@ -33,7 +34,8 @@
             
             <span options *ngFor="let item of categories"
             class="custom-option flex justify-content-space-between" 
-            (click)="selectCategory(item.name)">
+            (click)="selectCategory(item.name)"
+            [class.no-display]="getCategoryResultsNumber(item.name) < 1">
                 <div class="flex align-items-center">
                     <uvx-icon icon={{item.icon}} class="margin-right-xs"></uvx-icon>
                     {{item.name}}

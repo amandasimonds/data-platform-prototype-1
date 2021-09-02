@@ -6,6 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 export class SearchService {
     public allSearchResults: SearchResult[] = allSearchResults;
+    public recentSearchResults: SearchResult[] = [];
     public searchSidebarState = new BehaviorSubject<string>('hidden');
     public compareWarningState = new BehaviorSubject<boolean>(false);
 
@@ -25,10 +26,28 @@ export class SearchService {
         this.compareWarningState.next(state);
     }
 
-    public getAllSearchResults(): SearchResult[]{
+    public getAllSearchResults(): SearchResult[] {
         return this.allSearchResults.slice();
     }
 
+    public addToRecentSearches(key: string, item: SearchResult) {
+        item.date = new Date().toString();
+        console.log(item);
+        localStorage.setItem(key, JSON.stringify(item));
+    }
+
+    public getRecentSearches() {
+        var values = [],
+        keys = Object.keys(localStorage).filter(item => item.includes('search')),
+        i = keys.length;
+
+        while ( i-- ) {
+            values.push( JSON.parse(localStorage.getItem(keys[i])) );
+        }
+        console.log(values);
+        this.recentSearchResults = values;
+        return this.recentSearchResults.slice();
+    }
 
     // public getData() {
     //     var data = [...configurationsData, ...partsData];
@@ -40,7 +59,6 @@ export class SearchService {
         results = results.filter(item => 
             item.title.toLowerCase().includes(input.toLowerCase())
         );
-
         return results;
     }
 }

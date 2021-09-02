@@ -14,7 +14,7 @@ import { DEFAULT_SEARCH_MENU_STATE } from './models/search-results-state';
 export class SearchComponent implements OnInit {
 
     public searchItemsArray: SearchResult[] = [];
-    public searchItem: SearchResult = {category: '', title: '', description: ''};
+    public searchItem: SearchResult = {category: '', title: '', description: '', date: ''};
     public searchCategory = '';
     public showContent = false;
     public searchTabs: MenuTab[] = DEFAULT_SEARCH_MENU_STATE.menuTabs;
