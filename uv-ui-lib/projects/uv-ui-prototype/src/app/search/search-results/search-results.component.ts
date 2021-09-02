@@ -15,7 +15,7 @@ export class SearchResultsComponent {
     @Input() public category = '';
     @Input() public searchText = '';
     @Output() public recentSearchClick = new EventEmitter<string>();
-    public recentSearches = recentSearches;
+    public recentSearches: SearchResult[] = [];
     public showToolbar = false;
     public classes: string[] = [];
 
@@ -24,8 +24,10 @@ export class SearchResultsComponent {
         console.log('mouseleave');
     }
 
-    compareClicked(value: boolean, data: string) {
-        this.searchService.setCompareWarningState(true)
+    compareClicked(value: boolean, item: SearchResult) {
+        this.searchService.setCompareWarningState(value);
+        let now = new Date().toString();
+        this.searchService.addToRecentSearches('search '+ now, item);
     }
 
     searchRecent(item: string) {
@@ -41,8 +43,13 @@ export class SearchResultsComponent {
         // this.searchResults = this.searchService.typeAheadSearch(this.searchText);
     }
 
+    ngOnInit(): void {
+        this.recentSearches = this.searchService.getRecentSearches();
+    }
+
     ngOnChanges(): void {
         console.log('search results', this.searchResults);
         this.searchResults = this.searchService.typeAheadSearch(this.searchText);
+        this.recentSearches = this.searchService.getRecentSearches();
     }
 }

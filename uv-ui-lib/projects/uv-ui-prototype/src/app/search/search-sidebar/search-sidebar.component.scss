@@ -13,13 +13,20 @@
 
         &-header {
             position: sticky; 
-            padding: 32px 4px 40px 32px;
+            padding: 32px 32px 40px 32px;
             top: 0; 
             background-color: var(--uv-color-white);
             height: 50px;
             display: block;
             z-index: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 }
+
+// .no-display {
+//     display: none;
+// }
 
