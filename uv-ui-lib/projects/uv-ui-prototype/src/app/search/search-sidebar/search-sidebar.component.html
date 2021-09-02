@@ -50,7 +50,8 @@
         </h4>
         <app-search-results 
             [category]="searchCategory" 
-            [searchText]="searchText">
+            [searchText]="searchText"
+            (recentSearchClick)="searchRecentSearch($event)">
         </app-search-results>
     </div>
 </uvx-side-panel>

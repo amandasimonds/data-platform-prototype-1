@@ -50,7 +50,7 @@ export class SearchSidebarComponent implements OnInit {
     }
 
     activateCompare(value: boolean) {
-        this.searchService.setCompareWarningState(false);
+        this.searchService.setCompareWarningState(value);
     }
 
     getCategoryResultsNumber(category: string): number {
@@ -73,6 +73,10 @@ export class SearchSidebarComponent implements OnInit {
 
     updateResults(e: Event) {
         this.searchResults = this.searchService.typeAheadSearch(this.searchText);
+    }
+
+    searchRecentSearch(item: string){
+        this.searchText = item;
     }
 
     ngOnInit(): void {

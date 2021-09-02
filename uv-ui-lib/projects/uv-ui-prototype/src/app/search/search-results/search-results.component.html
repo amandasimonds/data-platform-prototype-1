@@ -1,20 +1,18 @@
 <div class="documents flex flex-column">
 
     <div *ngIf="searchText === ''">
-        <div class="search-result" 
+        <div class="search-result"
+        [ngClass]="classes" 
+        (mouseleave)="mouseLeaveClass()"
+        (click)="searchRecent(item.title)"
         *ngFor="let item of recentSearches">
-
-            <div class="search-result-tool-menu">
-                <uvx-icon-button icon="compare" 
-                (click)="compareClicked(true)"
-                class="margin-left-xxs padding-xxs"></uvx-icon-button>
-                <uvx-icon-button icon="apps-gwu" class="padding-xxs"></uvx-icon-button>
-                <uvx-icon-button icon="apps-design-ripple" class="padding-xxs"></uvx-icon-button>
-                <div style="height: 16px; margin: 0 8px;" class="divider-left"></div>
-                <uvx-icon-button icon="more_dots" class="padding-xxs margin-right-xxs" ></uvx-icon-button>
-            </div>
             
+        <div class="flex justify-content-space-between align-content-center align-items-center">
             <h5 class="margin-bottom-xxs">{{item.title}}</h5>
+            <uvx-icon-button icon="close" color="primary"
+                (click)="deleteRecentSearch()">
+            </uvx-icon-button>
+        </div>
             <p class="uv-label-sbs-secondary">{{item.date}}</p>
         </div>
     </div>
@@ -24,7 +22,7 @@
             
                 <div class="search-result-tool-menu">
                     <uvx-icon-button icon="compare" 
-                    (click)="compareClicked(true)"
+                    (click)="compareClicked(true, item.title)"
                     class="margin-left-xxs padding-xxs"></uvx-icon-button>
                     <uvx-icon-button icon="apps-gwu" class="padding-xxs"></uvx-icon-button>
                     <uvx-icon-button icon="apps-design-ripple" class="padding-xxs"></uvx-icon-button>

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { SearchResult } from '../models/search-result.model';
 import { SearchService } from '../../services/search.service';
 import { recentSearches } from './sample-search-results/recent-searches';
@@ -14,11 +14,26 @@ export class SearchResultsComponent {
     @Input() public searchResults: SearchResult[] = [];
     @Input() public category = '';
     @Input() public searchText = '';
+    @Output() public recentSearchClick = new EventEmitter<string>();
     public recentSearches = recentSearches;
     public showToolbar = false;
+    public classes: string[] = [];
 
-    compareClicked(value: boolean) {
-        this.searchService.setCompareWarningState(true);
+    mouseLeaveClass(){
+        this.classes.push('mouseleave')
+        console.log('mouseleave');
+    }
+
+    compareClicked(value: boolean, data: string) {
+        this.searchService.setCompareWarningState(true)
+    }
+
+    searchRecent(item: string) {
+        this.recentSearchClick.emit(item);
+    }
+
+    deleteRecentSearch() {
+
     }
 
     constructor(private searchService: SearchService) {
