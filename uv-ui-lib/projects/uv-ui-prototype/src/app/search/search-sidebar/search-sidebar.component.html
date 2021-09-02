@@ -46,10 +46,10 @@
     </div>
 
     <div bottom class="search-sidebar-bottom">
-        <h4 class="search-sidebar-bottom-header">
+        <p class="search-sidebar-bottom-header">
             {{searchText === '' ? 'Recent Searches' : 
             searchResults.length + ' Results for ' + searchText}}
-        </h4>
+        </p>
         <app-search-results 
             [category]="searchCategory" 
             [searchText]="searchText"

@@ -34,8 +34,9 @@ export class SearchResultsComponent {
         this.recentSearchClick.emit(item);
     }
 
-    deleteRecentSearch() {
-
+    deleteRecentSearch(date: string) {
+        localStorage.removeItem('search ' + date);
+        this.recentSearches = this.searchService.getRecentSearches();
     }
 
     constructor(private searchService: SearchService) {
