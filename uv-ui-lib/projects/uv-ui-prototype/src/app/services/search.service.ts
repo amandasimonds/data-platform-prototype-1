@@ -29,6 +29,7 @@ export class SearchService {
         return this.allSearchResults.slice();
     }
 
+
     // public getData() {
     //     var data = [...configurationsData, ...partsData];
     //     console.log(data);
