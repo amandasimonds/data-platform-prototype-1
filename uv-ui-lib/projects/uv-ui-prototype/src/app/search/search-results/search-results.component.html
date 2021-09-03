@@ -1,40 +1,30 @@
-<div class="documents flex flex-column">
+<div class="documents flex flex-column" (mouseleave)="mouseLeaveClassRemove()">
 
-    <div *ngIf="searchText === ''">
         <div class="search-result"
-        [ngClass]="classes" 
         (mouseleave)="mouseLeaveClass()"
-        (click)="searchRecent(item.title)"
-        *ngFor="let item of recentSearches | filterResults: category">
+        (click)="searchText === '' && searchRecent(item.title)"
+        [ngClass]="classes" 
+         *ngFor="let item of ( searchText === '' ? (recentSearches | filterResults: category) : searchResults | filterResults: category )">
             
-        <div class="flex justify-content-space-between align-content-center align-items-center">
-            <h5 class="margin-bottom-xxs">{{item.title}}</h5>
-            <uvx-icon-button icon="close" color="primary"
-                (click)="deleteRecentSearch(item.date)">
-            </uvx-icon-button>
+            <div *ngIf="searchText != ''" class="search-result-tool-menu">
+                <uvx-icon-button icon="compare" 
+                    (click)="compareClicked(true, item)"
+                    class="margin-left-xxs padding-xxs">
+                </uvx-icon-button>
+                <uvx-icon-button icon="apps-gwu" class="padding-xxs"></uvx-icon-button>
+                <uvx-icon-button icon="apps-design-ripple" class="padding-xxs"></uvx-icon-button>
+                <div style="height: 16px; margin: 0 8px;" class="divider-left"></div>
+                <uvx-icon-button icon="more_dots" class="padding-xxs margin-right-xxs" ></uvx-icon-button>
+            </div>
+            
+            <div class="flex justify-content-space-between align-content-center align-items-center">
+                <h5 class="margin-bottom-xxs">{{item.title}}</h5>
+                <uvx-icon-button *ngIf="searchText === ''" icon="close" color="primary"
+                    (click)="deleteRecentSearch(item.date)">
+                </uvx-icon-button>
+            </div>
+            <p class="uv-body" *ngIf="searchText != ''">{{item.description}}</p>
+            <p class="uv-label-sbs-secondary" *ngIf="searchText === ''">{{item.date}}</p>
         </div>
-            <p class="uv-label-sbs-secondary">{{item.date}}</p>
-        </div>
+        
     </div>
-
-    <div *ngIf="searchText != ''">
-        <div class="search-result"
-         *ngFor="let item of searchResults | filterResults: category">
-            
-                <div class="search-result-tool-menu">
-                    <uvx-icon-button icon="compare" 
-                        (click)="compareClicked(true, item)"
-                        class="margin-left-xxs padding-xxs">
-                    </uvx-icon-button>
-                    <uvx-icon-button icon="apps-gwu" class="padding-xxs"></uvx-icon-button>
-                    <uvx-icon-button icon="apps-design-ripple" class="padding-xxs"></uvx-icon-button>
-                    <div style="height: 16px; margin: 0 8px;" class="divider-left"></div>
-                    <uvx-icon-button icon="more_dots" class="padding-xxs margin-right-xxs" ></uvx-icon-button>
-                </div>
-            
-            <h5 class="margin-bottom-xxs">{{item.title}}</h5>
-            <p class="uv-body">{{item.description}}</p>
-        </div>
-    </div>
-
-</div>

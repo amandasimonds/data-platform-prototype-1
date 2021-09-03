@@ -1,7 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { SearchResult } from '../models/search-result.model';
 import { SearchService } from '../../services/search.service';
-import { recentSearches } from './sample-search-results/recent-searches';
 
 @Component({
   selector: 'app-search-results',
@@ -21,13 +20,16 @@ export class SearchResultsComponent {
 
     mouseLeaveClass(){
         this.classes.push('mouseleave')
-        console.log('mouseleave');
+    }
+
+    mouseLeaveClassRemove(){
+        this.classes.splice(0 , 1);
     }
 
     compareClicked(value: boolean, item: SearchResult) {
-        this.searchService.setCompareWarningState(value);
         let now = new Date().toString();
         this.searchService.addToRecentSearches('search '+ now, item);
+        this.searchService.setCompareWarningState(value);
     }
 
     searchRecent(item: string) {
@@ -39,17 +41,13 @@ export class SearchResultsComponent {
         this.recentSearches = this.searchService.getRecentSearches();
     }
 
-    constructor(private searchService: SearchService) {
-        // this.searchResults = this.searchService.allSearchResults;
-        // this.searchResults = this.searchService.typeAheadSearch(this.searchText);
-    }
+    constructor(private searchService: SearchService) {}
 
     ngOnInit(): void {
         this.recentSearches = this.searchService.getRecentSearches();
     }
 
     ngOnChanges(): void {
-        console.log('search results', this.searchResults);
         this.searchResults = this.searchService.typeAheadSearch(this.searchText);
         this.recentSearches = this.searchService.getRecentSearches();
     }

@@ -1,7 +1,5 @@
 import { SearchResult } from '../search/models/search-result.model';
 import { allSearchResults } from '../search/search-results/sample-search-results/allSearchResults';
-import * as configurationsData from '../../sample-data/configurations.json';
-import * as partsData from '../../sample-data/parts.json';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 export class SearchService {
@@ -32,7 +30,6 @@ export class SearchService {
 
     public addToRecentSearches(key: string, item: SearchResult) {
         item.date = new Date().toString();
-        console.log(item);
         localStorage.setItem(key, JSON.stringify(item));
     }
 
@@ -40,19 +37,12 @@ export class SearchService {
         var values = [],
         keys = Object.keys(localStorage).filter(item => item.includes('search')),
         i = keys.length;
-
         while ( i-- ) {
             values.push( JSON.parse(localStorage.getItem(keys[i])) );
         }
-        console.log(values);
         this.recentSearchResults = values;
         return this.recentSearchResults.slice();
     }
-
-    // public getData() {
-    //     var data = [...configurationsData, ...partsData];
-    //     console.log(data);
-    // }
 
     public typeAheadSearch(input: string) {
         let results = this.allSearchResults.slice();
