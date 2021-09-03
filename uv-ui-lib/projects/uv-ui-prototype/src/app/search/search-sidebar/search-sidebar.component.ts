@@ -60,15 +60,11 @@ export class SearchSidebarComponent implements OnInit {
         if (category === 'All') {
             return results.length
         }
-        if(category === 'Requirements' || 'Documents' || 'Parts') {
+        else {
             results = results.filter(item => item.category === category)
-            return results.length;
-        } else {
-            results = results.filter(item => item.category != 'Requirements' || 'Documents' || 'Parts')
             return results.length;
         }
     }
-
 
     closeSearchSidebar(value: string){
         this.searchCloseEvent.emit(value);
@@ -94,5 +90,6 @@ export class SearchSidebarComponent implements OnInit {
 
     ngAfterViewChecked(): void {
         this.searchResults = this.searchService.typeAheadSearch(this.searchText);
+        this.recentSearches = this.searchService.getRecentSearches();
     }
 }

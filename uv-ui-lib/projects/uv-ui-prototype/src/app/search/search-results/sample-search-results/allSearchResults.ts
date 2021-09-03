@@ -13,7 +13,6 @@ export const allSearchResults = [
       active: false,
       date: ''
     },
-
     {
         category: 'Parts',
         title: 'EXH-B-SU-5110-B1',
