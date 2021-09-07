@@ -34,7 +34,14 @@ export class FormPageComponent implements OnInit {
     return !this.stepsService.isLastStep() ? 'Continue' : 'Finish';
   }
 
+  cancelWizard() {
+    this.stepsService.resetWizard();
+    this.router.navigate(['/main/gwu']);
+  }
+
   onSubmit(): void {
-    this.router.navigate(['complete'], {relativeTo: this.route});
+    this.stepsService.resetWizard();
+    //TODO: add logic to save project to project list (use local storage?)
+    this.router.navigate(['/main/gwu']);
   }
 }

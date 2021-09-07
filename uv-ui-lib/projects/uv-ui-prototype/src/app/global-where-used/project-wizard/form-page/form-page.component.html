@@ -1,21 +1,36 @@
-<div class="form-page-container wizard-margin">
-  <app-steps></app-steps>
-<div class="step-page-container">
-  <div class="form-step">
-      <ng-container [ngSwitch]="(currentStep | async)?.stepIndex">
-          <ng-container *ngSwitchCase="'1'">
-              <app-step-template [step]="(currentStep | async)"></app-step-template>
-          </ng-container>
-          <ng-container *ngSwitchCase="'2'">
-            <app-step-template [step]="(currentStep | async)"></app-step-template>
-          </ng-container>
-          <ng-container *ngSwitchCase="'3'">
-            <app-step-template [step]="(currentStep | async)"></app-step-template>
-          </ng-container>
-      </ng-container>
-  </div>
-</div>
-<button (click)="onNextStep()" [disabled]="!(currentStep | async)?.isComplete" class="form-continue-btn">
-  {{ showButtonLabel() }}
-</button>
+<div class="form-page-container">
+
+    <div class="form-page-container-top">
+        <app-steps></app-steps>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="form-page-container-middle">
+        <div class="form-step">
+            <ng-container [ngSwitch]="(currentStep | async)?.stepIndex">
+                <ng-container *ngSwitchCase="'1'">
+                    <app-step-template [step]="(currentStep | async)"></app-step-template>
+                </ng-container>
+                <ng-container *ngSwitchCase="'2'">
+                    <app-step-template [step]="(currentStep | async)"></app-step-template>
+                </ng-container>
+                <ng-container *ngSwitchCase="'3'">
+                    <app-step-template [step]="(currentStep | async)"></app-step-template>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="form-page-container-bottom flex justify-content-flex-end align-items-center">
+        <uvx-button label="Cancel" color="gray" class="margin-right-sm" 
+        (click)="cancelWizard()"></uvx-button>
+        <uvx-button 
+        (click)="onNextStep()" [disabled]="!(currentStep | async)?.isComplete" 
+        mode="primary"
+        [label]="showButtonLabel()">
+        </uvx-button>
+    </div>
 </div>
