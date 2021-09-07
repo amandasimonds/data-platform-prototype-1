@@ -1,5 +1,8 @@
-<h5 class="margin-bottom-xs">Create a new project</h5>
-<div class="form-steps-container">
+<div class="flex justify-content-space-between align-items-center">
+    <h4>Create a New Project</h4>
+    <uvx-icon-button icon="close" size="md" color="gray" (click)="cancelWizard()"></uvx-icon-button>
+</div>
+<div class="form-steps-container margin-top-sm">
   <ng-container *ngFor="let step of steps | async; let i = index;">
       <div (click)="onStepClick(step)"
           [ngClass]="{

@@ -32,10 +32,18 @@ export class StepsService {
 
   moveToNextStep(): void {
     const index = this.currentStep$.value.stepIndex;
+    console.log(index, this.currentStep$.value);
 
     if (index < this.steps$.value.length) {
       this.currentStep$.next(this.steps$.value[index]);
     }
+
+    console.log(index, this.currentStep$.value);
+  }
+
+  resetWizard() {
+    console.log('resetwizard');
+    this.setCurrentStep(this.steps$.value[0]);
   }
 
   isLastStep(): boolean {

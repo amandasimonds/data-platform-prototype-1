@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { StepModel } from '../../../models/step.model';
 import { StepsService } from '../../../services/steps.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-steps',
@@ -14,7 +15,7 @@ export class StepsComponent implements OnInit {
   steps: Observable<StepModel[]>;
   currentStep: Observable<StepModel>;
 
-  constructor(private stepsService: StepsService) { }
+  constructor(private stepsService: StepsService, private router: Router) { }
 
   ngOnInit(): void {
     this.steps = this.stepsService.getSteps();
@@ -23,5 +24,10 @@ export class StepsComponent implements OnInit {
 
   onStepClick(step: StepModel) {
     this.stepsService.setCurrentStep(step);
+  }
+
+  cancelWizard() {
+    this.stepsService.resetWizard();
+    this.router.navigate(['/main/gwu']);
   }
 }

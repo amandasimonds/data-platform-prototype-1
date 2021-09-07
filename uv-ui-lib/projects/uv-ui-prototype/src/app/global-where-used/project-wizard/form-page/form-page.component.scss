@@ -1,25 +1,15 @@
 .form-page-container {
     flex-direction: column;
-    margin: 28px 32px;
-}
 
-.step-page-container {
-    flex: 1;
-    margin: 0px 32px;
-}
+    &-top {
+        padding: 32px;
+    }
 
-.form-continue-btn {
-    color: white;
-    background: var(--uv-color-primary);
-    padding: 20px;
-    border-radius: 50px;
-    font-size: 1.15em;
-    cursor: pointer;
-    border: none !important;
-    margin: 32px;
+    &-middle {
+        padding: 32px;
+    }
 
-    &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed !important;
+    &-bottom {
+        padding: 32px;
     }
 }
