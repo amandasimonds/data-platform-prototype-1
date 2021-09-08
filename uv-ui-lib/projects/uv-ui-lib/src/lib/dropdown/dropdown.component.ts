@@ -23,12 +23,12 @@ export class DropdownComponent {
         }
     }
 
-    @HostListener('document:mouseout', ['$event'])
-    mouseOutside(event: any) {
-        if (!this.elementRef.nativeElement.contains(event.target)) {
-            this.open = false;
-        }
-    }
+    // @HostListener('document:mouseout', ['$event'])
+    // mouseOutside(event: any) {
+    //     if (!this.elementRef.nativeElement.contains(event.target)) {
+    //         this.open = false;
+    //     }
+    // }
 
     public toggle() {
        this.open = !this.open

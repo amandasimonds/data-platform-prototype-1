@@ -34,6 +34,7 @@ export class SearchResultsComponent {
 
     searchRecent(item: string) {
         this.recentSearchClick.emit(item);
+        this.searchService.addToRecentSearches('search '+ item, {title: item});
     }
 
     deleteRecentSearch(title: string) {
