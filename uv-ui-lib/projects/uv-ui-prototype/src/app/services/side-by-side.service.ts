@@ -19,15 +19,15 @@ export class SidebySideService {
 
     @Output() sourceDocumentSelected = new EventEmitter<boolean>();
 
-    public getTargetDocuments(): ISbsTargetDocument[]{
+    public getTargetDocuments(): ISbsTargetDocument[] {
         return this.targetDocuments.slice();
     }
 
-    public getSourceDocuments(): ISbsSourceDocument[]{
+    public getSourceDocuments(): ISbsSourceDocument[] {
         return this.sourceDocuments.slice();
     }
 
-    public selectSourceDocument(document: ISbsSourceDocument, i: number){
+    public selectSourceDocument(document: ISbsSourceDocument, i: number) {
         document.active = !document.active;
         let sourceDocsList: ISbsSourceDocument[] = [];
         const exceptIndex = i;
@@ -48,7 +48,7 @@ export class SidebySideService {
         this.sourceDocumentSelectedEvent.next(sourceDocsList);
     }
 
-    public selectTargetDocument(document: ISbsTargetDocument){
+    public selectTargetDocument(document: ISbsTargetDocument) {
         const selectedTargetDocs = [...this.targetDocumentSelectedEvent.value, document].filter(item => item.active === true);
         this.targetDocumentSelectedEvent.next(selectedTargetDocs);
     }

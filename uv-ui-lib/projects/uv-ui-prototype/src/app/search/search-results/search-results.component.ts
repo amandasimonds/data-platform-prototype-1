@@ -26,9 +26,9 @@ export class SearchResultsComponent {
         this.classes.splice(0 , 1);
     }
 
-    compareClicked(value: boolean, item: SearchResult) {
-        let now = new Date().toString();
-        this.searchService.addToRecentSearches('search '+ now, item);
+    compareClicked(value: boolean, item: SearchResult, i: number) {
+        this.searchService.addToRecentSearches('search '+ item.title, item);
+        this.searchService.selectResult(item, i)
         this.searchService.setCompareWarningState(value);
     }
 
@@ -36,8 +36,8 @@ export class SearchResultsComponent {
         this.recentSearchClick.emit(item);
     }
 
-    deleteRecentSearch(date: string) {
-        localStorage.removeItem('search ' + date);
+    deleteRecentSearch(title: string) {
+        localStorage.removeItem('search ' + title);
         this.recentSearches = this.searchService.getRecentSearches();
     }
 
