@@ -1,5 +1,5 @@
-<uvx-side-panel mode="scroll" class="search-sidebar" [@slideInOut]="searchSidebarState">
-    <div top class="search-sidebar-top">
+<div class="search-sidebar" [@slideInOut]="searchSidebarState">
+    <div class="search-sidebar-top">
         <div class="flex align-items-center justify-content-space-between  margin-bottom-sm">
             <div class="flex align-items-center">
                 <uvx-icon icon="search" color="gray" class="margin-right-xxs"></uvx-icon>
@@ -9,7 +9,7 @@
             icon="close" 
             color="gray" 
             size="md"
-            (click)="closeSearchSidebar('hidden')"></uvx-icon-button>
+            (click)="onCloseSearchSidebar('hidden', searchText)"></uvx-icon-button>
         </div>
         <div class="margin-bottom-sm">
             <uvx-search-panel mode="component-border" (searchCloseClicked)="searchText = ''">
@@ -45,15 +45,19 @@
         </uvx-dropdown>
     </div>
 
-    <div bottom class="search-sidebar-bottom">
-        <p class="search-sidebar-bottom-header">
-            {{searchText === '' ? 'Recent Searches' : 
-            searchResults.length + ' Results for ' + searchText}}
-        </p>
-        <app-search-results 
-            [category]="searchCategory" 
-            [searchText]="searchText"
-            (recentSearchClick)="searchRecentSearch($event)">
-        </app-search-results>
+    <div class="divider"></div>
+
+    <div class="search-sidebar-bottom">
+        <div class="search-sidebar-bottom-scroll">
+            <p class="search-sidebar-bottom-scroll-header">
+                {{searchText === '' ? 'Recent Searches' : 
+                searchResults.length + ' Results for ' + searchText}}
+            </p>
+            <app-search-results 
+                [category]="searchCategory" 
+                [searchText]="searchText"
+                (recentSearchClick)="searchRecentSearch($event)">
+            </app-search-results>
+        </div>
     </div>
-</uvx-side-panel>
+</div>

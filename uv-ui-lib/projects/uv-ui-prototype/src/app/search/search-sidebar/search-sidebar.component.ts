@@ -66,8 +66,10 @@ export class SearchSidebarComponent implements OnInit {
         }
     }
 
-    closeSearchSidebar(value: string){
+    onCloseSearchSidebar(value: string, item: string){
+        this.searchService.addToRecentSearches('search '+ item, {title: item});
         this.searchCloseEvent.emit(value);
+        this.searchText = '';
     }
 
     updateResults(e: Event) {

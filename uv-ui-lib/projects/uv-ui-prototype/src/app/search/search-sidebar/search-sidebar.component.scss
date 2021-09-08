@@ -8,20 +8,33 @@
     animation-duration: .6s;
     animation-timing-function: ease-in-out;
     width: 431px;
+    background-color: var(--uv-color-white);
+
+    &-top {
+        padding: 24px;
+    }
 
     &-bottom {
+        padding-right:4px;
+        height: 100%;
 
-        &-header {
-            position: sticky; 
-            padding: 32px 32px 40px 32px;
-            top: 0; 
-            background-color: var(--uv-color-white);
-            height: 50px;
-            display: block;
-            z-index: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        &-scroll {
+            overflow: auto;
+            height: calc(100% - 230px);
+
+            &-header {
+                position: sticky; 
+                padding: 32px 32px 40px 32px;
+                top: 0; 
+                background-color: var(--uv-color-white);
+                height: 50px;
+                display: block;
+                z-index: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+            }
         }
     }
 }
