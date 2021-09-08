@@ -23,6 +23,7 @@ export class MainComponent implements OnInit {
     public compareWarning = false;
     public searchSidebarState = 'hidden';
     public currentApp = '';
+    public selectedItem = '';
 
     @Input() public searchQuery = '';
 

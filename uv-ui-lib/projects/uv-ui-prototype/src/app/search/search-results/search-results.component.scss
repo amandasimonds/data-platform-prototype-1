@@ -7,7 +7,7 @@
 
     &:hover {
         .search-result:not(:hover) {
-            transition: 2s;
+            transition: ease-out 1s;
             opacity: .3;
         }
     }
@@ -26,7 +26,24 @@
         opacity: 0;
     }
 
-    &:hover, &-selected {
+    &-disabled {
+        opacity: .3;
+    }
+
+    &-selected {
+        opacity: 1;
+        background-color: var(--uv-color-gray-light);
+
+        h5 {
+            color: var(--uv-color-primary);
+        }
+
+        uvx-icon-button {
+            opacity: 1;
+        }
+    }
+
+    &:hover {
         opacity: 1;
         cursor: pointer;
         background-color: var(--uv-color-gray-light);
