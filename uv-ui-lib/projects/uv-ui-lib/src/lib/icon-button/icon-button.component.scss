@@ -66,6 +66,14 @@
     }
 }
 
+.help {
+    color: var(--uv-color-help);
+
+    &:hover {
+        color: var(--uv-color-help-active);
+    }
+}
+
 .disabled {
     color: var(--uv-svg-color-gray);
     cursor: not-allowed;

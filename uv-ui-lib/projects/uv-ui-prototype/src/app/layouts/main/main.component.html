@@ -2,7 +2,8 @@
     <div class="uv-ui-shell-header">
         <uvx-header
             [headerText]="title"
-            [icon]="headerIcon">
+            [icon]="headerIcon"
+            [uvHighlight]="currentHighlight === 'header'">
 
             <uvx-search-panel mode="global" *ngIf="checkifSearch">
                 <input type="text"
@@ -10,11 +11,19 @@
                 class="uv-input margin-left-xs">
             </uvx-search-panel>
 
+            <div *ngIf="currentUser.new === true">
+                <uvx-icon-button 
+                    color='help' 
+                    icon="lightbulb"
+                    (click)="toggleUvLight()">
+                </uvx-icon-button>
+            </div>
+
             <uvx-icon-button 
                 color='primary' 
                 icon="profile" 
                 class="margin-left-sm margin-right-sm">
-            </uvx-icon-button>
+            </uvx-icon-button>    
 
         </uvx-header>
     </div>
@@ -44,12 +53,19 @@
     <div class="uv-ui-shell-content">
         <router-outlet></router-outlet>
     </div>
+    
     <uvx-backdrop 
-        [backdropState]="searchSidebarState" 
+    [backdropState]="uvLight ? 'visible' : searchSidebarState"
         [mode]="compareWarning ? 'popup' : ''">
     </uvx-backdrop>
     <app-search-sidebar (searchCloseEvent)="toggleSearchSidebar()"></app-search-sidebar>
     <app-compare-warning *ngIf="compareWarning" 
         (closeCompareWarning)="compareWarning = false">
     </app-compare-warning>
+
+    <app-uv-light *ngIf="uvLight" (uvLightToggle)="toggleUvLight()"
+    ></app-uv-light>
+
+    
+
 </div>

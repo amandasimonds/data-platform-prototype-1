@@ -1,0 +1,11 @@
+.uv-light-modal {
+    position: absolute;
+    z-index: 999999;
+    background-color: var(--uv-color-white);
+    width: 238px;
+    top: 32px;
+    right: 100px;
+    border-radius: 4px;
+    box-shadow:var(--uv-box-shadow-2);
+    padding: 32px;
+}

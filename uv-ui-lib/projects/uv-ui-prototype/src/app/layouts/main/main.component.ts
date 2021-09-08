@@ -6,6 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 import { takeUntil, tap } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { combineLatest } from 'rxjs';
+import { UserService } from '../../services/user.service';
+import { UvLightService } from '../../services/uv-light.service';
 
 @Component({
     selector: 'prototype-app-main',
@@ -23,6 +25,9 @@ export class MainComponent implements OnInit {
     public compareWarning = false;
     public searchSidebarState = 'hidden';
     public currentApp = '';
+    public currentUser = {id: 1, new: false, name: ''};
+    public currentHighlight = '';
+    public uvLight = false;
 
     @Input() public searchQuery = '';
 
@@ -31,7 +36,9 @@ export class MainComponent implements OnInit {
         public searchService: SearchService,
         private ref: ChangeDetectorRef,
         private route: ActivatedRoute,
-        private destroy$: NgOnDestroyService) { 
+        private destroy$: NgOnDestroyService,
+        private userService: UserService,
+        private uvlService: UvLightService) { 
         }
 
     public ngOnInit(): void {
@@ -40,7 +47,10 @@ export class MainComponent implements OnInit {
             this.appShellService.currentAppHeaderIcon$.pipe(tap(icon => this.headerIcon = icon)),
             this.appShellService.currentAppNavIcon$.pipe(tap(icon => this.navActiveIcon = icon)),
             this.searchService.searchState$.pipe(tap(state => this.searchSidebarState = state)),
-            this.searchService.compareWarning$.pipe(tap(state => this.compareWarning = state))
+            this.searchService.compareWarning$.pipe(tap(state => this.compareWarning = state)),
+            this.userService.currentUser$.pipe(tap(user => this.currentUser = user)),
+            this.uvlService.currentHighlight$.pipe(tap(highlight => this.currentHighlight = highlight))
+            
         ]).pipe( 
             // do other things if you want
             takeUntil(this.destroy$)
@@ -48,6 +58,9 @@ export class MainComponent implements OnInit {
         this.route.queryParams.subscribe(
             params => { this.currentApp =  params['app'];}
         )
+
+        console.log(this.currentUser);
+        console.log(this.currentHighlight);
     }
 
     public get checkifSearch(): boolean {
@@ -60,6 +73,10 @@ export class MainComponent implements OnInit {
             this.appShellService.setNavIcon('search')) : 
             (this.searchService.setSearchSidebarState('hidden'),
             this.appShellService.setNavIcon(this.currentApp));
+    }
+
+    toggleUvLight() {
+        this.uvLight = !this.uvLight;
     }
 
     closeSearchSidebar() {
