@@ -64,7 +64,7 @@ export class SearchService {
             this.resultSelectedEvent.next(resultsList);
     }
 
-    public addToRecentSearches(key: string, item: SearchResult) {
+    public addToRecentSearches(key: string, item: any) {
         item.date = new Date().toString();
         localStorage.setItem(key, JSON.stringify(item));
     }
@@ -74,9 +74,11 @@ export class SearchService {
         keys = Object.keys(localStorage).filter(item => item.includes('search')),
         i = keys.length;
         while ( i-- ) {
-            values.push( JSON.parse(localStorage.getItem(keys[i])) );
+            values.push(JSON.parse(localStorage.getItem(keys[i])));
         }
-        this.recentSearchResults = values;
+        this.recentSearchResults = values.sort((a, b) => {
+            return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
         return this.recentSearchResults.slice();
     }
 
