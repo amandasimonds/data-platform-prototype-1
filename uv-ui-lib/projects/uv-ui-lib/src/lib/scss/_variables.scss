@@ -42,6 +42,8 @@
     --uv-color-success-light: #D6F0E9;
     --uv-color-danger: #E28003;
     --uv-color-danger-light: #FAEAD6;
+    --uv-color-help: var(--uv-color-purple);
+    --uv-color-help-active: var(--uv-color-purple);
     --uv-font-color: var(--uv-color-black);
     --uv-font-color-secondary: var(--uv-color-gray-dark);
     --uv-scrollbar-color: var(--uv-color-gray-light-5);
@@ -51,6 +53,7 @@
 
     --uv-color-blue: #00A3E5;
     --uv-color-blue-2:#0375a4;
+    --uv-color-purple: #83439A;
     --uv-color-white: #ffffff;
     --uv-color-white-2: rgba(251, 251, 251, 0.9);
     --uv-color-gray: #D2D2D6;

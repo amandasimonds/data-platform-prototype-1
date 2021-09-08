@@ -350,3 +350,8 @@
     position: relative;
     z-index: 1000;
 }
+
+.uv-highlight {
+    position: relative;
+    z-index: var(--uv-z-index-popup) !important;
+}

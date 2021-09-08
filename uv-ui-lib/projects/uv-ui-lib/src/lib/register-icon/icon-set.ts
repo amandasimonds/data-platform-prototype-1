@@ -107,6 +107,10 @@ export const ICON_SET = [
 		name: 'apps-settings-gradient',
 		url: 'gradient/apps-settings-gradient.svg'
 	},
+    {
+		name: 'lightbulb',
+		url: 'lightbulb.svg'
+	},
 	{
 		name: 'link',
 		url: 'entity_state/Link.svg'

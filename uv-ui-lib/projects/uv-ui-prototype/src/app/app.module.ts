@@ -14,7 +14,8 @@ import {
     TabModule,
     RegisterIconModule,
     UvxIconModule,
-    BackdropModule
+    BackdropModule,
+    ModalModule
 } from '../../../uv-ui-lib/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,46 +35,53 @@ import { BackdropService } from './services/backdrop.service';
 import { AppShellService } from './services/app-shell.service';
 import { SearchSidebarModule } from './search/search-sidebar/search-sidebar.module';
 import { CompareWarningModule } from './search/compare-warning/compare-warning.module';
+import { UvLightComponent } from './uv-light/uv-light.component';
+import { UserService } from './services/user.service';
+import { UvLightService } from './services/uv-light.service';
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
-        MainComponent
+        MainComponent,
+        UvLightComponent
     ],
     imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
         ActionBarModule,
+        AppRoutingModule,
+        AuthConfigModule,
         BackdropModule,
+        BrowserAnimationsModule,
+        BrowserModule,
         ButtonModule,
         CompareWarningModule,
-        SidePanelModule,
+        HeaderModule,
+        HomeSplashModule,
+        HttpClientModule,
+        IconButtonModule,
+        ModalModule,
+        NavbarModule,
+        RegisterIconModule,
+        RegisterIconModule.forRoot(ICON_SET),
+        SearchModule,
         SearchPanelModule,
         SearchSidebarModule,
-        HeaderModule,
-        NavbarModule,
-        IconButtonModule,
-        HomeSplashModule,
-        SearchModule,
+        SidePanelModule,
         SideBySideModule,
         TabModule,
-        HttpClientModule,
-        RegisterIconModule,
         UvxIconModule,
-        RegisterIconModule.forRoot(ICON_SET),
-        AuthConfigModule
     ],
     providers: [
-        HelperService, 
         AppShellService,
-        AuthService, 
+        AuthService,
+        BackdropService,
+        HelperService, 
         HttpClient, 
+        NgOnDestroyService,
         SearchService, 
         SidebySideService,
-        NgOnDestroyService,
-        BackdropService,
+        UserService,
+        UvLightService
     ],
     bootstrap: [AppComponent]
 })
