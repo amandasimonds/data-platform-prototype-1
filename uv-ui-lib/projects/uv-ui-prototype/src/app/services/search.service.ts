@@ -1,12 +1,18 @@
 import { SearchResult } from '../search/models/search-result.model';
 import { allSearchResults } from '../search/search-results/sample-search-results/allSearchResults';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 
+@Injectable()
 export class SearchService {
     public allSearchResults: SearchResult[] = allSearchResults;
     public recentSearchResults: SearchResult[] = [];
     public searchSidebarState = new BehaviorSubject<string>('hidden');
     public compareWarningState = new BehaviorSubject<boolean>(false);
+
+    private resultSelectedEvent = new BehaviorSubject<SearchResult[]>([]);
+    readonly searchResultsList$ = this.resultSelectedEvent.asObservable();
+    @Output() resultSelected = new EventEmitter<boolean>();
 
     public get searchState$(): Observable<string> {
         return this.searchSidebarState.asObservable();
@@ -26,6 +32,36 @@ export class SearchService {
 
     public getAllSearchResults(): SearchResult[] {
         return this.allSearchResults.slice();
+    }
+
+    public selectResult(result: SearchResult, i: number) {
+        console.log('selectResult()');
+        result.active = !result.active;
+        let resultsList: SearchResult[] = [];
+        const exceptIndex = i;
+        if (result.active) {
+            this.resultSelected.emit(true);
+            resultsList = this.getAllSearchResults()
+            .filter((item, index) => exceptIndex !== index)
+            .map(item => {
+                return {...item, disabled: item.disabled = true};
+            });
+        } else {
+            this.resultSelected.emit(false);
+            resultsList = this.getAllSearchResults()
+            .map(item => {
+                return {...item, disabled: item.disabled = false};
+            });
+        }
+        this.resultSelectedEvent.next(resultsList);
+    }
+
+    public unselectAll() {
+        let resultsList = this.getAllSearchResults()
+            .map(item => {
+                return {...item, disabled: item.disabled = false, active: item.active = false};
+            });
+            this.resultSelectedEvent.next(resultsList);
     }
 
     public addToRecentSearches(key: string, item: SearchResult) {

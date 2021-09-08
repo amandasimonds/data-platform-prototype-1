@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 
 @Component({
@@ -8,12 +8,15 @@ import { SearchService } from '../../services/search.service';
 })
 export class CompareWarningComponent {
 
+    @Input() selectedItem = '';
+
     @Output() closeCompareWarningEvent = new EventEmitter<boolean>();
 
     constructor(private searchService: SearchService){}
 
   closeCompareWarning() {
       this.searchService.setCompareWarningState(false);
+      this.searchService.unselectAll();
   }
 
   refresh() {
