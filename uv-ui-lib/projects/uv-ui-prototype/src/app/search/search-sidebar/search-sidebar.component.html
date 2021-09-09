@@ -12,11 +12,12 @@
             (click)="onCloseSearchSidebar('hidden', searchText)"></uvx-icon-button>
         </div>
         <div class="margin-bottom-sm">
-            <uvx-search-panel mode="component-border" (searchCloseClicked)="searchText = ''">
+            <uvx-search-panel mode="component-border" (searchCloseClicked)="searchText = ''; resetScroll()">
                 <input type="text"
                     placeholder="Search..."
                     class="uv-input margin-left-xs"
                     maxlength="40"
+                    (ngModelChange)="resetScroll(); getCategoryResultsNumber(searchCategory)"
                     [(ngModel)]="searchText">
             </uvx-search-panel>
         </div>
@@ -48,10 +49,13 @@
     <div class="divider"></div>
 
     <div class="search-sidebar-bottom">
-        <div class="search-sidebar-bottom-scroll">
+        <div #resultsContainer class="search-sidebar-bottom-scroll">
             <p class="search-sidebar-bottom-scroll-header">
-                {{searchText === '' ? 'Recent Searches' : 
-                searchResults.length + ' Results for ' + searchText}}
+                <span *ngIf="getCategoryResultsNumber(searchCategory) != 0">
+                    {{searchText === '' && getCategoryResultsNumber(searchCategory) != 0 ? 'Recent Searches' : 
+                    getCategoryResultsNumber(searchCategory) + ' Results for ' + searchText }}
+                </span>
+                <span *ngIf="getCategoryResultsNumber(searchCategory) === 0 && searchText != ''">No results</span>
             </p>
             <app-search-results 
                 [category]="searchCategory" 

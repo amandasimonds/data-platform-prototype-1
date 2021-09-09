@@ -4,11 +4,12 @@
         [class.search-result-selected]="item.active"
         [class.search-result-disabled]="item.disabled"
         (mouseleave)="mouseLeaveClass()"
+        (click)="searchText === '' && searchRecent(item.title)"
         [ngClass]="classes" 
         *ngFor="let item of ( searchText === '' ? (recentSearches | filterResults: category) : searchResults | filterResults: category ); let i = index;">
         
         <div class="search-result-tool-menu">
-            <uvx-icon-button *ngIf="searchText === ''" (click)="searchText === '' && searchRecent(item.title)" icon="search" class="padding-xxs margin-right-xxs margin-left-xxs"></uvx-icon-button>
+            <!-- <uvx-icon-button *ngIf="searchText === ''" (click)="searchText === '' && searchRecent(item.title)" icon="search" class="padding-xxs margin-right-xxs margin-left-xxs"></uvx-icon-button> -->
             <uvx-icon-button *ngIf="searchText != ''" icon="compare" (click)="compareClicked(true, item, i)" class="margin-left-xxs padding-xxs"></uvx-icon-button>
             <uvx-icon-button *ngIf="searchText != ''" icon="apps-gwu" class="padding-xxs"></uvx-icon-button>
             <uvx-icon-button *ngIf="searchText != ''" icon="apps-design-ripple" class="padding-xxs margin-right-xxs"></uvx-icon-button>
