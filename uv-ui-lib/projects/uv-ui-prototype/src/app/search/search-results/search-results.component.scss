@@ -21,7 +21,6 @@
     padding: 16px 19px 16px 32px;
     position: relative;
     transition: .2s;
-    height: 100%;
     
     uvx-icon-button {
         opacity: 0;
@@ -62,7 +61,7 @@
         .search-result-tool-menu {
             opacity: 1;
             transition: .2s;
-            transition-delay: 1s;
+            transition-delay: .75s;
         }
     }
 
