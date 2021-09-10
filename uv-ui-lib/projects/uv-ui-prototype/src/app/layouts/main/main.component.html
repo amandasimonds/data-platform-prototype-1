@@ -46,7 +46,8 @@
     </div>
     <uvx-backdrop 
         [backdropState]="searchSidebarState" 
-        [mode]="compareWarning ? 'popup' : ''">
+        [mode]="compareWarning ? 'popup' : ''"
+        (backdropClicked)="!compareWarning && closeSearchSidebar()">
     </uvx-backdrop>
     <app-search-sidebar (searchCloseEvent)="toggleSearchSidebar()"></app-search-sidebar>
     <app-compare-warning *ngIf="compareWarning" 
