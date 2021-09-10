@@ -23,6 +23,7 @@
         <uvx-navbar>
             <span *ngFor="let navlink of navlinks" 
                 class="nav-icon"
+                [class.nav-icon-disabled]="navlink.disabled"
                 [class.nav-icon-active]="navActiveIcon === navlink.app">
                 <a [routerLink]="navlink.navlink"
                     [queryParams]="{app: navlink.app}"
