@@ -18,20 +18,17 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked {
     @Input() public searchCategory = 'All';
     @Output() public searchCloseEvent = new EventEmitter<string>();
     @Input() searchResults: SearchResult[] = [];
-    recentSearches: SearchResult[] = [];
+    @Input() recentSearches: SearchResult[] = [];
     @Input() searchText = '';
-    categoryOption: SearchResult[] = [];
-    compareWarning = false;
     searchSidebarState = 'hidden';
-    resultsNumber = 0;
 
     @ViewChild('resultsContainer', { static: true }) public resultsDiv: ElementRef;
 
     categories = [
-        {name: 'All', icon: 'list-right'},
-        {name: 'Requirements', icon: 'list-right'},
-        {name: 'Parts', icon: 'parts'}, 
-        {name: 'Documents', icon: 'document'}
+        {name: 'All', icon: 'list-right', resultCount: 0},
+        {name: 'Requirements', icon: 'list-right', resultCount: 0},
+        {name: 'Parts', icon: 'parts', resultCount: 0}, 
+        {name: 'Documents', icon: 'document', resultCount: 0}
     ]
     
     constructor(
@@ -62,23 +59,23 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked {
     }
 
     getCategoryResultsNumber(category: string): number {
-        // console.log(category);
         let results: SearchResult[] = []
         this.searchText === '' ? results = this.recentSearches : results = this.searchResults;
         if (category === 'All') {
-            // console.log(category, results);
             return results.length
         }
         else {
             results = results.filter(item => item.category === category)
-            // console.log(category, results);
             return results.length;
         }
     }
 
-    onCloseSearchSidebar(value: string, item: string){
-        this.searchService.addToRecentSearches('search '+ item, {title: item});
-        this.searchCloseEvent.emit(value);
+    onCloseSearchSidebar(state: string, item: string){
+        item = item.trim();
+        if (item != '') {
+            this.searchService.addToRecentSearches('search '+ item, {title: item});
+        }
+        this.searchCloseEvent.emit(state);
         this.searchText = '';
         this.resetScroll();
     }
