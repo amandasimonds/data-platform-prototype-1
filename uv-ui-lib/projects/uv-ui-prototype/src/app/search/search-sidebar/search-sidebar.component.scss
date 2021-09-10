@@ -15,25 +15,29 @@
     }
 
     &-bottom {
-        padding-right:4px;
         height: 100%;
 
-        &-scroll {
-            overflow: auto;
-            height: calc(100% - 230px);
+        &-header {
+            position: sticky; 
+            padding: 20px 28px 38px 32px;
+            top: 0; 
+            background-color: var(--uv-color-white);
+            height: 50px;
+            display: block;
+            // z-index: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+        }
 
-            &-header {
-                position: sticky; 
-                padding: 32px 32px 40px 32px;
-                top: 0; 
-                background-color: var(--uv-color-white);
-                height: 50px;
-                display: block;
-                z-index: 1;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+        &-wrapper {
+            padding-right:4px;
+            height: 100%;
+
+            &-scroll {
+                overflow: auto;
+                height: calc(100% - 285px);  
             }
         }
     }

@@ -1,6 +1,5 @@
 .documents {
     max-width: 1040px;
-    height: 80vh;
     position: relative;
     flex-direction: column;
     margin: 12px 0;
@@ -77,7 +76,7 @@
         border-radius: 4px;
         box-shadow: var(--uv-box-shadow-hover-2);
         background-color: var(--uv-color-white);
-        z-index: var(--uv-z-index-search-sidebar-toolmenu);
+        z-index: 999999 !important;
     
         uvx-icon-button {
             &:hover {

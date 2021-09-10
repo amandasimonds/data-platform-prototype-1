@@ -35,7 +35,6 @@ export class SearchService {
     }
 
     public selectResult(result: SearchResult, i: number) {
-        console.log('selectResult()');
         result.active = !result.active;
         let resultsList: SearchResult[] = [];
         const exceptIndex = i;
@@ -65,8 +64,10 @@ export class SearchService {
     }
 
     public addToRecentSearches(key: string, item: any) {
-        item.date = new Date().toString();
-        localStorage.setItem(key, JSON.stringify(item));
+        if (this.typeAheadSearch(item.title).length != 0) {
+            item.date = new Date().toString();
+            localStorage.setItem(key, JSON.stringify(item));
+        }
     }
 
     public getRecentSearches() {
@@ -76,9 +77,10 @@ export class SearchService {
         while ( i-- ) {
             values.push(JSON.parse(localStorage.getItem(keys[i])));
         }
-        this.recentSearchResults = values.sort((a, b) => {
+        values = values.sort((a, b) => {
             return new Date(b.date).getTime() - new Date(a.date).getTime();
         });
+        this.recentSearchResults = values.slice(0, 10);
         return this.recentSearchResults.slice();
     }
 
