@@ -9,7 +9,6 @@ export class SearchService {
     public recentSearchResults: SearchResult[] = [];
     public searchSidebarState = new BehaviorSubject<string>('hidden');
     public compareWarningState = new BehaviorSubject<boolean>(false);
-
     private resultSelectedEvent = new BehaviorSubject<SearchResult[]>([]);
     readonly searchResultsList$ = this.resultSelectedEvent.asObservable();
     @Output() resultSelected = new EventEmitter<boolean>();
@@ -35,24 +34,24 @@ export class SearchService {
     }
 
     public selectResult(result: SearchResult, i: number) {
-        result.active = !result.active;
-        let resultsList: SearchResult[] = [];
-        const exceptIndex = i;
-        if (result.active) {
-            this.resultSelected.emit(true);
-            resultsList = this.getAllSearchResults()
-            .filter((item, index) => exceptIndex !== index)
-            .map(item => {
-                return {...item, disabled: item.disabled = true};
-            });
-        } else {
-            this.resultSelected.emit(false);
-            resultsList = this.getAllSearchResults()
-            .map(item => {
-                return {...item, disabled: item.disabled = false};
-            });
-        }
-        this.resultSelectedEvent.next(resultsList);
+        // result.active = !result.active;
+        // let resultsList: SearchResult[] = [];
+        // const exceptIndex = i;
+        // if (result.active) {
+        //     this.resultSelected.emit(true);
+        //     resultsList = this.getAllSearchResults()
+        //     .filter((item, index) => exceptIndex !== index)
+        //     .map(item => {
+        //         return {...item, disabled: item.disabled = true};
+        //     });
+        // } else {
+        //     this.resultSelected.emit(false);
+        //     resultsList = this.getAllSearchResults()
+        //     .map(item => {
+        //         return {...item, disabled: item.disabled = false};
+        //     });
+        // }
+        // this.resultSelectedEvent.next(resultsList);
     }
 
     public unselectAll() {
@@ -63,7 +62,7 @@ export class SearchService {
             this.resultSelectedEvent.next(resultsList);
     }
 
-    public addToRecentSearches(key: string, item: any) {
+    public addToRecentSearches(key: string, item: SearchResult) {
         if (this.typeAheadSearch(item.title).length != 0) {
             item.date = new Date().toString();
             localStorage.setItem(key, JSON.stringify(item));

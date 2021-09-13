@@ -50,10 +50,8 @@
 
     <div class="search-sidebar-bottom">
         <p class="search-sidebar-bottom-header">
-            <span>
-                {{searchText === '' ? 'Recent Searches' : 
-                getCategoryResultsNumber(searchCategory) + ' Results for ' + searchText }}
-            </span>
+            <span *ngIf="searchText === ''">Recent Searches</span>
+            <span *ngIf="getCategoryResultsNumber(searchCategory) > 0 && searchText != ''">{{getCategoryResultsNumber(searchCategory) + ' Results for ' + searchText }}</span>
             <span *ngIf="getCategoryResultsNumber(searchCategory) === 0 && searchText != ''">No results</span>
         </p>
         <div class="search-sidebar-bottom-wrapper">

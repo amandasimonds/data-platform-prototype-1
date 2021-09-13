@@ -13,7 +13,7 @@ export class SearchResultsComponent {
     @Input() public searchResults: SearchResult[] = [];
     @Input() public category = '';
     @Input() public searchText = '';
-    @Output() public recentSearchClick = new EventEmitter<string>();
+    @Output() public recentSearchClick = new EventEmitter<SearchResult>();
     public recentSearches: SearchResult[] = [];
     public showToolbar = false;
     public classes: string[] = [];
@@ -32,9 +32,9 @@ export class SearchResultsComponent {
         this.searchService.setCompareWarningState(value);
     }
 
-    searchRecent(item: string) {
+    searchRecent(item: SearchResult) {
         this.recentSearchClick.emit(item);
-        this.searchService.addToRecentSearches('search '+ item, {title: item});
+        this.searchService.addToRecentSearches('search '+ item.title, item);
     }
 
     deleteRecentSearch(title: string) {
