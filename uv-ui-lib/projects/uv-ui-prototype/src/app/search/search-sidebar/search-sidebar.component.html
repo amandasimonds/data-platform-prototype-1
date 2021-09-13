@@ -1,6 +1,6 @@
 <div class="search-sidebar" [@slideInOut]="searchSidebarState">
     <div class="search-sidebar-top">
-        <div class="flex align-items-center justify-content-space-between  margin-bottom-sm">
+        <div class="flex align-items-center justify-content-space-between margin-bottom-sm">
             <div class="flex align-items-center">
                 <uvx-icon icon="search" color="gray" class="margin-right-xxs"></uvx-icon>
                 <h3>Global Search</h3>
@@ -48,20 +48,19 @@
 
     <div class="divider"></div>
 
-    <div class="search-sidebar-bottom">
-        <p class="search-sidebar-bottom-header">
-            <span *ngIf="searchText === ''">Recent Searches</span>
-            <span *ngIf="getCategoryResultsNumber(searchCategory) > 0 && searchText != ''">{{getCategoryResultsNumber(searchCategory) + ' Results for ' + searchText }}</span>
-            <span *ngIf="getCategoryResultsNumber(searchCategory) === 0 && searchText != ''">No results</span>
-        </p>
-        <div class="search-sidebar-bottom-wrapper">
-            <div #resultsContainer class="search-sidebar-bottom-wrapper-scroll">
-                <app-search-results 
-                [category]="searchCategory" 
-                [searchText]="searchText"
-                (recentSearchClick)="searchRecentSearch($event)">
-                </app-search-results>
-            </div>
+    <div class="search-sidebar-header">
+        <span *ngIf="searchText === ''">Recent Searches</span>
+        <span *ngIf="getCategoryResultsNumber(searchCategory) > 0 && searchText != ''">{{getCategoryResultsNumber(searchCategory) + ' Results for ' + searchText }}</span>
+        <span *ngIf="getCategoryResultsNumber(searchCategory) === 0 && searchText != ''">No results</span>
+    </div>
+
+    <div class="search-sidebar-wrapper">
+        <div #resultsContainer class="search-sidebar-wrapper-scroll">
+            <app-search-results 
+            [category]="searchCategory" 
+            [searchText]="searchText"
+            (recentSearchClick)="searchRecentSearch($event)">
+            </app-search-results>
         </div>
     </div>
 </div>
