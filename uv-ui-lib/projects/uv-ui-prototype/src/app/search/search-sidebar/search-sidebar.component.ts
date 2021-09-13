@@ -70,10 +70,12 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked {
         }
     }
 
-    onCloseSearchSidebar(state: string, item: string){
-        item = item.trim();
-        if (item != '') {
-            this.searchService.addToRecentSearches('search '+ item, {title: item});
+    onCloseSearchSidebar(state: string, searchText: string){
+        let searchItem = {category: '', title: searchText, description: '', active: false, disabled: false, date: ''}
+        searchText = searchText.trim();
+        console.log(searchText);
+        if (searchText != '') {
+            this.searchService.addToRecentSearches('search '+ searchText, searchItem);
         }
         this.searchCloseEvent.emit(state);
         this.searchText = '';
@@ -84,8 +86,9 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked {
         this.searchResults = this.searchService.typeAheadSearch(this.searchText);
     }
 
-    searchRecentSearch(item: string){
-        this.searchText = item;
+    searchRecentSearch(item: SearchResult){
+        this.searchText = item.title;
+        console.log(this.searchText);
         this.resetScroll();
     }
 

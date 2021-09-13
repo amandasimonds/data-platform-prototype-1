@@ -4,7 +4,7 @@
         [class.search-result-selected]="item.active"
         [class.search-result-disabled]="item.disabled"
         (mouseleave)="mouseLeaveClass()"
-        (click)="searchText === '' && searchRecent(item.title)"
+        (click)="searchText === '' && searchRecent(item)"
         [ngClass]="classes" 
         *ngFor="let item of ( searchText === '' ? (recentSearches | filterResults: category) : searchResults | filterResults: category ); let i = index;">
         
