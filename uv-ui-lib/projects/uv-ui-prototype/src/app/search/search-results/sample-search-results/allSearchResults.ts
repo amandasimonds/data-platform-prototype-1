@@ -68,11 +68,91 @@ export const allSearchResults = [
       disabled: false,
       date: ''
     },
+    {
+        category: 'Parts',
+        title: 'ZK-8285',
+        description: 'CRANKSHAFT, C-302',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Parts',
+        title: 'ZK-8285-0',
+        description: 'CRANKSHAFT, C-302',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Parts',
+        title: 'ZK-8274',
+        description: 'C-202 AND',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Parts',
+        title: 'ZK-8274-0',
+        description: 'C-202 AND C302 COMPRESSOR FRAME',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Parts',
+        title: 'ZK-8285-1',
+        description: 'CRANKSHAFT COMPRESSOR',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Parts',
+        title: 'ZBM-11083-X-1-B-0',
+        description: 'VALVE, DIVIDER',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Parts',
+        title: 'ZK-6911-A-1-309',
+        description: 'PISTON - END, C.E.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Parts',
+        title: 'ZK-6911-A-1-310',
+        description: 'PISTON ADJ CLEAR',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Parts',
+        title: 'ZK-6911-A-1-311',
+        description: 'PISTON - 16.75\"\" ZD 7\"\" STROKE',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Parts',
+        title: 'PartABCD000004',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
 
     {
-      category: 'Requirements',
-      title: 'RequirementsABCD000001',
-      description: 'Screw, Hexagon Flange Head Cap v4.',
+      category: 'Parts',
+      title: 'ZK-6911-A-1-312',
+      description: 'PISTON - END, H.E.',
       active: false,
       disabled: false,
       date: ''
@@ -197,8 +277,112 @@ export const allSearchResults = [
 
       {
         category: 'Materials',
-        title: 'MaterialsABCD000006',
-        description: 'Screw, Hexagon Flange Head Cap v4.1',
+        title: 'Stainless Steel',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Ceramic',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Anodized Aluminum',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Semi-Rigid Modified Polyolefin',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Modified Polyolefin',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'NBCCS',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Fluid Resistant Modified Elastomer',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Modified Fluoropolymer',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Modified Fluoropolymer',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Modified Fluoro-Elastomer',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Polyolefin Flexible Modified',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Crosslinked Ethylene Tetrafluoroethylene',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Crosslinked Polyvinylidene Fluoride',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        active: false,
+        disabled: false,
+        date: ''
+      },
+      {
+        category: 'Materials',
+        title: 'Irradiated Modified Polyolefin',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         active: false,
         disabled: false,
         date: ''
