@@ -25,7 +25,8 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked {
     @ViewChild('resultsContainer', { static: true }) public resultsDiv: ElementRef;
 
     categories = [
-        {name: 'All', icon: 'list-right', resultCount: 0},
+        {name: 'All', icon: 'apps-design-ripple', resultCount: 0},
+        {name: 'Materials', icon: 'apps-gwu', resultCount: 0},
         {name: 'Requirements', icon: 'list-right', resultCount: 0},
         {name: 'Parts', icon: 'parts', resultCount: 0}, 
         {name: 'Documents', icon: 'document', resultCount: 0}
