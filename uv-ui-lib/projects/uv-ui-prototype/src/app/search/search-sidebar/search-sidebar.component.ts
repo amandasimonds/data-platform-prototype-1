@@ -72,7 +72,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked {
     }
 
     onCloseSearchSidebar(state: string, searchText: string){
-        let searchItem = {category: '', title: searchText, description: '', active: false, disabled: false, date: ''}
+        let searchItem = {category: '', title: searchText, description: '', active: false, disabled: false, date: '', formattedDate: ''}
         searchText = searchText.trim();
         console.log(searchText);
         if (searchText != '') {
@@ -89,7 +89,6 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked {
 
     searchRecentSearch(item: SearchResult){
         this.searchText = item.title;
-        console.log(this.searchText);
         this.resetScroll();
     }
 

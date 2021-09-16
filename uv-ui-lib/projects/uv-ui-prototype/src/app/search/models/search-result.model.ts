@@ -5,14 +5,15 @@ export class SearchResult {
     public date: string;
     public active: boolean;
     public disabled: boolean;
+    public formattedDate: string;
 
-    constructor(category: string, title: string, desc: string, date: string, active: boolean, disabled: boolean) {
+    constructor(category: string, title: string, desc: string, date: string, active: boolean, disabled: boolean, formattedDate: string) {
         this.category = category;
         this.title = title;
         this.description = desc;
         this.date = date;
         this.active = active;
         this.disabled = disabled;
-
+        this.formattedDate = formattedDate;
     }
 }

@@ -5,7 +5,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
     },
     {
         category: 'Parts',
@@ -13,7 +14,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
     },
     {
         category: 'Parts',
@@ -21,7 +23,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
     },
 
     {
@@ -30,7 +33,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
     },
 
     {
@@ -39,7 +43,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
     },
 
     {
@@ -48,7 +53,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
     },
 
     {
@@ -58,7 +64,8 @@ export const allSearchResults = [
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.` ,
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
     },
     {
       category: 'Parts',
@@ -66,7 +73,8 @@ export const allSearchResults = [
       description: 'Screw, Hexagon Flange Head Cap v4.',
       active: false,
       disabled: false,
-      date: ''
+      date: '',
+      formattedDate: ''
     },
     {
         category: 'Parts',
@@ -74,7 +82,8 @@ export const allSearchResults = [
         description: 'CRANKSHAFT, C-302',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Parts',
@@ -82,7 +91,8 @@ export const allSearchResults = [
         description: 'CRANKSHAFT, C-302',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Parts',
@@ -90,7 +100,8 @@ export const allSearchResults = [
         description: 'C-202 AND',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Parts',
@@ -98,7 +109,8 @@ export const allSearchResults = [
         description: 'C-202 AND C302 COMPRESSOR FRAME',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Parts',
@@ -106,7 +118,8 @@ export const allSearchResults = [
         description: 'CRANKSHAFT COMPRESSOR',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Parts',
@@ -114,7 +127,8 @@ export const allSearchResults = [
         description: 'VALVE, DIVIDER',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Parts',
@@ -122,7 +136,8 @@ export const allSearchResults = [
         description: 'PISTON - END, C.E.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Parts',
@@ -130,7 +145,8 @@ export const allSearchResults = [
         description: 'PISTON ADJ CLEAR',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Parts',
@@ -138,7 +154,8 @@ export const allSearchResults = [
         description: 'PISTON - 16.75\"\" ZD 7\"\" STROKE',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Parts',
@@ -146,7 +163,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
 
     {
@@ -155,7 +173,8 @@ export const allSearchResults = [
       description: 'PISTON - END, H.E.',
       active: false,
       disabled: false,
-      date: ''
+      date: '',
+      formattedDate: ''
     },
 
     {
@@ -164,7 +183,8 @@ export const allSearchResults = [
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       active: false,
       disabled: false,
-      date: ''
+      date: '',
+      formattedDate: ''
     },
 
     {
@@ -173,7 +193,8 @@ export const allSearchResults = [
       description: 'Screw, Hexagon Flange Head Cap v4.1',
       active: false,
       disabled: false,
-      date: ''
+      date: '',
+      formattedDate: ''
     },
 
     {
@@ -182,7 +203,8 @@ export const allSearchResults = [
       description: 'Screw, Hexagon Flange Head Cap v4.1',
       active: false,
       disabled: false,
-      date: ''
+      date: '',
+      formattedDate: ''
     },
 
     {
@@ -191,7 +213,8 @@ export const allSearchResults = [
       description: 'Screw, Hexagon Flange Head Cap v4.1',
       active: false,
       disabled: false,
-      date: ''
+      date: '',
+      formattedDate: ''
     },
 
       {
@@ -200,7 +223,8 @@ export const allSearchResults = [
         description: 'Screw, Hexagon Flange Head Cap v4.1',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
 
       {
@@ -209,7 +233,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
 
       {
@@ -218,7 +243,8 @@ export const allSearchResults = [
         description: 'Screw, Hexagon Flange Head Cap v4.1',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
 
       {
@@ -227,7 +253,8 @@ export const allSearchResults = [
         description: 'Screw, Hexagon Flange Head Cap v4.1',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
 
       {
@@ -236,7 +263,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
 
       {
@@ -245,7 +273,8 @@ export const allSearchResults = [
         description: 'Screw, Hexagon Flange Head Cap v4.1',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
 
       {
@@ -254,7 +283,8 @@ export const allSearchResults = [
         description: 'Screw, Hexagon Flange Head Cap v4.1',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
 
       {
@@ -263,7 +293,8 @@ export const allSearchResults = [
         description: 'Screw, Hexagon Flange Head Cap v4.1',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
 
       {
@@ -272,7 +303,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
 
       {
@@ -281,7 +313,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -289,7 +322,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -297,7 +331,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -305,7 +340,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -313,7 +349,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -321,7 +358,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -329,7 +367,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -337,7 +376,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -345,7 +385,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -353,7 +394,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -361,7 +403,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -369,7 +412,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -377,7 +421,8 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       },
       {
         category: 'Materials',
@@ -385,6 +430,7 @@ export const allSearchResults = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         active: false,
         disabled: false,
-        date: ''
+        date: '',
+        formattedDate: ''
       }
     ];
