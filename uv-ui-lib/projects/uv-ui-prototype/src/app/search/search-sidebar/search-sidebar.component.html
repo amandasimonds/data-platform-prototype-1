@@ -9,7 +9,7 @@
             icon="close" 
             color="gray" 
             size="md"
-            (click)="onCloseSearchSidebar('hidden', searchText)"></uvx-icon-button>
+            (click)="onCloseClicked('hidden')"></uvx-icon-button>
         </div>
         <div class="margin-bottom-sm">
             <uvx-search-panel mode="component-border" (searchCloseClicked)="searchText = ''; resetScroll()">
@@ -24,8 +24,8 @@
         
         <uvx-dropdown>
             <span title class="flex align-items center justify-content-space-between w-100">
-                <div>
-                    <uvx-icon icon="list-right" class="margin-right-xs"></uvx-icon>
+                <div class="flex align-items-center">
+                    <uvx-icon icon="{{searchCategoryIcon}}" class="margin-right-xs"></uvx-icon>
                     {{searchCategory}} 
                 </div>
                 <div class="divider-right margin-right-xs">

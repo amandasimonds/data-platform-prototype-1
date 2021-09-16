@@ -12,32 +12,23 @@ export class SearchService {
     public recentSearchResults: SearchResult[] = [];
     public searchSidebarState = new BehaviorSubject<string>('hidden');
     public compareWarningState = new BehaviorSubject<boolean>(false);
-    private resultSelectedEvent = new BehaviorSubject<SearchResult[]>([]);
-    readonly searchResultsList$ = this.resultSelectedEvent.asObservable();
+    public resultSelectedEvent = new BehaviorSubject<SearchResult[]>([]);
+
+    public searchResults = new BehaviorSubject<SearchResult[]>([]);
+    // readonly searchResultsList$ = this.resultSelectedEvent.asObservable();
     @Output() resultSelected = new EventEmitter<boolean>();
 
-    public get searchState$(): Observable<string> {
-        return this.searchSidebarState.asObservable();
-    }
+    public get searchResultsList$(): Observable<SearchResult[]> {return this.searchResults.asObservable();}
+    public get searchState$(): Observable<string> {return this.searchSidebarState.asObservable();}
+    public get compareWarning$(): Observable<boolean> {return this.compareWarningState.asObservable();}
 
-    public get compareWarning$(): Observable<boolean> {
-        return this.compareWarningState.asObservable();
-    }
+    public setSearchSidebarState(state: string): void {this.searchSidebarState.next(state);}
+    public setCompareWarningState(state: boolean): void {this.compareWarningState.next(state);}
+    public setSearchResults(results: SearchResult[]): void {this.searchResults.next(results)};
 
-    public setSearchSidebarState(state: string): void {
-        this.searchSidebarState.next(state);
-    }
-
-    public setCompareWarningState(state: boolean): void {
-        this.compareWarningState.next(state);
-    }
-
-    public getAllSearchResults(): SearchResult[] {
-        return this.allSearchResults.slice();
-    }
+    public getAllSearchResults(): SearchResult[] {return this.allSearchResults.slice();}
 
     public selectResult(result: SearchResult, i: number) {
-        console.log('selecting');
         result.active = !result.active;
         let resultsList: SearchResult[] = [];
         const exceptIndex = i;
@@ -50,21 +41,24 @@ export class SearchService {
             });
         } else {
             this.resultSelected.emit(false);
-            resultsList = this.getAllSearchResults()
+            resultsList = [...this.getAllSearchResults(), ...this.getRecentSearches()]
             .map(item => {
                 return {...item, disabled: item.disabled = false};
             });
         }
         this.resultSelectedEvent.next(resultsList);
-        console.log('selected', result.active);
     }
 
     public unselectAll() {
+        console.log(this.getRecentSearches().length);
+        console.log(this.getAllSearchResults().length);
         let resultsList = [...this.getAllSearchResults(), ...this.getRecentSearches()]
             .map(item => {
                 return {...item, disabled: item.disabled = false, active: item.active = false};
             });
-        console.log('unselect', resultsList);
+
+        for(let i = 0; i < resultsList.length; i++){console.log(resultsList[i].active)};
+
         this.resultSelectedEvent.next(resultsList);
     }
 

@@ -20,7 +20,8 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked {
     @Input() searchResults: SearchResult[] = [];
     @Input() recentSearches: SearchResult[] = [];
     @Input() searchText = '';
-    searchSidebarState = 'hidden';
+    @Input() searchSidebarState = 'hidden';
+    searchCategoryIcon = 'apps-design-ripple';
 
     @ViewChild('resultsContainer', { static: true }) public resultsDiv: ElementRef;
 
@@ -53,6 +54,26 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked {
 
     selectCategory(category: string) {
         this.searchCategory = category;
+        switch(this.searchCategory) {
+            case 'All':
+                this.searchCategoryIcon = 'apps-design-ripple'
+                break;
+            case 'Materials':
+                this.searchCategoryIcon = 'apps-gwu'
+                break;
+            case 'Requirements':
+                this.searchCategoryIcon = 'list-right'
+                break;
+            case 'Parts':
+                this.searchCategoryIcon =  'parts'
+                break;
+            case 'Documents':
+                this.searchCategoryIcon = 'document'
+                break;
+            default:
+                this.searchCategoryIcon = 'apps-design-ripple'
+                break;
+        }
     }
 
     activateCompare(value: boolean) {
@@ -71,14 +92,17 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked {
         }
     }
 
-    onCloseSearchSidebar(state: string, searchText: string){
+    onCloseClicked(state: string){
+        this.searchCloseEvent.emit(state);
+        this.searchSidebarClosed(this.searchText)
+    }
+
+    searchSidebarClosed(searchText: string) {
         let searchItem = {category: '', title: searchText, description: '', active: false, disabled: false, date: '', formattedDate: ''}
         searchText = searchText.trim();
-        console.log(searchText);
         if (searchText != '') {
             this.searchService.addToRecentSearches('search '+ searchText, searchItem);
         }
-        this.searchCloseEvent.emit(state);
         this.searchText = '';
         this.resetScroll();
     }
@@ -100,6 +124,12 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked {
             .subscribe(state => { this.searchSidebarState = state;
                 this.ref.detectChanges();
             });
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if(this.searchSidebarState === 'hidden') {
+            this.searchSidebarClosed(this.searchText)
+        }
     }
 
     ngAfterViewChecked(): void {

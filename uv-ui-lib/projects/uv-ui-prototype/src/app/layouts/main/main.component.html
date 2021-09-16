@@ -50,7 +50,7 @@
         [mode]="compareWarning ? 'popup' : ''"
         (backdropClicked)="!compareWarning && closeSearchSidebar()">
     </uvx-backdrop>
-    <app-search-sidebar (searchCloseEvent)="toggleSearchSidebar()"></app-search-sidebar>
+    <app-search-sidebar (searchCloseEvent)="toggleSearchSidebar()" [searchSidebarState]="searchSidebarState"></app-search-sidebar>
     <app-compare-warning *ngIf="compareWarning" 
         (closeCompareWarning)="compareWarning = false" [selectedItem]="selectedItem">
     </app-compare-warning>
