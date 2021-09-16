@@ -19,7 +19,7 @@
             <div class="flex flex-column">
                 <h5 class="margin-bottom-xxs">{{item.title}}</h5>
                 <p class="uv-body" *ngIf="searchText != ''">{{item.description}}</p>
-                <p class="uv-label-sbs-secondary" *ngIf="searchText === ''">{{item.date}}</p>
+                <p class="uv-label-sbs-secondary" *ngIf="searchText === ''">{{item.formattedDate}}</p>
             </div>
             <uvx-icon-button *ngIf="searchText === ''" icon="close" color="primary"
                 (click)="deleteRecentSearch(item.title)">

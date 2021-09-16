@@ -9,15 +9,16 @@ export const navItems = [
         app: 'gwu',
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',
         active: false,
-        navlink: '/main',
+        navlink: 'gwu',
+        // disabled: false,
         disabled: true
     },
-
     {
         app: 'sbs',
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',
         active: false,
-        navlink: '/main',
+        navlink: 'sbs',
+        // disabled: false,
         disabled: true
     },
     {
@@ -25,6 +26,7 @@ export const navItems = [
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',
         active: false,
         navlink: '/main',
+        // disabled: false,
         disabled: true
     },
     {
@@ -32,6 +34,7 @@ export const navItems = [
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',
         active: false,
         navlink: '/main',
+        // disabled: false,
         disabled: true
     },
     // {
