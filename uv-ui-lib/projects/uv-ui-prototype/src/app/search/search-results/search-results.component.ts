@@ -55,4 +55,11 @@ export class SearchResultsComponent implements OnChanges {
         this.recentSearches = this.searchService.getRecentSearches();
         // console.log(this.compareWarningActive);
     }
+
+    ngAfterViewChecked(): void {
+        //Called after every check of the component's view. Applies to components only.
+        //Add 'implements AfterViewChecked' to the class.
+        // this.recentSearches = this.searchService.getRecentSearches();
+        
+    }
 }
