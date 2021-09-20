@@ -32,6 +32,7 @@
         <uvx-navbar>
             <span *ngFor="let navlink of navlinks" 
                 class="nav-icon"
+                [class.nav-icon-disabled]="navlink.disabled"
                 [class.nav-icon-active]="navActiveIcon === navlink.app">
                 <a [routerLink]="navlink.navlink"
                     [queryParams]="{app: navlink.app}"
@@ -56,11 +57,13 @@
     
     <uvx-backdrop 
     [backdropState]="uvLight ? 'visible' : searchSidebarState"
-        [mode]="compareWarning ? 'popup' : ''">
+        [mode]="compareWarning ? 'popup' : ''"
+        [backdropState]="searchSidebarState" 
+        (backdropClicked)="!compareWarning && closeSearchSidebar()">
     </uvx-backdrop>
-    <app-search-sidebar (searchCloseEvent)="toggleSearchSidebar()"></app-search-sidebar>
+    <app-search-sidebar (searchCloseEvent)="toggleSearchSidebar()" [searchSidebarState]="searchSidebarState"></app-search-sidebar>
     <app-compare-warning *ngIf="compareWarning" 
-        (closeCompareWarning)="compareWarning = false">
+        (closeCompareWarning)="compareWarning = false" [selectedItem]="selectedItem">
     </app-compare-warning>
 
     <app-uv-light *ngIf="uvLight" (uvLightToggle)="toggleUvLight()"

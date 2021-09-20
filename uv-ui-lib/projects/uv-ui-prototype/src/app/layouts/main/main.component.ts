@@ -28,6 +28,7 @@ export class MainComponent implements OnInit {
     public currentUser = {id: 1, new: false, name: ''};
     public currentHighlight = '';
     public uvLight = false;
+    public selectedItem = '';
 
     @Input() public searchQuery = '';
 
