@@ -19,7 +19,7 @@ export const allSearchResults = [
     },
     {
         category: 'Parts',
-        title: 'EXH-B-SU-5110-B1',
+        title: 'EXH-B-SU-5110',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
         active: false,
         disabled: false,
@@ -29,39 +29,17 @@ export const allSearchResults = [
 
     {
         category: 'Parts',
-        title: 'EXH-C-SU-5110-B2',
+        title: 'EXH-C-SU-5110',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
         active: false,
         disabled: false,
         date: '',
         formattedDate: ''
     },
-
     {
         category: 'Parts',
-        title: 'EXH-SU-5110-B1',
+        title: 'EXH-SU-5110',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-    },
-
-    {
-        category: 'Parts',
-        title: 'EXH-SU-5110-B2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-    },
-
-    {
-        category: 'Parts',
-        title: 'EXH-SU-5110-B3',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.` ,
         active: false,
         disabled: false,
         date: '',
