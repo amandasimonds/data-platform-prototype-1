@@ -12,6 +12,7 @@ export class SearchService {
     public recentSearchResults: SearchResult[] = [];
     public searchSidebarState = new BehaviorSubject<string>('hidden');
     public compareWarningState = new BehaviorSubject<boolean>(false);
+
     public resultSelectedEvent = new BehaviorSubject<SearchResult[]>([]);
 
     public searchResults = new BehaviorSubject<SearchResult[]>([]);
@@ -52,7 +53,7 @@ export class SearchService {
     public unselectAll() {
         console.log(this.getRecentSearches().length);
         console.log(this.getAllSearchResults().length);
-        let resultsList = [...this.getAllSearchResults(), ...this.getRecentSearches()]
+        let resultsList = [...this.getAllSearchResults(), ...this.resultSelectedEvent.value]
             .map(item => {
                 return {...item, disabled: item.disabled = false, active: item.active = false};
             });
@@ -86,6 +87,7 @@ export class SearchService {
             return new Date(b.date).getTime() - new Date(a.date).getTime();
         });
         this.recentSearchResults = values.slice(0, 10);
+        console.log(this.recentSearchResults);
         return this.recentSearchResults.slice();
     }
 
