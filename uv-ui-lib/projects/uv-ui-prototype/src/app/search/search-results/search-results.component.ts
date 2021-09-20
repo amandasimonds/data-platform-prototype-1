@@ -1,6 +1,9 @@
-import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, ChangeDetectorRef } from '@angular/core';
 import { SearchResult } from '../models/search-result.model';
 import { SearchService } from '../../services/search.service';
+import { takeUntil, tap } from 'rxjs/operators';
+import { pipe } from 'rxjs';
+import { NgOnDestroyService } from '../../services/on-destroy.service';
 
 @Component({
   selector: 'app-search-results',
@@ -8,40 +11,40 @@ import { SearchService } from '../../services/search.service';
   styleUrls: ['./search-results.component.scss', '../search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchResultsComponent {
+export class SearchResultsComponent implements OnChanges {
 
     @Input() public searchResults: SearchResult[] = [];
     @Input() public category = '';
     @Input() public searchText = '';
-    @Output() public recentSearchClick = new EventEmitter<string>();
+    // @Input() public compareWarningActive = false;
+    @Output() public recentSearchClick = new EventEmitter<SearchResult>();
     public recentSearches: SearchResult[] = [];
     public showToolbar = false;
     public classes: string[] = [];
 
-    mouseLeaveClass(){
-        this.classes.push('mouseleave')
-    }
+    mouseLeaveClass() {this.classes.push('mouseleave')}
+    mouseLeaveClassRemove() {this.classes.splice(0 , 1);}
 
-    mouseLeaveClassRemove(){
-        this.classes.splice(0 , 1);
-    }
-
-    compareClicked(value: boolean, item: SearchResult) {
-        let now = new Date().toString();
-        this.searchService.addToRecentSearches('search '+ now, item);
+    compareClicked(value: boolean, item: SearchResult, i: number) {
+        this.searchService.addToRecentSearches('search '+ item.title, item);
+        this.searchService.selectResult(item, i)
         this.searchService.setCompareWarningState(value);
+        event.stopPropagation();
     }
 
-    searchRecent(item: string) {
+    searchRecent(item: SearchResult) {
         this.recentSearchClick.emit(item);
+        this.searchService.addToRecentSearches('search '+ item.title, item);
     }
 
-    deleteRecentSearch(date: string) {
-        localStorage.removeItem('search ' + date);
+    deleteRecentSearch(title: string) {
+        localStorage.removeItem('search ' + title);
         this.recentSearches = this.searchService.getRecentSearches();
     }
 
-    constructor(private searchService: SearchService) {}
+    constructor(private searchService: SearchService, private ref: ChangeDetectorRef, private destroy$: NgOnDestroyService) {
+        // this.compareWarningActive = this.searchService.compareWarningState.value;
+    }
 
     ngOnInit(): void {
         this.recentSearches = this.searchService.getRecentSearches();
@@ -50,5 +53,13 @@ export class SearchResultsComponent {
     ngOnChanges(): void {
         this.searchResults = this.searchService.typeAheadSearch(this.searchText);
         this.recentSearches = this.searchService.getRecentSearches();
+        // console.log(this.compareWarningActive);
+    }
+
+    ngAfterViewChecked(): void {
+        //Called after every check of the component's view. Applies to components only.
+        //Add 'implements AfterViewChecked' to the class.
+        // this.recentSearches = this.searchService.getRecentSearches();
+        
     }
 }
