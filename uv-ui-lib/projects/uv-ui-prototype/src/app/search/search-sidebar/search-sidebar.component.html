@@ -1,6 +1,6 @@
-<uvx-side-panel mode="scroll" class="search-sidebar" [@slideInOut]="searchSidebarState">
-    <div top class="search-sidebar-top">
-        <div class="flex align-items-center justify-content-space-between  margin-bottom-sm">
+<div class="search-sidebar" [@slideInOut]="searchSidebarState">
+    <div class="search-sidebar-top">
+        <div class="flex align-items-center justify-content-space-between margin-bottom-sm">
             <div class="flex align-items-center">
                 <uvx-icon icon="search" color="gray" class="margin-right-xxs"></uvx-icon>
                 <h3>Global Search</h3>
@@ -9,22 +9,23 @@
             icon="close" 
             color="gray" 
             size="md"
-            (click)="closeSearchSidebar('hidden')"></uvx-icon-button>
+            (click)="onCloseClicked('hidden')"></uvx-icon-button>
         </div>
         <div class="margin-bottom-sm">
-            <uvx-search-panel mode="component-border" (searchCloseClicked)="searchText = ''">
+            <uvx-search-panel mode="component-border" (searchCloseClicked)="searchText = ''; resetScroll()">
                 <input type="text"
                     placeholder="Search..."
                     class="uv-input margin-left-xs"
                     maxlength="40"
+                    (ngModelChange)="resetScroll()"
                     [(ngModel)]="searchText">
             </uvx-search-panel>
         </div>
         
         <uvx-dropdown>
             <span title class="flex align-items center justify-content-space-between w-100">
-                <div>
-                    <uvx-icon icon="list-right" class="margin-right-xs"></uvx-icon>
+                <div class="flex align-items-center">
+                    <uvx-icon icon="{{searchCategoryIcon}}" class="margin-right-xs"></uvx-icon>
                     {{searchCategory}} 
                 </div>
                 <div class="divider-right margin-right-xs">
@@ -45,15 +46,21 @@
         </uvx-dropdown>
     </div>
 
-    <div bottom class="search-sidebar-bottom">
-        <p class="search-sidebar-bottom-header">
-            {{searchText === '' ? 'Recent Searches' : 
-            searchResults.length + ' Results for ' + searchText}}
-        </p>
-        <app-search-results 
+    <div class="divider"></div>
+
+    <div class="search-sidebar-header">
+        <span *ngIf="searchText === ''">Recent Searches</span>
+        <span *ngIf="getCategoryResultsNumber(searchCategory) > 0 && searchText != ''">{{getCategoryResultsNumber(searchCategory) + ' Results for ' + searchText }}</span>
+        <span *ngIf="getCategoryResultsNumber(searchCategory) === 0 && searchText != ''">No results</span>
+    </div>
+
+    <div class="search-sidebar-wrapper">
+        <div #resultsContainer class="search-sidebar-wrapper-scroll">
+            <app-search-results 
             [category]="searchCategory" 
             [searchText]="searchText"
             (recentSearchClick)="searchRecentSearch($event)">
-        </app-search-results>
+            </app-search-results>
+        </div>
     </div>
-</uvx-side-panel>
+</div>

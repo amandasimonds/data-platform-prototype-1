@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../models/search-result.model';
 import { SlideInOutAnimation } from '../../animations';
@@ -13,22 +13,24 @@ import { NgOnDestroyService } from '../../services/on-destroy.service';
         SlideInOutAnimation
     ]
 })
-export class SearchSidebarComponent implements OnInit {
+export class SearchSidebarComponent implements OnInit, AfterViewChecked {
 
     @Input() public searchCategory = 'All';
     @Output() public searchCloseEvent = new EventEmitter<string>();
     @Input() searchResults: SearchResult[] = [];
-    recentSearches: SearchResult[] = [];
+    @Input() recentSearches: SearchResult[] = [];
     @Input() searchText = '';
-    categoryOption: SearchResult[] = [];
-    compareWarning = false;
-    searchSidebarState = 'hidden';
+    @Input() searchSidebarState = 'hidden';
+    searchCategoryIcon = 'apps-design-ripple';
+
+    @ViewChild('resultsContainer', { static: true }) public resultsDiv: ElementRef;
 
     categories = [
-        {name: 'All', icon: 'list-right'},
-        {name: 'Requirements', icon: 'list-right'},
-        {name: 'Parts', icon: 'parts'}, 
-        {name: 'Documents', icon: 'document'}
+        {name: 'All', icon: 'apps-design-ripple', resultCount: 0},
+        {name: 'Materials', icon: 'apps-gwu', resultCount: 0},
+        {name: 'Requirements', icon: 'list-right', resultCount: 0},
+        {name: 'Parts', icon: 'parts', resultCount: 0}, 
+        {name: 'Documents', icon: 'document', resultCount: 0}
     ]
     
     constructor(
@@ -38,16 +40,40 @@ export class SearchSidebarComponent implements OnInit {
         private destroy$: NgOnDestroyService) {     
         }
 
-        // @HostListener('document:click', ['$event'])
-        // clickOutside(event: any) {
-        //     if (!this.elementRef.nativeElement.contains(event.target) 
-        //     && event.target.getAttribute("app-icon") != "app-icon") {
-        //         this.searchCloseEvent.emit('hidden');
-        //     }
-        // }
+    // @HostListener('document:click', ['$event'])
+    // clickOutside(event: any) {
+    //     if (!this.elementRef.nativeElement.contains(event.target) 
+    //     && event.target.getAttribute("app-icon") != "app-icon") {
+    //         this.searchCloseEvent.emit('hidden');
+    //     }
+    // }
+
+    resetScroll() {
+        this.resultsDiv.nativeElement.scrollTop = 0;
+    }
 
     selectCategory(category: string) {
         this.searchCategory = category;
+        switch(this.searchCategory) {
+            case 'All':
+                this.searchCategoryIcon = 'apps-design-ripple'
+                break;
+            case 'Materials':
+                this.searchCategoryIcon = 'apps-gwu'
+                break;
+            case 'Requirements':
+                this.searchCategoryIcon = 'list-right'
+                break;
+            case 'Parts':
+                this.searchCategoryIcon =  'parts'
+                break;
+            case 'Documents':
+                this.searchCategoryIcon = 'document'
+                break;
+            default:
+                this.searchCategoryIcon = 'apps-design-ripple'
+                break;
+        }
     }
 
     activateCompare(value: boolean) {
@@ -66,16 +92,28 @@ export class SearchSidebarComponent implements OnInit {
         }
     }
 
-    closeSearchSidebar(value: string){
-        this.searchCloseEvent.emit(value);
+    onCloseClicked(state: string){
+        this.searchCloseEvent.emit(state);
+        this.searchSidebarClosed(this.searchText)
+    }
+
+    searchSidebarClosed(searchText: string) {
+        let searchItem = {category: '', title: searchText, description: '', active: false, disabled: false, date: '', formattedDate: ''}
+        searchText = searchText.trim();
+        if (searchText != '') {
+            this.searchService.addToRecentSearches('search '+ searchText, searchItem);
+        }
+        this.searchText = '';
+        this.resetScroll();
     }
 
     updateResults(e: Event) {
         this.searchResults = this.searchService.typeAheadSearch(this.searchText);
     }
 
-    searchRecentSearch(item: string){
-        this.searchText = item;
+    searchRecentSearch(item: SearchResult){
+        this.searchText = item.title;
+        this.resetScroll();
     }
 
     ngOnInit(): void {  
@@ -86,6 +124,12 @@ export class SearchSidebarComponent implements OnInit {
             .subscribe(state => { this.searchSidebarState = state;
                 this.ref.detectChanges();
             });
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if(this.searchSidebarState === 'hidden') {
+            this.searchSidebarClosed(this.searchText)
+        }
     }
 
     ngAfterViewChecked(): void {

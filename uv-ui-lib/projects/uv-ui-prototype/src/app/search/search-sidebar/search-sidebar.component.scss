@@ -1,6 +1,6 @@
 .search-sidebar {
     height: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: var(--uv-navbar-width);
     z-index: var(--uv-z-index-search-sidebar);
@@ -8,22 +8,42 @@
     animation-duration: .6s;
     animation-timing-function: ease-in-out;
     width: 431px;
+    background-color: var(--uv-color-white);
 
-    &-bottom {
+    &-top {
+        padding: 24px;
+        position: relative;
+        z-index: auto;
+    }
 
-        &-header {
-            position: sticky; 
-            padding: 32px 32px 40px 32px;
-            top: 0; 
-            background-color: var(--uv-color-white);
-            height: 50px;
-            display: block;
-            z-index: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+    &-header {
+        padding: 20px 28px 38px 32px;
+        background-color: var(--uv-color-white);
+        height: 50px;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    &-wrapper {
+        padding-right:4px;
+        height: 100%;
+
+        &-scroll {
+            padding-top: 10px;
+            overflow: auto;
+            position: relative;
+            height: calc(100% - 285px);  
+        }
+
+        &-scroll:after {
+            display: table;
+            content: "";
+            clear: both;
         }
     }
+
 }
 
 // .no-display {
