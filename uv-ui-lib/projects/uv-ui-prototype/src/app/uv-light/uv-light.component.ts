@@ -27,6 +27,55 @@ export class UvLightComponent implements OnInit {
         this.uvLightToggle.emit()
     }
 
+    varNext = 0;                             
+    stepButton = 'Next';    
+    resetText = "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.";                               
+    content = this.resetText; 
+
+    //content
+    contentHolder = {
+        first: "This is the filler content for the first: Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+        second: "This is the filler content for the second: Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+        third: "This is the filler content for the third: Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+    }
+
+    public uv_next() {            
+        this.varNext++;
+            if(this.varNext == 1){
+                this.content = this.contentHolder.first;
+                this.highlightFeature('header');
+            }else if(this.varNext == 2){
+                this.content = this.contentHolder.second;
+                this.highlightFeature('sbs');
+                this.highlightFeature('search-options');
+            }else if(this.varNext == 3){                        
+                this.content = this.contentHolder.third;
+                this.stepButton = "Got it!"                 
+            }else if(this.varNext == 4){
+                this.varNext = 0;
+                this.content = this.resetText;
+                this.toggleUvLight();
+            }else{ }            
+    }
+
+    public uv_one() {       
+        this.varNext = 1;
+        this.content = this.contentHolder.first;
+        this.stepButton = "Next"
+    }
+
+    public uv_two() {       
+        this.varNext = 2;
+        this.content = this.contentHolder.second;
+        this.stepButton = "Next"
+    }
+
+    public uv_three() {       
+        this.varNext = 3;
+        this.content = this.contentHolder.third;
+        this.stepButton = "Got it!"   
+    }
+
     ngOnInit(): void {
     }
 

@@ -87,7 +87,7 @@ export class SearchService {
             return new Date(b.date).getTime() - new Date(a.date).getTime();
         });
         this.recentSearchResults = values.slice(0, 10);
-        console.log(this.recentSearchResults);
+        // console.log(this.recentSearchResults);
         return this.recentSearchResults.slice();
     }
 

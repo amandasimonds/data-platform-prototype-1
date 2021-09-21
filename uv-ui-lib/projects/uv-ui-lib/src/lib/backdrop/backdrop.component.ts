@@ -10,7 +10,7 @@ import { FadeInOutAnimation } from '../animations';
 export class BackdropComponent {
 
     @Input() backdropState = 'visible';
-    @Input() mode: '' | 'popup' | 'uv-light' = '';
+    @Input() mode: string = '';
     @Input() logo: 'uv-logo' | 'search' | '' = '';
     @Output() backdropClicked = new EventEmitter<Event>();
 

@@ -9,3 +9,9 @@
     box-shadow:var(--uv-box-shadow-2);
     padding: 32px;
 }
+
+@keyframes pulse { 
+    0% {  background: #ffffff; }
+    50% { background: #A020F0;  }
+    100% { background: #ffffff;  }
+}
