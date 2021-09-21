@@ -15,6 +15,10 @@
         z-index: var(--uv-z-index-popup-backdrop);
     }
 
+    &-uv-light {
+        z-index: var(--uv-z-index-uv-light-backdrop);
+    }
+
     &-logo {
         opacity: .2;
         width: 200px;
@@ -32,11 +36,11 @@
         transition-delay: .3s;
     }
 
-    &-uv-light {
-        position: absolute;
-        box-shadow: 0 0 0 9999px rgba(13,12,34,0.16);
-        z-index: var(--uv-z-index-popup-backdrop);
-    }
+    // &-uv-light {
+    //     position: absolute;
+    //     box-shadow: 0 0 0 9999px rgba(13,12,34,0.16);
+    //     z-index: var(--uv-z-index-popup-backdrop);
+    // }
 }
 
 .navbar {

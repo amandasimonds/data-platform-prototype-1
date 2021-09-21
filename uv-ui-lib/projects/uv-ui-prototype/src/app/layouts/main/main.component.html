@@ -15,6 +15,7 @@
                 <uvx-icon-button 
                     color='help' 
                     icon="lightbulb"
+                    class="z-index-popup"
                     (click)="toggleUvLight()">
                 </uvx-icon-button>
             </div>
@@ -57,7 +58,7 @@
     
     <uvx-backdrop 
     [backdropState]="uvLight ? 'visible' : searchSidebarState"
-        [mode]="compareWarning ? 'popup' : ''"
+        [mode]="backdropMode"
         [backdropState]="searchSidebarState" 
         (backdropClicked)="!compareWarning && closeSearchSidebar()">
     </uvx-backdrop>

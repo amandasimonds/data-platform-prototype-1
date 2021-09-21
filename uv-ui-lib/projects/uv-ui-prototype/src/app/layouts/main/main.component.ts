@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input, SimpleChanges } from '@angular/core';
 import { AppShellService } from '../../services/app-shell.service';
 import { navItems } from './navItems';
 import { SearchService } from '../../services/search.service';
@@ -31,6 +31,16 @@ export class MainComponent implements OnInit {
     public selectedItem = '';
 
     @Input() public searchQuery = '';
+
+    public get backdropMode(): string {
+        if(this.compareWarning){
+            return 'popup'
+        } else if (this.uvLight) {
+            return 'uv-light'
+        } else {
+            return '';
+        }
+    }
 
     constructor(
         public appShellService: AppShellService, 

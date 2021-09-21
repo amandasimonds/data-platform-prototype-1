@@ -1,6 +1,9 @@
 <div class="uv-light-modal">
-    <uvx-button label="Toggle UV Light" (click)="toggleUvLight()"></uvx-button>
-    <uvx-button label="Highlight Header" (click)="highlightFeature('header')"></uvx-button>
-    <uvx-button label="Highlight SBS documents" (click)="highlightFeature('sbs')"></uvx-button>
-    <uvx-button label="Highlight Search/Options" (click)="highlightFeature('search-options')"></uvx-button>
+    <div class="flex flex-column">
+            {{content}}
+            <div class="flex">
+                <uvx-button *ngIf="varNext != 3" label="Close" class="margin-right-sm" (click)="toggleUvLight()"></uvx-button>
+                <uvx-button label={{stepButton}} (click)="uv_next()"></uvx-button>
+            </div>
+    </div>
 </div>
