@@ -12,7 +12,7 @@
             (click)="onCloseClicked('hidden')"></uvx-icon-button>
         </div>
         <div class="margin-bottom-sm">
-            <uvx-search-panel mode="component-border" (searchCloseClicked)="searchText = ''; resetScroll()">
+            <uvx-search-panel mode="component-border" (searchCloseClicked)="searchText = ''; resetScroll(); searchCategory = 'All'">
                 <input type="text"
                     placeholder="Search..."
                     class="uv-input margin-left-xs"
