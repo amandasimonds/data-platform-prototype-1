@@ -5,7 +5,7 @@
         [class.search-result-selected]="item.active"
         [class.search-result-disabled]="item.disabled"
         (mouseleave)="mouseLeaveClass()"
-        (click)="searchText === '' && searchRecent(item)"
+        (click)="searchText === ''; !item.category && searchRecent(item)"
         [ngClass]="classes" 
         >
         
