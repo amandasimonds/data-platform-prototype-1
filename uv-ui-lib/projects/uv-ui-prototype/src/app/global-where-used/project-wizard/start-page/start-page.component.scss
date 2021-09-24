@@ -1,0 +1,34 @@
+.create-project {
+    width: 100%;
+    border: 1px dashed var(--uv-color-gray-2);
+    border-radius: 4px;
+    padding: 2.125rem;
+    text-align: center;
+    &:hover {
+        background-color: var(--uv-color-gray-light);
+    }
+}
+
+.project {
+    width: 100%;
+    border: 1px solid var(--uv-color-gray-2);
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+
+    &-action {
+        opacity: 0;
+    }
+
+    &-text {
+        width: 80%;
+    }
+
+    &:hover {
+        background-color: var(--uv-color-gray-light);
+        cursor: pointer;
+
+        .project-action {
+            opacity: 1;
+        }
+    }
+}

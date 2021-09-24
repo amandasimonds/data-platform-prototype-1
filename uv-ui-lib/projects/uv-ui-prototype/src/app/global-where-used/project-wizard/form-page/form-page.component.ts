@@ -31,7 +31,7 @@ export class FormPageComponent implements OnInit {
   }
 
   showButtonLabel() {
-    return !this.stepsService.isLastStep() ? 'Continue' : 'Finish';
+    return !this.stepsService.isLastStep() ? 'Next' : 'Finish';
   }
 
   cancelWizard() {

@@ -1,0 +1,50 @@
+.task-selection {
+    border: 2px solid var(--uv-color-gray-2);
+    padding: 1.75rem;
+    border-radius: 50%;
+
+    &:hover, &-selected {
+        background-color: var(--uv-color-gray-light);
+        border: 2px solid var(--uv-color-gray-light);
+        cursor: pointer;
+
+        svg {
+            color: var(--uv-color-primary);
+        }
+    }
+
+    &-wrapper{
+        &:hover {
+            .task-selection {
+                background-color: var(--uv-color-gray-light);
+                border: 2px solid var(--uv-color-gray-light);
+                cursor: pointer;
+                
+                svg {
+                    color: var(--uv-color-primary);
+                }
+
+            }
+
+            p {
+                color: var(--uv-color-primary)
+            }
+        }
+    }
+}
+
+.selected {
+    color: var(--uv-color-primary)
+}
+
+.task-selection-container {
+    gap: 36px;
+}
+
+.search-suggestion {
+    padding: 8px 16px;
+
+    &:hover {
+        background-color: var(--uv-color-gray-light);
+    }
+}

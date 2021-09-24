@@ -10,13 +10,13 @@
         <div class="form-step">
             <ng-container [ngSwitch]="(currentStep | async)?.stepIndex">
                 <ng-container *ngSwitchCase="'1'">
-                    <app-step-template [step]="(currentStep | async)"></app-step-template>
+                    <app-step-directions [step]="(currentStep | async)"></app-step-directions>
                 </ng-container>
                 <ng-container *ngSwitchCase="'2'">
-                    <app-step-template [step]="(currentStep | async)"></app-step-template>
+                    <app-step-directions [step]="(currentStep | async)"></app-step-directions>
                 </ng-container>
                 <ng-container *ngSwitchCase="'3'">
-                    <app-step-template [step]="(currentStep | async)"></app-step-template>
+                    <app-step-directions [step]="(currentStep | async)"></app-step-directions>
                 </ng-container>
             </ng-container>
         </div>
