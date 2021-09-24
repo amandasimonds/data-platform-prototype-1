@@ -42,6 +42,6 @@ export class FormPageComponent implements OnInit {
   onSubmit(): void {
     this.stepsService.resetWizard();
     //TODO: add logic to save project to project list (use local storage?)
-    this.router.navigate(['/main/gwu']);
+    this.router.navigate(['/main/gwu/landing']);
   }
 }

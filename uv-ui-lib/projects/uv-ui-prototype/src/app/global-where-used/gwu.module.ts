@@ -11,13 +11,15 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { StartPageModule } from './project-wizard/start-page/start-page.module';
 // import { WizardContainerModule } from './project-wizard/wizard-container/wizard-container.module';
 import { WizardContainerComponent } from './project-wizard/wizard-container/wizard-container.component';
+import { ProfileViewerModule } from './profile-viewer/profile-viewer.module';
+import { ProfileViewerContainerModule } from './profile-viewer-container/profile-viewer-container.module';
 
 @NgModule({
     declarations: [
         CompletePageComponent,
         GlobalWhereUsedComponent,
         LandingComponent,
-        WizardContainerComponent
+        WizardContainerComponent,
     ],
     imports: [
         CommonModule,
@@ -32,7 +34,9 @@ import { WizardContainerComponent } from './project-wizard/wizard-container/wiza
         FormPageModule,
         ActionBarModule,
         StartPageModule,
-        ModalModule
+        ModalModule,
+        ProfileViewerModule,
+        ProfileViewerContainerModule
     ],
     exports: [ GlobalWhereUsedComponent ],
     providers: [ StepsService ]

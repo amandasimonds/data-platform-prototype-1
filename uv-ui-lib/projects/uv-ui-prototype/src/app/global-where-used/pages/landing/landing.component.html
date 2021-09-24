@@ -1,16 +1,27 @@
-<div class="grid">
-
+<div class="uv-container-fluid h-100">
     
-    <div class="actionbar">
-        <uvx-action-bar>
-            <div right>
-                <uvx-icon-button class="margin-right-xs" color='primary' icon='more_dots'></uvx-icon-button>
-                <uvx-icon-button color='primary' icon='fullscreen'></uvx-icon-button>
+    <div class="row">
+        <uvx-action-bar class="w-100">
+            <div left class="gwu-nav flex gap-10 justify-content-space-between">
+                <span>Wave</span>
+                <span>Force Directed Graph</span>
+                <span>Profile</span>
             </div>
         </uvx-action-bar>
     </div>
+    <div *ngIf="expandActionBar"class="row">
+        <uvx-action-bar class="w-100">
+                <uvx-icon-button class="margin-right-xs" color='primary' icon='more_dots'></uvx-icon-button>
+                <uvx-icon-button color='primary' icon='fullscreen'></uvx-icon-button>
+        </uvx-action-bar>
+    </div>
+   
+        <app-profile-viewer-container>
+            <app-profile-viewer></app-profile-viewer>
+        </app-profile-viewer-container>
+</div>
 
-    <div class="sidebar">
+    <!-- <div class="sidebar">
         <uvx-side-panel>
             <div top>
                 <div class="height-sm top-content flex justify-content-space-between margin-bottom-sm">
@@ -31,12 +42,11 @@
                 </div> 
             </div>
         </uvx-side-panel>
-    </div>
+    </div> -->
 
-<div class="content">
+<!-- <div class="content">
 
     <router-outlet></router-outlet>
     
-</div>
+</div> -->
 
-</div>
