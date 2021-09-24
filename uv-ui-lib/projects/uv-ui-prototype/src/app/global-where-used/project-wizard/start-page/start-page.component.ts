@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { StepsService } from '../../../services/steps.service';
 
 @Component({
   selector: 'app-start-page',
@@ -8,7 +9,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class StartPageComponent {
 
-    constructor(private router: Router, private route: ActivatedRoute) {}
+    constructor(
+        private router: Router, 
+        private route: ActivatedRoute, 
+        private stepsService: StepsService) {}
+
+    closeWizard() {
+        this.stepsService.resetWizard();
+        this.router.navigate(['/main/gwu/landing']);
+    }
 
     startWizard() {
         this.router.navigate(

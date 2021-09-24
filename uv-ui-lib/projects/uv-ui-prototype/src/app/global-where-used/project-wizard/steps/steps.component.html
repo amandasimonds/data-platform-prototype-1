@@ -10,7 +10,10 @@
             'step-incomplete': !step.isComplete,
             'step-current': (currentStep | async)?.stepIndex === step.stepIndex
           }"
-          class="step-bubble">{{ step.stepIndex }}</div>
+          class="step-bubble">
+        <uvx-icon *ngIf="step.isComplete" icon="checked" color="white"></uvx-icon>
+        <span *ngIf="!step.isComplete">{{step.stepIndex}}</span>
+        </div>
       <div *ngIf="i < (steps | async)?.length - 1" class="step-divider"></div>
   </ng-container>
 </div>
