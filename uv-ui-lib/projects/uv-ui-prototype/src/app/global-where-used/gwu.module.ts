@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { SidePanelModule, ButtonModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule, ActionBarModule, ModalModule } from '../../../../uv-ui-lib/src/public-api';
-import { CompletePageComponent } from './project-wizard/complete-page/complete-page.component';
+import { SidePanelModule, ButtonModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule, ActionBarModule, ModalModule, UvxIconModule } from '../../../../uv-ui-lib/src/public-api';
 import { GlobalWhereUsedComponent } from './global-where-used.component';
 import { StepsService } from '../services/steps.service';
 import { GwuRoutingModule } from './global-where-used-routing.module';
@@ -16,7 +15,6 @@ import { ProfileViewerContainerModule } from './profile-viewer-container/profile
 
 @NgModule({
     declarations: [
-        CompletePageComponent,
         GlobalWhereUsedComponent,
         LandingComponent,
         WizardContainerComponent,
@@ -36,7 +34,8 @@ import { ProfileViewerContainerModule } from './profile-viewer-container/profile
         StartPageModule,
         ModalModule,
         ProfileViewerModule,
-        ProfileViewerContainerModule
+        ProfileViewerContainerModule,
+        UvxIconModule
     ],
     exports: [ GlobalWhereUsedComponent ],
     providers: [ StepsService ]

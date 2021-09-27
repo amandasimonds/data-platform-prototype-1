@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormPageComponent } from './project-wizard/form-page/form-page.component';
-import { CompletePageComponent } from './project-wizard/complete-page/complete-page.component';
 import { GlobalWhereUsedComponent } from './global-where-used.component';
 import { WizardContainerComponent } from './project-wizard/wizard-container/wizard-container.component';
 import { StartPageComponent } from './project-wizard/start-page/start-page.component';
@@ -37,10 +36,6 @@ const routes: Routes = [
                     {
                         path: 'form',
                         component: FormPageComponent
-                    },
-                    {
-                        path: 'complete',
-                        component: CompletePageComponent
                     },
                 ]
             },

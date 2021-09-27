@@ -42,7 +42,9 @@ export class StepsService {
   }
 
   resetWizard() {
-    console.log('resetwizard');
+    for (let i = 0; i < STEPS.length; i++ ) {
+        STEPS[i].isComplete = false;
+    }
     this.setCurrentStep(this.steps$.value[0]);
   }
 
