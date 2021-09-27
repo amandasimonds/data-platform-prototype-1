@@ -78,6 +78,10 @@
     }
 }
 
+.text-align-center {
+    text-align: center;
+}
+
 .gap-4 {
     gap: 4px;
 }
@@ -172,6 +176,10 @@
     padding-left: var(--uv-md-size);
 }
 
+.margin-auto {
+    margin: 0 auto;
+}
+
 .margin-4 {
     margin: 4px;
 }
@@ -206,6 +214,10 @@
 
 .margin-top-sm {
     margin-top: var(--uv-sm-size);
+}
+
+.margin-bottom-xxxs {
+    margin-bottom: var(--uv-xxxs-size);
 }
 
 .margin-bottom-xxs {
@@ -323,6 +335,10 @@
     background-color: var(--uv-color-white);
     border: var(--uv-border-gray);
     box-shadow: var(--uv-box-shadow);
+
+    &-rounded {
+        border-radius: 8px;
+    }
 }
 
 .scroll-wrapper {

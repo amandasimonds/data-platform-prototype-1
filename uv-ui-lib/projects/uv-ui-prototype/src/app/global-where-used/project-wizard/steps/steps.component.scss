@@ -11,26 +11,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid var(--uv-color-gray-2);
     border-radius: 50%;
-    color: var(--uv-color-primary);
+    color: var(--uv-color-gray-dark);
     font-size: 1em;
     cursor: pointer;
     user-select: none;
+    font-weight: var(--uv-font-bold)
 }
 
 .step-divider {
     height: 2px;
-    background: var(--uv-color-gray-light);
+    background: var(--uv-color-gray-2);
     flex: 1;
 }
 
 .step-current {
     background: var(--uv-color-primary);
     color: var(--uv-color-white);
+    font-weight: var(--uv-font-bold);
+    border: 2px solid var(--uv-color-primary);
 }
 
 .step-complete {
     background-color: var(--uv-color-success);
+    border: 2px solid var(--uv-color-success);
     color: var(--uv-color-white);
 }
 

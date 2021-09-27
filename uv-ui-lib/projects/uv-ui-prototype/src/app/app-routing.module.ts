@@ -42,10 +42,6 @@ const routes: Routes = [
                 loadChildren: () => import('./global-where-used/gwu.module').then(m => m.GwuModule)
             },
             {
-                path: 'search',
-                loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
-            },
-            {
                 path: 'settings',
                 component: SettingsComponent
             }

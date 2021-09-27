@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class LandingComponent {
 
+    expandActionBar = false;
+
     public gwuTabs = [
         {
             icon: 'more_dots',
