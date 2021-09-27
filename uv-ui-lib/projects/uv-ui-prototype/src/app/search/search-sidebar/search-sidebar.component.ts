@@ -1,138 +1,137 @@
-import { AfterViewChecked, ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, ElementRef, EventEmitter, ChangeDetectionStrategy, Input, OnInit, Output, ViewChild, OnChanges } from '@angular/core';
+import { takeUntil } from 'rxjs/operators';
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../models/search-result.model';
-import { SlideInOutAnimation } from '../../animations';
-import { takeUntil } from 'rxjs/operators';
+import { slideInOutAnimation } from '../../animations';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 
 @Component({
     selector: 'app-search-sidebar',
     templateUrl: './search-sidebar.component.html',
     styleUrls: ['./search-sidebar.component.scss'],
-    animations: [
-        SlideInOutAnimation
-    ]
+    animations: [slideInOutAnimation],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchSidebarComponent implements OnInit, AfterViewChecked {
+export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChanges {
 
     @Input() public searchCategory = 'All';
-    @Output() public searchCloseEvent = new EventEmitter<string>();
-    @Input() searchResults: SearchResult[] = [];
-    @Input() recentSearches: SearchResult[] = [];
-    @Input() searchText = '';
-    @Input() searchSidebarState = 'hidden';
-    searchCategoryIcon = 'apps-design-ripple';
+    @Input() public searchResults: SearchResult[] = [];
+    @Input() public recentSearches: SearchResult[] = [];
+    @Input() public searchText = '';
+    @Input() public searchSidebarState = 'hidden';
+    @Output() public readonly searchCloseEvent = new EventEmitter<string>();
+    public searchCategoryIcon = 'apps-design-ripple';
 
     @ViewChild('resultsContainer', { static: true }) public resultsDiv: ElementRef;
 
-    categories = [
+    public categories = [
         {name: 'All', icon: 'apps-design-ripple', resultCount: 0},
         {name: 'Materials', icon: 'apps-gwu', resultCount: 0},
         {name: 'Requirements', icon: 'list-right', resultCount: 0},
-        {name: 'Parts', icon: 'parts', resultCount: 0}, 
+        {name: 'Parts', icon: 'parts', resultCount: 0},
         {name: 'Documents', icon: 'document', resultCount: 0}
-    ]
-    
+    ];
+
     constructor(
         private searchService: SearchService,
         private ref: ChangeDetectorRef,
-        private elementRef: ElementRef,
-        private destroy$: NgOnDestroyService) {     
+        private destroy$: NgOnDestroyService) {
         }
 
-    // @HostListener('document:click', ['$event'])
-    // clickOutside(event: any) {
-    //     if (!this.elementRef.nativeElement.contains(event.target) 
-    //     && event.target.getAttribute("app-icon") != "app-icon") {
-    //         this.searchCloseEvent.emit('hidden');
-    //     }
-    // }
-
-    resetScroll() {
+    public resetScroll(): void {
         this.resultsDiv.nativeElement.scrollTop = 0;
     }
 
-    selectCategory(category: string) {
+    public selectCategory(category: string): void {
         this.searchCategory = category;
         switch(this.searchCategory) {
             case 'All':
-                this.searchCategoryIcon = 'apps-design-ripple'
+                this.searchCategoryIcon = 'apps-design-ripple';
                 break;
             case 'Materials':
-                this.searchCategoryIcon = 'apps-gwu'
+                this.searchCategoryIcon = 'apps-gwu';
                 break;
             case 'Requirements':
-                this.searchCategoryIcon = 'list-right'
+                this.searchCategoryIcon = 'list-right';
                 break;
             case 'Parts':
-                this.searchCategoryIcon =  'parts'
+                this.searchCategoryIcon =  'parts';
                 break;
             case 'Documents':
-                this.searchCategoryIcon = 'document'
+                this.searchCategoryIcon = 'document';
                 break;
             default:
-                this.searchCategoryIcon = 'apps-design-ripple'
+                this.searchCategoryIcon = 'apps-design-ripple';
                 break;
         }
     }
 
-    activateCompare(value: boolean) {
+    public activateCompare(value: boolean): void {
         this.searchService.setCompareWarningState(value);
     }
 
-    getCategoryResultsNumber(category: string): number {
-        let results: SearchResult[] = []
+    public getCategoryResultsNumber(category: string): number {
+        let results: SearchResult[] = [];
         this.searchText === '' ? results = this.recentSearches : results = this.searchResults;
         if (category === 'All') {
-            return results.length
-        }
-        else {
-            results = results.filter(item => item.category === category)
+            return results.length;
+        } else {
+            results = results.filter(item => item.category === category);
+
             return results.length;
         }
     }
 
-    onCloseClicked(state: string){
+    public onCloseClicked(state: string): void{
         this.searchCloseEvent.emit(state);
-        this.searchSidebarClosed(this.searchText)
+        this.searchSidebarClosed(this.searchText);
     }
 
-    searchSidebarClosed(searchText: string) {
-        let searchItem = {category: '', title: searchText, description: '', active: false, disabled: false, date: '', formattedDate: ''}
-        searchText = searchText.trim();
-        if (searchText != '') {
+    public searchSidebarClosed(searchText: string): void {
+        const searchItem = {
+            category: '',
+            title: searchText,
+            description: '',
+            active: false,
+            disabled: false,
+            date: '',
+            formattedDate: ''
+        };
+        searchText.trim();
+        if (searchText !== '') {
             this.searchService.addToRecentSearches('search '+ searchText, searchItem);
         }
         this.searchText = '';
         this.resetScroll();
     }
 
-    updateResults(e: Event) {
+    public updateResults(e: Event): void {
         this.searchResults = this.searchService.typeAheadSearch(this.searchText);
     }
 
-    searchRecentSearch(item: SearchResult){
+    public searchRecentSearch(item: SearchResult): void {
         this.searchText = item.title;
         this.resetScroll();
     }
 
-    ngOnInit(): void {  
+    public ngOnInit(): void {
         this.recentSearches = this.searchService.getRecentSearches();
         this.searchResults = this.searchService.getAllSearchResults();
         this.searchService.searchState$
             .pipe(takeUntil(this.destroy$))
-            .subscribe(state => { this.searchSidebarState = state;
+            .subscribe(state => {
+                this.searchSidebarState = state;
                 this.ref.detectChanges();
             });
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
+    public ngOnChanges(): void {
         if(this.searchSidebarState === 'hidden') {
-            this.searchSidebarClosed(this.searchText)
+            this.searchSidebarClosed(this.searchText);
         }
     }
 
-    ngAfterViewChecked(): void {
+    public ngAfterViewChecked(): void {
         this.searchResults = this.searchService.typeAheadSearch(this.searchText);
         this.recentSearches = this.searchService.getRecentSearches();
     }

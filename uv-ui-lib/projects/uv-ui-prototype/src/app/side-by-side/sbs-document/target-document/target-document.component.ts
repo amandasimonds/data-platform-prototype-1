@@ -17,26 +17,26 @@ export class TargetDocumentComponent implements OnInit {
     public selectedTargetDocuments: ISbsTargetDocument[] = [];
 
     constructor(
-        private sbsService: SidebySideService, 
+        private sbsService: SidebySideService,
         private ref: ChangeDetectorRef,
         private destroy$: NgOnDestroyService) {}
 
-    onTargetDocumentSelected(item: ISbsTargetDocument){
+    public onTargetDocumentSelected(item: ISbsTargetDocument): void {
         item.active = !item.active;
         this.sbsService.selectTargetDocument(item);
     }
 
-    onShowMoreDocumentDetails(event: Event, item: ISbsTargetDocument) {
+    public onShowMoreDocumentDetails(event: Event, item: ISbsTargetDocument): void {
         item.showDetails = !item.showDetails;
         event.stopPropagation();
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.sbsService.selectedTargetDocuments$
         .pipe(takeUntil(this.destroy$))
         .subscribe(targetDocs => {
             this.selectedTargetDocuments = targetDocs;
             this.ref.detectChanges();
-        })
+        });
     }
 }

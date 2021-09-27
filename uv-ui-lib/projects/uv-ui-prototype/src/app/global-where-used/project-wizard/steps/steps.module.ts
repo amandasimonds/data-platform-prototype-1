@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StepsComponent } from './steps.component';
 import { IconButtonModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { StepsComponent } from './steps.component';
 
 @NgModule({
   declarations: [StepsComponent],

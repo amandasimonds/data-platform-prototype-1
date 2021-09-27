@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, ChangeDetectionStrategy, Component, Input, OnInit, OnChanges } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { SbsFilterService } from '../../services/sbs-filter.service';
@@ -8,18 +8,18 @@ import { sbsFilters } from '../sample-data/sbs-filters';
 @Component({
   selector: 'sbs-filter-modal',
   templateUrl: './filter-modal.component.html',
-  styleUrls: ['./filter-modal.component.scss', '../side-by-side.component.scss']
+  styleUrls: ['./filter-modal.component.scss', '../side-by-side.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FilterModalComponent implements OnInit {
+export class FilterModalComponent implements OnInit, OnChanges {
 
-    @Input() searchText = '';
-    @Input() searchFilters: ISbsFilter[] = [];
+    @Input() public searchText = '';
+    @Input() public searchFilters: ISbsFilter[] = [];
 
     public appliedFilterList: ISbsFilter[] = [];
     public filterCategoriesList: ISbsFilter[] = sbsFilters;
     public customKeywordMode = false;
-    // searchCategoriesList = [];
-    keywordSearchResults: ISbsFilter[] = [];
+    public keywordSearchResults: ISbsFilter[] = [];
 
     constructor(
         private filterService: SbsFilterService,
@@ -27,32 +27,27 @@ export class FilterModalComponent implements OnInit {
         private destroy$: NgOnDestroyService
     ) { }
 
-    onFilterApplied(item: ISbsFilter, i: number) {
+    public onFilterApplied(item: ISbsFilter, i: number): void {
         this.filterService.applyFilter(item, i);
     }
 
-    onFilterKeywordApplied (item: ISbsFilter, i: number) {
+    public onFilterKeywordApplied(item: ISbsFilter, i: number): void {
         this.filterService.applyFilterKeyword(item, i);
     }
 
-    // applyCustomKeyword(text: string) {
-    //     this.filterService.applyCustomKeyword(text);
-    // }
-
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.filterService.appliedFilters$
         .pipe(takeUntil(this.destroy$))
         .subscribe(filters => {
             this.appliedFilterList = filters;
             this.ref.detectChanges();
             console.log(filters);
-        })
+        });
     }
 
-    ngOnChanges(): void {
-        if (this.searchText != ''){
+    public ngOnChanges(): void {
+        if (this.searchText !== ''){
             this.customKeywordMode = true;
-            // this.keywordSearchResults = this.filterService.searchMatchingKeywords(this.filterCategoriesList, this.searchText);
         } else {
             this.customKeywordMode = false;
         }

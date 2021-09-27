@@ -7,14 +7,14 @@ import { StartPageComponent } from './project-wizard/start-page/start-page.compo
 import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
-    { 
-        path: '', 
-        component: GlobalWhereUsedComponent, 
+    {
+        path: '',
+        component: GlobalWhereUsedComponent,
         children: [
             {
-                path: '', 
-                redirectTo: 'project-wizard', 
-                pathMatch: 'full' 
+                path: '',
+                redirectTo: 'project-wizard',
+                pathMatch: 'full'
             },
             {
                 path: 'landing',
@@ -25,9 +25,9 @@ const routes: Routes = [
                 component: WizardContainerComponent,
                 children: [
                     {
-                        path: '', 
-                        redirectTo: 'start', 
-                        pathMatch: 'full' 
+                        path: '',
+                        redirectTo: 'start',
+                        pathMatch: 'full'
                     },
                     {
                         path: 'start',
@@ -36,9 +36,9 @@ const routes: Routes = [
                     {
                         path: 'form',
                         component: FormPageComponent
-                    },
+                    }
                 ]
-            },
+            }
         ]
     }
 ];

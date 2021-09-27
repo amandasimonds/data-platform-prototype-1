@@ -1,21 +1,21 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { StepModel } from '../../../models/step.model';
 
 @Component({
   selector: 'app-step-directions',
   templateUrl: './step-directions.component.html',
   styleUrls: ['./step-directions.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class StepDirectionsComponent {
 
-    @Input() step: StepModel;
+    @Input() public step: StepModel;
 
-    searchText = '';
-    searchSelected = false;
+    public searchText = '';
+    public searchSelected = false;
 
-    taskSelections = [
+    public taskSelections = [
         {
             name: 'Compare',
             icon: 'compare',
@@ -51,9 +51,9 @@ export class StepDirectionsComponent {
             icon: 'checked',
             selected: false
         }
-    ]
+    ];
 
-    searchSuggestions = [
+    public searchSuggestions = [
         {
             title: 'Lorem ipsum dolor sit consectetur',
             description: 'Lorem ipsum dolor sit consectetur adipiscing elit sed do eiusmod tempor'
@@ -66,16 +66,15 @@ export class StepDirectionsComponent {
             title: 'Dolor sit consectetur',
             description: 'Dolor sit consectetur adipiscing elit sed do eiusmod tempor'
         }
-    ]
+    ];
 
-    enterSearchSuggestion(item: string) {
+    public enterSearchSuggestion(item: string): void {
         this.searchText = item;
         this.searchSelected = true;
-        this.onCompleteStep()
+        this.onCompleteStep();
     }
 
-    onCompleteStep() {
+    public onCompleteStep(): void {
         this.step.isComplete = true;
     }
-
 }

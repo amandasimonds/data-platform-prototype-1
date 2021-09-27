@@ -1,26 +1,27 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-compare-warning',
   templateUrl: './compare-warning.component.html',
-  styleUrls: ['./compare-warning.component.scss']
+  styleUrls: ['./compare-warning.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CompareWarningComponent {
 
-    @Input() selectedItem = '';
+    @Input() public selectedItem = '';
 
-    @Output() closeCompareWarningEvent = new EventEmitter<boolean>();
+    @Output() public readonly closeCompareWarningEvent = new EventEmitter<boolean>();
 
     constructor(private searchService: SearchService){}
 
-  closeCompareWarning() {
-      this.searchService.setCompareWarningState(false);
-      this.searchService.unselectAll();
-  }
+    public closeCompareWarning(): void {
+        this.searchService.setCompareWarningState(false);
+        this.searchService.unselectAll();
+    }
 
-  refresh() {
-      window.location.reload();
-  }
+    public refresh() {
+        window.location.reload();
+    }
 
 }

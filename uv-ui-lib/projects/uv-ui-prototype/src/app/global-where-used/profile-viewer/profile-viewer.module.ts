@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProfileViewerComponent } from './profile-viewer.component';
 import { ButtonModule, IconButtonModule } from 'projects/uv-ui-lib/src/public-api';
+import { ProfileViewerComponent } from './profile-viewer.component';
 
 @NgModule({
   declarations: [ProfileViewerComponent],

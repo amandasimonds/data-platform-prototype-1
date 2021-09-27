@@ -1,28 +1,28 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { StepModel } from '../../../models/step.model';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { StepModel } from '../../../models/step.model';
 import { StepsService } from '../../../services/steps.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-page',
   templateUrl: './form-page.component.html',
   styleUrls: ['./form-page.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormPageComponent implements OnInit {
-  currentStep: Observable<StepModel>;
+  public currentStep: Observable<StepModel>;
 
   constructor(
     private stepsService: StepsService,
-    private router: Router,
-    private route: ActivatedRoute) { }
+    private router: Router
+    ) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.currentStep = this.stepsService.getCurrentStep();
   }
 
-  onNextStep() {
+  public onNextStep(): void {
     if (!this.stepsService.isLastStep()) {
       this.stepsService.moveToNextStep();
     } else {
@@ -30,18 +30,17 @@ export class FormPageComponent implements OnInit {
     }
   }
 
-  showButtonLabel() {
+  public showButtonLabel(): string {
     return !this.stepsService.isLastStep() ? 'Next' : 'Finish';
   }
 
-  cancelWizard() {
+  public cancelWizard(): void {
     this.stepsService.resetWizard();
     this.router.navigate(['/main/gwu']);
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     this.stepsService.resetWizard();
-    //TODO: add logic to save project to project list (use local storage?)
     this.router.navigate(['/main/gwu/landing']);
   }
 }

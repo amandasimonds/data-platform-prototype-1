@@ -19,8 +19,7 @@ export default {
                     </div>
                 </div>
             `
-        ),
-        
+        )
       ]
 } as Meta;
 

@@ -8,8 +8,8 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 })
 export class UvxIconComponent {
 
-    @Input() icon = '';
-    @Input() color: 'black' | 'primary' | 'gray' | 'white' = 'black';
-    @Input() size: 'xs' | 'sm' | 'md' | 'xl' | 'bg' | 'checkmark' = 'sm';
+    @Input() public icon = '';
+    @Input() public color: 'black' | 'primary' | 'gray' | 'white' = 'black';
+    @Input() public size: 'xs' | 'sm' | 'md' | 'xl' | 'bg' | 'checkmark' = 'sm';
 
 }
