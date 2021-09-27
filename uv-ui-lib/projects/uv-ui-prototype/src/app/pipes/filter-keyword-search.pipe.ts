@@ -5,23 +5,20 @@ import { ISbsFilter } from '../models/sbs-filter.model';
     name:'search'
 })
 export class FilterKeywordSearchPipe implements PipeTransform {
-    transform(filters: ISbsFilter[], searchInput: string): ISbsFilter[]{    
+   public transform(filters: ISbsFilter[], searchInput: string): ISbsFilter[]{
         if(!searchInput) {
             return  [];
         }
 
         let keywordsSearch: ISbsFilter[] = [];
-        searchInput = searchInput.toLowerCase();
-        
-        for (let i = 0; i <= filters.length; i++){
-            for (let j = 0; j < filters[i].keywords.length; j++){
-                console.log(filters[i].keywords[j].name);
+        searchInput.toLowerCase();
+
+        for (let item of filters){
+            for (let j = 0; j < item.keywords.length; j++){
                 keywordsSearch = filters.filter(item => item.active);
-                // keywordsSearch = filters[i].keywords.filter((item) => item.name.toLowerCase().includes(searchInput));
-                console.log('forloop', keywordsSearch);
             }
         }
-        console.log('end of pipe', keywordsSearch);
+
         return keywordsSearch;
     }
 }

@@ -16,7 +16,7 @@
             position: relative;
             overflow: hidden;
             height: 1.875rem;
-            transition: ease-in-out .2s;
+            transition: ease-in-out 0.2s;
 
             &-expanded {
                 overflow: visible;
@@ -46,7 +46,8 @@
         transform: translateY(-1px);
         background-color: var(--uv-color-white);
 
-        .options-button, .sbs-document-card-bottom-show-more {
+        .options-button, 
+        .sbs-document-card-bottom-show-more {
             opacity: 1;
         }
 
@@ -62,7 +63,8 @@
         background-color: var(--uv-color-white);
     }
 
-    &-disabled, &-disabled:hover {
+    &-disabled, 
+    &-disabled:hover {
         cursor: not-allowed;
         transform: none;
         color: var(--uv-color-gray-dark);

@@ -1,6 +1,6 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
-export const SlideInOutAnimation = [
+export const slideInOutAnimation = [
     trigger('slideInOut', [
 
         state('visible', style({
@@ -11,11 +11,11 @@ export const SlideInOutAnimation = [
             transform: 'translateX(-500px)'
         })),
 
-        transition('hidden <=> visible', animate(200)),
+        transition('hidden <=> visible', animate(200))
     ]),
-]
+];
 
-export const FadeInOutAnimation = [
+export const fadeInOutAnimation = [
     trigger('fadeInOut', [
 
         state('visible', style({
@@ -26,6 +26,6 @@ export const FadeInOutAnimation = [
             opacity: '0'
         })),
 
-        transition('hidden <=> visible', animate(200)),
+        transition('hidden <=> visible', animate(200))
     ]),
-]
+];

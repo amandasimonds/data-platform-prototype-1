@@ -8,6 +8,6 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 })
 export class CardComponent  {
 
-    @Input() size: 'auto' | 'sm' | 'md' = 'auto';
+    @Input() public size: 'auto' | 'sm' | 'md' = 'auto';
 
 }

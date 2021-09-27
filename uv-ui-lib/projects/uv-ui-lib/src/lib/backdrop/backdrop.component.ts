@@ -1,18 +1,19 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FadeInOutAnimation } from '../animations';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
+import { fadeInOutAnimation } from '../animations';
 
 @Component({
     selector: 'uvx-backdrop',
     templateUrl: './backdrop.component.html',
     styleUrls: ['./backdrop.component.scss'],
-    animations: [ FadeInOutAnimation ]
+    animations: [fadeInOutAnimation],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BackdropComponent {
 
-    @Input() backdropState = 'visible';
-    @Input() mode: string = '';
-    @Input() logo: 'uv-logo' | 'search' | '' = '';
-    @Output() backdropClicked = new EventEmitter<Event>();
+    @Input() public backdropState = 'visible';
+    @Input() public  mode = '';
+    @Input() public logo: 'uv-logo' | 'search' | '' = '';
+    @Output() public readonly backdropClicked = new EventEmitter<Event>();
 
     public onBackdropClicked($event: Event): void {
         this.backdropClicked.emit($event);

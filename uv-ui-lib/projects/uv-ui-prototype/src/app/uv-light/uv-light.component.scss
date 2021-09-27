@@ -6,12 +6,18 @@
     top: 32px;
     right: 100px;
     border-radius: 4px;
-    box-shadow:var(--uv-box-shadow-2);
+    box-shadow: var(--uv-box-shadow-2);
     padding: 32px;
 }
 
 @keyframes pulse { 
-    0% {  background: #ffffff; }
-    50% { background: #A020F0;  }
-    100% { background: #ffffff;  }
+    0% {  
+        background: var(--uv-color-white); 
+    }
+    50% { 
+        background: var(--uv-color-help);  
+    }
+    100% { 
+        background: var(--uv-color-white);  
+    }
 }

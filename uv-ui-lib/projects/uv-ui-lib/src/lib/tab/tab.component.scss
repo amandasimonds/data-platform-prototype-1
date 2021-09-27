@@ -8,12 +8,15 @@
         font-weight: bold;
         background-color: var(--uv-color-gray-light);
         box-shadow: inset -4px 0 0 var(--uv-color-primary);
-            a, svg, span, mat-icon {
+            a, 
+            svg, 
+            span, 
+            mat-icon {
                 color: var(--uv-color-primary);
             }
             ::ng-deep {
                 & > * {
-                    color:var(--uv-color-primary);
+                    color: var(--uv-color-primary);
                 }
             }
     }
@@ -23,7 +26,9 @@
     color: var(--uv-color-gray);
     pointer-events: none;
     cursor: not-allowed;
-    a, svg, span {
+    a, 
+    svg, 
+    span {
         color: var(--uv-color-gray);
         pointer-events: none;
     }
@@ -31,7 +36,7 @@
         cursor: not-allowed;
         color: var(--uv-color-gray);
         font-weight: none;
-        background-color: white;
+        background-color: var(--uv-color-white);
         box-shadow: none;
         pointer-events: none;
         a, svg, span {

@@ -1,13 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'uvx-text-input',
   templateUrl: './text-input.component.html',
-  styleUrls: ['./text-input.component.scss']
+  styleUrls: ['./text-input.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TextInputComponent {
 
-    @Input() placeholder = '';
-    @Input() id = '';
-    @Input() label = '';
+    @Input() public placeholder = '';
+    @Input() public id = '';
+    @Input() public label = '';
 }

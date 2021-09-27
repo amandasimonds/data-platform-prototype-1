@@ -170,7 +170,7 @@ export const ICON_SET = [
     {
         name: 'uv-logo',
         url: 'uv-logo.svg'
-    },
+    }
 ] as const;
 
 export type UvxMatIconName = typeof ICON_SET[number]['name'];

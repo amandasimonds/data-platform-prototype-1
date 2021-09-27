@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { BackdropService } from './services/backdrop.service';
 
 @Component({
@@ -7,15 +7,15 @@ import { BackdropService } from './services/backdrop.service';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
-    @Input() backdropActive = false;
+    @Input() public backdropActive = false;
 
     constructor(
         private backdropService: BackdropService,
         private ref: ChangeDetectorRef){}
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.backdropService.backdropState$.subscribe(state => {
             this.backdropActive = state;
             this.ref.detectChanges();
