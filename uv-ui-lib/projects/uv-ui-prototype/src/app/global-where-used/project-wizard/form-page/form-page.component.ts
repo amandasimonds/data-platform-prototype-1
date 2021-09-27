@@ -31,7 +31,7 @@ export class FormPageComponent implements OnInit {
   }
 
   showButtonLabel() {
-    return !this.stepsService.isLastStep() ? 'Continue' : 'Finish';
+    return !this.stepsService.isLastStep() ? 'Next' : 'Finish';
   }
 
   cancelWizard() {
@@ -42,6 +42,6 @@ export class FormPageComponent implements OnInit {
   onSubmit(): void {
     this.stepsService.resetWizard();
     //TODO: add logic to save project to project list (use local storage?)
-    this.router.navigate(['/main/gwu']);
+    this.router.navigate(['/main/gwu/landing']);
   }
 }

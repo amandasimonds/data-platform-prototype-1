@@ -10,6 +10,17 @@ body, p {
     font-size: var(--uv-font-size-sm);
     line-height: 24px;
     color: var(--uv-font-color);
+
+    &-sm {
+        font-size: var(--uv-font-size-xs);
+        line-height: 16px;
+    }
+
+    &-secondary{
+        font-size: var(--uv-font-size-xs);
+        color: var(--uv-font-color-secondary);
+        line-height: var(--uv-font-size-xs);
+    }
 }
 
 h1 {
