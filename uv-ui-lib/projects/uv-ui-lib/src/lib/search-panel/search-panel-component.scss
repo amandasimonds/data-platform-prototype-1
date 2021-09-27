@@ -21,3 +21,27 @@
     border: var(--uv-border-gray);
     border-radius: 4px;
 }
+
+.rounded {
+    border-radius: 28px;
+    padding-left: 17px;
+}
+
+.suggestions-dropdown {
+    position: absolute;
+    max-height: 30vh;
+    top: 114%;
+    left: 0;
+    right: 0;
+    border-top: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2);
+}
+
+.select.open .suggestions-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
