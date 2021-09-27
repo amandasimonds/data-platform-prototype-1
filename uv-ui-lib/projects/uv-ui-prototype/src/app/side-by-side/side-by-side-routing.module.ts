@@ -18,6 +18,6 @@ export const sideBySideRoutes: Routes = [
 @NgModule({
     imports: [RouterModule.forChild(sideBySideRoutes)],
     exports: [RouterModule]
-  })
-  
+})
+
 export class SideBySideRoutingModule { }

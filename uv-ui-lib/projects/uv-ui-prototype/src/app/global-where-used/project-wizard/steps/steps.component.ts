@@ -1,32 +1,32 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { StepModel } from '../../../models/step.model';
 import { StepsService } from '../../../services/steps.service';
-import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-steps',
   templateUrl: './steps.component.html',
   styleUrls: ['./steps.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StepsComponent implements OnInit {
 
-  steps: Observable<StepModel[]>;
-  currentStep: Observable<StepModel>;
+  public steps: Observable<StepModel[]>;
+  public currentStep: Observable<StepModel>;
 
   constructor(private stepsService: StepsService, private router: Router) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.steps = this.stepsService.getSteps();
     this.currentStep = this.stepsService.getCurrentStep();
   }
 
-  onStepClick(step: StepModel) {
+  public onStepClick(step: StepModel): void {
     this.stepsService.setCurrentStep(step);
   }
 
-  cancelWizard() {
+  public cancelWizard(): void {
     this.stepsService.resetWizard();
     this.router.navigate(['/main/gwu']);
   }

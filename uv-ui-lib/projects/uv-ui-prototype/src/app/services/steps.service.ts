@@ -11,26 +11,26 @@ const STEPS = [
 @Injectable()
 export class StepsService {
 
-  steps$: BehaviorSubject<StepModel[]> = new BehaviorSubject<StepModel[]>(STEPS);
-  currentStep$: BehaviorSubject<StepModel> = new BehaviorSubject<StepModel>(null);
+  public steps$: BehaviorSubject<StepModel[]> = new BehaviorSubject<StepModel[]>(STEPS);
+  public currentStep$: BehaviorSubject<StepModel> = new BehaviorSubject<StepModel>(null);
 
   constructor() {
     this.currentStep$.next(this.steps$.value[0]);
   }
 
-  setCurrentStep(step: StepModel): void {
+  public setCurrentStep(step: StepModel): void {
     this.currentStep$.next(step);
   }
 
-  getCurrentStep(): Observable<StepModel> {
+  public getCurrentStep(): Observable<StepModel> {
     return this.currentStep$.asObservable();
   }
 
-  getSteps(): Observable<StepModel[]> {
+  public getSteps(): Observable<StepModel[]> {
     return this.steps$.asObservable();
   }
 
-  moveToNextStep(): void {
+  public moveToNextStep(): void {
     const index = this.currentStep$.value.stepIndex;
     console.log(index, this.currentStep$.value);
 
@@ -41,14 +41,14 @@ export class StepsService {
     console.log(index, this.currentStep$.value);
   }
 
-  resetWizard() {
-    for (let i = 0; i < STEPS.length; i++ ) {
-        STEPS[i].isComplete = false;
+  public resetWizard(): void {
+    for (const step of STEPS) {
+        step.isComplete = false;
     }
     this.setCurrentStep(this.steps$.value[0]);
   }
 
-  isLastStep(): boolean {
+  public isLastStep(): boolean {
     return this.currentStep$.value.stepIndex === this.steps$.value.length;
   }
 }

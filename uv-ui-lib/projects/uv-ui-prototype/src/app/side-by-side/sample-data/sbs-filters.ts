@@ -5,35 +5,35 @@ export const sbsFilters = [
         keywords: [
             {
                 name: 'Sullivan Campbell',
-                active: false,
+                active: false
             },
             {
                 name: 'Sullivan Ford',
-                active: false,
+                active: false
             },
             {
                 name: 'Sullivan Murphy',
-                active: false,
+                active: false
             },
             {
                 name: 'Sullivan Smith',
-                active: false,
+                active: false
             },
             {
                 name: 'Alexander Myron',
-                active: false,
+                active: false
             },
             {
                 name: 'Barnett Silas',
-                active: false,
+                active: false
             },
             {
                 name: 'Cross Jack',
-                active: false,
+                active: false
             },
             {
                 name: 'Flynn WIllis',
-                active: false,
+                active: false
             }
         ]
     },
@@ -43,7 +43,7 @@ export const sbsFilters = [
         keywords: [
             {
                 name: 'Engineering',
-                active: false,
+                active: false
             }
         ]
     },
@@ -53,7 +53,7 @@ export const sbsFilters = [
         keywords: [
             {
                 name: 'Sales',
-                active: false,
+                active: false
             }
         ]
     },
@@ -63,7 +63,7 @@ export const sbsFilters = [
         keywords: [
             {
                 name: 'Metal',
-                active: false,
+                active: false
             }
         ]
     },
@@ -73,7 +73,7 @@ export const sbsFilters = [
         keywords: [
             {
                 name: 'Steel',
-                active: false,
+                active: false
             }
         ]
     },
@@ -83,7 +83,7 @@ export const sbsFilters = [
         keywords: [
             {
                 name: 'Materials',
-                active: false,
+                active: false
             }
         ]
     },
@@ -93,7 +93,7 @@ export const sbsFilters = [
         keywords: [
             {
                 name: 'Design',
-                active: false,
+                active: false
             }
         ]
     },
@@ -103,15 +103,15 @@ export const sbsFilters = [
         keywords: [
             {
                 name: 'Parts',
-                active: false,
+                active: false
             },
             {
                 name: 'Documents',
-                active: false,
+                active: false
             },
             {
                 name: 'Requirements',
-                active: false,
+                active: false
             }
         ]
     },
@@ -121,15 +121,15 @@ export const sbsFilters = [
         keywords: [
             {
                 name: 'High',
-                active: false,
+                active: false
             },
             {
                 name: 'Medium',
-                active: false,
+                active: false
             },
             {
                 name: 'Low',
-                active: false,
+                active: false
             }
         ]
     },
@@ -139,11 +139,11 @@ export const sbsFilters = [
         keywords: [
             {
                 name: 'Standards',
-                active: false,
+                active: false
             },
             {
                 name: 'Certification',
-                active: false,
+                active: false
             }
         ]
     },
@@ -153,8 +153,8 @@ export const sbsFilters = [
         keywords: [
             {
                 name: '',
-                active: false,
+                active: false
             }
         ]
     }
-]
+];

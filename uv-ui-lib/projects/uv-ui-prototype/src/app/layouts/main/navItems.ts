@@ -31,7 +31,7 @@ export const navItems = [
         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',
         active: false,
         navlink: '/main',
-        disabled: false,
+        disabled: false
     },
     {
         app: 'settings',

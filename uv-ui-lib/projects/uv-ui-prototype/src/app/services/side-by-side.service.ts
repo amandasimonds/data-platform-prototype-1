@@ -8,16 +8,16 @@ import { targetDocumentSamples } from '../side-by-side/sample-data/target-docume
 @Injectable()
 export class SidebySideService {
 
-    private targetDocumentSelectedEvent = new BehaviorSubject<ISbsTargetDocument[]>([]);
-    private sourceDocumentSelectedEvent = new BehaviorSubject<ISbsSourceDocument[]>([]);
+    public targetDocumentSelectedEvent = new BehaviorSubject<ISbsTargetDocument[]>([]);
+    public sourceDocumentSelectedEvent = new BehaviorSubject<ISbsSourceDocument[]>([]);
 
-    readonly selectedTargetDocuments$ = this.targetDocumentSelectedEvent.asObservable();
-    readonly sourceDocumentsList$ = this.sourceDocumentSelectedEvent.asObservable();
+    public readonly selectedTargetDocuments$ = this.targetDocumentSelectedEvent.asObservable();
+    public readonly sourceDocumentsList$ = this.sourceDocumentSelectedEvent.asObservable();
 
     private targetDocuments: ISbsTargetDocument[] = targetDocumentSamples;
     private sourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
 
-    @Output() sourceDocumentSelected = new EventEmitter<boolean>();
+    @Output() public readonly sourceDocumentSelected = new EventEmitter<boolean>();
 
     public getTargetDocuments(): ISbsTargetDocument[] {
         return this.targetDocuments.slice();
@@ -27,7 +27,7 @@ export class SidebySideService {
         return this.sourceDocuments.slice();
     }
 
-    public selectSourceDocument(document: ISbsSourceDocument, i: number) {
+    public selectSourceDocument(document: ISbsSourceDocument, i: number): void {
         document.active = !document.active;
         let sourceDocsList: ISbsSourceDocument[] = [];
         const exceptIndex = i;
@@ -35,39 +35,39 @@ export class SidebySideService {
             this.sourceDocumentSelected.emit(true);
             sourceDocsList = this.getSourceDocuments()
             .filter((item, index) => exceptIndex !== index)
-            .map(item => {
-                return {...item, disabled: item.disabled = true};
-            });
+            .map(item => ({
+                ...item,
+                disabled: !item.disabled
+            }));
         } else {
             this.sourceDocumentSelected.emit(false);
             sourceDocsList = this.getSourceDocuments()
-            .map(item => {
-                return {...item, disabled: item.disabled = false};
-            });
+            .map(item => ({
+                ...item,
+                disabled: !item.disabled
+            }));
         }
         this.sourceDocumentSelectedEvent.next(sourceDocsList);
     }
 
-    public selectTargetDocument(document: ISbsTargetDocument) {
-        const selectedTargetDocs = [...this.targetDocumentSelectedEvent.value, document].filter(item => item.active === true);
+    public selectTargetDocument(document: ISbsTargetDocument): void {
+        const selectedTargetDocs = [...this.targetDocumentSelectedEvent.value, document].filter(item => item.active);
         this.targetDocumentSelectedEvent.next(selectedTargetDocs);
     }
 
-    unselectTargetDocument(document: ISbsTargetDocument) {
+    public unselectTargetDocument(document: ISbsTargetDocument): void {
         document.active = !document.active;
-        const selectedTargetDocs = [...this.targetDocumentSelectedEvent.value, document].filter(item => item.active === true);
+        const selectedTargetDocs = [...this.targetDocumentSelectedEvent.value, document].filter(item => item.active);
         this.targetDocumentSelectedEvent.next(selectedTargetDocs);
     }
 
-    public getSelectedTargetDocuments(): ISbsTargetDocument[]{
+    public getSelectedTargetDocuments(): ISbsTargetDocument[] {
         return this.targetDocumentSelectedEvent.value.slice();
     }
 
-    public clearTargetDocumentSelections(items: ISbsTargetDocument[]){
-        let selectedTargetDocs = items.map(item => {
-            return {...item, active: item.active = false};
-        });
-        selectedTargetDocs = selectedTargetDocs.filter(item => item.active === true);
+    public clearTargetDocumentSelections(items: ISbsTargetDocument[]): void {
+        let selectedTargetDocs = items.map(item => ({...item, active: !item.active}));
+        selectedTargetDocs = selectedTargetDocs.filter(item => item.active);
         this.targetDocumentSelectedEvent.next(selectedTargetDocs);
     }
 }

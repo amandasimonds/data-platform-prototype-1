@@ -7,6 +7,8 @@
     "build": "ng build uv-ui-prototype",
     "test": "ng test",
     "lint": "ng lint",
+    "eslint": "eslint -c .eslintrc.json --ext .ts projects/uv-ui-prototype",
+    "lint-lib": "eslint -c .eslintrc.json --ext .ts projects/uv-ui-lib",
     "lint-scss": "npx stylelint **/*.scss",
     "build-prototype": "ng build uv-ui-prototype -s ../uv-ui-lib/src/lib/assets",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",

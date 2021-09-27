@@ -5,9 +5,10 @@ import { StepsService } from '../../../services/steps.service';
 import { StepDirectionsModule } from '../step-directions/step-directions.module';
 import { StepsModule } from '../steps/steps.module';
 import { FormPageComponent } from './form-page.component';
+
 @NgModule({
     declarations: [
-        FormPageComponent,
+        FormPageComponent
     ],
     imports: [
         CommonModule,

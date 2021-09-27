@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UvxIconComponent } from './uvx-icon.component';
 import { RegisterIconModule } from '../register-icon/register-icon.module';
+import { UvxIconComponent } from './uvx-icon.component';
 
 @NgModule({
     declarations: [ UvxIconComponent ],

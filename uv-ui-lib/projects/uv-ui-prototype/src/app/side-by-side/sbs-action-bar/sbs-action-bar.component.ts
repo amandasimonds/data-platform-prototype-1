@@ -3,10 +3,8 @@ import { takeUntil } from 'rxjs/operators';
 ;
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { SidebySideService } from '../../services/side-by-side.service';
-import { ISbsFilter } from '../../models/sbs-filter.model';
 import { ISbsSourceDocument } from '../../models/sbs-source-document.model';
 import { ISbsTargetDocument } from '../../models/sbs-target-document.model';
-import { sbsFilters } from '../sample-data/sbs-filters';
 import { sourceDocumentSamples } from '../sample-data/source-documents';
 import { targetDocumentSamples } from '../sample-data/target-documents';
 
@@ -20,55 +18,55 @@ export class SbsActionBarComponent implements OnInit {
 
     @Input() public showTargetDocuments = false;
 
-    selectedTargetDocuments: ISbsTargetDocument[] = [];
-    sourceDocumentsList: ISbsSourceDocument[] = [];
-    loadedTargetDocuments: ISbsTargetDocument[] = targetDocumentSamples;
-    loadedSourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
+    public selectedTargetDocuments: ISbsTargetDocument[] = [];
+    public sourceDocumentsList: ISbsSourceDocument[] = [];
+    public loadedTargetDocuments: ISbsTargetDocument[] = targetDocumentSamples;
+    public loadedSourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
 
-    showMoreSelections = false;
-    showFilterModal = false;
-    searchText = '';
+    public showMoreSelections = false;
+    public showFilterModal = false;
+    public searchText = '';
 
     constructor(
-        private sbsService: SidebySideService, 
+        private sbsService: SidebySideService,
         private ref: ChangeDetectorRef,
         private destroy$: NgOnDestroyService
     ) { }
 
-    toggleShowMoreSelections() {
+    public toggleShowMoreSelections(): void {
         this.showMoreSelections = !this.showMoreSelections;
     }
 
-    toggleFilterModal() {
+    public toggleFilterModal(): void {
         if(this.searchText === ''){
             this.showFilterModal = !this.showFilterModal;
         }
     }
 
-    unselectTargetDocument(item: ISbsTargetDocument) {
+    public unselectTargetDocument(item: ISbsTargetDocument): void {
         this.sbsService.unselectTargetDocument(item);
     }
 
-    clearSelections(items: ISbsTargetDocument[]) {
+    public clearSelections(items: ISbsTargetDocument[]): void {
         this.sbsService.clearTargetDocumentSelections(items);
     }
 
-    clearSearch() {
+    public clearSearch(): void {
         this.searchText = '';
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.sbsService.sourceDocumentsList$
         .pipe(takeUntil(this.destroy$))
         .subscribe(sourceDocs => {
             this.sourceDocumentsList = sourceDocs;
             this.ref.detectChanges();
-        })
+        });
         this.sbsService.selectedTargetDocuments$
         .pipe(takeUntil(this.destroy$))
         .subscribe(targetDocs => {
             this.selectedTargetDocuments = targetDocs;
             this.ref.detectChanges();
-        })
+        });
     }
 }

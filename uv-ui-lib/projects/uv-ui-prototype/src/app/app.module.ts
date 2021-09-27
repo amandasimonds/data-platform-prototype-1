@@ -23,7 +23,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeSplashModule } from './home-splash/home-splash.module';
 import { MainComponent } from './layouts/main/main.component';
-import { SearchModule } from './search/search.module';
 import { HelperService } from './services/helper.service';
 import { SearchService } from './services/search.service';
 import { SideBySideModule } from './side-by-side/side-by-side.module';
@@ -63,22 +62,21 @@ import { UvLightService } from './services/uv-light.service';
         NavbarModule,
         RegisterIconModule,
         RegisterIconModule.forRoot(ICON_SET),
-        SearchModule,
         SearchPanelModule,
         SearchSidebarModule,
         SidePanelModule,
         SideBySideModule,
         TabModule,
-        UvxIconModule,
+        UvxIconModule
     ],
     providers: [
         AppShellService,
         AuthService,
         BackdropService,
-        HelperService, 
-        HttpClient, 
+        HelperService,
+        HttpClient,
         NgOnDestroyService,
-        SearchService, 
+        SearchService,
         SidebySideService,
         UserService,
         UvLightService

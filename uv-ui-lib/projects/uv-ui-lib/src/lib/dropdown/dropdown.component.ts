@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, HostListener, ElementRef, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, HostListener, ElementRef } from '@angular/core';
 import { IDropdown } from '../interfaces/dropdown.interfaces';
 
 @Component({
@@ -17,25 +17,17 @@ export class DropdownComponent {
     constructor(private elementRef: ElementRef) {}
 
     @HostListener('document:click', ['$event'])
-    clickOutside(event: any) {
+    public clickOutside(event: any): void {
         if (!this.elementRef.nativeElement.contains(event.target)) {
             this.open = false;
         }
     }
 
-    // @HostListener('document:mouseout', ['$event'])
-    // mouseOutside(event: any) {
-    //     if (!this.elementRef.nativeElement.contains(event.target)) {
-    //         this.open = false;
-    //     }
-    // }
-
-    public toggle() {
-       this.open = !this.open
+    public toggle(): void {
+       this.open = !this.open;
     }
 
     public trackByFn(_: number, {name}: IDropdown): string {
         return name;
     }
-
 }

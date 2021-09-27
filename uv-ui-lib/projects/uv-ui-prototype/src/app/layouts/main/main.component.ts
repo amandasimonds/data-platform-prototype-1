@@ -1,13 +1,13 @@
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input, SimpleChanges } from '@angular/core';
-import { AppShellService } from '../../services/app-shell.service';
-import { navItems } from './navItems';
-import { SearchService } from '../../services/search.service';
+import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { takeUntil, tap } from 'rxjs/operators';
-import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { combineLatest } from 'rxjs';
+import { takeUntil, tap } from 'rxjs/operators';
+import { AppShellService } from '../../services/app-shell.service';
+import { SearchService } from '../../services/search.service';
+import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { UserService } from '../../services/user.service';
 import { UvLightService } from '../../services/uv-light.service';
+import { navItems } from './navItems';
 
 @Component({
     selector: 'prototype-app-main',
@@ -34,22 +34,22 @@ export class MainComponent implements OnInit {
 
     public get backdropMode(): string {
         if(this.compareWarning){
-            return 'popup'
+            return 'popup';
         } else if (this.uvLight) {
-            return 'uv-light'
+            return 'uv-light';
         } else {
             return '';
         }
     }
 
     constructor(
-        public appShellService: AppShellService, 
+        public appShellService: AppShellService,
         public searchService: SearchService,
         private ref: ChangeDetectorRef,
         private route: ActivatedRoute,
         private destroy$: NgOnDestroyService,
         private userService: UserService,
-        private uvlService: UvLightService) { 
+        private uvlService: UvLightService) {
         }
 
     public ngOnInit(): void {
@@ -61,36 +61,33 @@ export class MainComponent implements OnInit {
             this.searchService.compareWarning$.pipe(tap(state => this.compareWarning = state)),
             this.userService.currentUser$.pipe(tap(user => this.currentUser = user)),
             this.uvlService.currentHighlight$.pipe(tap(highlight => this.currentHighlight = highlight))
-            
-        ]).pipe( 
-            // do other things if you want
+        ]).pipe(
             takeUntil(this.destroy$)
-        ).subscribe( () => this.ref.detectChanges());
+        ).subscribe(() => this.ref.detectChanges());
         this.route.queryParams.subscribe(
-            params => { this.currentApp =  params['app'];}
-        )
-
-        console.log(this.currentUser);
-        console.log(this.currentHighlight);
+            params => {
+                this.currentApp =  params['app'];
+            }
+        );
     }
 
     public get checkifSearch(): boolean {
         return this.title === 'Search';
     }
 
-    toggleSearchSidebar() {
-        this.searchSidebarState == 'hidden' ? 
+    public toggleSearchSidebar(): void {
+        this.searchSidebarState === 'hidden' ?
             (this.searchService.setSearchSidebarState('visible'),
-            this.appShellService.setNavIcon('search')) : 
+            this.appShellService.setNavIcon('search')) :
             (this.searchService.setSearchSidebarState('hidden'),
             this.appShellService.setNavIcon(this.currentApp));
     }
 
-    toggleUvLight() {
+    public toggleUvLight(): void {
         this.uvLight = !this.uvLight;
     }
 
-    closeSearchSidebar() {
+    public closeSearchSidebar(): void {
         this.searchService.setSearchSidebarState('hidden');
         this.appShellService.setNavIcon(this.currentApp);
     }

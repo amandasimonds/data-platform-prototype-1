@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
-import { LOCAL_STORAGE } from '../tokens/local-storage';
 import { AbstractSecurityStorage } from 'angular-auth-oidc-client';
+import { LOCAL_STORAGE } from '../tokens/local-storage';
 
 @Injectable()
 export class LocalStorage implements AbstractSecurityStorage {

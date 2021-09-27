@@ -3,7 +3,7 @@ import { AuthModule } from 'angular-auth-oidc-client';
 import { LocalStorage } from './local-storage.service';
 
 @NgModule({
-    imports: [AuthModule.forRoot({ 
+    imports: [AuthModule.forRoot({
         storage: LocalStorage,
         config: {
             authority: 'https://dev-0d2xh410.us.auth0.com',
@@ -16,7 +16,7 @@ import { LocalStorage } from './local-storage.service';
             responseType: 'code',
             silentRenew: true,
             useRefreshToken: true,
-            renewTimeBeforeTokenExpiresInSeconds: 30,
+            renewTimeBeforeTokenExpiresInSeconds: 30
         }
         // config: {
         //     authority: 'https://uv-dev-test.us.auth0.com',
@@ -27,7 +27,7 @@ import { LocalStorage } from './local-storage.service';
         //     responseType: 'code',
         //     silentRenew: true,
         //     useRefreshToken: true,
-        //     renewTimeBeforeTokenExpiresInSeconds: 30,
+        //     renewTimeBeforeTokenExpiresInSeconds: 30
         // }
     })],
     exports: [AuthModule]

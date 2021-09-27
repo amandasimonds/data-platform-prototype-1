@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Output, Input, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SidebySideService } from '../../../services/side-by-side.service';
 import { ISbsSourceDocument } from '../../../models/sbs-source-document.model';
 import { sourceDocumentSamples } from '../../sample-data/source-documents';
@@ -13,14 +13,14 @@ export class SourceDocumentComponent {
 
     public sourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
 
-    onShowMoreDocumentDetails(event: Event, item: ISbsSourceDocument) {
-        item.showDetails = !item.showDetails;
-        event.stopPropagation();
-    }
-
     constructor(private sbsService: SidebySideService) { }
 
-    onSourceDocumentSelected(item: ISbsSourceDocument, i: number){
+    public onSourceDocumentSelected(item: ISbsSourceDocument, i: number): void {
         this.sbsService.selectSourceDocument(item, i);
+    }
+
+    public onShowMoreDocumentDetails(event: Event, item: ISbsSourceDocument): void {
+        item.showDetails = !item.showDetails;
+        event.stopPropagation();
     }
 }

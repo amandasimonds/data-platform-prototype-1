@@ -36,8 +36,8 @@
     border-top: 0;
     cursor: pointer;
     border-radius: 4px;
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2);
+    background-color: var(--uv-color-white);
+    box-shadow: var(--uv-box-shadow-2);
 }
 
 .select.open .suggestions-dropdown {

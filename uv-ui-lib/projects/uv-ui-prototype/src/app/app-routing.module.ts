@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AutoLoginAllRoutesGuard } from 'angular-auth-oidc-client';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './layouts/main/main.component';
 import { SettingsComponent } from './settings/settings.component';
-import { AutoLoginAllRoutesGuard } from 'angular-auth-oidc-client';
 import { AuthCallbackComponent } from './layouts/auth-callback/auth-callback.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: AuthCallbackComponent,
+        component: AuthCallbackComponent
     },
     {
         path: 'login',
@@ -47,8 +47,7 @@ const routes: Routes = [
             }
         ],
         canActivate: [AutoLoginAllRoutesGuard]
-    },
-    
+    }
 ];
 
 @NgModule({
