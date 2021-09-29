@@ -12,6 +12,14 @@ export class StepDirectionsComponent {
 
     @Input() public step: StepModel;
 
+    public formatLabel(value: number) {
+        if (value >= 1000) {
+          return Math.round(value / 1000) + 'k';
+        }
+    
+        return value;
+      }
+
     public searchText = '';
     public searchSelected = false;
 

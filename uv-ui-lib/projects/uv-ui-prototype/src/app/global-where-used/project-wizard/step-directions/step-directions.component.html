@@ -55,7 +55,19 @@
         <p class="uv-body">
             Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         </p>
+        <div class="flex flex-column">
 
+            <mat-slider
+  thumbLabel
+  [displayWith]="formatLabel"
+  tickInterval="1000"
+  step="1000"
+  min="0"
+  max="100000"
+  aria-label="units"></mat-slider>
+
+        </div>
+        
         <uvx-button class="flex flex-end" label="Complete" (click)="onCompleteStep()"></uvx-button>
 
         <uvx-button class="flex flex-end" label="Advanced Options"></uvx-button>

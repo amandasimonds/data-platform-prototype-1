@@ -7,6 +7,8 @@ import { StepDirectionsComponent } from './step-directions.component';
 import { StepOneComponent } from './step-one/step-one.component';
 import { StepTwoComponent } from './step-two/step-two.component';
 import { StepThreeComponent } from './step-three/step-three.component';
+import { MDCSlider } from '@material/slider';
+import { MatSliderModule } from '@angular/material/slider'; 
 
 @NgModule({
     declarations: [
@@ -21,7 +23,8 @@ import { StepThreeComponent } from './step-three/step-three.component';
         ButtonModule,
         TextInputModule,
         SearchPanelModule,
-        FormsModule
+        FormsModule,
+        MatSliderModule
     ],
     exports: [ StepDirectionsComponent ],
     providers: [ StepsService ]
