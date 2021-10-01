@@ -41,6 +41,7 @@ export class FormPageComponent implements OnInit {
 
   public onSubmit(): void {
     this.stepsService.resetWizard();
-    this.router.navigate(['/main/gwu/landing']);
+    console.log('submit');
+    this.router.navigate(['/main/gwu/project-wizard/launch']);
   }
 }

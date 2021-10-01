@@ -1,4 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StepModel } from '../../../models/step.model';
 
 @Component({
@@ -75,6 +76,8 @@ export class StepDirectionsComponent {
             description: 'Dolor sit consectetur adipiscing elit sed do eiusmod tempor'
         }
     ];
+
+    constructor(private route: ActivatedRoute, private router: Router) {}
 
     public enterSearchSuggestion(item: string): void {
         this.searchText = item;
