@@ -1,0 +1,20 @@
+<div class="slider-container" [ngStyle]="{'width' : sliderWidth}">
+    <input type="range" 
+    data-popup-enabled = "true"
+    min={{min}}
+    max={{max}} 
+    [value]="value"
+    class="slider" 
+    id={{rangeId}}
+    [(ngModel)]="value"
+    [ngStyle]="{'background': background }"/>
+    <div class="slider-tooltip" [ngStyle]="{'left': tooltipPosition }">
+        <span class="uv-body-sm">
+            {{value}}
+        </span>
+    </div>
+</div>
+<div class="flex justify-content-space-between">
+    <span class="uv-body-sm">{{minLabel}}</span>
+    <span class="uv-body-sm">{{maxLabel}}</span>
+</div>

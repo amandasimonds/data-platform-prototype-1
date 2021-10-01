@@ -11,6 +11,7 @@ import { StartPageModule } from './project-wizard/start-page/start-page.module';
 import { WizardContainerComponent } from './project-wizard/wizard-container/wizard-container.component';
 import { ProfileViewerModule } from './profile-viewer/profile-viewer.module';
 import { ProfileViewerContainerModule } from './profile-viewer-container/profile-viewer-container.module';
+import { LaunchPointPageModule } from './project-wizard/launch-point-page/launch-point-page.module';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { ProfileViewerContainerModule } from './profile-viewer-container/profile
         DragDropModule,
         CheckboxModule,
         GwuRoutingModule,
+        LaunchPointPageModule,
         FormPageModule,
         ActionBarModule,
         StartPageModule,

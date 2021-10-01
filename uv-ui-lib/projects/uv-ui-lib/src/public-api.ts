@@ -24,6 +24,8 @@ export * from './lib/modal/modal.component';
 export * from './lib/modal/modal.module';
 export * from './lib/navbar/navbar.component';
 export * from './lib/navbar/navbar.module';
+export * from './lib/range-slider/range-slider.module';
+export * from './lib/range-slider/range-slider.component';
 export * from './lib/register-icon/register-icon.module';
 export * from './lib/register-icon/register-icon.directive';
 export * from './lib/register-icon/icon-set';

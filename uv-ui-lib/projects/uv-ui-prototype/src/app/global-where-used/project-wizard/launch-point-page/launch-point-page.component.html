@@ -1,0 +1,23 @@
+<div class="padding-sm flex justify-content-space-between">
+    <h4 class="medium-bold">What is your launch point?</h4>
+    <uvx-icon-button icon="close" size="md" color="gray"></uvx-icon-button>
+</div>
+
+<div class="divider"></div>
+
+<div class="flex align-items-center justify-content-center padding-sm">
+
+    <div class="flex flex-wrap container justify-content-center">
+        <div *ngFor="let item of taskSelections" class="flex flex-column align-items-center task-selection">
+            <uvx-icon-button 
+                [class.task-selection-selected]="item.selected" 
+                class="task-selection-button margin-bottom-xxs" 
+                (click)="onLaunchPointSelected(item.route); item.selected = true" 
+                [icon]="item.icon"></uvx-icon-button>
+            <p class="uv-body medium-bold" [class.selected]="item.selected">
+                {{item.name}}
+            </p>
+        </div>
+    </div>
+
+</div>

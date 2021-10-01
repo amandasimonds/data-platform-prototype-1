@@ -5,6 +5,7 @@ import { GlobalWhereUsedComponent } from './global-where-used.component';
 import { WizardContainerComponent } from './project-wizard/wizard-container/wizard-container.component';
 import { StartPageComponent } from './project-wizard/start-page/start-page.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { LaunchPointPageComponent } from './project-wizard/launch-point-page/launch-point-page.component';
 
 const routes: Routes = [
     {
@@ -36,6 +37,10 @@ const routes: Routes = [
                     {
                         path: 'form',
                         component: FormPageComponent
+                    },
+                    {
+                        path: 'launch',
+                        component: LaunchPointPageComponent
                     }
                 ]
             }
