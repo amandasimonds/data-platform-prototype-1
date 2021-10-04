@@ -2,9 +2,11 @@
 
 #### Introduction
 
-This project serves as a sandbox environment for the Design Team, primarily for experiencing UI/UX designs through software instead of static mockups. It acts as another layer of mockups that the design team can use and build upon.
+This project serves as a sandbox environment for the Design Team, primarily for experiencing UI/UX designs through software instead of static mockups. It acts as another layer of mockups that the design team can use and build upon, and as an important tool for Usability Testing with our customers.
 
-Implemented designs will sometimes correspond to existing designs for Beta, but will also correspond to post-beta designs that are still under review and testing.
+Please note that implemented designs will sometimes correspond to existing designs for Beta, but will also correspond to post-beta designs that are still under review and testing. Therefore, Engineering teams should continue to reference approved InVision links for front end development.
+
+Also, be informed that this prototype does not correspond to [Pattern Library II for UV](https://pattern-library-ii.dev.uvp.epd.pdd.ihs.com/). Because the prototype is used mainly within the Design Team, it has its own component library that is not meant to be used by Engineering. Engineering teams should refer to Pattern Library II for front end development as well.
 
 Not all designs are included in UV-UI-Prototype - but only features we choose based on need for concept actualization, refinement, and showing general user flow through the app.
 
@@ -18,7 +20,9 @@ Usability testing is done internally, by people within the team, and externally,
 
 #### Deployment
 
-Internal users - https://uvuiprototype.z13.web.core.windows.net
+This project is deployed on Azure. The internal link is protected by OIDC Auth library within the USG-UV-DEV security group. The external link is secured under Auth0 and made accessible to external users through a rotating user/pw.
+
+Internal users - https://uvuiprototype.z13.web.core.windows.net 
 External users - https://uvuiusabilitytest.z13.web.core.windows.net
 
 #### Getting Started
