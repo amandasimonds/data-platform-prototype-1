@@ -5,15 +5,18 @@
             <div left class="flex">
                 <div class="margin-right-md">
                     <uvx-icon icon="apps-design-ripple" class="margin-right-xs"></uvx-icon>
-                    <span class="medium-bold">Wave</span>
+                    <span class="medium-bold" routerLink="wave">Wave</span>
                 </div>
                 <div class="margin-right-md">
                     <uvx-icon icon="apps-gwu" class="margin-right-xs"></uvx-icon>
-                    <span class="medium-bold">Force Directed Graph</span>
+                    <span class="medium-bold" routerLink="force-directed-graph">Force Directed Graph</span>
                 </div>
                 <div class="margin-right-md">
                     <uvx-icon icon="document" class="margin-right-xs"></uvx-icon>
-                    <span class="medium-bold">Profile</span>
+                    <span class="medium-bold" routerLink="profile">Profile</span>
+                </div>
+                <div class="margin-right-md">
+                    <uvx-button (click)="projectWizard = true"  label="New Project"></uvx-button>
                 </div>
             </div>
         </uvx-action-bar>
@@ -24,38 +27,19 @@
                 <uvx-icon-button color='primary' icon='fullscreen'></uvx-icon-button>
         </uvx-action-bar>
     </div>
-   
-        <app-profile-viewer-container>
-            <app-profile-viewer></app-profile-viewer>
-        </app-profile-viewer-container>
-</div>
-
-    <!-- <div class="sidebar">
-        <uvx-side-panel>
-            <div top>
-                <div class="height-sm top-content flex justify-content-space-between margin-bottom-sm">
-                    <div>
-                        <uvx-button label="Back" mode="text" icon="back" color="primary"></uvx-button>
-                    </div>
-                </div>
-                <h4 class="margin-bottom-xs">Title Goes Here</h4>
-                <p>Lorem ipsum dolor sit amet consectetur eiusmod tempor adipiscing elit sed do incididunt ut labore</p>
-            </div>
-
-            <div bottom>
-                    <div *ngFor="let tab of gwuTabs">
-                        <uvx-tab 
-                        icon="{{tab.icon}}" 
-                        label="{{tab.linkText}}">
-                    </uvx-tab>
-                </div> 
-            </div>
-        </uvx-side-panel>
-    </div> -->
-
-<!-- <div class="content">
 
     <router-outlet></router-outlet>
-    
-</div> -->
+
+    <app-wizard-container *ngIf="projectWizard" 
+        (onCancelWizard)="projectWizard = false">
+    </app-wizard-container>
+
+</div>
+
+<uvx-backdrop 
+[backdropState]="backdropState"
+(backdropClicked)="projectWizard = false"
+    [mode]="backdropMode">
+</uvx-backdrop>
+
 

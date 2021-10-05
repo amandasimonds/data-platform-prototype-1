@@ -6,6 +6,9 @@ import { WizardContainerComponent } from './project-wizard/wizard-container/wiza
 import { StartPageComponent } from './project-wizard/start-page/start-page.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { LaunchPointPageComponent } from './project-wizard/launch-point-page/launch-point-page.component';
+import { WaveComponent } from './wave/wave.component';
+import { ForceDirectedGraphComponent } from './force-directed-graph/force-directed-graph.component';
+import { ProfileViewerContainerComponent } from './profile-viewer-container/profile-viewer-container.component';
 
 const routes: Routes = [
     {
@@ -14,33 +17,24 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'project-wizard',
-                pathMatch: 'full'
-            },
-            {
-                path: 'landing',
-                component: LandingComponent
-            },
-            {
-                path: 'project-wizard',
-                component: WizardContainerComponent,
+                component: LandingComponent,
                 children: [
                     {
                         path: '',
-                        redirectTo: 'start',
+                        redirectTo: 'project-wizard',
                         pathMatch: 'full'
                     },
                     {
-                        path: 'start',
-                        component: StartPageComponent
+                        path: 'wave',
+                        component: WaveComponent
                     },
                     {
-                        path: 'form',
-                        component: FormPageComponent
+                        path: 'force-directed-graph',
+                        component: ForceDirectedGraphComponent
                     },
                     {
-                        path: 'launch',
-                        component: LaunchPointPageComponent
+                        path: 'profile',
+                        component: ProfileViewerContainerComponent
                     }
                 ]
             }

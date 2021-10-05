@@ -3,17 +3,19 @@
     <uvx-icon-button icon="close" size="md" color="gray" (click)="cancelWizard()"></uvx-icon-button>
 </div>
 <div class="form-steps-container margin-top-sm">
-  <ng-container *ngFor="let step of steps | async; let i = index;">
-      <div (click)="onStepClick(step)"
-          [ngClass]="{
-            'step-complete': step.isComplete,
-            'step-incomplete': !step.isComplete,
-            'step-current': (currentStep | async)?.stepIndex === step.stepIndex
-          }"
-          class="step-bubble">
-        <uvx-icon *ngIf="step.isComplete" icon="checked" color="white"></uvx-icon>
-        <span *ngIf="!step.isComplete">{{step.stepIndex}}</span>
+    <ng-container *ngFor="let step of steps | async; let i = index;">
+        <div (click)="onStepClick(step)"
+            [ngClass]="{
+                'step-complete': step.isComplete,
+                'step-incomplete': !step.isComplete,
+                'step-current': (currentStep | async)?.stepIndex === step.stepIndex
+            }"
+            class="step-bubble">
+            <uvx-icon *ngIf="step.isComplete" icon="checked" color="white"></uvx-icon>
+            <span *ngIf="!step.isComplete">{{step.stepIndex}}</span>
         </div>
-      <div *ngIf="i < (steps | async)?.length - 1" class="step-divider"></div>
-  </ng-container>
+        <div *ngIf="i < (steps | async)?.length - 1" class="step-divider" 
+            [ngStyle]="{ 'background' : step.isComplete ? 'var(--uv-color-success)' : 'var(--uv-color-gray)'}">
+        </div>
+    </ng-container>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StepModel } from '../../../models/step.model';
@@ -12,6 +12,8 @@ import { StepsService } from '../../../services/steps.service';
 })
 export class FormPageComponent implements OnInit {
   public currentStep: Observable<StepModel>;
+
+  @Output() public onSubmitEvent = new EventEmitter();
 
   constructor(
     private stepsService: StepsService,
@@ -36,12 +38,11 @@ export class FormPageComponent implements OnInit {
 
   public cancelWizard(): void {
     this.stepsService.resetWizard();
-    this.router.navigate(['/main/gwu']);
+    this.stepsService.cancelWizard();
   }
 
   public onSubmit(): void {
     this.stepsService.resetWizard();
-    console.log('submit');
-    this.router.navigate(['/main/gwu/project-wizard/launch']);
+    this.onSubmitEvent.emit();
   }
 }
