@@ -11,6 +11,7 @@ import { IconButtonModule } from 'projects/uv-ui-lib/src/public-api';
   imports: [
     CommonModule,
     IconButtonModule
-  ]
+  ],
+  exports: [LaunchPointPageComponent]
 })
 export class LaunchPointPageModule { }

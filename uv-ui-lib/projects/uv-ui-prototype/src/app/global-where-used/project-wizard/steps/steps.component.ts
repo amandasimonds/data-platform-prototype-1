@@ -12,22 +12,22 @@ import { StepsService } from '../../../services/steps.service';
 })
 export class StepsComponent implements OnInit {
 
-  public steps: Observable<StepModel[]>;
-  public currentStep: Observable<StepModel>;
+    public steps: Observable<StepModel[]>;
+    public currentStep: Observable<StepModel>;
 
-  constructor(private stepsService: StepsService, private router: Router) { }
+    constructor(private stepsService: StepsService, private router: Router) { }
 
-  public ngOnInit(): void {
-    this.steps = this.stepsService.getSteps();
-    this.currentStep = this.stepsService.getCurrentStep();
-  }
+    public ngOnInit(): void {
+        this.steps = this.stepsService.getSteps();
+        this.currentStep = this.stepsService.getCurrentStep();
+    }
 
-  public onStepClick(step: StepModel): void {
-    this.stepsService.setCurrentStep(step);
-  }
+    public onStepClick(step: StepModel): void {
+        this.stepsService.setCurrentStep(step);
+    }
 
-  public cancelWizard(): void {
-    this.stepsService.resetWizard();
-    this.router.navigate(['/main/gwu']);
-  }
+    public cancelWizard(): void {
+        this.stepsService.resetWizard();
+        this.stepsService.cancelWizard();
+    }
 }

@@ -20,14 +20,12 @@ export class RangeSliderComponent {
     public background = 'linear-gradient(to right, var(--uv-color-gray-light-2) ' + this.value + '%, var(--uv-color-primary) ' + this.value + '%)'
 
     constructor(){
-        this.tooltipPosition = `calc(${this.value}% - 3px)`
-        // this.tooltipPosition = `${this.value}%`
+        this.tooltipPosition = `calc(${this.value}% - 6px)`
     }
 
     ngAfterViewChecked(): void {
         this.rangeValue = (this.value - this.min)/(this.max-this.min)*100;
         this.background = 'linear-gradient(to right, var(--uv-color-gray-light-2) ' + this.value + '%, var(--uv-color-primary) ' + this.value + '%)'
-        // this.tooltipPosition = `${this.value}%`
-        this.tooltipPosition = `calc(${this.value}% - 3px)`
+        this.tooltipPosition = `calc(${this.value}% - 6px)`
     }
 }
