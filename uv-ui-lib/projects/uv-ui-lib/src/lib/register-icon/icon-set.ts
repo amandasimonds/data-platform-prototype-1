@@ -1,5 +1,9 @@
 export const ICON_SET = [
     {
+		name: 'activate-all',
+		url: 'Activate all.svg'
+	},
+    {
 		name: 'apps-gwu',
 		url: 'apps-gwu.svg'
 	},
@@ -52,12 +56,28 @@ export const ICON_SET = [
 		url: 'entity_state/Checked.svg'
 	},
     {
+		name: 'check',
+		url: 'actions/Check.svg'
+	},
+    {
+		name: 'check-alt',
+		url: 'actions/Check alt.svg'
+	},
+    {
+		name: 'clear',
+		url: 'actions/Clear.svg'
+	},
+    {
 		name: 'clock',
 		url: 'clock.svg'
 	},
+    // {
+	// 	name: 'close',
+	// 	url: 'system/Close.svg'
+	// },
     {
 		name: 'close',
-		url: 'system/Close.svg'
+		url: 'actions/Download.svg'
 	},
     {
 		name: 'compare',
