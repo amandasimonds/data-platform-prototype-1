@@ -15,7 +15,8 @@ import {
     RegisterIconModule,
     UvxIconModule,
     BackdropModule,
-    ModalModule
+    ModalModule,
+    IconDisplayModule
 } from '../../../uv-ui-lib/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,13 +38,15 @@ import { CompareWarningModule } from './search/compare-warning/compare-warning.m
 import { UvLightComponent } from './uv-light/uv-light.component';
 import { UserService } from './services/user.service';
 import { UvLightService } from './services/uv-light.service';
+import { IconDisplayComponent } from './icon-display/icon-display.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
         MainComponent,
-        UvLightComponent
+        UvLightComponent,
+        IconDisplayComponent
     ],
     imports: [
         ActionBarModule,
@@ -58,6 +61,7 @@ import { UvLightService } from './services/uv-light.service';
         HomeSplashModule,
         HttpClientModule,
         IconButtonModule,
+        IconDisplayModule,
         ModalModule,
         NavbarModule,
         RegisterIconModule,

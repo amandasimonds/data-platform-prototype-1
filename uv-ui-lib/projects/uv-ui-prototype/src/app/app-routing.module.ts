@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { MainComponent } from './layouts/main/main.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AuthCallbackComponent } from './layouts/auth-callback/auth-callback.component';
+import { IconDisplayComponent } from './icon-display/icon-display.component';
 
 const routes: Routes = [
     {
@@ -44,6 +45,10 @@ const routes: Routes = [
             {
                 path: 'settings',
                 component: SettingsComponent
+            },
+            {
+                path: 'icons',
+                component: IconDisplayComponent
             }
         ],
         canActivate: [AutoLoginAllRoutesGuard]
