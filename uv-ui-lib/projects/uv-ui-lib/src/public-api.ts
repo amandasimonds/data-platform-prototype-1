@@ -18,6 +18,8 @@ export * from './lib/dropdown/dropdown.component';
 export * from './lib/dropdown/dropdown.module';
 export * from './lib/header/header.component';
 export * from './lib/header/header.module';
+export * from './lib/icon-display/icon-display.component';
+export * from './lib/icon-display/icon-display.module';
 export * from './lib/image-button/image-button.component';
 export * from './lib/image-button/image-button.module';
 export * from './lib/modal/modal.component';
