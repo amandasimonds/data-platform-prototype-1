@@ -21,19 +21,19 @@ export class LandingComponent {
 
     public gwuTabs = [
         {
-            icon: 'more_dots',
+            icon: 'more_horisontal',
             link: '/',
             linkText: 'Link',
             results: ''
         },
         {
-            icon: 'more_dots',
+            icon: 'more_horisontal',
             link: '/',
             linkText: 'Link',
             results: ''
         },
         {
-            icon: 'more_dots',
+            icon: 'more_horisontal',
             link: '/',
             linkText: 'Link',
             results: ''

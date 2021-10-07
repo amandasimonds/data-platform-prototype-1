@@ -32,32 +32,32 @@ export class StepDirectionsComponent {
         },
         {
             name: 'Current',
-            icon: 'compare',
+            icon: 'thunderbolt',
             selected: false
         },
         {
             name: 'Design',
-            icon: 'apps-design-ripple',
+            icon: 'package',
             selected: false
         },
         {
             name: 'Replace',
-            icon: 'compare',
+            icon: 'replace',
             selected: false
         },
         {
             name: 'Similar',
-            icon: 'reorder',
+            icon: 'clone',
             selected: false
         },
         {
             name: 'Update',
-            icon: 'clock',
+            icon: 'refresh',
             selected: false
         },
         {
             name: 'Validate',
-            icon: 'checked',
+            icon: 'check_alt',
             selected: false
         }
     ];

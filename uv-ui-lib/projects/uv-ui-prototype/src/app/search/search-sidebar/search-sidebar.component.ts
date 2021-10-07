@@ -20,13 +20,13 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
     @Input() public searchText = '';
     @Input() public searchSidebarState = 'hidden';
     @Output() public readonly searchCloseEvent = new EventEmitter<string>();
-    public searchCategoryIcon = 'apps-design-ripple';
+    public searchCategoryIcon = 'design';
 
     @ViewChild('resultsContainer', { static: true }) public resultsDiv: ElementRef;
 
     public categories = [
-        {name: 'All', icon: 'apps-design-ripple', resultCount: 0},
-        {name: 'Materials', icon: 'apps-gwu', resultCount: 0},
+        {name: 'All', icon: 'design', resultCount: 0},
+        {name: 'Materials', icon: 'global_where_used', resultCount: 0},
         {name: 'Requirements', icon: 'list-right', resultCount: 0},
         {name: 'Parts', icon: 'parts', resultCount: 0},
         {name: 'Documents', icon: 'document', resultCount: 0}
@@ -46,10 +46,10 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
         this.searchCategory = category;
         switch(this.searchCategory) {
             case 'All':
-                this.searchCategoryIcon = 'apps-design-ripple';
+                this.searchCategoryIcon = 'design';
                 break;
             case 'Materials':
-                this.searchCategoryIcon = 'apps-gwu';
+                this.searchCategoryIcon = 'global_where_used';
                 break;
             case 'Requirements':
                 this.searchCategoryIcon = 'list-right';
@@ -61,7 +61,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
                 this.searchCategoryIcon = 'document';
                 break;
             default:
-                this.searchCategoryIcon = 'apps-design-ripple';
+                this.searchCategoryIcon = 'design';
                 break;
         }
     }

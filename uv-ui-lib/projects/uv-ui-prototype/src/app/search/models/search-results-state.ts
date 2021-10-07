@@ -29,7 +29,7 @@ export const DEFAULT_SEARCH_MENU_STATE: SearchResultsSideMenuState = {
         showEntitySearchCount: true
       },
       {
-        icon: 'apps-sbs',
+        icon: 'compare',
         routeUri: 'search-results',
         title: 'Documents   ',
         selected: false,

@@ -24,5 +24,5 @@ const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
 export const Default = Template.bind({});
 Default.args = {
     headerText: 'Header',
-    icon: 'apps-quad'
+    icon: 'dashboard'
 };

@@ -22,13 +22,13 @@ export class LaunchPointPageComponent {
         },
         {
             name: 'Profile',
-            icon: 'document',
+            icon: 'profile',
             selected: false,
             route: 'profile'
         },
         {
             name: 'Force Directed Graph',
-            icon: 'apps-gwu',
+            icon: 'force_directed_graph',
             selected: false,
             route: 'force-directed-graph'
         },
