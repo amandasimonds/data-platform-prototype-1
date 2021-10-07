@@ -1,29 +1,5 @@
 export const ICON_SET = [
     {
-		name: 'activate-all',
-		url: 'Activate all.svg'
-	},
-    {
-		name: 'apps-gwu',
-		url: 'apps-gwu.svg'
-	},
-    {
-		name: 'apps-design-ripple',
-		url: 'apps-design-ripple.svg'
-	},
-    {
-		name: 'apps-quad',
-		url: 'apps-quad.svg'
-	},
-    {
-		name: 'apps-sbs',
-		url: 'apps-sbs.svg'
-	},
-    {
-		name: 'apps-settings',
-		url: 'apps-settings.svg'
-	},
-    {
 		name: 'arrow_expand',
 		url: 'system/Arrow expand.svg'
 	},
@@ -32,81 +8,17 @@ export const ICON_SET = [
 		url: 'system/Arrow collapse.svg'
 	},
     {
-        name: 'arrow_right',
-        url: 'system/Arrow right.svg'
-    },
-    {
-        name: 'back',
-        url: 'back-arrow.svg'
-    },
-	{
-		name: 'checked',
-		url: 'entity_state/Checked.svg'
-	},
-    {
-		name: 'check',
-		url: 'actions/Check.svg'
-	},
-    {
-		name: 'check-alt',
-		url: 'actions/Check alt.svg'
-	},
-    {
-		name: 'clear',
-		url: 'actions/Clear.svg'
-	},
-    {
-		name: 'clock',
-		url: 'clock.svg'
-	},
-    // {
-	// 	name: 'close',
-	// 	url: 'system/Close.svg'
-	// },
-    {
-		name: 'close',
-		url: 'states/Blocked.svg'
-	},
-    {
 		name: 'compare',
 		url: 'system/Compare.svg'
-	},
-    {
-		name: 'copy',
-		url: 'system/Copy.svg'
 	},
     {
 		name: 'digital_view',
 		url: 'system/Degital view.svg'
 	},
     {
-		name: 'document',
-		url: 'document.svg'
-	},
-    {
 		name: 'document_view',
 		url: 'system/Document view.svg'
 	},
-	{
-		name: 'double_checked',
-		url: 'entity_state/Double checked New.svg'
-	},
-	{
-		name: 'empty',
-		url: 'entity_state/Empty.svg'
-	},
-    {
-		name: 'expand',
-		url: 'system/Expand.svg'
-	},
-	{
-		name: 'filter',
-		url: 'system/Filter.svg'
-	},
-    {
-        name: 'filter2',
-        url: 'filter.svg'
-    },
     {
         name: 'fullscreen',
         url: 'fullscreen.svg'
@@ -115,53 +27,17 @@ export const ICON_SET = [
 		name: 'lightbulb',
 		url: 'lightbulb.svg'
 	},
-	{
-		name: 'link',
-		url: 'entity_state/Link.svg'
-	},
     {
 		name: 'list-right',
 		url: 'list-right.svg'
-	},
-	{
-		name: 'menu',
-		url: 'system/Menu.svg'
-	},
-	{
-		name: 'more_dots',
-		url: 'system/More dots.svg'
 	},
     {
 		name: 'parts',
 		url: 'parts.svg'
 	},
     {
-		name: 'profile',
-		url: 'profile.svg'
-	},
-    {
 		name: 'plus',
 		url: 'system/Plus.svg'
-	},
-    {
-		name: 'reorder',
-		url: 'reorder.svg'
-	},
-    {
-		name: 'search',
-		url: 'search.svg'
-	},
-	{
-		name: 'settings',
-		url: 'system/Settings.svg'
-	},
-    {
-		name: 'unlink',
-		url: 'entity_state/Unlink New.svg'
-	},
-    {
-		name: 'unlink_alt',
-		url: 'system/Unlink alt.svg'
 	},
     {
         name: 'up-down-arrows',
@@ -171,9 +47,6 @@ export const ICON_SET = [
         name: 'uv-logo',
         url: 'uv-logo.svg'
     },
-
-    ///////////////////////////////////////////////////////////////////////////////
-
     {
         name: 'activate_all',
         url: 'actions/Activate all.svg'
@@ -346,9 +219,6 @@ export const ICON_SET = [
         name: 'filter',
         url: 'actions/filter.svg'
     },
-
-    ////////////////////////////////////////////
-
     {
         name: 'arrow_back',
         url: 'navigation/Arrow back.svg'
@@ -410,7 +280,7 @@ export const ICON_SET = [
         url: 'navigation/Expand.svg'
     },
     {
-        name: 'full_close alt',
+        name: 'full_close_alt',
         url: 'navigation/Full close alt.svg'
     },
     {
@@ -418,7 +288,7 @@ export const ICON_SET = [
         url: 'navigation/Full open alt.svg'
     },
     {
-        name: 'full_screen exit',
+        name: 'full_screen_exit',
         url: 'navigation/Full screen exit.svg'
     },
     {
@@ -449,20 +319,9 @@ export const ICON_SET = [
         name: 'top',
         url: 'navigation/Top.svg'
     },
-
-    ///////////////////////////
-
     {
         name: 'blocked',
         url: 'states/Blocked.svg'
-    },
-    {
-        name: 'check',
-        url: 'states/Check.svg'
-    },
-    {
-        name: 'double_check',
-        url: 'states/Double check.svg'
     },
     {
         name: 'empty',
@@ -488,8 +347,6 @@ export const ICON_SET = [
         name: 'unlink',
         url: 'states/Unlink.svg'
     },
-
-    //////////////////////////////////
     {
         name: 'calendar',
         url: 'content/Calendar.svg'
@@ -519,11 +376,11 @@ export const ICON_SET = [
         url: 'content/Drop down.svg'
     },
     {
-        name: 'drop_left down',
+        name: 'drop_left_down',
         url: 'content/Drop left down.svg'
     },
     {
-        name: 'drop_left up',
+        name: 'drop_left_up',
         url: 'content/Drop left up.svg'
     },
     {
@@ -531,11 +388,11 @@ export const ICON_SET = [
         url: 'content/Drop left.svg'
     },
     {
-        name: 'drop_right down',
+        name: 'drop_right_down',
         url: 'content/Drop right down.svg'
     },
     {
-        name: 'drop_right up',
+        name: 'drop_right_up',
         url: 'content/Drop right up.svg'
     },
     {
@@ -563,7 +420,7 @@ export const ICON_SET = [
         url: 'content/Folder.svg'
     },
     {
-        name: 'forced_directed graph',
+        name: 'force_directed_graph',
         url: 'content/Forced directed graph.svg'
     },
     {
@@ -591,7 +448,7 @@ export const ICON_SET = [
         url: 'content/Redo.svg'
     },
     {
-        name: 'search_results alt',
+        name: 'search_results_alt',
         url: 'content/Search results alt.svg'
     },
     {
@@ -650,9 +507,6 @@ export const ICON_SET = [
         name: 'wave',
         url: 'content/Wave.svg'
     },
-
-    /////////////////////////////////////
-
     {
         name: 'analytics_alt',
         url: 'services/Analytics alt.svg'
@@ -674,7 +528,7 @@ export const ICON_SET = [
         url: 'services/Design.svg'
     },
     {
-        name: 'global_where used',
+        name: 'global_where_used',
         url: 'services/Global where used.svg'
     },
     {
@@ -721,23 +575,20 @@ export const ICON_SET = [
         name: 'tasks',
         url: 'services/Tasks.svg'
     },
-    
-    //////////////////////////////////
-
     {
-        name: 'directed_graph',
+        name: 'gwu_directed_graph',
         url: 'gwu/Directed graph.svg'
     },
     {
-        name: 'gwu-profile',
+        name: 'gwu_profile',
         url: 'gwu/Profile.svg'
     },
     {
-        name: 'search_results',
+        name: 'gwu_search_results',
         url: 'gwu/Search results.svg'
     },
     {
-        name: 'waves',
+        name: 'gwu_waves',
         url: 'gwu/Waves.svg'
     },
 ] as const;
