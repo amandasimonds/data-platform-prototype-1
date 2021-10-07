@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AppShellService {
     public title = new BehaviorSubject<string>('Title');
-    public headerIcon = new BehaviorSubject<string>('apps-quad');
+    public headerIcon = new BehaviorSubject<string>('dashboard');
     public navIcon = new BehaviorSubject<string>('');
 
     public get currentAppNavIcon$(): Observable<string> {

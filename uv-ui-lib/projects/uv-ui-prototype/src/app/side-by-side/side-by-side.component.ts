@@ -23,7 +23,7 @@ export class SideBySideComponent implements OnInit{
 
     public ngOnInit(): void {
         this.appShellService.setTitle('Side By Side');
-        this.appShellService.setHeaderIcon('apps-sbs');
+        this.appShellService.setHeaderIcon('compare');
         this.appShellService.setNavIcon('sbs');
     }
 }
