@@ -1,15 +1,50 @@
+@import '../../../../scss/main.scss';
+
 .form-page-container {
     flex-direction: column;
+    width: auto;
 
     &-top {
         padding: 32px;
+        @include respond(small-desktop-height) {
+            padding: 18px;
+        }
     }
 
     &-middle {
         padding: 32px;
+        @include respond(small-desktop-height) {
+            padding: 18px;
+        }
     }
 
     &-bottom {
         padding: 32px;
+        @include respond(small-desktop-height) {
+            padding: 18px;
+        }
+    }
+}
+
+.app-steps-top {
+    // @media (max-height: 800px) {
+        
+    // }
+    @include respond(small-desktop-height) {
+        display: none;
+    }
+}
+
+.app-steps-side {
+    min-width: 125px;
+    min-height: 270px;
+    @include respond(big-desktop-height) {
+        display: none;
+    }
+}
+
+.steps-divider-side {
+    @include respond(big-desktop-height) {
+        display: none;
     }
 }

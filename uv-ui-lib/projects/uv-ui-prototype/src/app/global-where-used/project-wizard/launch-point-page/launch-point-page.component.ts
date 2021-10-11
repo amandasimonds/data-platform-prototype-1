@@ -48,4 +48,9 @@ export class LaunchPointPageComponent {
         this.router.navigate([`main/gwu/${route}`]);
     }
 
+    cancelWizard(){
+        this.stepsService.cancelWizard();
+        this.stepsService.resetWizard();
+    }
+
 }
