@@ -1,13 +1,26 @@
 <div class="form-page-container">
 
     <div class="form-page-container-top">
-        <app-steps></app-steps>
+        <div class="flex justify-content-space-between align-items-center">
+            <h4>Create a New Project</h4>
+            <uvx-icon-button icon="close" size="md" color="gray" (click)="cancelWizard()"></uvx-icon-button>
+        </div>
+        <div class="app-steps-top">
+            <app-steps></app-steps>
+        </div>
     </div>
 
     <div class="divider"></div>
 
-    <div class="form-page-container-middle">
-        <div class="form-step">
+    <div class="form-page-container-middle flex">
+
+        <div class="app-steps-side">
+            <app-steps></app-steps>
+        </div>
+
+        <div class="divider-right margin-right-md steps-divider-side"></div>
+
+        <div class="form-step w-100">
             <ng-container [ngSwitch]="(currentStep | async)?.stepIndex">
                 <ng-container *ngSwitchCase="'1'">
                     <app-step-directions [step]="(currentStep | async)"></app-step-directions>

@@ -1,21 +1,27 @@
-<div class="flex justify-content-space-between align-items-center">
-    <h4>Create a New Project</h4>
-    <uvx-icon-button icon="close" size="md" color="gray" (click)="cancelWizard()"></uvx-icon-button>
-</div>
-<div class="form-steps-container margin-top-sm">
-    <ng-container *ngFor="let step of steps | async; let i = index;">
-        <div (click)="onStepClick(step)"
+<div class="form-steps-container">
+    <div class="step-bubble-container">
+        <ng-container *ngFor="let step of steps | async; let i = index;">
+            <div (click)="onStepClick(step)"
             [ngClass]="{
                 'step-complete': step.isComplete,
                 'step-incomplete': !step.isComplete,
                 'step-current': (currentStep | async)?.stepIndex === step.stepIndex
             }"
             class="step-bubble">
-            <uvx-icon *ngIf="step.isComplete" icon="checked" color="white"></uvx-icon>
-            <span *ngIf="!step.isComplete">{{step.stepIndex}}</span>
-        </div>
-        <div *ngIf="i < (steps | async)?.length - 1" class="step-divider" 
-            [ngStyle]="{ 'background' : step.isComplete ? 'var(--uv-color-success)' : 'var(--uv-color-gray)'}">
-        </div>
+                <uvx-icon *ngIf="step.isComplete" icon="check" color="white"></uvx-icon>
+                <span *ngIf="!step.isComplete">{{step.stepIndex}}</span>
+            </div>
+            <div *ngIf="i < (steps | async)?.length - 1" class="step-divider" 
+                [ngStyle]="{ 'background' : step.isComplete ? 'var(--uv-color-success)' : 'var(--uv-color-gray)'}"> 
+            </div>
+        </ng-container>
+    </div>
+    <div class="flex justify-content-space-between step-number-container">
+    <ng-container *ngFor="let step of steps | async; let i = index;">
+        
+            <p class="uv-body-sm margin-top-xxs">Step {{step.stepIndex}}</p>
+        
     </ng-container>
+    </div>
+    
 </div>

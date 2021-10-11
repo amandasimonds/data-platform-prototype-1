@@ -1,3 +1,5 @@
+@import '../../../../scss//main.scss';
+
 .wizard-container {
     position: absolute;
     display: flex;
@@ -8,4 +10,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @include respond(small-desktop-width) {
+        width: 80%;
+    }
 }
