@@ -19,7 +19,7 @@
                     *ngFor="let item of selectedTargetDocuments" 
                     class="sbs-block margin-4 sbs-block-with-icon sbs-block-selection medium-bold uv-body flex align-items-center padding-right-sm">
                     {{item.title}}
-                    <uvx-icon-button icon="close"  color="primary" class="margin-left-xxxs" (click)="unselectTargetDocument(item)"></uvx-icon-button>
+                    <uvx-icon-button icon="clear"  color="primary" class="margin-left-xxxs" (click)="unselectTargetDocument(item)"></uvx-icon-button>
                     </span>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                 Show less<uvx-icon icon="arrow_expand" color="primary" class="margin-left-xxxs"></uvx-icon>
             </a>
             <div class="divider-left" style="height: 25px; margin: 0 8px;"></div>
-            <a class="sbs-action-bar-link uv-link margin-right-sm"(click)="clearSelections(selectedTargetDocuments)">Clear all<uvx-icon icon="close" color="primary" class="margin-left-xxxs"></uvx-icon></a>
+            <a class="sbs-action-bar-link uv-link margin-right-sm"(click)="clearSelections(selectedTargetDocuments)">Clear all<uvx-icon icon="clear" color="primary" class="margin-left-xxxs"></uvx-icon></a>
         </div>
     </div>
 

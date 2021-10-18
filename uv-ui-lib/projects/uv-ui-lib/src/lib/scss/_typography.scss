@@ -42,11 +42,11 @@ h3 {
     line-height: 36px;
 }
 
-h4 {
-    font-weight: var(--uv-font-medium-bold);
-    font-size: var(--uv-font-size-md-lg);
-    line-height: 32px;
-}
+// h4 {
+//     font-weight: var(--uv-font-medium-bold);
+//     font-size: var(--uv-font-size-md-lg);
+//     line-height: 32px;
+// }
 
 h5 {
     font-weight: var(--uv-font-medium-bold);
@@ -186,4 +186,13 @@ ul, ol {
     font-weight: var(--uv-font-bold);
     padding: 2px 10px;
     font-size: var(--uv-font-size-sm);
+}
+
+.uv-tag {
+    font-size: var(--uv-font-size-xs);
+    background-color: var(--uv-color-gray-light);
+    padding: 4px 8px;
+    border-radius: 2px;
+    margin: 2px;
+    line-height: 16px;
 }

@@ -55,6 +55,34 @@
     }
 }
 
+.secondary {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: var(--uv-font-bold);
+    height: 40px;
+    padding: 0 25px;
+    color: var(--uv-color-black);
+    background-color: var(--uv-color-white);
+    border: 1px solid var(--uv-color-gray-3);
+
+    &.disabled {
+        color: var(--uv-color-white);
+            background-color: var(--uv-color-gray);
+            font-weight: none;
+            cursor: not-allowed;
+        &:hover{
+            color: var(--uv-color-white);
+            background-color: var(--uv-color-gray);
+            font-weight: none;
+            cursor: not-allowed;
+        }
+    }
+
+    &:hover {
+        background-color: var(--uv-color-gray-light);
+    }
+}
+
 .round {
     background-color: white;
     width: 41px;
@@ -74,9 +102,12 @@
 }
 
 .position-svg {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
+    svg {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        margin: auto auto;
+    }
 }
 
 .btn-chip {
@@ -93,5 +124,9 @@
     font-size: 18px;
     padding: 6px;
     border: var(--uv-border-gray);
+}
+
+.button-icon {
+    margin-left: -12px;
 }
 
