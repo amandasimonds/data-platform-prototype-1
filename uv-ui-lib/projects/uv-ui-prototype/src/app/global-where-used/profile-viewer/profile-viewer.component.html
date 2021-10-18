@@ -1,12 +1,44 @@
-<div class="box box-rounded padding-sm h-100 profile-viewer margin-auto">
-    <div class="flex justify-content-space-between margin-bottom-md">
-        <div class="flex">
-            <uvx-button label="Compare" icon="compare"></uvx-button>
-        </div>
-        <div class="flex">
+<div class="box box-rounded h-100 profile-viewer margin-auto">
+    <div class="padding-sm profile-viewer-top">
+        <div class="flex justify-content-space-between margin-bottom-md">
+            <div class="flex justify-content-space-between">
+                <div *ngIf="columnCount == 1 || columnCount == 2" >
+                    <uvx-button mode="secondary" label="Compare" icon="compare" class="margin-right-xxxs"></uvx-button>
+                    <uvx-button mode="secondary" label="Design Ripple" icon="design" class="margin-right-xs"></uvx-button>
+                </div>
+                <div *ngIf="columnCount == 3 || columnCount == 4" >
+                    <uvx-icon-button mode="secondary" class="margin-right-xxxs" icon="compare"></uvx-icon-button>
+                    <uvx-icon-button mode="secondary" class="margin-right-xs" icon="design"></uvx-icon-button>
+                </div>
+                <uvx-icon-button icon="more_horisontal"></uvx-icon-button>
+            </div>
+            <div class="flex">
+                <uvx-icon-button icon="unlock" class="margin-right-xs" color="gray-dark"></uvx-icon-button>
+                <uvx-icon-button icon="full_screen" class="margin-right-xs" color="gray-dark"></uvx-icon-button>
+                <uvx-icon-button icon="close" color="gray-dark"></uvx-icon-button>
+            </div>
 
         </div>
-
+        <h5 class="margin-bottom-md"># API 13M-4 / ISO 13503-4</h5>
+        <p class="uv-body">
+            1. The LGC NCOE has witnessed several LNG bunkering operations over the last few months and seen common errors/failures, some that have resulted in the release of LNG and/or near misses, but also others that have gone very well. It is critically important for all parties involved to fully understand the risks that are presented when transferring LNG. While LNG can be handled safely, its cryogenic, asphyxiant, and flammability hazards must be recognized and mitigated in order to avoid serious personnel injury, vessel damage, and/or other harmful effects. This LGC NCOE Field Notice augments references (a) and (b) and shares the following recommendations based off best practices and lessons learned observed during recent LNG bunkering operations in order to prevent future…
+        </p>
     </div>
-    Profile Data
+
+    <uvx-tab></uvx-tab>
+
+    <div class="divider"></div>
+
+    <div class="padding-sm profile-viewer-metadata">
+        <div *ngFor="let item of items; let i = index" class="flex margin-bottom-xs">
+            <div class="profile-viewer-title">
+                <p class="uv-body bold">{{item.title}}</p>
+            </div>
+            <div>{{item.details}}</div>
+            <div *ngIf="item.tags[0] !=''" class="flex flex-wrap">
+                <div *ngFor="let tag of item.tags" class="uv-tag">{{tag}}</div>
+            </div>
+        </div>
+    </div>
+
 </div>

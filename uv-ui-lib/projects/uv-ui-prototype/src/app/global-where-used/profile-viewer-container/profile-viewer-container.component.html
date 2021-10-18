@@ -1,22 +1,20 @@
 <div class='uv-container-fluid h-100 padding-sm'>
-       <div class="row profile-row">
-           <div class="col-12">
-               <app-profile-viewer></app-profile-viewer>
-            </div>
+       <div *ngIf="columnCount === 1" class="row profile-row" >
+           <div class="col-12"><app-profile-viewer></app-profile-viewer></div>
        </div>
-       <!-- <div class="row">
-           <div class="col-6"><div class="column-placeholder">col-6</div></div>
-           <div class="col-6"><div class="column-placeholder">col-6</div></div>
+       <div  *ngIf="columnCount === 2" class="udemy-row profile-row" >
+            <div class="col-1-of-2 margin-right-sm"><app-profile-viewer></app-profile-viewer></div>
+            <div class="col-1-of-2"><app-profile-viewer></app-profile-viewer></div>
        </div>
-       <div class="row">
-           <div class="col-4"><div class="column-placeholder">col-4</div></div>
-           <div class="col-4"><div class="column-placeholder">col-4</div></div>
-           <div class="col-4"><div class="column-placeholder">col-4</div></div>
+       <div  *ngIf="columnCount === 3" class="udemy-row profile-row">
+           <div class="col-1-of-3"><app-profile-viewer></app-profile-viewer></div>
+           <div class="col-1-of-3"><app-profile-viewer></app-profile-viewer></div>
+           <div class="col-1-of-3"><app-profile-viewer></app-profile-viewer></div>
        </div>
-       <div class="row">
-           <div class="col-3"><div class="column-placeholder">col-3</div></div>
-           <div class="col-3"><div class="column-placeholder">col-3</div></div>
-           <div class="col-3"><div class="column-placeholder">col-3</div></div>
-           <div class="col-3"><div class="column-placeholder">col-3</div></div>
-       </div> -->
+       <div  *ngIf="columnCount === 4" class="udemy-row profile-row">
+           <div class="col-1-of-4"><app-profile-viewer></app-profile-viewer></div>
+           <div class="col-1-of-4"><app-profile-viewer></app-profile-viewer></div>
+           <div class="col-1-of-4"><app-profile-viewer></app-profile-viewer></div>
+           <div class="col-1-of-4"><app-profile-viewer></app-profile-viewer></div>
+       </div>
    </div>

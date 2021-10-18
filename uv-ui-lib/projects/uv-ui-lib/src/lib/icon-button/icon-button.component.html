@@ -1,8 +1,9 @@
 <button class="btn btn-svg h-100" 
-    [ngClass]="cssClasses" 
+    [ngClass]="cssClasses"
+    [class.secondary]="mode === 'secondary'" 
     [class.disabled]="disabled"
     [class.active]="active">
-    <mat-icon svgIcon="{{icon}}" 
+    <mat-icon svgIcon="{{icon}}" class="position-svg" 
         [class.uvx-icon-xs]="size === 'xs'" 
         [class.uvx-icon-sm]="size === 'sm'"
         [class.uvx-icon-md]="size === 'md'">

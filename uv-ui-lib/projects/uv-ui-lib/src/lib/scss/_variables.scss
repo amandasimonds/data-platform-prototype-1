@@ -120,3 +120,24 @@
     --uv-z-index-sidebar-1: 800;
     --uv-z-index-sidebar-2: 750;
 }
+
+@mixin respond($breakpoint) {
+    // @if $breakpoint == phone {
+    //     @media (max-width: 37.5em) { @content }; //600px
+    // }
+    // @if $breakpoint == tab-port {
+    //     @media (max-width: 56.25em) { @content }; //900px
+    // }
+    @if $breakpoint == tab-land {
+        @media (max-width: 1200px) { @content };
+    }
+    @if $breakpoint == small-desktop-height {
+        @media (max-height: 800px) { @content };
+    }
+    @if $breakpoint == small-desktop-width {
+        @media (max-width: 1200px) { @content }; 
+    }
+    @if $breakpoint == big-desktop-height {
+        @media (min-height: 800px) { @content }; 
+    }
+}
