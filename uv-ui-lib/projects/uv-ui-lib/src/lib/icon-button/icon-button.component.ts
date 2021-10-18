@@ -8,7 +8,8 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 })
 export class IconButtonComponent {
     @Input() public icon = '';
-    @Input() public color: 'gray' | 'primary' | 'black' | 'help' = 'black';
+    @Input() public mode: 'secondary' | '' = '';
+    @Input() public color: 'gray' | 'gray-dark' | 'primary' | 'black' | 'help' = 'black';
     @Input() public size: 'md' | 'sm' | 'xs' | 'xxs' = 'sm';
     @Input() public disabled = false;
     @Input() public active = false;

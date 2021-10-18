@@ -58,6 +58,14 @@
     }
 }
 
+.gray-dark {
+    color: var(--uv-color-gray-dark);
+    
+    &:hover {
+        color: var(--uv-color-primary);
+    }
+}
+
 .primary {
     color: var(--uv-color-primary);
 
@@ -87,4 +95,41 @@
 .active {
     color: var(--uv-color-primary-active);
     background-color: var(--uv-color-gray-light);
+}
+
+.secondary {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: var(--uv-font-bold);
+    height: 40px;
+    width: 40px;
+    color: var(--uv-color-black);
+    background-color: var(--uv-color-white);
+    border: 1px solid var(--uv-color-gray-3);
+
+    &.disabled {
+        color: var(--uv-color-white);
+            background-color: var(--uv-color-gray);
+            font-weight: none;
+            cursor: not-allowed;
+        &:hover{
+            color: var(--uv-color-white);
+            background-color: var(--uv-color-gray);
+            font-weight: none;
+            cursor: not-allowed;
+        }
+    }
+
+    &:hover {
+        background-color: var(--uv-color-gray-light);
+    }
+}
+
+.position-svg {
+    svg {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        margin: auto auto;
+    }
 }

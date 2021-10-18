@@ -33,6 +33,7 @@
         <uvx-navbar>
             <span *ngFor="let navlink of navlinks" 
                 class="nav-icon"
+                [matTooltip]="navlink.tooltip"
                 [class.nav-icon-disabled]="navlink.disabled"
                 [class.nav-icon-active]="navActiveIcon === navlink.app">
                 <a [routerLink]="navlink.navlink"
@@ -42,6 +43,7 @@
                 </a>
             </span>
             <span class="nav-icon"
+            matTooltip="Global Search"
             [class.nav-icon-active]="navActiveIcon === 'search'">
                 <a (click)="toggleSearchSidebar()">
                     <img

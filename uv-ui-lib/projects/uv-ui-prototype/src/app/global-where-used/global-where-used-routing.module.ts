@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormPageComponent } from './project-wizard/form-page/form-page.component';
 import { GlobalWhereUsedComponent } from './global-where-used.component';
-import { WizardContainerComponent } from './project-wizard/wizard-container/wizard-container.component';
-import { StartPageComponent } from './project-wizard/start-page/start-page.component';
 import { LandingComponent } from './pages/landing/landing.component';
-import { LaunchPointPageComponent } from './project-wizard/launch-point-page/launch-point-page.component';
 import { WaveComponent } from './wave/wave.component';
 import { ForceDirectedGraphComponent } from './force-directed-graph/force-directed-graph.component';
 import { ProfileViewerContainerComponent } from './profile-viewer-container/profile-viewer-container.component';

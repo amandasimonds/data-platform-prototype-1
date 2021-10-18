@@ -31,12 +31,6 @@ export class LaunchPointPageComponent {
             icon: 'force_directed_graph',
             selected: false,
             route: 'force-directed-graph'
-        },
-        {
-            name: 'Search Results',
-            icon: 'search',
-            selected: false,
-            route: 'profile'
         }
     ];
 
@@ -45,7 +39,7 @@ export class LaunchPointPageComponent {
     public onLaunchPointSelected(route: string): void {
         this.stepsService.cancelWizard();
         this.stepsService.resetWizard();
-        this.router.navigate([`main/gwu/${route}`]);
+        this.router.navigate([`main/gwu/${route}`], { queryParams: {service: `${route}`}});
     }
 
     cancelWizard(){

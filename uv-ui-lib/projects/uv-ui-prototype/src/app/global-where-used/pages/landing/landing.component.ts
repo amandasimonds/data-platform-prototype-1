@@ -1,4 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProfileViewerService } from '../../../services/profile-viewer.service';
 import { StepsService } from '../../../services/steps.service';
 
 @Component({
@@ -10,6 +12,7 @@ export class LandingComponent {
 
     public expandActionBar = false;
     public projectWizard = false;
+    public activeService = '';
 
     public get backdropMode(): string {
         return this.projectWizard ? 'popup' : 'hidden';
@@ -40,11 +43,18 @@ export class LandingComponent {
         }
     ];
 
-    constructor(private stepsService: StepsService) {}
+    public columnView(count: number) {
+        this.profileViewerService.setCurrentColumnCount(count);
+    }
+
+    constructor(private stepsService: StepsService, private route: ActivatedRoute, private profileViewerService: ProfileViewerService) {}
 
     ngOnInit(): void {
         this.stepsService.onCancelWizard$.subscribe(value => this.projectWizard = value);
-        this.projectWizard = true;
+        this.projectWizard = false;
+        this.route.queryParams.subscribe(params => {
+            this.activeService = params['service'];
+        });
     }
 
 }

@@ -3,20 +3,32 @@
     <div class="row">
         <uvx-action-bar class="w-100">
             <div left class="flex">
-                <div class="margin-right-md">
+                <div class="margin-right-md pointer">
                     <uvx-icon icon="wave" class="margin-right-xs"></uvx-icon>
                     <span class="medium-bold" routerLink="wave">Wave</span>
                 </div>
-                <div class="margin-right-md">
+                <div class="margin-right-md pointer">
                     <uvx-icon icon="global_where_used" class="margin-right-xs"></uvx-icon>
                     <span class="medium-bold" routerLink="force-directed-graph">Force Directed Graph</span>
                 </div>
-                <div class="margin-right-md">
+                <div class="margin-right-md pointer">
                     <uvx-icon icon="profile" class="margin-right-xs"></uvx-icon>
-                    <span class="medium-bold" routerLink="profile">Profile</span>
+                    <span class="medium-bold" routerLink="profile" [queryParams]="{service: 'profile'}">Profile</span>
                 </div>
                 <div class="margin-right-md">
                     <uvx-button (click)="projectWizard = true"  label="New Project"></uvx-button>
+                </div>
+                
+            </div>
+            <div right>
+                <div *ngIf="activeService === 'profile'" class="flex">
+                    <p class="uv-body margin-right-sm">
+                        Columns:
+                    </p>
+                    <uvx-button color="gray" label="1" class="margin-right-xxs" (click)="columnView(1)"></uvx-button>
+                    <uvx-button color="gray" label="2" class="margin-right-xxs" (click)="columnView(2)"></uvx-button>
+                    <uvx-button color="gray" label="3" class="margin-right-xxs" (click)="columnView(3)"></uvx-button>
+                    <uvx-button color="gray" label="4" class="margin-right-xxs" (click)="columnView(4)"></uvx-button>
                 </div>
             </div>
         </uvx-action-bar>
