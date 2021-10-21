@@ -3,28 +3,45 @@
     <div class="row">
         <uvx-action-bar class="w-100">
             <div left class="flex">
-                <div class="margin-right-md pointer">
-                    <uvx-icon icon="wave" class="margin-right-xs"></uvx-icon>
-                    <span class="medium-bold" routerLink="wave">Wave</span>
+                <div class="flex margin-top-sm margin-right-sm">
+                    <uvx-tab
+                        label="Wave"
+                        mode="horizontal"
+                        icon="wave"
+                        routerLink="wave"
+                        [queryParams]="{service: 'wave'}"
+                        [isActive]="activeService === 'wave'"
+                        class="margin-right-xxs"></uvx-tab>
+                    <uvx-tab
+                        label="Force Directed Graph"
+                        mode="horizontal"
+                        icon="global_where_used"
+                        routerLink="force-directed-graph"
+                        [queryParams]="{service: 'force-directed-graph'}"
+                        [isActive]="activeService === 'force-directed-graph'"
+                        class="margin-right-xxs"></uvx-tab>
+                    <uvx-tab
+                        label="Profile"
+                        mode="horizontal"
+                        icon="profile"
+                        routerLink="profile"
+                        [queryParams]="{service: 'profile'}"
+                        [isActive]="activeService === 'profile'"
+                        class="margin-right-xxs"></uvx-tab>
                 </div>
-                <div class="margin-right-md pointer">
-                    <uvx-icon icon="global_where_used" class="margin-right-xs"></uvx-icon>
-                    <span class="medium-bold" routerLink="force-directed-graph">Force Directed Graph</span>
-                </div>
-                <div class="margin-right-md pointer">
-                    <uvx-icon icon="profile" class="margin-right-xs"></uvx-icon>
-                    <span class="medium-bold" routerLink="profile" [queryParams]="{service: 'profile'}">Profile</span>
-                </div>
-                <div class="margin-right-md">
+                <div class="flex align-items-center">
                     <uvx-button (click)="projectWizard = true"  label="New Project"></uvx-button>
                 </div>
                 
             </div>
-            <div right>
-                <div *ngIf="activeService === 'profile'" class="flex">
-                    <p class="uv-body margin-right-sm">
-                        Columns:
-                    </p>
+            <div right class="flex">
+                <div *ngIf="activeService === 'profile'" class="flex align-items-center">
+                    <!-- <div class="profile-page-numbers"> -->
+                        <p class="flex justify-content-space-between margin-right-sm divider-right padding-right-sm gap-10 bold">
+                            Page: <uvx-button label="1"></uvx-button> of <uvx-button label="4"></uvx-button>
+                        </p>                    
+                    <!-- </div> -->
+                    <p class="uv-body margin-right-xs">Columns:</p>
                     <uvx-button color="gray" label="1" class="margin-right-xxs" (click)="columnView(1)"></uvx-button>
                     <uvx-button color="gray" label="2" class="margin-right-xxs" (click)="columnView(2)"></uvx-button>
                     <uvx-button color="gray" label="3" class="margin-right-xxs" (click)="columnView(3)"></uvx-button>

@@ -13,6 +13,10 @@ export class LandingComponent {
     public expandActionBar = false;
     public projectWizard = false;
     public activeService = '';
+    public columnCount: number = 1;
+    public pageLength: number = this.columnCount;
+    public pageSize: number = this.columnCount;
+    public pageSizeOptions: number[] = [1, 2, 3, 4];
 
     public get backdropMode(): string {
         return this.projectWizard ? 'popup' : 'hidden';
@@ -45,6 +49,7 @@ export class LandingComponent {
 
     public columnView(count: number) {
         this.profileViewerService.setCurrentColumnCount(count);
+        this.columnCount = count;
     }
 
     constructor(private stepsService: StepsService, private route: ActivatedRoute, private profileViewerService: ProfileViewerService) {}

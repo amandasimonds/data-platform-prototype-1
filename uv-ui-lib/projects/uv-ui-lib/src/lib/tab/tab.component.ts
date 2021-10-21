@@ -10,6 +10,7 @@ export class TabComponent {
 
     @Input() public icon = '';
     @Input() public label = '';
+    @Input() public mode: 'horizontal' | 'vertical' = 'horizontal';
     @Input() public isDisabled = false;
     @Input() public isActive = false;
     @Input() public isReorderMode = false;
