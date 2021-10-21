@@ -1,9 +1,23 @@
-<div 
-    class="tab flex justify-content-space-between align-content-center align-items-center" 
-    [ngClass]="{'disabled': isDisabled, 'active': isActive, 'reorder-mode': isReorderMode}">
-    <div>
-        <mat-icon class="gray margin-right-sm position-relative position" [class.blue]="isReorderMode" [svgIcon]="isReorderMode ? 'reorder' : icon"></mat-icon>
-        {{label}}
+<div class="tab-wrapper">
+    <div class="tab" 
+        [ngClass]="{
+            'disabled': isDisabled, 
+            'horizontal-active': isActive && mode === 'horizontal', 
+            'vertical-active': isActive && mode === 'vertical',
+            'reorder-mode': isReorderMode }"
+            [class.horizontal]="mode === 'horizontal'"
+            [class.active]="isActive"
+            [class.vertical]="mode === 'vertical'">
+        <div>
+            <mat-icon *ngIf="icon != ''" 
+            class="position-svg black margin-right-xs" 
+            [class.margin-right-sm]="mode === 'vertical'"
+            [class.position-relative]="mode === 'vertical'"
+            [class.position]="mode === 'vertical'"
+            [class.blue]="isReorderMode" 
+            [svgIcon]="isReorderMode ? 'reorder' : icon"></mat-icon>
+            {{label}}
+        </div>
+        <ng-content></ng-content>
     </div>
-    <ng-content></ng-content>
 </div>

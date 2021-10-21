@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class ProfileViewerService {
-    public columnCount = new BehaviorSubject<number>(1);
+    public columnCount = new BehaviorSubject<number>(3);
 
     public get currentColumnCount$(): Observable<number> {
         return this.columnCount.asObservable();
