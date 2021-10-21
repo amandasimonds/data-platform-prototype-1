@@ -12,6 +12,10 @@ import { ProfileViewerService } from '../../services/profile-viewer.service';
 
 export class ProfileViewerComponent implements OnInit {
 
+    public expandedDescription = false;
+    public metadataTabActive = false;
+    public historyTabActive = false;
+
     @Input() public columnCount = 0;
 
     items = [
@@ -52,7 +56,7 @@ export class ProfileViewerComponent implements OnInit {
         private ref: ChangeDetectorRef,
         private destroy$ : NgOnDestroyService) {}
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.profileViewerService.columnCount
         .pipe(takeUntil(this.destroy$))
             .subscribe(count => {
@@ -61,6 +65,33 @@ export class ProfileViewerComponent implements OnInit {
             });
 
             console.log(this.columnCount);
+    }
+
+    public isTextOverflow(elementId: string): boolean {
+        const elem = document.getElementById(elementId);
+        if (elem) {
+            console.log(elem.offsetWidth < elem.scrollHeight);
+            console.log(elem, elem.offsetWidth, elem.scrollHeight);
+            return (elem.offsetWidth < elem.scrollHeight);
+        }
+        else {
+            return false;
+        }
+    }
+
+    public onDescriptionResized(event: Event) {
+        console.log(event);
+        this.ref.markForCheck();
+    }
+
+    public expandDescription() {
+        this.expandedDescription = true;
+    }
+
+    public changeTab(tab: string) {
+        tab === 'metadata' ? 
+        (this.metadataTabActive = true, this.historyTabActive = false) : 
+        (this.historyTabActive = true, this.metadataTabActive = false);
     }
 
 }
