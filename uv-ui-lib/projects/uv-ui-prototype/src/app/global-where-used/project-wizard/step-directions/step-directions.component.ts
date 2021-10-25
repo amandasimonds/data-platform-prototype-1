@@ -13,55 +13,8 @@ export class StepDirectionsComponent {
 
     @Input() public step: StepModel;
 
-    public formatLabel(value: number) {
-        if (value >= 1000) {
-          return Math.round(value / 1000) + 'k';
-        }
-    
-        return value;
-      }
-
     public searchText = '';
     public searchSelected = false;
-
-    public taskSelections = [
-        {
-            name: 'Compare',
-            icon: 'compare',
-            selected: false
-        },
-        {
-            name: 'Current',
-            icon: 'thunderbolt',
-            selected: false
-        },
-        {
-            name: 'Design',
-            icon: 'package',
-            selected: false
-        },
-        {
-            name: 'Replace',
-            icon: 'replace',
-            selected: false
-        },
-        {
-            name: 'Similar',
-            icon: 'clone',
-            selected: false
-        },
-        {
-            name: 'Update',
-            icon: 'refresh',
-            selected: false
-        },
-        {
-            name: 'Validate',
-            icon: 'check_alt',
-            selected: false
-        }
-    ];
-
     public searchSuggestions = [
         {
             title: 'Lorem ipsum dolor sit consectetur',
@@ -76,8 +29,6 @@ export class StepDirectionsComponent {
             description: 'Dolor sit consectetur adipiscing elit sed do eiusmod tempor'
         }
     ];
-
-    constructor(private route: ActivatedRoute, private router: Router) {}
 
     public enterSearchSuggestion(item: string): void {
         this.searchText = item;

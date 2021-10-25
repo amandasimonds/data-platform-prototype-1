@@ -10,7 +10,7 @@ export class IconButtonComponent {
     @Input() public icon = '';
     @Input() public mode: 'secondary' | '' = '';
     @Input() public color: 'gray' | 'gray-dark' | 'primary' | 'black' | 'help' = 'black';
-    @Input() public size: 'md' | 'sm' | 'xs' | 'xxs' = 'sm';
+    @Input() public size: 'xs' | 'sm' | 'md' | 'xl' | 'bg' | 'checkmark' = 'sm';
     @Input() public disabled = false;
     @Input() public active = false;
 

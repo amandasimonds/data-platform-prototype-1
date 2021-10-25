@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ButtonModule, IconButtonModule, RangeSliderModule, SearchPanelModule, TextInputModule } from 'projects/uv-ui-lib/src/public-api';
+import { ButtonModule, DropdownModule, IconButtonModule, RangeSliderModule, SearchPanelModule, TextInputModule } from 'projects/uv-ui-lib/src/public-api';
 import { FormsModule } from '@angular/forms';
 import { StepsService } from '../../../services/steps.service';
 import { StepDirectionsComponent } from './step-directions.component';
@@ -19,6 +19,7 @@ import { StepThreeComponent } from './step-three/step-three.component';
         CommonModule,
         IconButtonModule,
         ButtonModule,
+        DropdownModule,
         TextInputModule,
         SearchPanelModule,
         FormsModule,

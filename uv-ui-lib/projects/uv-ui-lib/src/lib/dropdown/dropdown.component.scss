@@ -32,17 +32,18 @@ table {
 .select-wrapper {
     position: relative;
     user-select: none;
+    border-radius: 4px;
     width: 100%;
+    padding: 10px 16px;
+    border: var(--uv-border-gray);
 }
 .select {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 10px 16px;
-    border: var(--uv-border-gray);
     width: 100%;
-    border-radius: 4px;
-  cursor: pointer;
+    border: none;
+    cursor: pointer;
 }
 
 .select__trigger {
@@ -77,43 +78,3 @@ table {
     pointer-events: all;
 }
 
-.arrow {
-    content: "";
-    // position: absolute;
-    position: relative;
-    width: 0.8em;
-    height: 0.5em;
-    background-color: #777;
-    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-}
-.arrow::before, .arrow::after {
-    // content: "";
-    // position: absolute;
-    // bottom: 0px;
-    // width: 0.15rem;
-    // height: 100%;
-    // transition: all 0.5s;
-    background-color: green;
-}
-.arrow::before {
-    // left: -5px;
-    // transform: rotate(45deg);
-    // background-color: #394a6d;
-    background-color: green;
-}
-.arrow::after {
-    // left: 5px;
-    // transform: rotate(-45deg);
-    // background-color: #394a6d;
-    background-color: green;
-}
-.open .arrow::before {
-    // left: -5px;
-    // transform: rotate(-45deg);
-    background-color: green;
-}
-.open .arrow::after {
-    // left: 5px;
-    // transform: rotate(45deg);
-    background-color: green;
-}

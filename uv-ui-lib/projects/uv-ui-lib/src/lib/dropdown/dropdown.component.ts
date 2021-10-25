@@ -13,6 +13,8 @@ export class DropdownComponent {
     @Input() public selectId = '';
     @Input() public dropdownName = '';
     @Input() public items: IDropdown[] = [];
+    @Input() public width = '';
+    @Input() public mode: 'input' | 'fancy' = 'fancy';
 
     constructor(private elementRef: ElementRef) {}
 
@@ -24,7 +26,7 @@ export class DropdownComponent {
     }
 
     public toggle(): void {
-       this.open = !this.open;
+        this.open = !this.open;
     }
 
     public trackByFn(_: number, {name}: IDropdown): string {
