@@ -1,30 +1,6 @@
 <div class="">
 
-    <div *ngIf="step.stepIndex === 1">
-        <p class="uv-body medium-bold margin-bottom-xxs">
-            Who are you, what is your role? (Optional)
-        </p>
-
-        <uvx-text-input placeholder="Enter text here...">
-        </uvx-text-input>
-
-        <h5 class="margin-top-sm margin-bottom-sm">What is your desired goal/task?</h5>
-
-        <div class="flex flex-wrap task-selection-container ">
-            <div *ngFor="let item of taskSelections" class="flex flex-column align-items-center task-selection">
-                <uvx-icon-button 
-                    size="md"
-                    [class.task-selection-button-selected]="item.selected" 
-                    class="task-selection-button margin-bottom-xxs" 
-                    (click)="onCompleteStep(); item.selected = true" 
-                    [icon]="item.icon"></uvx-icon-button>
-                <p class="uv-body medium-bold" [class.selected]="item.selected">
-                    {{item.name}}
-                </p>
-            </div>
-        </div>
-
-    </div>
+    <app-step-one *ngIf="step.stepIndex === 1"></app-step-one>
 
     <div *ngIf="step.stepIndex === 2">
         <h5 class="margin-bottom-xs">

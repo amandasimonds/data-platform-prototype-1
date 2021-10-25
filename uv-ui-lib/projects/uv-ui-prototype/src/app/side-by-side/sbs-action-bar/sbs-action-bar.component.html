@@ -1,5 +1,5 @@
 <uvx-action-bar>
-    <div left>
+    <div left style="padding-top: 24px;">
         <p *ngIf="!showTargetDocuments" class="italic uv-font-gray flex align-items-center" style="height: 50px;">Select documents to get started</p>
 
         <div *ngIf="showTargetDocuments" class="flex flex-row">
@@ -27,7 +27,7 @@
 
     </div>
 
-    <div right class="flex flex-row sbs-action-bar-right-container justify-content-flex-end">
+    <div right style="padding-top: 24px;" class="flex flex-row sbs-action-bar-right-container justify-content-flex-end">
         <div>
 
             <div *ngIf="showTargetDocuments" class="flex align-items-center">
@@ -45,7 +45,7 @@
         <uvx-button mode="primary" [disabled]="!showTargetDocuments" label="Compare"></uvx-button>
     </div>
 
-    <div bottom>
+    <div bottom style="padding-bottom: 24px;">
         <div class="row">
             <div class="col-6 flex justify-content-space-between padding-right-sm">
                 <p class="uv-body medium-bold">{{loadedSourceDocuments.length}} documents</p>
