@@ -1,11 +1,24 @@
-<div class="select-wrapper" (click)="toggle()">
+<div *ngIf="mode === 'fancy'" class="select-wrapper" (click)="toggle()" [ngStyle]="{'width' : width}">
     <div class="select" [class.open]="open">
         <div class="select__trigger">
             <ng-content select="[title]"></ng-content>
-            <div class="arrow"></div>
+            <uvx-icon [icon]="open ? 'arrow_expand' : 'arrow_collapse'"></uvx-icon>
         </div>
         <div class="custom-options flex flex-column">
             <ng-content select="[options]"></ng-content>
         </div>
     </div>
+</div>
+
+<div *ngIf="mode === 'input'" class="select-wrapper" (click)="toggle()" [ngStyle]="{'width' : width}">
+    <select class="select" [class.open]="open">
+        <!-- <div class="select__trigger">
+            <ng-content select="[title]"></ng-content>
+            <uvx-icon [icon]="open ? 'arrow_expand' : 'arrow_collapse'"></uvx-icon>
+        </div> -->
+        <!-- <div class="custom-options flex flex-column"> -->
+            <ng-content></ng-content>
+            <!-- <ng-content select="[options]"></ng-content> -->
+        <!-- </div> -->
+    </select>
 </div>
