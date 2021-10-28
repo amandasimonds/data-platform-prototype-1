@@ -1,14 +1,15 @@
 .profile-viewer {
     max-width: 1105px;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 177px);
 
     &-top {
-        height: 50%;
-        overflow: auto;
+        height: 333px;
+        // overflow: auto;
+        overflow: hidden;
     }
 
     &-metadata {
-        height: calc(100% - 350px);
+        height: calc(100% - 393px);
         overflow: auto;
 
     }

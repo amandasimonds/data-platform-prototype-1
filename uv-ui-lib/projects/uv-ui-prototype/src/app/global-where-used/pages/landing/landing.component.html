@@ -38,7 +38,7 @@
                 <div *ngIf="activeService === 'profile'" class="flex align-items-center">
                     <!-- <div class="profile-page-numbers"> -->
                         <p class="flex justify-content-space-between margin-right-sm divider-right padding-right-sm gap-10 bold">
-                            Page: <uvx-button label="1"></uvx-button> of <uvx-button label="4"></uvx-button>
+                            Page: <uvx-button [label]="currentProfileViewerPage"></uvx-button> of <uvx-button [label]="profileViewerPageLength"></uvx-button>
                         </p>                    
                     <!-- </div> -->
                     <p class="uv-body margin-right-xs">Columns:</p>

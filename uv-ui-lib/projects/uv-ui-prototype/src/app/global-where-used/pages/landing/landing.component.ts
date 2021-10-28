@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileViewerService } from '../../../services/profile-viewer.service';
 import { StepsService } from '../../../services/steps.service';
 
@@ -14,9 +14,8 @@ export class LandingComponent {
     public projectWizard = false;
     public activeService = '';
     public columnCount: number = 1;
-    public pageLength: number = this.columnCount;
-    public pageSize: number = this.columnCount;
-    public pageSizeOptions: number[] = [1, 2, 3, 4];
+    public profileViewerPageLength = '';
+    public currentProfileViewerPage = '';
 
     public get backdropMode(): string {
         return this.projectWizard ? 'popup' : 'hidden';
@@ -46,20 +45,30 @@ export class LandingComponent {
             results: ''
         }
     ];
-
-    public columnView(count: number) {
-        this.profileViewerService.setCurrentColumnCount(count);
-        this.columnCount = count;
-    }
-
-    constructor(private stepsService: StepsService, private route: ActivatedRoute, private profileViewerService: ProfileViewerService) {}
+    
+    constructor(
+        private stepsService: StepsService, 
+        private route: ActivatedRoute, 
+        private router: Router,
+        private profileViewerService: ProfileViewerService) {}
 
     ngOnInit(): void {
         this.stepsService.onCancelWizard$.subscribe(value => this.projectWizard = value);
         this.projectWizard = false;
+        this.profileViewerService.currentPage$.subscribe(value => 
+            this.currentProfileViewerPage = value.toString()
+        );
+        this.profileViewerService.pages$.subscribe(value => 
+            this.profileViewerPageLength = value.length.toString()
+        );
         this.route.queryParams.subscribe(params => {
             this.activeService = params['service'];
         });
     }
 
+    public columnView(count: number) {
+        this.profileViewerService.setCurrentColumnCount(count);
+        this.columnCount = count;
+        this.router.navigate([], { queryParams: { service: 'profile', columnCount : this.columnCount }});
+    }
 }

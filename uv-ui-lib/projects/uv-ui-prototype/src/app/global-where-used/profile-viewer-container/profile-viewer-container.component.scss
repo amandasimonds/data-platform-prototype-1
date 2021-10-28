@@ -1,11 +1,83 @@
-.border {
-    border: 2px solid green;
-}
-
 .profile-viewer-container {
-    height: calc(100% - 53px);
+    height: calc(100vh - 145px);
+    display: inline-block;
+    flex: none;
+    width: auto !important;
 }
 
 .profile-row {
     height: calc(100% - 53px);
+}
+
+.paginate {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    height: 144px;
+    width: 144px;
+    border-radius: 100% ;
+    background-color: var(--uv-color-gray-2);
+
+    &:hover {
+        background-color: var(--uv-color-gray);
+    }
+
+    &-next {
+        right: -123px;
+    }
+
+    &-back {
+        left: -58px;
+    }
+}
+
+.animate {
+    &-exit-right {
+        animation: moveOutRight 1s 1;
+    }
+    &-exit-left {
+        animation: moveOutLeft 1s 1;
+    }
+    &-enter-right {
+        animation: moveInRight 1s 1;
+    }
+    &-enter-left {
+        animation: moveInLeft 1s 1;
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-2000px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(2000px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveOutLeft {
+    100% {
+        opacity: 0;
+        transform: translateX(-2000px);
+    }
+}
+
+@keyframes moveOutRight {
+    100% {
+        opacity: 0;
+        transform: translateX(2000px);
+    }
 }

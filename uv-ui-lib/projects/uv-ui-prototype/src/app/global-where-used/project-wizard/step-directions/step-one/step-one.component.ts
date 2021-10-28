@@ -1,6 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
 import { StepsService } from 'projects/uv-ui-prototype/src/app/services/steps.service';
+import { IGoal } from './goal.model';
+import { taskSelections } from './taskSelections';
 
 @Component({
   selector: 'app-step-one',
@@ -11,6 +12,21 @@ import { StepsService } from 'projects/uv-ui-prototype/src/app/services/steps.se
 export class StepOneComponent {
 
     public selectedRole = "Select a role";
+    public selectedGoal = '';
+    public taskSelections = taskSelections;
+
+    @Output() public stepisCompleteEvent = new EventEmitter<boolean>();
+
+    public checkIfComplete() {
+        const wizardData = this.stepsService.wizardData$;
+        console.log('isComplete', wizardData);
+        if (wizardData.value.goal !== '' && wizardData.value.role !== '') {
+            this.stepisCompleteEvent.emit(true);
+            console.log('emitted');
+        } else {
+            return
+        }
+    }
 
     public roles = [
         {
@@ -27,55 +43,28 @@ export class StepOneComponent {
         }
     ];
 
-    
-    public taskSelections = [
-        {
-            name: 'Compare',
-            icon: 'compare',
-            selected: false
-        },
-        {
-            name: 'Current',
-            icon: 'thunderbolt',
-            selected: false
-        },
-        {
-            name: 'Design',
-            icon: 'package',
-            selected: false
-        },
-        {
-            name: 'Replace',
-            icon: 'replace',
-            selected: false
-        },
-        {
-            name: 'Similar',
-            icon: 'clone',
-            selected: false
-        },
-        {
-            name: 'Update',
-            icon: 'refresh',
-            selected: false
-        },
-        {
-            name: 'Validate',
-            icon: 'check_alt',
-            selected: false
-        },
-        {
-            name: 'Test',
-            icon: 'activate_all',
-            selected: false
-        }
-    ];
-
     constructor(private stepsService: StepsService) {}
 
-    public selectRole(role: string) {
+    public selectRole(role: string): void {
         this.selectedRole = role;
         this.stepsService.updateWizardData('role', role)
+        this.checkIfComplete();
     }
 
+    public selectGoal(goal: string): void {
+        this.selectedGoal = goal;
+        this.stepsService.updateWizardData('goal', goal);
+        this.checkIfComplete();
+    }
+
+    public setSelectedGoal(item: IGoal, i: number): void { 
+        item.selected = true;
+        const array = this.taskSelections;
+        const exceptIndex = this.taskSelections.indexOf(item);
+        for(let item of array) {
+            if (array.indexOf(item) !== exceptIndex) {
+                item.selected = false;
+            }
+        }
+    }
 }
