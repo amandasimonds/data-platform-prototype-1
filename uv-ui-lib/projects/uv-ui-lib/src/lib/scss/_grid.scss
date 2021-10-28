@@ -90,13 +90,13 @@ $columns: 12; // Number of columns in the grid system
     border: 1px solid gray;
 }
 
-$grid-width: 114rem;
+// $grid-width: 114rem;
 $gutter-vertical: 8rem;
 $gutter-vertical-small: 6rem;
-$gutter-horizontal: var(--uv-sm-size);
+$gutter-horizontal: 18px;
 
 .udemy-row{
-    max-width:$grid-width;
+    max-width: 100vw;
     margin: 0 auto;
     margin-bottom: $gutter-vertical;
 

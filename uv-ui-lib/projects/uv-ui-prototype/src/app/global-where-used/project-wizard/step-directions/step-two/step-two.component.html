@@ -1,1 +1,25 @@
-<p>step-two works!</p>
+<div>
+    <h5 class="margin-bottom-xs">
+        What item is the entity?
+    </h5>
+
+    <uvx-search-panel mode="component-border" 
+        (searchClearClicked)="searchText = '' && entitySelected = false" 
+        [rounded]="true" 
+        [showSuggestions]="searchText != '' && entitySelected == false">
+        <input type="text"
+            placeholder="Search..."
+            class="uv-input margin-left-xs"
+            maxlength="40"
+            [(ngModel)]="searchText">
+        <div suggestions>
+            <div *ngFor="let item of searchResults" class="search-suggestion" (click)="selectEntity(item.title)">
+                <p class="uv-body">{{item.title}}</p>
+                <span class="uv-body-secondary">
+                    {{item.description}}
+                </span>
+            </div>
+        </div>
+    </uvx-search-panel>
+
+</div>

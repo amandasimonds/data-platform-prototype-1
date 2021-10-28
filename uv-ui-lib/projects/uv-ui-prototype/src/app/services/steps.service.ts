@@ -10,22 +10,22 @@ const STEPS = [
     { stepIndex: 3, isComplete: false }
 ];
 
-const wizardData = {
-    role: '',
-    goal: '',
-    entity: allSearchResults[1],
-    filter1: 0,
-    filter2: 0,
-    filter3: 0
-}
-
 @Injectable()
 export class StepsService {
 
-    public wizardData$: BehaviorSubject<WizardDataModel> = new BehaviorSubject<WizardDataModel>(wizardData);
+    public wizardData = {
+        role: '',
+        goal: '',
+        entity: allSearchResults[1],
+        filter1: 0,
+        filter2: 0,
+        filter3: 0
+    }
+
+    @Output() public stepisCompleteEvent = new EventEmitter<boolean>();
+    public wizardData$: BehaviorSubject<WizardDataModel> = new BehaviorSubject<WizardDataModel>(this.wizardData);
     public steps$: BehaviorSubject<StepModel[]> = new BehaviorSubject<StepModel[]>(STEPS);
     public currentStep$: BehaviorSubject<StepModel> = new BehaviorSubject<StepModel>(null);
-    
     public onCancelWizard$ = new BehaviorSubject(false);
 
     constructor() {
@@ -49,14 +49,29 @@ export class StepsService {
     }
 
     public updateWizardData(property: string, value: any) {
-        console.log(this.wizardData$.value);
+        console.log(property, value);
+        const wizardDataObject = this.wizardData$.value;
+        this.wizardData$.next(
+            Object.defineProperty(wizardDataObject, property, {value : value})
+        )
+        console.log('new', this.wizardData$.value);
     }
 
     public moveToNextStep(): void {
         const index = this.currentStep$.value.stepIndex;
-
         if (index < this.steps$.value.length) {
         this.currentStep$.next(this.steps$.value[index]);
+        }
+    }
+
+    public checkIfComplete() {
+        const wizardData = this.wizardData$;
+        console.log('isComplete', wizardData);
+        if (wizardData.value.goal !== '' && wizardData.value.role !== '') {
+            this.stepisCompleteEvent.emit(true);
+            console.log('emitted');
+        } else {
+            return
         }
     }
 
@@ -65,13 +80,17 @@ export class StepsService {
             step.isComplete = false;
         }
         this.setCurrentStep(this.steps$.value[0]);
+        this.wizardData$.next(
+           this.wizardData
+        )
     }
 
     public isLastStep(): boolean {
         return this.currentStep$.value.stepIndex === this.steps$.value.length;
     }
 
-    public cancelWizard() {
+    public cancelWizard(): void {
         this.onCancelWizard$.next(false);
+        this.resetWizard();
     }
 }

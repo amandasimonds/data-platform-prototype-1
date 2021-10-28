@@ -17,6 +17,8 @@ export class ProfileViewerComponent implements OnInit {
     public historyTabActive = false;
 
     @Input() public columnCount = 0;
+    @Input() public name = '';
+    @Input() public description = '';
 
     items = [
         {
@@ -57,7 +59,7 @@ export class ProfileViewerComponent implements OnInit {
         private destroy$ : NgOnDestroyService) {}
 
     public ngOnInit(): void {
-        this.profileViewerService.columnCount
+        this.profileViewerService.columnCount$
         .pipe(takeUntil(this.destroy$))
             .subscribe(count => {
                 this.columnCount = count;
@@ -70,8 +72,8 @@ export class ProfileViewerComponent implements OnInit {
     public isTextOverflow(elementId: string): boolean {
         const elem = document.getElementById(elementId);
         if (elem) {
-            console.log(elem.offsetWidth < elem.scrollHeight);
-            console.log(elem, elem.offsetWidth, elem.scrollHeight);
+            // console.log(elem.offsetWidth < elem.scrollHeight);
+            // console.log(elem, elem.offsetWidth, elem.scrollHeight);
             return (elem.offsetWidth < elem.scrollHeight);
         }
         else {
@@ -80,7 +82,7 @@ export class ProfileViewerComponent implements OnInit {
     }
 
     public onDescriptionResized(event: Event) {
-        console.log(event);
+        // console.log(event);
         this.ref.markForCheck();
     }
 
