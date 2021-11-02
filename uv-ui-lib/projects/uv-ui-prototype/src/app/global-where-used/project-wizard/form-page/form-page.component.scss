@@ -27,9 +27,6 @@
 }
 
 .app-steps-top {
-    // @media (max-height: 800px) {
-        
-    // }
     @include respond(small-desktop-height) {
         display: none;
     }

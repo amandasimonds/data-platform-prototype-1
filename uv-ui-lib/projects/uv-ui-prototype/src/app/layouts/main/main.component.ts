@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { AppShellService } from '../../services/app-shell.service';
@@ -47,6 +47,7 @@ export class MainComponent implements OnInit {
         public searchService: SearchService,
         private ref: ChangeDetectorRef,
         private route: ActivatedRoute,
+        private router: Router,
         private destroy$: NgOnDestroyService,
         private userService: UserService,
         private uvlService: UvLightService) {
@@ -90,5 +91,15 @@ export class MainComponent implements OnInit {
     public closeSearchSidebar(): void {
         this.searchService.setSearchSidebarState('hidden');
         this.appShellService.setNavIcon(this.currentApp);
+    }
+
+    public launchWizard(): void {
+        if (this.currentApp === 'sbs' || this.currentUser.name === 'user1@test.com') {
+            this.router.navigate(['sbs/wizard']);
+        } else if (this.currentApp === 'gwu' || this.currentUser.name === 'user2@test.com') {
+            this.router.navigate(['gwu/wizard']);
+        } else {
+            this.router.navigate(['gwu/wizard']);
+        }
     }
 }

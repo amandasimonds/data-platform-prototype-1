@@ -17,7 +17,7 @@ const routes: Routes = [
                 children: [
                     {
                         path: '',
-                        redirectTo: 'project-wizard',
+                        redirectTo: 'wave',
                         pathMatch: 'full'
                     },
                     {

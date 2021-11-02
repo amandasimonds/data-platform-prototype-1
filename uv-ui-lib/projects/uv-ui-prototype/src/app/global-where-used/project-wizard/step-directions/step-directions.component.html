@@ -1,34 +1,10 @@
 <div class="">
 
-    <app-step-one *ngIf="step.stepIndex === 1" (stepisCompleteEvent)="step.isComplete = true"></app-step-one>
-
-    <app-step-two *ngIf="step.stepIndex === 2" (stepisCompleteEvent)="step.isComplete = true"></app-step-two>
-
-    <div *ngIf="step.stepIndex === 3">
-        <p class="uv-body">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        </p>
-        <div class="flex flex-column">
-            <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
-                <p class="uv-body bold" style="width: 30%" >Lorem ipsum</p>
-                <uvx-range-slider class="flex-grow" minLabel="0%" maxLabel="100%"></uvx-range-slider>
-            </div>
-
-            <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
-                <p class="uv-body bold" style="width: 30%">Lorem ipsum</p>
-                <uvx-range-slider class="flex-grow" minLabel="0%" maxLabel="100%"></uvx-range-slider>
-            </div>
-
-            <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
-                <p class="uv-body bold" style="width: 30%">Lorem ipsum</p>
-                <uvx-range-slider class="flex-grow" minLabel="0%" maxLabel="100%"></uvx-range-slider>
-            </div>
-        </div>
-        
-        <div class="flex flex-column">
-            <uvx-button class="right" label="Complete" (click)="onCompleteStep()"></uvx-button>
-            <uvx-button class="right" label="Advanced Options"></uvx-button>
-        </div>
-    </div>
+    <app-step-one *ngIf="step.stepIndex === 1" 
+        (stepisCompleteEvent)="step.isComplete = true"></app-step-one>
+    <app-step-two *ngIf="step.stepIndex === 2" 
+        (stepisCompleteEvent)="step.isComplete = true"></app-step-two>
+    <app-step-three  *ngIf="step.stepIndex === 3" 
+        (stepisCompleteEvent)="step.isComplete = true"></app-step-three>
 
 </div>

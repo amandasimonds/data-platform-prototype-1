@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StepModel } from '../../../models/step.model';
-import { StepsService } from '../../../services/steps.service';
+import { WizardService } from '../../../services/wizard.service';
 
 @Component({
   selector: 'app-steps',
@@ -15,7 +15,7 @@ export class StepsComponent implements OnInit {
     public steps: Observable<StepModel[]>;
     public currentStep: Observable<StepModel>;
 
-    constructor(private stepsService: StepsService, private router: Router) { }
+    constructor(private stepsService: WizardService, private router: Router) { }
 
     public ngOnInit(): void {
         this.steps = this.stepsService.getSteps();

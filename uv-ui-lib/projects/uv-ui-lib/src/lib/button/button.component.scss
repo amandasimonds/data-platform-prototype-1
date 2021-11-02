@@ -5,6 +5,7 @@
     cursor: pointer;
     display: inline-block;
     line-height: 1;
+    background-color: transparent;
 }
 
 .text {
@@ -39,9 +40,9 @@
 
     &.disabled {
         color: var(--uv-color-white);
-            background-color: var(--uv-color-gray);
-            font-weight: none;
-            cursor: not-allowed;
+        background-color: var(--uv-color-gray);
+        font-weight: none;
+        cursor: not-allowed;
         &:hover{
             color: var(--uv-color-white);
             background-color: var(--uv-color-gray);
@@ -81,6 +82,10 @@
     &:hover {
         background-color: var(--uv-color-gray-light);
     }
+}
+
+.tertiary {
+    font-weight: var(--uv-font-weight);
 }
 
 .round {

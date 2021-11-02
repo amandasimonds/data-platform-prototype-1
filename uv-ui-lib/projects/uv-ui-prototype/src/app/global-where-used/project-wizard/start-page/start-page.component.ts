@@ -1,6 +1,5 @@
 import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { StepsService } from '../../../services/steps.service';
+import { WizardService } from '../../../services/wizard.service';
 
 @Component({
   selector: 'app-wizard-start',
@@ -13,9 +12,7 @@ export class StartPageComponent {
     @Output() public createNewProjectEvent = new EventEmitter();
 
     constructor(
-        private router: Router,
-        private route: ActivatedRoute,
-        private stepsService: StepsService) {}
+        private stepsService: WizardService) {}
 
     public cancelWizard() {
         this.stepsService.resetWizard();

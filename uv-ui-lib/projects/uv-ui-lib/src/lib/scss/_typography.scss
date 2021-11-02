@@ -131,6 +131,10 @@ a:visited {
     color: var(--uv-color-primary);
     text-decoration: none;
     cursor: pointer;
+
+    &-secondary {
+        color: gray;
+    }
 }
 
 ul, ol {

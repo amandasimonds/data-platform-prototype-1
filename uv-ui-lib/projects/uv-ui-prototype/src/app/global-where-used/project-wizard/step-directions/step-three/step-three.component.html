@@ -1,1 +1,23 @@
-<p>step-three works!</p>
+    <p class="uv-body">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        </p>
+        <div class="flex flex-column">
+            <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
+                <p class="uv-body bold" style="width: 30%" >Lorem ipsum</p>
+                <uvx-range-slider class="flex-grow" minLabel="0%" maxLabel="100%" (valueChangedEvent)="filter1Changed($event)" (mouseup)="setFilter1()"></uvx-range-slider>
+            </div>
+            
+            <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
+                <p class="uv-body bold" style="width: 30%">Lorem ipsum</p>
+                <uvx-range-slider class="flex-grow" minLabel="0%" maxLabel="100%" (valueChangedEvent)="filter2Changed($event)" (mouseup)="setFilter2()"></uvx-range-slider>
+            </div>
+            
+            <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
+                <p class="uv-body bold" style="width: 30%">Lorem ipsum</p>
+                <uvx-range-slider class="flex-grow" minLabel="0%" maxLabel="100%" (valueChangedEvent)="filter3Changed($event)" (mouseup)="setFilter3()"></uvx-range-slider>
+            </div>
+        </div>
+            
+        <div class="flex flex-column">
+            <uvx-button class="right" label="Advanced Options"></uvx-button>
+        </div>

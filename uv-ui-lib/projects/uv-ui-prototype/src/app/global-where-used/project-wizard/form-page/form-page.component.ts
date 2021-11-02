@@ -1,8 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output, Input, ChangeDetectorRef } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { combineLatest, Observable } from 'rxjs';
+import { takeUntil, tap } from 'rxjs/operators';
 import { StepModel } from '../../../models/step.model';
-import { StepsService } from '../../../services/steps.service';
+import { WizardDataModel } from '../../../models/wizard-data.model';
+import { allSearchResults } from '../../../search/search-results/sample-search-results/allSearchResults';
+import { NgOnDestroyService } from '../../../services/on-destroy.service';
+import { WizardService } from '../../../services/wizard.service';
 
 @Component({
   selector: 'app-form-page',
@@ -11,17 +15,32 @@ import { StepsService } from '../../../services/steps.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormPageComponent implements OnInit {
-  public currentStep: Observable<StepModel>;
 
+  public currentStep: Observable<StepModel>;
   @Output() public onSubmitEvent = new EventEmitter();
+  @Input() public totalResultsnumber = allSearchResults.length;
+  public currentStepNumber: StepModel;
+  public wizardData: WizardDataModel
 
   constructor(
-    private stepsService: StepsService,
+    private stepsService: WizardService,
+    private destroy$: NgOnDestroyService,
+    private ref: ChangeDetectorRef,
     private router: Router
     ) { }
 
   public ngOnInit(): void {
     this.currentStep = this.stepsService.getCurrentStep();
+    combineLatest([
+        this.stepsService.currentStep$.pipe(tap(value => this.currentStepNumber = value)),
+        this.stepsService.wizardData$.pipe(tap(data => this.wizardData = data))
+    ])
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(() => this.ref.detectChanges());
+  }
+
+  ngAfterViewChecked(): void {
+    this.ref.detectChanges()
   }
 
   public onNextStep(): void {
@@ -32,8 +51,35 @@ export class FormPageComponent implements OnInit {
     }
   }
 
-  public showButtonLabel(): string {
-    return !this.stepsService.isLastStep() ? 'Next' : 'Finish';
+  public onSkipStep(): void {
+    const data = this.wizardData;
+    switch (this.currentStepNumber.stepIndex){
+        case 1:
+            this.stepsService.updateWizardData('stepOneSkip', true);
+            this.stepsService.updateWizardData('stepOneComplete', false);
+            break;
+        case 2:
+            this.stepsService.updateWizardData('stepTwoSkip', true);
+            this.stepsService.updateWizardData('stepTwoComplete', false);
+            break;
+        case 3:
+            this.stepsService.updateWizardData('stepThreeSkip', true);
+            this.stepsService.updateWizardData('stepThreeComplete', false);
+            break;
+    }
+
+    if (data.stepOneSkip && data.stepTwoSkip) {
+        console.log('skipped step 1 and 2');
+        this.stepsService.cancelWizard();
+        this.router.navigate(['main/gwu/wave'], { queryParams: {service: 'wave'}})
+    }
+    if (data.stepOneSkip && data.stepTwoSkip && data.stepThreeSkip) {
+        console.log('go to GWU');
+        this.stepsService.cancelWizard();
+        this.router.navigate(['main/gwu'], { queryParams: {service: 'wave'}})
+    } else {
+        this.onNextStep();
+    }
   }
 
   public cancelWizard(): void {
@@ -42,7 +88,6 @@ export class FormPageComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    this.stepsService.resetWizard();
     this.onSubmitEvent.emit();
   }
 }

@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
-import { StepsService } from 'projects/uv-ui-prototype/src/app/services/steps.service';
+import { WizardService } from 'projects/uv-ui-prototype/src/app/services/wizard.service';
 import { IGoal } from './goal.model';
 import { taskSelections } from './taskSelections';
 
@@ -12,21 +12,9 @@ import { taskSelections } from './taskSelections';
 export class StepOneComponent {
 
     public selectedRole = "Select a role";
-    public selectedGoal = '';
     public taskSelections = taskSelections;
 
     @Output() public stepisCompleteEvent = new EventEmitter<boolean>();
-
-    public checkIfComplete() {
-        const wizardData = this.stepsService.wizardData$;
-        console.log('isComplete', wizardData);
-        if (wizardData.value.goal !== '' && wizardData.value.role !== '') {
-            this.stepisCompleteEvent.emit(true);
-            console.log('emitted');
-        } else {
-            return
-        }
-    }
 
     public roles = [
         {
@@ -43,18 +31,22 @@ export class StepOneComponent {
         }
     ];
 
-    constructor(private stepsService: StepsService) {}
+    constructor(private stepsService: WizardService) {
+        const role = this.stepsService.wizardData$.value.role;
+        const goal = this.stepsService.wizardData$.value.goal;
+        role !== '' ? this.selectedRole = role : null;
+        goal === '' ? this.taskSelections.map(item => {item.selected = false}) : null
+    }
 
     public selectRole(role: string): void {
         this.selectedRole = role;
         this.stepsService.updateWizardData('role', role)
-        this.checkIfComplete();
+        this.stepsService.checkIfStep1Complete();
     }
 
     public selectGoal(goal: string): void {
-        this.selectedGoal = goal;
         this.stepsService.updateWizardData('goal', goal);
-        this.checkIfComplete();
+        this.stepsService.checkIfStep1Complete();
     }
 
     public setSelectedGoal(item: IGoal, i: number): void { 
