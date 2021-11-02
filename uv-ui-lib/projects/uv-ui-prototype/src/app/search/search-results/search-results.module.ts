@@ -4,6 +4,7 @@ import { IconButtonModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-a
 import { SearchResultsComponent } from './search-results.component';
 import { FilterResultsPipe } from './filter-results.pipe';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { WizardService } from '../../services/wizard.service';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     UvxIconModule,
     IconButtonModule
   ],
-  exports: [SearchResultsComponent]
+  exports: [SearchResultsComponent],
+  providers: [WizardService]
 })
 export class SearchResultsModule { }

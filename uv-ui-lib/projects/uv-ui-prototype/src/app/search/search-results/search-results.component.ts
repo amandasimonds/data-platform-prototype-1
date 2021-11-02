@@ -1,6 +1,8 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, OnInit } from '@angular/core';
 import { SearchResult } from '../models/search-result.model';
 import { SearchService } from '../../services/search.service';
+import { WizardService } from '../../services/wizard.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-results',
@@ -18,7 +20,9 @@ export class SearchResultsComponent implements OnChanges, OnInit {
     public showToolbar = false;
     public classes: string[] = [];
 
-    constructor(private searchService: SearchService) {}
+    constructor(private searchService: SearchService, 
+        private wizardService: WizardService,
+        private router: Router) {}
 
     public mouseLeaveClass(): void {
         this.classes.push('mouseleave');
@@ -32,6 +36,16 @@ export class SearchResultsComponent implements OnChanges, OnInit {
         this.searchService.addToRecentSearches('search '+ item.title, item);
         this.searchService.selectResult(item, i);
         this.searchService.setCompareWarningState(value);
+        event.stopPropagation();
+    }
+
+    public launchClicked(value: boolean, item: SearchResult, i: number): void {
+        console.log('launch click', item);
+        this.searchService.addToRecentSearches('search '+ item.title, item);
+        this.searchService.selectResult(item, i);
+        // this.searchService.setCompareWarningState(value);
+        this.wizardService.updateWizardData('entity', item);
+        this.router.navigate(['main/gwu/wave'])
         event.stopPropagation();
     }
 

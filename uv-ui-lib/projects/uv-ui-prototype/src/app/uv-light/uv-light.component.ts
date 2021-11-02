@@ -75,7 +75,8 @@ export class UvLightComponent implements OnChanges {
     }
 
     public ngOnChanges(): void {
-        this.uvlService.currentHighlight$.pipe(takeUntil(this.destroy$))
+        this.uvlService.currentHighlight$
+            .pipe(takeUntil(this.destroy$))
             .subscribe(highlight => {
                 this.currentHighlight = highlight;
                 this.ref.detectChanges();
