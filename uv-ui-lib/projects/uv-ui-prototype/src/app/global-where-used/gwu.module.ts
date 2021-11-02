@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { StepsService } from '../services/steps.service';
+import { WizardService } from '../services/wizard.service';
 import { SidePanelModule, BackdropModule, ButtonModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule, ActionBarModule, ModalModule, UvxIconModule } from '../../../../uv-ui-lib/src/public-api';
 import { GlobalWhereUsedComponent } from './global-where-used.component';
 import { GwuRoutingModule } from './global-where-used-routing.module';
@@ -44,6 +44,6 @@ import { WizardContainerModule } from './project-wizard/wizard-container/wizard-
         WizardContainerModule
     ],
     exports: [ GlobalWhereUsedComponent ],
-    providers: [ StepsService ]
+    providers: [ WizardService ]
 })
 export class GwuModule { }

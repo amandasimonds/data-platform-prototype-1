@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { StepsService } from '../../../services/steps.service';
+import { WizardService } from '../../../services/wizard.service';
 
 @Component({
   selector: 'app-wizard-container',
@@ -13,7 +13,7 @@ export class WizardContainerComponent {
     public wizardSteps = false;
     public launchPoint = false;
 
-    constructor(private stepsService: StepsService) {}
+    constructor(private stepsService: WizardService) {}
 
     public startWizard() {
         this.wizardStart = false;
@@ -28,5 +28,4 @@ export class WizardContainerComponent {
         this.wizardSteps = false;
         this.launchPoint = true;
     }
-
 }

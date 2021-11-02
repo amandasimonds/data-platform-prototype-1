@@ -29,7 +29,7 @@
 
 .suggestions-dropdown {
     position: absolute;
-    max-height: 30vh;
+    max-height: 40vh;
     top: 114%;
     left: 0;
     right: 0;
@@ -38,6 +38,7 @@
     border-radius: 4px;
     background-color: var(--uv-color-white);
     box-shadow: var(--uv-box-shadow-2);
+    overflow: auto;
 }
 
 .select.open .suggestions-dropdown {

@@ -133,6 +133,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
 
     public ngAfterViewChecked(): void {
         this.searchResults = this.searchService.typeAheadSearch(this.searchText);
+        this.ref.detectChanges();
         this.recentSearches = this.searchService.getRecentSearches();
     }
 }

@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileViewerService } from '../../../services/profile-viewer.service';
-import { StepsService } from '../../../services/steps.service';
+import { WizardService } from '../../../services/wizard.service';
 
 @Component({
   selector: 'app-landing',
@@ -47,14 +47,14 @@ export class LandingComponent {
     ];
     
     constructor(
-        private stepsService: StepsService, 
+        private stepsService: WizardService, 
         private route: ActivatedRoute, 
         private router: Router,
         private profileViewerService: ProfileViewerService) {}
 
     ngOnInit(): void {
         this.stepsService.onCancelWizard$.subscribe(value => this.projectWizard = value);
-        this.projectWizard = false;
+        this.projectWizard = true;
         this.profileViewerService.currentPage$.subscribe(value => 
             this.currentProfileViewerPage = value.toString()
         );

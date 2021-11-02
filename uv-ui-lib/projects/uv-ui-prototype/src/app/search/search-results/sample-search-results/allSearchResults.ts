@@ -1,6 +1,15 @@
 export const allSearchResults = [
     {
         category: 'Parts',
+        title: 'API 13M-4 / ISO 13503-4',
+        description: '1. The LGC NCOE has witnessed several LNG bunkering operations over the last few months and seen common errors/failures, some that have resulted in the release of LNG and/or near misses, but also others that have gone very well. It is critically important for all parties involved to fully understand the risks that are presented when transferring LNG. While LNG can be handled safely, its cryogenic, asphyxiant, and flammability hazards must be recognized and mitigated in order to avoid serious personnel injury, vessel damage, and/or other harmful effects. This LGC NCOE Field Notice augments references (a) and (b) and shares the following recommendations based off best practices and lessons learned observed during recent LNG bunkering operations in order to prevent',
+        active: false,
+        disabled: false,
+        date: '',
+        formattedDate: ''
+    },
+    {
+        category: 'Parts',
         title: 'EXH-SU-5110-B1',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
         active: false,

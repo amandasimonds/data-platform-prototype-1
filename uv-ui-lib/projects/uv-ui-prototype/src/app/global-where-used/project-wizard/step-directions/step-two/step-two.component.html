@@ -4,7 +4,7 @@
     </h5>
 
     <uvx-search-panel mode="component-border" 
-        (searchClearClicked)="searchText = '' && entitySelected = false" 
+        (searchClearClicked)="clearSearch()" 
         [rounded]="true" 
         [showSuggestions]="searchText != '' && entitySelected == false">
         <input type="text"
@@ -13,11 +13,15 @@
             maxlength="40"
             [(ngModel)]="searchText">
         <div suggestions>
-            <div *ngFor="let item of searchResults" class="search-suggestion" (click)="selectEntity(item.title)">
+            <div *ngFor="let item of searchResults; trackBy: trackItem"
+                class="custom-option" 
+                (click)="selectEntity(item)">
                 <p class="uv-body">{{item.title}}</p>
-                <span class="uv-body-secondary">
-                    {{item.description}}
-                </span>
+                <div class="option-description">
+                    <span class="uv-body-secondary">
+                        {{item.description}}
+                    </span>
+                </div>
             </div>
         </div>
     </uvx-search-panel>

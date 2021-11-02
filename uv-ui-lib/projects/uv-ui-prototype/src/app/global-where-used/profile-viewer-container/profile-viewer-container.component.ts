@@ -31,10 +31,12 @@ export class ProfileViewerContainerComponent implements OnInit {
 
     ngOnInit(): void {
         this.pages = this.profileViewerService.getPages();
-        this.profileViewerService.currentPage$.subscribe(value => 
+        this.profileViewerService.currentPage$
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(value => 
             this.currentPageNumber = value)
         this.profileViewerService.columnCount$
-        .pipe(takeUntil(this.destroy$))
+            .pipe(takeUntil(this.destroy$))
             .subscribe(count => {
                 this.columnCount = count;
                 this.ref.detectChanges();

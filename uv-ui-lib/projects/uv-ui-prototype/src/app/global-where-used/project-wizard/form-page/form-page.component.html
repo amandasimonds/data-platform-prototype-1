@@ -20,7 +20,7 @@
 
         <div class="divider-right margin-right-md steps-divider-side"></div>
 
-        <div class="form-step w-100">
+        <div class="w-100 flex flex-column justify-content-space-between">
             <ng-container [ngSwitch]="(currentStep | async)?.stepIndex">
                 <ng-container *ngSwitchCase="'1'">
                     <app-step-directions [step]="(currentStep | async)"></app-step-directions>
@@ -32,18 +32,29 @@
                     <app-step-directions [step]="(currentStep | async)"></app-step-directions>
                 </ng-container>
             </ng-container>
+
+            <div class="flex justify-content-flex-end margin-top-sm">
+                <p class="uv-body uv-font-gray semi-bold">
+                    Total results: {{totalResultsnumber}}
+                </p>
+            </div>
         </div>
+        
     </div>
 
     <div class="divider"></div>
 
-    <div class="form-page-container-bottom flex justify-content-flex-end align-items-center">
-        <uvx-button label="Cancel" color="gray" class="margin-right-sm" 
-        (click)="cancelWizard()"></uvx-button>
-        <uvx-button 
-        (click)="onNextStep()" [disabled]="!(currentStep | async)?.isComplete" 
-        mode="primary"
-        [label]="showButtonLabel()">
-        </uvx-button>
+    <div class="form-page-container-bottom flex justify-content-space-between align-items-center">
+        <uvx-button mode="tertiary" label="Skip" color="gray" (click)="onSkipStep()"></uvx-button>
+        <div>
+            <uvx-button label="Cancel" color="gray" class="margin-right-sm" 
+            (click)="cancelWizard()"></uvx-button>
+            <uvx-button 
+                (click)="currentStepNumber.isComplete && onNextStep()" 
+                [disabled]="!currentStepNumber.isComplete" 
+                mode="primary"
+                label="Next">
+            </uvx-button>
+        </div>
     </div>
 </div>
