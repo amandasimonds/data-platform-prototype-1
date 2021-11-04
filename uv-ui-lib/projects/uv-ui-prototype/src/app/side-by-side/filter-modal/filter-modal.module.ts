@@ -8,7 +8,7 @@ import {
     TextInputModule,
     UvxIconModule
 } from 'projects/uv-ui-lib/src/public-api';
-import { SbsFilterService } from '../../services/sbs-filter.service';
+import { SbsFilterService } from '../sbs-filter.service';
 import { FilterKeywordSearchPipe } from '../../pipes/filter-keyword-search.pipe';
 import { FilterModalComponent } from './filter-modal.component';
 

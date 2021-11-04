@@ -3,9 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../../services/on-destroy.service';
-import { ProfileViewerService } from '../../../services/profile-viewer.service';
+import { ProfileViewerService } from '../../profile-viewer.service';
 import { UserService } from '../../../services/user.service';
-import { WizardService } from '../../../services/wizard.service';
+import { WizardService } from '../../wizard.service';
 
 @Component({
   selector: 'app-landing',

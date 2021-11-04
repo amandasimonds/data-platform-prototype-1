@@ -6,7 +6,6 @@ import {
     SearchPanelModule,
     CheckboxModule
 } from '../../../../uv-ui-lib/src/public-api';
-import { TasksModule } from './tasks/tasks.module';
 import { SideBySideLandingModule } from './landing/landing.module';
 import { SideBySideRoutingModule } from './side-by-side-routing.module';
 import { SourceDocumentModule } from './sbs-document/source-document/source-document.module';
@@ -20,7 +19,6 @@ import { SideBySideComponent } from './side-by-side.component';
         CommonModule,
         SideBySideRoutingModule,
         ActionBarModule,
-        TasksModule,
         SideBySideLandingModule,
         SourceDocumentModule,
         CheckboxModule,

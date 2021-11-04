@@ -11,7 +11,7 @@
         [class.form-page-container-top]="!wizardModeFullscreen">
             <div class="flex justify-content-space-between align-items-center margin-bottom-xs">
                 <h4>Title of the Step</h4>
-                <uvx-icon-button icon="close" size="md" color="gray" (click)="cancelWizard()"></uvx-icon-button>
+                <uvx-icon-button icon="close" matTooltip="Close Wizard" size="md" color="gray" (click)="cancelWizard()"></uvx-icon-button>
             </div>
             <p class="uv-body">This is a description of the step. More filler text here.</p>
             <div *ngIf="!wizardModeFullscreen" class="app-steps-top">
@@ -46,26 +46,33 @@
                     </ng-container>
                 </div>
 
-                <app-helper-bar></app-helper-bar>
+                <app-helper-bar *ngIf="wizardModeFullscreen"></app-helper-bar>
             </div>
 
             <div>
                 <div class="flex justify-content-flex-end margin-bottom-sm margin-sm">
                     <p class="uv-body uv-font-gray semi-bold">
-                        Total results: {{totalResultsnumber}}
+                        Total results: {{totalResults}}
                     </p>
                 </div>
                 <div class="divider"></div>
                 <div class="form-page-container-bottom flex justify-content-space-between align-items-center">
-                    <uvx-button mode="tertiary" label="Skip" color="gray" (click)="onSkipStep()"></uvx-button>
+                    <uvx-button mode="tertiary" label="Skip" 
+                    matTooltip="Skip this step"
+                    color="gray" 
+                    (click)="onSkipStep()"></uvx-button>
                     <div>
-                        <uvx-button label="Back" color="gray" class="margin-right-sm" 
-                        (click)="onBackStep()">
+                        <uvx-button label="Back" mode="primary" 
+                        class="margin-right-sm" 
+                        matTooltip="Go to previous step"
+                        [disabled]="currentStepNumber.stepIndex === 1"
+                        (click)="currentStepNumber.stepIndex > 1 && onBackStep()">
                         </uvx-button>
                         <uvx-button 
                         (click)="currentStepNumber.isComplete && onNextStep()" 
                         [disabled]="!currentStepNumber.isComplete" 
                         mode="primary"
+                        [matTooltip]="!isLastStep ? 'Go to next step' : 'Finish and launch into GWU'"
                         [label]="getButtonLabel()">
                         </uvx-button>
                     </div>

@@ -38,12 +38,14 @@ export class WizardService {
         stepThreeSkip: false,
     }
 
+    public initialResultsNumber = 2034
+
     public wizardData$: BehaviorSubject<WizardDataModel> = new BehaviorSubject<WizardDataModel>(this.wizardData);
     public steps$: BehaviorSubject<StepModel[]> = new BehaviorSubject<StepModel[]>(STEPS);
     public currentStep$: BehaviorSubject<StepModel> = new BehaviorSubject<StepModel>(null);
     public onCancelWizard$ = new BehaviorSubject(false);
+    public results$ = new BehaviorSubject<number>(this.initialResultsNumber);
     
-
     constructor() {
         this.currentStep$.next(this.steps$.value[0]);
     }
@@ -62,6 +64,14 @@ export class WizardService {
 
     public getWizardData(): Observable<WizardDataModel> {
         return this.wizardData$.asObservable();
+    }
+
+    public getResults(): Observable<number> {
+        return this.results$.asObservable();
+    }
+
+    public updateResults(value: number) {
+        this.results$.next(this.results$.value - value);
     }
 
     public updateWizardData(property: string, value: any) {
@@ -135,6 +145,7 @@ export class WizardService {
             stepTwoSkip: false,
             stepThreeSkip: false,
         });
+        this.results$.next(this.initialResultsNumber);
         console.log('reset wizard');
     }
 

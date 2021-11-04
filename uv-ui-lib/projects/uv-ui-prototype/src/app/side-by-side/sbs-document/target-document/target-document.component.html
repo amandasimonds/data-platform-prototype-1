@@ -23,8 +23,7 @@
         
         <div class="sbs-document-card-bottom-details-container" 
             [class.sbs-document-card-bottom-details-container-expanded]="item.showDetails">
-            <div *ngFor="let tag of item.tags" class="tooltip-parent sbs-tag uv-label-sbs position-relative">
-                <uvx-tooltip label="Industry"></uvx-tooltip>
+            <div *ngFor="let tag of item.tags" class="sbs-tag uv-label-sbs position-relative">
                 {{tag}}
             </div>
             <div *ngIf="item.showDetails" class="margin-top-xs">

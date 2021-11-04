@@ -24,9 +24,8 @@
         max-height: inherit;
 
         &-fullscreen {
-            width: 70%;
+            width: 80%;
             max-height: inherit;
-            overflow: auto;
         }
 
         @include respond(small-desktop-height) {

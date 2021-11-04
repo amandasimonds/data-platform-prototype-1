@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { WizardService } from '../../../services/wizard.service';
+import { WizardService } from '../../wizard.service';
 
 @Component({
   selector: 'app-wizard-container',

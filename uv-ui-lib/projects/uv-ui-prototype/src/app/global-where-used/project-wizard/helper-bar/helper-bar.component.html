@@ -1,6 +1,6 @@
 <div class="helper-bar flex flex-column" [@slideInOutRight]="helperBarState">
     <uvx-icon-button 
-    matTooltip="More info about this step"
+    [matTooltip]="helperBarState === 'hidden' ? 'More info about this step' : 'Close helper bar'"
     [icon]="helperBarState === 'hidden' ? 'double_left' : 'double_right'" 
     (click)="toggleHelperBar()"></uvx-icon-button>
         <div class="margin-xs margin-left-sm">

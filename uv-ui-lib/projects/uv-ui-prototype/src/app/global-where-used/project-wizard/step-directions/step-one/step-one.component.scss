@@ -51,5 +51,7 @@
 
     @include respond(small-desktop-height) {
         gap: 18px;
+        max-height: inherit;
+        overflow: hidden;
     }
 }

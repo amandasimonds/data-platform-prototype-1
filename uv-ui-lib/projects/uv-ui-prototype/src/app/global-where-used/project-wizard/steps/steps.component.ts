@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StepModel } from '../../../models/step.model';
-import { WizardService } from '../../../services/wizard.service';
+import { WizardService } from '../../wizard.service';
 
 @Component({
   selector: 'app-steps',

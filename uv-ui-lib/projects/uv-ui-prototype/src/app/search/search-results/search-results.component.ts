@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, OnInit } from '@angular/core';
 import { SearchResult } from '../models/search-result.model';
 import { SearchService } from '../../services/search.service';
-import { WizardService } from '../../services/wizard.service';
+import { WizardService } from '../../global-where-used/wizard.service';
 import { Router } from '@angular/router';
 
 @Component({

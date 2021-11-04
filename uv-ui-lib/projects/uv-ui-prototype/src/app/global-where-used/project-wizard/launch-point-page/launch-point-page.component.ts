@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { LaunchPointModel } from '../../../models/launch-point.model';
 import { StepModel } from '../../../models/step.model';
 import { WizardDataModel } from '../../../models/wizard-data.model';
-import { WizardService } from '../../../services/wizard.service';
+import { WizardService } from '../../wizard.service';
 
 @Component({
   selector: 'app-launch-point-page',
@@ -19,8 +19,6 @@ export class LaunchPointPageComponent {
     public taskSelections: LaunchPointModel[] = [];
 
     constructor(private router: Router, private stepsService: WizardService) {
-        // const data = this.wizardData;
-        // console.log(data.stepThreeSkip, data.stepOneSkip, data.stepTwoSkip );
     }
 
     ngOnInit(): void {

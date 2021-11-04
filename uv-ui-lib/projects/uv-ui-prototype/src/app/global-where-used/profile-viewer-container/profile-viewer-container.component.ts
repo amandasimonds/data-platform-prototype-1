@@ -4,7 +4,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Container, EnterExitLeft, EnterExitRight, flyInOutAnimation, nextPageAnimation } from '../../animations';
 import { allSearchResults } from '../../search/search-results/sample-search-results/allSearchResults';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
-import { ProfileViewerService } from '../../services/profile-viewer.service';
+import { ProfileViewerService } from '../profile-viewer.service';
 
 @Component({
   selector: 'app-profile-viewer-container',

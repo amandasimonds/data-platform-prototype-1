@@ -1,13 +1,12 @@
 import { Location } from '@angular/common';
-import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest, Observable } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { StepModel } from '../../../models/step.model';
 import { WizardDataModel } from '../../../models/wizard-data.model';
-import { allSearchResults } from '../../../search/search-results/sample-search-results/allSearchResults';
 import { NgOnDestroyService } from '../../../services/on-destroy.service';
-import { WizardService } from '../../../services/wizard.service';
+import { WizardService } from '../../wizard.service';
 
 @Component({
   selector: 'app-form-page',
@@ -19,17 +18,13 @@ export class FormPageComponent implements OnInit {
 
   public currentStep: Observable<StepModel>;
   @Output() public onSubmitEvent = new EventEmitter();
-  @Input() public totalResultsnumber = allSearchResults.length;
   public currentStepNumber: StepModel;
   public wizardData: WizardDataModel
   public wizardMode = '';
-
-  public get wizardModeFullscreen() {
-    return this.wizardMode === 'fullscreen' ? true : false
-  }
+  public resultsNumber = 0;
 
   constructor(
-    private stepsService: WizardService,
+    private wizardService: WizardService,
     private destroy$: NgOnDestroyService,
     private ref: ChangeDetectorRef,
     private router: Router,
@@ -38,10 +33,11 @@ export class FormPageComponent implements OnInit {
     ) { }
 
   public ngOnInit(): void {
-    this.currentStep = this.stepsService.getCurrentStep();
+    this.currentStep = this.wizardService.getCurrentStep();
     combineLatest([
-        this.stepsService.currentStep$.pipe(tap(value => this.currentStepNumber = value)),
-        this.stepsService.wizardData$.pipe(tap(data => this.wizardData = data)),
+        this.wizardService.currentStep$.pipe(tap(value => this.currentStepNumber = value)),
+        this.wizardService.wizardData$.pipe(tap(data => this.wizardData = data)),
+        this.wizardService.results$.pipe(tap(value => this.resultsNumber = value)),
         this.route.queryParams.pipe(tap(queryParams => this.wizardMode = queryParams['wizardMode']))
     ])
         .pipe(takeUntil(this.destroy$))
@@ -52,47 +48,59 @@ export class FormPageComponent implements OnInit {
     this.ref.detectChanges()
   }
 
+  public get totalResults(): string{
+    return this.resultsNumber > 0 ? Math.round(this.resultsNumber).toString() : 'No results'
+  }
+
+  public get wizardModeFullscreen() {
+    return this.wizardMode === 'fullscreen' ? true : false
+  }
+
+  public get isLastStep() {
+    return this.wizardService.isLastStep();
+  }
+
   public onNextStep(): void {
-    if (!this.stepsService.isLastStep()) {
-      this.stepsService.moveToNextStep();
+    if (!this.wizardService.isLastStep()) {
+      this.wizardService.moveToNextStep();
     } else {
       this.onSubmit();
     }
   }
 
   public onBackStep(): void {
-      this.stepsService.moveBackStep();
+      this.wizardService.moveBackStep();
   }
 
   public getButtonLabel(): string {
-    return this.stepsService.isLastStep() ? 'Finish' : 'Next';
+    return this.wizardService.isLastStep() ? 'Finish' : 'Next';
   }
 
   public onSkipStep(): void {
     const data = this.wizardData;
     switch (this.currentStepNumber.stepIndex){
         case 1:
-            this.stepsService.updateWizardData('stepOneSkip', true);
-            this.stepsService.updateWizardData('stepOneComplete', false);
+            this.wizardService.updateWizardData('stepOneSkip', true);
+            this.wizardService.updateWizardData('stepOneComplete', false);
             break;
         case 2:
-            this.stepsService.updateWizardData('stepTwoSkip', true);
-            this.stepsService.updateWizardData('stepTwoComplete', false);
+            this.wizardService.updateWizardData('stepTwoSkip', true);
+            this.wizardService.updateWizardData('stepTwoComplete', false);
             break;
         case 3:
-            this.stepsService.updateWizardData('stepThreeSkip', true);
-            this.stepsService.updateWizardData('stepThreeComplete', false);
+            this.wizardService.updateWizardData('stepThreeSkip', true);
+            this.wizardService.updateWizardData('stepThreeComplete', false);
             break;
     }
 
     if (data.stepOneSkip && data.stepTwoSkip) {
         console.log('skipped step 1 and 2');
-        this.stepsService.cancelWizard();
+        this.wizardService.cancelWizard();
         this.router.navigate(['main/gwu/wave'], { queryParams: {service: 'wave'}})
     }
     if (data.stepOneSkip && data.stepTwoSkip && data.stepThreeSkip) {
         console.log('go to GWU');
-        this.stepsService.cancelWizard();
+        this.wizardService.cancelWizard();
         this.router.navigate(['main/gwu'], { queryParams: {service: 'wave'}})
     } else {
         this.onNextStep();
@@ -100,8 +108,8 @@ export class FormPageComponent implements OnInit {
   }
 
   public cancelWizard(): void {
-    this.stepsService.resetWizard();
-    this.stepsService.cancelWizard();
+    this.wizardService.resetWizard();
+    this.wizardService.cancelWizard();
     this.wizardModeFullscreen ? this.location.back() : null;
   }
 
