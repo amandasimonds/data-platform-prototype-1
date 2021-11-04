@@ -6,6 +6,14 @@
 
     &-top {
         padding: 32px;
+
+        &-fullscreen {
+            border-bottom: var(--uv-border-gray);
+            box-shadow: var(--uv-box-shadow);
+            padding: 18px 32px;
+            background-color: var(--uv-color-gray-light-6);
+        }
+
         @include respond(small-desktop-height) {
             padding: 18px;
         }
@@ -13,16 +21,34 @@
 
     &-middle {
         padding: 32px;
+        max-height: inherit;
+
+        &-fullscreen {
+            width: 70%;
+            max-height: inherit;
+            overflow: auto;
+        }
+
         @include respond(small-desktop-height) {
             padding: 18px;
+        }
+        @include respond(small-desktop-width) {
+            padding: 18px;
+            width: 90%;
         }
     }
 
     &-bottom {
         padding: 32px;
+        background-color: var(--uv-color-white);
         @include respond(small-desktop-height) {
             padding: 18px;
         }
+    }
+
+    &-fullscreen {
+        height: 100%;
+        display: flex;
     }
 }
 
@@ -30,6 +56,16 @@
     @include respond(small-desktop-height) {
         display: none;
     }
+}
+
+.app-steps-fullscreen {
+    min-width: 125px;
+    border-right: var(--uv-border-gray);
+    box-shadow: var(--uv-box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 18px;
 }
 
 .app-steps-side {
@@ -44,4 +80,8 @@
     @include respond(big-desktop-height) {
         display: none;
     }
+}
+
+.fullscreen-bg {
+    background-color: var(--uv-color-gray-light-6);
 }

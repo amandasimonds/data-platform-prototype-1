@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output, Input, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest, Observable } from 'rxjs';
@@ -21,19 +22,27 @@ export class FormPageComponent implements OnInit {
   @Input() public totalResultsnumber = allSearchResults.length;
   public currentStepNumber: StepModel;
   public wizardData: WizardDataModel
+  public wizardMode = '';
+
+  public get wizardModeFullscreen() {
+    return this.wizardMode === 'fullscreen' ? true : false
+  }
 
   constructor(
     private stepsService: WizardService,
     private destroy$: NgOnDestroyService,
     private ref: ChangeDetectorRef,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private location: Location
     ) { }
 
   public ngOnInit(): void {
     this.currentStep = this.stepsService.getCurrentStep();
     combineLatest([
         this.stepsService.currentStep$.pipe(tap(value => this.currentStepNumber = value)),
-        this.stepsService.wizardData$.pipe(tap(data => this.wizardData = data))
+        this.stepsService.wizardData$.pipe(tap(data => this.wizardData = data)),
+        this.route.queryParams.pipe(tap(queryParams => this.wizardMode = queryParams['wizardMode']))
     ])
         .pipe(takeUntil(this.destroy$))
         .subscribe(() => this.ref.detectChanges());
@@ -49,6 +58,14 @@ export class FormPageComponent implements OnInit {
     } else {
       this.onSubmit();
     }
+  }
+
+  public onBackStep(): void {
+      this.stepsService.moveBackStep();
+  }
+
+  public getButtonLabel(): string {
+    return this.stepsService.isLastStep() ? 'Finish' : 'Next';
   }
 
   public onSkipStep(): void {
@@ -85,9 +102,11 @@ export class FormPageComponent implements OnInit {
   public cancelWizard(): void {
     this.stepsService.resetWizard();
     this.stepsService.cancelWizard();
+    this.wizardModeFullscreen ? this.location.back() : null;
   }
 
   public onSubmit(): void {
     this.onSubmitEvent.emit();
+    this.router.navigate(['/main/gwu'], { queryParams: {service: 'wave'}})
   }
 }

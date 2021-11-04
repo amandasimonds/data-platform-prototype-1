@@ -7,6 +7,12 @@
     align-items: center;
     margin-top: 32px;
 
+    &-fullscreen {
+        display: flex;
+        margin-top: 0;
+        height: 100%;
+    }
+
     @include respond(small-desktop-height) {
         flex-direction: row;
         margin-right: 32px;
@@ -19,6 +25,13 @@
     display: flex;
     align-items: center;
     width: 100%;
+
+    &-fullscreen {
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 12px;
+    }
 
     @include respond(small-desktop-height) {
         height: 100%;
@@ -34,6 +47,13 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 0;
+
+    &-fullscreen {
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+    }
 
     @include respond(small-desktop-height) {
         flex-direction: column;
@@ -65,6 +85,12 @@
     height: 2px;
     background: var(--uv-color-gray-2);
     flex: 1;
+
+    &-fullscreen {
+        height: 200px;
+        width: 2px;
+        margin: 0 auto;
+    }
 
     @include respond(small-desktop-height) {
         height: 200px;

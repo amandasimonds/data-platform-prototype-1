@@ -8,7 +8,7 @@ export class UserService {
         {
             id: 1,
             new: true,
-            name: 'User'
+            name: ''
         }
     );
 
@@ -18,5 +18,10 @@ export class UserService {
 
     public getCurrentUser(): Observable<any> {
         return this.currentUser$.asObservable();
+    }
+
+    public updateUserName(): void {
+        const data = JSON.parse(localStorage.getItem('0-GAb6wGt0e5Sa5HmmyLwVEVDNRXQ61Bwv'));
+        this.currentUser$.value.name = data.userData.name;
     }
 }

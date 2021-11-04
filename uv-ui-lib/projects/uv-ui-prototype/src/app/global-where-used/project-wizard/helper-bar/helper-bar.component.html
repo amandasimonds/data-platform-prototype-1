@@ -1,0 +1,10 @@
+<div class="helper-bar flex flex-column" [@slideInOutRight]="helperBarState">
+    <uvx-icon-button 
+    matTooltip="More info about this step"
+    [icon]="helperBarState === 'hidden' ? 'double_left' : 'double_right'" 
+    (click)="toggleHelperBar()"></uvx-icon-button>
+        <div class="margin-xs margin-left-sm">
+                <h6 class="margin-bottom-xxxs">synopsis</h6>
+                <p class="uv-body-secondary">Description about the item.</p>
+        </div>
+</div>

@@ -1,4 +1,8 @@
-<uvx-modal class="wizard-container">
+<div *ngIf="wizardMode === 'fullscreen'" class="wizard-full">
+    <app-form-page (onSubmitEvent)="startLaunchPoint()"></app-form-page>
+</div>
+
+<uvx-modal *ngIf="wizardMode !== 'fullscreen'" class="wizard-container">
     <app-wizard-start *ngIf="wizardStart" 
         (createNewProjectEvent)="startWizard()">
     </app-wizard-start>

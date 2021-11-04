@@ -3,12 +3,6 @@
     Who are you, what is your role? (Optional)
 </p>
 
-<!-- <uvx-dropdown 
-    mode="input" width="75%"
-    required>
-    <option *ngFor="let item of roles" class="flex align-items-center">{{item.name}}</option>
-</uvx-dropdown> -->
-
 <uvx-dropdown width="75%">
     <span title class="flex align-items center justify-content-space-between w-100">
         <div class="flex align-items-center">{{selectedRole}}</div>
@@ -23,12 +17,13 @@
 
 <h5 class="margin-top-sm margin-bottom-sm">What is your desired goal/task?</h5>
 
-<div class="flex flex-wrap task-selection-container ">
+<div class="flex flex-wrap task-selection-container">
     <div *ngFor="let item of taskSelections; let i = index" 
     (click)="selectGoal(item.name); setSelectedGoal(item, i)"
     class="flex flex-column align-items-center task-selection">
         <uvx-icon-button 
             size="md"
+            matTooltip="Placeholder info about this item"
             [class.task-selection-button-selected]="item.selected" 
             class="task-selection-button margin-bottom-xxs" 
             [icon]="item.icon"></uvx-icon-button>

@@ -40,5 +40,10 @@ export const taskSelections: IGoal[] = [
         name: 'Test',
         icon: 'activate_all',
         selected: false
+    },
+    {
+        name: 'Security',
+        icon: 'check_alt',
+        selected: false
     }
 ];
