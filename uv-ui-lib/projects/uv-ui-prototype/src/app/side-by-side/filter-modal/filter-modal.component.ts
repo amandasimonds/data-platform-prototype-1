@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, ChangeDetectionStrategy, Component, Input, OnInit, OnChanges } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
-import { SbsFilterService } from '../../services/sbs-filter.service';
+import { SbsFilterService } from '../sbs-filter.service';
 import { ISbsFilter } from '../../models/sbs-filter.model';
 import { sbsFilters } from '../sample-data/sbs-filters';
 

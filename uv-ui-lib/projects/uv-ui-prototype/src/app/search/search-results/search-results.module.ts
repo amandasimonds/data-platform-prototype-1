@@ -4,7 +4,7 @@ import { IconButtonModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-a
 import { SearchResultsComponent } from './search-results.component';
 import { FilterResultsPipe } from './filter-results.pipe';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { WizardService } from '../../services/wizard.service';
+import { WizardService } from '../../global-where-used/wizard.service';
 
 @NgModule({
   declarations: [
