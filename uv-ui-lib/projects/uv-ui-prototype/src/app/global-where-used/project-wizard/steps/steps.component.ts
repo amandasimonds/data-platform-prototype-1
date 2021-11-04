@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StepModel } from '../../../models/step.model';
@@ -14,6 +14,7 @@ export class StepsComponent implements OnInit {
 
     public steps: Observable<StepModel[]>;
     public currentStep: Observable<StepModel>;
+    @Input() public wizardModeIsFullscreen = false;
 
     constructor(private stepsService: WizardService, private router: Router) { }
 

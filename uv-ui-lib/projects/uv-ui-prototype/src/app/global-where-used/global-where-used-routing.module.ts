@@ -5,12 +5,17 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { WaveComponent } from './wave/wave.component';
 import { ForceDirectedGraphComponent } from './force-directed-graph/force-directed-graph.component';
 import { ProfileViewerContainerComponent } from './profile-viewer-container/profile-viewer-container.component';
+import { WizardContainerComponent } from './project-wizard/wizard-container/wizard-container.component';
 
 const routes: Routes = [
     {
         path: '',
         component: GlobalWhereUsedComponent,
         children: [
+            {
+                path: 'wizard',
+                component: WizardContainerComponent
+            },
             {
                 path: '',
                 component: LandingComponent,

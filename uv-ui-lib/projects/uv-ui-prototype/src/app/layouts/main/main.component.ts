@@ -8,6 +8,7 @@ import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { UserService } from '../../services/user.service';
 import { UvLightService } from '../../services/uv-light.service';
 import { navItems } from './navItems';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
     selector: 'prototype-app-main',
@@ -45,6 +46,7 @@ export class MainComponent implements OnInit {
     constructor(
         public appShellService: AppShellService,
         public searchService: SearchService,
+        private authService: AuthService,
         private ref: ChangeDetectorRef,
         private route: ActivatedRoute,
         private router: Router,
@@ -54,6 +56,7 @@ export class MainComponent implements OnInit {
         }
 
     public ngOnInit(): void {
+        this.userService.updateUserName();
         combineLatest([
             this.appShellService.currentAppTitle$.pipe(tap(title => this.title = title)),
             this.appShellService.currentAppHeaderIcon$.pipe(tap(icon => this.headerIcon = icon)),
@@ -94,12 +97,19 @@ export class MainComponent implements OnInit {
     }
 
     public launchWizard(): void {
-        if (this.currentApp === 'sbs' || this.currentUser.name === 'user1@test.com') {
-            this.router.navigate(['sbs/wizard']);
-        } else if (this.currentApp === 'gwu' || this.currentUser.name === 'user2@test.com') {
-            this.router.navigate(['gwu/wizard']);
+        if (this.currentApp === 'sbs' || this.currentUser.name === 'user_chevron@test.com') {
+            console.log('chevron', this.currentUser);
+            this.router.navigate(['sbs']);
+        } else if (this.currentApp === 'gwu' || this.currentUser.name === 'user_cummins@test.com') {
+            this.router.navigate(['gwu/wizard'], {relativeTo: this.route, queryParams: {wizardMode: 'fullscreen'}});
         } else {
-            this.router.navigate(['gwu/wizard']);
+            console.log('else', this.currentUser);
+            this.router.navigate(['gwu/wizard'], {relativeTo: this.route, queryParams: {wizardMode: 'fullscreen'}});
         }
+    }
+
+    public logout() {
+        console.log('log out');
+        this.authService.signOut();
     }
 }

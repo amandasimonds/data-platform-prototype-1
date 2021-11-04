@@ -22,13 +22,16 @@
 
             <uvx-icon-button
             color="primary"
+            matTooltip="Launch Wizard"
             icon="help" (click)="launchWizard()">
             </uvx-icon-button>
 
             <uvx-icon-button 
                 color='primary' 
                 icon="user" 
-                class="margin-left-sm margin-right-sm">
+                class="margin-left-sm margin-right-sm"
+                matTooltip="Log out"
+                (click)="logout()">
             </uvx-icon-button>    
 
         </uvx-header>
@@ -36,7 +39,9 @@
 
     <div class="uv-ui-shell-navbar">
         <uvx-navbar>
-            <span *ngFor="let navlink of navlinks" 
+
+            <div *ngIf="currentUser.name === 'user@test.com'">
+                <span *ngFor="let navlink of navlinks" 
                 class="nav-icon"
                 [matTooltip]="navlink.tooltip"
                 [class.nav-icon-disabled]="navlink.disabled"
@@ -46,16 +51,42 @@
                     (click)="closeSearchSidebar()">
                     <img app-icon="app-icon" [src]="navlink.icon">
                 </a>
-            </span>
-            <span class="nav-icon"
-            matTooltip="Global Search"
-            [class.nav-icon-active]="navActiveIcon === 'search'">
-                <a (click)="toggleSearchSidebar()">
-                    <img
-                    app-icon="app-icon" 
-                    src="http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg">
+                </span>
+                <span class="nav-icon"
+                matTooltip="Global Search"
+                [class.nav-icon-active]="navActiveIcon === 'search'">
+                    <a (click)="toggleSearchSidebar()">
+                        <img
+                        app-icon="app-icon" 
+                        src="http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg">
+                    </a>
+                </span>
+            </div>
+
+            <div *ngIf="currentUser.name === 'user_cummins@test.com'">
+                <span 
+                class="nav-icon"
+                matTooltip="Global Where Used"
+                [class.nav-icon-active]="navActiveIcon === 'gwu'">
+                <a routerLink="gwu"
+                    [queryParams]="{app: 'gwu'}">
+                    <uvx-icon icon="global_where_used"></uvx-icon>
                 </a>
-            </span>
+                </span>
+            </div>
+
+            <div *ngIf="currentUser.name === 'user_chevron@test.com'">
+                <span 
+                class="nav-icon"
+                matTooltip="Side By Side"
+                [class.nav-icon-active]="navActiveIcon === 'sbs'">
+                <a routerLink="sbs"
+                    [queryParams]="{app: 'sbs'}">
+                    <uvx-icon icon="compare"></uvx-icon>
+                </a>
+                </span>
+            </div>
+
         </uvx-navbar>
     </div>
 

@@ -19,7 +19,6 @@ import {
     IconDisplayModule
 } from '../../../uv-ui-lib/src/public-api';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -41,13 +40,8 @@ import { UserService } from './services/user.service';
 import { UvLightService } from './services/uv-light.service';
 import { IconDisplayComponent } from './icon-display/icon-display.component';
 import { ProfileViewerService } from './services/profile-viewer.service';
-import {MAT_TOOLTIP_DEFAULT_OPTIONS, MatTooltipDefaultOptions} from '@angular/material/tooltip';
-
-export const myCustomTooltipDefaults: MatTooltipDefaultOptions = {
-  showDelay: 1000,
-  hideDelay: 100,
-  touchendHideDelay: 100,
-};
+import { MAT_TOOLTIP_DEFAULT_OPTIONS } from '@angular/material/tooltip';
+import { myCustomTooltipDefaults } from './tooltip-options';
 
 @NgModule({
     declarations: [

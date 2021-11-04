@@ -1,60 +1,76 @@
-<div class="form-page-container">
+<div [class.form-page-container-fullscreen]="wizardModeFullscreen"
+    [class.form-page-container]="!wizardModeFullscreen">
 
-    <div class="form-page-container-top">
-        <div class="flex justify-content-space-between align-items-center">
-            <h4>Create a New Project</h4>
-            <uvx-icon-button icon="close" size="md" color="gray" (click)="cancelWizard()"></uvx-icon-button>
-        </div>
-        <div class="app-steps-top">
-            <app-steps></app-steps>
-        </div>
+    <div *ngIf="wizardModeFullscreen"
+    class="app-steps-fullscreen">
+        <app-steps [wizardModeIsFullscreen]="wizardModeFullscreen"></app-steps>
     </div>
 
-    <div class="divider"></div>
-
-    <div class="form-page-container-middle flex">
-
-        <div class="app-steps-side">
-            <app-steps></app-steps>
-        </div>
-
-        <div class="divider-right margin-right-md steps-divider-side"></div>
-
-        <div class="w-100 flex flex-column justify-content-space-between">
-            <ng-container [ngSwitch]="(currentStep | async)?.stepIndex">
-                <ng-container *ngSwitchCase="'1'">
-                    <app-step-directions [step]="(currentStep | async)"></app-step-directions>
-                </ng-container>
-                <ng-container *ngSwitchCase="'2'">
-                    <app-step-directions [step]="(currentStep | async)"></app-step-directions>
-                </ng-container>
-                <ng-container *ngSwitchCase="'3'">
-                    <app-step-directions [step]="(currentStep | async)"></app-step-directions>
-                </ng-container>
-            </ng-container>
-
-            <div class="flex justify-content-flex-end margin-top-sm">
-                <p class="uv-body uv-font-gray semi-bold">
-                    Total results: {{totalResultsnumber}}
-                </p>
+    <div class="flex flex-column w-100">
+        <div [class.form-page-container-top-fullscreen]="wizardModeFullscreen"
+        [class.form-page-container-top]="!wizardModeFullscreen">
+            <div class="flex justify-content-space-between align-items-center margin-bottom-xs">
+                <h4>Title of the Step</h4>
+                <uvx-icon-button icon="close" size="md" color="gray" (click)="cancelWizard()"></uvx-icon-button>
+            </div>
+            <p class="uv-body">This is a description of the step. More filler text here.</p>
+            <div *ngIf="!wizardModeFullscreen" class="app-steps-top">
+                <app-steps></app-steps>
             </div>
         </div>
-        
-    </div>
 
-    <div class="divider"></div>
+        <div *ngIf="!wizardModeFullscreen" class="divider"></div>
 
-    <div class="form-page-container-bottom flex justify-content-space-between align-items-center">
-        <uvx-button mode="tertiary" label="Skip" color="gray" (click)="onSkipStep()"></uvx-button>
-        <div>
-            <uvx-button label="Cancel" color="gray" class="margin-right-sm" 
-            (click)="cancelWizard()"></uvx-button>
-            <uvx-button 
-                (click)="currentStepNumber.isComplete && onNextStep()" 
-                [disabled]="!currentStepNumber.isComplete" 
-                mode="primary"
-                label="Next">
-            </uvx-button>
+        <div class="flex flex-column justify-content-space-between h-100" 
+        [class.fullscreen-bg]="wizardModeFullscreen">
+            <div class="form-page-container-middle flex justify-content-space-between">
+
+                <div *ngIf="!wizardModeFullscreen" class="app-steps-side">
+                    <app-steps></app-steps>
+                </div>
+                
+                <div class="divider-right margin-right-md steps-divider-side"></div>
+
+                <div class="w-100 flex flex-column justify-content-space-between"
+                [class.form-page-container-middle-fullscreen]="wizardModeFullscreen">
+                    <ng-container [ngSwitch]="(currentStep | async)?.stepIndex">
+                        <ng-container *ngSwitchCase="'1'">
+                            <app-step-directions [step]="(currentStep | async)"></app-step-directions>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'2'">
+                            <app-step-directions [step]="(currentStep | async)"></app-step-directions>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'3'">
+                            <app-step-directions [step]="(currentStep | async)"></app-step-directions>
+                        </ng-container>
+                    </ng-container>
+                </div>
+
+                <app-helper-bar></app-helper-bar>
+            </div>
+
+            <div>
+                <div class="flex justify-content-flex-end margin-bottom-sm margin-sm">
+                    <p class="uv-body uv-font-gray semi-bold">
+                        Total results: {{totalResultsnumber}}
+                    </p>
+                </div>
+                <div class="divider"></div>
+                <div class="form-page-container-bottom flex justify-content-space-between align-items-center">
+                    <uvx-button mode="tertiary" label="Skip" color="gray" (click)="onSkipStep()"></uvx-button>
+                    <div>
+                        <uvx-button label="Back" color="gray" class="margin-right-sm" 
+                        (click)="onBackStep()">
+                        </uvx-button>
+                        <uvx-button 
+                        (click)="currentStepNumber.isComplete && onNextStep()" 
+                        [disabled]="!currentStepNumber.isComplete" 
+                        mode="primary"
+                        [label]="getButtonLabel()">
+                        </uvx-button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

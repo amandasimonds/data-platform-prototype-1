@@ -14,6 +14,7 @@ export class SearchPanelComponent {
     @Input() public mode: 'global' | 'component' | 'component-border' | 'component' = 'component';
     @Input() public placeholder = '';
     @Input() public showSuggestions = false;
+    @Input() public width = '';
 
     public onSearch(): void {
         this.searchClicked.emit();

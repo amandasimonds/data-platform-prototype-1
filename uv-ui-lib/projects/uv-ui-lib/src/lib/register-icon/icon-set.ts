@@ -368,6 +368,10 @@ export const ICON_SET = [
         url: 'content/Collections.svg'
     },
     {
+        name: 'cube',
+        url: 'content/Cube.svg'
+    },
+    {
         name: 'devider_out',
         url: 'content/Devider out.svg'
     },

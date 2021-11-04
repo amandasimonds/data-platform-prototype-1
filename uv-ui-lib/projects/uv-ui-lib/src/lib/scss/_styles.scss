@@ -75,11 +75,15 @@ body {
     }
 
     &-active {
-        background-color: var(--uv-color-gray-light);
+        background-color: rgba(0,163,229,0.08);
+
+        svg {
+            color: var(--uv-color-primary);
+        }
     }
 
     &:hover {
-        background-color: var(--uv-color-gray-light);
+        background-color: rgba(0,163,229,0.08);
     }
 
     img, a {

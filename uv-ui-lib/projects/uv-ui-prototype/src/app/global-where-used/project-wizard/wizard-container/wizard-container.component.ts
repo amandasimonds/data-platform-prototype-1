@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { WizardService } from '../../../services/wizard.service';
 
 @Component({
@@ -12,8 +13,16 @@ export class WizardContainerComponent {
     public wizardStart = true;
     public wizardSteps = false;
     public launchPoint = false;
+    public wizardMode = '';
 
-    constructor(private stepsService: WizardService) {}
+    constructor(
+        private stepsService: WizardService, 
+        private router: Router, 
+        private route: ActivatedRoute) {}
+
+    ngOnInit(): void {
+        this.route.queryParams.subscribe(queryParams => this.wizardMode = queryParams['wizardMode'])
+    }
 
     public startWizard() {
         this.wizardStart = false;

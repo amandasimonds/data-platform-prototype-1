@@ -79,6 +79,11 @@ export class WizardService {
         }
     }
 
+    public moveBackStep(): void {
+        const index = this.currentStep$.value.stepIndex;
+        this.currentStep$.next(this.steps$.value[index - 2]);
+    }
+
     public checkIfStep1Complete() {
         const wizardData = this.wizardData$;
         if (wizardData.value.goal !== '' && wizardData.value.role !== '') {

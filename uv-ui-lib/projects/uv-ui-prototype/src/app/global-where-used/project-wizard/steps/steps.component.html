@@ -1,5 +1,10 @@
-<div class="form-steps-container">
-    <div class="step-bubble-container">
+<div 
+[class.form-steps-container]="!wizardModeIsFullscreen"
+[class.form-steps-container-fullscreen]="wizardModeIsFullscreen">
+
+    <div
+    [class.step-bubble-container]="!wizardModeIsFullscreen"
+    [class.step-bubble-container-fullscreen]="wizardModeIsFullscreen">
         <ng-container *ngFor="let step of steps | async; let i = index;">
             <div (click)="onStepClick(step)"
             [ngClass]="{
@@ -11,12 +16,17 @@
                 <uvx-icon *ngIf="step.isComplete" icon="check" color="white"></uvx-icon>
                 <span *ngIf="!step.isComplete">{{step.stepIndex}}</span>
             </div>
-            <div *ngIf="i < (steps | async)?.length - 1" class="step-divider" 
+            <div *ngIf="i < (steps | async)?.length - 1" 
+            [class.step-divider]="!wizardModeIsFullscreen"
+            [class.step-divider-fullscreen]="wizardModeIsFullscreen"
                 [ngStyle]="{ 'background' : step.isComplete ? 'var(--uv-color-success)' : 'var(--uv-color-gray)'}"> 
             </div>
         </ng-container>
     </div>
-    <div class="flex justify-content-space-between step-number-container">
+
+    <div class="flex justify-content-space-between"
+    [class.step-number-container]="!wizardModeIsFullscreen"
+    [class.step-number-container-fullscreen]="wizardModeIsFullscreen">
     <ng-container *ngFor="let step of steps | async; let i = index;">
         <p class="uv-body-sm margin-top-xxs">Step {{step.stepIndex}}</p>
     </ng-container>

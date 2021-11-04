@@ -1,7 +1,7 @@
 <div class="uv-container-fluid h-100">
     
     <div class="row">
-        <uvx-action-bar class="w-100">
+        <uvx-action-bar *ngIf="currentUser.name !== 'user_cummins@test.com'" class="w-100">
             <div left class="flex">
                 <div class="flex margin-top-sm margin-right-sm">
                     <uvx-tab
@@ -29,9 +29,9 @@
                         [isActive]="activeService === 'profile'"
                         class="margin-right-xxs"></uvx-tab>
                 </div>
-                <div class="flex align-items-center">
+                <!-- <div class="flex align-items-center">
                     <uvx-button (click)="projectWizard = true"  label="New Project"></uvx-button>
-                </div>
+                </div> -->
                 
             </div>
             <div right class="flex">
