@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef, OnInit, Input } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
-import { ProfileViewerService } from '../../services/profile-viewer.service';
+import { ProfileViewerService } from '../profile-viewer.service';
 
 @Component({
   selector: 'app-profile-viewer',

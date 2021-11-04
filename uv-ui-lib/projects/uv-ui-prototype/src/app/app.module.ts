@@ -16,9 +16,9 @@ import {
     UvxIconModule,
     BackdropModule,
     ModalModule,
-    IconDisplayModule
+    IconDisplayModule,
+    TooltipModule
 } from '../../../uv-ui-lib/src/public-api';
-import {MatTooltipModule} from '@angular/material/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -39,9 +39,7 @@ import { UvLightComponent } from './uv-light/uv-light.component';
 import { UserService } from './services/user.service';
 import { UvLightService } from './services/uv-light.service';
 import { IconDisplayComponent } from './icon-display/icon-display.component';
-import { ProfileViewerService } from './services/profile-viewer.service';
-import { MAT_TOOLTIP_DEFAULT_OPTIONS } from '@angular/material/tooltip';
-import { myCustomTooltipDefaults } from './tooltip-options';
+import { ProfileViewerService } from './global-where-used/profile-viewer.service';
 
 @NgModule({
     declarations: [
@@ -66,7 +64,7 @@ import { myCustomTooltipDefaults } from './tooltip-options';
         IconButtonModule,
         IconDisplayModule,
         ModalModule,
-        MatTooltipModule,
+        TooltipModule,
         NavbarModule,
         RegisterIconModule,
         RegisterIconModule.forRoot(ICON_SET),
@@ -88,8 +86,7 @@ import { myCustomTooltipDefaults } from './tooltip-options';
         SearchService,
         SidebySideService,
         UserService,
-        UvLightService,
-        {provide: MAT_TOOLTIP_DEFAULT_OPTIONS, useValue: myCustomTooltipDefaults}
+        UvLightService
     ],
     bootstrap: [AppComponent]
 })

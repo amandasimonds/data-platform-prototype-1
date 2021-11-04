@@ -1,5 +1,9 @@
-import { Component, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
-import { WizardService } from 'projects/uv-ui-prototype/src/app/services/wizard.service';
+import { Component, ChangeDetectionStrategy, EventEmitter, Output, Input, ChangeDetectorRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NgOnDestroyService } from 'projects/uv-ui-prototype/src/app/services/on-destroy.service';
+import { WizardService } from 'projects/uv-ui-prototype/src/app/global-where-used/wizard.service';
+import { pipe } from 'rxjs';
+import { takeUntil, tap } from 'rxjs/operators';
 import { IGoal } from './goal.model';
 import { taskSelections } from './taskSelections';
 
@@ -13,7 +17,7 @@ export class StepOneComponent {
 
     public selectedRole = "Select a role";
     public taskSelections = taskSelections;
-
+    public wizardMode = '';
     @Output() public stepisCompleteEvent = new EventEmitter<boolean>();
 
     public roles = [
@@ -31,22 +35,35 @@ export class StepOneComponent {
         }
     ];
 
-    constructor(private stepsService: WizardService) {
-        const role = this.stepsService.wizardData$.value.role;
-        const goal = this.stepsService.wizardData$.value.goal;
+    constructor(
+        private wizardService: WizardService, 
+        private route: ActivatedRoute, 
+        private destroy$: NgOnDestroyService,
+        private ref: ChangeDetectorRef
+        ) {
+        const role = this.wizardService.wizardData$.value.role;
+        const goal = this.wizardService.wizardData$.value.goal;
         role !== '' ? this.selectedRole = role : null;
         goal === '' ? this.taskSelections.map(item => {item.selected = false}) : null
     }
 
+    ngOnInit(): void {
+        this.route.queryParams.pipe(tap(queryParams => this.wizardMode = queryParams['wizardMode']))
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(() => this.ref.detectChanges());
+    }
+
     public selectRole(role: string): void {
         this.selectedRole = role;
-        this.stepsService.updateWizardData('role', role)
-        this.stepsService.checkIfStep1Complete();
+        this.wizardService.updateWizardData('role', role);
+        this.wizardService.updateResults(436);
+        this.wizardService.checkIfStep1Complete();
     }
 
     public selectGoal(goal: string): void {
-        this.stepsService.updateWizardData('goal', goal);
-        this.stepsService.checkIfStep1Complete();
+        this.wizardService.updateWizardData('goal', goal);
+        this.wizardService.updateResults(512);
+        this.wizardService.checkIfStep1Complete();
     }
 
     public setSelectedGoal(item: IGoal, i: number): void { 

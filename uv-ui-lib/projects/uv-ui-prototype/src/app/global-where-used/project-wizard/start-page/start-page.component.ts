@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
-import { WizardService } from '../../../services/wizard.service';
+import { WizardService } from '../../wizard.service';
 
 @Component({
   selector: 'app-wizard-start',

@@ -79,14 +79,6 @@ h5 {
     }
 }
 
-.tooltip-parent:hover {
-    .uv-tooltip {
-        visibility: visible;
-        opacity: 1;
-        display: block;
-    }
-}
-
 .uv-placeholder {
     font-size: var(--uv-font-size-sm-md);
     color: var(--uv-color-gray-dark);
