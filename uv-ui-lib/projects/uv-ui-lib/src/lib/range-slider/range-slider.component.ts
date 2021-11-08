@@ -18,6 +18,7 @@ export class RangeSliderComponent implements OnInit{
     @Input() public maxLabel = '';
     @Input() public sliderWidth = '';
     @Input() public background = '';
+    @Input() public numberInput = false;
 
     constructor(){
         this.tooltipPosition = `calc(${this.value}% - 6px)`
@@ -26,6 +27,7 @@ export class RangeSliderComponent implements OnInit{
 
     ngOnInit(): void {
         this.background = 'linear-gradient(to right, var(--uv-color-gray-light-2) ' + this.value + '%, var(--uv-color-primary) ' + this.value + '%)'
+        this.tooltipPosition = `calc(${this.value}% - 6px)`
     }
 
     ngAfterViewChecked(): void {

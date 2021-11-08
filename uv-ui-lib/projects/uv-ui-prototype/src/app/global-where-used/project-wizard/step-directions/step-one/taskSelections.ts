@@ -1,4 +1,4 @@
-import { IGoal } from "./goal.model";
+import { IGoal } from "../../../../models/goal.model";
 
 export const taskSelections: IGoal[] = [
     {

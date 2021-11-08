@@ -1,21 +1,33 @@
-<div class="slider-container" [ngStyle]="{'width' : sliderWidth}">
-    <input type="range" 
-    data-popup-enabled = "true"
-    min={{min}}
-    max={{max}} 
-    (input)="valueChanged(value)"
-    [value]="value"
-    class="slider" 
-    id={{rangeId}}
-    [(ngModel)]="value"
-    [ngStyle]="{'background': background }"/>
-    <div class="slider-tooltip" [ngStyle]="{'left': tooltipPosition }">
-        <span class="uv-body-sm">
-            {{value}}%
-        </span>
+<div class="flex align-items-center">
+    <div class="slider-container" [ngStyle]="{'width' : sliderWidth}">
+        <input type="range" 
+        data-popup-enabled = "true"
+        min={{min}}
+        max={{max}} 
+        (input)="valueChanged(value)"
+        [value]="value"
+        class="slider" 
+        id={{rangeId}}
+        [(ngModel)]="value"
+        [ngStyle]="{'background': background }"/>
+        <div class="slider-tooltip" [ngStyle]="{'left': tooltipPosition }">
+            <span class="uv-body-sm">
+                {{value}}%
+            </span>
+        </div>
+        <div class="flex justify-content-space-between">
+            <span class="uv-body-sm">{{minLabel}}</span>
+            <span class="uv-body-sm">{{maxLabel}}</span>
+        </div>
     </div>
+    <input *ngIf="numberInput"
+    type="number" 
+    matTooltip="Enter a number or use your arrow keys"
+    class="number-input"
+    (input)="valueChanged(value)" 
+    [value]="value" 
+    [(ngModel)]="value">
 </div>
-<div class="flex justify-content-space-between">
-    <span class="uv-body-sm">{{minLabel}}</span>
-    <span class="uv-body-sm">{{maxLabel}}</span>
-</div>
+
+
+

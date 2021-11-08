@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
+import { devEnv, testEnv } from '../auth/env';
 
 @Injectable()
 export class UserService {
@@ -12,6 +14,11 @@ export class UserService {
         }
     );
 
+    public token = devEnv.clientId;
+    // public token = testEnv.clientId;
+
+    constructor(private auth: AuthService) {}
+
     public setCurrentUser(user: any): void {
         this.currentUser$.next(user);
     }
@@ -21,7 +28,7 @@ export class UserService {
     }
 
     public updateUserName(): void {
-        const data = JSON.parse(localStorage.getItem('0-GAb6wGt0e5Sa5HmmyLwVEVDNRXQ61Bwv'));
+        const data = JSON.parse(localStorage.getItem('0-'+this.token));
         this.currentUser$.value.name = data.userData.name;
     }
 }
