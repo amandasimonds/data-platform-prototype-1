@@ -11,7 +11,7 @@ export const allSearchResults = [
     {
         category: 'Parts',
         title: 'EXH-SU-5110-B1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -20,7 +20,7 @@ export const allSearchResults = [
     {
         category: 'Parts',
         title: 'EXH-A-SU-5110-B2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -29,7 +29,7 @@ export const allSearchResults = [
     {
         category: 'Parts',
         title: 'EXH-B-SU-5110',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -39,7 +39,7 @@ export const allSearchResults = [
     {
         category: 'Parts',
         title: 'EXH-C-SU-5110',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -48,7 +48,7 @@ export const allSearchResults = [
     {
         category: 'Parts',
         title: 'EXH-SU-5110',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -147,7 +147,7 @@ export const allSearchResults = [
       {
         category: 'Parts',
         title: 'PartABCD000004',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -167,7 +167,7 @@ export const allSearchResults = [
     {
       category: 'Requirements',
       title: 'RequirementsABCD000002',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       active: false,
       disabled: false,
       date: '',
@@ -217,7 +217,7 @@ export const allSearchResults = [
       {
         category: 'Documents',
         title: 'DocumentsABCD000002',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
         date: '',
@@ -247,7 +247,7 @@ export const allSearchResults = [
       {
         category: 'Documents',
         title: 'DocumentsABCD000005',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
         date: '',
@@ -287,7 +287,7 @@ export const allSearchResults = [
       {
         category: 'Industry',
         title: 'IndustryABCD000005',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
         date: '',
@@ -297,7 +297,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Stainless Steel',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
         date: '',
@@ -306,7 +306,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Ceramic',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
         date: '',
@@ -315,7 +315,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Anodized Aluminum',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -324,7 +324,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Semi-Rigid Modified Polyolefin',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -333,7 +333,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Modified Polyolefin',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -342,7 +342,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'NBCCS',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -351,7 +351,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Fluid Resistant Modified Elastomer',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
         date: '',
@@ -360,7 +360,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Modified Fluoropolymer',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
         date: '',
@@ -369,7 +369,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Modified Fluoropolymer',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
         date: '',
@@ -378,7 +378,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Modified Fluoro-Elastomer',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
         date: '',
@@ -387,7 +387,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Polyolefin Flexible Modified',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -396,7 +396,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Crosslinked Ethylene Tetrafluoroethylene',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -405,7 +405,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Crosslinked Polyvinylidene Fluoride',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
@@ -414,7 +414,7 @@ export const allSearchResults = [
       {
         category: 'Materials',
         title: 'Irradiated Modified Polyolefin',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',

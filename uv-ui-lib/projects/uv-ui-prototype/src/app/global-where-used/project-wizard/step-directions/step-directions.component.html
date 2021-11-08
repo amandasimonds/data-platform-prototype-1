@@ -1,10 +1,21 @@
 <div class="">
 
-    <app-step-one *ngIf="step.stepIndex === 1" 
-        (stepisCompleteEvent)="step.isComplete = true"></app-step-one>
-    <app-step-two *ngIf="step.stepIndex === 2" 
-        (stepisCompleteEvent)="step.isComplete = true"></app-step-two>
-    <app-step-three  *ngIf="step.stepIndex === 3" 
-        (stepisCompleteEvent)="step.isComplete = true"></app-step-three>
+    <div *ngIf="app === 'gwu'">
+        <app-step-one *ngIf="step.stepIndex === 1" 
+            (stepisCompleteEvent)="step.isComplete = true"></app-step-one>
+        <app-step-two *ngIf="step.stepIndex === 2" 
+            (stepisCompleteEvent)="step.isComplete = true"></app-step-two>
+        <app-step-three  *ngIf="step.stepIndex === 3" 
+            (stepisCompleteEvent)="step.isComplete = true"></app-step-three>
+    </div>
+
+    <div *ngIf="app === 'sbs'">
+        <sbs-step-one *ngIf="step.stepIndex === 1" 
+            (stepisCompleteEvent)="step.isComplete = true"></sbs-step-one>
+        <sbs-step-two *ngIf="step.stepIndex === 2" 
+            (stepisCompleteEvent)="step.isComplete = true"></sbs-step-two>
+        <sbs-step-three  *ngIf="step.stepIndex === 3" 
+            (stepisCompleteEvent)="step.isComplete = true"></sbs-step-three>
+    </div>
 
 </div>

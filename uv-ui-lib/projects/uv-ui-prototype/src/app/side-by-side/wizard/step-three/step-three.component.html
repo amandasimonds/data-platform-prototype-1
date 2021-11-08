@@ -1,0 +1,19 @@
+<h5 class="margin-bottom-sm">
+    What is your area of focus?
+</h5>
+
+<div class="flex flex-wrap task-selection-container">
+    <div *ngFor="let item of selections; let i = index" 
+    (click)="selectFocus(item.name); setSelectedFocus(item, i)"
+    class="flex flex-column align-items-center task-selection">
+        <uvx-icon-button 
+            size="md"
+            matTooltip="Placeholder info about this item"
+            [class.task-selection-button-selected]="item.selected" 
+            class="task-selection-button margin-bottom-xxs" 
+            [icon]="item.icon"></uvx-icon-button>
+        <p class="uv-body medium-bold" [class.selected]="item.selected">
+            {{item.name}}
+        </p>
+    </div>
+</div>

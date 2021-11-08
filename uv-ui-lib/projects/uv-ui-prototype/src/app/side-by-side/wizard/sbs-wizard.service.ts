@@ -1,8 +1,9 @@
-import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { StepModel } from '../models/step.model';
-import { WizardDataModel } from '../models/wizard-data.model';
-import { SearchResult } from '../search/models/search-result.model';
+import { StepModel } from '../../models/step.model';
+import { SbsWizardDataModel } from './sbs-wizard-data.model';
+import { SearchResult } from '../../search/models/search-result.model';
+import { ILocation } from './step-one/locations';
 
 const STEPS = [
     { stepIndex: 1, isComplete: false },
@@ -11,7 +12,7 @@ const STEPS = [
 ];
 
 @Injectable()
-export class WizardService {
+export class SbsWizardService {
 
     public emptyEntity: SearchResult = {
         category: '',
@@ -23,24 +24,22 @@ export class WizardService {
         formattedDate: ''
     }
 
-    public wizardData = {
-        role: '',
+    public wizardData: SbsWizardDataModel = {
+        locations: [],
         goal: '',
+        focus: '',
         entity: this.emptyEntity,
-        filter1: 0,
-        filter2: 0,
-        filter3: 0,
         stepOneComplete: false,
         stepTwoComplete: false,
         stepThreeComplete: false,
         stepOneSkip: false,
         stepTwoSkip: false,
-        stepThreeSkip: false,
+        stepThreeSkip: false
     }
 
     public initialResultsNumber = 2034
 
-    public wizardData$: BehaviorSubject<WizardDataModel> = new BehaviorSubject<WizardDataModel>(this.wizardData);
+    public wizardData$: BehaviorSubject<SbsWizardDataModel> = new BehaviorSubject<SbsWizardDataModel>(this.wizardData);
     public steps$: BehaviorSubject<StepModel[]> = new BehaviorSubject<StepModel[]>(STEPS);
     public currentStep$: BehaviorSubject<StepModel> = new BehaviorSubject<StepModel>(null);
     public onCancelWizard$ = new BehaviorSubject(false);
@@ -55,14 +54,16 @@ export class WizardService {
     }
 
     public getCurrentStep(): Observable<StepModel> {
+        console.log('getting current step from sbs wizard service');
         return this.currentStep$.asObservable();
     }
 
     public getSteps(): Observable<StepModel[]> {
+        console.log('got the steps for sbs');
         return this.steps$.asObservable();
     }
 
-    public getWizardData(): Observable<WizardDataModel> {
+    public getWizardData(): Observable<SbsWizardDataModel> {
         return this.wizardData$.asObservable();
     }
 
@@ -76,9 +77,18 @@ export class WizardService {
 
     public updateWizardData(property: string, value: any) {
         const wizardDataObject = this.wizardData$.value;
-        this.wizardData$.next(
-            Object.defineProperty(wizardDataObject, property, {value : value})
-        )
+        if (property !== 'location') {
+            this.wizardData$.next(
+                Object.defineProperty(wizardDataObject, property, {value : value}));
+        } else {
+            wizardDataObject.locations.push(value);
+        }
+        console.log('update', this.wizardData$.value);
+    }
+
+    public unselectLocation(item: ILocation, i: number) {
+        const wizardDataObject = this.wizardData$.value;
+        wizardDataObject.locations.splice(i, 1);
         console.log('update', this.wizardData$.value);
     }
 
@@ -96,10 +106,9 @@ export class WizardService {
 
     public checkIfStep1Complete() {
         const wizardData = this.wizardData$;
-        if (wizardData.value.goal !== '') {
+        if (wizardData.value.locations !== []) {
             wizardData.value.stepOneComplete = true;
             this.steps$.value[0].isComplete = true;
-            this.setCurrentStep(this.steps$.value[0]);
         } else {
             this.steps$.value[0].isComplete = false;
         }
@@ -107,23 +116,25 @@ export class WizardService {
 
     public checkIfStep2Complete() {
         const wizardData = this.wizardData$;
-        if (wizardData.value.entity === this.emptyEntity || wizardData.value.entity === null) {
-            wizardData.value.stepTwoComplete = false;
-            this.steps$.value[1].isComplete = false;
-        } else {
+        if (wizardData.value.goal !== '') {
+            console.log('should be complete');
             wizardData.value.stepTwoComplete = true;
             this.steps$.value[1].isComplete = true;
+        } else {
+            console.log('oops');
+            wizardData.value.stepTwoComplete = false;
+            this.steps$.value[1].isComplete = false;
         }
     }
 
     public checkIfStep3Complete() {
         const data = this.wizardData$.value;
-        if (data.filter1 === null && data.filter2 === null && data.filter3 === null) {
-            data.stepTwoComplete = false;
-            this.steps$.value[2].isComplete = false;
-        } else {
+        if (data.focus !== '') {
             data.stepTwoComplete = true;
             this.steps$.value[2].isComplete = true;
+        } else {
+            data.stepTwoComplete = false;
+            this.steps$.value[2].isComplete = false;
         }
     }
 
@@ -133,18 +144,16 @@ export class WizardService {
         }
         this.setCurrentStep(this.steps$.value[0]);
         this.wizardData$.next({
-            role: '',
+            locations: [],
             goal: '',
+            focus: '',
             entity: this.emptyEntity,
-            filter1: 0,
-            filter2: 0,
-            filter3: 0,
             stepOneComplete: false,
             stepTwoComplete: false,
             stepThreeComplete: false,
             stepOneSkip: false,
             stepTwoSkip: false,
-            stepThreeSkip: false,
+            stepThreeSkip: false
         });
         this.results$.next(this.initialResultsNumber);
         console.log('reset wizard');

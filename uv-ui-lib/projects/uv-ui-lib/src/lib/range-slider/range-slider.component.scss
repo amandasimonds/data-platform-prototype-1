@@ -1,5 +1,6 @@
 .slider-container {
     height: 25px;
+    flex-grow: 1;
   }
 
 .slider {
@@ -49,4 +50,23 @@
     display: flex;
     width: auto;
     top: -40px;
+    height: 0;
 }
+
+.number-input {
+    border-radius: 4px;
+    border: var(--uv-border-gray);
+    margin-left: 8px;
+    padding: 6px;
+    width: 35px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }

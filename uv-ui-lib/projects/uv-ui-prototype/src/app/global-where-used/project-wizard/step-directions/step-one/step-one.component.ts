@@ -2,15 +2,14 @@ import { Component, ChangeDetectionStrategy, EventEmitter, Output, Input, Change
 import { ActivatedRoute } from '@angular/router';
 import { NgOnDestroyService } from 'projects/uv-ui-prototype/src/app/services/on-destroy.service';
 import { WizardService } from 'projects/uv-ui-prototype/src/app/global-where-used/wizard.service';
-import { pipe } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
-import { IGoal } from './goal.model';
+import { IGoal } from '../../../../models/goal.model';
 import { taskSelections } from './taskSelections';
 
 @Component({
   selector: 'app-step-one',
   templateUrl: './step-one.component.html',
-  styleUrls: ['./step-one.component.scss'],
+  styleUrls: ['../step-directions.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StepOneComponent {

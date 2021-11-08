@@ -1,4 +1,4 @@
-@import '../../../../scss//main.scss';
+@import '../../../../scss/main.scss';
 
 .task-selection {
     width: 112px;
@@ -38,14 +38,16 @@
             }
         }
     }
-}
 
-.selected {
-    color: var(--uv-color-primary)
+    &-selected {
+        color: var(--uv-color-primary)
+    }
 }
 
 .task-selection-container {
     gap: 36px;
+    overflow: auto;
+    max-height: 37vh;
 
     @include respond(small-desktop-height) {
         gap: 18px;

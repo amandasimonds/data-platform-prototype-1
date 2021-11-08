@@ -40,7 +40,7 @@
     <div class="uv-ui-shell-navbar">
         <uvx-navbar>
 
-            <div *ngIf="currentUser.name === 'user@test.com'">
+            <div *ngIf="isDevUser">
                 <span *ngFor="let navlink of navlinks" 
                 class="nav-icon"
                 [matTooltip]="navlink.tooltip"

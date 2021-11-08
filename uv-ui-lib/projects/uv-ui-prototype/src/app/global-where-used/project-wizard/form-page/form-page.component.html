@@ -29,7 +29,7 @@
                     <app-steps></app-steps>
                 </div>
                 
-                <div class="divider-right margin-right-md steps-divider-side"></div>
+                <div *ngIf="!wizardModeFullscreen" class="divider-right margin-right-md steps-divider-side"></div>
 
                 <div class="w-100 flex flex-column justify-content-space-between"
                 [class.form-page-container-middle-fullscreen]="wizardModeFullscreen">

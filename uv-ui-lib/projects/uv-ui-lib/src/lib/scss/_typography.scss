@@ -192,3 +192,47 @@ ul, ol {
     margin: 2px;
     line-height: 16px;
 }
+
+.task-selection {
+    width: 112px;
+    text-align: center;
+
+    &:hover {
+        .task-selection-button {
+            background-color: var(--uv-color-gray-light);
+            border: 2px solid var(--uv-color-gray-light);
+            cursor: pointer;
+
+            ::ng-deep {
+                & > * {
+                    color: var(--uv-color-primary);
+                }
+            }
+        }
+        p {
+            color: var(--uv-color-primary)
+        }
+    }
+
+    &-button {
+        border: 2px solid var(--uv-color-gray-2);
+        padding: 1.5rem;
+        border-radius: 50%;
+    
+        &-selected {
+            background-color: var(--uv-color-gray-light);
+            border: 2px solid var(--uv-color-gray-light);
+            cursor: pointer;
+
+            ::ng-deep {
+                & > * {
+                    color: var(--uv-color-primary);
+                }
+            }
+        }
+    }
+
+    &-selected {
+        color: var(--uv-color-primary)
+    }
+}

@@ -10,6 +10,7 @@ import { SideBySideLandingModule } from './landing/landing.module';
 import { SideBySideRoutingModule } from './side-by-side-routing.module';
 import { SourceDocumentModule } from './sbs-document/source-document/source-document.module';
 import { SideBySideComponent } from './side-by-side.component';
+import { SbsWizardService } from './wizard/sbs-wizard.service';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import { SideBySideComponent } from './side-by-side.component';
         SearchPanelModule,
         ButtonModule
     ],
-    exports: [ SideBySideComponent ]
+    exports: [ SideBySideComponent ],
+    providers: [SbsWizardService]
 })
 export class SideBySideModule { }

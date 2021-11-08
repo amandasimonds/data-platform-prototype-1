@@ -30,6 +30,8 @@ export class MainComponent implements OnInit {
     public currentHighlight = '';
     public uvLight = false;
     public selectedItem = '';
+    public chevronUser = 'user_chevron@test.com';
+    public cumminsUser = 'user_cummins@test.com';
 
     @Input() public searchQuery = '';
 
@@ -79,6 +81,10 @@ export class MainComponent implements OnInit {
         return this.title === 'Search';
     }
 
+    public get isDevUser(): boolean {
+        return this.currentUser.name === this.chevronUser || this.currentUser.name === this.cumminsUser ? false : true;
+    }
+
     public toggleSearchSidebar(): void {
         this.searchSidebarState === 'hidden' ?
             (this.searchService.setSearchSidebarState('visible'),
@@ -98,13 +104,13 @@ export class MainComponent implements OnInit {
 
     public launchWizard(): void {
         if (this.currentApp === 'sbs' || this.currentUser.name === 'user_chevron@test.com') {
-            console.log('chevron', this.currentUser);
-            this.router.navigate(['sbs']);
+            console.log('sbs', this.currentUser);
+            this.router.navigate(['sbs/wizard'], {relativeTo: this.route, queryParams: {wizardMode: 'fullscreen', app: 'sbs'}});
         } else if (this.currentApp === 'gwu' || this.currentUser.name === 'user_cummins@test.com') {
-            this.router.navigate(['gwu/wizard'], {relativeTo: this.route, queryParams: {wizardMode: 'fullscreen'}});
+            this.router.navigate(['gwu/wizard'], {relativeTo: this.route, queryParams: {wizardMode: 'fullscreen',  app: 'gwu'}});
         } else {
-            console.log('else', this.currentUser);
-            this.router.navigate(['gwu/wizard'], {relativeTo: this.route, queryParams: {wizardMode: 'fullscreen'}});
+            console.log('default', this.currentUser);
+            this.router.navigate(['gwu/wizard'], {relativeTo: this.route, queryParams: {wizardMode: 'fullscreen',  app: 'gwu'}});
         }
     }
 
