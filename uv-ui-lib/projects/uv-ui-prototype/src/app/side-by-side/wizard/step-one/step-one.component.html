@@ -1,0 +1,29 @@
+<h5 class="margin-bottom-sm">
+    Please select locations:
+</h5>
+
+<uvx-search-panel mode="component-border" 
+    width="65%"
+    (searchClearClicked)="clearSearch()" 
+    (click)="showSuggestions = true"
+    [rounded]="true"
+    [showSuggestions]="showSuggestions || searchText !== ''">
+    <input type="text"
+        placeholder="Search locations here"
+        class="uv-input margin-left-xs"
+        maxlength="40"
+        [(ngModel)]="searchText">
+    <div suggestions>
+        <div (mouseleave)="showSuggestions = false">
+            <div class="custom-option">
+                <p class="uv-body">0 Locations Selected</p>
+            </div>
+            <div *ngFor="let item of locations; trackBy: trackItem; let i = index"
+            (click)="selectLocation(item, i)"
+                class="custom-option flex align-items-center">
+                <uvx-checkbox [checked]="item.selected"></uvx-checkbox>
+                <p class="uv-body">{{item.name}}</p>
+            </div>
+        </div>
+    </div>
+</uvx-search-panel>
