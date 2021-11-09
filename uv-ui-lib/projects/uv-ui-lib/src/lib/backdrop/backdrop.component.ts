@@ -13,6 +13,8 @@ export class BackdropComponent {
     @Input() public backdropState = 'visible';
     @Input() public  mode = '';
     @Input() public logo: 'uv-logo' | 'search' | '' = '';
+    @Input() public transparent = false;
+    @Input() public blockContent = false;
     @Output() public readonly backdropClicked = new EventEmitter<Event>();
 
     public onBackdropClicked($event: Event): void {

@@ -1,7 +1,9 @@
 <div [@fadeInOut]="backdropState" class="backdrop" 
+        [class.backdrop-transparent]="transparent === true"
         [class.backdrop-popup]="mode === 'popup'"
         [class.backdrop-uv-light]="mode === 'uv-light'"
         [class.backdrop-not-active]="backdropState === 'hidden'"
+        [class.backdrop-block-content]="blockContent === true"
         (click)="onBackdropClicked($event)">
     <img *ngIf="logo === 'uv-logo'" 
         class="position-center backdrop-logo" 

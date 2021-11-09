@@ -36,6 +36,14 @@
         transition-delay: .3s;
     }
 
+    &-transparent {
+        background-color: rgba(13, 12, 34, 0.028);
+    }
+
+    &-block-content {
+        transform: translateY(128px);
+    }
+
     // &-uv-light {
     //     position: absolute;
     //     box-shadow: 0 0 0 9999px rgba(13,12,34,0.16);

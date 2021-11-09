@@ -26,6 +26,7 @@
         &-fullscreen {
             width: 80%;
             max-height: inherit;
+            padding: 18px;
         }
 
         @include respond(small-desktop-height) {
