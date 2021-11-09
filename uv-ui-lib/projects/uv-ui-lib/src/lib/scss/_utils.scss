@@ -94,8 +94,24 @@
     gap: 12px;
 }
 
+.gap-xxxs {
+    gap: var(--uv-xxxs-size);
+}
+
+.gap-xxs {
+    gap: var(--uv-xxs-size);
+}
+
+.gap-xs {
+    gap: var(--uv-xs-size);
+}
+
 .gap-sm {
-    gap: 16px;
+    gap: var(--uv-sm-size);
+}
+
+.gap-md {
+    gap: var(--uv-md-size);
 }
 
 .w-100 {
@@ -214,6 +230,14 @@
 
 .margin-top-sm {
     margin-top: var(--uv-sm-size);
+}
+
+.margin-top-md {
+    margin-top: var(--uv-md-size);
+}
+
+.margin-top-lg {
+    margin-top: var(--uv-lg-size);
 }
 
 .margin-bottom-xxxs {
@@ -391,4 +415,8 @@
 
 .pointer {
     cursor: pointer;
+}
+
+.dev-border {
+    border: 3px solid orange;
 }

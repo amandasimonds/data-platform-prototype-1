@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core
 import { takeUntil } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { SidebySideService } from '../../services/side-by-side.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'uv-prototype-sbs-landing',
@@ -12,8 +13,18 @@ import { SidebySideService } from '../../services/side-by-side.service';
 export class SideBySideLandingComponent implements OnInit {
 
     @Input() public sourceDocumentSelected = false;
+    public currentUser = {id: 1, new: false, name: ''};
+    public chevronUser = 'user_chevron@test.com';
+    public cumminsUser = 'user_cummins@test.com';
 
-    constructor(private sbsService: SidebySideService, private destroy$: NgOnDestroyService) {
+    constructor(
+        private sbsService: SidebySideService, 
+        private destroy$: NgOnDestroyService,
+        private userService: UserService) {
+    }
+
+    public get isDevUser(): boolean {
+        return this.currentUser.name === this.chevronUser || this.currentUser.name === this.cumminsUser ? false : true;
     }
 
     public ngOnInit(): void {
@@ -22,5 +33,8 @@ export class SideBySideLandingComponent implements OnInit {
         .subscribe((sourceDocumentSelected: boolean) => {
                 this.sourceDocumentSelected = sourceDocumentSelected;
         });
+        this.userService.currentUser$
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(value => this.currentUser = value);
     }
 }
