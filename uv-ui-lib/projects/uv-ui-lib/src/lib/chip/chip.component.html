@@ -1,1 +1,8 @@
-<p>chip works!</p>
+<div class="chip"
+[class.chip-primary]="mode === 'primary'"
+[class.chip-secondary]="mode === 'secondary'">
+    <span class="margin-right-xs">
+        {{label}}
+    </span>
+    <uvx-icon-button icon="clear" color="primary" (click)="clearClicked($event)"></uvx-icon-button>
+</div>

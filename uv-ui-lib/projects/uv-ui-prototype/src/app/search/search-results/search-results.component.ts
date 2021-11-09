@@ -39,13 +39,18 @@ export class SearchResultsComponent implements OnChanges, OnInit {
         event.stopPropagation();
     }
 
-    public launchClicked(value: boolean, item: SearchResult, i: number): void {
+    public launchClicked(value: boolean, item: SearchResult, i: number, route: string): void {
         console.log('launch click', item);
         this.searchService.addToRecentSearches('search '+ item.title, item);
         this.searchService.selectResult(item, i);
         // this.searchService.setCompareWarningState(value);
         this.wizardService.updateWizardData('entity', item);
-        this.router.navigate(['main/gwu/wave'])
+        if (route === 'gwu') {
+            this.router.navigate(['main/gwu/wave']);
+        } else if (route === 'sbs') {
+            this.router.navigate(['main/sbs']);
+        }
+        this.searchService.setSearchSidebarState('hidden');
         event.stopPropagation();
     }
 
