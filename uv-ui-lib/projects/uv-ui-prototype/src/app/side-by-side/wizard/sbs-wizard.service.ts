@@ -54,12 +54,10 @@ export class SbsWizardService {
     }
 
     public getCurrentStep(): Observable<StepModel> {
-        console.log('getting current step from sbs wizard service');
         return this.currentStep$.asObservable();
     }
 
     public getSteps(): Observable<StepModel[]> {
-        console.log('got the steps for sbs');
         return this.steps$.asObservable();
     }
 
@@ -89,7 +87,6 @@ export class SbsWizardService {
     public unselectLocation(item: ILocation, i: number) {
         const wizardDataObject = this.wizardData$.value;
         wizardDataObject.locations.splice(i, 1);
-        console.log('update', this.wizardData$.value);
     }
 
     public moveToNextStep(): void {
@@ -117,11 +114,9 @@ export class SbsWizardService {
     public checkIfStep2Complete() {
         const wizardData = this.wizardData$;
         if (wizardData.value.goal !== '') {
-            console.log('should be complete');
             wizardData.value.stepTwoComplete = true;
             this.steps$.value[1].isComplete = true;
         } else {
-            console.log('oops');
             wizardData.value.stepTwoComplete = false;
             this.steps$.value[1].isComplete = false;
         }

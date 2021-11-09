@@ -1,0 +1,20 @@
+.chip {
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: max-content;
+    height: 2.5rem;
+    margin: 4px 4px 0 0;
+
+    &-primary {
+        padding: 0 8px 0 16px;
+        background-color: var(--uv-color-gray-light);
+    }
+
+    &-secondary {
+        border: var(--uv-border-gray);
+        padding: 0 14px;
+        background-color: var(--uv-color-white);
+    }
+}

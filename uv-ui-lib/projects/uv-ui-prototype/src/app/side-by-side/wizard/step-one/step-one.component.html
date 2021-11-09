@@ -16,7 +16,7 @@
     <div suggestions>
         <div (mouseleave)="showSuggestions = false">
             <div class="custom-option">
-                <p class="uv-body">0 Locations Selected</p>
+                <p class="uv-body">{{selectedLocations.length}} Locations Selected</p>
             </div>
             <div *ngFor="let item of locations; trackBy: trackItem; let i = index"
             (click)="selectLocation(item, i)"
@@ -27,3 +27,7 @@
         </div>
     </div>
 </uvx-search-panel>
+
+<p class="uv-body margin-bottom-sm margin-top-sm margin-left-xs">{{selectedLocations.length}} Locations Selected</p>
+
+<uvx-chip *ngFor="let location of selectedLocations; let i = index" [label]="location.name" (clearClickedEvent)="unselectLocation(location, i)"></uvx-chip>

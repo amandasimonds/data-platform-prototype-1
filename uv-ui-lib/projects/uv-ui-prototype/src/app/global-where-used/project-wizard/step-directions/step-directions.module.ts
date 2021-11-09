@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ButtonModule, CheckboxModule, DropdownModule, IconButtonModule, RangeSliderModule, SearchPanelModule, TextInputModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { ButtonModule, CheckboxModule, ChipModule, DropdownModule, IconButtonModule, RangeSliderModule, SearchPanelModule, TextInputModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
 import { FormsModule } from '@angular/forms';
 import { WizardService } from '../../wizard.service';
 import { StepDirectionsComponent } from './step-directions.component';
@@ -32,7 +32,8 @@ import { SbsStepThreeComponent } from '../../../side-by-side/wizard/step-three/s
         RangeSliderModule,
         TooltipModule,
         UvxIconModule,
-        CheckboxModule
+        CheckboxModule,
+        ChipModule
     ],
     exports: [ StepDirectionsComponent ],
     providers: [ WizardService ]

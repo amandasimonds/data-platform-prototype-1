@@ -13,6 +13,7 @@ export class SbsStepOneComponent {
     public locationSelected = false;
     public searchText: string;
     public showSuggestions = false;
+    public selectedLocations: ILocation[] = [];
 
     constructor( 
         private sbsWizardService: SbsWizardService, 
@@ -34,15 +35,14 @@ export class SbsStepOneComponent {
         return item.name;
     }
 
-    public selectLocation(item: ILocation, index: number): void {
+    public selectLocation(item: ILocation, i: number): void {
         if (!item.selected) { 
             item.selected = true;
-            console.log('yas it is selected');
             this.sbsWizardService.updateWizardData('location', item.name);
+            this.selectedLocations.push(item);
             this.sbsWizardService.updateResults(310);
         } else {
-            item.selected = false;
-            this.sbsWizardService.unselectLocation(item, index);
+            this.unselectLocation(item, i);
         }
         this.sbsWizardService.checkIfStep1Complete();
     }
@@ -52,5 +52,19 @@ export class SbsStepOneComponent {
         this.locationSelected = false;
         this.sbsWizardService.updateWizardData('location', '');
         this.sbsWizardService.checkIfStep1Complete();
+    }
+
+    public unselectLocation(item: ILocation, i: number) {
+        item.selected = false;
+        this.selectedLocations.splice(i, 1);
+        this.sbsWizardService.unselectLocation(item, i);
+    }
+
+    public typeAhead(input: string): ILocation[] {
+        let results = this.locations;
+        results = results.filter(item =>
+            item.name.toLowerCase().includes(input.toLowerCase())
+        );
+        return results;
     }
 }
