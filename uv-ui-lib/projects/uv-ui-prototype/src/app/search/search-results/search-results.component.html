@@ -11,8 +11,8 @@
         
         <div *ngIf="item.category" class="search-result-tool-menu">
             <!-- <uvx-icon-button *ngIf="searchText === ''" (click)="searchText === '' && searchRecent(item.title)" icon="search" class="padding-xxs margin-right-xxs margin-left-xxs"></uvx-icon-button> -->
-            <uvx-icon-button icon="compare" (click)="compareClicked(true, item, i)" class="margin-left-xxs padding-xxs"></uvx-icon-button>
-            <uvx-icon-button icon="global_where_used" (click)="launchClicked(true, item, i)" class="padding-xxs"></uvx-icon-button>
+            <uvx-icon-button icon="compare" (click)="launchClicked(true, item, i, 'sbs')" class="margin-left-xxs padding-xxs"></uvx-icon-button>
+            <uvx-icon-button icon="global_where_used" (click)="launchClicked(true, item, i, 'gwu')" class="padding-xxs"></uvx-icon-button>
             <uvx-icon-button icon="design" (click)="compareClicked(true, item, i)" class="padding-xxs margin-right-xxs"></uvx-icon-button>
         </div>
         
