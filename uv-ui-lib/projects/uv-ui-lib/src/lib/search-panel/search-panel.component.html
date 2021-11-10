@@ -12,11 +12,15 @@
             <ng-content></ng-content>
         </div>
 
-        <uvx-icon-button *ngIf="mode === 'global' || 'component-border'" color='primary' icon='clear' (click)="onSearchClearClicked($event)"></uvx-icon-button>
+        <uvx-icon-button 
+            *ngIf="mode === 'global' || 'component-border'" 
+            color='primary' icon='clear' 
+            (click)="onSearchClearClicked($event)">
+        </uvx-icon-button>
 
     </div>
 
-    <div *ngIf="showSuggestions" class="suggestions-dropdown flex flex-column">
+    <div *ngIf="showSuggestions" [ngStyle]="{'height': suggestionsDropdownHeight}" class="suggestions-dropdown flex flex-column">
         <ng-content select="[suggestions]"></ng-content>
     </div>
 

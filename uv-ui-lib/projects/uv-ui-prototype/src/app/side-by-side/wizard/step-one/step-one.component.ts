@@ -40,7 +40,7 @@ export class SbsStepOneComponent {
             item.selected = true;
             this.sbsWizardService.updateWizardData('location', item.name);
             this.selectedLocations.push(item);
-            this.sbsWizardService.updateResults(310);
+            this.sbsWizardService.updateResults(36);
         } else {
             this.unselectLocation(item, i);
         }

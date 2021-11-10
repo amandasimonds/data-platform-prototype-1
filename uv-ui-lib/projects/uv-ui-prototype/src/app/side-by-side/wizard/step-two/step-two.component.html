@@ -2,18 +2,35 @@
     What is your desired goal/task?
 </h5>
 
-<div class="flex flex-wrap task-selection-container">
-    <div *ngFor="let item of selections; let i = index" 
-    (click)="selectFocus(item.name); setSelectedFocus(item, i)"
-    class="flex flex-column align-items-center task-selection">
+<div class="flex flex-column task-selection-container">
+    <div class="flex task-selection-container">
+        <div *ngFor="let item of selections.slice(0, 3); let i = index" 
+        (click)="selectFocus(item.name); setSelectedFocus(item, i)"
+        class="flex flex-column align-items-center task-selection">
         <uvx-icon-button 
             size="md"
             matTooltip="Placeholder info about this item"
             [class.task-selection-button-selected]="item.selected" 
             class="task-selection-button margin-bottom-xxs" 
             [icon]="item.icon"></uvx-icon-button>
-        <p class="uv-body medium-bold" [class.task-selection-selected]="item.selected">
-            {{item.name}}
-        </p>
+            <p class="uv-body medium-bold" [class.task-selection-selected]="item.selected">
+                {{item.name}}
+            </p>
+        </div>
+    </div>
+    <div class="flex task-selection-container">
+        <div *ngFor="let item of selections.slice(3, 6); let i = index" 
+            (click)="selectFocus(item.name); setSelectedFocus(item, i)"
+            class="flex flex-column align-items-center task-selection">
+            <uvx-icon-button 
+            size="md"
+            matTooltip="Placeholder info about this item"
+            [class.task-selection-button-selected]="item.selected" 
+            class="task-selection-button margin-bottom-xxs" 
+            [icon]="item.icon"></uvx-icon-button>
+            <p class="uv-body medium-bold" [class.task-selection-selected]="item.selected">
+                {{item.name}}
+            </p>
+        </div>
     </div>
 </div>
