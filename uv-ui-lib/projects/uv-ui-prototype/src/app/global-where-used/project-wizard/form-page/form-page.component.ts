@@ -47,6 +47,7 @@ export class FormPageComponent implements OnInit {
         this.wizardService.wizardData$.pipe(tap(data => this.wizardData = data)),
         this.sbsWizardService.wizardData$.pipe(tap(data => this.sbsWizardData = data)),
         this.wizardService.results$.pipe(tap(value => this.resultsNumber = value)),
+        this.sbsWizardService.results$.pipe(tap(value => this.resultsNumber = value)),
        
     ])
         .pipe(takeUntil(this.destroy$))

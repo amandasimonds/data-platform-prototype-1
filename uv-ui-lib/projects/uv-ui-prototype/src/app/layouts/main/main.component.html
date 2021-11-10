@@ -49,16 +49,18 @@
                 <a [routerLink]="navlink.navlink"
                     [queryParams]="{app: navlink.app}"
                     (click)="closeSearchSidebar()">
-                    <img app-icon="app-icon" [src]="navlink.icon">
+                    <uvx-icon color="black" [icon]="navlink.icon"></uvx-icon>
+                    <!-- <img app-icon="app-icon" [src]="navlink.icon"> -->
                 </a>
                 </span>
                 <span class="nav-icon"
                 matTooltip="Global Search"
                 [class.nav-icon-active]="navActiveIcon === 'search'">
                     <a (click)="toggleSearchSidebar()">
-                        <img
+                        <uvx-icon icon="search" color="black"></uvx-icon>
+                        <!-- <img
                         app-icon="app-icon" 
-                        src="http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg">
+                        src="http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg"> -->
                     </a>
                 </span>
             </div>

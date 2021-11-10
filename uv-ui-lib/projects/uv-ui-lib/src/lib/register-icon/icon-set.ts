@@ -452,6 +452,10 @@ export const ICON_SET = [
         url: 'content/Redo.svg'
     },
     {
+        name: 'requirement',
+        url: 'content/Requirement.svg'
+    },
+    {
         name: 'search_results_alt',
         url: 'content/Search results alt.svg'
     },

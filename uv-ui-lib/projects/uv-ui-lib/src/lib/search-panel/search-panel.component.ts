@@ -15,6 +15,7 @@ export class SearchPanelComponent {
     @Input() public placeholder = '';
     @Input() public showSuggestions = false;
     @Input() public width = '';
+    @Input() public suggestionsDropdownHeight = '';
 
     public onSearch(): void {
         this.searchClicked.emit();

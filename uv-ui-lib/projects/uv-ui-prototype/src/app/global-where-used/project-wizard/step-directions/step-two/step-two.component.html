@@ -6,7 +6,8 @@
     <uvx-search-panel mode="component-border" 
         width="50%"
         (searchClearClicked)="clearSearch()" 
-        [rounded]="true" 
+        [rounded]="true"
+        suggestionsDropdownHeight="34vh" 
         [showSuggestions]="searchText != '' && entitySelected == false">
         <input type="text"
             placeholder="Search..."

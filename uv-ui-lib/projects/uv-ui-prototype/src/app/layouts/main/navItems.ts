@@ -1,6 +1,6 @@
 export const navItems = [
     {   app: 'home-splash',
-        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',
+        icon: 'dashboard',
         active: false,
         navlink: 'home-splash',
         disabled: false,
@@ -8,7 +8,7 @@ export const navItems = [
     },
     {
         app: 'gwu',
-        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',
+        icon: 'global_where_used',
         active: false,
         navlink: 'gwu',
         disabled: false,
@@ -16,7 +16,7 @@ export const navItems = [
     },
     {
         app: 'sbs',
-        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',
+        icon: 'compare',
         active: false,
         navlink: 'sbs',
         disabled: false,
@@ -24,7 +24,7 @@ export const navItems = [
     },
     {
         app: 'design-ripple',
-        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',
+        icon: 'design',
         active: false,
         navlink: '/main',
         disabled: false,
@@ -32,7 +32,7 @@ export const navItems = [
     },
     {
         app: 'ingest',
-        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',
+        icon: 'upload',
         active: false,
         navlink: '/main',
         disabled: false,
@@ -40,7 +40,7 @@ export const navItems = [
     },
     {
         app: 'settings',
-        icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',
+        icon: 'settings',
         active: false,
         navlink: 'settings',
         tooltip: 'Settings'
