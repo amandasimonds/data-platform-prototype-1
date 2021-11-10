@@ -3,32 +3,32 @@ import { IGoal } from "../../../models/goal.model";
 export const selections: IGoal[] = [
     {
         name: 'Consolidation',
-        icon: 'compare',
-        selected: false
-    },
-    {
-        name: 'Spec. Review',
-        icon: 'thunderbolt',
-        selected: false
-    },
-    {
-        name: 'Spec Approval',
         icon: 'package',
         selected: false
     },
     {
-        name: 'BU/Corporate Comparison',
-        icon: 'replace',
+        name: 'Spec. Review',
+        icon: 'show',
         selected: false
     },
     {
-        name: 'Revision',
+        name: 'Spec Approval',
+        icon: 'tasks_alt',
+        selected: false
+    },
+    {
+        name: 'BU/Corporate Comparison',
         icon: 'clone',
         selected: false
     },
     {
+        name: 'Revision',
+        icon: 'section',
+        selected: false
+    },
+    {
         name: 'Requirement Analysis',
-        icon: 'refresh',
+        icon: 'analytics_alt',
         selected: false
     }
 ];

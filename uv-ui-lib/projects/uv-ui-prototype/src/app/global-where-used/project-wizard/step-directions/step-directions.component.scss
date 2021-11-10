@@ -46,8 +46,6 @@
 
 .task-selection-container {
     gap: 36px;
-    overflow: auto;
-    max-height: 37vh;
 
     @include respond(small-desktop-height) {
         gap: 18px;
