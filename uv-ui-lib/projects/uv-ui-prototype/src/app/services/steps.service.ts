@@ -11,8 +11,8 @@ const STEPS = [
 @Injectable()
 export class StepsService {
 
-  public steps$: BehaviorSubject<StepModel[]> = new BehaviorSubject<StepModel[]>(STEPS);
-  public currentStep$: BehaviorSubject<StepModel> = new BehaviorSubject<StepModel>(null);
+  private steps$: BehaviorSubject<StepModel[]> = new BehaviorSubject<StepModel[]>(STEPS);
+  private currentStep$: BehaviorSubject<StepModel> = new BehaviorSubject<StepModel>(null);
 
   constructor() {
     this.currentStep$.next(this.steps$.value[0]);
@@ -37,14 +37,10 @@ export class StepsService {
     if (index < this.steps$.value.length) {
       this.currentStep$.next(this.steps$.value[index]);
     }
-
-    console.log(index, this.currentStep$.value);
   }
 
   public resetWizard(): void {
-    for (const step of STEPS) {
-        step.isComplete = false;
-    }
+    STEPS.forEach(step => step.isComplete = false);
     this.setCurrentStep(this.steps$.value[0]);
   }
 
