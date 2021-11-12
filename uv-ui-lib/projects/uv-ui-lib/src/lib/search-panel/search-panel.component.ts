@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Output, EventEmitter, Input, ElementRef, HostListener } from '@angular/core';
 
 @Component({
     selector: 'uvx-search-panel',
@@ -16,6 +16,15 @@ export class SearchPanelComponent {
     @Input() public showSuggestions = false;
     @Input() public width = '';
     @Input() public suggestionsDropdownHeight = '';
+
+    constructor(private elementRef: ElementRef) {}
+
+    @HostListener('document:click', ['$event'])
+    public clickOutside(event: any): void {
+        if (!this.elementRef.nativeElement.contains(event.target)) {
+            this.showSuggestions = false;
+        }
+    }
 
     public onSearch(): void {
         this.searchClicked.emit();

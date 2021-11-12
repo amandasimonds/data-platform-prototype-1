@@ -23,6 +23,10 @@ body, p {
     }
 }
 
+.color-primary {
+    color: var(--uv-color-primary);
+}
+
 h1 {
     font-weight: var(--uv-font-semibold);
     font-size: var(--uv-font-size-lg);

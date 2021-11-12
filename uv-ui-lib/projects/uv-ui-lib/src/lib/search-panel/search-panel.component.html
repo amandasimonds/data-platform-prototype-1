@@ -1,4 +1,4 @@
-<div class="search-panel w-100 flex justify-content-space-between position-relative"
+<div (click)="showSuggestions = true" class="search-panel w-100 flex justify-content-space-between position-relative"
 [ngStyle]="{'width': width}" 
     [class.global]="mode === 'global'"
     [class.component-border]="mode === 'component-border'"
@@ -20,7 +20,7 @@
 
     </div>
 
-    <div *ngIf="showSuggestions" [ngStyle]="{'height': suggestionsDropdownHeight}" class="suggestions-dropdown flex flex-column">
+    <div *ngIf="showSuggestions" [ngStyle]="{'max-height': suggestionsDropdownHeight}" class="suggestions-dropdown flex flex-column">
         <ng-content select="[suggestions]"></ng-content>
     </div>
 
