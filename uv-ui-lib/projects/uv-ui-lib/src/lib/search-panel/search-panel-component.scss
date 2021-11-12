@@ -1,5 +1,5 @@
 .search-panel {
-    min-width: 10rem;
+    min-width: 12rem;
     width: 100%;
     height: 40px;
     background-color: var(--uv-color-white);
@@ -30,7 +30,7 @@
 .suggestions-dropdown {
     position: absolute;
     max-height: 40vh;
-    top: 114%;
+    top: 105%;
     left: 0;
     right: 0;
     border-top: 0;

@@ -8,7 +8,7 @@
         (searchClearClicked)="clearSearch()" 
         [rounded]="true"
         suggestionsDropdownHeight="34vh" 
-        [showSuggestions]="searchText != '' && entitySelected == false">
+        [showSuggestions]="searchText != '' && entitySelected === false">
         <input type="text"
             placeholder="Search..."
             class="uv-input margin-left-xs"
@@ -17,7 +17,7 @@
         <div suggestions>
             <div *ngFor="let item of searchResults; trackBy: trackItem"
                 class="custom-option" 
-                (click)="selectEntity(item)">
+                (click)="selectEntity(item); entitySelected = true">
                 <p class="uv-body">{{item.title}}</p>
                 <div class="option-description">
                     <span class="uv-body-secondary">
@@ -27,5 +27,11 @@
             </div>
         </div>
     </uvx-search-panel>
+
+    <div *ngIf="entitySelected"class="margin-top-md">
+        <p class="bold">Selected entity: {{selectedEntity.title}}</p>
+        <p>{{selectedEntity.description}}</p>
+        <p>Metadata for the selected entity will be shown here.</p>
+    </div>
 
 </div>

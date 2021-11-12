@@ -14,6 +14,8 @@ export class StepTwoComponent {
     @Input() public searchResults: SearchResult[] = [];
     public entitySelected = false;
     public searchText: string;
+    public selectedEntity: SearchResult;
+    public showSuggestions = false;
 
     constructor( 
         private wizardService: WizardService, 
@@ -23,15 +25,20 @@ export class StepTwoComponent {
             const entity = this.wizardService.wizardData$.value.entity
             if (entity !== this.wizardService.emptyEntity) {
                 this.searchText = entity.title;
+                this.selectedEntity = entity;
             } else {
                 this.searchText = '';
+                this.selectedEntity = this.wizardService.emptyEntity;
             }
         }
 
     public ngAfterViewChecked(): void {
-        this.searchResults = this.searchService.typeAheadSearch(this.searchText);
+        if (this.searchText.length > 0) {
+            this.searchResults = this.searchService.typeAheadSearch(this.searchText);
+        }
         this.ref.detectChanges();
     }
+    
     public trackItem (index: number, item: SearchResult) {
         return item.title;
     }
@@ -39,6 +46,7 @@ export class StepTwoComponent {
     public selectEntity(item: SearchResult): void {
         this.searchText = item.title;
         this.entitySelected = true;
+        this.selectedEntity = item;
         this.wizardService.updateWizardData('entity', item);
         this.wizardService.updateResults(310);
         this.wizardService.checkIfStep2Complete();

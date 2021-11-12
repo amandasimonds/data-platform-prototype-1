@@ -31,8 +31,8 @@
                 
                 <div *ngIf="!wizardModeFullscreen" class="divider-right margin-right-md steps-divider-side"></div>
 
-                <div class="w-100 flex flex-column justify-content-space-between"
-                [class.form-page-container-middle-fullscreen]="wizardModeFullscreen">
+                <div class="w-100 flex flex-column justify-content-space-between h-100"
+                [class.directions-fullscreen]="wizardModeFullscreen">
                     <ng-container [ngSwitch]="(currentStep | async)?.stepIndex">
                         <ng-container *ngSwitchCase="'1'">
                             <app-step-directions [step]="(currentStep | async)"></app-step-directions>
@@ -51,8 +51,8 @@
 
             <div>
                 <div class="flex justify-content-flex-end margin-bottom-sm margin-sm">
-                    <p class="uv-body uv-font-gray semi-bold">
-                        Total results: {{totalResults}}
+                    <p class="uv-body uv-font-gray semi-bold color-primary">
+                        Total results: <span class="color-primary">{{totalResults}}</span>
                     </p>
                 </div>
                 <div class="divider"></div>
