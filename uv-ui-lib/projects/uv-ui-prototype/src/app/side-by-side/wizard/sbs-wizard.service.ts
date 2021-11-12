@@ -6,9 +6,9 @@ import { SearchResult } from '../../search/models/search-result.model';
 import { ILocation } from './step-one/locations';
 
 const STEPS = [
-    { stepIndex: 1, isComplete: false },
-    { stepIndex: 2, isComplete: false },
-    { stepIndex: 3, isComplete: false }
+    { stepIndex: 1, isComplete: false, title: 'Title of Step 1', description: '' },
+    { stepIndex: 2, isComplete: false, title: 'Title of Step 2', description: '' },
+    { stepIndex: 3, isComplete: false, title: 'Title of Step 3', description: '' }
 ];
 
 @Injectable()

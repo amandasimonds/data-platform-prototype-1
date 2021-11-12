@@ -8,10 +8,11 @@ import { WizardService } from 'projects/uv-ui-prototype/src/app/global-where-use
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StepThreeComponent implements OnInit{
-    public filter1Value = 50;
-    public filter2Value = 50;
-    public filter3Value = 50;
-    public radioOptions = ''
+    public filter1Value = 54;
+    public filter2Value = 23;
+    public filter3Value = 77;
+    public radioSelection = 'option 0';
+    public advancedOptions = false;
 
     constructor(private wizardService: WizardService) {
     }
