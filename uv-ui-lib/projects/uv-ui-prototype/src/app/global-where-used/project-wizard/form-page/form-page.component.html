@@ -1,4 +1,4 @@
-<div class="form-page-container">
+<div class="form-page-container" *ngIf="(currentStep$ | async) as currentStep">
 
     <div class="form-page-container-top">
         <app-steps></app-steps>
@@ -8,15 +8,15 @@
 
     <div class="form-page-container-middle">
         <div class="form-step">
-            <ng-container [ngSwitch]="(currentStep | async)?.stepIndex">
+            <ng-container [ngSwitch]="currentStep?.stepIndex">
                 <ng-container *ngSwitchCase="'1'">
-                    <app-step-directions [step]="(currentStep | async)"></app-step-directions>
+                    <app-step-directions [step]="currentStep"></app-step-directions>
                 </ng-container>
                 <ng-container *ngSwitchCase="'2'">
-                    <app-step-directions [step]="(currentStep | async)"></app-step-directions>
+                    <app-step-directions [step]="currentStep"></app-step-directions>
                 </ng-container>
                 <ng-container *ngSwitchCase="'3'">
-                    <app-step-directions [step]="(currentStep | async)"></app-step-directions>
+                    <app-step-directions [step]="currentStep"></app-step-directions>
                 </ng-container>
             </ng-container>
         </div>
@@ -28,7 +28,7 @@
         <uvx-button label="Cancel" color="gray" class="margin-right-sm" 
         (click)="cancelWizard()"></uvx-button>
         <uvx-button 
-        (click)="onNextStep()" [disabled]="!(currentStep | async)?.isComplete" 
+        (click)="onNextStep()" [disabled]="!currentStep.isComplete" 
         mode="primary"
         [label]="showButtonLabel()">
         </uvx-button>

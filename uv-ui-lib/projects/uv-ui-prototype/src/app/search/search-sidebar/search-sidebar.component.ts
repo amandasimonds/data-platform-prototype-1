@@ -114,6 +114,12 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
         this.resetScroll();
     }
 
+    public searchClear(): void {
+        this.searchText = ''; 
+        this.resetScroll(); 
+        this.searchCategory = 'All';
+    }
+
     public ngOnInit(): void {
         this.recentSearches = this.searchService.getRecentSearches();
         this.searchResults = this.searchService.getAllSearchResults();

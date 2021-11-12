@@ -11,7 +11,7 @@ import { StepsService } from '../../../services/steps.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormPageComponent implements OnInit {
-  public currentStep: Observable<StepModel>;
+  public currentStep$: Observable<StepModel>;
 
   constructor(
     private stepsService: StepsService,
@@ -19,7 +19,7 @@ export class FormPageComponent implements OnInit {
     ) { }
 
   public ngOnInit(): void {
-    this.currentStep = this.stepsService.getCurrentStep();
+    this.currentStep$ = this.stepsService.getCurrentStep();
   }
 
   public onNextStep(): void {
