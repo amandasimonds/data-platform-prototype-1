@@ -3,7 +3,7 @@
         <uvx-header
             [headerText]="title"
             [icon]="headerIcon"
-            [uvHighlight]="currentHighlight === 'header'">
+            [uvHighlight]="headerIsHighlight">
 
             <uvx-search-panel mode="global" *ngIf="checkifSearch">
                 <input type="text"
@@ -11,7 +11,7 @@
                 class="uv-input margin-left-xs">
             </uvx-search-panel>
 
-            <div *ngIf="currentUser.new === true">
+            <div *ngIf="currentUser.new">
                 <uvx-icon-button 
                     color='help' 
                     icon="lightbulb"
@@ -64,7 +64,8 @@
     </uvx-backdrop>
     <app-search-sidebar (searchCloseEvent)="toggleSearchSidebar()" [searchSidebarState]="searchSidebarState"></app-search-sidebar>
     <app-compare-warning *ngIf="compareWarning" 
-        (closeCompareWarning)="compareWarning = false" [selectedItem]="selectedItem">
+        (closeCompareWarning)="closeCompareWarning()" 
+        [selectedItem]="selectedItem">
     </app-compare-warning>
 
     <app-uv-light *ngIf="uvLight" (uvLightToggle)="toggleUvLight()"

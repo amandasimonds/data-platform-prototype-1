@@ -16,6 +16,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     UvxIconModule,
     IconButtonModule
   ],
+  providers: [FilterResultsPipe],
   exports: [SearchResultsComponent]
 })
 export class SearchResultsModule { }
