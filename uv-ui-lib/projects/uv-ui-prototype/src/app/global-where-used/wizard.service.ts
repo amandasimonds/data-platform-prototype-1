@@ -38,7 +38,7 @@ export class WizardService {
         stepThreeSkip: false,
     }
 
-    public initialResultsNumber = 2034
+    public initialResultsNumber = 4078
 
     public wizardData$: BehaviorSubject<WizardDataModel> = new BehaviorSubject<WizardDataModel>(this.wizardData);
     public steps$: BehaviorSubject<StepModel[]> = new BehaviorSubject<StepModel[]>(STEPS);
@@ -71,7 +71,8 @@ export class WizardService {
     }
 
     public updateResults(value: number) {
-        this.results$.next(this.results$.value - value);
+        const newValue = Math.floor(Math.random() * 1000);
+        this.results$.next(newValue);
     }
 
     public updateWizardData(property: string, value: any) {
