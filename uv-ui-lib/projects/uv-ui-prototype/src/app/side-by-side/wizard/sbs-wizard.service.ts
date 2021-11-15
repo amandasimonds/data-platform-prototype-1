@@ -37,7 +37,7 @@ export class SbsWizardService {
         stepThreeSkip: false
     }
 
-    public initialResultsNumber = 2034
+    public initialResultsNumber = 5093
 
     public wizardData$: BehaviorSubject<SbsWizardDataModel> = new BehaviorSubject<SbsWizardDataModel>(this.wizardData);
     public steps$: BehaviorSubject<StepModel[]> = new BehaviorSubject<StepModel[]>(STEPS);
@@ -70,7 +70,8 @@ export class SbsWizardService {
     }
 
     public updateResults(value: number) {
-        this.results$.next(this.results$.value - value);
+        const newValue = Math.floor(Math.random() * 1000);
+        this.results$.next(newValue);
     }
 
     public updateWizardData(property: string, value: any) {
