@@ -1,6 +1,5 @@
 .backdrop {
     top: calc(0px - var(--uv-header-height));
-    // left: calc(0px - var(--uv-navbar-width));
     height: calc(100% + var(--uv-header-height));
     width: 100vw;
     background-color: rgba(13,12,34,0.16);

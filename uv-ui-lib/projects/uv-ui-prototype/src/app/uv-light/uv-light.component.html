@@ -1,7 +1,12 @@
 <div class="uv-light-modal">
     <div class="flex flex-column">
             {{content}}
-            <div class="flex">
+            <div class="container flex align-items-center justify-content-center padding-sm">
+                <span class="step" (click)="stepOne()"></span>
+                <span class="step" (click)="stepTwo()"></span>
+                <span class="step" (click)="stepThree()"></span>
+            </div>
+            <div class="flex flex-end">
                 <uvx-button *ngIf="varNext != 3" label="Close" class="margin-right-sm" (click)="toggleUvLight()"></uvx-button>
                 <uvx-button label={{stepButton}} (click)="nextStep()"></uvx-button>
             </div>

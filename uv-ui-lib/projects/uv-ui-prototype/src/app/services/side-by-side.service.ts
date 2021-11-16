@@ -8,8 +8,8 @@ import { targetDocumentSamples } from '../side-by-side/sample-data/target-docume
 @Injectable()
 export class SidebySideService {
 
-    public targetDocumentSelectedEvent = new BehaviorSubject<ISbsTargetDocument[]>([]);
-    public sourceDocumentSelectedEvent = new BehaviorSubject<ISbsSourceDocument[]>([]);
+    private targetDocumentSelectedEvent = new BehaviorSubject<ISbsTargetDocument[]>([]);
+    private sourceDocumentSelectedEvent = new BehaviorSubject<ISbsSourceDocument[]>([]);
 
     public readonly selectedTargetDocuments$ = this.targetDocumentSelectedEvent.asObservable();
     public readonly sourceDocumentsList$ = this.sourceDocumentSelectedEvent.asObservable();

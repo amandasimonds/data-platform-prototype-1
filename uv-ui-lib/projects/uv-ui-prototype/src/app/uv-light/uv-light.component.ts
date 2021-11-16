@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, EventEmitter, OnChanges, Output, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Output, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
 import { NgOnDestroyService } from '../services/on-destroy.service';
 import { UvLightService } from '../services/uv-light.service';
@@ -9,7 +9,7 @@ import { UvLightService } from '../services/uv-light.service';
   styleUrls: ['./uv-light.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UvLightComponent implements OnChanges {
+export class UvLightComponent implements OnInit {
 
     public varNext = 0;
     public stepButton = 'Next';
@@ -29,6 +29,14 @@ export class UvLightComponent implements OnChanges {
         private ref: ChangeDetectorRef,
         private destroy$: NgOnDestroyService) { }
 
+    ngOnInit(): void {
+        this.uvlService.getCurrentHighlight().pipe(takeUntil(this.destroy$))
+            .subscribe(highlight => {
+                this.currentHighlight = highlight;
+                this.ref.detectChanges();
+            });
+    }
+
     public highlightFeature(value: string): void {
         this.uvlService.setCurrentHighlight(value);
     }
@@ -39,21 +47,26 @@ export class UvLightComponent implements OnChanges {
 
     public nextStep(): void {
         this.varNext++;
-            if (this.varNext === 1) {
+        switch(this.varNext) {
+            case 1:
                 this.content = this.contentHolder.first;
                 this.highlightFeature('header');
-            } else if(this.varNext === 2) {
+                break;
+            case 2:
                 this.content = this.contentHolder.second;
                 this.highlightFeature('sbs');
                 this.highlightFeature('search-options');
-            } else if(this.varNext === 3) {
+                break;
+            case 3:
                 this.content = this.contentHolder.third;
                 this.stepButton = 'Got it!';
-            } else if (this.varNext === 4) {
+                break;
+            case 4:
                 this.varNext = 0;
                 this.content = this.resetText;
                 this.toggleUvLight();
-            }
+                break;
+        }
     }
 
     public stepOne(): void {
@@ -72,14 +85,5 @@ export class UvLightComponent implements OnChanges {
         this.varNext = 3;
         this.content = this.contentHolder.third;
         this.stepButton = 'Got it!';
-    }
-
-    public ngOnChanges(): void {
-        this.uvlService.currentHighlight$
-            .pipe(takeUntil(this.destroy$))
-            .subscribe(highlight => {
-                this.currentHighlight = highlight;
-                this.ref.detectChanges();
-            });
     }
 }

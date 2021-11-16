@@ -18,6 +18,6 @@ import { WizardService } from '../../global-where-used/wizard.service';
     IconButtonModule
   ],
   exports: [SearchResultsComponent],
-  providers: [WizardService]
+  providers: [WizardService, FilterResultsPipe]
 })
 export class SearchResultsModule { }

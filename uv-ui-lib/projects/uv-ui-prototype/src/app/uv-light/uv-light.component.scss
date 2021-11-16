@@ -10,6 +10,23 @@
     padding: 32px;
 }
 
+.container {
+    text-align: center;
+}
+
+.step {
+    background-color: var(--uv-color-help);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+
+    &:hover {
+        cursor: pointer;
+        
+    }
+}
+
 @keyframes pulse { 
     0% {  
         background: var(--uv-color-white); 

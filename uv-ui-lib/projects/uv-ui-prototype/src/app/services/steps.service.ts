@@ -43,16 +43,14 @@ export class StepsService {
         this.currentStep$.next(this.steps$.value[index - 2]);
     }
 
-    public resetWizard(): void {
-        for (const step of STEPS) {
-            step.isComplete = false;
-        }
-        this.setCurrentStep(this.steps$.value[0]);
-        console.log('reset wizard');
-    }
 
     public isLastStep(): boolean {
         return this.currentStep$.value.stepIndex === this.steps$.value.length;
+    }
+
+    public resetWizard(): void {
+        STEPS.forEach(step => step.isComplete = false);
+        this.setCurrentStep(this.steps$.value[0]);
     }
 
     public cancelWizard(): void {

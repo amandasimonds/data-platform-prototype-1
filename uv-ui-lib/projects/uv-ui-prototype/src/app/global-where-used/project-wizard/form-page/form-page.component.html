@@ -1,5 +1,6 @@
 <div [class.form-page-container-fullscreen]="wizardModeFullscreen"
-    [class.form-page-container]="!wizardModeFullscreen">
+    [class.form-page-container]="!wizardModeFullscreen"
+    *ngIf="(currentStep$ | async) as currentStep">
 
     <div *ngIf="wizardModeFullscreen"
     class="app-steps-fullscreen">

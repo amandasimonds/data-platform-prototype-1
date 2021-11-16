@@ -1,11 +1,11 @@
 <div class="documents flex flex-column" (mouseleave)="mouseLeaveClassRemove()">
 
     <div class="search-result"
-        *ngFor="let item of ( searchText === '' ? (recentSearches | filterResults: category) : searchResults | filterResults: category ); let i = index;"
+        *ngFor="let item of getSearchCollection(); let i = index;"
         [class.search-result-selected]="item.active"
         [class.search-result-disabled]="item.disabled"
         (mouseleave)="mouseLeaveClass()"
-        (click)="searchText === ''; !item.category && searchRecent(item)"
+        (click)="searchResultClicked(item)"
         [ngClass]="classes" 
         >
         
@@ -18,11 +18,13 @@
         
         <div class="flex justify-content-space-between align-content-center align-items-center">
             <div class="flex flex-column">
-                <h6 class="margin-bottom-xxxs">{{item.title}}</h6>
-                <p class="uv-body" *ngIf="searchText != ''">{{item.description}}</p>
-                <p class="uv-label-sbs-secondary" *ngIf="searchText === ''">{{item.formattedDate}}</p>
+                <h5 class="margin-bottom-xxs">{{item.title}}</h5>
+                <p class="uv-body" *ngIf="!searchIsEmpty; else recentSearchesTpl">{{item.description}}</p>
+                <ng-template #recentSearchesTpl>
+                    <p class="uv-label-sbs-secondary">{{item.formattedDate}}</p>
+                </ng-template>
             </div>
-            <uvx-icon-button *ngIf="searchText === ''" icon="close" color="primary"
+            <uvx-icon-button *ngIf="searchIsEmpty" icon="close" color="primary"
                 (click)="deleteRecentSearch(item.title)">
             </uvx-icon-button>
         </div>
