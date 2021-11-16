@@ -6,7 +6,7 @@ import { devEnv, testEnv } from '../auth/env';
 @Injectable()
 export class UserService {
 
-    public currentUser$: BehaviorSubject<any> = new BehaviorSubject<any>(
+    private currentUser$: BehaviorSubject<any> = new BehaviorSubject<any>(
         {
             id: 1,
             new: true,

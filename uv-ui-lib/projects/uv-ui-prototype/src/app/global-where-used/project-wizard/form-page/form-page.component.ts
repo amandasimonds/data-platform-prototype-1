@@ -18,7 +18,6 @@ import { WizardService } from '../../wizard.service';
 })
 export class FormPageComponent implements OnInit {
 
-  public currentStep: Observable<StepModel>;
   @Output() public onSubmitEvent = new EventEmitter();
   public currentStepNumber: StepModel;
   public wizardData: WizardDataModel;
@@ -26,6 +25,7 @@ export class FormPageComponent implements OnInit {
   public wizardMode = '';
   public resultsNumber = 0;
   public app = '';
+  public currentStep$: Observable<StepModel>;
 
   constructor(
     private wizardService: WizardService,
@@ -53,9 +53,9 @@ export class FormPageComponent implements OnInit {
         .pipe(takeUntil(this.destroy$))
         .subscribe(() => this.ref.detectChanges());
     if (this.isGwu) {
-        this.currentStep = this.wizardService.getCurrentStep();
+        this.currentStep$ = this.wizardService.getCurrentStep();
     } else {
-        this.currentStep = this.sbsWizardService.getCurrentStep();
+        this.currentStep$ = this.sbsWizardService.getCurrentStep();
     } 
   }
 

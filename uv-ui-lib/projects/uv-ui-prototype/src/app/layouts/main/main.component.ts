@@ -45,6 +45,10 @@ export class MainComponent implements OnInit {
         }
     }
 
+    public get headerIsHighlight(): boolean {
+        return this.currentHighlight === 'header' ? true : false;
+    }
+
     constructor(
         public appShellService: AppShellService,
         public searchService: SearchService,
@@ -65,8 +69,8 @@ export class MainComponent implements OnInit {
             this.appShellService.currentAppNavIcon$.pipe(tap(icon => this.navActiveIcon = icon)),
             this.searchService.searchState$.pipe(tap(state => this.searchSidebarState = state)),
             this.searchService.compareWarning$.pipe(tap(state => this.compareWarning = state)),
-            this.userService.currentUser$.pipe(tap(user => this.currentUser = user)),
-            this.uvlService.currentHighlight$.pipe(tap(highlight => this.currentHighlight = highlight))
+            this.userService.getCurrentUser().pipe(tap(user => this.currentUser = user)),
+            this.uvlService.getCurrentHighlight().pipe(tap(highlight => this.currentHighlight = highlight))
         ]).pipe(
             takeUntil(this.destroy$)
         ).subscribe(() => this.ref.detectChanges());
@@ -117,5 +121,9 @@ export class MainComponent implements OnInit {
     public logout() {
         console.log('log out');
         this.authService.signOut();
+    }
+    
+    public closeCompareWarning(): void {
+        this.compareWarning = false;
     }
 }

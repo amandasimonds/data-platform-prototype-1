@@ -39,10 +39,6 @@ $columns: 12; // Number of columns in the grid system
     width: 100%;
 
     &-fluid {
-        // display: flex;
-        // margin: 0 auto;
-        // height: 100%;
-        // width: 100%;
         flex-wrap: wrap;
     }
 }
