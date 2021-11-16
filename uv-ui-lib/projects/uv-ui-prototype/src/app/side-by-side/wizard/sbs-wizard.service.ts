@@ -104,12 +104,20 @@ export class SbsWizardService {
 
     public checkIfStep1Complete() {
         const wizardData = this.wizardData$;
-        if (wizardData.value.locations !== []) {
-            wizardData.value.stepOneComplete = true;
-            this.steps$.value[0].isComplete = true;
-        } else {
+        if (wizardData.value.entity === this.emptyEntity || wizardData.value.entity === null) {
+            wizardData.value.stepTwoComplete = false;
             this.steps$.value[0].isComplete = false;
+        } else {
+            wizardData.value.stepTwoComplete = true;
+            this.steps$.value[0].isComplete = true;
         }
+        // const wizardData = this.wizardData$;
+        // if (wizardData.value.locations !== []) {
+        //     wizardData.value.stepOneComplete = true;
+        //     this.steps$.value[0].isComplete = true;
+        // } else {
+        //     this.steps$.value[0].isComplete = false;
+        // }
     }
 
     public checkIfStep2Complete() {
@@ -121,6 +129,7 @@ export class SbsWizardService {
             wizardData.value.stepTwoComplete = false;
             this.steps$.value[1].isComplete = false;
         }
+
     }
 
     public checkIfStep3Complete() {

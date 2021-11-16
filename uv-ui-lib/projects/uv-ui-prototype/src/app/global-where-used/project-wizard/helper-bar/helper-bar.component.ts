@@ -10,7 +10,7 @@ import { slideInOutRightAnimation } from '../../../animations';
 })
 export class HelperBarComponent {
 
-    public helperBarState = 'hidden';
+    public helperBarState = 'visible';
 
    public toggleHelperBar() {
     this.helperBarState === 'hidden' ? this.helperBarState = 'visible' : this.helperBarState = 'hidden';

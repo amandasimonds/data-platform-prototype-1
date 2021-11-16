@@ -21,6 +21,7 @@ export class LandingComponent {
     public profileViewerPageLength = '';
     public currentProfileViewerPage = '';
     public currentUser = {id: 1, new: false, name: ''};
+    public columns = ['1', '2', '3', '4'];
 
     public get backdropMode(): string {
         return this.projectWizard ? 'popup' : 'hidden';
@@ -78,5 +79,11 @@ export class LandingComponent {
         this.profileViewerService.setCurrentColumnCount(count);
         this.columnCount = count;
         this.router.navigate([], { queryParams: { service: 'profile', columnCount : this.columnCount }});
+    }
+
+    public getClosest(val: number) {
+        // return this.columns.reduce(value => (prev, curr) {
+        //     // return (Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev);
+        //   });
     }
 }

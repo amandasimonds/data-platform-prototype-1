@@ -19,6 +19,8 @@ export class RangeSliderComponent implements OnInit{
     @Input() public sliderWidth = '';
     @Input() public background = '';
     @Input() public numberInput = false;
+    @Input() public datalistEnabled = false;
+    @Input() public datalistId = '';
 
     constructor(){
         this.tooltipPosition = `calc(${this.value}% - 6px)`

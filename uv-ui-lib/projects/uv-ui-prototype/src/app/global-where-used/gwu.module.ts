@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { WizardService } from './wizard.service';
-import { SidePanelModule, BackdropModule, ButtonModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule, ActionBarModule, ModalModule, UvxIconModule } from '../../../../uv-ui-lib/src/public-api';
+import { SidePanelModule, BackdropModule, ButtonModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule, ActionBarModule, ModalModule, UvxIconModule, RangeSliderModule } from '../../../../uv-ui-lib/src/public-api';
 import { GlobalWhereUsedComponent } from './global-where-used.component';
 import { GwuRoutingModule } from './global-where-used-routing.module';
 import { FormPageModule } from './project-wizard/form-page/form-page.module';
@@ -36,6 +36,7 @@ import { WizardContainerModule } from './project-wizard/wizard-container/wizard-
         LaunchPointPageModule,
         FormPageModule,
         ActionBarModule,
+        RangeSliderModule,
         StartPageModule,
         ModalModule,
         ProfileViewerModule,

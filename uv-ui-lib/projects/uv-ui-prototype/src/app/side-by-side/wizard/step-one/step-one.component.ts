@@ -1,4 +1,7 @@
 import { ChangeDetectorRef, Component, Input } from '@angular/core';
+import { SearchResult } from '../../../search/models/search-result.model';
+import { allSearchResults } from '../../../search/search-results/sample-search-results/allSearchResults';
+import { SearchService } from '../../../services/search.service';
 import { SbsWizardService } from '../sbs-wizard.service';
 import { ILocation, locations } from './locations';
 
@@ -15,9 +18,14 @@ export class SbsStepOneComponent {
     public showSuggestions = false;
     public selectedLocations: ILocation[] = [];
 
+    public searchResults: SearchResult[] = allSearchResults;
+    public entitySelected = false;
+    public selectedEntity: SearchResult;
+
     constructor( 
         private sbsWizardService: SbsWizardService, 
-        private ref: ChangeDetectorRef
+        private ref: ChangeDetectorRef,
+        private searchService: SearchService
         ) {
             const entity = this.sbsWizardService.wizardData$.value.entity
             if (entity !== this.sbsWizardService.emptyEntity) {
@@ -28,11 +36,14 @@ export class SbsStepOneComponent {
         }
 
     public ngAfterViewChecked(): void {
+        if (this.searchText.length > 0) {
+            this.searchResults = this.searchService.typeAheadSearch(this.searchText);
+        }
         this.ref.detectChanges();
     }
     
-    public trackItem (index: number, item: ILocation) {
-        return item.name;
+    public trackItem (index: number, item: SearchResult) {
+        return item.title;
     }
 
     public selectLocation(item: ILocation, i: number): void {
@@ -47,10 +58,17 @@ export class SbsStepOneComponent {
         this.sbsWizardService.checkIfStep1Complete();
     }
 
+    // public clearSearch() {
+    //     this.searchText = '';
+    //     this.locationSelected = false;
+    //     this.sbsWizardService.updateWizardData('location', '');
+    //     this.sbsWizardService.checkIfStep1Complete();
+    // }
+
     public clearSearch() {
         this.searchText = '';
-        this.locationSelected = false;
-        this.sbsWizardService.updateWizardData('location', '');
+        this.entitySelected = false;
+        this.sbsWizardService.updateWizardData('entity', this.sbsWizardService.emptyEntity);
         this.sbsWizardService.checkIfStep1Complete();
     }
 
@@ -66,5 +84,14 @@ export class SbsStepOneComponent {
             item.name.toLowerCase().includes(input.toLowerCase())
         );
         return results;
+    }
+    
+    public selectEntity(item: SearchResult): void {
+        this.searchText = item.title;
+        this.entitySelected = true;
+        this.selectedEntity = item;
+        this.sbsWizardService.updateWizardData('entity', item);
+        this.sbsWizardService.updateResults(310);
+        this.sbsWizardService.checkIfStep1Complete();
     }
 }

@@ -1,6 +1,6 @@
 <div>
     <h5 class="margin-bottom-xs">
-        What item is the entity?
+        Here you will search for a [Insert here] based on Step 1 selections.
     </h5>
 
     <uvx-search-panel mode="component-border" 
@@ -28,10 +28,12 @@
         </div>
     </uvx-search-panel>
 
-    <div *ngIf="entitySelected"class="margin-top-md">
+    <div *ngIf="entitySelected"class="margin-top-md" style="width: 600px;">
         <p class="bold">Selected entity: {{selectedEntity.title}}</p>
         <p>{{selectedEntity.description}}</p>
         <p>Metadata for the selected entity will be shown here.</p>
+        <p class="uv-body">Document: <span class="uv-body blue">This is the document metadata.</span></p>
+        <p class="uv-body">Section: <span class="uv-body blue">This is the section metadata.</span></p>
     </div>
 
 </div>
