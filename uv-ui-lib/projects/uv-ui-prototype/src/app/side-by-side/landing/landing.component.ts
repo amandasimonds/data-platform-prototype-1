@@ -33,7 +33,7 @@ export class SideBySideLandingComponent implements OnInit {
         .subscribe((sourceDocumentSelected: boolean) => {
                 this.sourceDocumentSelected = sourceDocumentSelected;
         });
-        this.userService.currentUser$
+        this.userService.getCurrentUser()
         .pipe(takeUntil(this.destroy$))
         .subscribe(value => this.currentUser = value);
     }
