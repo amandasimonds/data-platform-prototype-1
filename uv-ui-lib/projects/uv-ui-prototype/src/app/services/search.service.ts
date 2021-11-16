@@ -41,29 +41,21 @@ export class SearchService {
     public selectResult(result: SearchResult, i: number): void {
         result.active = !result.active;
         let resultsList: SearchResult[] = [];
-        const exceptIndex = i;
-        if (result.active) {
-            this.resultSelected.emit(true);
-            resultsList = this.getAllSearchResults()
-            .filter((item, index) => exceptIndex !== index)
-            .map(item => ({
-                ...item,
-                disabled: item.disabled = true
-            }));
-        } else {
-            this.resultSelected.emit(false);
-            resultsList = [...this.getAllSearchResults(), ...this.getRecentSearches()]
-            .map(item => ({
-                ...item, 
-                disabled: !item.disabled
-            }));
-        }
+        result.active ? this.setSelectedEntity(resultsList, i) : null;
         this.resultSelectedEvent.next(resultsList);
     }
 
+    public setSelectedEntity(resultsList: SearchResult[], i: number): void {
+        this.resultSelected.emit(true);
+        resultsList = this.getAllSearchResults()
+        .filter((item, index) => i !== index)
+        .map(item => ({
+            ...item,
+            disabled: item.disabled = true
+        }));
+    }
+
     public unselectAll(): void {
-        console.log(this.getRecentSearches().length);
-        console.log(this.getAllSearchResults().length);
         const resultsList = [...this.getAllSearchResults(), ...this.resultSelectedEvent.value]
             .map(item => ({
                 ...item,
@@ -82,8 +74,8 @@ export class SearchService {
     }
 
     public getRecentSearches(): SearchResult[] {
-        var values = [];
-        var keys = Object.keys(localStorage).filter(item => item.includes('search')),
+        const values = [];
+        let keys = Object.keys(localStorage).filter(item => item.includes('search')),
         i = keys.length;
         if(i === 0) {
             this.presetRecentSearches();
@@ -91,7 +83,7 @@ export class SearchService {
         while(i--) {
             values.push(JSON.parse(localStorage.getItem(keys[i])));
         }
-        values = values.sort((a, b) => (
+        values.sort((a, b) => (
             new Date(b.date).getTime() - new Date(a.date).getTime()
         ));
         this.recentSearchResults = values.slice(0, 10);
@@ -103,7 +95,7 @@ export class SearchService {
         for(let item of presetSearches) {
             item.formattedDate = format(new Date(), 'd LLLL hh:mm a');
             item.date = new Date().toString();
-            localStorage.setItem('search ' + item.title, JSON.stringify(item));
+            localStorage.setItem(`search ${item.title}`, JSON.stringify(item));
         }
     }
 

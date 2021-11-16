@@ -3,6 +3,7 @@ import { SearchResult } from '../models/search-result.model';
 import { SearchService } from '../../services/search.service';
 import { WizardService } from '../../global-where-used/wizard.service';
 import { Router } from '@angular/router';
+import { FilterResultsPipe } from './filter-results.pipe';
 
 @Component({
   selector: 'app-search-results',
@@ -19,10 +20,28 @@ export class SearchResultsComponent implements OnChanges, OnInit {
     public recentSearches: SearchResult[] = [];
     public showToolbar = false;
     public classes: string[] = [];
+    public get searchIsEmpty(): boolean {
+        return this.searchText === '' ? true : false;
+    }
 
-    constructor(private searchService: SearchService, 
+    constructor(
+        private searchService: SearchService, 
+        private filterResults: FilterResultsPipe,
         private wizardService: WizardService,
         private router: Router) {}
+
+    public ngOnInit(): void {
+        this.recentSearches = this.searchService.getRecentSearches();
+    }
+    
+    public ngOnChanges(): void {
+        this.searchResults = this.searchService.typeAheadSearch(this.searchText);
+        this.recentSearches = this.searchService.getRecentSearches();
+    }
+
+    public getSearchCollection(): SearchResult[] {
+        return this.searchText === '' ? this.filterResults.transform(this.recentSearches, this.category) : this.filterResults.transform(this.searchResults, this.category);
+    }
 
     public mouseLeaveClass(): void {
         this.classes.push('mouseleave');
@@ -33,7 +52,7 @@ export class SearchResultsComponent implements OnChanges, OnInit {
     }
 
     public compareClicked(value: boolean, item: SearchResult, i: number): void {
-        this.searchService.addToRecentSearches('search '+ item.title, item);
+        this.searchService.addToRecentSearches(`search ${item.title}`, item);
         this.searchService.selectResult(item, i);
         this.searchService.setCompareWarningState(value);
         event.stopPropagation();
@@ -56,20 +75,16 @@ export class SearchResultsComponent implements OnChanges, OnInit {
 
     public searchRecent(item: SearchResult): void {
         this.recentSearchClick.emit(item);
-        this.searchService.addToRecentSearches('search '+ item.title, item);
+        this.searchService.addToRecentSearches(`search ${item.title}`, item);
     }
 
     public deleteRecentSearch(title: string): void {
-        localStorage.removeItem('search ' + title);
+        localStorage.removeItem(`search ${title}`);
         this.recentSearches = this.searchService.getRecentSearches();
     }
 
-    public ngOnInit(): void {
-        this.recentSearches = this.searchService.getRecentSearches();
-    }
-
-    public ngOnChanges(): void {
-        this.searchResults = this.searchService.typeAheadSearch(this.searchText);
-        this.recentSearches = this.searchService.getRecentSearches();
+    public searchResultClicked(item: SearchResult): void {
+        this.searchText === ''; 
+        !item.category ? this.searchRecent(item) : null;
     }
 }
