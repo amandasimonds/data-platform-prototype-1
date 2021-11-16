@@ -21,16 +21,19 @@ export class StepOneComponent {
 
     public roles = [
         {
-            name: 'Role 1'
+            name: 'Product Engineer'
         },
         {
-            name: 'Role 2'
+            name: 'Systems Engineer'
         },
         {
-            name: 'Role 3'
+            name: 'Service Engineer'
         },
         {
-            name: 'Role 4'
+            name: 'Design Engineer'
+        },
+        {
+            name: 'Process Engineer'
         }
     ];
 

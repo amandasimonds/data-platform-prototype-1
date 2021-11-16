@@ -29,23 +29,25 @@
                         [isActive]="activeService === 'profile'"
                         class="margin-right-xxs"></uvx-tab>
                 </div>
-                <!-- <div class="flex align-items-center">
-                    <uvx-button (click)="projectWizard = true"  label="New Project"></uvx-button>
-                </div> -->
-                
             </div>
             <div right class="flex">
                 <div *ngIf="activeService === 'profile'" class="flex align-items-center">
-                    <!-- <div class="profile-page-numbers"> -->
                         <p class="flex justify-content-space-between margin-right-sm divider-right padding-right-sm gap-10 bold">
                             Page: <uvx-button [label]="currentProfileViewerPage"></uvx-button> of <uvx-button [label]="profileViewerPageLength"></uvx-button>
                         </p>                    
-                    <!-- </div> -->
                     <p class="uv-body margin-right-xs">Columns:</p>
-                    <uvx-button color="gray" label="1" class="margin-right-xxs" (click)="columnView(1)"></uvx-button>
+                    <!-- <uvx-button color="gray" label="1" class="margin-right-xxs" (click)="columnView(1)"></uvx-button>
                     <uvx-button color="gray" label="2" class="margin-right-xxs" (click)="columnView(2)"></uvx-button>
                     <uvx-button color="gray" label="3" class="margin-right-xxs" (click)="columnView(3)"></uvx-button>
-                    <uvx-button color="gray" label="4" class="margin-right-xxs" (click)="columnView(4)"></uvx-button>
+                    <uvx-button color="gray" label="4" class="margin-right-xxs" (click)="columnView(4)"></uvx-button> -->
+                    <uvx-range-slider [datalistEnabled]="true" [min]="1" [max]="4">
+                        <!-- <datalist datalist id="datalistId">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </datalist> -->
+                    </uvx-range-slider>
                 </div>
             </div>
         </uvx-action-bar>

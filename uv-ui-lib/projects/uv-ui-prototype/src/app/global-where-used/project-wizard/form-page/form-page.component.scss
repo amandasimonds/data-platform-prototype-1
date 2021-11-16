@@ -21,7 +21,7 @@
 
     &-middle {
         padding: 32px;
-        height: calc(100vh - 330px);
+        height: calc(100vh - 315px);
         overflow-y: auto;
         overflow-x: hidden;
         width: 100%;
@@ -87,4 +87,12 @@
 
 .fullscreen-bg {
     background-color: var(--uv-color-gray-light-6);
+}
+
+.total-results-container {
+    position: relative;
+    display: inline-flex;
+    right: 0;
+    bottom: 0;
+    margin-left: auto;
 }

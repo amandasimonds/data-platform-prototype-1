@@ -1,19 +1,19 @@
 <p class="uv-body">
-        Placeholder information about the range sliders below. 
+    This will contain guidance information regarding the sliders and the settings for which you could be calibrating.
 </p>
 <div class="flex flex-column">
     <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
-        <p class="uv-body bold" style="width: 30%" >Date range</p>
+        <p class="uv-body bold" style="width: 30%" >Option 1</p>
         <uvx-range-slider [numberInput]="true" class="flex-grow" [value]="filter1Value" minLabel="0%" maxLabel="100%" (valueChangedEvent)="filter1Changed($event)" (mouseup)="setFilter1()"></uvx-range-slider>
     </div>
     
     <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
-        <p class="uv-body bold" style="width: 30%">Category range</p>
+        <p class="uv-body bold" style="width: 30%">Option 2</p>
         <uvx-range-slider  [numberInput]="true" class="flex-grow" [value]="filter2Value" minLabel="0%" maxLabel="100%" (valueChangedEvent)="filter2Changed($event)" (mouseup)="setFilter2()"></uvx-range-slider>
     </div>
     
     <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
-        <p class="uv-body bold" style="width: 30%">Other range</p>
+        <p class="uv-body bold" style="width: 30%">Option 3</p>
         <uvx-range-slider  [numberInput]="true" class="flex-grow" [value]="filter3Value" minLabel="0%" maxLabel="100%" (valueChangedEvent)="filter3Changed($event)" (mouseup)="setFilter3()"></uvx-range-slider>
     </div>
 
@@ -53,10 +53,10 @@
     </div>
 </div>
 
-<div class="flex margin-top-sm" (click)="advancedOptions = !advancedOptions">
+<!-- <div class="flex margin-top-sm" (click)="advancedOptions = !advancedOptions">
     <uvx-button class="right" label="Advanced Options"></uvx-button>
     <uvx-icon color="primary" [icon]="!advancedOptions ? 'chevron_bottom' : 'chevron_top'"></uvx-icon>
-</div>
+</div> -->
 
 <div [class.display-none]="!advancedOptions">
     <p class="uv-body margin-bottom-sm">

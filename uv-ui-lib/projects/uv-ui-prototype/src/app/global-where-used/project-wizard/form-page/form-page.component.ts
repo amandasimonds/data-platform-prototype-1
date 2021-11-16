@@ -95,9 +95,9 @@ export class FormPageComponent implements OnInit {
 
   public getButtonLabel(): string {
       if (this.isGwu) {
-          return this.wizardService.isLastStep() ? 'Finish' : 'Next';
+          return this.wizardService.isLastStep() ? 'Launch' : 'Next';
         } else {
-            return this.sbsWizardService.isLastStep() ? 'Finish' : 'Next';
+            return this.sbsWizardService.isLastStep() ? 'Launch' : 'Next';
         }
   }
 

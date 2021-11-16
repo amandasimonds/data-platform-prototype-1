@@ -71,7 +71,7 @@ export class WizardService {
     }
 
     public updateResults(value: number) {
-        const newValue = Math.floor(Math.random() * 1000);
+        const newValue = Math.floor(Math.random() * (1000 - 100) + 100);
         this.results$.next(newValue);
     }
 
