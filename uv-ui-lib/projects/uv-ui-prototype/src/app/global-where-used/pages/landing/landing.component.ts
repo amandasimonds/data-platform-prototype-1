@@ -66,7 +66,7 @@ export class LandingComponent {
             this.stepsService.onCancelWizard$.pipe(tap(value => this.projectWizard = value)),
             this.profileViewerService.currentPage$.pipe(tap(value => this.currentProfileViewerPage = value.toString())),
             this.profileViewerService.pages$.pipe(tap(value => this.profileViewerPageLength = value.length.toString())),
-            this.userService.currentUser$.pipe(tap(value => this.currentUser = value))
+            this.userService.getCurrentUser().pipe(tap(value => this.currentUser = value))
         ]).pipe(
             takeUntil(this.destroy$)
         ).subscribe(() => this.ref.detectChanges());

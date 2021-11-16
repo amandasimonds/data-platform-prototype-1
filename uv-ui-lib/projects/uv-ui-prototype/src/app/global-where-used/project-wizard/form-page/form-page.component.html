@@ -34,15 +34,15 @@
 
                 <div class="w-100 flex flex-column justify-content-space-between h-100"
                 [class.directions-fullscreen]="wizardModeFullscreen">
-                    <ng-container [ngSwitch]="(currentStep | async)?.stepIndex">
+                    <ng-container [ngSwitch]="currentStep?.stepIndex">
                         <ng-container *ngSwitchCase="'1'">
-                            <app-step-directions [step]="(currentStep | async)"></app-step-directions>
+                            <app-step-directions [step]="currentStep"></app-step-directions>
                         </ng-container>
                         <ng-container *ngSwitchCase="'2'">
-                            <app-step-directions [step]="(currentStep | async)"></app-step-directions>
+                            <app-step-directions [step]="currentStep"></app-step-directions>
                         </ng-container>
                         <ng-container *ngSwitchCase="'3'">
-                            <app-step-directions [step]="(currentStep | async)"></app-step-directions>
+                            <app-step-directions [step]="currentStep"></app-step-directions>
                         </ng-container>
                     </ng-container>
                 </div>
