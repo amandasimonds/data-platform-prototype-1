@@ -1,6 +1,7 @@
 <div class="flex align-items-center">
     <div class="slider-container" [ngStyle]="{'width' : sliderWidth}">
         <input type="range" 
+        list="datalistId"
         data-popup-enabled = "true"
         min={{min}}
         max={{max}} 
@@ -10,9 +11,10 @@
         id={{rangeId}}
         [(ngModel)]="value"
         [ngStyle]="{'background': background }"/>
+            <ng-content *ngIf="datalistEnabled" select="[datalist]"></ng-content>
         <div class="slider-tooltip" [ngStyle]="{'left': tooltipPosition }">
             <span class="uv-body-sm">
-                {{value}}%
+                {{value}}
             </span>
         </div>
         <div class="flex justify-content-space-between">

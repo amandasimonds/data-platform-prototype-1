@@ -19,7 +19,7 @@ export const slideInOutRightAnimation = [
     trigger('slideInOutRight', [
 
         state('visible', style({
-            transform: 'translateX(100px)'
+            transform: 'translateX(157px)'
         })),
 
         state('hidden', style({

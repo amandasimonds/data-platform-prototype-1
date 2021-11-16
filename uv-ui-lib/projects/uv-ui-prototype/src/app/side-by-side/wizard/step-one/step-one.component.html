@@ -1,4 +1,45 @@
-<h5 class="margin-bottom-sm">
+<div>
+    <h5 class="margin-bottom-xs">
+        Here you will search for a [insert item here].
+    </h5>
+
+    <uvx-search-panel mode="component-border" 
+        width="50%"
+        (searchClearClicked)="clearSearch()" 
+        [rounded]="true"
+        suggestionsDropdownHeight="34vh" 
+        [showSuggestions]="searchText != '' && entitySelected === false">
+        <input type="text"
+            placeholder="Search..."
+            class="uv-input margin-left-xs"
+            maxlength="40"
+            [(ngModel)]="searchText">
+        <div suggestions>
+            <div *ngFor="let item of searchResults; trackBy: trackItem"
+                class="custom-option" 
+                (click)="selectEntity(item); entitySelected = true">
+                <p class="uv-body">{{item.title}}</p>
+                <div class="option-description">
+                    <span class="uv-body-secondary">
+                        {{item.description}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </uvx-search-panel>
+
+    <div *ngIf="entitySelected"class="margin-top-md" style="width: 600px;">
+        <p class="bold">Selected entity: {{selectedEntity.title}}</p>
+        <p>{{selectedEntity.description}}</p>
+        <p>Metadata for the selected entity will be shown here.</p>
+        <p class="uv-body">Document: <span class="uv-body blue">This is the document metadata.</span></p>
+        <p class="uv-body">Section: <span class="uv-body blue">This is the section metadata.</span></p>
+    </div>
+
+</div>
+
+
+<!-- <h5 class="margin-bottom-sm">
     Please select locations:
 </h5>
 
@@ -28,4 +69,4 @@
 
 <p class="uv-body margin-bottom-sm margin-top-sm margin-left-xs">{{selectedLocations.length}} Locations Selected</p>
 
-<uvx-chip *ngFor="let location of selectedLocations; let i = index" [label]="location.name" (clearClickedEvent)="unselectLocation(location, i)"></uvx-chip>
+<uvx-chip *ngFor="let location of selectedLocations; let i = index" [label]="location.name" (clearClickedEvent)="unselectLocation(location, i)"></uvx-chip> -->
