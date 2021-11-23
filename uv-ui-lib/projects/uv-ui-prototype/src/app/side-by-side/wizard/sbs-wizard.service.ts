@@ -16,7 +16,8 @@ export class SbsWizardService {
 
     public emptyEntity: SearchResult = {
         category: '',
-        title: '',
+        name: '',
+        id: null,
         description: '',
         active: false,
         disabled: false,

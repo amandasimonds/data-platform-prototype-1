@@ -4,10 +4,14 @@ import { format, isToday } from 'date-fns';
 import { SearchResult } from '../search/models/search-result.model';
 import { allSearchResults } from '../search/search-results/sample-search-results/allSearchResults';
 import { presetSearches } from '../search/search-results/sample-search-results/presetSearches';
+import { configData } from '../shared/data/configData';
+import { programData } from '../shared/data/programData';
+import { partData } from '../shared/data/partData';
+import { materialData } from '../shared/data/materialData';
 
 @Injectable()
 export class SearchService {
-    public allSearchResults: SearchResult[] = allSearchResults;
+    public allSearchResults: SearchResult[] = [...configData, ...materialData, ...programData, ...partData];
     public presetSearchResults: SearchResult[] = presetSearches;
     public recentSearchResults: SearchResult[] = [];
     public searchSidebarState = new BehaviorSubject<string>('hidden');
@@ -66,7 +70,7 @@ export class SearchService {
     }
 
     public addToRecentSearches(key: string, item: SearchResult): void {
-        if (this.typeAheadSearch(item.title).length !== 0) {
+        if (this.typeAheadSearch(item.name).length !== 0) {
             item.date = new Date().toString();
             item.formattedDate = isToday(new Date()) ? 'Today at  ' + format(new Date(),' hh:mm a') : format(new Date(), 'd LLLL hh:mm a');
             localStorage.setItem(key, JSON.stringify(item));
@@ -95,14 +99,14 @@ export class SearchService {
         for(let item of presetSearches) {
             item.formattedDate = format(new Date(), 'd LLLL hh:mm a');
             item.date = new Date().toString();
-            localStorage.setItem(`search ${item.title}`, JSON.stringify(item));
+            localStorage.setItem(`search ${item.name}`, JSON.stringify(item));
         }
     }
 
     public typeAheadSearch(input: string): SearchResult[] {
         let results = this.allSearchResults.slice();
         results = results.filter(item =>
-            item.title.toLowerCase().includes(input.toLowerCase())
+            item.name.toLowerCase().includes(input.toLowerCase())
         );
 
         return results;

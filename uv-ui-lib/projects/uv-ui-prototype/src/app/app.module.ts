@@ -40,6 +40,8 @@ import { UserService } from './services/user.service';
 import { UvLightService } from './services/uv-light.service';
 import { IconDisplayComponent } from './icon-display/icon-display.component';
 import { ProfileViewerService } from './global-where-used/profile-viewer.service';
+import {NgxEchartsModule} from 'ngx-echarts';
+import * as echarts from 'echarts';
 
 @NgModule({
     declarations: [
@@ -66,6 +68,9 @@ import { ProfileViewerService } from './global-where-used/profile-viewer.service
         ModalModule,
         TooltipModule,
         NavbarModule,
+        NgxEchartsModule.forRoot({
+            echarts: () => import('echarts')
+          }),
         RegisterIconModule,
         RegisterIconModule.forRoot(ICON_SET),
         SearchPanelModule,
