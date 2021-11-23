@@ -1,7 +1,8 @@
 export const allSearchResults = [
     {
         category: 'Parts',
-        title: 'API 13M-4 / ISO 13503-4',
+        name: 'API 13M-4 / ISO 13503-4',
+        id: 1234,
         description: '1. The LGC NCOE has witnessed several LNG bunkering operations over the last few months and seen common errors/failures, some that have resulted in the release of LNG and/or near misses, but also others that have gone very well. It is critically important for all parties involved to fully understand the risks that are presented when transferring LNG. While LNG can be handled safely, its cryogenic, asphyxiant, and flammability hazards must be recognized and mitigated in order to avoid serious personnel injury, vessel damage, and/or other harmful effects. This LGC NCOE Field Notice augments references (a) and (b) and shares the following recommendations based off best practices and lessons learned observed during recent LNG bunkering operations in order to prevent',
         active: false,
         disabled: false,
@@ -10,7 +11,8 @@ export const allSearchResults = [
     },
     {
         category: 'Parts',
-        title: 'EXH-SU-5110-B1',
+        name: 'EXH-SU-5110-B1',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -19,7 +21,8 @@ export const allSearchResults = [
     },
     {
         category: 'Parts',
-        title: 'EXH-A-SU-5110-B2',
+        name: 'EXH-A-SU-5110-B2',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -28,7 +31,8 @@ export const allSearchResults = [
     },
     {
         category: 'Parts',
-        title: 'EXH-B-SU-5110',
+        name: 'EXH-B-SU-5110',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -38,7 +42,8 @@ export const allSearchResults = [
 
     {
         category: 'Parts',
-        title: 'EXH-C-SU-5110',
+        name: 'EXH-C-SU-5110',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -47,7 +52,8 @@ export const allSearchResults = [
     },
     {
         category: 'Parts',
-        title: 'EXH-SU-5110',
+        name: 'EXH-SU-5110',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -55,17 +61,9 @@ export const allSearchResults = [
         formattedDate: ''
     },
     {
-      category: 'Parts',
-      title: 'PartABCD000004',
-      description: 'Screw, Hexagon Flange Head Cap v4.',
-      active: false,
-      disabled: false,
-      date: '',
-      formattedDate: ''
-    },
-    {
         category: 'Parts',
-        title: 'ZK-8285',
+        name: 'ZK-8285',
+        id: 1234,
         description: 'CRANKSHAFT, C-302',
         active: false,
         disabled: false,
@@ -74,7 +72,8 @@ export const allSearchResults = [
       },
       {
         category: 'Parts',
-        title: 'ZK-8285-0',
+        name: 'ZK-8285-0',
+        id: 1234,
         description: 'CRANKSHAFT, C-302',
         active: false,
         disabled: false,
@@ -83,7 +82,8 @@ export const allSearchResults = [
       },
       {
         category: 'Parts',
-        title: 'ZK-8274',
+        name: 'ZK-8274',
+        id: 1234,
         description: 'C-202 AND',
         active: false,
         disabled: false,
@@ -92,7 +92,8 @@ export const allSearchResults = [
       },
       {
         category: 'Parts',
-        title: 'ZK-8274-0',
+        name: 'ZK-8274-0',
+        id: 1234,
         description: 'C-202 AND C302 COMPRESSOR FRAME',
         active: false,
         disabled: false,
@@ -101,7 +102,8 @@ export const allSearchResults = [
       },
       {
         category: 'Parts',
-        title: 'ZK-8285-1',
+        name: 'ZK-8285-1',
+        id: 1234,
         description: 'CRANKSHAFT COMPRESSOR',
         active: false,
         disabled: false,
@@ -110,7 +112,8 @@ export const allSearchResults = [
       },
       {
         category: 'Parts',
-        title: 'ZBM-11083-X-1-B-0',
+        name: 'ZBM-11083-X-1-B-0',
+        id: 1234,
         description: 'VALVE, DIVIDER',
         active: false,
         disabled: false,
@@ -119,7 +122,8 @@ export const allSearchResults = [
       },
       {
         category: 'Parts',
-        title: 'ZK-6911-A-1-309',
+        name: 'ZK-6911-A-1-309',
+        id: 1234,
         description: 'PISTON - END, C.E.',
         active: false,
         disabled: false,
@@ -128,7 +132,8 @@ export const allSearchResults = [
       },
       {
         category: 'Parts',
-        title: 'ZK-6911-A-1-310',
+        name: 'ZK-6911-A-1-310',
+        id: 1234,
         description: 'PISTON ADJ CLEAR',
         active: false,
         disabled: false,
@@ -137,166 +142,28 @@ export const allSearchResults = [
       },
       {
         category: 'Parts',
-        title: 'ZK-6911-A-1-311',
+        name: 'ZK-6911-A-1-311',
+        id: 1234,
         description: 'PISTON - 16.75\"\" ZD 7\"\" STROKE',
         active: false,
         disabled: false,
         date: '',
         formattedDate: ''
       },
-      {
-        category: 'Parts',
-        title: 'PartABCD000004',
-        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-      },
-
     {
       category: 'Parts',
-      title: 'ZK-6911-A-1-312',
+      name: 'ZK-6911-A-1-312',
+      id: 1234,
       description: 'PISTON - END, H.E.',
       active: false,
       disabled: false,
       date: '',
       formattedDate: ''
     },
-
-    {
-      category: 'Requirements',
-      title: 'RequirementsABCD000002',
-      description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      active: false,
-      disabled: false,
-      date: '',
-      formattedDate: ''
-    },
-
-    {
-      category: 'Requirements',
-      title: 'RequirementsABCD000003',
-      description: 'Screw, Hexagon Flange Head Cap v4.1',
-      active: false,
-      disabled: false,
-      date: '',
-      formattedDate: ''
-    },
-
-    {
-      category: 'Requirements',
-      title: 'RequirementsABCD000004',
-      description: 'Screw, Hexagon Flange Head Cap v4.1',
-      active: false,
-      disabled: false,
-      date: '',
-      formattedDate: ''
-    },
-
-    {
-      category: 'Requirements',
-      title: 'RequirementsABCD000005',
-      description: 'Screw, Hexagon Flange Head Cap v4.1',
-      active: false,
-      disabled: false,
-      date: '',
-      formattedDate: ''
-    },
-
-      {
-        category: 'Documents',
-        title: 'DocumentsABCD000001',
-        description: 'Screw, Hexagon Flange Head Cap v4.1',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-      },
-
-      {
-        category: 'Documents',
-        title: 'DocumentsABCD000002',
-        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-      },
-
-      {
-        category: 'Documents',
-        title: 'DocumentsABCD000003',
-        description: 'Screw, Hexagon Flange Head Cap v4.1',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-      },
-
-      {
-        category: 'Documents',
-        title: 'DocumentsABCD000004',
-        description: 'Screw, Hexagon Flange Head Cap v4.1',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-      },
-
-      {
-        category: 'Documents',
-        title: 'DocumentsABCD000005',
-        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-      },
-
-      {
-        category: 'Documents',
-        title: 'DocumentsABCD000006',
-        description: 'Screw, Hexagon Flange Head Cap v4.1',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-      },
-
-      {
-        category: 'Integrity',
-        title: 'IntegrityABCD000003',
-        description: 'Screw, Hexagon Flange Head Cap v4.1',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-      },
-
-      {
-        category: 'Entity',
-        title: 'EntityABCD000004',
-        description: 'Screw, Hexagon Flange Head Cap v4.1',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-      },
-
-      {
-        category: 'Industry',
-        title: 'IndustryABCD000005',
-        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-      },
-
       {
         category: 'Materials',
-        title: 'Stainless Steel',
+        name: 'Stainless Steel',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
@@ -305,7 +172,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Ceramic',
+        name: 'Ceramic',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
@@ -314,7 +182,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Anodized Aluminum',
+        name: 'Anodized Aluminum',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -323,7 +192,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Semi-Rigid Modified Polyolefin',
+        name: 'Semi-Rigid Modified Polyolefin',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -332,7 +202,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Modified Polyolefin',
+        name: 'Modified Polyolefin',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -341,7 +212,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'NBCCS',
+        name: 'NBCCS',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -350,7 +222,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Fluid Resistant Modified Elastomer',
+        name: 'Fluid Resistant Modified Elastomer',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
@@ -359,7 +232,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Modified Fluoropolymer',
+        name: 'Modified Fluoropolymer',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
@@ -368,7 +242,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Modified Fluoropolymer',
+        name: 'Modified Fluoropolymer',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
@@ -377,7 +252,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Modified Fluoro-Elastomer',
+        name: 'Modified Fluoro-Elastomer',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         active: false,
         disabled: false,
@@ -386,7 +262,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Polyolefin Flexible Modified',
+        name: 'Polyolefin Flexible Modified',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -395,7 +272,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Crosslinked Ethylene Tetrafluoroethylene',
+        name: 'Crosslinked Ethylene Tetrafluoroethylene',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -404,7 +282,8 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Crosslinked Polyvinylidene Fluoride',
+        name: 'Crosslinked Polyvinylidene Fluoride',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
@@ -413,11 +292,12 @@ export const allSearchResults = [
       },
       {
         category: 'Materials',
-        title: 'Irradiated Modified Polyolefin',
+        name: 'Irradiated Modified Polyolefin',
+        id: 1234,
         description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
         active: false,
         disabled: false,
         date: '',
         formattedDate: ''
-      }
+      },
     ];

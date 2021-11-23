@@ -18,14 +18,14 @@
         
         <div class="flex justify-content-space-between align-content-center align-items-center">
             <div class="flex flex-column">
-                <h5 class="margin-bottom-xxs">{{item.title}}</h5>
+                <h5 class="margin-bottom-xxs">{{item.name}}</h5>
                 <p class="uv-body" *ngIf="!searchIsEmpty; else recentSearchesTpl">{{item.description}}</p>
                 <ng-template #recentSearchesTpl>
                     <p class="uv-label-sbs-secondary">{{item.formattedDate}}</p>
                 </ng-template>
             </div>
             <uvx-icon-button *ngIf="searchIsEmpty" icon="close" color="primary"
-                (click)="deleteRecentSearch(item.title)">
+                (click)="deleteRecentSearch(item.name)">
             </uvx-icon-button>
         </div>
         

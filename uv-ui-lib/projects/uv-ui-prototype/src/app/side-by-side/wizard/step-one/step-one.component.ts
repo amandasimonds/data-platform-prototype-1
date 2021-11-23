@@ -29,7 +29,7 @@ export class SbsStepOneComponent {
         ) {
             const entity = this.sbsWizardService.wizardData$.value.entity
             if (entity !== this.sbsWizardService.emptyEntity) {
-                this.searchText = entity.title;
+                this.searchText = entity.name;
             } else {
                 this.searchText = '';
             }
@@ -43,7 +43,7 @@ export class SbsStepOneComponent {
     }
     
     public trackItem (index: number, item: SearchResult) {
-        return item.title;
+        return item.name;
     }
 
     public selectLocation(item: ILocation, i: number): void {
@@ -87,7 +87,7 @@ export class SbsStepOneComponent {
     }
     
     public selectEntity(item: SearchResult): void {
-        this.searchText = item.title;
+        this.searchText = item.name;
         this.entitySelected = true;
         this.selectedEntity = item;
         this.sbsWizardService.updateWizardData('entity', item);

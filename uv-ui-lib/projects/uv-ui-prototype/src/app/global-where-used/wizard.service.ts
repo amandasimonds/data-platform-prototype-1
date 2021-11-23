@@ -15,7 +15,8 @@ export class WizardService {
 
     public emptyEntity: SearchResult = {
         category: '',
-        title: '',
+        name: '',
+        id: 1,
         description: '',
         active: false,
         disabled: false,

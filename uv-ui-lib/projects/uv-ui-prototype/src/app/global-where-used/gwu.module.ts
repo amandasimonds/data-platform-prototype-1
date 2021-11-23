@@ -14,6 +14,7 @@ import { LaunchPointPageModule } from './project-wizard/launch-point-page/launch
 import { WaveComponent } from './wave/wave.component';
 import { ForceDirectedGraphComponent } from './force-directed-graph/force-directed-graph.component';
 import { WizardContainerModule } from './project-wizard/wizard-container/wizard-container.module';
+import { GraphModule } from './force-directed-graph/graph/graph.module';
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import { WizardContainerModule } from './project-wizard/wizard-container/wizard-
         SearchPanelModule,
         DragDropModule,
         CheckboxModule,
+        GraphModule,
         GwuRoutingModule,
         LaunchPointPageModule,
         FormPageModule,

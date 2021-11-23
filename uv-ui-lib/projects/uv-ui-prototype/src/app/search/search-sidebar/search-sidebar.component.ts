@@ -90,7 +90,8 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
     public searchSidebarClosed(searchText: string): void {
         const searchItem = {
             category: '',
-            title: searchText,
+            name: searchText,
+            id: 1,
             description: '',
             active: false,
             disabled: false,
@@ -110,7 +111,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
     }
 
     public searchRecentSearch(item: SearchResult): void {
-        this.searchText = item.title;
+        this.searchText = item.name;
         this.resetScroll();
     }
 

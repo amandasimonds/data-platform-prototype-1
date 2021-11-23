@@ -18,7 +18,7 @@
             <div *ngFor="let item of searchResults; trackBy: trackItem"
                 class="custom-option" 
                 (click)="selectEntity(item); entitySelected = true">
-                <p class="uv-body">{{item.title}}</p>
+                <p class="uv-body">{{item.name}}</p>
                 <div class="option-description">
                     <span class="uv-body-secondary">
                         {{item.description}}
@@ -29,7 +29,7 @@
     </uvx-search-panel>
 
     <div *ngIf="entitySelected"class="margin-top-md" style="width: 600px;">
-        <p class="bold">Selected entity: {{selectedEntity.title}}</p>
+        <p class="bold">Selected entity: {{selectedEntity.name}}</p>
         <p>{{selectedEntity.description}}</p>
         <p>Metadata for the selected entity will be shown here.</p>
         <p class="uv-body">Document: <span class="uv-body blue">This is the document metadata.</span></p>

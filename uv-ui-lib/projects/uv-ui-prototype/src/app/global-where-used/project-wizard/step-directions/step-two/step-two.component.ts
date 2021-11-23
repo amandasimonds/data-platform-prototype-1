@@ -24,7 +24,7 @@ export class StepTwoComponent {
         ) {
             const entity = this.wizardService.wizardData$.value.entity
             if (entity !== this.wizardService.emptyEntity) {
-                this.searchText = entity.title;
+                this.searchText = entity.name;
                 this.selectedEntity = entity;
             } else {
                 this.searchText = '';
@@ -40,11 +40,11 @@ export class StepTwoComponent {
     }
     
     public trackItem (index: number, item: SearchResult) {
-        return item.title;
+        return item.name;
     }
 
     public selectEntity(item: SearchResult): void {
-        this.searchText = item.title;
+        this.searchText = item.name;
         this.entitySelected = true;
         this.selectedEntity = item;
         this.wizardService.updateWizardData('entity', item);
