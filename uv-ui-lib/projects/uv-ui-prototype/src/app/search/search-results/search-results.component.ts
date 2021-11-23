@@ -52,7 +52,7 @@ export class SearchResultsComponent implements OnChanges, OnInit {
     }
 
     public compareClicked(value: boolean, item: SearchResult, i: number): void {
-        this.searchService.addToRecentSearches(`search ${item.title}`, item);
+        this.searchService.addToRecentSearches(`search ${item.name}`, item);
         this.searchService.selectResult(item, i);
         this.searchService.setCompareWarningState(value);
         event.stopPropagation();
@@ -60,7 +60,7 @@ export class SearchResultsComponent implements OnChanges, OnInit {
 
     public launchClicked(value: boolean, item: SearchResult, i: number, route: string): void {
         console.log('launch click', item);
-        this.searchService.addToRecentSearches('search '+ item.title, item);
+        this.searchService.addToRecentSearches('search '+ item.name, item);
         this.searchService.selectResult(item, i);
         // this.searchService.setCompareWarningState(value);
         this.wizardService.updateWizardData('entity', item);
@@ -75,7 +75,7 @@ export class SearchResultsComponent implements OnChanges, OnInit {
 
     public searchRecent(item: SearchResult): void {
         this.recentSearchClick.emit(item);
-        this.searchService.addToRecentSearches(`search ${item.title}`, item);
+        this.searchService.addToRecentSearches(`search ${item.name}`, item);
     }
 
     public deleteRecentSearch(title: string): void {
