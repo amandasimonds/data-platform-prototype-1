@@ -56,34 +56,24 @@ export class GraphComponent {
         ]
       };
 
-      lineGraph = {
-        xAxis: {
-          type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        },
-        yAxis: {
-          type: 'value',
-        },
-        series: [
-          {
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
-            type: 'line',
-          },
-        ],
-      };
-
       nodeGraph = {
         title: {
           text: 'Sample Graph',
           top: 'bottom',
           left: 'right'
         },
+        legend: {
+            data: [
+                {name: 'Sample Graph'}
+            ]
+        },
         tooltip: {},
         series: [
           {
-            name: 'legend',
+            // name: 'legend',
             type: 'graph',
             layout: 'force',
+            legendHoverLink: true,
             data: this.parseJsonData(),
             links: this.parseJsonLinkData(),
             roam: true,
@@ -91,36 +81,17 @@ export class GraphComponent {
               position: 'right'
             },
             force: {
-              repulsion: 300,
+              repulsion: 100,
             //   initLayout: null,
               gravity: 0.1,
               friction: 0.6,
               edgeLength: 30,
-              layoutAnimation: false
+              layoutAnimation: false,
+              draggable: true
             }
           }
         ],
-        legend: {
-            // data: [{name: 'UV Data'}],
-            textStyle: {
-                color: "#fff",
-                fontSize: 10
-            },
-            icon: "circle",
-            type: "scroll",
-            orient: "vertical",
-            left: "right",
-            right: 20,
-            top: 20,
-            bottom: 80,
-            pageIconColor: "#00f6ff",
-            pageIconInactiveColor: "#fff",
-            pageIconSize: 12,
-            pageTextStyle: {
-                color: "#fff",
-                fontSize: 12
-            }
-        }
+        
       }
 
       parseJsonData() {
