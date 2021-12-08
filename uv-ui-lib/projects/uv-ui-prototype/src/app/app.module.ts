@@ -36,7 +36,7 @@ import { AppShellService } from './services/app-shell.service';
 import { SearchSidebarModule } from './search/search-sidebar/search-sidebar.module';
 import { CompareWarningModule } from './search/compare-warning/compare-warning.module';
 import { UvLightComponent } from './uv-light/uv-light.component';
-import { UserService } from './services/user.service';
+import { UserService } from './auth/user.service';
 import { UvLightService } from './services/uv-light.service';
 import { IconDisplayComponent } from './icon-display/icon-display.component';
 import { ProfileViewerService } from './global-where-used/profile-viewer.service';

@@ -4,30 +4,15 @@
         <uvx-action-bar *ngIf="currentUser.name !== 'user_cummins@test.com'" class="w-100">
             <div left class="flex">
                 <div class="flex margin-top-sm margin-right-sm">
-                    <uvx-tab
-                        label="Wave"
+                    <uvx-tab *ngFor="let item of gwuTabs"
+                        [label]="item.label"
                         mode="horizontal"
-                        icon="wave"
-                        routerLink="wave"
-                        [queryParams]="{service: 'wave'}"
-                        [isActive]="activeService === 'wave'"
-                        class="margin-right-xxs"></uvx-tab>
-                    <uvx-tab
-                        label="Force Directed Graph"
-                        mode="horizontal"
-                        icon="global_where_used"
-                        routerLink="force-directed-graph"
-                        [queryParams]="{service: 'force-directed-graph'}"
-                        [isActive]="activeService === 'force-directed-graph'"
-                        class="margin-right-xxs"></uvx-tab>
-                    <uvx-tab
-                        label="Profile"
-                        mode="horizontal"
-                        icon="profile"
-                        routerLink="profile"
-                        [queryParams]="{service: 'profile'}"
-                        [isActive]="activeService === 'profile'"
-                        class="margin-right-xxs"></uvx-tab>
+                        [icon]="item.icon"
+                        [routerLink]="item.service"
+                        [queryParams]="{service: item.service}"
+                        [isActive]="activeService === item.service"
+                        class="margin-right-xxs">
+                    </uvx-tab>
                 </div>
             </div>
             <div right class="flex">
@@ -36,17 +21,11 @@
                             Page: <uvx-button [label]="currentProfileViewerPage"></uvx-button> of <uvx-button [label]="profileViewerPageLength"></uvx-button>
                         </p>                    
                     <p class="uv-body margin-right-xs">Columns:</p>
-                    <!-- <uvx-button color="gray" label="1" class="margin-right-xxs" (click)="columnView(1)"></uvx-button>
-                    <uvx-button color="gray" label="2" class="margin-right-xxs" (click)="columnView(2)"></uvx-button>
-                    <uvx-button color="gray" label="3" class="margin-right-xxs" (click)="columnView(3)"></uvx-button>
-                    <uvx-button color="gray" label="4" class="margin-right-xxs" (click)="columnView(4)"></uvx-button> -->
-                    <uvx-range-slider [datalistEnabled]="true" [min]="1" [max]="4">
-                        <!-- <datalist datalist id="datalistId">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </datalist> -->
+                    <uvx-range-slider 
+                    [min]="1" [max]="4"
+                    [value]="columnCount" 
+                    [valueMarkers]="true"
+                    (valueChangedEvent)="columnCountChanged($event)">
                     </uvx-range-slider>
                 </div>
             </div>
@@ -68,8 +47,8 @@
 </div>
 
 <uvx-backdrop 
-[backdropState]="backdropState"
-(backdropClicked)="projectWizard = false"
+    [backdropState]="backdropState"
+    (backdropClicked)="projectWizard = false"
     [mode]="backdropMode">
 </uvx-backdrop>
 

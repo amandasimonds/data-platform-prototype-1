@@ -78,7 +78,11 @@ h5 {
 
         &-secondary {
             font-size: var(--uv-font-size-xs);
-            color: var(--uv-font-color-secondary)
+            color: var(--uv-font-color-secondary);
+
+            &-active {
+                color: var(--uv-color-primary);
+            }
         }
     }
 }
