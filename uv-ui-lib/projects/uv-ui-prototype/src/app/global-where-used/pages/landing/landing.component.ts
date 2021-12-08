@@ -4,8 +4,9 @@ import { combineLatest } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../../services/on-destroy.service';
 import { ProfileViewerService } from '../../profile-viewer.service';
-import { UserService } from '../../../services/user.service';
+import { UserService } from '../../../auth/user.service';
 import { WizardService } from '../../wizard.service';
+import { gwuTabs } from './gwu-tabs';
 
 @Component({
   selector: 'app-landing',
@@ -22,6 +23,7 @@ export class LandingComponent {
     public currentProfileViewerPage = '';
     public currentUser = {id: 1, new: false, name: ''};
     public columns = ['1', '2', '3', '4'];
+    public gwuTabs = gwuTabs;
 
     public get backdropMode(): string {
         return this.projectWizard ? 'popup' : 'hidden';
@@ -31,26 +33,26 @@ export class LandingComponent {
         return this.projectWizard ? 'visible' : 'hidden';
     }
 
-    public gwuTabs = [
-        {
-            icon: 'more_horisontal',
-            link: '/',
-            linkText: 'Link',
-            results: ''
-        },
-        {
-            icon: 'more_horisontal',
-            link: '/',
-            linkText: 'Link',
-            results: ''
-        },
-        {
-            icon: 'more_horisontal',
-            link: '/',
-            linkText: 'Link',
-            results: ''
-        }
-    ];
+    // public gwuTabs = [
+    //     {
+    //         icon: 'more_horisontal',
+    //         link: '/',
+    //         linkText: 'Link',
+    //         results: ''
+    //     },
+    //     {
+    //         icon: 'more_horisontal',
+    //         link: '/',
+    //         linkText: 'Link',
+    //         results: ''
+    //     },
+    //     {
+    //         icon: 'more_horisontal',
+    //         link: '/',
+    //         linkText: 'Link',
+    //         results: ''
+    //     }
+    // ];
     
     constructor(
         private stepsService: WizardService, 
@@ -65,6 +67,7 @@ export class LandingComponent {
         combineLatest([
             this.stepsService.onCancelWizard$.pipe(tap(value => this.projectWizard = value)),
             this.profileViewerService.currentPage$.pipe(tap(value => this.currentProfileViewerPage = value.toString())),
+            this.profileViewerService.currentColumnCount$.pipe(tap(value => this.columnCount = value)),
             this.profileViewerService.pages$.pipe(tap(value => this.profileViewerPageLength = value.length.toString())),
             this.userService.getCurrentUser().pipe(tap(value => this.currentUser = value))
         ]).pipe(
@@ -75,9 +78,9 @@ export class LandingComponent {
         });
     }
 
-    public columnView(count: number) {
-        this.profileViewerService.setCurrentColumnCount(count);
-        this.columnCount = count;
+    public columnCountChanged(value: number) {
+        this.columnCount = value;
+        this.profileViewerService.setCurrentColumnCount(this.columnCount);
         this.router.navigate([], { queryParams: { service: 'profile', columnCount : this.columnCount }});
     }
 

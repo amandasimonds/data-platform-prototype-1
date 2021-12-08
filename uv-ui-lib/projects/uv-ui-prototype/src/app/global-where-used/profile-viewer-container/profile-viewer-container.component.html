@@ -1,44 +1,26 @@
-<div class='uv-container-fluid profile-viewer-container h-100 padding-sm'>
+<div class='uv-container-fluid h-100 padding-sm'>
     <div *ngIf="columnCount === 1" class="row profile-row" >
         <div class="col-12">
-            <app-profile-viewer [name]="items[0].name" [description]="items[0].description"></app-profile-viewer>
+            <app-profile-viewer [name]="items[0].name" 
+            [description]="items[0].description"></app-profile-viewer>
         </div>
     </div>
     <div  *ngIf="columnCount === 2" class="udemy-row profile-row" >
-        <div class="col-1-of-2" *ngFor="let item of items.slice(0, 2)" 
-            [class.animate-exit-left]="currentPageNumber === 2">
+        <div class="col-1-of-2" *ngFor="let item of items.slice(0, 2)">
                 <app-profile-viewer [name]="item.name" [description]="item.description"></app-profile-viewer>
             </div>
     </div>
 
     <div  *ngIf="columnCount === 3" class="udemy-row profile-row">
         <div>
-            <div class="col-1-of-3" *ngFor="let item of items.slice(0, 3)" 
-            [class.animate-exit-left]="currentPageNumber === 2">
-                <app-profile-viewer [name]="item.name" [description]="item.description"></app-profile-viewer>
-            </div>
-        </div>
-        <div  *ngIf="currentPageNumber === 2">
-            <div class="col-1-of-3" *ngFor="let item of items.slice(0, 3)"
-            [class.animate-enter-right]="currentPageNumber === 2">
-                <app-profile-viewer [name]="item.name" [description]="item.description"></app-profile-viewer>
-            </div>
-        </div>
-        <!-- <div [@flyInOut]="setPageAnimationState(3, 'third page')">
             <div class="col-1-of-3" *ngFor="let item of items.slice(0, 3)">
                 <app-profile-viewer [name]="item.name" [description]="item.description"></app-profile-viewer>
             </div>
         </div>
-        <div [@flyInOut]="setPageAnimationState(4, 'fourth page')">
-            <div class="col-1-of-3" *ngFor="let item of items.slice(0, 3)">
-                <app-profile-viewer [name]="item.name" [description]="item.description"></app-profile-viewer>
-            </div>
-        </div> -->
     </div>
 
     <div  *ngIf="columnCount === 4" class="udemy-row profile-row">
-        <div class="col-1-of-4" *ngFor="let item of items.slice(0, 4)" 
-        [class.animate-exit-left]="currentPageNumber === 2">
+        <div class="col-1-of-4" *ngFor="let item of items.slice(0, 4)">
             <app-profile-viewer [name]="item.name" [description]="item.description"></app-profile-viewer>
         </div>
     </div>

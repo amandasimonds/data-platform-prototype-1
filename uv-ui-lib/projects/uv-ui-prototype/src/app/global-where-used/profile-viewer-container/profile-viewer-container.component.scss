@@ -1,16 +1,32 @@
-.profile-viewer-container {
-    // height: calc(100vh - 145px);
-    // display: inline-block;
-    // flex: none;
-    // width: auto !important;
+// .profile-viewer-container {
+//     // height: calc(100vh - 145px);
+//     // display: inline-block;
+//     // flex: none;
+//     // width: auto !important;
 
-    // display: grid;
-    // grid-gap: 16px;
-    // padding: 16px;
-    // grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
-    // grid-auto-flow: column;
-    // grid-auto-columns: minmax(160px,1fr);
+//     // display: grid;
+//     // grid-gap: 16px;
+//     // padding: 16px;
+//     // grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+//     // grid-auto-flow: column;
+//     // grid-auto-columns: minmax(160px,1fr);
+//     overflow-x: auto;
+// }
+
+.profile-viewer-container {
+    border: 2px solid green;
+    height: calc(100vh - 150px);
+    display: grid;
+    grid-gap: 16px;
+    padding: 16px;
+    grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(160px,1fr);
     overflow-x: auto;
+
+    :host{
+        width: 100%;
+    }
 }
 
 .profile-row {

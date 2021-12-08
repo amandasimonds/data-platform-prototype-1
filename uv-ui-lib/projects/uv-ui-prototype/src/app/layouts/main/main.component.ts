@@ -5,7 +5,7 @@ import { takeUntil, tap } from 'rxjs/operators';
 import { AppShellService } from '../../services/app-shell.service';
 import { SearchService } from '../../services/search.service';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../auth/user.service';
 import { UvLightService } from '../../services/uv-light.service';
 import { navItems } from './navItems';
 import { AuthService } from '../../auth/auth.service';
@@ -121,6 +121,8 @@ export class MainComponent implements OnInit {
     public logout() {
         console.log('log out');
         this.authService.signOut();
+        localStorage.clear();
+        this.router.navigate(['/logout']);
     }
     
     public closeCompareWarning(): void {

@@ -1,7 +1,7 @@
 .slider-container {
     height: 25px;
     flex-grow: 1;
-  }
+}
 
 .slider {
     -webkit-appearance: none;
@@ -10,13 +10,13 @@
     height: 8px; 
     border-radius: 4px;
     outline: none;
-  }
-  
-  .slider:hover {
+}
+
+.slider:hover {
     opacity: 1;
-  }
+}
 
-  .slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none; 
     appearance: none;
     width: 16px; 
@@ -25,9 +25,9 @@
     cursor: pointer; 
     border: 4px solid var(--uv-color-primary);
     border-radius: 50%;
-  }
+}
 
-  .slider[type="range"]::-webkit-slider-thumb {
+.slider[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none; 
     appearance: none;
     width: 16px; 
@@ -36,16 +36,16 @@
     cursor: pointer; 
     border: 4px solid var(--uv-color-primary);
     border-radius: 50%;
-  }
-  
-  .slider::-moz-range-thumb {
+}
+
+.slider::-moz-range-thumb {
     width: 16px; 
     height: 16px; 
     background: var(--uv-color-white); 
     cursor: pointer; 
-  }
+}
 
-  .slider-tooltip {
+.slider-tooltip {
     position: relative;
     display: flex;
     width: auto;
@@ -63,10 +63,14 @@
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type=number] {
     -moz-appearance: textfield;
-  }
+}
+
+.marker-active {
+color: var(--uv-color-primary);
+}

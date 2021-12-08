@@ -44,7 +44,7 @@ yarn-error.log
 testem.log
 /typings
 /storybook-static
-env.ts
+environments/*
 
 # System Files
 .DS_Store

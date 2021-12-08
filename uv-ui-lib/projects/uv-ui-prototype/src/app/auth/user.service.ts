@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { AuthService } from '../auth/auth.service';
-import { devEnv, testEnv } from '../auth/env';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class UserService {
@@ -14,10 +13,7 @@ export class UserService {
         }
     );
 
-    public token = devEnv.clientId;
-    // public token = testEnv.clientId;
-
-    constructor(private auth: AuthService) {}
+    public token = environment.authConfig.clientId;
 
     public setCurrentUser(user: any): void {
         this.currentUser$.next(user);

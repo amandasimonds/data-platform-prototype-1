@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { AuthModule } from 'angular-auth-oidc-client';
-import { devEnv, devEnvLocal, testEnv, testEnvLocal } from './env';
+import { environment } from '../../environments/environment';
 import { LocalStorage } from './local-storage.service';
 
 @NgModule({
     imports: [AuthModule.forRoot({
         storage: LocalStorage,
-        // config: devEnv
-        config: devEnvLocal
-        // config: testEnv
-        // config: testEnvLocal
+        config: environment.authConfig
     })],
     exports: [AuthModule]
 })

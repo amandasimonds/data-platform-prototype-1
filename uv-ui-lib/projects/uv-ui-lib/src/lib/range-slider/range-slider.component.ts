@@ -21,21 +21,32 @@ export class RangeSliderComponent implements OnInit{
     @Input() public numberInput = false;
     @Input() public datalistEnabled = false;
     @Input() public datalistId = '';
+    @Input() public valueMarkers = false;
+    @Input() public tooltip = false;
 
     constructor(){
         this.tooltipPosition = `calc(${this.value}% - 6px)`
+        // this.tooltipPosition = `calc(((${this.value} / ${this.max}) * 100)% - 6px)`
         this.rangeValue = (this.value - this.min)/(this.max-this.min)*100;
     }
 
     ngOnInit(): void {
-        this.background = 'linear-gradient(to right, var(--uv-color-gray-light-2) ' + this.value + '%, var(--uv-color-primary) ' + this.value + '%)'
-        this.tooltipPosition = `calc(${this.value}% - 6px)`
+        this.background = 'linear-gradient(to right, var(--uv-color-gray-light-2) ' + this.rangeValue + '%, var(--uv-color-primary) ' + this.rangeValue + '%)'
+        this.tooltipPosition = `calc(${this.rangeValue}% - 6px)`
     }
 
     ngAfterViewChecked(): void {
         this.rangeValue = (this.value - this.min)/(this.max-this.min)*100;
-        this.background = 'linear-gradient(to right, var(--uv-color-gray-light-2) ' + this.value + '%, var(--uv-color-primary) ' + this.value + '%)'
-        this.tooltipPosition = `calc(${this.value}% - 6px)`
+        this.tooltipPosition = `calc(${this.rangeValue}% - 6px)`
+        this.background = 'linear-gradient(to right, var(--uv-color-gray-light-2) ' + this.rangeValue + '%, var(--uv-color-primary) ' + this.rangeValue + '%)'
+        console.log(this.background);
+        console.log(this.rangeValue);
+    }
+
+    public get getValueMarkers(): number[] {
+        const array = Array.from({length: (this.max + 1)}, (x, i) => i);
+        array.shift();
+        return array
     }
 
     public valueChanged(value: number) {
