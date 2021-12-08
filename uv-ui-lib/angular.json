@@ -117,6 +117,30 @@
                   "maximumError": "4kb"
                 }
               ]
+            },
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/uv-ui-prototype/src/environments/environment.ts",
+                  "with": "projects/uv-ui-prototype/src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "aws-ut": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/uv-ui-prototype/src/environments/environment.ts",
+                  "with": "projects/uv-ui-prototype/src/environments/environment.aws-ut.ts"
+                }
+              ]
+            },
+            "azure-ut": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/uv-ui-prototype/src/environments/environment.ts",
+                  "with": "projects/uv-ui-prototype/src/environments/environment.azure-ut.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": ""
@@ -129,6 +153,15 @@
           "configurations": {
             "production": {
               "browserTarget": "uv-ui-prototype:build:production"
+            },
+            "dev": {
+              "browserTarget": "uv-ui-prototype:build:dev"
+            },
+            "aws-ut": {
+              "browserTarget": "uv-ui-prototype:build:aws-ut"
+            },
+            "azure-ut": {
+              "browserTarget": "uv-ui-prototype:build:azure-ut"
             }
           }
         },
@@ -177,6 +210,12 @@
           "configurations": {
             "production": {
               "devServerTarget": "uv-ui-prototype:serve:production"
+            },
+            "aws-ut": {
+              "devServerTarget": "uv-ui-prototype:serve:aws-ut"
+            },
+            "azure-ut": {
+              "devServerTarget": "uv-ui-prototype:serve:azure-ut"
             }
           }
         }

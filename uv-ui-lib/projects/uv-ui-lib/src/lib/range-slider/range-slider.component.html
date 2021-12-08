@@ -11,8 +11,7 @@
         id={{rangeId}}
         [(ngModel)]="value"
         [ngStyle]="{'background': background }"/>
-            <ng-content *ngIf="datalistEnabled" select="[datalist]"></ng-content>
-        <div class="slider-tooltip" [ngStyle]="{'left': tooltipPosition }">
+        <div *ngIf="tooltip" class="slider-tooltip" [ngStyle]="{'left': tooltipPosition }">
             <span class="uv-body-sm">
                 {{value}}
             </span>
@@ -20,6 +19,13 @@
         <div class="flex justify-content-space-between">
             <span class="uv-body-sm">{{minLabel}}</span>
             <span class="uv-body-sm">{{maxLabel}}</span>
+        </div>
+        <div class="flex justify-content-space-between" *ngIf="valueMarkers">
+            <span *ngFor="let number of getValueMarkers" 
+            class="uv-body-secondary semibold"
+            [class.marker-active]="this.value === number">
+            {{number}}
+            </span>
         </div>
     </div>
     <input *ngIf="numberInput"

@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core
 import { takeUntil } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { SidebySideService } from '../../services/side-by-side.service';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../auth/user.service';
 
 @Component({
   selector: 'uv-prototype-sbs-landing',
