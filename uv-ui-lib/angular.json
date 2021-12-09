@@ -141,6 +141,14 @@
                   "with": "projects/uv-ui-prototype/src/environments/environment.azure-ut.ts"
                 }
               ]
+            },
+            "local-ut": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/uv-ui-prototype/src/environments/environment.ts",
+                  "with": "projects/uv-ui-prototype/src/environments/environment.local-ut.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": ""
@@ -162,6 +170,9 @@
             },
             "azure-ut": {
               "browserTarget": "uv-ui-prototype:build:azure-ut"
+            },
+            "local-ut": {
+              "browserTarget": "uv-ui-prototype:build:local-ut"
             }
           }
         },
@@ -216,6 +227,9 @@
             },
             "azure-ut": {
               "devServerTarget": "uv-ui-prototype:serve:azure-ut"
+            },
+            "local-ut": {
+              "devServerTarget": "uv-ui-prototype:serve:local-ut"
             }
           }
         }
