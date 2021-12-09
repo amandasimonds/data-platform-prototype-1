@@ -82,8 +82,8 @@ export class MainComponent implements OnInit {
         );
     }
 
-    public get checkifSearch(): boolean {
-        return this.title === 'Search';
+    public get checkifDashboard(): boolean {
+        return this.title === 'Dashboard';
     }
 
     public get isDevUser(): boolean {

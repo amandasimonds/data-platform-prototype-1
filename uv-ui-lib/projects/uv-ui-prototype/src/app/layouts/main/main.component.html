@@ -5,25 +5,29 @@
             [icon]="headerIcon"
             [uvHighlight]="headerIsHighlight">
 
-            <uvx-search-panel mode="global" *ngIf="checkifSearch">
-                <input type="text"
-                placeholder="Search"
-                class="uv-input margin-left-xs">
-            </uvx-search-panel>
+            <div left class="margin-left-sm"> 
+                <uvx-search-panel mode="component-border"  width="40vw" *ngIf="checkifDashboard">
+                    <input type="text"
+                    placeholder="Search"
+                    class="uv-input margin-left-xs">
+                </uvx-search-panel>
+            </div>
 
-            <uvx-icon-button
-            color="primary"
-            matTooltip="Launch Wizard"
-            icon="help" (click)="launchWizard()">
-            </uvx-icon-button>
-
-            <uvx-icon-button 
-                color='primary' 
-                icon="user" 
-                class="margin-left-sm margin-right-sm"
-                matTooltip="Log out"
-                (click)="logout()">
-            </uvx-icon-button>    
+            <div right>
+                <uvx-icon-button
+                    color="primary"
+                    matTooltip="Launch Wizard"
+                    icon="help" (click)="launchWizard()">
+                </uvx-icon-button>
+            
+                <uvx-icon-button 
+                    color='primary' 
+                    icon="user" 
+                    class="margin-left-sm margin-right-sm"
+                    matTooltip="Log out"
+                    (click)="logout()">
+                </uvx-icon-button>    
+            </div>
 
         </uvx-header>
     </div>
@@ -49,9 +53,6 @@
                 [class.nav-icon-active]="navActiveIcon === 'search'">
                     <a (click)="toggleSearchSidebar()">
                         <uvx-icon icon="search" color="black"></uvx-icon>
-                        <!-- <img
-                        app-icon="app-icon" 
-                        src="http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-search-gradient.svg"> -->
                     </a>
                 </span>
             </div>

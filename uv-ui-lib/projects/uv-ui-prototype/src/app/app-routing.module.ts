@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AutoLoginAllRoutesGuard } from 'angular-auth-oidc-client';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './layouts/main/main.component';
 import { SettingsComponent } from './settings/settings.component';
-import { AuthCallbackComponent } from './layouts/auth-callback/auth-callback.component';
-import { IconDisplayComponent } from './icon-display/icon-display.component';
+import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
+import { IconDisplayComponent } from './pages/icon-display/icon-display.component';
 
 const routes: Routes = [
     {
@@ -32,7 +32,7 @@ const routes: Routes = [
         children: [
             {
                 path: 'home-splash',
-                loadChildren: () => import('./home-splash/home-splash.module').then(m => m.HomeSplashModule)
+                loadChildren: () => import('./pages/home-splash/home-splash.module').then(m => m.HomeSplashModule)
             },
             {
                 path: 'sbs',
