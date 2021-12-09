@@ -8,11 +8,13 @@
         </span>
         <h4>{{headerText}}</h4>
 
+        <ng-content select="[left]"></ng-content>
+
     </div>
 
     <div class="flex flex-row justify-content-center align-items-center">
 
-        <ng-content></ng-content>
+        <ng-content select="[right]"></ng-content>
 
     </div>
 

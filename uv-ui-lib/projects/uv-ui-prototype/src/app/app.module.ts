@@ -21,8 +21,8 @@ import {
 } from '../../../uv-ui-lib/src/public-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { HomeSplashModule } from './home-splash/home-splash.module';
+import { LoginComponent } from './pages/login/login.component';
+import { HomeSplashModule } from './pages/home-splash/home-splash.module';
 import { MainComponent } from './layouts/main/main.component';
 import { HelperService } from './services/helper.service';
 import { SearchService } from './services/search.service';
@@ -38,10 +38,11 @@ import { CompareWarningModule } from './search/compare-warning/compare-warning.m
 import { UvLightComponent } from './uv-light/uv-light.component';
 import { UserService } from './auth/user.service';
 import { UvLightService } from './services/uv-light.service';
-import { IconDisplayComponent } from './icon-display/icon-display.component';
+import { IconDisplayComponent } from './pages/icon-display/icon-display.component';
 import { ProfileViewerService } from './global-where-used/profile-viewer.service';
 import {NgxEchartsModule} from 'ngx-echarts';
 import * as echarts from 'echarts';
+import { DashboardComponent } from './layouts/dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
@@ -49,7 +50,8 @@ import * as echarts from 'echarts';
         LoginComponent,
         MainComponent,
         UvLightComponent,
-        IconDisplayComponent
+        IconDisplayComponent,
+        DashboardComponent
     ],
     imports: [
         ActionBarModule,
