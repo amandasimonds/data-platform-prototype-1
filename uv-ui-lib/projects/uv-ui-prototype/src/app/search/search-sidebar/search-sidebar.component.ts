@@ -2,7 +2,7 @@ import { AfterViewChecked, ChangeDetectorRef, Component, ElementRef, EventEmitte
 import { takeUntil } from 'rxjs/operators';
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../models/search-result.model';
-import { slideInOutAnimation } from '../../animations';
+import { slideInOutAnimation } from '../../shared/animations';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 
 @Component({

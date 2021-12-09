@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { slideInOutRightAnimation } from '../../../animations';
+import { slideInOutRightAnimation } from '../../../shared/animations';
 
 @Component({
   selector: 'app-helper-bar',

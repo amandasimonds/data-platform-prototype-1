@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { AppShellService } from '../services/app-shell.service';
+import { AppShellService } from '../../services/app-shell.service';
 
 @Component({
   selector: 'prototype-uv-ui-home-splash',
