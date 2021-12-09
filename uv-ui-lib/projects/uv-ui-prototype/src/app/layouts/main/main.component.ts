@@ -9,6 +9,7 @@ import { UserService } from '../../auth/user.service';
 import { UvLightService } from '../../services/uv-light.service';
 import { navItems } from './navItems';
 import { AuthService } from '../../auth/auth.service';
+import { environment } from 'projects/uv-ui-prototype/src/environments/environment';
 
 @Component({
     selector: 'prototype-app-main',
@@ -119,9 +120,8 @@ export class MainComponent implements OnInit {
     }
 
     public logout() {
-        console.log('log out');
-        this.authService.signOut();
         localStorage.clear();
+        window.location.href = `${environment.authConfig.authority}/v2/logout?federated`;
         this.router.navigate(['/logout']);
     }
     

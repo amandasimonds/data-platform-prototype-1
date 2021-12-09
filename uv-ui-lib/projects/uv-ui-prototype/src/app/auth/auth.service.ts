@@ -27,6 +27,17 @@ export class AuthService {
       }
 
       public signOut(): void {
-        this.oidcSecurityService.logoff();
+        // this.oidcSecurityService.logoffAndRevokeTokens();
+        console.log(this.oidcSecurityService.getEndSessionUrl());
       }
+
+    //   var webAuth = new auth0.WebAuth({
+    //     domain:       'YOUR_DOMAIN',
+    //     clientID:     'YOUR_CLIENT_ID'
+    //   });
+      
+    //   public webAuth.logout({
+    //     returnTo: 'YOUR_LOGOUT_URL',
+    //     client_id: 'YOUR_CLIENT_ID'
+    //   });
 }
