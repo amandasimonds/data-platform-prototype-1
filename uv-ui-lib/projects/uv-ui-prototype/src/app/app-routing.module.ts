@@ -35,6 +35,10 @@ const routes: Routes = [
                 loadChildren: () => import('./pages/home-splash/home-splash.module').then(m => m.HomeSplashModule)
             },
             {
+                path: 'dashboard',
+                loadChildren: () => import('./layouts/dashboard/dashboard.module').then(m => m.DashboardModule)
+            },
+            {
                 path: 'sbs',
                 loadChildren: () => import('./side-by-side/side-by-side.module').then(m => m.SideBySideModule)
             },

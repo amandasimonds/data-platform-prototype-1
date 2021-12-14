@@ -1,1 +1,36 @@
-<p>dashboard works!</p>
+<div class="container flex padding-sm">
+    <div class="side-container gap-sm flex-column padding-right-sm padding-left-sm">
+        <div class="item item-square"></div>
+        <div class="item item-square margin-top-sm"></div>
+        <div class="item item-square margin-top-sm"></div>
+        <div class="item item-square margin-top-sm"></div>
+        <div class="item item-square margin-top-sm"></div>
+    </div>
+
+    <div class="main-container flex flex-column">
+        <div class="top-container padding-right-sm padding-left-sm flex justify-content-space-between">
+            <uvx-dropdown *ngFor="let item of placeholderDropdowns">
+                <div title>
+                    <uvx-icon icon="cube" size="sm" class="margin-right-xxs"></uvx-icon>Placeholder
+                </div>
+            </uvx-dropdown>
+        </div>
+        <div class="widget-container align-items-stretch align-content-stretch flex flex-column gap-sm padding-top-sm padding-left-sm">
+            <div class="flex h-100 align-items-stretch align-content-stretch gap-sm">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <div class="flex h-100 align-items-stretch align-content-stretch gap-sm">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wallet">
+        <uvx-icon-button icon="double_left"></uvx-icon-button>
+    </div>
+
+</div>
+
+

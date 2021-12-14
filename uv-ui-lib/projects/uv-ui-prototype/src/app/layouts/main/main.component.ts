@@ -33,6 +33,9 @@ export class MainComponent implements OnInit {
     public selectedItem = '';
     public chevronUser = 'user_chevron@test.com';
     public cumminsUser = 'user_cummins@test.com';
+    public miniWalletOpen = false;
+    public walletOpen = false;
+    public walletSidebarState = 'hidden';
 
     @Input() public searchQuery = '';
 
@@ -53,7 +56,6 @@ export class MainComponent implements OnInit {
     constructor(
         public appShellService: AppShellService,
         public searchService: SearchService,
-        private authService: AuthService,
         private ref: ChangeDetectorRef,
         private route: ActivatedRoute,
         private router: Router,
@@ -127,5 +129,16 @@ export class MainComponent implements OnInit {
     
     public closeCompareWarning(): void {
         this.compareWarning = false;
+    }
+
+    public toggleWallet() {
+        setTimeout(() => {this.miniWalletOpen = !this.miniWalletOpen;}, 100);
+        this.walletOpen = !this.walletOpen;
+    }
+
+    public toggleWalletSidebar() {
+        console.log('full wallet toggle', this.walletSidebarState);
+        this.miniWalletOpen = false;
+        this.walletSidebarState === 'visible' ? this.walletSidebarState = 'hidden' : this.walletSidebarState = 'visible';
     }
 }

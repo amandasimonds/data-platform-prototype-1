@@ -1,0 +1,22 @@
+.wallet-wrap {
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.16));
+    position: absolute;
+    top: 46px;
+    right: 14px;
+}
+
+.wallet-point {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: relative;
+    left: 40%;
+    width: 40px;
+    height: 20px;
+    background-color: var(--uv-color-white);
+}
+
+.wallet {
+    text-align: left;
+    width: auto;
+    background-color: var(--uv-color-white);
+    border-radius: 4px;
+}

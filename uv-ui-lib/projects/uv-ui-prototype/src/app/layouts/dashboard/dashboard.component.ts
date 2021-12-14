@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppShellService } from '../../services/app-shell.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appShellService: AppShellService){}
 
-  ngOnInit(): void {
-  }
+  public placeholderDropdowns = [
+    {
+      title: 'Placeholder'
+    },
+    {
+      title: 'Placeholder'
+    },
+    {
+      title: 'Placeholder'
+    },
+    {
+      title: 'Placeholder'
+    }
+  ]
+
+    public ngOnInit(): void {
+        this.appShellService.setTitle('Dashboard');
+        this.appShellService.setHeaderIcon('dashboard');
+        this.appShellService.setNavIcon('home-splash');
+    }
 
 }

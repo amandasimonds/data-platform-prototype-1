@@ -16,6 +16,15 @@
             <div right>
                 <uvx-icon-button
                     color="primary"
+                    [matTooltip]="walletOpen ? 'Close Wallet' : 'Open Wallet'"
+                    class="margin-right-sm"
+                    id="wallet-icon"
+                    icon="store" (click)="toggleWallet()" (dblclick)="toggleWalletSidebar()">
+                </uvx-icon-button>
+                <app-wallet *ngIf="miniWalletOpen"></app-wallet>
+                
+                <uvx-icon-button
+                    color="primary"
                     matTooltip="Launch Wizard"
                     icon="help" (click)="launchWizard()">
                 </uvx-icon-button>
@@ -100,6 +109,7 @@
         [selectedItem]="selectedItem">
     </app-compare-warning>
 
-    <app-uv-light *ngIf="uvLight" (uvLightToggle)="toggleUvLight()"></app-uv-light>
+    <app-wallet-full (walletSidebarClosedEvent)="toggleWalletSidebar()" [walletSidebarState]="walletSidebarState"></app-wallet-full>
 
+    <app-uv-light *ngIf="uvLight" (uvLightToggle)="toggleUvLight()"></app-uv-light>
 </div>
