@@ -1,4 +1,4 @@
-<div *ngIf="mode === 'fancy'" class="select-wrapper" (click)="toggle()" [ngStyle]="{'width' : width}">
+<div *ngIf="mode === 'fancy'" class="select-wrapper" (click)="toggle()" [ngStyle]="{'width' : width}" [class.select-wrapper-border]="hasBorder">
     <div class="select" [class.open]="open">
         <div class="select__trigger">
             <ng-content select="[title]"></ng-content>

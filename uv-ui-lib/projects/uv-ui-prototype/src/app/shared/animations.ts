@@ -30,6 +30,21 @@ export const slideInOutRightAnimation = [
     ])
 ];
 
+export const slideInOutRightSidebarAnimation = [
+    trigger('slideInOutRightSidebarAnimation', [
+
+        state('visible', style({
+            transform: 'translateX(0)'
+        })),
+
+        state('hidden', style({
+            transform: 'translateX(500px)'
+        })),
+
+        transition('hidden <=> visible', animate(300))
+    ])
+];
+
 export const flyInOutAnimation = [
     trigger('flyInOut', [
 

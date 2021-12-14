@@ -1,0 +1,41 @@
+.container {
+    // border: 3px solid green;
+    height: 100%;
+}
+
+.item {
+    width: 100%;
+    background-color: var(--uv-color-white);
+
+    &-square {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+.side-container {
+    // border: 2px solid red;
+}
+
+.main-container {
+    // border: 3px solid orange;
+    width: 100%;
+    height: 100%;
+}
+
+.top-container {
+// border: 2px solid purple;
+}
+
+.widget-container {
+    height: 100%;
+    // border: 2px solid purple;
+}
+
+.wallet {
+    // border: 2px solid green;
+    width: 20vw;
+    position: relative;
+    right: -30px;
+    background-color: var(--uv-color-white);
+}

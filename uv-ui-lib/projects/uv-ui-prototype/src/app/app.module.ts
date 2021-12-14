@@ -42,7 +42,7 @@ import { IconDisplayComponent } from './pages/icon-display/icon-display.componen
 import { ProfileViewerService } from './global-where-used/profile-viewer.service';
 import {NgxEchartsModule} from 'ngx-echarts';
 import * as echarts from 'echarts';
-import { DashboardComponent } from './layouts/dashboard/dashboard.component';
+import { WalletModule } from './wallet/wallet.module';
 
 @NgModule({
     declarations: [
@@ -50,8 +50,7 @@ import { DashboardComponent } from './layouts/dashboard/dashboard.component';
         LoginComponent,
         MainComponent,
         UvLightComponent,
-        IconDisplayComponent,
-        DashboardComponent
+        IconDisplayComponent
     ],
     imports: [
         ActionBarModule,
@@ -80,7 +79,8 @@ import { DashboardComponent } from './layouts/dashboard/dashboard.component';
         SidePanelModule,
         SideBySideModule,
         TabModule,
-        UvxIconModule
+        UvxIconModule,
+        WalletModule
     ],
     providers: [
         AppShellService,

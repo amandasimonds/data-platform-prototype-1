@@ -1,0 +1,32 @@
+<div id="wallet" class="wallet-wrap">
+    <div class="wallet-point"></div>
+    <div class="wallet">
+        <div class="padding-xs">
+            <p class="uv-body small margin-bottom-xxs">Category</p>
+            <div class="uv-body"><uvx-checkbox></uvx-checkbox> Folder name 01 </div>
+            <div class="uv-body"><uvx-checkbox></uvx-checkbox> Folder name 01 </div>
+        </div>
+        <div class="divider"></div>
+        <div class="padding-xs">
+            <p class="uv-body small margin-bottom-xxs">Category</p>
+            <div class="uv-body"><uvx-checkbox></uvx-checkbox> Folder name 01 </div>
+            <div class="uv-body"><uvx-checkbox></uvx-checkbox> Folder name 01 </div>
+        </div>
+        <div class="divider"></div>
+        <div class="padding-xs">    
+            <epd-pl-button-dropdown 
+            [disabled]="false" 
+            contentText="Add to Wallet" 
+            color="primary" 
+            [disableRipple]="true"> 
+            <ng-template epdPlButtonIconTmp>
+                <uvx-icon color="white" class="margin-right-xxs" icon="store"></uvx-icon>
+            </ng-template>
+                <ng-template epdPlButtonDropdownItemTmp>
+                    <div epd-pl-button-dropdown-item>Option 1</div>
+                    <div epd-pl-button-dropdown-item>Option 2</div>
+                </ng-template>
+            </epd-pl-button-dropdown>
+        </div>
+    </div>
+</div>

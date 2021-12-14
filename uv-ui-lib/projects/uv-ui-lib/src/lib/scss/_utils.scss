@@ -70,11 +70,19 @@
     &-center {
         align-items: center;
     }
+
+    &-stretch {
+        align-items: stretch;
+    }
 }
 
 .align-content {
     &-center {
         align-content: center;
+    }
+
+    &-stretch {
+        align-content: stretch;
     }
 }
 
@@ -190,6 +198,10 @@
 
 .padding-left-md {
     padding-left: var(--uv-md-size);
+}
+
+.padding-top-sm {
+    padding-top: var(--uv-sm-size);
 }
 
 .margin-auto {

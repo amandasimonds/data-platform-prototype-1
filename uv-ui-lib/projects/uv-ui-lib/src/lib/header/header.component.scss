@@ -3,5 +3,5 @@
     border-left: none;
     border-right: none;
     height: 100%;
-    z-index: 100;
+    z-index: var(--uv-z-index-header);
 }
