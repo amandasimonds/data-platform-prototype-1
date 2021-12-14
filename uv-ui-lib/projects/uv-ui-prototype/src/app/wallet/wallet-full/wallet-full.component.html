@@ -1,0 +1,46 @@
+<div class="wallet-sidebar" [@slideInOutRightSidebarAnimation]="walletSidebarState">
+    <div class="padding-sm">
+        <div class="flex flex-column">
+            <div class="flex align-items-center justify-content-space-between margin-bottom-sm">
+                <div class="flex">
+                    <h4 class="margin-right-xs">Wallet</h4>
+                    <uvx-icon-button icon="more_horisontal"></uvx-icon-button>
+                </div>
+                <uvx-icon-button icon="close" color="gray" (click)="onCloseClicked('hidden')"></uvx-icon-button>
+            </div>
+            <p class="uv-body margin-bottom-xs">
+                Description about the wallet feature here.
+            </p>
+
+            <div class="flex align-items-center justify-content-space-between">
+                <div class="flex align-items-center">
+                    <epd-pl-button-dropdown 
+                        [disabled]="true" 
+                        class="margin-right-xs"
+                        contentText="Launch" 
+                        color="primary" 
+                        [disableRipple]="true"> 
+                        <ng-template epdPlButtonDropdownItemTmp>
+                            <div epd-pl-button-dropdown-item>Option 1</div>
+                            <div epd-pl-button-dropdown-item>Option 2</div>
+                        </ng-template>
+                    </epd-pl-button-dropdown>
+                    <span>View objects</span>
+                </div>
+                <uvx-icon-button icon="filter"></uvx-icon-button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="divider"></div>
+    <div class="padding-sm">
+        <uvx-icon-button icon="folder_plus"></uvx-icon-button>
+    </div>
+    <div class="divider"></div>
+    <div class="padding-sm">
+        <h6>Entities</h6>
+    </div>
+    <div class="divider"></div>
+</div>
