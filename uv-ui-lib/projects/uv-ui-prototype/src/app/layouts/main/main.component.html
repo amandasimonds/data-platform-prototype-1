@@ -105,7 +105,7 @@
     </div>
 
     <div class="uv-ui-shell-subnavbar"> -->
-        <uvx-navbar-extended (toggleButtonClicked)="toggleSubNavbar()" [navbarExtendedState]="subNavbarState"></uvx-navbar-extended>
+        <uvx-navbar-extended *ngIf="currentApp === 'settings'" (toggleButtonClicked)="toggleSubNavbar()" [navbarExtendedState]="subNavbarState"></uvx-navbar-extended>
     </div>
 
     <div class="uv-ui-shell-content">
