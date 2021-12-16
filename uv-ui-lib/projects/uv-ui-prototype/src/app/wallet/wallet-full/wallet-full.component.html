@@ -25,7 +25,7 @@
                             <div epd-pl-button-dropdown-item>Option 2</div>
                         </ng-template>
                     </epd-pl-button-dropdown>
-                    <span>View objects</span>
+                    <uvx-button mode="secondary" label="View Objects"></uvx-button>
                 </div>
                 <uvx-icon-button icon="filter"></uvx-icon-button>
             </div>
@@ -36,7 +36,30 @@
 
     <div class="divider"></div>
     <div class="padding-sm">
-        <uvx-icon-button icon="folder_plus"></uvx-icon-button>
+        <uvx-icon-button icon="folder_plus" *ngIf="!folderTreeOpen" (click)="toggleFolderTree()"></uvx-icon-button>
+        
+        <div *ngIf="folderTreeOpen">
+            <div class="flex justify-content-space-between">
+                <uvx-search-panel rounded="true" mode="component-border" >
+                    <input type="text"
+                    placeholder="Search Entities"
+                    class="uv-input margin-left-xs"
+                    maxlength="40">
+                </uvx-search-panel>
+                <uvx-icon-button icon="filter"></uvx-icon-button>
+                <uvx-icon-button icon="arrow_uprward" (click)="toggleFolderTree()"></uvx-icon-button>
+            </div>
+
+            <div class="margin-top-sm">
+                <div *ngFor="let folder of folders" 
+                class="margin-bottom-xxs">
+                    <uvx-folder-tree-icon 
+                        [open]="folder.open" 
+                        (click)="folder.open = !folder.open">
+                    </uvx-folder-tree-icon>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="divider"></div>
     <div class="padding-sm">
