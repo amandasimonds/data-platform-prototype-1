@@ -8,7 +8,6 @@ import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { UserService } from '../../auth/user.service';
 import { UvLightService } from '../../services/uv-light.service';
 import { navItems } from './navItems';
-import { AuthService } from '../../auth/auth.service';
 import { environment } from 'projects/uv-ui-prototype/src/environments/environment';
 
 @Component({
@@ -36,6 +35,7 @@ export class MainComponent implements OnInit {
     public miniWalletOpen = false;
     public walletOpen = false;
     public walletSidebarState = 'hidden';
+    public navbarExtendedState = 'navbar-peek';
 
     @Input() public searchQuery = '';
 
@@ -140,5 +140,9 @@ export class MainComponent implements OnInit {
         console.log('full wallet toggle', this.walletSidebarState);
         this.miniWalletOpen = false;
         this.walletSidebarState === 'visible' ? this.walletSidebarState = 'hidden' : this.walletSidebarState = 'visible';
+    }
+
+    public toggleExtendedNavbar() {
+        this.navbarExtendedState === 'visible' ? this.navbarExtendedState = 'navbar-peek' : this.navbarExtendedState = 'visible';
     }
 }

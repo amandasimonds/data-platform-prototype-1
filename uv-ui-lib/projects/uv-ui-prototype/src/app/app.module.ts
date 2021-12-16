@@ -17,7 +17,8 @@ import {
     BackdropModule,
     ModalModule,
     IconDisplayModule,
-    TooltipModule
+    TooltipModule,
+    NavbarExtendedModule
 } from '../../../uv-ui-lib/src/public-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -69,6 +70,7 @@ import { WalletModule } from './wallet/wallet.module';
         ModalModule,
         TooltipModule,
         NavbarModule,
+        NavbarExtendedModule,
         NgxEchartsModule.forRoot({
             echarts: () => import('echarts')
           }),

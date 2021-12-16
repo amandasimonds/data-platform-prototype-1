@@ -43,6 +43,7 @@
 
     <div class="uv-ui-shell-navbar">
         <uvx-navbar>
+            <uvx-icon-button (click)="toggleExtendedNavbar()" icon="double_right"></uvx-icon-button>
 
             <div *ngIf="isDevUser">
                 <span *ngFor="let navlink of navlinks" 
@@ -91,6 +92,8 @@
             </div>
 
         </uvx-navbar>
+
+        <uvx-navbar-extended (toggleButtonClicked)="toggleExtendedNavbar()" [navbarExtendedState]="navbarExtendedState"></uvx-navbar-extended>
     </div>
 
     <div class="uv-ui-shell-content">
