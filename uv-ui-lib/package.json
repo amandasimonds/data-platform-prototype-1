@@ -12,6 +12,7 @@
     "deploy-aws": "npm run build-aws && aws s3 cp dist/uv-ui-prototype s3://uv-design-prototype-usability-testing --recursive",
     "build-azure-ut": "ng build uv-ui-prototype --configuration azure-ut",
     "deploy-azure-ut": "npm run build-azure-ut && azcopy copy dist/uv-ui-prototype/* https://uvuiusabilitytest.blob.core.windows.net/$web --recursive",
+    "deploy-azure": "npm run deploy-dev && npm run deploy-azure-ut",
     "deploy-all": "npm run deploy-dev && npm run deploy-aws && npm run deploy-azure-ut",
     "test": "ng test",
     "lint": "eslint -c .eslintrc.json --ext .ts projects/uv-ui-prototype",
