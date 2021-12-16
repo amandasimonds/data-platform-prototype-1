@@ -5,10 +5,24 @@
     border-bottom: none;
     background-color: var(--uv-color-white);
     box-shadow: var(--uv-box-shadow);
+    width: var(--uv-navbar-width);
+    transition: width 0.25s;
+
+    &-expanded {
+        width: 200px;
+    }
 }
 
 .navbar-logo {
     width: var(--uv-md-size);
-    margin: 0 auto;
     height: calc(var(--uv-header-height) - 2px);
+    margin-left: 15px;
+}
+
+.content {
+    padding: 0 8px;
+}
+
+.logo-box {
+    padding-left: 8px;
 }

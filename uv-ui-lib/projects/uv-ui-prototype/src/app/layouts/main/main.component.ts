@@ -35,7 +35,8 @@ export class MainComponent implements OnInit {
     public miniWalletOpen = false;
     public walletOpen = false;
     public walletSidebarState = 'hidden';
-    public navbarExtendedState = 'navbar-peek';
+    public subNavbarState = 'navbar-peek';
+    public navbarIsExpanded = false;
 
     @Input() public searchQuery = '';
 
@@ -142,7 +143,11 @@ export class MainComponent implements OnInit {
         this.walletSidebarState === 'visible' ? this.walletSidebarState = 'hidden' : this.walletSidebarState = 'visible';
     }
 
-    public toggleExtendedNavbar() {
-        this.navbarExtendedState === 'visible' ? this.navbarExtendedState = 'navbar-peek' : this.navbarExtendedState = 'visible';
+    public toggleSubNavbar() {
+        this.subNavbarState === 'visible' ? this.subNavbarState = 'navbar-peek' : this.subNavbarState = 'visible';
+    }
+
+    public toggleExpandNavbar() {
+        this.navbarIsExpanded = !this.navbarIsExpanded;
     }
 }

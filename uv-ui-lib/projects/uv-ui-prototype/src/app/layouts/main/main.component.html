@@ -42,22 +42,32 @@
     </div>
 
     <div class="uv-ui-shell-navbar">
-        <uvx-navbar>
-            <uvx-icon-button (click)="toggleExtendedNavbar()" icon="double_right"></uvx-icon-button>
+        <uvx-navbar [navbarIsExpanded]="navbarIsExpanded">
+            <div class="toggle-button">
+                <uvx-icon-button (click)="toggleExpandNavbar()" 
+                    color="gray"
+                    class="toggle-button"
+                    [matTooltip]="navbarIsExpanded ? 'Expand Menu' : 'Collapse Menu'"
+                    [icon]="navbarIsExpanded ? 'double_left' : 'double_right'">
+                </uvx-icon-button>
+            </div>
 
             <div *ngIf="isDevUser">
-                <span *ngFor="let navlink of navlinks" 
+                <div *ngFor="let navlink of navlinks" 
                 class="nav-icon"
                 [matTooltip]="navlink.tooltip"
                 [class.nav-icon-disabled]="navlink.disabled"
                 [class.nav-icon-active]="navActiveIcon === navlink.app">
                 <a [routerLink]="navlink.navlink"
+                class="display-inline-block"
                     [queryParams]="{app: navlink.app}"
                     (click)="closeSearchSidebar()">
                     <uvx-icon color="black" [icon]="navlink.icon"></uvx-icon>
-                    <!-- <img app-icon="app-icon" [src]="navlink.icon"> -->
+                    <p *ngIf="navbarIsExpanded" 
+                    class="display-inline-block margin-left-xxs fade-in">
+                    {{navlink.tooltip}}</p>
                 </a>
-                </span>
+                </div>
                 <span class="nav-icon"
                 matTooltip="Global Search"
                 [class.nav-icon-active]="navActiveIcon === 'search'">
@@ -92,8 +102,10 @@
             </div>
 
         </uvx-navbar>
+    </div>
 
-        <uvx-navbar-extended (toggleButtonClicked)="toggleExtendedNavbar()" [navbarExtendedState]="navbarExtendedState"></uvx-navbar-extended>
+    <div class="uv-ui-shell-subnavbar"> -->
+        <uvx-navbar-extended (toggleButtonClicked)="toggleSubNavbar()" [navbarExtendedState]="subNavbarState"></uvx-navbar-extended>
     </div>
 
     <div class="uv-ui-shell-content">
