@@ -11,7 +11,11 @@ export const slideInOutAnimation = [
             transform: 'translateX(-500px)'
         })),
 
-        transition('hidden <=> visible', animate(200))
+        state('navbar-peek', style({
+            transform: 'translateX(-210px)'
+        })),
+
+        transition('* <=> visible', animate(300))
     ]),
 ];
 
