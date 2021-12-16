@@ -1,9 +1,15 @@
-<div class="navbar flex flex-column align-content-center position-relative">
+<div class="navbar position-relative" [class.navbar-expanded]="navbarIsExpanded">
 
-    <img class="navbar-logo" src="http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg">
+    <div class="flex">
+        <img class="navbar-logo" src="http://dpzaq1wj21co3.cloudfront.net/uv-logo.svg">
+    </div>
 
     <div class="divider"></div>
 
-    <ng-content></ng-content>
+    <div class="content">
+
+        <ng-content></ng-content>
+
+    </div>
 
 </div>

@@ -6,7 +6,7 @@
     position: fixed;
     display: grid;
     grid-gap: 0;
-    grid-template-columns: [col1] var(--uv-navbar-width) [col2] auto;
+    grid-template-columns: [col1] min-content [col2] auto;
     grid-template-rows: [row1] var(--uv-header-height) [row2] auto;
     grid-template-areas: 
     "navbar header"
@@ -19,6 +19,12 @@
 
     &-navbar {
         grid-column: col1;
+        grid-row-start: row1;
+        grid-row-end: 3;
+    }
+
+    &-subnavbar {
+        grid-column: col2;
         grid-row-start: row1;
         grid-row-end: 3;
     }
