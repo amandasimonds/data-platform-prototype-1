@@ -45,4 +45,11 @@ export const navItems = [
         navlink: 'settings',
         tooltip: 'Settings'
     }
+    // {
+    //     app: 'search',
+    //     icon: 'search',
+    //     active: false,
+    //     navlink: null,
+    //     tooltip: 'Global Search'
+    // }
 ];

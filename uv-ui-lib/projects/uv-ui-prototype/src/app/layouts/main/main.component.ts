@@ -51,7 +51,11 @@ export class MainComponent implements OnInit {
     }
 
     public get headerIsHighlight(): boolean {
-        return this.currentHighlight === 'header' ? true : false;
+        return this.currentHighlight === 'header';
+    }
+
+    public handleNavlinkAction(item: string) {
+        item === 'search' ? this.toggleSearchSidebar() : this.closeSearchSidebar();
     }
 
     constructor(

@@ -62,14 +62,16 @@ body {
 }
 
 .nav-icon {
-    width: var(--uv-lg-size);
     height: var(--uv-lg-size);
     margin-top: 18px;
     border-radius: 50%;
     padding: 10px;
     display: flex;
     white-space: nowrap;
-    justify-content: center;
+    justify-content: left;
+    transition-property: border-radius;
+    transition-delay: 0.2s;
+    transition-duration: .1s;
 
     & > * {
         display: inline-block;
@@ -84,6 +86,12 @@ body {
 
         svg {
             color: var(--uv-color-primary);
+        }
+
+        &-expanded {
+            border-radius: 0%;
+            transition-property: border-radius;
+            transition-delay: 0s;
         }
     }
 
