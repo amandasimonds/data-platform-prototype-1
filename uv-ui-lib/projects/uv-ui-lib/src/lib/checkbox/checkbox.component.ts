@@ -25,7 +25,7 @@ export class CheckboxComponent implements ControlValueAccessor {
         }
     }
 
-    public isChecked = false;
+    @Input() public isChecked = false;
     public onChange: any = () => {};
     public onTouch: any = () => {};
 

@@ -4,6 +4,7 @@ import { WalletComponent } from './wallet.component';
 import { ButtonDropdownModule } from 'epd-pattern-library';
 import { ButtonModule, CheckboxModule, DropdownModule, FolderTreeIconModule, IconButtonModule, SearchPanelModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
 import { WalletFullComponent } from './wallet-full/wallet-full.component';
+import { WalletItemModule } from './wallet-item/wallet-item.module';
 
 @NgModule({
   declarations: [WalletComponent, WalletFullComponent],
@@ -16,7 +17,8 @@ import { WalletFullComponent } from './wallet-full/wallet-full.component';
     UvxIconModule,
     IconButtonModule,
     SearchPanelModule,
-    FolderTreeIconModule
+    FolderTreeIconModule,
+    WalletItemModule
   ],
   exports: [WalletComponent, WalletFullComponent]
 })

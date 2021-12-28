@@ -1,0 +1,16 @@
+.wallet-item {
+    display: inline-block;
+
+    &:hover {
+        cursor: grab;
+            background-color: var(--uv-color-primary-hover);
+    }
+
+    &-selected {
+        background-color: var(--uv-color-primary-hover);
+    }
+}
+
+.draggable {
+    cursor: grab !important;
+}
