@@ -10,10 +10,11 @@ import { slideInOutAnimation } from '../animations';
 export class NavbarExtendedComponent {
 
   @Input() public navbarExtendedState = 'navbar-peek';
+  @Input() public subNavbarIsExpanded = false;
   @Output() public readonly toggleButtonClicked = new EventEmitter<Event>();
 
   public get isVisible(): boolean {
-    return this.navbarExtendedState === 'visible'
+    return this.subNavbarIsExpanded
   }
 
   public onToggleButtonClicked($event: Event): void {
@@ -21,6 +22,6 @@ export class NavbarExtendedComponent {
   }
 
   public toggleExtendedNavbar() {
-    this.navbarExtendedState = 'navbar-peek';
+    this.subNavbarIsExpanded = !this.subNavbarIsExpanded;
   }
 }

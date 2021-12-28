@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { slideInOutRightSidebarAnimation } from '../../shared/animations';
+import {CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-wallet-full',
@@ -14,6 +15,7 @@ export class WalletFullComponent {
   @Output() public readonly walletSidebarClosedEvent = new EventEmitter<string>();
 
   public folderTreeOpen = false;
+  public viewObjectsOpen = true;
 
   public folders = [
     {
@@ -36,6 +38,10 @@ export class WalletFullComponent {
 
   public toggleFolderTree() {
     this.folderTreeOpen = !this.folderTreeOpen;
+  }
+
+  public toggleViewObjects() {
+    this.viewObjectsOpen = !this.viewObjectsOpen;
   }
 
 }
