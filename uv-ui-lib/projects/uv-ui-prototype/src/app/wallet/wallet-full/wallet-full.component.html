@@ -25,9 +25,12 @@
                             <div epd-pl-button-dropdown-item>Option 2</div>
                         </ng-template>
                     </epd-pl-button-dropdown>
-                    <uvx-button mode="secondary" label="View Objects"></uvx-button>
+                    <uvx-button mode="secondary" label="View Objects" (click)="toggleViewObjects()"></uvx-button>
                 </div>
                 <uvx-icon-button icon="filter"></uvx-icon-button>
+            </div>
+            <div class="margin-top-xs flex flex-column" *ngIf="viewObjectsOpen">
+                <app-wallet-item></app-wallet-item>
             </div>
 
         </div>
@@ -59,6 +62,21 @@
                     </uvx-folder-tree-icon>
                 </div>
             </div>
+
+            <div
+                id="folder"
+                cdkDropList
+                [cdkDropListData]="folder"
+                cdkDropListConnectedTo="folder"
+                (cdkDropListDropped)="drop($event)"
+                [cdkDropListEnterPredicate]="evenPredicate">
+                <div
+                class="example-box"
+                *ngFor="let number of even"
+                cdkDrag
+                [cdkDragData]="number">{{number}}</div>
+            </div>
+
         </div>
     </div>
     <div class="divider"></div>

@@ -37,6 +37,7 @@
     //colors
     --uv-color-primary: var(--uv-color-blue);
     --uv-color-primary-active: var(--uv-color-blue-2);
+    --uv-color-primary-hover: var(--uv-color-blue-3);
     --uv-color-success: #03a474;
     --uv-color-success-active: #007b56;
     --uv-color-success-light: #D6F0E9;
@@ -53,6 +54,7 @@
 
     --uv-color-blue: #00A3E5;
     --uv-color-blue-2:#0375a4;
+    --uv-color-blue-3: rgba(0,163,229,0.08);
     --uv-color-purple: #83439A;
     --uv-color-white: #ffffff;
     --uv-color-white-2: rgba(251, 251, 251, 0.9);

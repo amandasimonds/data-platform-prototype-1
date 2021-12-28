@@ -1,11 +1,22 @@
 .navbar-extended {
     height: 100%;
-    position: absolute;
-    top: var(--uv-header-height);
-    left: var(--uv-navbar-width);
-    // z-index: var(--uv-z-index-search-sidebar);
-    width: 250px;
+    width: 40px;
     box-shadow: 0 2px 14px 0 rgba(215,215,215,0.5);
     background-color: rgba(255, 255, 255, 0.529);
     border-right: var(--uv-border-gray);
+    transition: width 0.25s;
+
+    &-expanded {
+        width: 250px;
+    }
+
+    &-content {
+        opacity: 0;
+
+        &-visible {
+            opacity: 1;
+            transition-property: opacity;
+            transition-delay: 0.2s;
+        }
+    }
 }
