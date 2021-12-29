@@ -30,7 +30,14 @@
                 <uvx-icon-button icon="filter"></uvx-icon-button>
             </div>
             <div class="margin-top-xs flex flex-column" *ngIf="viewObjectsOpen">
-                <app-wallet-item></app-wallet-item>
+                <div
+                    cdkDropList
+                    id="items"
+                    [cdkDropListData]="items"
+                    [cdkDropListConnectedTo]="['folder']"
+                    (cdkDropListDropped)="onDrop($event)">
+                <app-wallet-item *ngFor="let item of items" [label]="item.name"></app-wallet-item>
+                </div>
             </div>
 
         </div>
@@ -54,27 +61,18 @@
             </div>
 
             <div class="margin-top-sm">
-                <div *ngFor="let folder of folders" 
-                class="margin-bottom-xxs">
-                    <uvx-folder-tree-icon 
-                        [open]="folder.open" 
-                        (click)="folder.open = !folder.open">
-                    </uvx-folder-tree-icon>
-                </div>
-            </div>
-
-            <div
-                id="folder"
+                <div 
                 cdkDropList
-                [cdkDropListData]="folder"
-                cdkDropListConnectedTo="folder"
-                (cdkDropListDropped)="drop($event)"
-                [cdkDropListEnterPredicate]="evenPredicate">
-                <div
-                class="example-box"
-                *ngFor="let number of even"
-                cdkDrag
-                [cdkDragData]="number">{{number}}</div>
+                *ngFor="let folder of folders" 
+                class="margin-bottom-xxs folder"
+                id="folder"
+                (cdkDropListDropped)="onDrop($event)"
+                [cdkDropListData]="folder.items">
+                    <uvx-folder-tree-icon [open]="folder.open" (click)="folder.open = !folder.open"></uvx-folder-tree-icon>
+                    <div *ngIf="folder.open">
+                        <app-wallet-item *ngFor="let item of folder.items" [label]="item.name"></app-wallet-item>
+                    </div>
+                </div>
             </div>
 
         </div>

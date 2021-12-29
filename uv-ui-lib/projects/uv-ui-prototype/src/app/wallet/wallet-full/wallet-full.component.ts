@@ -1,6 +1,7 @@
+import { CdkDragDrop, copyArrayItem, moveItemInArray } from '@angular/cdk/drag-drop';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DragDropService } from '../../services/drag-drop.service';
 import { slideInOutRightSidebarAnimation } from '../../shared/animations';
-import {CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-wallet-full',
@@ -14,23 +15,52 @@ export class WalletFullComponent {
   @Input() public walletSidebarState = 'hidden';
   @Output() public readonly walletSidebarClosedEvent = new EventEmitter<string>();
 
-  public folderTreeOpen = false;
+  public folderTreeOpen = true;
   public viewObjectsOpen = true;
 
   public folders = [
     {
       name: '',
-      open: false
+      open: false,
+      items: [
+        {
+          type: 'item',
+          name: 'Item 6'
+        },
+        {
+          type: 'item',
+          name: 'Item 7'
+        },
+      ]
     },
     {
       name: '',
-      open: false
+      open: false,
+      items: ['']
     },
     {
       name: '',
-      open: false
+      open: false,
+      items: ['']
     }
   ]
+
+  items = [
+    {
+      type: 'item',
+      name: 'Item 1'
+    },
+    {
+      type: 'item',
+      name: 'Item 2'
+    },
+    {
+      type: 'item',
+      name: 'Item 3'
+    }
+  ];
+
+  constructor (private dragDropService: DragDropService) {}
 
   public onCloseClicked(state: string): void{
       this.walletSidebarClosedEvent.emit(state);
@@ -42,6 +72,10 @@ export class WalletFullComponent {
 
   public toggleViewObjects() {
     this.viewObjectsOpen = !this.viewObjectsOpen;
+  }
+
+  public onDrop(event: CdkDragDrop<string []>) {
+    this.dragDropService.copyOnDrop(event);
   }
 
 }

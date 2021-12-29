@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag} from '@angular/cdk/drag-drop';
 
 export interface IWalletItem {
@@ -15,6 +15,7 @@ export interface IWalletItem {
 export class WalletItemComponent {
 
   public isSelected = false;
+  @Input() public label = '';
 
   items: IWalletItem[] = [
     {
@@ -31,38 +32,20 @@ export class WalletItemComponent {
     }
   ];
 
-  even = [10];
-
-  drop(event: CdkDragDrop<IWalletItem[]>) {
+  onDrop(event: CdkDragDrop<string []>) {
     if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      )
     } else {
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,
-        event.currentIndex,
-      );
+        event.currentIndex
+      )
     }
   }
-
-  /** Predicate function that only allows even numbers to be dropped into a list. */
-  // evenPredicate(item: CdkDrag<number>) {
-  //   return item.data % 2 === 0;
-  // }
-
-  /** Predicate function that doesn't allow items to be dropped into a list. */
-  // noReturnPredicate() {
-  //   return false;
-  // }
-
-    
-    evenPredicate(item: CdkDrag<IWalletItem>) {
-      console.log();
-    }
-
-    noReturnPredicate() {
-      return false;
-    }
-
 }
