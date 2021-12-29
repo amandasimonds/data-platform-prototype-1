@@ -44,6 +44,7 @@ import { ProfileViewerService } from './global-where-used/profile-viewer.service
 import {NgxEchartsModule} from 'ngx-echarts';
 import * as echarts from 'echarts';
 import { WalletModule } from './wallet/wallet.module';
+import { DragDropService } from './services/drag-drop.service';
 
 @NgModule({
     declarations: [
@@ -88,6 +89,7 @@ import { WalletModule } from './wallet/wallet.module';
         AppShellService,
         AuthService,
         BackdropService,
+        DragDropService,
         HelperService,
         HttpClient,
         NgOnDestroyService,
