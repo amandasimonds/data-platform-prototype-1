@@ -1,16 +1,7 @@
+
 <div
-    id="wallet-items"
-    cdkDropList
-    [cdkDropListData]="items"
-    cdkDropListConnectedTo="folder"
-    class="example-list"
-    [class.wallet-item-selected]="isSelected"
-    (cdkDropListDropped)="drop($event)"
-    [cdkDropListEnterPredicate]="noReturnPredicate">
-    <div
-      class="wallet-item padding-xxs"
-      *ngFor="let item of items"
-      [cdkDragData]="item"
-      cdkDrag>
-      <uvx-checkbox [label]="item.name" class="draggable" [isChecked]="isSelected"></uvx-checkbox></div>
-  </div>
+  class="wallet-item padding-xxs"
+  [class.wallet-item-selected]="isSelected"
+  cdkDrag>
+  <uvx-checkbox class="draggable" [isChecked]="isSelected"></uvx-checkbox> {{label}}
+</div>

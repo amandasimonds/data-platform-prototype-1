@@ -1,5 +1,6 @@
 .wallet-item {
-    display: inline-block;
+    // display: inline-block;
+    cursor: grab;
 
     &:hover {
         cursor: grab;
