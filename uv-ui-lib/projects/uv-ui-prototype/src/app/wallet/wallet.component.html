@@ -3,33 +3,54 @@
     <div class="wallet">
         <div class="padding-xs">
             <p class="uv-body small margin-bottom-xxs">Category</p>
-            <div class="uv-body"><uvx-checkbox></uvx-checkbox> Folder name 01 </div>
-            <div class="uv-body"><uvx-checkbox></uvx-checkbox> Folder name 01 </div>
+            <div
+                cdkDropList
+                [cdkDropListData]="folders"
+                [cdkDropListConnectedTo]="['folder']"
+                (cdkDropListDropped)="onDrop($event)">
+                <app-wallet-item 
+                    [itemAmountTrue]="true"
+                    mode="folder"
+                    *ngFor="let folder of folders" 
+                    [itemAmount]="folder.items.length"
+                    [label]="folder.name">
+                </app-wallet-item>
+            </div>
         </div>
         <div class="divider"></div>
         <div class="padding-xs">
             <p class="uv-body small margin-bottom-xxs">Category</p>
-            <div class="uv-body"><uvx-checkbox></uvx-checkbox> Folder name 01 </div>
-            <div class="uv-body"><uvx-checkbox></uvx-checkbox> Folder name 01 </div>
+            <div
+                cdkDropList
+                [cdkDropListData]="folders"
+                [cdkDropListConnectedTo]="['folder']"
+                (cdkDropListDropped)="onDrop($event)">
+                <app-wallet-item 
+                    [itemAmountTrue]="true"
+                    *ngFor="let folder of folders" 
+                    [itemAmount]="folder.items.length" 
+                    [label]="folder.name">
+                </app-wallet-item>
+            </div>
         </div>
         <div class="divider"></div>
         <div class="padding-xs">    
             <epd-pl-button-dropdown 
-            [disabled]="false" 
-            contentText="Add to Wallet" 
-            color="primary" 
-            [disableRipple]="true"> 
-            <ng-template epdPlButtonIconTmp>
-                <uvx-icon color="white" class="margin-right-xxs" icon="store"></uvx-icon>
-            </ng-template>
+                [disabled]="false" 
+                contentText="Add to Wallet" 
+                color="primary" 
+                [disableRipple]="true"> 
+                <ng-template epdPlButtonIconTmp>
+                    <uvx-icon color="white" class="margin-right-xxs" icon="store"></uvx-icon>
+                </ng-template>
                 <ng-template epdPlButtonDropdownItemTmp>
                     <div epd-pl-button-dropdown-item>Option 1</div>
                     <div epd-pl-button-dropdown-item>Option 2</div>
                 </ng-template>
             </epd-pl-button-dropdown>
-
-            
-<button mat-flat-button color="primary" class="pl-small-button">Press me!</button>
+            <div class="margin-top-xs">
+                <uvx-button icon="store" mode="secondary" label="Open Wallet" (click)="openWalletClicked($event)"></uvx-button>
+            </div>
         </div>
     </div>
 </div>
