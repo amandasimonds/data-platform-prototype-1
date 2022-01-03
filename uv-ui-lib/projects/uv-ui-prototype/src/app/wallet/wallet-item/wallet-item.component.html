@@ -1,7 +1,22 @@
-
 <div
-  class="wallet-item padding-xxs"
-  [class.wallet-item-selected]="isSelected"
+  [class.entity]="isEntity"
+  [class.folder]="isFolder"
+  (click)="selectItem($event)"
+  [class.entity-selected]="isSelected && isEntity"
+  [class.folder-selected]="isSelected && isFolder"
+  [cdkDragDisabled]="isFolder"
   cdkDrag>
-  <uvx-checkbox class="draggable" [isChecked]="isSelected"></uvx-checkbox> {{label}}
+  <div class="flex justify-content-space-between align-items-center">
+    <div>
+      <uvx-checkbox class="draggable" [isChecked]="isSelected"></uvx-checkbox> 
+      <span *ngIf="!isEditMode; else editTpl">
+        {{label}}
+      </span>
+      <ng-template #editTpl>
+        <uvx-text-input></uvx-text-input>
+      </ng-template>
+      
+    </div>
+    <div *ngIf="itemAmountTrue" class="results-number results-number-sm">{{itemAmount}}</div>
+  </div>
 </div>

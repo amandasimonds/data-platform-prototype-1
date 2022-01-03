@@ -38,7 +38,7 @@ export const slideInOutRightSidebarAnimation = [
         })),
 
         state('hidden', style({
-            transform: 'translateX(500px)'
+            transform: 'translateX(510px)'
         })),
 
         transition('hidden <=> visible', animate(300))

@@ -1,0 +1,10 @@
+<div
+cdkDropList
+id="items"
+[cdkDropListData]="cdkDropListData"
+[cdkDropListConnectedTo]="['folder']"
+(cdkDropListDropped)="onDrop($event)">
+
+<ng-content></ng-content>
+
+</div>

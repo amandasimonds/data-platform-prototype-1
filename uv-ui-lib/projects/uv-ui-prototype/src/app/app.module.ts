@@ -18,7 +18,8 @@ import {
     ModalModule,
     IconDisplayModule,
     TooltipModule,
-    NavbarExtendedModule
+    NavbarExtendedModule,
+    NavbarSubModule
 } from '../../../uv-ui-lib/src/public-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -71,6 +72,7 @@ import { DragDropService } from './services/drag-drop.service';
         ModalModule,
         TooltipModule,
         NavbarModule,
+        NavbarSubModule,
         NavbarExtendedModule,
         NgxEchartsModule.forRoot({
             echarts: () => import('echarts')

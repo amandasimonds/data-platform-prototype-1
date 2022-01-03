@@ -21,7 +21,7 @@
                     id="wallet-icon"
                     icon="store" (click)="toggleWallet()" (dblclick)="toggleWalletSidebar()">
                 </uvx-icon-button>
-                <app-wallet *ngIf="miniWalletOpen"></app-wallet>
+                <app-wallet *ngIf="miniWalletOpen" (openWalletClickEvent)="toggleWalletSidebar()"></app-wallet>
                 
                 <uvx-icon-button
                     color="primary"
@@ -112,7 +112,38 @@
     </div>
 
     <div class="uv-ui-shell-subnavbar">
-        <uvx-navbar-extended *ngIf="currentApp === 'settings'" (toggleButtonClicked)="toggleSubNavbar()" [subNavbarIsExpanded]="subNavbarIsExpanded"></uvx-navbar-extended>
+        <uvx-navbar-sub [isExpanded]="subNavbarIsExpanded" *ngIf="currentApp === 'settings'">
+            <div class="toggle-button">
+                <uvx-icon-button (click)="toggleSubNavbar()" 
+                    color="gray"
+                    class="toggle-button"
+                    [matTooltip]="subNavbarIsExpanded ? 'Collapse Menu' : 'Expand Menu'"
+                    [icon]="subNavbarIsExpanded ? 'double_left' : 'double_right'">
+                </uvx-icon-button>
+            </div>
+
+                <div *ngFor="let navlink of settingsNavlinks" 
+                    class="nav-icon"
+                    [matTooltip]="navlink.tooltip"
+                    [class.nav-icon-active-expanded]="subNavbarIsExpanded"
+                    [class.nav-icon-disabled]="navlink.disabled"
+                    [class.nav-icon-active]="navActiveIcon === navlink.app"
+                    (click)="handleNavlinkAction(navlink.app)">
+                    <a [routerLink]="navlink.navlink"
+                        class="display-inline-block"
+                        [queryParams]="{app: navlink.app}">
+                        <uvx-icon color="black" [icon]="navlink.icon"></uvx-icon>
+                        <p [class.navbar-expanded-text-visible]="subNavbarIsExpanded"
+                            class="display-inline-block margin-left-xxs navbar-expanded-text">
+                            {{navlink.tooltip}}
+                        </p>
+                    </a>
+                </div>
+        </uvx-navbar-sub>
+        <!-- <uvx-navbar-extended *ngIf="currentApp === 'settings'" (toggleButtonClicked)="toggleSubNavbar()" [subNavbarIsExpanded]="subNavbarIsExpanded"></uvx-navbar-extended> -->
+    </div>
+    <div class="uv-ui-shell-subnavbar2">
+        <uvx-navbar-extended *ngIf="currentApp === 'settings'" (toggleButtonClicked)="toggleSubNavbar2()" [subNavbarIsExpanded]="subNavbar2IsExpanded"></uvx-navbar-extended>
     </div>
 
     <div class="uv-ui-shell-content">

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag} from '@angular/cdk/drag-drop';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 export interface IWalletItem {
   type: string;
@@ -15,22 +15,27 @@ export interface IWalletItem {
 export class WalletItemComponent {
 
   public isSelected = false;
+  
   @Input() public label = '';
+  @Input() itemAmountTrue = false;
+  @Input() public itemAmount = 0;
+  @Input() public mode: 'folder' | 'entity' = 'entity';
+  @Input() public isEditMode = false;
 
-  items: IWalletItem[] = [
-    {
-      type: 'item',
-      name: 'Item 1'
-    },
-    {
-      type: 'item',
-      name: 'Item 2'
-    },
-    {
-      type: 'item',
-      name: 'Item 3'
-    }
-  ];
+  @Output() public itemSelectedEvent = new EventEmitter<Event>();
+
+  public get isEntity(): boolean {
+    return this.mode === 'entity';
+  }
+
+  public get isFolder(): boolean {
+    return this.mode === 'folder';
+  }
+
+  public selectItem(event: Event) {
+    this.isSelected = !this.isSelected;
+    this.itemSelectedEvent.emit(event);
+  }
 
   onDrop(event: CdkDragDrop<string []>) {
     if (event.previousContainer === event.container) {

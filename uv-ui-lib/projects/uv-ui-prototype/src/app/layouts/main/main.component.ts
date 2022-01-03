@@ -9,6 +9,7 @@ import { UserService } from '../../auth/user.service';
 import { UvLightService } from '../../services/uv-light.service';
 import { navItems } from './navItems';
 import { environment } from 'projects/uv-ui-prototype/src/environments/environment';
+import { settingsNavlinks } from '../../settings/settingsNavLinks';
 
 @Component({
     selector: 'prototype-app-main',
@@ -20,6 +21,7 @@ import { environment } from 'projects/uv-ui-prototype/src/environments/environme
 export class MainComponent implements OnInit {
 
     public navlinks = navItems;
+    public settingsNavlinks = settingsNavlinks;
     public title = '';
     public headerIcon = '';
     public navActiveIcon = '';
@@ -34,10 +36,11 @@ export class MainComponent implements OnInit {
     public cumminsUser = 'user_cummins@test.com';
     public miniWalletOpen = false;
     public walletOpen = false;
-    public walletSidebarState = 'visible';
+    public walletSidebarState = 'hidden';
     public subNavbarState = 'navbar-peek';
     public navbarIsExpanded = false;
     public subNavbarIsExpanded = false;
+    public subNavbar2IsExpanded = false;
 
     @Input() public searchQuery = '';
 
@@ -55,8 +58,12 @@ export class MainComponent implements OnInit {
         return this.currentHighlight === 'header';
     }
 
-    public handleNavlinkAction(item: string) {
-        item === 'search' ? this.toggleSearchSidebar() : this.closeSearchSidebar();
+    public get checkifDashboard(): boolean {
+        return this.title === 'Dashboard';
+    }
+
+    public get isDevUser(): boolean {
+        return this.currentUser.name === this.chevronUser || this.currentUser.name === this.cumminsUser ? false : true;
     }
 
     constructor(
@@ -90,12 +97,9 @@ export class MainComponent implements OnInit {
         );
     }
 
-    public get checkifDashboard(): boolean {
-        return this.title === 'Dashboard';
-    }
-
-    public get isDevUser(): boolean {
-        return this.currentUser.name === this.chevronUser || this.currentUser.name === this.cumminsUser ? false : true;
+    
+    public handleNavlinkAction(item: string) {
+        item === 'search' ? this.toggleSearchSidebar() : this.closeSearchSidebar();
     }
 
     public toggleSearchSidebar(): void {
@@ -140,16 +144,20 @@ export class MainComponent implements OnInit {
     public toggleWallet() {
         setTimeout(() => {this.miniWalletOpen = !this.miniWalletOpen;}, 100);
         this.walletOpen = !this.walletOpen;
+        this.walletSidebarState = 'hidden';
     }
 
     public toggleWalletSidebar() {
-        console.log('full wallet toggle', this.walletSidebarState);
         this.miniWalletOpen = false;
         this.walletSidebarState === 'visible' ? this.walletSidebarState = 'hidden' : this.walletSidebarState = 'visible';
     }
 
     public toggleSubNavbar() {
         this.subNavbarIsExpanded = !this.subNavbarIsExpanded;
+    }
+
+    public toggleSubNavbar2() {
+        this.subNavbar2IsExpanded = !this.subNavbar2IsExpanded;
     }
 
     public toggleExpandNavbar() {
