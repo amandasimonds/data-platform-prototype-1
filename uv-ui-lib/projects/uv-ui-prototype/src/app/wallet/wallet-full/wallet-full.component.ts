@@ -2,6 +2,8 @@ import { CdkDragDrop, copyArrayItem, moveItemInArray } from '@angular/cdk/drag-d
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DragDropService } from '../../services/drag-drop.service';
 import { slideInOutRightSidebarAnimation } from '../../shared/animations';
+import { folders } from '../wallet-folders';
+import { items } from '../wallet-items';
 
 @Component({
   selector: 'app-wallet-full',
@@ -15,59 +17,16 @@ export class WalletFullComponent {
   @Input() public walletSidebarState = 'hidden';
   @Output() public readonly walletSidebarClosedEvent = new EventEmitter<string>();
 
-  public folderTreeOpen = true;
-  public viewObjectsOpen = true;
-
-  public folders = [
-    {
-      name: '',
-      open: false,
-      items: [
-        {
-          type: 'item',
-          name: 'Item 6'
-        },
-        {
-          type: 'item',
-          name: 'Item 7'
-        },
-      ]
-    },
-    {
-      name: '',
-      open: false,
-      items: ['']
-    },
-    {
-      name: '',
-      open: false,
-      items: ['']
-    }
-  ]
-
-  items = [
-    {
-      type: 'item',
-      name: 'Item 1'
-    },
-    {
-      type: 'item',
-      name: 'Item 2'
-    },
-    {
-      type: 'item',
-      name: 'Item 3'
-    }
-  ];
+  public viewObjectsOpen = false;
+  public folders = folders;
+  public items = items;
+  public folderSelected = false;
+  public folderIsEditMode = false;
 
   constructor (private dragDropService: DragDropService) {}
 
   public onCloseClicked(state: string): void{
       this.walletSidebarClosedEvent.emit(state);
-  }
-
-  public toggleFolderTree() {
-    this.folderTreeOpen = !this.folderTreeOpen;
   }
 
   public toggleViewObjects() {
@@ -76,6 +35,19 @@ export class WalletFullComponent {
 
   public onDrop(event: CdkDragDrop<string []>) {
     this.dragDropService.copyOnDrop(event);
+  }
+
+  public createFolder() {
+    alert("Create Folder dialogue");
+  }
+
+  public folderIsSelected(folder: any) {
+    folder.selected = !folder.selected;
+    folder.selected ? this.folderSelected = true : this.folderSelected = false;
+  }
+
+  public editFolder(folder: any) {
+    this.folderIsEditMode = !this.folderIsEditMode;
   }
 
 }

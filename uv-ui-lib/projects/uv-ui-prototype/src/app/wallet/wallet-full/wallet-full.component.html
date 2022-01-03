@@ -13,21 +13,19 @@
             </p>
 
             <div class="flex align-items-center justify-content-space-between">
-                <div class="flex align-items-center">
-                    <epd-pl-button-dropdown 
-                        [disabled]="true" 
-                        class="margin-right-xs"
-                        contentText="Launch" 
-                        color="primary" 
-                        [disableRipple]="true"> 
-                        <ng-template epdPlButtonDropdownItemTmp>
-                            <div epd-pl-button-dropdown-item>Option 1</div>
-                            <div epd-pl-button-dropdown-item>Option 2</div>
-                        </ng-template>
-                    </epd-pl-button-dropdown>
-                    <uvx-button mode="secondary" label="View Objects" (click)="toggleViewObjects()"></uvx-button>
-                </div>
-                <uvx-icon-button icon="filter"></uvx-icon-button>
+                <epd-pl-button-dropdown 
+                    [disabled]="true" 
+                    class="margin-right-xs"
+                    contentText="Launch" 
+                    color="primary" 
+                    [disableRipple]="true"> 
+                    <ng-template epdPlButtonDropdownItemTmp>
+                        <div epd-pl-button-dropdown-item>Option 1</div>
+                        <div epd-pl-button-dropdown-item>Option 2</div>
+                    </ng-template>
+                </epd-pl-button-dropdown>
+                <uvx-button mode="secondary" label="View Objects" (click)="toggleViewObjects()"></uvx-button>
+                <uvx-button mode="primary" label="Add To Wallet" (click)="toggleViewObjects()"></uvx-button>
             </div>
             <div class="margin-top-xs flex flex-column" *ngIf="viewObjectsOpen">
                 <div
@@ -45,38 +43,56 @@
     </div>
 
     <div class="divider"></div>
-    <div class="padding-sm">
-        <uvx-icon-button icon="folder_plus" *ngIf="!folderTreeOpen" (click)="toggleFolderTree()"></uvx-icon-button>
-        
-        <div *ngIf="folderTreeOpen">
-            <div class="flex justify-content-space-between">
+
+    <div class="padding-xs flex justify-content-space-between">
+        <uvx-icon-button icon="folder_plus"  class="margin-left-sm" (click)="createFolder()"></uvx-icon-button>
+        <div class="flex gap-xxs">
+            <div *ngIf="folderSelected" class="flex gap-xxs">
+                <uvx-icon-button icon="edit" (click)="editFolder()"></uvx-icon-button>
+                <uvx-icon-button icon="delete"></uvx-icon-button>
+            </div>
+            <uvx-icon-button icon="filter"></uvx-icon-button>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+        <div class="padding-xs">
+            <!-- <div class="flex justify-content-space-between">
                 <uvx-search-panel rounded="true" mode="component-border" >
                     <input type="text"
                     placeholder="Search Entities"
                     class="uv-input margin-left-xs"
                     maxlength="40">
                 </uvx-search-panel>
-                <uvx-icon-button icon="filter"></uvx-icon-button>
-                <uvx-icon-button icon="arrow_uprward" (click)="toggleFolderTree()"></uvx-icon-button>
-            </div>
+            </div> -->
 
-            <div class="margin-top-sm">
+            <!-- <div class="margin-top-sm"> -->
                 <div 
-                cdkDropList
-                *ngFor="let folder of folders" 
-                class="margin-bottom-xxs folder"
-                id="folder"
-                (cdkDropListDropped)="onDrop($event)"
-                [cdkDropListData]="folder.items">
-                    <uvx-folder-tree-icon [open]="folder.open" (click)="folder.open = !folder.open"></uvx-folder-tree-icon>
-                    <div *ngIf="folder.open">
-                        <app-wallet-item *ngFor="let item of folder.items" [label]="item.name"></app-wallet-item>
+                    cdkDropList
+                    *ngFor="let folder of folders" 
+                    class="margin-bottom-xxs folder"
+                    id="folder"
+                    (cdkDropListDropped)="onDrop($event)"
+                    [cdkDropListData]="folder.items">
+                    <div class="flex flex-column">
+                        <div class="flex align-items-center">
+                            <uvx-folder-tree-icon [open]="folder.open" (click)="folder.open = !folder.open"></uvx-folder-tree-icon>
+                            <app-wallet-item 
+                                (itemSelectedEvent)="folderIsSelected(folder)"
+                                mode="folder"
+                                [label]="folder.name">
+                            </app-wallet-item>
+                        </div>
+                        <div *ngIf="folder.open" class="folder-items">
+                            <app-wallet-item *ngFor="let item of folder.items" [label]="item.name"></app-wallet-item>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
 
         </div>
-    </div>
+
     <div class="divider"></div>
     <div class="padding-sm">
         <h6>Entities</h6>

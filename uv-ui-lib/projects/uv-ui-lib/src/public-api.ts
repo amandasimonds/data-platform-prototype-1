@@ -32,6 +32,8 @@ export * from './lib/navbar/navbar.component';
 export * from './lib/navbar/navbar.module';
 export * from './lib/navbar-extended/navbar-extended.component';
 export * from './lib/navbar-extended/navbar-extended.module';
+export * from './lib/navbar-sub/navbar-sub.component';
+export * from './lib/navbar-sub/navbar-sub.module';
 export * from './lib/range-slider/range-slider.module';
 export * from './lib/range-slider/range-slider.component';
 export * from './lib/register-icon/register-icon.module';

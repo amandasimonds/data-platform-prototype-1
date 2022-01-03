@@ -1,5 +1,6 @@
-.wallet-item {
-    // display: inline-block;
+.entity {
+    padding: 4px 8px;
+    font-size: var(--uv-font-size-sm);
     cursor: grab;
 
     &:hover {
@@ -10,6 +11,12 @@
     &-selected {
         background-color: var(--uv-color-primary-hover);
     }
+}
+
+.folder {
+    padding: 4px 8px;
+    font-size: var(--uv-font-size-sm);
+    cursor: pointer;
 }
 
 .draggable {
