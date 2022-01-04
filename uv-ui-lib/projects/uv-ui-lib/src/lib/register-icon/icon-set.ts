@@ -108,12 +108,24 @@ export const ICON_SET = [
         url: 'services/Dashboard.svg'
     },
     {
+        name: 'datalake',
+        url: 'logos/Datalake.svg'
+    },
+    {
+        name: 'datalake_alt',
+        url: 'logos/Datalake alt.svg'
+    },
+    {
         name: 'design',
         url: 'services/Design.svg'
     },
     {
         name: 'delete',
         url: 'actions/Delete.svg'
+    },
+    {
+        name: 'deltalake',
+        url: 'logos/Delta lake.svg'
     },
     {
         name: 'deselect_all',
@@ -614,6 +626,10 @@ export const ICON_SET = [
     {
         name: 'tasks',
         url: 'services/Tasks.svg'
+    },
+    {
+        name: 'windchill',
+        url: 'logos/Windchill.svg'
     }
 ] as const;
 

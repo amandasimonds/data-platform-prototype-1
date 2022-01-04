@@ -127,7 +127,6 @@
                     [matTooltip]="navlink.tooltip"
                     [class.nav-icon-active-expanded]="subNavbarIsExpanded"
                     [class.nav-icon-disabled]="navlink.disabled"
-                    [class.nav-icon-active]="navActiveIcon === navlink.app"
                     (click)="handleNavlinkAction(navlink.app)">
                     <a [routerLink]="navlink.navlink"
                         class="display-inline-block"
@@ -140,10 +139,9 @@
                     </a>
                 </div>
         </uvx-navbar-sub>
-        <!-- <uvx-navbar-extended *ngIf="currentApp === 'settings'" (toggleButtonClicked)="toggleSubNavbar()" [subNavbarIsExpanded]="subNavbarIsExpanded"></uvx-navbar-extended> -->
     </div>
     <div class="uv-ui-shell-subnavbar2">
-        <uvx-navbar-extended *ngIf="currentApp === 'settings'" (toggleButtonClicked)="toggleSubNavbar2()" [subNavbarIsExpanded]="subNavbar2IsExpanded"></uvx-navbar-extended>
+        <app-settings-menu *ngIf="isCreatingConnector"></app-settings-menu>
     </div>
 
     <div class="uv-ui-shell-content">

@@ -28,6 +28,7 @@ export class MainComponent implements OnInit {
     public compareWarning = false;
     public searchSidebarState = 'hidden';
     public currentApp = '';
+    public currentService = '';
     public currentUser = {id: 1, new: false, name: ''};
     public currentHighlight = '';
     public uvLight = false;
@@ -66,6 +67,10 @@ export class MainComponent implements OnInit {
         return this.currentUser.name === this.chevronUser || this.currentUser.name === this.cumminsUser ? false : true;
     }
 
+    public get isCreatingConnector(): boolean {
+        return this.currentService === 'connector-creator';
+    }
+
     constructor(
         public appShellService: AppShellService,
         public searchService: SearchService,
@@ -86,17 +91,14 @@ export class MainComponent implements OnInit {
             this.searchService.searchState$.pipe(tap(state => this.searchSidebarState = state)),
             this.searchService.compareWarning$.pipe(tap(state => this.compareWarning = state)),
             this.userService.getCurrentUser().pipe(tap(user => this.currentUser = user)),
-            this.uvlService.getCurrentHighlight().pipe(tap(highlight => this.currentHighlight = highlight))
-        ]).pipe(
-            takeUntil(this.destroy$)
-        ).subscribe(() => this.ref.detectChanges());
-        this.route.queryParams.subscribe(
-            params => {
-                this.currentApp =  params['app'];
-            }
-        );
+            this.uvlService.getCurrentHighlight().pipe(tap(highlight => this.currentHighlight = highlight)),
+            this.route.queryParams.pipe(tap(params => {
+                    this.currentApp =  params['app'];
+                    this.currentService = params['service'];}))
+        ])
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(() => this.ref.detectChanges());
     }
-
     
     public handleNavlinkAction(item: string) {
         item === 'search' ? this.toggleSearchSidebar() : this.closeSearchSidebar();

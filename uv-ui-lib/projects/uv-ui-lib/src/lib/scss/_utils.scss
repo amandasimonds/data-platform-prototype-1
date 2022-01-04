@@ -214,6 +214,18 @@
     padding-left: var(--uv-md-size);
 }
 
+.padding-top-xxxs {
+    padding-top: var(--uv-xxxs-size);
+}
+
+.padding-top-xxs {
+    padding-top: var(--uv-xxs-size);
+}
+
+.padding-top-xs {
+    padding-top: var(--uv-xs-size);
+}
+
 .padding-top-sm {
     padding-top: var(--uv-sm-size);
 }
@@ -332,6 +344,10 @@
 
 .margin-right-md {
     margin-right: var(--uv-md-size);
+}
+
+.margin-right-lg {
+    margin-right: var(--uv-lg-size);
 }
 
 .vertical-align-top {
