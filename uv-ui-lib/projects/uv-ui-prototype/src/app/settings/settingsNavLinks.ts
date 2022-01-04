@@ -1,33 +1,33 @@
 export const settingsNavlinks = [
     {   
-        app: '',
+        app: 'settings',
         icon: 'force_directed_graph',
         active: false,
-        navlink: '',
+        navlink: 'settings/connector-table',
         disabled: false,
         tooltip: 'Connectors'
     },
     {   
-        app: '',
+        app: 'settings',
         icon: 'lock',
         active: false,
-        navlink: '',
+        navlink: 'settings',
         disabled: false,
         tooltip: 'Info Security'
     },
     {   
-        app: '',
+        app: 'settings',
         icon: 'users',
         active: false,
-        navlink: '',
+        navlink: 'settings',
         disabled: false,
         tooltip: 'User Management'
     },
     {   
-        app: '',
+        app: 'settings',
         icon: 'settings',
         active: false,
-        navlink: '',
+        navlink: 'settings',
         disabled: false,
         tooltip: 'Settings'
     },
