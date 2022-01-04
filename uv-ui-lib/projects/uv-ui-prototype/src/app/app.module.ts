@@ -25,6 +25,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeSplashModule } from './pages/home-splash/home-splash.module';
+import { SettingsModule } from './settings/settings.module';
+import { SettingsMenuModule } from './settings/settings-menu/settings-menu.module';
 import { MainComponent } from './layouts/main/main.component';
 import { HelperService } from './services/helper.service';
 import { SearchService } from './services/search.service';
@@ -46,6 +48,7 @@ import {NgxEchartsModule} from 'ngx-echarts';
 import * as echarts from 'echarts';
 import { WalletModule } from './wallet/wallet.module';
 import { DragDropService } from './services/drag-drop.service';
+import { ButtonDropdownModule } from 'epd-pattern-library';
 
 @NgModule({
     declarations: [
@@ -63,6 +66,7 @@ import { DragDropService } from './services/drag-drop.service';
         BrowserAnimationsModule,
         BrowserModule,
         ButtonModule,
+        ButtonDropdownModule,
         CompareWarningModule,
         HeaderModule,
         HomeSplashModule,
@@ -71,6 +75,7 @@ import { DragDropService } from './services/drag-drop.service';
         IconDisplayModule,
         ModalModule,
         TooltipModule,
+        SettingsMenuModule,
         NavbarModule,
         NavbarSubModule,
         NavbarExtendedModule,
@@ -81,6 +86,7 @@ import { DragDropService } from './services/drag-drop.service';
         RegisterIconModule.forRoot(ICON_SET),
         SearchPanelModule,
         SearchSidebarModule,
+        SettingsModule,
         SidePanelModule,
         SideBySideModule,
         TabModule,
