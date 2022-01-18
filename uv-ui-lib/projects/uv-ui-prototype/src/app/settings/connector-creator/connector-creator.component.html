@@ -1,12 +1,39 @@
 <div class="container padding-md flex flex-column">
-    <h4>Details</h4>
-    <div class="margin-bottom-md margin-top-xs">
-        Connector Name
-    </div>
 
-    <h4>Setup</h4>
-    <div class="margin-bottom-md margin-top-xs">
-        Connection Type
+    <div #formSection *ngFor="let section of connectorCreatorSteps" 
+        yPosition [topPosition]="section.complete ? '' : formSectionYPos" 
+        class="margin-bottom-md" [attr.id]="section.name">
+
+        <div class="flex flex-column">
+            <h4 class="margin-bottom-sm">{{section.sectionTitle}}</h4>
+
+            <div class="flex flex-column gap-xs">
+
+                <div #formStep class="form-item" 
+                *ngFor="let step of section.steps"
+                [ngSwitch]="step.type" 
+                [attr.id]="step.name"
+                >
+                
+                    <div *ngSwitchCase="'input'">
+                        <uvx-text-input 
+                        [label]="step.title" 
+                        [required]="step.required"></uvx-text-input>
+                    </div>
+                    
+                    <div *ngSwitchCase="'dropdown'">
+                        <uvx-dropdown 
+                            [hasBorder]="true" 
+                            [label]="step.title" 
+                            [required]="step.required">
+                            <span title>Hidden</span>
+                            <span options class="custom-option flex justify-content-space-between">Hidden</span>
+                            <span options class="custom-option flex justify-content-space-between">Restricted</span>
+                        </uvx-dropdown>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <h4>Data Source</h4>

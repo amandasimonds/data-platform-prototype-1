@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarExtendedComponent } from './navbar-extended.component';
+import { ExpandingMenuComponent } from './expanding-menu.component';
 import { IconButtonModule } from '../icon-button/icon-button.module';
 
 @NgModule({
-  declarations: [NavbarExtendedComponent],
+  declarations: [ExpandingMenuComponent],
   imports: [
     CommonModule,
     IconButtonModule
   ],
-  exports: [NavbarExtendedComponent]
+  exports: [ExpandingMenuComponent]
 })
-export class NavbarExtendedModule { }
+export class ExpandingMenuModule { }

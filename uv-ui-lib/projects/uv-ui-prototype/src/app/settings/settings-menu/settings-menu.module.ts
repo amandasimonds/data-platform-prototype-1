@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SettingsMenuComponent } from './settings-menu.component';
-import { NavbarExtendedModule } from 'projects/uv-ui-lib/src/public-api';
+import { ExpandingMenuModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { PositionElementDirective } from '../../shared/position-element.directive';
 
 @NgModule({
-  declarations: [SettingsMenuComponent],
+  declarations: [SettingsMenuComponent, PositionElementDirective],
   imports: [
     CommonModule,
-    NavbarExtendedModule
+    ExpandingMenuModule,
+    UvxIconModule
   ],
   exports: [SettingsMenuComponent]
 })
