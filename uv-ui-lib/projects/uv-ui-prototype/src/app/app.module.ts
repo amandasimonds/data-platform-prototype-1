@@ -18,7 +18,7 @@ import {
     ModalModule,
     IconDisplayModule,
     TooltipModule,
-    NavbarExtendedModule,
+    ExpandingMenuModule,
     NavbarSubModule
 } from '../../../uv-ui-lib/src/public-api';
 import { AppRoutingModule } from './app-routing.module';
@@ -49,6 +49,7 @@ import * as echarts from 'echarts';
 import { WalletModule } from './wallet/wallet.module';
 import { DragDropService } from './services/drag-drop.service';
 import { ButtonDropdownModule } from 'epd-pattern-library';
+import { ConnectorCreatorService } from './services/connector-creator.service';
 
 @NgModule({
     declarations: [
@@ -56,7 +57,7 @@ import { ButtonDropdownModule } from 'epd-pattern-library';
         LoginComponent,
         MainComponent,
         UvLightComponent,
-        IconDisplayComponent
+        IconDisplayComponent,
     ],
     imports: [
         ActionBarModule,
@@ -78,7 +79,7 @@ import { ButtonDropdownModule } from 'epd-pattern-library';
         SettingsMenuModule,
         NavbarModule,
         NavbarSubModule,
-        NavbarExtendedModule,
+        ExpandingMenuModule,
         NgxEchartsModule.forRoot({
             echarts: () => import('echarts')
           }),
@@ -97,6 +98,7 @@ import { ButtonDropdownModule } from 'epd-pattern-library';
         AppShellService,
         AuthService,
         BackdropService,
+        ConnectorCreatorService,
         DragDropService,
         HelperService,
         HttpClient,

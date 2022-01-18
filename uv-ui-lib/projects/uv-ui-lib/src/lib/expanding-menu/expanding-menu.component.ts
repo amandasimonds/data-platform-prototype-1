@@ -2,19 +2,19 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { slideInOutAnimation } from '../animations';
 
 @Component({
-  selector: 'uvx-navbar-extended',
-  templateUrl: './navbar-extended.component.html',
-  styleUrls: ['./navbar-extended.component.scss'],
+  selector: 'uvx-expanding-menu',
+  templateUrl: './expanding-menu.component.html',
+  styleUrls: ['./expanding-menu.component.scss'],
   animations: [slideInOutAnimation],
 })
-export class NavbarExtendedComponent {
+export class ExpandingMenuComponent {
 
-  @Input() public navbarExtendedState = 'navbar-peek';
-  @Input() public subNavbarIsExpanded = false;
+  @Input() public menuExpandedState = 'navbar-peek';
+  @Input() public menuIsExpanded = false;
   @Output() public readonly toggleButtonClicked = new EventEmitter<Event>();
 
   public get isVisible(): boolean {
-    return this.subNavbarIsExpanded
+    return this.menuIsExpanded
   }
 
   public onToggleButtonClicked($event: Event): void {
@@ -22,6 +22,6 @@ export class NavbarExtendedComponent {
   }
 
   public toggleExtendedNavbar() {
-    this.subNavbarIsExpanded = !this.subNavbarIsExpanded;
+    this.menuIsExpanded = !this.menuIsExpanded;
   }
 }

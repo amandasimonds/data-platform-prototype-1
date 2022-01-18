@@ -11,4 +11,5 @@ export class TextInputComponent {
     @Input() public placeholder = '';
     @Input() public id = '';
     @Input() public label = '';
+    @Input() public required = false;
 }
