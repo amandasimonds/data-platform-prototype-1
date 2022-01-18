@@ -3,6 +3,8 @@
     <input 
     [id]="id"
     type="text"
+    [value]="value"
+    (keyup)="keyupEvent($event)"
         [placeholder]="placeholder"
         class="uv-input"/>
 </div>

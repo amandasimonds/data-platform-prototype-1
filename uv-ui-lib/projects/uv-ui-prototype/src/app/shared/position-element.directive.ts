@@ -5,8 +5,8 @@ import { AfterViewChecked, AfterViewInit, Directive, ElementRef, HostBinding, In
 })
 export class PositionElementDirective {
 
-  @Input() topPosition = 0;
-  @Input() stylePos = 'absolute'
+  @Input() topPosition: number;
+  @Input() stylePos = 'relative'
 
   constructor(private el: ElementRef) { 
   }
@@ -15,12 +15,12 @@ export class PositionElementDirective {
   }
 
   ngAfterViewChecked(): void {
-    this.el.nativeElement.style.position = this.stylePos;
-    this.el.nativeElement.style.top = `${this.topPosition}px`;
-    console.log(
-      this.el.nativeElement.id, '\n',
-      this.topPosition, '\n',
-      this.el.nativeElement.style.top, '\n',
-      this.el.nativeElement.offsetTop);
+      this.el.nativeElement.style.position = this.stylePos;
+      this.el.nativeElement.style.top = `${this.topPosition}px`;
+  //   console.log(
+  //     this.el.nativeElement.id, '\n',
+  //     this.topPosition, '\n',
+  //     this.el.nativeElement.style.top, '\n',
+  //     this.el.nativeElement.offsetTop);
   }
 }

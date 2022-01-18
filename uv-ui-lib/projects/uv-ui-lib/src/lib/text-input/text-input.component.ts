@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'uvx-text-input',
@@ -12,4 +12,11 @@ export class TextInputComponent {
     @Input() public id = '';
     @Input() public label = '';
     @Input() public required = false;
+    @Input() public value = '';
+
+    @Output() keyup = new EventEmitter<Event>();
+
+    keyupEvent(event: Event) {
+      this.keyup.emit(event);
+    }
 }
