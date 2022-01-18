@@ -8,15 +8,18 @@ export interface ConnectorCreatorFormValue {
     required: boolean;
     complete: boolean;
     yPos: string;
-    steps: 
-        {
-            title: string;
-            yPos: string;
-            name: string;
-            required: boolean;
-            complete: boolean;
-            type: string
-        }[]
+    steps: ConnectorCreatorFormValueStep[]
+}
+
+export interface ConnectorCreatorFormValueStep {
+    title: string;
+    yPos: string;
+    name: string;
+    required: boolean;
+    complete: boolean;
+    selection: string;
+    type: string;
+    options: string[]
 }
 
 @Injectable({

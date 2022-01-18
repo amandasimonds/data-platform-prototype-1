@@ -14,7 +14,9 @@ export const connectorCreatorSteps: ConnectorCreatorFormValue[] = [
                 name: 'connection-name',
                 required: true,
                 complete: false,
-                type: 'input'
+                selection: '',
+                type: 'input',
+                options: ['']
             },
             {
                 title: 'Restricted Access Format',
@@ -22,7 +24,12 @@ export const connectorCreatorSteps: ConnectorCreatorFormValue[] = [
                 name: 'restricted-access-format',
                 required: true,
                 complete: false,
-                type: 'dropdown'
+                selection: '',
+                type: 'dropdown',
+                options: [
+                    'Hidden', 
+                    'Restricted'
+                ]
             }
         ]
     },
@@ -39,7 +46,13 @@ export const connectorCreatorSteps: ConnectorCreatorFormValue[] = [
                 name: 'connection-type',
                 required: true,
                 complete: false,
-                type: 'dropdown'
+                selection: '',
+                type: 'dropdown',
+                options: [
+                    'Gen2', 
+                    'Option', 
+                    'Option 2'
+                ]
             },
             {
                 title: 'Authorization Method',
@@ -47,7 +60,13 @@ export const connectorCreatorSteps: ConnectorCreatorFormValue[] = [
                 name: 'authorization-method',
                 required: true,
                 complete: false,
-                type: 'dropdown'
+                selection: '',
+                type: 'dropdown',
+                options: [
+                    'Active Directory Service Principal (recommended)', 
+                    'Option', 
+                    'Option 2'
+                ]
             },
             {
                 title: 'Account Name',
@@ -55,15 +74,9 @@ export const connectorCreatorSteps: ConnectorCreatorFormValue[] = [
                 name: 'account-name',
                 required: true,
                 complete: false,
-                type: 'input'
-            },
-            {
-                title: 'Authorization Method',
-                yPos: '',
-                name: 'authorization-method',
-                required: true,
-                complete: false,
-                type: 'input'
+                selection: '',
+                type: 'input',
+                options: ['']
             },
             {
                 title: 'Client ID',
@@ -71,7 +84,9 @@ export const connectorCreatorSteps: ConnectorCreatorFormValue[] = [
                 name: 'client-id',
                 required: true,
                 complete: false,
-                type: 'input'
+                selection: '',
+                type: 'input',
+                options: ['']
             },
             {
                 title: 'Tenant ID',
@@ -79,7 +94,9 @@ export const connectorCreatorSteps: ConnectorCreatorFormValue[] = [
                 name: 'tenant-id',
                 required: true,
                 complete: false,
-                type: 'input'
+                selection: '',
+                type: 'input',
+                options: ['']
             }
         ]
     }

@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { StepsComponent } from '../../global-where-used/project-wizard/steps/steps.component';
-import { ConnectorCreatorService } from '../../services/connector-creator.service';
+import { ConnectorCreatorFormValue, ConnectorCreatorFormValueStep } from '../../services/connector-creator.service';
 import { connectorCreatorSteps } from './connector-creator-steps';
 
 @Component({
@@ -16,7 +15,6 @@ export class ConnectorCreatorComponent implements OnInit {
   @ViewChildren("formStep") private formSteps: QueryList<ElementRef>;
 
   public getYPos(el: string): number {
-    console.log(el, this.elRef.nativeElement.querySelector(el).offsetTop);
     return this.elRef.nativeElement.querySelector(el).offsetTop;
   }
 
@@ -40,7 +38,25 @@ export class ConnectorCreatorComponent implements OnInit {
           })
         })
       })
-    console.log(this.connectorCreatorSteps);
+  }
+
+  public enterFormInputSelection(event: Event, step: ConnectorCreatorFormValueStep, section: ConnectorCreatorFormValue) {
+    const target = event.target as HTMLTextAreaElement;
+    target.value.length > 2 ? step.complete = true : step.complete = false;
+    this.checkIfSectionComplete(section);
+  }
+
+  public selectFormDropdownOption(step: ConnectorCreatorFormValueStep, option: string, section: ConnectorCreatorFormValue) {
+    step.selection = option;
+    step.complete = true;
+    this.checkIfSectionComplete(section);
+  }
+
+  public checkIfSectionComplete(section: ConnectorCreatorFormValue) {
+    const result = section.steps.every(step => {
+        return step.complete
+    })
+    result ? section.complete = true : section.complete = false;
   }
 
   constructor(
@@ -48,19 +64,9 @@ export class ConnectorCreatorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // const div = this.elRef.nativeElement.querySelector('#formStep');
-    // console.log(div.offsetTop);
-    // this.connectorCreatorService.setPosition(this.connectorCreatorSteps);
   }
 
   ngAfterViewChecked(): void {
-    // this.formSections.forEach((el) => {
-    //   console.log(el.nativeElement.offsetTop, el.nativeElement.id);
-    // })
-
-    // this.formSteps.forEach((el) => {
-    //   console.log(el.nativeElement.offsetTop, el.nativeElement.id);
-    // })
     this.setYPos();
   }
 
