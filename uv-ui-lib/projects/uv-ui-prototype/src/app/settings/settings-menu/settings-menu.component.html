@@ -5,7 +5,7 @@
     <div content>
         <div *ngFor="let section of connectorCreatorSteps">
 
-            <div *ngIf="!section.complete"
+            <!-- <div *ngIf="!section.complete"
                 yPosition 
                 [topPosition]="section.yPos" 
                 [stylePos]="'absolute'"
@@ -30,10 +30,10 @@
                     color="success" class="margin-right-xs"></uvx-icon>
                     <p class="uv-body-sm">{{step.title}}</p>
                 </div>
-            </div>
+            </div> -->
 
 
-            <div *ngIf="section.complete"
+            <div
                 class="margin-bottom-md" [attr.id]="section.name">
             
                 <div class="flex align-items-center" >
