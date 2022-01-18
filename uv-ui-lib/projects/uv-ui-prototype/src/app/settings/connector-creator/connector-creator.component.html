@@ -12,12 +12,13 @@
                 <div #formStep class="form-item" 
                 *ngFor="let step of section.steps"
                 [ngSwitch]="step.type" 
-                [attr.id]="step.name"
-                >
+                [attr.id]="step.name">
                 
                     <div *ngSwitchCase="'input'">
                         <uvx-text-input 
+                        (keyup)="enterFormInputSelection($event, step, section)"
                         [label]="step.title" 
+                        [value]=""
                         [required]="step.required"></uvx-text-input>
                     </div>
                     
@@ -26,9 +27,13 @@
                             [hasBorder]="true" 
                             [label]="step.title" 
                             [required]="step.required">
-                            <span title>Hidden</span>
-                            <span options class="custom-option flex justify-content-space-between">Hidden</span>
-                            <span options class="custom-option flex justify-content-space-between">Restricted</span>
+                            <span title>{{step.selection != '' ? step.selection : step.options[0]}}</span>
+                            <span options 
+                                (click)="selectFormDropdownOption(step, option, section)"
+                                *ngFor="let option of step.options"
+                                class="custom-option flex justify-content-space-between">
+                                {{option}}
+                            </span>
                         </uvx-dropdown>
                     </div>
                 </div>
