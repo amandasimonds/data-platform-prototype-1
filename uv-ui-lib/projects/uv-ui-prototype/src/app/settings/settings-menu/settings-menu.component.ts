@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { connectorCreatorSteps } from '../connector-creator/connector-creator-steps';
 
 @Component({
   selector: 'app-settings-menu',
@@ -7,15 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsMenuComponent implements OnInit {
 
-  public subNavbar2IsExpanded = true;
+  public settingsMenuIsExpanded = true;
+  public connectorCreatorSteps = connectorCreatorSteps;
 
-  constructor() { }
+  @ViewChild('section') div:ElementRef;
+
+  // public getYPos(el: string): number {
+  //   console.log(el, this.elRef.nativeElement.querySelector(`#${el}`).offsetTop);
+  //   return this.elRef.nativeElement.querySelector(el).offsetTop;
+  // }
+
+  constructor(private elRef:ElementRef) { }
 
   ngOnInit(): void {
+    // console.log(this.div.nativeElement.style.offsetTop);
   }
 
-  public toggleSubNavbar2() {
-      this.subNavbar2IsExpanded = !this.subNavbar2IsExpanded;
+  public toggleSettingsMenu() {
+      this.settingsMenuIsExpanded = !this.settingsMenuIsExpanded;
   }
 
+  ngAfterViewChecked(): void {
+    console.log('menu', this.connectorCreatorSteps);
+  }
 }

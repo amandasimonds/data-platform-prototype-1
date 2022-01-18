@@ -90,6 +90,10 @@ $columns: 12; // Number of columns in the grid system
         overflow: auto;
         width: 100%;
     }
+
+    .uv-ui-shell {
+        overflow: auto;
+    }
 }
 
 .column-placeholder {

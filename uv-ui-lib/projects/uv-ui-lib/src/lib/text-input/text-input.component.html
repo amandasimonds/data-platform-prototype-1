@@ -1,4 +1,4 @@
-<label class="uv-input-label" for={{id}}>{{label}}</label>
+<label class="uv-input-label" for={{id}}>{{label}} <span *ngIf="required">*</span></label>
 <div class="text-input">
     <input 
     [id]="id"

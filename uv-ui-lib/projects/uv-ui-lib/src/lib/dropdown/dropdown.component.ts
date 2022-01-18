@@ -16,6 +16,8 @@ export class DropdownComponent {
     @Input() public width = '';
     @Input() public mode: 'input' | 'fancy' = 'fancy';
     @Input() public hasBorder = false;
+    @Input() public label = '';
+    @Input() public required = false;
 
     constructor(private elementRef: ElementRef) {}
 
