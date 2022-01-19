@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { IconSetValue, ICON_SET } from '../register-icon/icon-set';
 
 @Component({
@@ -9,7 +9,22 @@ import { IconSetValue, ICON_SET } from '../register-icon/icon-set';
 export class IconDisplayComponent implements OnInit {
 
   public icons = ICON_SET;
-  public sortedArray: IconSetValue[] = []
+  public sortedArray: IconSetValue[] = [];
+  public searchResults: IconSetValue[] = []
+  public searchText = '';
+
+  constructor(private ref: ChangeDetectorRef) {}
+
+  ngOnInit(): void {
+    this.sortArray('recent');
+  }
+
+  ngAfterViewChecked(): void {
+    if (this.searchText != '') {
+      this.typeAheadSearch(this.searchText);
+    }
+    this.ref.detectChanges();
+  }
 
   public sortArrayByName(x: IconSetValue , y: IconSetValue){
     if (x.name < y.name) {return -1;}
@@ -41,8 +56,18 @@ export class IconDisplayComponent implements OnInit {
     this.sortedArray = newSortedArray;
   }
 
-  ngOnInit(): void {
-      this.sortArray('recent');
+  public typeAheadSearch(input: string) {
+    console.log('searching');
+    let results = this.icons.slice();
+    results = results.filter(item =>
+        item.name.toLowerCase().includes(input.toLowerCase())
+    );
+
+    this.sortedArray = results;
+  }
+
+  public clearSearch(): void {
+    this.searchText = ''; 
   }
 
 }

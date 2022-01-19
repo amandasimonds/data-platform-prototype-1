@@ -3,6 +3,13 @@
     <uvx-button mode="primary" label="Sort by Most Recent" (click)="sortArray('recent')"></uvx-button>
     <uvx-button mode="primary" label="Sort by Name" (click)="sortArray('name')"></uvx-button>
     <uvx-button mode="primary" label="Sort by Category" (click)="sortArray('category')"></uvx-button>
+    <uvx-search-panel mode="component-border" (searchClearClicked)="clearSearch()">
+        <input type="text"
+                    placeholder="Search..."
+                    class="uv-input margin-left-xs"
+                    maxlength="40"
+                    [(ngModel)]="searchText">
+    </uvx-search-panel>
 </div>
 <div class="flex flex-wrap container scroll padding-left-sm">
     <div *ngFor="let icon of sortedArray" class="icon-display flex flex-column align-items-center justify-content-center">
