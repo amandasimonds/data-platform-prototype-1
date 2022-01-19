@@ -273,14 +273,6 @@ export const ICON_SET: IconSetValue[] = [
         url: 'navigation/Full open alt.svg'
     },
     {
-        name: 'full_screen_exit',
-        url: 'navigation/Full screen exit.svg'
-    },
-    {
-        name: 'full_screen',
-        url: 'navigation/Full screen.svg'
-    },
-    {
         name: 'fullscreen',
         url: 'fullscreen.svg'
     },
