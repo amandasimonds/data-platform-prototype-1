@@ -34,7 +34,15 @@
                     [cdkDropListData]="items"
                     [cdkDropListConnectedTo]="['folder']"
                     (cdkDropListDropped)="onDrop($event)">
-                <app-wallet-item *ngFor="let item of items" [label]="item.name"></app-wallet-item>
+                <app-wallet-item *ngFor="let item of items; let i = index" 
+                    (click)="select($event, i, item)"
+                    [isSelected]="item.selected"
+                    (cdkDragStarted)="onDragStart($event)"
+                    [label]="item.name">
+                </app-wallet-item>
+                <div class="layout-item-drag-preview" *cdkDragPreview>
+                    {{ selections.length > 0 ? selections.length : 1 }}
+                  </div>
                 </div>
             </div>
 

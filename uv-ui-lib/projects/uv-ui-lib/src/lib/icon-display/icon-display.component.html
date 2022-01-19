@@ -1,5 +1,11 @@
-<div class="flex flex-wrap container scroll">
-    <div *ngFor="let icon of icons" class="icon-display flex flex-column align-items-center justify-content-center">
+
+<div class="padding-sm flex gap-10">
+    <uvx-button mode="primary" label="Sort by Most Recent" (click)="sortArray('recent')"></uvx-button>
+    <uvx-button mode="primary" label="Sort by Name" (click)="sortArray('name')"></uvx-button>
+    <uvx-button mode="primary" label="Sort by Category" (click)="sortArray('category')"></uvx-button>
+</div>
+<div class="flex flex-wrap container scroll padding-left-sm">
+    <div *ngFor="let icon of sortedArray" class="icon-display flex flex-column align-items-center justify-content-center">
         <uvx-icon-button class="margin-bottom-xs" icon={{icon.name}}></uvx-icon-button> 
         <p class="uv-body-sm">name: {{icon.name}}</p>
         <p class="uv-body-sm">url: {{icon.url}}</p>

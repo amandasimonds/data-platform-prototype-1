@@ -4,6 +4,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dra
 export interface IWalletItem {
   type: string;
   name: string;
+  selected: boolean;
 }
 
 @Component({
@@ -17,7 +18,7 @@ export class WalletItemComponent {
   public isSelected = false;
   
   @Input() public label = '';
-  @Input() itemAmountTrue = false;
+  @Input() public itemAmountTrue = false;
   @Input() public itemAmount = 0;
   @Input() public mode: 'folder' | 'entity' = 'entity';
   @Input() public isEditMode = false;

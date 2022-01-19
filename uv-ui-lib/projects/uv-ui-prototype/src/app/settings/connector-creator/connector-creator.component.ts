@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { ConnectorCreatorFormValue, ConnectorCreatorFormValueStep } from '../../services/connector-creator.service';
+import { ConnectorCreatorFormValue, ConnectorCreatorFormValueStep } from './connector-creator-form.model';
 import { connectorCreatorSteps } from './connector-creator-steps';
 
 @Component({
@@ -31,7 +31,7 @@ export class ConnectorCreatorComponent implements OnInit {
     }) 
     stepElements.forEach((el) => {
         sections.forEach(section => {
-          section.steps.map(step => {
+          section.steps.map((step: ConnectorCreatorFormValueStep) => {
             if (step.name === el.nativeElement.id) {
               step.yPos = el.nativeElement.offsetTop
             } 
