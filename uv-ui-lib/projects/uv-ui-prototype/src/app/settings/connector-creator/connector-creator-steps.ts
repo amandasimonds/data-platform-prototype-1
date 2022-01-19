@@ -1,4 +1,4 @@
-import { ConnectorCreatorFormValue } from "../../services/connector-creator.service";
+import { ConnectorCreatorFormValue } from "./connector-creator-form.model";
 
 export const connectorCreatorSteps: ConnectorCreatorFormValue[] = [
     {
