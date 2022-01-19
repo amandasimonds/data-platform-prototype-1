@@ -39,6 +39,7 @@ export class IconDisplayComponent implements OnInit {
   }
 
   public sortArray(sortBy: string) {
+    this.clearSearch()
     let newSortedArray = this.icons.slice();
     switch(sortBy) {
       case 'name':
