@@ -1,11 +1,15 @@
 <div
   [class.entity]="isEntity"
   [class.folder]="isFolder"
-  (click)="selectItem($event)"
   [class.entity-selected]="isSelected && isEntity"
   [class.folder-selected]="isSelected && isFolder"
+  cdkDrag
+  (click)="selectItem($event)"
+  (cdkDragStarted)="onDragStart($event)"
+  (cdkDragEnded)="onDragEnded($event)"
+  (cdkDragDropped)="onDropped($event)"
   [cdkDragDisabled]="isFolder"
-  cdkDrag>
+  >
   <div class="flex justify-content-space-between align-items-center">
     <div>
       <uvx-checkbox class="draggable" [isChecked]="isSelected"></uvx-checkbox> 
