@@ -12,6 +12,7 @@ export class DragDropService {
                 event.currentIndex
             )
         } else {
+            console.log(event.previousContainer.data, '\n', event.container.data);
             copyArrayItem(
                 event.previousContainer.data,
                 event.container.data,

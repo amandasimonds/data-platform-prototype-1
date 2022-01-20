@@ -1,19 +1,34 @@
 import { IWalletItem } from "./wallet-item/wallet-item.component";
 
-export const items: IWalletItem[] = [
+export const walletItems: IWalletItem[] = [
     {
       type: 'item',
-      name: 'Item 1',
+      name: 'Part',
       selected: false
     },
     {
       type: 'item',
-      name: 'Item 2',
+      name: 'Requirement',
       selected: false
     },
     {
       type: 'item',
-      name: 'Item 3',
+      name: 'Material',
+      selected: false
+    },
+    {
+      type: 'item',
+      name: 'Document',
+      selected: false
+    },
+    {
+      type: 'item',
+      name: 'EXH',
+      selected: false
+    },
+    {
+      type: 'item',
+      name: 'Stainless Steel',
       selected: false
     }
 ];
