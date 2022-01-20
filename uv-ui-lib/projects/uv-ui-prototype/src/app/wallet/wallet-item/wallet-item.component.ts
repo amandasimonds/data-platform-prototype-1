@@ -24,6 +24,9 @@ export class WalletItemComponent {
   @Input() public isEditMode = false;
 
   @Output() public itemSelectedEvent = new EventEmitter<Event>();
+  @Output() public cdkDragStarted = new EventEmitter<Event>();
+  @Output() public cdkDragEnded = new EventEmitter<Event>();
+  @Output() public cdkDragDropped = new EventEmitter<Event>();
 
   public get isEntity(): boolean {
     return this.mode === 'entity';
@@ -38,20 +41,15 @@ export class WalletItemComponent {
     this.itemSelectedEvent.emit(event);
   }
 
-  onDrop(event: CdkDragDrop<string []>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      )
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      )
-    }
+  onDragStart(e: Event) {
+    this.cdkDragStarted.emit(e);
+  }
+
+  onDragEnded(e: Event) {
+    this.cdkDragEnded.emit(e);
+  }
+
+  onDropped(e: Event) {
+    this.cdkDragDropped.emit(e);
   }
 }

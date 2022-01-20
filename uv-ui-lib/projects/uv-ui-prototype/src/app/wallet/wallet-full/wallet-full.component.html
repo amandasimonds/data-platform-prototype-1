@@ -33,11 +33,13 @@
                     id="items"
                     [cdkDropListData]="items"
                     [cdkDropListConnectedTo]="['folder']"
-                    (cdkDropListDropped)="onDrop($event)">
+                    (cdkDropListDropped)="droppedIntoList($event)">
                 <app-wallet-item *ngFor="let item of items; let i = index" 
                     (click)="select($event, i, item)"
                     [isSelected]="item.selected"
                     (cdkDragStarted)="onDragStart($event)"
+                    (cdkDragEnded)="onDragEnded($event)"
+                    (cdkDragDropped)="onDropped($event)"
                     [label]="item.name">
                 </app-wallet-item>
                 <div class="layout-item-drag-preview" *cdkDragPreview>
@@ -81,7 +83,7 @@
                     *ngFor="let folder of folders" 
                     class="margin-bottom-xxs folder"
                     id="folder"
-                    (cdkDropListDropped)="onDrop($event)"
+                    (cdkDropListDropped)="droppedIntoList($event)"
                     [cdkDropListData]="folder.items">
                     <div class="flex flex-column">
                         <div class="flex align-items-center">
