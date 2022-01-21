@@ -27,6 +27,7 @@ export class WalletFullComponent {
   // public dragging = false;
   public dragging: DragRef = null;
   public selections: IWalletItem[] = [];
+  public selectionsIndices: number[] = [];
 
   constructor (
     private dragDropService: DragDropService,
@@ -41,10 +42,6 @@ export class WalletFullComponent {
     this.viewObjectsOpen = !this.viewObjectsOpen;
   }
 
-  // public onDrop(event: CdkDragDrop<string []>) {
-  //   this.dragDropService.copyOnDrop(event);
-  // }
-
   public createFolder() {
     alert("Create Folder dialogue");
   }
@@ -58,92 +55,74 @@ export class WalletFullComponent {
     this.folderIsEditMode = !this.folderIsEditMode;
   }
 
-  public select(event: Event, i: number, item: IWalletItem) {
+  public select(event: Event, index: number, item: IWalletItem) {
     item.selected = !item.selected;
-    item.selected ? this.selections.push(item) : this.selections.splice(i, 1);
+    index = (index + 1);
+    const alreadySelected = _.find(this.selectionsIndices, s => s === (index));
+    if (alreadySelected) {
+      _.remove(this.selectionsIndices, s => s === (index));
+    } else {
+      this.selectionsIndices.push((index));
+    }
     console.log('selections', this.selections);
+    console.log('selection indices', this.selectionsIndices);
   }
 
-  public onDragStart(event: CdkDragStart<string[]>) {
-    console.log('drag start');
+  public onDragStart(event: CdkDragStart, index: number) {
     this.dragging = event.source._dragRef;
+    const indices = this.selectionsIndices.length ? this.selectionsIndices : [index + 1];
+    console.log('dragstart, indices', indices);
+    event.source.data = {
+      indices,
+      values: indices.map(i => this.items[i - 1]),
+      source: this,
+    };
+    this.cdRef.detectChanges();
   }
 
-  
-  public onDragEnded(event: CdkDragDrop<string[]>) {
+  public onDragEnded() {
     console.log('drag end');
     this.dragging = null;
   }
 
-  public onDropped(event: CdkDragDrop<string[]>) {
-    console.log('onDropped');
-    console.log(_.get(event, 'item'));
-    if (!event.isPointerOverContainer || !_.get(event, 'item.data.source')) {
-      console.log('abort');
-      return;
-    }
+  public onDropped(event: CdkDragDrop<any>) {
     const data = event.item.data;
-    console.log(data);
-
-    if (data.source === this) {
-      const removed = _.pullAt(this.items, data.indices);
-      if (event.previousContainer !== event.container) {
-
-      }
+    console.log('onDropped', data);
+    if (!event.isPointerOverContainer || !_.get(event, 'item.data.source')) {
+      console.log('aborted drop');
+      return;
     }
     this.dragging = null;
   }
 
-  public droppedIntoList(event: CdkDragDrop<string[]>) {
-    const selectionsIndices: number[] = []
-    // console.log('drop', event.item);
-  
-    // Get the indexes for all selected items
-    _.each(this.items, (item, i) => {
-      if (item.selected) {
-        selectionsIndices.push(i);
-      }
-    });
-    console.log(selectionsIndices);
-  
-    if (selectionsIndices.length > 1) {
-      // If multiple selections exist
-      let newIndex = event.currentIndex;
-      let indexCounted = false;
-  
-      // create an array of the selected items
-      // set newCurrentIndex to currentIndex - (any items before that index)
-      // let newSelectionsIndicesArray = selectionsIndices.slice();
-      const newSelectionsIndicesArray = _.sortBy(selectionsIndices, s => s);
-      const selectedItems = _.map(newSelectionsIndicesArray, s => {
-        if (s < event.currentIndex) {
-          newIndex --;
-          indexCounted = true;
-        }
-        return this.items[s];
-      });
-
-      console.log(selectedItems);
-  
-      // correct the index
-      if (indexCounted) {
-        newIndex++;
-      }
-  
-      // remove selected items
-      this.items = _.without(this.items, ...selectedItems);
-  
-      // add selected items at new index
-      this.items.splice(newIndex, 0, ...selectedItems);
-      this.dragDropService.copyOnDrop(event)
-      // copyArrayItem(selectedItems, event.container.data, event.previousIndex, event.currentIndex)
-    } else {
-      // If a single selection
-      this.dragDropService.copyOnDrop(event)
-      moveItemInArray(this.items, event.previousIndex, event.currentIndex);
+  public onDroppedIntoList(event: CdkDragDrop<any>): void {
+    if (!event.isPointerOverContainer || !_.get(event, 'item.data.source')) {
+      console.log('aborted dropIntoList');
+      return;
     }
-  
-    this.dragging = null;
+    const data = event.item.data;
+    console.log('droppedIntoList data', data);
+    console.log('containers', event.previousContainer, event.container);
+    console.log(event.previousContainer === event.container, this.selectionsIndices.length > 1);
+    let spliceIntoIndex = event.currentIndex;
+    if (event.previousContainer === event.container && this.selectionsIndices.length > 1) {
+      console.log('same container');
+      this.selectionsIndices.splice(-1, 1);
+      const sum = _.sumBy(this.selectionsIndices, selectedIndex => selectedIndex <= spliceIntoIndex ? 1 : 0);
+      spliceIntoIndex -= sum;
+    } else if (event.previousContainer !== event.container) {
+      console.log('not the same container', event.previousIndex);
+      copyArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+    )
+    }
+    console.log('spliceItems', spliceIntoIndex, ...data.values);
+   
+    setTimeout(() => this.cdRef.detectChanges());
+    console.log(this.items);
   }
 
 }
