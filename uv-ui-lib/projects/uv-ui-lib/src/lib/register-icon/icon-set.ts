@@ -699,6 +699,14 @@ export const ICON_SET: IconSetValue[] = [
     {
         name: 'projects_alt',
         url: 'services/Projects alt.svg'
+    },
+    {
+        name: 'zoom_in',
+        url: 'actions/Zoom in.svg'
+    },
+    {
+        name: 'zoom_out',
+        url: 'actions/Zoom out.svg'
     }
 ];
 
