@@ -34,18 +34,18 @@ export class SidebySideService {
         if (document.active) {
             this.sourceDocumentSelected.emit(true);
             sourceDocsList = this.getSourceDocuments()
-            .filter((item, index) => exceptIndex !== index)
-            .map(item => ({
-                ...item,
-                disabled: !item.disabled
-            }));
+                .filter((item, index) => exceptIndex !== index)
+                .map(item => ({
+                    ...item,
+                    disabled: !item.disabled
+                }));
         } else {
             this.sourceDocumentSelected.emit(false);
             sourceDocsList = this.getSourceDocuments()
-            .map(item => ({
-                ...item,
-                disabled: !item.disabled
-            }));
+                .map(item => ({
+                    ...item,
+                    disabled: !item.disabled
+                }));
         }
         this.sourceDocumentSelectedEvent.next(sourceDocsList);
     }
