@@ -12,7 +12,7 @@ import * as _ from 'lodash';
   templateUrl: './wallet-full.component.html',
   styleUrls: ['./wallet-full.component.scss'],
   animations: [slideInOutRightSidebarAnimation],
-    changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WalletFullComponent {
 
@@ -64,8 +64,8 @@ export class WalletFullComponent {
     } else {
       this.selectionsIndices.push((index));
     }
-    console.log('selections', this.selections);
     console.log('selection indices', this.selectionsIndices);
+    this.cdRef.detectChanges();
   }
 
   public onDragStart(event: CdkDragStart, index: number) {
@@ -77,12 +77,14 @@ export class WalletFullComponent {
       values: indices.map(i => this.items[i - 1]),
       source: this,
     };
+    console.log(event.source.data);
     this.cdRef.detectChanges();
   }
 
   public onDragEnded() {
     console.log('drag end');
     this.dragging = null;
+    this.cdRef.detectChanges();
   }
 
   public onDropped(event: CdkDragDrop<any>) {
@@ -93,6 +95,15 @@ export class WalletFullComponent {
       return;
     }
     this.dragging = null;
+    setTimeout(() => this.clearSelected());
+  }
+
+  public clearSelected() {
+    this.items = this.items.map( item => ({
+      ...item,
+      selected: false
+    }));
+    this.selectionsIndices = [];
   }
 
   public onDroppedIntoList(event: CdkDragDrop<any>): void {
@@ -102,25 +113,26 @@ export class WalletFullComponent {
     }
     const data = event.item.data;
     console.log('droppedIntoList data', data);
-    console.log('containers', event.previousContainer, event.container);
+    console.log('containers', event.previousContainer, event.container.data);
     console.log(event.previousContainer === event.container, this.selectionsIndices.length > 1);
     let spliceIntoIndex = event.currentIndex;
-    if (event.previousContainer === event.container && this.selectionsIndices.length > 1) {
+    if (event.previousContainer === event.container) {
       console.log('same container');
       this.selectionsIndices.splice(-1, 1);
       const sum = _.sumBy(this.selectionsIndices, selectedIndex => selectedIndex <= spliceIntoIndex ? 1 : 0);
       spliceIntoIndex -= sum;
     } else if (event.previousContainer !== event.container) {
-      console.log('not the same container', event.previousIndex);
+      console.log('not the same container', event.previousIndex, data, event.container.data);
+      event.container.data.splice(spliceIntoIndex, 0, ...data.values);
       copyArrayItem(
-        event.previousContainer.data,
+        data,
         event.container.data,
         event.previousIndex,
         event.currentIndex
-    )
+      )
     }
-    console.log('spliceItems', spliceIntoIndex, ...data.values);
-   
+    // console.log('spliceItems', spliceIntoIndex, ...data.values);
+    this.clearSelected();
     setTimeout(() => this.cdRef.detectChanges());
     console.log(this.items);
   }
