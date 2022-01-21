@@ -27,19 +27,20 @@
                 <uvx-button mode="secondary" label="View Objects" (click)="toggleViewObjects()"></uvx-button>
                 <uvx-button mode="primary" label="Add To Wallet" (click)="toggleViewObjects()"></uvx-button>
             </div>
+            
             <div class="margin-top-xs flex flex-column" *ngIf="viewObjectsOpen">
                 <div
                     cdkDropList
                     id="items"
+                    #itemsList="cdkDropList"
+                    (cdkDropListDropped)="onDroppedIntoList($event)"
                     [cdkDropListData]="items"
-                    [cdkDropListConnectedTo]="['folder']"
-                    (cdkDropListDropped)="droppedIntoList($event)">
+                    [cdkDropListConnectedTo]="['folder']">
                 <app-wallet-item *ngFor="let item of items; let i = index" 
                     (click)="select($event, i, item)"
                     [isSelected]="item.selected"
                     (cdkDragStarted)="onDragStart($event)"
                     (cdkDragEnded)="onDragEnded($event)"
-                    (cdkDragDropped)="onDropped($event)"
                     [label]="item.name">
                 </app-wallet-item>
                 <div class="layout-item-drag-preview" *cdkDragPreview>
@@ -68,22 +69,15 @@
     <div class="divider"></div>
 
         <div class="padding-xs">
-            <!-- <div class="flex justify-content-space-between">
-                <uvx-search-panel rounded="true" mode="component-border" >
-                    <input type="text"
-                    placeholder="Search Entities"
-                    class="uv-input margin-left-xs"
-                    maxlength="40">
-                </uvx-search-panel>
-            </div> -->
 
-            <!-- <div class="margin-top-sm"> -->
                 <div 
                     cdkDropList
+                    #folderList="cdkDropList"
                     *ngFor="let folder of folders" 
                     class="margin-bottom-xxs folder"
                     id="folder"
-                    (cdkDropListDropped)="droppedIntoList($event)"
+                    [cdkDropListConnectedTo]="['items']"
+                    (cdkDropListDropped)="onDroppedIntoList($event)"
                     [cdkDropListData]="folder.items">
                     <div class="flex flex-column">
                         <div class="flex align-items-center">
@@ -99,7 +93,6 @@
                         </div>
                     </div>
                 </div>
-            <!-- </div> -->
 
         </div>
 
