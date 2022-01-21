@@ -1,5 +1,4 @@
-<div class="wallet-sidebar" [@slideInOutRightSidebarAnimation]="walletSidebarState">
-    <!-- <div cdkDropListGroup> -->
+<div class="wallet-sidebar" cdkDropListGroup [@slideInOutRightSidebarAnimation]="walletSidebarState">
     <div class="padding-sm">
         <div class="flex flex-column">
             <div class="flex align-items-center justify-content-space-between margin-bottom-sm">
@@ -28,18 +27,22 @@
                 <uvx-button mode="secondary" label="View Objects" (click)="toggleViewObjects()"></uvx-button>
                 <uvx-button mode="primary" label="Add To Wallet" (click)="toggleViewObjects()"></uvx-button>
             </div>
+            <div class="margin-top-xxs text-align-right">
+                <uvx-button icon="clear" (click)="clearSelected()" label="Clear Selections"></uvx-button>
+            </div>
             
             <div class="margin-top-xs flex flex-column" *ngIf="viewObjectsOpen">
-                <div cdkDropListGroup>
                     <div cdkDropList
                         id="items"
                         (cdkDropListDropped)="onDroppedIntoList($event)"
                         [cdkDropListData]="items"
                         [cdkDropListConnectedTo]="['items']">
                         <app-wallet-item *ngFor="let item of items; let i = index" 
-                            (click)="select($event, i, item)"
-                            [isSelected]="item.selected"
-                            (cdkDragStarted)="onDragStart($event)"
+                        [matTooltip]="item.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
+                            (mousedown)="select($event, i, item)"
+                            (contextmenu)="unselect($event, i, item)"
+                            [isSelected]="isSelected(i)"
+                            (cdkDragStarted)="onDragStart($event, index, item)"
                             (cdkDragEnded)="onDragEnded($event)"
                             (cdkDragDropped)="onDropped($event)"
                             [label]="item.name">
@@ -48,30 +51,6 @@
                             {{ selections.length > 0 ? selections.length : 1 }}
                         </div>
                     </div>
-
-                    <div *ngFor="let folder of folders">
-                        <div cdkDropList
-                            class="margin-bottom-xxs folder"
-                            id="items"
-                            [cdkDropListConnectedTo]="['items']"
-                            [cdkDropListData]="folder.items"
-                            (cdkDropListDropped)="onDroppedIntoList($event)">
-                            <div class="flex flex-column">
-                                <div class="flex align-items-center">
-                                    <uvx-folder-tree-icon [open]="folder.open" (click)="folder.open = !folder.open"></uvx-folder-tree-icon>
-                                    <app-wallet-item 
-                                        (itemSelectedEvent)="folderIsSelected(folder)"
-                                        mode="folder"
-                                        [label]="folder.name">
-                                    </app-wallet-item>
-                                </div>
-                                <div *ngIf="folder.open" class="folder-items">
-                                    <app-wallet-item *ngFor="let item of folder.items" [label]="item.name"></app-wallet-item>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -95,27 +74,29 @@
 
         <div class="padding-xs">
 
-                <div cdkDropList
-                    *ngFor="let folder of folders" 
-                    class="margin-bottom-xxs folder"
-                    id="folder"
-                    [cdkDropListConnectedTo]="['items']"
-                    (cdkDropListDropped)="onDroppedIntoList($event)"
-                    [cdkDropListData]="folder.items">
-                    <div class="flex flex-column">
-                        <div class="flex align-items-center">
-                            <uvx-folder-tree-icon [open]="folder.open" (click)="folder.open = !folder.open"></uvx-folder-tree-icon>
-                            <app-wallet-item 
-                                (itemSelectedEvent)="folderIsSelected(folder)"
-                                mode="folder"
-                                [label]="folder.name">
-                            </app-wallet-item>
-                        </div>
-                        <div *ngIf="folder.open" class="folder-items">
-                            <app-wallet-item *ngFor="let item of folder.items" [label]="item.name"></app-wallet-item>
-                        </div>
+            <div cdkDropList *ngFor="let folder of folders"
+                class="margin-bottom-xxs folder"
+                id="items"
+                [cdkDropListConnectedTo]="['items']"
+                [cdkDropListData]="folder.items"
+                (cdkDropListDropped)="onDroppedIntoList($event)">
+                <div class="flex flex-column">
+                    <div class="flex align-items-center">
+                        <uvx-folder-tree-icon [open]="folder.open" (click)="folder.open = !folder.open"></uvx-folder-tree-icon>
+                        <app-wallet-item 
+                            (itemSelectedEvent)="folderIsSelected(folder)"
+                            (itemUnselectedEvent)="unselect($event, i, item)"
+                            mode="folder"
+                            [label]="folder.name">
+                        </app-wallet-item>
+                    </div>
+                    <div *ngIf="folder.open" class="folder-items">
+                        <app-wallet-item *ngFor="let item of folder.items" 
+                            [label]="item.name">
+                        </app-wallet-item>
                     </div>
                 </div>
+            </div>
 
         </div>
 
@@ -124,5 +105,4 @@
         <h6>Entities</h6>
     </div>
     <div class="divider"></div>
-<!-- </div> -->
 </div>
