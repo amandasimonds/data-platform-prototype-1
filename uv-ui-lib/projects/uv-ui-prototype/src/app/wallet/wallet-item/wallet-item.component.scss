@@ -1,6 +1,9 @@
-.entity {
+.wallet-item {
     padding: 4px 8px;
     font-size: var(--uv-font-size-sm);
+}
+
+.entity {
     cursor: grab;
 
     &:hover {
@@ -14,11 +17,20 @@
 }
 
 .folder {
-    padding: 4px 8px;
-    font-size: var(--uv-font-size-sm);
     cursor: pointer;
 }
 
 .draggable {
     cursor: grab !important;
 }
+
+.item-dragging {
+    .item.selected:not(.cdk-drag-placeholder) {
+      border: 3px solid orange;
+    }
+}
+
+.cdk-drag-preview {
+    display: flex;
+    background-color: var(--uv-color-primary-hover);
+  }
