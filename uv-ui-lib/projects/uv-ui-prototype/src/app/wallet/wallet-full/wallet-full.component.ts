@@ -1,5 +1,5 @@
-import { CdkDragDrop, CdkDragStart, copyArrayItem, DragRef, moveItemInArray } from '@angular/cdk/drag-drop';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CdkDragDrop, CdkDragStart, copyArrayItem, DragRef } from '@angular/cdk/drag-drop';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
 import { DragDropService } from '../../services/drag-drop.service';
 import { slideInOutRightSidebarAnimation } from '../../shared/animations';
 import { folders } from '../wallet-folders';
@@ -24,15 +24,17 @@ export class WalletFullComponent {
   public items: IWalletItem[] = walletItems;
   public folderSelected = false;
   public folderIsEditMode = false;
-  // public dragging = false;
   public dragging: DragRef = null;
   public selections: IWalletItem[] = [];
   public selectionsIndices: number[] = [];
 
   constructor (
     private dragDropService: DragDropService,
-    private eRef: ElementRef,
     private cdRef: ChangeDetectorRef,) {}
+
+    isSelected(i: number): boolean {
+      return this.items[i].selected;
+    }
 
   public onCloseClicked(state: string): void{
       this.walletSidebarClosedEvent.emit(state);
@@ -55,13 +57,25 @@ export class WalletFullComponent {
     this.folderIsEditMode = !this.folderIsEditMode;
   }
 
-  public select(event: Event, index: number, item: IWalletItem) {
-    item.selected = !item.selected;
+  public unselect(event: Event, index: number, item: IWalletItem) {
+    event.preventDefault();
     index = (index + 1);
+    item.selected = false;
+    console.log('click');
     const alreadySelected = _.find(this.selectionsIndices, s => s === (index));
     if (alreadySelected) {
       _.remove(this.selectionsIndices, s => s === (index));
-    } else {
+    }
+    console.log('selection indices', this.selectionsIndices);
+  }
+
+  public select(event: Event, index: number, item: IWalletItem) {
+    index = (index + 1);
+    console.log(item.selected);
+    if (item.selected) {
+      return;
+    } else if (!item.selected) {
+      item.selected = true;
       this.selectionsIndices.push((index));
     }
     console.log('selection indices', this.selectionsIndices);
@@ -114,7 +128,6 @@ export class WalletFullComponent {
     const data = event.item.data;
     console.log('droppedIntoList data', data);
     console.log('containers', event.previousContainer, event.container.data);
-    console.log(event.previousContainer === event.container, this.selectionsIndices.length > 1);
     let spliceIntoIndex = event.currentIndex;
     if (event.previousContainer === event.container) {
       console.log('same container');
@@ -124,17 +137,9 @@ export class WalletFullComponent {
     } else if (event.previousContainer !== event.container) {
       console.log('not the same container', event.previousIndex, data, event.container.data);
       event.container.data.splice(spliceIntoIndex, 0, ...data.values);
-      copyArrayItem(
-        data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      )
     }
-    // console.log('spliceItems', spliceIntoIndex, ...data.values);
     this.clearSelected();
     setTimeout(() => this.cdRef.detectChanges());
-    console.log(this.items);
   }
 
 }

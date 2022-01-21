@@ -1,10 +1,13 @@
 <div
+  class="wallet-item"
+  
   [class.entity]="isEntity"
   [class.folder]="isFolder"
   [class.entity-selected]="isSelected && isEntity"
   [class.folder-selected]="isSelected && isFolder"
   cdkDrag
-  (click)="selectItem($event)"
+  (mousedown)="selectItem($event)"
+  (contextmenu)="unselect($event)"
   (cdkDragStarted)="onDragStart($event)"
   (cdkDragEnded)="onDragEnded($event)"
   (cdkDragDropped)="onDropped($event)"

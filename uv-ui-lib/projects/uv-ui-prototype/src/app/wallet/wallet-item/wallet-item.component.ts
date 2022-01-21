@@ -24,6 +24,7 @@ export class WalletItemComponent {
   @Input() public isEditMode = false;
 
   @Output() public itemSelectedEvent = new EventEmitter<Event>();
+  @Output() public itemUnselectedEvent = new EventEmitter<Event>();
   @Output() public cdkDragStarted = new EventEmitter<Event>();
   @Output() public cdkDragEnded = new EventEmitter<Event>();
   @Output() public cdkDragDropped = new EventEmitter<Event>();
@@ -37,8 +38,14 @@ export class WalletItemComponent {
   }
 
   public selectItem(event: Event) {
-    this.isSelected = !this.isSelected;
+    this.isSelected = true
     this.itemSelectedEvent.emit(event);
+  }
+
+  public unselect(event: Event){
+    event.preventDefault();
+    this.isSelected = false;
+    this.itemUnselectedEvent.emit(event);
   }
 
   onDragStart(e: Event) {
