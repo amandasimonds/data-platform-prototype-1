@@ -1,10 +1,10 @@
 <div class="wallet-sidebar" cdkDropListGroup [@slideInOutRightSidebarAnimation]="walletSidebarState">
-    <div class="padding-sm">
+    <div class="padding-top-sm padding-right-sm padding-left-sm padding-bottom-xs">
         <div class="flex flex-column">
             <div class="flex align-items-center justify-content-space-between margin-bottom-sm">
                 <div class="flex">
                     <h4 class="margin-right-xs">Wallet</h4>
-                    <uvx-icon-button icon="more_horisontal"></uvx-icon-button>
+<!--                    <uvx-icon-button icon="more_horisontal"></uvx-icon-button>-->
                 </div>
                 <uvx-icon-button icon="close" color="gray" (click)="onCloseClicked('hidden')"></uvx-icon-button>
             </div>
@@ -13,96 +13,125 @@
             </p>
 
             <div class="flex align-items-center justify-content-space-between">
-                <epd-pl-button-dropdown 
-                    [disabled]="true" 
-                    class="margin-right-xs"
-                    contentText="Launch" 
-                    color="primary" 
-                    [disableRipple]="true"> 
-                    <ng-template epdPlButtonDropdownItemTmp>
-                        <div epd-pl-button-dropdown-item>Option 1</div>
-                        <div epd-pl-button-dropdown-item>Option 2</div>
-                    </ng-template>
-                </epd-pl-button-dropdown>
-                <uvx-button mode="secondary" label="View Objects" (click)="toggleViewObjects()"></uvx-button>
+<!--                <epd-pl-button-dropdown -->
+<!--                    [disabled]="true" -->
+<!--                    class="margin-right-xs"-->
+<!--                    contentText="Launch" -->
+<!--                    color="primary" -->
+<!--                    [disableRipple]="true"> -->
+<!--                    <ng-template epdPlButtonDropdownItemTmp>-->
+<!--                        <div epd-pl-button-dropdown-item>Option 1</div>-->
+<!--                        <div epd-pl-button-dropdown-item>Option 2</div>-->
+<!--                    </ng-template>-->
+<!--                </epd-pl-button-dropdown>-->
+<!--                <uvx-button mode="secondary" label="View Objects" (click)="toggleViewObjects()"></uvx-button>-->
+                <uvx-search-panel mode="component-border"  width="100%">
+                    <input type="text"
+                    placeholder="Search"
+                    class="uv-input margin-left-xs">
+                </uvx-search-panel>
                 <uvx-button mode="primary" label="Add To Wallet" (click)="toggleViewObjects()"></uvx-button>
             </div>
-            <div class="margin-top-xxs text-align-right">
-                <uvx-button icon="clear" (click)="clearSelected()" label="Clear Selections"></uvx-button>
-            </div>
+<!--            <div class="margin-top-xxs text-align-right" [ngStyle]="selectionsIndices.length > 0 && {'height': '15px'}">-->
+<!--                <uvx-button  *ngIf="selectionsIndices.length > 0" icon="clear" (click)="clearSelected()" label="Clear Selections"></uvx-button>-->
+<!--            </div>-->
             
-            <div class="margin-top-xs flex flex-column" *ngIf="viewObjectsOpen">
-                    <div cdkDropList
-                        id="items"
-                        (cdkDropListDropped)="onDroppedIntoList($event)"
-                        [cdkDropListData]="items"
-                        [cdkDropListConnectedTo]="['items']">
-                        <app-wallet-item *ngFor="let item of items; let i = index" 
-                        [matTooltip]="item.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
-                            (mousedown)="select($event, i, item)"
-                            (contextmenu)="unselect($event, i, item)"
-                            [isSelected]="isSelected(i)"
-                            (cdkDragStarted)="onDragStart($event, index, item)"
-                            (cdkDragEnded)="onDragEnded($event)"
-                            (cdkDragDropped)="onDropped($event)"
-                            [label]="item.name">
-                        </app-wallet-item>
-                        <div class="layout-item-drag-preview" *cdkDragPreview>
-                            {{ selections.length > 0 ? selections.length : 1 }}
-                        </div>
-                    </div>
-            </div>
+<!--            <div class="margin-top-xxs flex flex-column" *ngIf="viewObjectsOpen">-->
+<!--                    <div cdkDropList-->
+<!--                        id="items"-->
+<!--                        (cdkDropListDropped)="onDroppedIntoList($event)"-->
+<!--                        [cdkDropListData]="items"-->
+<!--                        cdkDropListSortingDisabled-->
+<!--                        [cdkDropListConnectedTo]="['items']">-->
+<!--                        <div class="flex flex-column">-->
+<!--                        <app-wallet-item *ngFor="let item of items; let i = index" -->
+<!--                        [matTooltip]="item.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"-->
+<!--                            (click.ctrl)="unselect($event, i, item)"-->
+<!--                            (mousedown)="handleItemMouseEvent($event, i, item)"-->
+<!--                            (contextmenu)="unselect($event, i, item)"-->
+<!--                            (itemUnselectedEvent)="unselect($event, i, item)"-->
+<!--                            [isSelected]="isSelected(i)"-->
+<!--                            (cdkDragStarted)="onDragStart($event, index, item)"-->
+<!--                            (cdkDragEnded)="onDragEnded($event)"-->
+<!--                            (cdkDragDropped)="onDropped($event)"-->
+<!--                            [dragging]="dragging"-->
+<!--                            [selections]="selectionsIndices"-->
+<!--                            [label]="item.name">-->
+<!--                        </app-wallet-item>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
         </div>
 
     </div>
 
-    <div class="divider"></div>
+<!--    <div class="divider"></div>-->
 
-    <div class="padding-xs flex justify-content-space-between">
-        <uvx-icon-button icon="folder_plus"  class="margin-left-sm" (click)="createFolder()"></uvx-icon-button>
-        <div class="flex gap-xxs">
-            <div *ngIf="folderSelected" class="flex gap-xxs">
-                <uvx-icon-button icon="edit" (click)="editFolder()"></uvx-icon-button>
-                <uvx-icon-button icon="delete"></uvx-icon-button>
-            </div>
-            <uvx-icon-button icon="filter"></uvx-icon-button>
-        </div>
-    </div>
+<!--    <div class="padding-xs flex justify-content-space-between">-->
+<!--        <uvx-icon-button icon="folder_plus"  class="margin-left-sm" (click)="createFolder()"></uvx-icon-button>-->
+<!--        <div class="flex gap-xxs">-->
+<!--            <div *ngIf="folderSelected" class="flex gap-xxs">-->
+<!--                <uvx-icon-button icon="edit" (click)="editFolder()"></uvx-icon-button>-->
+<!--                <uvx-icon-button icon="delete"></uvx-icon-button>-->
+<!--            </div>-->
+<!--            <uvx-icon-button icon="filter"></uvx-icon-button>-->
+<!--        </div>-->
+<!--    </div>-->
 
     <div class="divider"></div>
 
         <div class="padding-xs">
+            <div class="flex align-items-center justify-content-space-between">
+                <div></div>
+                <div class="flex align-items-center">
+                    <uvx-icon-button class="margin-right-xxs" icon="share"></uvx-icon-button>
+                    <uvx-icon-button class="" icon="delete"></uvx-icon-button>
+                    <span class="divider-left"></span>
+                    <uvx-icon-button icon="sorting_bottom"></uvx-icon-button>
+                </div>
+            </div>
+            <div class="padding-left-sm">
+                <div cdkDropList *ngFor="let category of presetWallet"
+                    class="margin-bottom-xxs folder"
+                    id="items"
+                    [cdkDropListConnectedTo]="['items']"
+                    [cdkDropListData]="category.items"
+                    (cdkDropListDropped)="onDroppedIntoList($event)">
+                    <div class="flex flex-column">
+                        <div class="flex align-items-center">
+    <!--                        <uvx-folder-tree-icon [open]="folder.open" (click)="folder.open = !folder.open"></uvx-folder-tree-icon>-->
+    <!--                        <app-wallet-item -->
+    <!--                            (itemSelectedEvent)="folderIsSelected(folder)"-->
+    <!--                            (itemUnselectedEvent)="unselect($event, i, item)"-->
+    <!--                            mode="folder"-->
+    <!--                            [label]="folder.name">-->
+    <!--                        </app-wallet-item>-->
+                            <p class="label margin-bottom-xxs">{{category.name}}</p>
 
-            <div cdkDropList *ngFor="let folder of folders"
-                class="margin-bottom-xxs folder"
-                id="items"
-                [cdkDropListConnectedTo]="['items']"
-                [cdkDropListData]="folder.items"
-                (cdkDropListDropped)="onDroppedIntoList($event)">
-                <div class="flex flex-column">
-                    <div class="flex align-items-center">
-                        <uvx-folder-tree-icon [open]="folder.open" (click)="folder.open = !folder.open"></uvx-folder-tree-icon>
-                        <app-wallet-item 
-                            (itemSelectedEvent)="folderIsSelected(folder)"
-                            (itemUnselectedEvent)="unselect($event, i, item)"
-                            mode="folder"
-                            [label]="folder.name">
-                        </app-wallet-item>
-                    </div>
-                    <div *ngIf="folder.open" class="folder-items">
-                        <app-wallet-item *ngFor="let item of folder.items" 
-                            [label]="item.name">
-                        </app-wallet-item>
+                        </div>
+                        <div class="margin-left-xxxs margin-bottom-xxs">
+                            <app-wallet-item *ngFor="let item of category.items; let i = index"
+                                             [matTooltip]="item.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
+                                             (mousedown)="handleItemMouseEvent($event, i, item)"
+                                             (contextmenu)="unselect($event, i, item)"
+                                             (itemUnselectedEvent)="unselect($event, i, item)"
+                                             (cdkDragStarted)="onDragStart($event, i)"
+                                             (cdkDragEnded)="onDragEnded($event)"
+                                             (cdkDragDropped)="onDropped($event)"
+                                             [dragging]="dragging"
+                                             [selections]="selectionsIndices"
+                                             [label]="item.name">
+                            </app-wallet-item>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
-    <div class="divider"></div>
-    <div class="padding-sm">
-        <h6>Entities</h6>
-    </div>
-    <div class="divider"></div>
+<!--    <div class="divider"></div>-->
+<!--    <div class="padding-sm">-->
+<!--        <h6>Entities</h6>-->
+<!--    </div>-->
+<!--    <div class="divider"></div>-->
 </div>

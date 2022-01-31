@@ -1,11 +1,11 @@
 import { CdkDragDrop, CdkDragStart, copyArrayItem, DragRef } from '@angular/cdk/drag-drop';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { DragDropService } from '../../services/drag-drop.service';
 import { slideInOutRightSidebarAnimation } from '../../shared/animations';
-import { folders } from '../wallet-folders';
-import { IWalletItem } from '../wallet-item/wallet-item.component';
+import { presetWallet, IWalletCategory } from '../wallet-preset';
 import { walletItems } from '../wallet-items';
 import * as _ from 'lodash';
+import { IEntity } from '../../models/entity.model';
 
 @Component({
   selector: 'app-wallet-full',
@@ -20,12 +20,12 @@ export class WalletFullComponent {
   @Output() public readonly walletSidebarClosedEvent = new EventEmitter<string>();
 
   public viewObjectsOpen = true;
-  public folders = folders;
-  public items: IWalletItem[] = walletItems;
+  public presetWallet: IWalletCategory[] = presetWallet;
+  public items: IEntity[] = walletItems;
   public folderSelected = false;
   public folderIsEditMode = false;
   public dragging: DragRef = null;
-  public selections: IWalletItem[] = [];
+  public selections: IEntity[] = [];
   public selectionsIndices: number[] = [];
 
   constructor (
@@ -57,30 +57,45 @@ export class WalletFullComponent {
     this.folderIsEditMode = !this.folderIsEditMode;
   }
 
-  public unselect(event: Event, index: number, item: IWalletItem) {
+  public unselect(event: Event, index: number, item: IEntity) {
     event.preventDefault();
     index = (index + 1);
     item.selected = false;
-    console.log('click');
     const alreadySelected = _.find(this.selectionsIndices, s => s === (index));
+    console.log('alreadySelected', alreadySelected, item, index);
     if (alreadySelected) {
       _.remove(this.selectionsIndices, s => s === (index));
     }
-    console.log('selection indices', this.selectionsIndices);
-  }
-
-  public select(event: Event, index: number, item: IWalletItem) {
-    index = (index + 1);
-    console.log(item.selected);
-    if (item.selected) {
-      return;
-    } else if (!item.selected) {
-      item.selected = true;
-      this.selectionsIndices.push((index));
-    }
-    console.log('selection indices', this.selectionsIndices);
+    console.log('selections', this.selectionsIndices, this.selections);
     this.cdRef.detectChanges();
   }
+
+  public selectIndex(event: Event, index: number, item: IEntity) {
+      index = (index + 1);
+      item.selected = true;
+      this.selectionsIndices.push((index));
+      this.selections.push(item)
+  }
+
+  public handleItemMouseEvent(event: Event, index: number, item: IEntity) {
+    console.log(item.selected, event);
+    if (!item.selected) {
+      this.selectIndex(event, index, item);
+    }
+    // else if (item.selected && event.ctrlKey) {
+    //   console.log('ctrl click event');
+    //   this.unselect(event, (index - 1), item);
+    // }
+    else  if (item.selected) {
+      return;
+    }
+    console.log('selected', this.selectionsIndices, this.selections);
+    this.cdRef.detectChanges();
+  }
+
+  select(item: IEntity) {
+
+  };
 
   public onDragStart(event: CdkDragStart, index: number) {
     this.dragging = event.source._dragRef;
@@ -91,7 +106,7 @@ export class WalletFullComponent {
       values: indices.map(i => this.items[i - 1]),
       source: this,
     };
-    console.log(event.source.data);
+    // console.log(event.source.data);
     this.cdRef.detectChanges();
   }
 
@@ -140,6 +155,11 @@ export class WalletFullComponent {
     }
     this.clearSelected();
     setTimeout(() => this.cdRef.detectChanges());
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  private handleKeyboardEvent(event: KeyboardEvent) {
+    // console.log(event);
   }
 
 }

@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
     public searchSidebarState = 'hidden';
     public currentApp = '';
     public currentService = '';
-    public currentUser = {id: 1, new: false, name: ''};
+    public currentUser = { id: 1, new: false, name: '' };
     public currentHighlight = '';
     public uvLight = false;
     public selectedItem = '';
@@ -46,7 +46,7 @@ export class MainComponent implements OnInit {
     @Input() public searchQuery = '';
 
     public get backdropMode(): string {
-        if(this.compareWarning){
+        if (this.compareWarning) {
             return 'popup';
         } else if (this.uvLight) {
             return 'uv-light';
@@ -80,7 +80,7 @@ export class MainComponent implements OnInit {
         private destroy$: NgOnDestroyService,
         private userService: UserService,
         private uvlService: UvLightService) {
-        }
+    }
 
     public ngOnInit(): void {
         this.userService.updateUserName();
@@ -93,13 +93,14 @@ export class MainComponent implements OnInit {
             this.userService.getCurrentUser().pipe(tap(user => this.currentUser = user)),
             this.uvlService.getCurrentHighlight().pipe(tap(highlight => this.currentHighlight = highlight)),
             this.route.queryParams.pipe(tap(params => {
-                    this.currentApp =  params['app'];
-                    this.currentService = params['service'];}))
+                this.currentApp = params['app'];
+                this.currentService = params['service'];
+            }))
         ])
-        .pipe(takeUntil(this.destroy$))
-        .subscribe(() => this.ref.detectChanges());
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(() => this.ref.detectChanges());
     }
-    
+
     public handleNavlinkAction(item: string) {
         item === 'search' ? this.toggleSearchSidebar() : this.closeSearchSidebar();
     }
@@ -107,9 +108,9 @@ export class MainComponent implements OnInit {
     public toggleSearchSidebar(): void {
         this.searchSidebarState === 'hidden' ?
             (this.searchService.setSearchSidebarState('visible'),
-            this.appShellService.setNavIcon('search')) :
+                this.appShellService.setNavIcon('search')) :
             (this.searchService.setSearchSidebarState('hidden'),
-            this.appShellService.setNavIcon(this.currentApp));
+                this.appShellService.setNavIcon(this.currentApp));
     }
 
     public toggleUvLight(): void {
@@ -124,12 +125,12 @@ export class MainComponent implements OnInit {
     public launchWizard(): void {
         if (this.currentApp === 'sbs' || this.currentUser.name === 'user_chevron@test.com') {
             console.log('sbs', this.currentUser);
-            this.router.navigate(['sbs/wizard'], {relativeTo: this.route, queryParams: {wizardMode: 'fullscreen', app: 'sbs'}});
+            this.router.navigate(['sbs/wizard'], { relativeTo: this.route, queryParams: { wizardMode: 'fullscreen', app: 'sbs' } });
         } else if (this.currentApp === 'gwu' || this.currentUser.name === 'user_cummins@test.com') {
-            this.router.navigate(['gwu/wizard'], {relativeTo: this.route, queryParams: {wizardMode: 'fullscreen',  app: 'gwu'}});
+            this.router.navigate(['gwu/wizard'], { relativeTo: this.route, queryParams: { wizardMode: 'fullscreen', app: 'gwu' } });
         } else {
             console.log('default', this.currentUser);
-            this.router.navigate(['gwu/wizard'], {relativeTo: this.route, queryParams: {wizardMode: 'fullscreen',  app: 'gwu'}});
+            this.router.navigate(['gwu/wizard'], { relativeTo: this.route, queryParams: { wizardMode: 'fullscreen', app: 'gwu' } });
         }
     }
 
@@ -138,13 +139,13 @@ export class MainComponent implements OnInit {
         window.location.href = `${environment.authConfig.authority}/v2/logout?federated`;
         this.router.navigate(['/logout']);
     }
-    
+
     public closeCompareWarning(): void {
         this.compareWarning = false;
     }
 
     public toggleWallet() {
-        setTimeout(() => {this.miniWalletOpen = !this.miniWalletOpen;}, 100);
+        setTimeout(() => { this.miniWalletOpen = !this.miniWalletOpen; }, 100);
         this.walletOpen = !this.walletOpen;
         this.walletSidebarState = 'hidden';
     }

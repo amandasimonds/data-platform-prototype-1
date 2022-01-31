@@ -1,34 +1,58 @@
-import { IWalletItem } from "./wallet-item/wallet-item.component";
+import { IEntity } from '../models/entity.model';
 
-export const walletItems: IWalletItem[] = [
+export const walletItems: IEntity[] = [
     {
-      type: 'item',
+      category: 'item',
       name: 'Part',
-      selected: false
+        id: 1,
+        description: '',
+        date: '',
+        active: false,
+      selected: false,
+        disabled: false,
+        formattedDate: ''
     },
     {
-      type: 'item',
-      name: 'Requirement',
-      selected: false
+        category: 'item',
+        name: 'Requirement',
+        id: 1,
+        description: '',
+        date: '',
+        active: false,
+        selected: false,
+        disabled: false,
+        formattedDate: ''
     },
     {
-      type: 'item',
-      name: 'Material',
-      selected: false
+        category: 'item',
+        name: 'Material',
+        id: 1,
+        description: '',
+        date: '',
+        active: false,
+        selected: false,
+        disabled: false,
+        formattedDate: ''
     },
     {
-      type: 'item',
-      name: 'Document',
-      selected: false
+        category: 'item',
+        name: 'Document',
+        id: 1,
+        description: '',
+        date: '',
+        active: false,
+        selected: false,
+        disabled: false,
+        formattedDate: ''
     },
-    {
-      type: 'item',
-      name: 'EXH',
-      selected: false
-    },
-    {
-      type: 'item',
-      name: 'Stainless Steel',
-      selected: false
-    }
+    // {
+    //   type: 'item',
+    //   name: 'EXH',
+    //   selected: false
+    // },
+    // {
+    //   type: 'item',
+    //   name: 'Stainless Steel',
+    //   selected: false
+    // }
 ];
