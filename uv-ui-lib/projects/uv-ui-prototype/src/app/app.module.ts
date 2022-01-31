@@ -50,6 +50,7 @@ import { WalletModule } from './wallet/wallet.module';
 import { DragDropService } from './services/drag-drop.service';
 import { ButtonDropdownModule } from 'epd-pattern-library';
 import { ConnectorCreatorService } from './services/connector-creator.service';
+import { WalletService } from './services/wallet.service';
 
 @NgModule({
     declarations: [
@@ -107,7 +108,8 @@ import { ConnectorCreatorService } from './services/connector-creator.service';
         SearchService,
         SidebySideService,
         UserService,
-        UvLightService
+        UvLightService,
+        WalletService
     ],
     bootstrap: [AppComponent]
 })

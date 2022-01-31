@@ -1,56 +1,17 @@
 <div id="wallet" class="wallet-wrap">
     <div class="wallet-point"></div>
     <div class="wallet">
-        <div class="padding-xs">
-            <p class="uv-body small margin-bottom-xxs">Category</p>
-            <div
-                cdkDropList
-                [cdkDropListData]="folders"
-                [cdkDropListConnectedTo]="['folder']"
-                (cdkDropListDropped)="onDrop($event)">
-                <app-wallet-item 
-                    [itemAmountTrue]="true"
-                    mode="folder"
-                    *ngFor="let folder of folders" 
-                    [itemAmount]="folder.items.length"
-                    [label]="folder.name">
-                </app-wallet-item>
-            </div>
-        </div>
-        <div class="divider"></div>
-        <div class="padding-xs">
-            <p class="uv-body small margin-bottom-xxs">Category</p>
-            <div
-                cdkDropList
-                [cdkDropListData]="folders"
-                [cdkDropListConnectedTo]="['folder']"
-                (cdkDropListDropped)="onDrop($event)">
-                <app-wallet-item 
-                    [itemAmountTrue]="true"
-                    *ngFor="let folder of folders" 
-                    [itemAmount]="folder.items.length" 
-                    [label]="folder.name">
-                </app-wallet-item>
-            </div>
-        </div>
-        <div class="divider"></div>
-        <div class="padding-xs">    
-            <epd-pl-button-dropdown 
-                [disabled]="false" 
-                contentText="Add to Wallet" 
-                color="primary" 
-                [disableRipple]="true"> 
-                <ng-template epdPlButtonIconTmp>
-                    <uvx-icon color="white" class="margin-right-xxs" icon="store"></uvx-icon>
-                </ng-template>
-                <ng-template epdPlButtonDropdownItemTmp>
-                    <div epd-pl-button-dropdown-item>Option 1</div>
-                    <div epd-pl-button-dropdown-item>Option 2</div>
-                </ng-template>
-            </epd-pl-button-dropdown>
+        <div class="padding-sm flex align-items-center flex-column">
+            <uvx-button label="Add to Wallet" mode="primary" icon="store"></uvx-button>
             <div class="margin-top-xs">
-                <uvx-button icon="store" mode="secondary" label="Open Wallet" (click)="openWalletClicked($event)"></uvx-button>
+                <uvx-button icon="store" label="Open Wallet" (click)="openWalletClicked($event)"></uvx-button>
             </div>
+        </div>
+        <div class="divider"></div>
+        <div class="padding-xs">
+            <app-wallet-item *ngFor="let item of favorites; let i = index"
+                             [label]="item.name">
+            </app-wallet-item>
         </div>
     </div>
 </div>
