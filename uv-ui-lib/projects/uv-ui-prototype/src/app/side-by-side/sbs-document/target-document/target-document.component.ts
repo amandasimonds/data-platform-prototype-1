@@ -2,8 +2,8 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef, OnInit } from '@
 import { takeUntil } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../../services/on-destroy.service';
 import { SidebySideService } from '../../../services/side-by-side.service';
-import { ISbsTargetDocument } from '../../../models/sbs-target-document.model';
 import { targetDocumentSamples } from '../../sample-data/target-documents';
+import { IEntity } from '../../../models/entity.model';
 
 @Component({
   selector: 'app-target-document',
@@ -13,20 +13,20 @@ import { targetDocumentSamples } from '../../sample-data/target-documents';
 })
 export class TargetDocumentComponent implements OnInit {
 
-    public targetDocuments: ISbsTargetDocument[] = targetDocumentSamples;
-    public selectedTargetDocuments: ISbsTargetDocument[] = [];
+    public targetDocuments: IEntity[] = targetDocumentSamples;
+    public selectedTargetDocuments: IEntity[] = [];
 
     constructor(
         private sbsService: SidebySideService,
         private ref: ChangeDetectorRef,
         private destroy$: NgOnDestroyService) {}
 
-    public onTargetDocumentSelected(item: ISbsTargetDocument): void {
+    public onTargetDocumentSelected(item: IEntity): void {
         item.active = !item.active;
         this.sbsService.selectTargetDocument(item);
     }
 
-    public onShowMoreDocumentDetails(event: Event, item: ISbsTargetDocument): void {
+    public onShowMoreDocumentDetails(event: Event, item: IEntity): void {
         item.showDetails = !item.showDetails;
         event.stopPropagation();
     }
