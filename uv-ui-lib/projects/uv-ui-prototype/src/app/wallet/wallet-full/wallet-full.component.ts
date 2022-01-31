@@ -1,11 +1,12 @@
 import { CdkDragDrop, CdkDragStart, copyArrayItem, DragRef } from '@angular/cdk/drag-drop';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { DragDropService } from '../../services/drag-drop.service';
 import { slideInOutRightSidebarAnimation } from '../../shared/animations';
 import { presetWallet, IWalletCategory } from '../wallet-preset';
 import { walletItems } from '../wallet-items';
 import * as _ from 'lodash';
 import { IEntity } from '../../models/entity.model';
+import { WalletService } from '../../services/wallet.service';
 
 @Component({
   selector: 'app-wallet-full',
@@ -14,23 +15,29 @@ import { IEntity } from '../../models/entity.model';
   animations: [slideInOutRightSidebarAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WalletFullComponent {
+export class WalletFullComponent implements OnInit {
 
   @Input() public walletSidebarState = 'hidden';
   @Output() public readonly walletSidebarClosedEvent = new EventEmitter<string>();
 
   public viewObjectsOpen = true;
-  public presetWallet: IWalletCategory[] = presetWallet;
+  public wallet: IWalletCategory[] = [];
   public items: IEntity[] = walletItems;
   public folderSelected = false;
   public folderIsEditMode = false;
   public dragging: DragRef = null;
   public selections: IEntity[] = [];
   public selectionsIndices: number[] = [];
+  @Input() public selectedEntities: IEntity[] = [];
 
   constructor (
     private dragDropService: DragDropService,
+    private walletService: WalletService,
     private cdRef: ChangeDetectorRef,) {}
+
+  ngOnInit(): void {
+    this.wallet = this.walletService.getPresetWallet();
+  }
 
     isSelected(i: number): boolean {
       return this.items[i].selected;
@@ -38,6 +45,10 @@ export class WalletFullComponent {
 
   public onCloseClicked(state: string): void{
       this.walletSidebarClosedEvent.emit(state);
+  }
+
+  public onAddEntityToWallet(entities: IEntity[]) {
+    this.walletService.addEntityToWallet(entities);
   }
 
   public toggleViewObjects() {
@@ -155,11 +166,6 @@ export class WalletFullComponent {
     }
     this.clearSelected();
     setTimeout(() => this.cdRef.detectChanges());
-  }
-
-  @HostListener('document:keydown', ['$event'])
-  private handleKeyboardEvent(event: KeyboardEvent) {
-    // console.log(event);
   }
 
 }

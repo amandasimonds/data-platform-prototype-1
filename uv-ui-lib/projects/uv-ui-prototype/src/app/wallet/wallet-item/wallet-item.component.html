@@ -5,13 +5,14 @@
   [class.entity-notDragging-hover]="!dragging"
   [class.entity-selected]="isSelected && isEntity"
   [class.folder-selected]="isSelected && isFolder"
+  [class.no-drag]="dragIsDisabled"
   cdkDrag
   (mousedown)="selectItem($event)"
   (contextmenu)="unselect($event)"
   (cdkDragStarted)="onDragStart($event)"
   (cdkDragEnded)="onDragEnded($event)"
   (cdkDragDropped)="onDropped($event)"
-  [cdkDragDisabled]="isFolder"
+  [cdkDragDisabled]="isFolder || dragIsDisabled"
   >
   <div class="select-item-drag-preview" *cdkDragPreview>
     {{ dragPreviewText }}

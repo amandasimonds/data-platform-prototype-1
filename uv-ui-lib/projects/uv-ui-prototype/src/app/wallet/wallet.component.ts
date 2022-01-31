@@ -25,6 +25,5 @@ export class WalletComponent {
   public onDrop(event: CdkDragDrop<string []>) {
     this.dragDropService.copyOnDrop(event);
   }
-
   
 }

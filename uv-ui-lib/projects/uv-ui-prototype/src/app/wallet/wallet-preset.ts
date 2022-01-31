@@ -22,7 +22,11 @@ export const presetWallet: IWalletCategory[] = [
                 active: false,
                 selected: false,
                 disabled: false,
-                formattedDate: ''
+                formattedDate: '',
+                showDetails: false,
+                details: '',
+                progress: 0,
+                tags: []
             },
         ]
     },
@@ -40,7 +44,11 @@ export const presetWallet: IWalletCategory[] = [
                 active: false,
                 selected: false,
                 disabled: false,
-                formattedDate: ''
+                formattedDate: '',
+                showDetails: false,
+                details: '',
+                progress: 0,
+                tags: []
             }
         ]
     },
@@ -58,7 +66,11 @@ export const presetWallet: IWalletCategory[] = [
                 active: false,
                 selected: false,
                 disabled: false,
-                formattedDate: ''
+                formattedDate: '',
+                showDetails: false,
+                details: '',
+                progress: 0,
+                tags: []
             }
         ]
     }
