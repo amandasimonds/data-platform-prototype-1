@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SidebySideService } from '../../../services/side-by-side.service';
-import { ISbsSourceDocument } from '../../../models/sbs-source-document.model';
 import { sourceDocumentSamples } from '../../sample-data/source-documents';
+import { IEntity } from '../../../models/entity.model';
 
 @Component({
   selector: 'app-source-document',
@@ -11,15 +11,15 @@ import { sourceDocumentSamples } from '../../sample-data/source-documents';
 })
 export class SourceDocumentComponent {
 
-    public sourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
+    public sourceDocuments: IEntity[] = sourceDocumentSamples;
 
     constructor(private sbsService: SidebySideService) { }
 
-    public onSourceDocumentSelected(item: ISbsSourceDocument, i: number): void {
+    public onSourceDocumentSelected(item: IEntity, i: number): void {
         this.sbsService.selectSourceDocument(item, i);
     }
 
-    public onShowMoreDocumentDetails(event: Event, item: ISbsSourceDocument): void {
+    public onShowMoreDocumentDetails(event: Event, item: IEntity): void {
         item.showDetails = !item.showDetails;
         event.stopPropagation();
     }

@@ -1,12 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, ChangeDetectorRef } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
-;
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { SidebySideService } from '../../services/side-by-side.service';
-import { ISbsSourceDocument } from '../../models/sbs-source-document.model';
-import { ISbsTargetDocument } from '../../models/sbs-target-document.model';
 import { sourceDocumentSamples } from '../sample-data/source-documents';
 import { targetDocumentSamples } from '../sample-data/target-documents';
+import { IEntity } from '../../models/entity.model';
 
 @Component({
   selector: 'sbs-action-bar',
@@ -18,10 +16,10 @@ export class SbsActionBarComponent implements OnInit {
 
     @Input() public showTargetDocuments = false;
 
-    public selectedTargetDocuments: ISbsTargetDocument[] = [];
-    public sourceDocumentsList: ISbsSourceDocument[] = [];
-    public loadedTargetDocuments: ISbsTargetDocument[] = targetDocumentSamples;
-    public loadedSourceDocuments: ISbsSourceDocument[] = sourceDocumentSamples;
+    public selectedTargetDocuments: IEntity[] = [];
+    public sourceDocumentsList: IEntity[] = [];
+    public loadedTargetDocuments: IEntity[] = targetDocumentSamples;
+    public loadedSourceDocuments: IEntity[] = sourceDocumentSamples;
 
     public showMoreSelections = false;
     public showFilterModal = false;
@@ -43,11 +41,11 @@ export class SbsActionBarComponent implements OnInit {
         }
     }
 
-    public unselectTargetDocument(item: ISbsTargetDocument): void {
+    public unselectTargetDocument(item: IEntity): void {
         this.sbsService.unselectTargetDocument(item);
     }
 
-    public clearSelections(items: ISbsTargetDocument[]): void {
+    public clearSelections(items: IEntity[]): void {
         this.sbsService.clearTargetDocumentSelections(items);
     }
 

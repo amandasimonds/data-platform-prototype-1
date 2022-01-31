@@ -10,7 +10,11 @@ export const walletItems: IEntity[] = [
         active: false,
       selected: false,
         disabled: false,
-        formattedDate: ''
+        formattedDate: '',
+        showDetails: false,
+        details: '',
+        progress: 0,
+        tags: []
     },
     {
         category: 'item',
@@ -21,7 +25,11 @@ export const walletItems: IEntity[] = [
         active: false,
         selected: false,
         disabled: false,
-        formattedDate: ''
+        formattedDate: '',
+        showDetails: false,
+        details: '',
+        progress: 0,
+        tags: []
     },
     {
         category: 'item',
@@ -32,7 +40,11 @@ export const walletItems: IEntity[] = [
         active: false,
         selected: false,
         disabled: false,
-        formattedDate: ''
+        formattedDate: '',
+        showDetails: false,
+        details: '',
+        progress: 0,
+        tags: []
     },
     {
         category: 'item',
@@ -43,7 +55,11 @@ export const walletItems: IEntity[] = [
         active: false,
         selected: false,
         disabled: false,
-        formattedDate: ''
+        formattedDate: '',
+        showDetails: false,
+        details: '',
+        progress: 0,
+        tags: []
     },
     // {
     //   type: 'item',

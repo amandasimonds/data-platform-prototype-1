@@ -8,4 +8,8 @@ export interface IEntity {
     selected: boolean;
     disabled: boolean;
     formattedDate: string;
+    showDetails: boolean;
+    details: string;
+    progress: number;
+    tags: string[];
 }

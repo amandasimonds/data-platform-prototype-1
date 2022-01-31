@@ -160,7 +160,11 @@
         [selectedItem]="selectedItem">
     </app-compare-warning>
 
-    <app-wallet-full (walletSidebarClosedEvent)="toggleWalletSidebar()" [walletSidebarState]="walletSidebarState"></app-wallet-full>
+    <app-wallet-full 
+        [selectedEntities]="selectedEntities"
+        (walletSidebarClosedEvent)="toggleWalletSidebar()" 
+        [walletSidebarState]="walletSidebarState">
+    </app-wallet-full>
 
     <app-uv-light *ngIf="uvLight" (uvLightToggle)="toggleUvLight()"></app-uv-light>
 </div>

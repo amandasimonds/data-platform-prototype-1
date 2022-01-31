@@ -18,6 +18,7 @@ export class WalletItemComponent {
   @Input() public isEditMode = false;
   @Input() public dragging: DragRef = null;
   @Input() public selections: number[] = [];
+  @Input() public dragIsDisabled = false;
 
   @Output() public itemSelectedEvent = new EventEmitter<Event>();
   @Output() public itemUnselectedEvent = new EventEmitter<Event>();
