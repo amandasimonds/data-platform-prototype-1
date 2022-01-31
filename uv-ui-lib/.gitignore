@@ -45,6 +45,7 @@ testem.log
 /typings
 /storybook-static
 app-env.ts
+.prettierrc
 
 # System Files
 .DS_Store

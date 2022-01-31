@@ -16,6 +16,19 @@
     margin-left: 64px;
 }
 
-.layout-item-drag-preview {
-    border: 3px solid orange
+.cdk-drop-list-receiving {
+    //border: 3px solid black;
 }
+
+.cdk-drag-placeholder {
+    opacity: 0;
+  }
+
+  .folder {
+    //   border: 3px solid orange;
+  }
+
+  .cdk-drop-list-dragging {
+      border: 2.5px dashed var(--uv-color-primary-light);
+      box-sizing: border-box;
+  }

@@ -1,8 +1,8 @@
 <div
   class="wallet-item"
-  
   [class.entity]="isEntity"
   [class.folder]="isFolder"
+  [class.entity-notDragging-hover]="!dragging"
   [class.entity-selected]="isSelected && isEntity"
   [class.folder-selected]="isSelected && isFolder"
   cdkDrag
@@ -13,6 +13,9 @@
   (cdkDragDropped)="onDropped($event)"
   [cdkDragDisabled]="isFolder"
   >
+  <div class="select-item-drag-preview" *cdkDragPreview>
+    {{ dragPreviewText }}
+  </div>
   <div class="flex justify-content-space-between align-items-center">
     <div>
       <uvx-checkbox class="draggable" [isChecked]="isSelected"></uvx-checkbox> 

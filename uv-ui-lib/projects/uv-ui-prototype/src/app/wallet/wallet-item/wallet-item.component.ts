@@ -1,11 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-
-export interface IWalletItem {
-  type: string;
-  name: string;
-  selected: boolean;
-}
+import {CdkDragDrop, DragRef, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-wallet-item',
@@ -22,6 +16,8 @@ export class WalletItemComponent {
   @Input() public itemAmount = 0;
   @Input() public mode: 'folder' | 'entity' = 'entity';
   @Input() public isEditMode = false;
+  @Input() public dragging: DragRef = null;
+  @Input() public selections: number[] = [];
 
   @Output() public itemSelectedEvent = new EventEmitter<Event>();
   @Output() public itemUnselectedEvent = new EventEmitter<Event>();
@@ -37,13 +33,18 @@ export class WalletItemComponent {
     return this.mode === 'folder';
   }
 
+  public get dragPreviewText(): string {
+    return this.selections.length > 1 ? `Save ${this.selections.length} items` : 'Save 1 item';
+  }
+
   public selectItem(event: Event) {
     this.isSelected = true
     this.itemSelectedEvent.emit(event);
   }
 
   public unselect(event: Event){
-    event.preventDefault();
+    console.log('walletitem', this.isSelected);
+    // event.preventDefault();
     this.isSelected = false;
     this.itemUnselectedEvent.emit(event);
   }
