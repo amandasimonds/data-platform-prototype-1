@@ -471,6 +471,10 @@
     border-bottom: 1px solid rgba(219,219,219,0.5);
 }
 
+.border-left {
+    border-left: var(--uv-border-gray);
+}
+
 .z-1000 {
     position: relative;
     z-index: 1000;

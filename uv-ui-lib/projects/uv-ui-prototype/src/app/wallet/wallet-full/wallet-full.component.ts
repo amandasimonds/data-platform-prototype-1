@@ -7,6 +7,9 @@ import { walletItems } from '../wallet-items';
 import * as _ from 'lodash';
 import { IEntity } from '../../models/entity.model';
 import { WalletService } from '../../services/wallet.service';
+import { combineLatest } from 'rxjs';
+import { takeUntil, tap } from 'rxjs/operators';
+import { NgOnDestroyService } from '../../services/on-destroy.service';
 
 @Component({
   selector: 'app-wallet-full',
@@ -33,10 +36,17 @@ export class WalletFullComponent implements OnInit {
   constructor (
     private dragDropService: DragDropService,
     private walletService: WalletService,
-    private cdRef: ChangeDetectorRef,) {}
+    private ref: ChangeDetectorRef,
+    private destroy$: NgOnDestroyService) {}
 
   ngOnInit(): void {
     this.wallet = this.walletService.getPresetWallet();
+    combineLatest([
+      this.walletService.selectedEntities$.pipe(tap(entities => this.selectedEntities = entities)),
+      this.walletService.walletItems$.pipe(tap(wallet => this.wallet = wallet))
+    ])
+    .pipe(takeUntil(this.destroy$))
+    .subscribe(() => this.ref.detectChanges());
   }
 
     isSelected(i: number): boolean {
@@ -49,6 +59,7 @@ export class WalletFullComponent implements OnInit {
 
   public onAddEntityToWallet(entities: IEntity[]) {
     this.walletService.addEntityToWallet(entities);
+    console.log('add entity to wallet', this.wallet);
   }
 
   public toggleViewObjects() {
@@ -78,7 +89,7 @@ export class WalletFullComponent implements OnInit {
       _.remove(this.selectionsIndices, s => s === (index));
     }
     console.log('selections', this.selectionsIndices, this.selections);
-    this.cdRef.detectChanges();
+    this.ref.detectChanges();
   }
 
   public selectIndex(event: Event, index: number, item: IEntity) {
@@ -101,7 +112,7 @@ export class WalletFullComponent implements OnInit {
       return;
     }
     console.log('selected', this.selectionsIndices, this.selections);
-    this.cdRef.detectChanges();
+    this.ref.detectChanges();
   }
 
   select(item: IEntity) {
@@ -118,13 +129,13 @@ export class WalletFullComponent implements OnInit {
       source: this,
     };
     // console.log(event.source.data);
-    this.cdRef.detectChanges();
+    this.ref.detectChanges();
   }
 
   public onDragEnded() {
     console.log('drag end');
     this.dragging = null;
-    this.cdRef.detectChanges();
+    this.ref.detectChanges();
   }
 
   public onDropped(event: CdkDragDrop<any>) {
@@ -165,7 +176,7 @@ export class WalletFullComponent implements OnInit {
       event.container.data.splice(spliceIntoIndex, 0, ...data.values);
     }
     this.clearSelected();
-    setTimeout(() => this.cdRef.detectChanges());
+    setTimeout(() => this.ref.detectChanges());
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SidebySideService } from '../../../services/side-by-side.service';
 import { sourceDocumentSamples } from '../../sample-data/source-documents';
 import { IEntity } from '../../../models/entity.model';
+import { WalletService } from '../../../services/wallet.service';
 
 @Component({
   selector: 'app-source-document',
@@ -13,10 +14,11 @@ export class SourceDocumentComponent {
 
     public sourceDocuments: IEntity[] = sourceDocumentSamples;
 
-    constructor(private sbsService: SidebySideService) { }
+    constructor(private sbsService: SidebySideService, private walletService: WalletService) { }
 
     public onSourceDocumentSelected(item: IEntity, i: number): void {
         this.sbsService.selectSourceDocument(item, i);
+        this.walletService.selectEntityForWallet(item);
     }
 
     public onShowMoreDocumentDetails(event: Event, item: IEntity): void {
