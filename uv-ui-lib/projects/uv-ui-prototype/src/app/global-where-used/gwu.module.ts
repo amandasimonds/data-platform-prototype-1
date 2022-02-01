@@ -15,6 +15,7 @@ import { WaveComponent } from './wave/wave.component';
 import { ForceDirectedGraphComponent } from './force-directed-graph/force-directed-graph.component';
 import { WizardContainerModule } from './project-wizard/wizard-container/wizard-container.module';
 import { GraphModule } from './force-directed-graph/graph/graph.module';
+import { WalletItemModule } from '../wallet/wallet-item/wallet-item.module';
 
 @NgModule({
     declarations: [
@@ -44,7 +45,8 @@ import { GraphModule } from './force-directed-graph/graph/graph.module';
         ProfileViewerModule,
         ProfileViewerContainerModule,
         UvxIconModule,
-        WizardContainerModule
+        WizardContainerModule,
+        WalletItemModule
     ],
     exports: [ GlobalWhereUsedComponent ],
     providers: [ WizardService ]

@@ -1,4 +1,17 @@
 <div class="wave-container">
-    <img class="wave-image" src="https://dpzaq1wj21co3.cloudfront.net/prototype/cumminswave.png">
+    <!-- <img class="wave-image" src="https://dpzaq1wj21co3.cloudfront.net/prototype/cumminswave.png"> -->
+    <div class="uv-container padding-xs">
+        
+        <div *ngFor="let column of columns">
+            <div class="col-2">
+                <span *ngFor="let entity of column.entities">
+                    <app-wallet-item 
+                    [label]="entity.name" 
+                    (itemUnselectedEvent)="onGwuEntitySelected(entity)"
+                    (click)="onGwuEntitySelected(entity)"></app-wallet-item>
+                </span>
+            </div>
+        </div>
+    </div>
 </div>
 

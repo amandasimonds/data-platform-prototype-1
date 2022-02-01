@@ -2,16 +2,14 @@
     <div class="wallet-point"></div>
     <div class="wallet">
         <div class="padding-sm flex align-items-center flex-column">
-            <uvx-button label="Add to Wallet" mode="primary" icon="store"></uvx-button>
+            <uvx-button label="Add to Wallet" (click)="onAddEntityToWallet()" mode="primary" icon="store"></uvx-button>
             <div class="margin-top-xs">
                 <uvx-button icon="store" label="Open Wallet" (click)="openWalletClicked($event)"></uvx-button>
             </div>
         </div>
         <div class="divider"></div>
         <div class="padding-xs">
-            <app-wallet-item *ngFor="let item of favorites; let i = index"
-                             [label]="item.name">
-            </app-wallet-item>
+            <app-wallet-item *ngFor="let item of favorites; let i = index" [label]="item.name"> </app-wallet-item>
         </div>
     </div>
 </div>
