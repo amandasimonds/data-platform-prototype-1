@@ -10,8 +10,6 @@ import { UvLightService } from '../../services/uv-light.service';
 import { navItems } from './navItems';
 import { environment } from 'projects/uv-ui-prototype/src/environments/environment';
 import { settingsNavlinks } from '../../settings/settingsNavLinks';
-import { IEntity } from '../../models/entity.model';
-import { WalletService } from '../../services/wallet.service';
 
 @Component({
     selector: 'prototype-app-main',
@@ -44,7 +42,6 @@ export class MainComponent implements OnInit {
     public navbarIsExpanded = false;
     public subNavbarIsExpanded = false;
     public subNavbar2IsExpanded = false;
-    public selectedEntities: IEntity[] = [];
 
     @Input() public searchQuery = '';
 
@@ -81,7 +78,6 @@ export class MainComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private destroy$: NgOnDestroyService,
-        public walletService: WalletService,
         private userService: UserService,
         private uvlService: UvLightService) {
     }
@@ -96,7 +92,6 @@ export class MainComponent implements OnInit {
             this.searchService.compareWarning$.pipe(tap(state => this.compareWarning = state)),
             this.userService.getCurrentUser().pipe(tap(user => this.currentUser = user)),
             this.uvlService.getCurrentHighlight().pipe(tap(highlight => this.currentHighlight = highlight)),
-            this.walletService.selectedEntities$.pipe(tap(entities => this.selectedEntities = entities)),
             this.route.queryParams.pipe(tap(params => {
                 this.currentApp = params['app'];
                 this.currentService = params['service'];

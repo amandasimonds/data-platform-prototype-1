@@ -3,6 +3,7 @@ import { takeUntil } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { SidebySideService } from '../../services/side-by-side.service';
 import { UserService } from '../../auth/user.service';
+import { WalletService } from '../../services/wallet.service';
 
 @Component({
   selector: 'uv-prototype-sbs-landing',
@@ -20,6 +21,7 @@ export class SideBySideLandingComponent implements OnInit {
     constructor(
         private sbsService: SidebySideService, 
         private destroy$: NgOnDestroyService,
+        private walletService: WalletService,
         private userService: UserService) {
     }
 
@@ -28,6 +30,7 @@ export class SideBySideLandingComponent implements OnInit {
     }
 
     public ngOnInit(): void {
+        this.walletService.clearSelectedEntities();
         this.sbsService.sourceDocumentSelected
         .pipe(takeUntil(this.destroy$))
         .subscribe((sourceDocumentSelected: boolean) => {

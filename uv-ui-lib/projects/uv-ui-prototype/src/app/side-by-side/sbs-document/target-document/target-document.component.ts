@@ -4,6 +4,7 @@ import { NgOnDestroyService } from '../../../services/on-destroy.service';
 import { SidebySideService } from '../../../services/side-by-side.service';
 import { targetDocumentSamples } from '../../sample-data/target-documents';
 import { IEntity } from '../../../models/entity.model';
+import { WalletService } from '../../../services/wallet.service';
 
 @Component({
   selector: 'app-target-document',
@@ -19,11 +20,13 @@ export class TargetDocumentComponent implements OnInit {
     constructor(
         private sbsService: SidebySideService,
         private ref: ChangeDetectorRef,
-        private destroy$: NgOnDestroyService) {}
+        private destroy$: NgOnDestroyService,
+        private walletService: WalletService) {}
 
     public onTargetDocumentSelected(item: IEntity): void {
         item.active = !item.active;
         this.sbsService.selectTargetDocument(item);
+        this.walletService.selectEntityForWallet(item);
     }
 
     public onShowMoreDocumentDetails(event: Event, item: IEntity): void {
