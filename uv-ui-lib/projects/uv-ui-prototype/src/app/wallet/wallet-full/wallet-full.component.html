@@ -106,9 +106,10 @@
                         <app-wallet-item
                             *ngFor="let entity of category.items; let i = index"
                             [matTooltip]="entity.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
-                            (click)="selectWalletEntity(entity)"
+                            (itemSelectedEvent)="selectWalletEntity(entity)"
                             (itemUnselectedEvent)="selectWalletEntity(entity)"
                             [dragIsDisabled]="true"
+                            [isSelected]="entity.selected"
                             [label]="entity.name"
                         >
                         </app-wallet-item>

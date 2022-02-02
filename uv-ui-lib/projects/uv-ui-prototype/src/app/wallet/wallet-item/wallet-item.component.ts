@@ -9,7 +9,7 @@ import {CdkDragDrop, DragRef, moveItemInArray, transferArrayItem } from '@angula
 
 export class WalletItemComponent {
 
-  public isSelected = false;
+  @Input() public isSelected = false;
   
   @Input() public label = '';
   @Input() public itemAmountTrue = false;

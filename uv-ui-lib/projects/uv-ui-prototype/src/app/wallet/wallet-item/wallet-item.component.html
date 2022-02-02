@@ -7,7 +7,7 @@
   [class.folder-selected]="isSelected && isFolder"
   [class.no-drag]="dragIsDisabled"
   cdkDrag
-  (mousedown)="selectItem($event)"
+  (click)="selectItem($event)"
   (contextmenu)="unselect($event)"
   (cdkDragStarted)="onDragStart($event)"
   (cdkDragEnded)="onDragEnded($event)"
