@@ -11,6 +11,10 @@ body, p {
     line-height: 24px;
     color: var(--uv-font-color);
 
+    &-sm-md {
+        font-size: var(--uv-font-size-sm-md);
+    }
+
     &-sm {
         font-size: var(--uv-font-size-xs);
         line-height: 16px;
@@ -19,6 +23,12 @@ body, p {
     &-secondary{
         font-size: var(--uv-font-size-xs);
         color: var(--uv-font-color-secondary);
+        line-height: var(--uv-font-size-md);
+    }
+
+    &-tertiary {
+        font-size: var(--uv-font-size-xs);
+        color: var(--uv-color-primary);
         line-height: var(--uv-font-size-md);
     }
 }

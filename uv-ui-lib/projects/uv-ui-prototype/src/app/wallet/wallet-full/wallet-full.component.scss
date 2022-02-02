@@ -7,7 +7,7 @@
     animation-name: slide-in;
     animation-duration: 0.6s;
     animation-timing-function: ease-in-out;
-    width: 510px;
+    width: 464px;
     background-color: var(--uv-color-white);
     border-left: var(--uv-border-gray);
 }
@@ -31,4 +31,9 @@
   .cdk-drop-list-dragging {
       border: 2.5px dashed var(--uv-color-primary-light);
       box-sizing: border-box;
+  }
+
+  .wallet-item-container {
+      height: calc(100vh - 327px);
+      overflow: auto;
   }

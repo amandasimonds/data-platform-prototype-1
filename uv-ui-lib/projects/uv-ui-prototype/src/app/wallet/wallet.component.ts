@@ -21,7 +21,7 @@ export class WalletComponent {
   public selectedEntities: IEntity[] = [];
   public items = walletItems;
   public selections: any[] = [];
-  public wallet: IWalletCategory[] = [];
+  public wallet: IEntity[] = [];
   
   constructor (
     private dragDropService: DragDropService, 

@@ -7,6 +7,7 @@ import { WalletFullComponent } from './wallet-full/wallet-full.component';
 import { WalletItemModule } from './wallet-item/wallet-item.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { WalletItemDroplistComponent } from './wallet-item-droplist/wallet-item-droplist.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [WalletComponent, WalletFullComponent, WalletItemDroplistComponent],
@@ -17,6 +18,7 @@ import { WalletItemDroplistComponent } from './wallet-item-droplist/wallet-item-
     ButtonModule,
     DropdownModule,
     DragDropModule,
+    FormsModule,
     UvxIconModule,
     IconButtonModule,
     SearchPanelModule,

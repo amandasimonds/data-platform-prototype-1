@@ -711,6 +711,14 @@ export const ICON_SET: IconSetValue[] = [
     {
         name: 'send_feedback',
         url: 'actions/Send feedback.svg'
+    },
+    {
+        name: 'star_solid',
+        url: 'actions/Star solid.svg'
+    },
+    {
+        name: 'star_outline',
+        url: 'actions/Star outline.svg'
     }
 ];
 

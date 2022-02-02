@@ -41,6 +41,8 @@ export * from './lib/register-icon/register-icon.directive';
 export * from './lib/register-icon/icon-set';
 export * from './lib/search-panel/search-panel.component';
 export * from './lib/search-panel/search-panel.module';
+export * from './lib/selectable-entity/selectable-entity.component';
+export * from './lib/selectable-entity/selectable-entity.module';
 export * from './lib/snippet/snippet.component';
 export * from './lib/snippet/snippet.module';
 export * from './lib/icon-button/icon-button.component';
