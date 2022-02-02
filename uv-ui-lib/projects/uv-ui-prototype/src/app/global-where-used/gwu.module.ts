@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { WizardService } from './wizard.service';
-import { SidePanelModule, BackdropModule, ButtonModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule, ActionBarModule, ModalModule, UvxIconModule, RangeSliderModule } from '../../../../uv-ui-lib/src/public-api';
+import { SidePanelModule, BackdropModule, ButtonModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule, ActionBarModule, ModalModule, UvxIconModule, RangeSliderModule, SelectableEntityModule } from '../../../../uv-ui-lib/src/public-api';
 import { GlobalWhereUsedComponent } from './global-where-used.component';
 import { GwuRoutingModule } from './global-where-used-routing.module';
 import { FormPageModule } from './project-wizard/form-page/form-page.module';
@@ -46,7 +46,7 @@ import { WalletItemModule } from '../wallet/wallet-item/wallet-item.module';
         ProfileViewerContainerModule,
         UvxIconModule,
         WizardContainerModule,
-        WalletItemModule
+        SelectableEntityModule
     ],
     exports: [ GlobalWhereUsedComponent ],
     providers: [ WizardService ]

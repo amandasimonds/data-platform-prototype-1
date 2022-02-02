@@ -5,11 +5,12 @@
         <div *ngFor="let column of columns">
             <div class="col-1 flex flex-column gap-10">
                 <span *ngFor="let entity of column.entities">
-                    <app-wallet-item 
+                    <uvx-selectable-entity 
                     [isSelected]="entity.selected"
                     [label]="entity.name" 
+                    [dragIsDisabled]="true"
                     (itemUnselectedEvent)="onGwuEntitySelected(entity)"
-                    (itemSelectedEvent)="onGwuEntitySelected(entity)"></app-wallet-item>
+                    (itemSelectedEvent)="onGwuEntitySelected(entity)"></uvx-selectable-entity>
                 </span>
                 <span *ngIf="column.image !== ''">
                     <img src="../../../assets/gwulines.png" alt="">

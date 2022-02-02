@@ -22,8 +22,12 @@
                 <!--                    </ng-template>-->
                 <!--                </epd-pl-button-dropdown>-->
                 <!--                <uvx-button mode="secondary" label="View Objects" (click)="toggleViewObjects()"></uvx-button>-->
-                <uvx-search-panel mode="component-border" width="100%">
-                    <input type="text" placeholder="Search" class="uv-input margin-left-xs" />
+                <uvx-search-panel mode="component-border" width="100%" 
+                    (searchClearClicked)="searchText = ''">
+                    <input type="text" 
+                    [(ngModel)]="searchText"
+                    placeholder="Search" 
+                    class="uv-input margin-left-xs" />
                 </uvx-search-panel>
                 <uvx-button mode="primary" label="Add To Wallet" 
                 (click)="onAddEntityToWallet(selectedEntities)"></uvx-button>
@@ -75,8 +79,8 @@
 
     <div class="divider"></div>
 
-    <div class="padding-xs">
-        <div class="flex align-items-center justify-content-space-between">
+    <div class="">
+        <div class="flex align-items-center padding-xs justify-content-space-between margin-bottom-sm">
             <div></div>
             <div class="flex align-items-center">
                 <uvx-icon-button 
@@ -88,7 +92,7 @@
                 <uvx-icon-button icon="sorting_bottom"></uvx-icon-button>
             </div>
         </div>
-        <div class="padding-left-sm">
+        <div class="">
             <!-- <div
                 cdkDropList
                 *ngFor="let category of wallet"
@@ -98,13 +102,13 @@
                 [cdkDropListData]="category.items"
                 (cdkDropListDropped)="onDroppedIntoList($event)"
             > -->
-                <div *ngFor="let category of wallet" class="flex flex-column">
-                    <div class="flex align-items-center">
+                <!-- <div *ngFor="let category of wallet" class="flex flex-column"> -->
+                    <!-- <div class="flex align-items-center">
                         <p class="label margin-bottom-xxs">{{ category.name }}</p>
-                    </div>
-                    <div class="margin-left-xxxs margin-bottom-xxs">
+                    </div> -->
+                    <div *ngIf="searchText === ''" class="margin-bottom-xxs wallet-item-container">
                         <app-wallet-item
-                            *ngFor="let entity of category.items; let i = index"
+                            *ngFor="let entity of wallet; let i = index"
                             [matTooltip]="entity.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
                             (itemSelectedEvent)="selectWalletEntity(entity)"
                             (itemUnselectedEvent)="selectWalletEntity(entity)"
@@ -114,7 +118,33 @@
                         >
                         </app-wallet-item>
                     </div>
-                </div>
+
+                    <div *ngIf="searchText === ''; else resultsTpl" class="margin-bottom-xxs wallet-item-container">
+                        <app-wallet-item
+                            *ngFor="let entity of wallet; let i = index"
+                            [matTooltip]="entity.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
+                            (itemSelectedEvent)="selectWalletEntity(entity)"
+                            (itemUnselectedEvent)="selectWalletEntity(entity)"
+                            [dragIsDisabled]="true"
+                            [isSelected]="entity.selected"
+                            [label]="entity.name"
+                        >
+                        </app-wallet-item>
+                    </div>
+                    <ng-template #resultsTpl>
+                        <app-wallet-item
+                            *ngFor="let entity of getWalletSearchResults(searchText); let i = index"
+                            [matTooltip]="entity.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
+                            (itemSelectedEvent)="selectWalletEntity(entity)"
+                            (itemUnselectedEvent)="selectWalletEntity(entity)"
+                            [dragIsDisabled]="true"
+                            [isSelected]="entity.selected"
+                            [label]="entity.name"
+                        >
+                        </app-wallet-item>
+                    </ng-template>
+                    
+                <!-- </div> -->
             <!-- </div> -->
         </div>
     </div>
