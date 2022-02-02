@@ -13,7 +13,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B1',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -28,7 +28,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B2',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -56,7 +56,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B3',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -71,7 +71,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B4',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -99,7 +99,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B5',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -114,7 +114,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B6',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -142,7 +142,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B7',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -157,7 +157,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B8',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -185,7 +185,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B9',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -200,7 +200,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B11',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -228,7 +228,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B12',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -243,7 +243,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B',
+                name: 'EXH-SU-5110-B13',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,

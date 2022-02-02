@@ -707,6 +707,10 @@ export const ICON_SET: IconSetValue[] = [
     {
         name: 'zoom_out',
         url: 'actions/Zoom out.svg'
+    },
+    {
+        name: 'send_feedback',
+        url: 'actions/Send feedback.svg'
     }
 ];
 

@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Ho
 import { DragDropService } from '../../services/drag-drop.service';
 import { slideInOutRightSidebarAnimation } from '../../shared/animations';
 import { presetWallet, IWalletCategory } from '../wallet-preset';
-import { walletItems } from '../wallet-items';
 import * as _ from 'lodash';
 import { IEntity } from '../../models/entity.model';
 import { WalletService } from '../../services/wallet.service';
@@ -25,12 +24,11 @@ export class WalletFullComponent implements OnInit {
 
   public viewObjectsOpen = true;
   public wallet: IWalletCategory[] = [];
-  public items: IEntity[] = walletItems;
   public folderSelected = false;
   public folderIsEditMode = false;
   public dragging: DragRef = null;
-  public selections: IEntity[] = [];
-  public selectionsIndices: number[] = [];
+  public walletEntitySelections: IEntity[] = [];
+  public walletEntitySelectionsIndices: number[] = [];
   @Input() public selectedEntities: IEntity[] = [];
 
   constructor (
@@ -40,18 +38,20 @@ export class WalletFullComponent implements OnInit {
     private destroy$: NgOnDestroyService) {}
 
   ngOnInit(): void {
-    this.wallet = this.walletService.getPresetWallet();
+    this.wallet = this.walletService.getWallet();
     combineLatest([
       this.walletService.selectedEntities$.pipe(tap(entities => this.selectedEntities = entities)),
-      this.walletService.walletItems$.pipe(tap(wallet => this.wallet = wallet))
+      this.walletService.walletItems$.pipe(tap(wallet => this.wallet = wallet)),
+      this.walletService.selectedWalletEntities$.pipe(tap(selections => this.walletEntitySelections = selections))
     ])
     .pipe(takeUntil(this.destroy$))
     .subscribe(() => this.ref.detectChanges());
+    console.log(this.wallet);
   }
 
-    isSelected(i: number): boolean {
-      return this.items[i].selected;
-    }
+    // isSelected(i: number): boolean {
+    //   return this.items[i].selected;
+    // }
 
   public onCloseClicked(state: string): void{
       this.walletSidebarClosedEvent.emit(state);
@@ -60,6 +60,14 @@ export class WalletFullComponent implements OnInit {
   public onAddEntityToWallet(entities: IEntity[]) {
     this.walletService.addEntityToWallet(entities);
     console.log('add entity to wallet', this.wallet);
+  }
+
+  public selectWalletEntity(entity: IEntity) {
+    this.walletService.selectWalletEntity(entity);
+  }
+
+  public deleteEntitySelectionFromWallet() {
+    this.walletService.deleteEntitySelectionFromWallet(this.walletEntitySelections);
   }
 
   public toggleViewObjects() {
@@ -83,20 +91,20 @@ export class WalletFullComponent implements OnInit {
     event.preventDefault();
     index = (index + 1);
     item.selected = false;
-    const alreadySelected = _.find(this.selectionsIndices, s => s === (index));
+    const alreadySelected = _.find(this.walletEntitySelectionsIndices, s => s === (index));
     console.log('alreadySelected', alreadySelected, item, index);
     if (alreadySelected) {
-      _.remove(this.selectionsIndices, s => s === (index));
+      _.remove(this.walletEntitySelectionsIndices, s => s === (index));
     }
-    console.log('selections', this.selectionsIndices, this.selections);
+    console.log('walletEntitySelections', this.walletEntitySelectionsIndices, this.walletEntitySelections);
     this.ref.detectChanges();
   }
 
   public selectIndex(event: Event, index: number, item: IEntity) {
       index = (index + 1);
       item.selected = true;
-      this.selectionsIndices.push((index));
-      this.selections.push(item)
+      this.walletEntitySelectionsIndices.push((index));
+      this.walletEntitySelections.push(item)
   }
 
   public handleItemMouseEvent(event: Event, index: number, item: IEntity) {
@@ -111,26 +119,22 @@ export class WalletFullComponent implements OnInit {
     else  if (item.selected) {
       return;
     }
-    console.log('selected', this.selectionsIndices, this.selections);
+    console.log('selected', this.walletEntitySelectionsIndices, this.walletEntitySelections);
     this.ref.detectChanges();
   }
 
-  select(item: IEntity) {
-
-  };
-
-  public onDragStart(event: CdkDragStart, index: number) {
-    this.dragging = event.source._dragRef;
-    const indices = this.selectionsIndices.length ? this.selectionsIndices : [index + 1];
-    console.log('dragstart, indices', indices);
-    event.source.data = {
-      indices,
-      values: indices.map(i => this.items[i - 1]),
-      source: this,
-    };
-    // console.log(event.source.data);
-    this.ref.detectChanges();
-  }
+  // public onDragStart(event: CdkDragStart, index: number) {
+  //   this.dragging = event.source._dragRef;
+  //   const indices = this.walletEntitySelectionsIndices.length ? this.walletEntitySelectionsIndices : [index + 1];
+  //   console.log('dragstart, indices', indices);
+  //   event.source.data = {
+  //     indices,
+  //     values: indices.map(i => this.items[i - 1]),
+  //     source: this,
+  //   };
+  //   // console.log(event.source.data);
+  //   this.ref.detectChanges();
+  // }
 
   public onDragEnded() {
     console.log('drag end');
@@ -146,16 +150,16 @@ export class WalletFullComponent implements OnInit {
       return;
     }
     this.dragging = null;
-    setTimeout(() => this.clearSelected());
+    // setTimeout(() => this.clearSelected());
   }
 
-  public clearSelected() {
-    this.items = this.items.map( item => ({
-      ...item,
-      selected: false
-    }));
-    this.selectionsIndices = [];
-  }
+  // public clearSelected() {
+  //   this.items = this.items.map( item => ({
+  //     ...item,
+  //     selected: false
+  //   }));
+  //   this.walletEntitySelectionsIndices = [];
+  // }
 
   public onDroppedIntoList(event: CdkDragDrop<any>): void {
     if (!event.isPointerOverContainer || !_.get(event, 'item.data.source')) {
@@ -168,14 +172,14 @@ export class WalletFullComponent implements OnInit {
     let spliceIntoIndex = event.currentIndex;
     if (event.previousContainer === event.container) {
       console.log('same container');
-      this.selectionsIndices.splice(-1, 1);
-      const sum = _.sumBy(this.selectionsIndices, selectedIndex => selectedIndex <= spliceIntoIndex ? 1 : 0);
+      this.walletEntitySelectionsIndices.splice(-1, 1);
+      const sum = _.sumBy(this.walletEntitySelectionsIndices, selectedIndex => selectedIndex <= spliceIntoIndex ? 1 : 0);
       spliceIntoIndex -= sum;
     } else if (event.previousContainer !== event.container) {
       console.log('not the same container', event.previousIndex, data, event.container.data);
       event.container.data.splice(spliceIntoIndex, 0, ...data.values);
     }
-    this.clearSelected();
+    // this.clearSelected();
     setTimeout(() => this.ref.detectChanges());
   }
 
