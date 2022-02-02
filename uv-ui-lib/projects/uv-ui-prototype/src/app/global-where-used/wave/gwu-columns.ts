@@ -13,22 +13,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B1',
-                description: 'Lorem upsum door sit amet consectetur',
-                date: '',
-                active: false,
-                selected: false,
-                disabled: false,
-                formattedDate: '',
-                showDetails: false,
-                tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
-                progress: 0,
-                details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            },
-            {
-                category: 'Part',
-                id: 1,
-                name: 'EXH-SU-5110-B2',
+                name: 'EXH-SU-B1',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -48,7 +33,7 @@ export const columns: IGwuColumn[] = [
         entities: [
             
         ],
-        image: ''
+        image: '../../../assets/gwulines.png'
     },
     {
         column: 3,
@@ -56,7 +41,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B3',
+                name: 'EXH-SU-B3',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -71,7 +56,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B4',
+                name: 'EXH-SU-B4',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -82,7 +67,37 @@ export const columns: IGwuColumn[] = [
                 tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
                 progress: 0,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            }
+            },
+            {
+                category: 'Part',
+                id: 1,
+                name: 'EXH-SU-B42',
+                description: 'Lorem upsum door sit amet consectetur',
+                date: '',
+                active: false,
+                selected: false,
+                disabled: false,
+                formattedDate: '',
+                showDetails: false,
+                tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
+                progress: 0,
+                details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            },
+            {
+                category: 'Part',
+                id: 1,
+                name: 'EXH-SU-B43',
+                description: 'Lorem upsum door sit amet consectetur',
+                date: '',
+                active: false,
+                selected: false,
+                disabled: false,
+                formattedDate: '',
+                showDetails: false,
+                tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
+                progress: 0,
+                details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            },
         ],
         image: ''
     },
@@ -91,7 +106,7 @@ export const columns: IGwuColumn[] = [
         entities: [
             
         ],
-        image: ''
+        image: '../../../assets/gwulines.png'
     },
     {
         column: 5,
@@ -99,7 +114,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B5',
+                name: 'EXH-SU-B5',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -114,7 +129,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B6',
+                name: 'EXH-SU-B6',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -125,7 +140,52 @@ export const columns: IGwuColumn[] = [
                 tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
                 progress: 0,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            }
+            },
+            {
+                category: 'Part',
+                id: 1,
+                name: 'EXH-SU-B62',
+                description: 'Lorem upsum door sit amet consectetur',
+                date: '',
+                active: false,
+                selected: false,
+                disabled: false,
+                formattedDate: '',
+                showDetails: false,
+                tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
+                progress: 0,
+                details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            },
+            {
+                category: 'Part',
+                id: 1,
+                name: 'EXH-SU-B63',
+                description: 'Lorem upsum door sit amet consectetur',
+                date: '',
+                active: false,
+                selected: false,
+                disabled: false,
+                formattedDate: '',
+                showDetails: false,
+                tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
+                progress: 0,
+                details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            },
+            {
+                category: 'Part',
+                id: 1,
+                name: 'EXH-SU-B64',
+                description: 'Lorem upsum door sit amet consectetur',
+                date: '',
+                active: false,
+                selected: false,
+                disabled: false,
+                formattedDate: '',
+                showDetails: false,
+                tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
+                progress: 0,
+                details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            },
         ],
         image: ''
     },
@@ -134,7 +194,7 @@ export const columns: IGwuColumn[] = [
         entities: [
             
         ],
-        image: ''
+        image: '../../../assets/gwulines.png'
     },
     {
         column: 7,
@@ -142,7 +202,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B7',
+                name: 'EXH-SU-B7',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -157,7 +217,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B8',
+                name: 'EXH-SU-B8',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -177,7 +237,7 @@ export const columns: IGwuColumn[] = [
         entities: [
             
         ],
-        image: ''
+        image: '../../../assets/gwulines.png'
     },
     {
         column: 9,
@@ -185,7 +245,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B9',
+                name: 'EXH-SU-B9',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -200,7 +260,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B11',
+                name: 'EXH-SU-B11',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -220,7 +280,7 @@ export const columns: IGwuColumn[] = [
         entities: [
             
         ],
-        image: ''
+        image: '../../../assets/gwulines.png'
     },
     {
         column: 11,
@@ -228,7 +288,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B12',
+                name: 'EXH-SU-B12',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -243,7 +303,7 @@ export const columns: IGwuColumn[] = [
             {
                 category: 'Part',
                 id: 1,
-                name: 'EXH-SU-5110-B13',
+                name: 'EXH-SU-B13',
                 description: 'Lorem upsum door sit amet consectetur',
                 date: '',
                 active: false,
@@ -254,15 +314,45 @@ export const columns: IGwuColumn[] = [
                 tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
                 progress: 0,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            }
-        ],
-        image: ''
-    },
-    {
-        column: 12,
-        entities: [
-            
+            },
+            {
+                category: 'Part',
+                id: 1,
+                name: 'EXH-SU-B2',
+                description: 'Lorem upsum door sit amet consectetur',
+                date: '',
+                active: false,
+                selected: false,
+                disabled: false,
+                formattedDate: '',
+                showDetails: false,
+                tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
+                progress: 0,
+                details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            },
+            {
+                category: 'Part',
+                id: 1,
+                name: 'EXH-SU-B1342',
+                description: 'Lorem upsum door sit amet consectetur',
+                date: '',
+                active: false,
+                selected: false,
+                disabled: false,
+                formattedDate: '',
+                showDetails: false,
+                tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
+                progress: 0,
+                details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            },
         ],
         image: ''
     }
+    // {
+    //     column: 12,
+    //     entities: [
+            
+    //     ],
+    //     image: '../../../assets/gwulines.png'
+    // }
 ]

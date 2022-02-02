@@ -129,18 +129,33 @@ export class WalletService {
   public deleteEntitySelectionFromWallet(entities: IEntity[]) {
     console.log('delete these: ', entities);
     const wallet = this.walletItems$.value.slice();
-    wallet.forEach((category) => category.items.forEach((item: IEntity) => {
-      entities.forEach(entity => {
-        if(entity.name === item.name) {
-          const index = category.items.indexOf(item);
-          category.items.splice(index, 1);
-        }
-        entity.selected = false;
+    // const filteredWallet: IWalletCategory[] = [];
+    wallet.forEach(category => {
+      console.log(category.name);
+      category.items.forEach((item: IEntity) => {
+        console.log('item', item.name);
+        entities.forEach(entity => {
+          console.log('selected entity', entity.name);
+          if (entity.name === item.name) {
+            const index = category.items.indexOf(item);
+            console.log(entity.name, entity.name === item.name, index);
+            category.items.splice(index, 1);
+          }
+          entity.selected = false;
+        })
       })
-    }))
+    })
+
+    // entities.forEach(entity =>
+    //   wallet.forEach(category => {
+    //     console.log(category);
+    //     category.items.filter(item => entity.name !== item.name)
+    //   }
+    //   ))
 
     console.log(wallet);
     this.walletItems$.next(wallet);
     this.selectedWalletEntities$.next([]);
+    this.saveWalletToLocalStorage();
   }
 }
