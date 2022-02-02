@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WalletItemComponent } from './wallet-item.component';
-import { CheckboxModule } from 'projects/uv-ui-lib/src/public-api';
+import { CheckboxModule, IconButtonModule } from 'projects/uv-ui-lib/src/public-api';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   imports: [
     CommonModule,
     CheckboxModule,
-    DragDropModule
+    DragDropModule,
+    IconButtonModule
   ],
   exports: [WalletItemComponent]
 })

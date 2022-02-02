@@ -23,12 +23,14 @@ export class WalletFullComponent implements OnInit {
   @Output() public readonly walletSidebarClosedEvent = new EventEmitter<string>();
 
   public viewObjectsOpen = true;
-  public wallet: IWalletCategory[] = [];
+  public searchText = '';
+  public wallet: IEntity[] = [];
   public folderSelected = false;
   public folderIsEditMode = false;
   public dragging: DragRef = null;
   public walletEntitySelections: IEntity[] = [];
   public walletEntitySelectionsIndices: number[] = [];
+  public walletSearchResults: IEntity[] = [];
   @Input() public selectedEntities: IEntity[] = [];
 
   constructor (
@@ -69,6 +71,17 @@ export class WalletFullComponent implements OnInit {
   public deleteEntitySelectionFromWallet() {
     this.walletService.deleteEntitySelectionFromWallet(this.walletEntitySelections);
   }
+
+  public getWalletSearchResults(input: string): IEntity[] {
+    let results = this.wallet.slice();
+    console.log(results);
+    console.log(input);
+    results = results.filter(item =>
+        item.name.toLowerCase().includes(input.toLowerCase())
+    );
+
+    return results;
+}
 
   public toggleViewObjects() {
     this.viewObjectsOpen = !this.viewObjectsOpen;

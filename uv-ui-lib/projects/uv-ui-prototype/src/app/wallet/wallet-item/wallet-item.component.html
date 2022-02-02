@@ -1,33 +1,43 @@
 <div
-  class="wallet-item"
-  [class.entity]="isEntity"
-  [class.folder]="isFolder"
-  [class.entity-notDragging-hover]="!dragging"
-  [class.entity-selected]="isSelected && isEntity"
-  [class.folder-selected]="isSelected && isFolder"
-  [class.no-drag]="dragIsDisabled"
-  cdkDrag
-  (click)="selectItem($event)"
-  (contextmenu)="unselect($event)"
-  (cdkDragStarted)="onDragStart($event)"
-  (cdkDragEnded)="onDragEnded($event)"
-  (cdkDragDropped)="onDropped($event)"
-  [cdkDragDisabled]="isFolder || dragIsDisabled"
-  >
-  <div class="select-item-drag-preview" *cdkDragPreview>
-    {{ dragPreviewText }}
-  </div>
-  <div class="flex justify-content-space-between align-items-center">
-    <div>
-      <uvx-checkbox class="draggable" [isChecked]="isSelected"></uvx-checkbox> 
-      <span *ngIf="!isEditMode; else editTpl">
-        {{label}}
-      </span>
-      <ng-template #editTpl>
-        <uvx-text-input></uvx-text-input>
-      </ng-template>
-      
+    class="wallet-item"
+    [class.entity]="isEntity"
+    [class.folder]="isFolder"
+    [class.entity-notDragging-hover]="!dragging"
+    [class.entity-selected]="isSelected && isEntity"
+    [class.folder-selected]="isSelected && isFolder"
+    [class.no-drag]="dragIsDisabled"
+    cdkDrag
+    (click)="selectItem($event)"
+    (contextmenu)="unselect($event)"
+    (cdkDragStarted)="onDragStart($event)"
+    (cdkDragEnded)="onDragEnded($event)"
+    (cdkDragDropped)="onDropped($event)"
+    [cdkDragDisabled]="isFolder || dragIsDisabled"
+>
+    <div class="select-item-drag-preview" *cdkDragPreview>
+        {{ dragPreviewText }}
     </div>
-    <div *ngIf="itemAmountTrue" class="results-number results-number-sm">{{itemAmount}}</div>
-  </div>
+    <div class="flex justify-content-space-between align-items-center">
+        <div class="flex align-items-center gap-xs">
+            <uvx-checkbox class="draggable" [isChecked]="isSelected"></uvx-checkbox>
+            <div class="flex flex-column">
+                <span *ngIf="!isEditMode; else editTpl" class="uv-body-sm-md medium-bold margin-bottom-xxxs">
+                    {{ label }}
+                </span>
+                <span class="flex">
+                  <p class="uv-body-secondary margin-right-xxs">Document:</p> 
+                  <p class="uv-body-tertiary">Lorem ipsum</p>
+                </span>
+                <span class="flex">
+                  <p class="uv-body-secondary margin-right-xxs">Section:</p> 
+                  <p class="uv-body-tertiary">Lorem ipsum</p>
+                </span>
+            </div>
+            <ng-template #editTpl>
+                <uvx-text-input></uvx-text-input>
+            </ng-template>
+        </div>
+        <uvx-icon-button icon="star_outline"></uvx-icon-button>
+        <div *ngIf="itemAmountTrue" class="results-number results-number-sm">{{ itemAmount }}</div>
+    </div>
 </div>

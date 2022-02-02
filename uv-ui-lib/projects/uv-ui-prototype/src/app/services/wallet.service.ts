@@ -32,13 +32,31 @@ export class WalletService {
     ]
   }];
 
+  public initialWalletItems: IEntity[] = [
+    {
+      category: 'Part',
+      id: 1,
+      name: 'WG-12',
+      description: 'Lorem upsum door sit amet consectetur',
+      date: '',
+      active: false,
+      selected: false,
+      disabled: false,
+      formattedDate: '',
+      showDetails: false,
+      tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
+      progress: 0,
+      details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    }
+  ]
+
   public savedWallet: IWalletCategory[] = JSON.parse(localStorage.getItem('wallet'));
 
-  public walletItems$ = new BehaviorSubject<IWalletCategory[]>([]);
+  public walletItems$ = new BehaviorSubject<IEntity[]>([]);
   public selectedEntities$ = new BehaviorSubject<IEntity[]>([]);
   public selectedWalletEntities$ = new BehaviorSubject<IEntity[]>([]);
 
-  public get walletItemsObservable(): Observable<IWalletCategory[]> {
+  public get walletItemsObservable(): Observable<IEntity[]> {
     return this.walletItems$.asObservable();
   }
 
@@ -47,7 +65,7 @@ export class WalletService {
     return this.selectedEntities$.asObservable();
   }
 
-  public setWalletItems(items: IWalletCategory[]): void {
+  public setWalletItems(items: IEntity[]): void {
     this.walletItems$.next(items);
   }
 
@@ -55,7 +73,7 @@ export class WalletService {
     this.selectedEntities$.next(entities);
   }
 
-  public getWallet(): IWalletCategory[] {
+  public getWallet(): IEntity[] {
     const localStorageWallet = JSON.parse(localStorage.getItem('wallet'));
     if (localStorageWallet === null) {
       return this.getPresetLocalStorageWallet();
@@ -65,17 +83,17 @@ export class WalletService {
     }
   }
 
-  public getPresetLocalStorageWallet(): IWalletCategory[] {
-    this.walletItems$.next(this.initialWalletCategory);
-    return this.initialWalletCategory;
+  public getPresetLocalStorageWallet(): IEntity[] {
+    this.walletItems$.next(this.initialWalletItems);
+    return this.initialWalletItems;
   }
 
-  public getPresetWallet(): IWalletCategory[] {
-    return this.presetWallet.slice();
-  }
+  // public getPresetWallet(): IEntity[] {
+  //   return this.presetWallet.slice();
+  // }
 
   public selectEntityForWallet(entity: IEntity): void {
-    const entitiesList: IEntity[] = this.selectedEntities$.value;
+    const entitiesList: IEntity[] = this.selectedEntities$.value.slice();
     if (!entity.selected) {
       entity.selected = true;
       entitiesList.push(entity);
@@ -88,11 +106,11 @@ export class WalletService {
   }
 
   public addEntityToWallet(entities: IEntity[]) {
-    const walletItemsList = this.walletItems$.value;
+    const walletItemsList = this.walletItems$.value.slice();
     console.log(walletItemsList);
     for (let item of this.selectedEntities$.value) {
       item.selected = false;
-      walletItemsList[0].items.push(item);
+      walletItemsList.push(item);
     }
 
     this.walletItems$.next(walletItemsList);
@@ -129,22 +147,19 @@ export class WalletService {
   public deleteEntitySelectionFromWallet(entities: IEntity[]) {
     console.log('delete these: ', entities);
     const wallet = this.walletItems$.value.slice();
-    // const filteredWallet: IWalletCategory[] = [];
-    wallet.forEach(category => {
-      console.log(category.name);
-      category.items.forEach((item: IEntity) => {
+    // const filteredWallet: IEntity[] = [];
+    wallet.forEach(item => {
         console.log('item', item.name);
         entities.forEach(entity => {
           console.log('selected entity', entity.name);
           if (entity.name === item.name) {
-            const index = category.items.indexOf(item);
+            const index = wallet.indexOf(item);
             console.log(entity.name, entity.name === item.name, index);
-            category.items.splice(index, 1);
+            wallet.splice(index, 1);
           }
           entity.selected = false;
         })
       })
-    })
 
     // entities.forEach(entity =>
     //   wallet.forEach(category => {
@@ -157,5 +172,14 @@ export class WalletService {
     this.walletItems$.next(wallet);
     this.selectedWalletEntities$.next([]);
     this.saveWalletToLocalStorage();
+  }
+
+  public typeAheadSearch(input: string): IEntity[] {
+    let results = this.walletItems$.value.slice();
+    results = results.filter(item =>
+      item.name.toLowerCase().includes(input.toLowerCase())
+    );
+
+    return results;
   }
 }

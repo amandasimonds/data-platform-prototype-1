@@ -1,0 +1,30 @@
+<div
+  class="selectable-entity entity"
+  [class.entity-notDragging-hover]="!dragging"
+  [class.entity-selected]="isSelected"
+  [class.no-drag]="dragIsDisabled"
+  cdkDrag
+  (click)="selectItem($event)"
+  (contextmenu)="unselect($event)"
+  (cdkDragStarted)="onDragStart($event)"
+  (cdkDragEnded)="onDragEnded($event)"
+  (cdkDragDropped)="onDropped($event)"
+  [cdkDragDisabled]="dragIsDisabled"
+  >
+  <div class="select-item-drag-preview" *cdkDragPreview>
+    {{ dragPreviewText }}
+  </div>
+  <div class="flex justify-content-space-between align-items-center">
+    <div>
+      <uvx-checkbox class="draggable" [isChecked]="isSelected"></uvx-checkbox> 
+      <span *ngIf="!isEditMode; else editTpl">
+        {{label}}
+      </span>
+      <ng-template #editTpl>
+        <uvx-text-input></uvx-text-input>
+      </ng-template>
+      
+    </div>
+    <div *ngIf="itemAmountTrue" class="results-number results-number-sm">{{itemAmount}}</div>
+  </div>
+</div>

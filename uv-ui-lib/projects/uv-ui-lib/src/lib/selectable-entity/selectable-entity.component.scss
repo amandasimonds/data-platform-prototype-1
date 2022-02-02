@@ -1,5 +1,5 @@
-.wallet-item {
-    padding: 12px 20px 20px 16px;
+.selectable-entity {
+    padding: 4px 8px;
     font-size: var(--uv-font-size-sm);
 }
 
@@ -12,21 +12,17 @@
 
     &-notDragging-hover {
         &:hover {
-            background-color: var(--uv-color-gray-light);
+            background-color: var(--uv-color-primary-hover);
         }
     }
 
     &-selected {
-        background-color: var(--uv-color-gray-light);
+        background-color: var(--uv-color-primary-hover);
     }
 }
 
 .no-drag {
     cursor: pointer !important;
-}
-
-.folder {
-    cursor: pointer;
 }
 
 .draggable {
