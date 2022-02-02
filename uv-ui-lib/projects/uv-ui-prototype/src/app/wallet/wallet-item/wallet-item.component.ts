@@ -44,7 +44,6 @@ export class WalletItemComponent {
   }
 
   public unselect(event: Event){
-    console.log('walletitem', this.isSelected);
     event.preventDefault();
     this.isSelected = false;
     this.itemUnselectedEvent.emit(event);

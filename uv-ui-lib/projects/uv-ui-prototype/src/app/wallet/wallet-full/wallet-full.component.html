@@ -79,13 +79,17 @@
         <div class="flex align-items-center justify-content-space-between">
             <div></div>
             <div class="flex align-items-center">
-                <uvx-icon-button class="" icon="delete"></uvx-icon-button>
+                <uvx-icon-button 
+                class="" 
+                icon="delete" 
+                *ngIf="walletEntitySelections.length > 0"
+                (click)="deleteEntitySelectionFromWallet()"></uvx-icon-button>
                 <span class="divider-left"></span>
                 <uvx-icon-button icon="sorting_bottom"></uvx-icon-button>
             </div>
         </div>
         <div class="padding-left-sm">
-            <div
+            <!-- <div
                 cdkDropList
                 *ngFor="let category of wallet"
                 class="margin-bottom-xxs folder"
@@ -93,30 +97,24 @@
                 [cdkDropListConnectedTo]="['items']"
                 [cdkDropListData]="category.items"
                 (cdkDropListDropped)="onDroppedIntoList($event)"
-            >
-                <div class="flex flex-column">
+            > -->
+                <div *ngFor="let category of wallet" class="flex flex-column">
                     <div class="flex align-items-center">
                         <p class="label margin-bottom-xxs">{{ category.name }}</p>
                     </div>
                     <div class="margin-left-xxxs margin-bottom-xxs">
                         <app-wallet-item
-                            *ngFor="let item of category.items; let i = index"
-                            [matTooltip]="item.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
-                            (mousedown)="handleItemMouseEvent($event, i, item)"
-                            (contextmenu)="unselect($event, i, item)"
-                            (itemUnselectedEvent)="unselect($event, i, item)"
-                            (cdkDragStarted)="onDragStart($event, i)"
-                            (cdkDragEnded)="onDragEnded($event)"
-                            (cdkDragDropped)="onDropped($event)"
-                            [dragging]="dragging"
-                            [selections]="selectionsIndices"
+                            *ngFor="let entity of category.items; let i = index"
+                            [matTooltip]="entity.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
+                            (click)="selectWalletEntity(entity)"
+                            (itemUnselectedEvent)="selectWalletEntity(entity)"
                             [dragIsDisabled]="true"
-                            [label]="item.name"
+                            [label]="entity.name"
                         >
                         </app-wallet-item>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 </div>
