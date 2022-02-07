@@ -4,10 +4,10 @@
 }
 
 .entity {
-    cursor: grab;
+    // cursor: grab;
 
     &:hover {
-        cursor: grab;
+        // cursor: grab;
     }
 
     &-notDragging-hover {
@@ -22,7 +22,7 @@
 }
 
 .no-drag {
-    cursor: pointer !important;
+    // cursor: pointer !important;
 }
 
 .folder {

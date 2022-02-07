@@ -1,8 +1,7 @@
-import { CdkDragDrop, CdkDragStart, copyArrayItem, DragRef } from '@angular/cdk/drag-drop';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { CdkDragDrop, DragRef } from '@angular/cdk/drag-drop';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DragDropService } from '../../services/drag-drop.service';
 import { slideInOutRightSidebarAnimation } from '../../shared/animations';
-import { presetWallet, IWalletCategory } from '../wallet-preset';
 import * as _ from 'lodash';
 import { IEntity } from '../../models/entity.model';
 import { WalletService } from '../../services/wallet.service';
@@ -20,8 +19,10 @@ import { NgOnDestroyService } from '../../services/on-destroy.service';
 export class WalletFullComponent implements OnInit {
 
   @Input() public walletSidebarState = 'hidden';
+  @Input() public selectedEntities: IEntity[] = [];
   @Output() public readonly walletSidebarClosedEvent = new EventEmitter<string>();
 
+  public apiList: IEntity[] = [];
   public viewObjectsOpen = true;
   public searchText = '';
   public wallet: IEntity[] = [];
@@ -31,40 +32,42 @@ export class WalletFullComponent implements OnInit {
   public walletEntitySelections: IEntity[] = [];
   public walletEntitySelectionsIndices: number[] = [];
   public walletSearchResults: IEntity[] = [];
-  @Input() public selectedEntities: IEntity[] = [];
 
-  constructor (
+  constructor(
     private dragDropService: DragDropService,
     private walletService: WalletService,
     private ref: ChangeDetectorRef,
-    private destroy$: NgOnDestroyService) {}
+    private destroy$: NgOnDestroyService) { }
 
   ngOnInit(): void {
     this.wallet = this.walletService.getWallet();
+    // this.walletService.getWalletApi();
     combineLatest([
       this.walletService.selectedEntities$.pipe(tap(entities => this.selectedEntities = entities)),
       this.walletService.walletItems$.pipe(tap(wallet => this.wallet = wallet)),
       this.walletService.selectedWalletEntities$.pipe(tap(selections => this.walletEntitySelections = selections))
+      // this.walletService.getWalletApi().pipe(tap(walletApi => this.apiList = walletApi))
     ])
-    .pipe(takeUntil(this.destroy$))
-    .subscribe(() => this.ref.detectChanges());
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => this.ref.detectChanges());
     console.log(this.wallet);
+    console.log(this.apiList);
   }
 
-    // isSelected(i: number): boolean {
-    //   return this.items[i].selected;
-    // }
+  // isSelected(i: number): boolean {
+  //   return this.items[i].selected;
+  // }
 
-  public onCloseClicked(state: string): void{
-      this.walletSidebarClosedEvent.emit(state);
+  public onCloseClicked(state: string): void {
+    this.walletSidebarClosedEvent.emit(state);
   }
 
   public onAddEntityToWallet(entities: IEntity[]) {
     this.walletService.addEntityToWallet(entities);
-    console.log('add entity to wallet', this.wallet);
   }
 
   public selectWalletEntity(entity: IEntity) {
+    console.log('event recieved');
     this.walletService.selectWalletEntity(entity);
   }
 
@@ -77,11 +80,16 @@ export class WalletFullComponent implements OnInit {
     console.log(results);
     console.log(input);
     results = results.filter(item =>
-        item.name.toLowerCase().includes(input.toLowerCase())
+      item.name.toLowerCase().includes(input.toLowerCase())
     );
 
     return results;
-}
+  }
+
+  public onFavoriteItem(entity: IEntity) {
+    entity.walletFavorite = !entity.walletFavorite;
+    this.walletService.setItemAsFavorite(this.wallet);
+  }
 
   public toggleViewObjects() {
     this.viewObjectsOpen = !this.viewObjectsOpen;
@@ -114,10 +122,10 @@ export class WalletFullComponent implements OnInit {
   }
 
   public selectIndex(event: Event, index: number, item: IEntity) {
-      index = (index + 1);
-      item.selected = true;
-      this.walletEntitySelectionsIndices.push((index));
-      this.walletEntitySelections.push(item)
+    index = (index + 1);
+    item.selected = true;
+    this.walletEntitySelectionsIndices.push((index));
+    this.walletEntitySelections.push(item)
   }
 
   public handleItemMouseEvent(event: Event, index: number, item: IEntity) {
@@ -129,7 +137,7 @@ export class WalletFullComponent implements OnInit {
     //   console.log('ctrl click event');
     //   this.unselect(event, (index - 1), item);
     // }
-    else  if (item.selected) {
+    else if (item.selected) {
       return;
     }
     console.log('selected', this.walletEntitySelectionsIndices, this.walletEntitySelections);

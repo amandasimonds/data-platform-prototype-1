@@ -26,7 +26,8 @@ export const presetWallet: IWalletCategory[] = [
                 showDetails: false,
                 details: '',
                 progress: 0,
-                tags: []
+                tags: [],
+                walletFavorite: false
             },
         ]
     },
@@ -48,7 +49,8 @@ export const presetWallet: IWalletCategory[] = [
                 showDetails: false,
                 details: '',
                 progress: 0,
-                tags: []
+                tags: [],
+                walletFavorite: false
             }
         ]
     },
@@ -70,7 +72,8 @@ export const presetWallet: IWalletCategory[] = [
                 showDetails: false,
                 details: '',
                 progress: 0,
-                tags: []
+                tags: [],
+                walletFavorite: false
             }
         ]
     }
