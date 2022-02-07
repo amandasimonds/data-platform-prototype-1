@@ -12,4 +12,5 @@ export interface IEntity {
     details: string;
     progress: number;
     tags: string[];
+    walletFavorite: boolean;
 }

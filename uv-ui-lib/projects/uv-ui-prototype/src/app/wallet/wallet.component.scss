@@ -20,3 +20,11 @@
     background-color: var(--uv-color-white);
     border-radius: 4px;
 }
+
+.wallet-favorite {
+    padding: 8px 36px;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--uv-color-gray-light);
+    }
+}

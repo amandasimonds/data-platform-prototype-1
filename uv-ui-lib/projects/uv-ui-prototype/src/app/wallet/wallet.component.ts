@@ -22,25 +22,32 @@ export class WalletComponent {
   public items = walletItems;
   public selections: any[] = [];
   public wallet: IEntity[] = [];
-  
-  constructor (
-    private dragDropService: DragDropService, 
+
+  constructor(
+    private dragDropService: DragDropService,
     private walletService: WalletService,
     private ref: ChangeDetectorRef,
-    private destroy$: NgOnDestroyService) {}
+    private destroy$: NgOnDestroyService) { }
 
   ngOnInit(): void {
     combineLatest([
       this.walletService.selectedEntities$.pipe(tap(entities => this.selectedEntities = entities)),
       this.walletService.walletItems$.pipe(tap(wallet => this.wallet = wallet))
     ])
-    .pipe(takeUntil(this.destroy$))
-    .subscribe(() => this.ref.detectChanges());
-    ;
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => this.ref.detectChanges());
+    console.log(this.getWalletFavorites());
   }
 
   public openWalletClicked(event: Event) {
     this.openWalletClickEvent.emit(event);
+  }
+
+  public getWalletFavorites(): IEntity[] {
+    const wallet = this.wallet.slice();
+    const walletFavorites = wallet.filter(item => item.walletFavorite);
+    console.log(walletFavorites);
+    return walletFavorites;
   }
 
   public onAddEntityToWallet() {
@@ -48,8 +55,8 @@ export class WalletComponent {
     console.log('add entity to wallet');
   }
 
-  public onDrop(event: CdkDragDrop<string []>) {
+  public onDrop(event: CdkDragDrop<string[]>) {
     this.dragDropService.copyOnDrop(event);
   }
-  
+
 }

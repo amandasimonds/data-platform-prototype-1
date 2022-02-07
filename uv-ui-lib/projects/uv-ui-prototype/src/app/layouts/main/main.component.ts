@@ -145,8 +145,8 @@ export class MainComponent implements OnInit {
     }
 
     public toggleWallet() {
-        setTimeout(() => { this.miniWalletOpen = !this.miniWalletOpen; }, 100);
-        this.walletOpen = !this.walletOpen;
+        setTimeout(() => { this.miniWalletOpen = !this.miniWalletOpen; }, 150);
+        // this.walletOpen = !this.walletOpen;
         this.walletSidebarState = 'hidden';
     }
 

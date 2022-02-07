@@ -16,12 +16,14 @@
             <div right>
                 <uvx-icon-button
                     color="primary"
-                    [matTooltip]="walletOpen ? 'Close Wallet' : 'Open Wallet'"
+                    [matTooltip]="walletOpen || walletSidebarState === 'visible' ? 'Close Wallet' : 'Double click to open wallet'"
                     class="margin-right-sm"
                     id="wallet-icon"
                     icon="store" (click)="toggleWallet()" (dblclick)="toggleWalletSidebar()">
                 </uvx-icon-button>
-                <app-wallet *ngIf="miniWalletOpen" (openWalletClickEvent)="toggleWalletSidebar()"></app-wallet>
+                <app-wallet *ngIf="miniWalletOpen
+                && walletSidebarState === 'hidden'" 
+                (openWalletClickEvent)="toggleWalletSidebar()"></app-wallet>
                 
                 <uvx-icon-button
                     color="primary"

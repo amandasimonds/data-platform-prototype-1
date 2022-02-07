@@ -1,15 +1,30 @@
 <div id="wallet" class="wallet-wrap">
     <div class="wallet-point"></div>
     <div class="wallet">
-        <div class="padding-sm flex align-items-center flex-column">
-            <uvx-button label="Add to Wallet" (click)="onAddEntityToWallet()" mode="primary" icon="store"></uvx-button>
-            <div class="margin-top-xs">
-                <uvx-button icon="store" label="Open Wallet" (click)="openWalletClicked($event)"></uvx-button>
-            </div>
+        <div class="padding-top-sm padding-bottom-xs padding-left-sm padding-right-sm flex flex-column">
+            <uvx-button
+                label="Add to Wallet"
+                [disabled]="selectedEntities.length < 1"
+                (click)="onAddEntityToWallet()"
+                mode="primary"
+                icon="store"
+            >
+            </uvx-button>
+            <uvx-button
+                icon="store"
+                mode="primary-text"
+                class="margin-top-xs"
+                label="Open Wallet"
+                (click)="openWalletClicked($event)"
+            ></uvx-button>
         </div>
-        <div class="divider"></div>
-        <div class="padding-xs">
-            <app-wallet-item *ngFor="let item of favorites; let i = index" [label]="item.name"> </app-wallet-item>
+        <div class="divider" *ngIf="getWalletFavorites().length > 0"></div>
+        <div class="flex flex-column padding-top-md padding-bottom-md" 
+            *ngIf="getWalletFavorites().length > 0">
+            <p class="uv-body bold wallet-favorite" 
+                *ngFor="let item of getWalletFavorites(); let i = index">
+                {{item.name}}
+            </p>
         </div>
     </div>
 </div>
