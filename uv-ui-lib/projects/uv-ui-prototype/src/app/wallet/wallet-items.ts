@@ -14,7 +14,8 @@ export const walletItems: IEntity[] = [
         showDetails: false,
         details: '',
         progress: 0,
-        tags: []
+        tags: [],
+        walletFavorite: false
     },
     {
         category: 'item',
@@ -29,7 +30,8 @@ export const walletItems: IEntity[] = [
         showDetails: false,
         details: '',
         progress: 0,
-        tags: []
+        tags: [],
+        walletFavorite: false
     },
     {
         category: 'item',
@@ -44,7 +46,8 @@ export const walletItems: IEntity[] = [
         showDetails: false,
         details: '',
         progress: 0,
-        tags: []
+        tags: [],
+        walletFavorite: false
     },
     {
         category: 'item',
@@ -59,7 +62,8 @@ export const walletItems: IEntity[] = [
         showDetails: false,
         details: '',
         progress: 0,
-        tags: []
+        tags: [],
+        walletFavorite: false
     },
     // {
     //   type: 'item',

@@ -58,6 +58,16 @@
     &:hover {
         background-color: var(--uv-color-primary-active);
     }
+
+    &-text {
+        background-color: var(--uv-color-white);
+        color: var(--uv-color-primary);
+
+        &:hover {
+            background-color: var(--uv-color-white);
+            color: var(--uv-color-primary-active);
+        }
+    }
 }
 
 .secondary {

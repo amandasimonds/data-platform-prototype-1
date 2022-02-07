@@ -22,15 +22,15 @@
                 <!--                    </ng-template>-->
                 <!--                </epd-pl-button-dropdown>-->
                 <!--                <uvx-button mode="secondary" label="View Objects" (click)="toggleViewObjects()"></uvx-button>-->
-                <uvx-search-panel mode="component-border" width="100%" 
-                    (searchClearClicked)="searchText = ''">
-                    <input type="text" 
-                    [(ngModel)]="searchText"
-                    placeholder="Search" 
-                    class="uv-input margin-left-xs" />
+                <uvx-search-panel mode="component-border" width="100%" (searchClearClicked)="searchText = ''">
+                    <input type="text" [(ngModel)]="searchText" placeholder="Search" class="uv-input margin-left-xs" />
                 </uvx-search-panel>
-                <uvx-button mode="primary" label="Add To Wallet" 
-                (click)="onAddEntityToWallet(selectedEntities)"></uvx-button>
+                <uvx-button
+                    mode="primary"
+                    label="Add To Wallet"
+                    [disabled]="selectedEntities.length < 1"
+                    (click)="onAddEntityToWallet(selectedEntities)"
+                ></uvx-button>
             </div>
             <!--            <div class="margin-top-xxs text-align-right" [ngStyle]="selectionsIndices.length > 0 && {'height': '15px'}">-->
             <!--                <uvx-button  *ngIf="selectionsIndices.length > 0" icon="clear" (click)="clearSelected()" label="Clear Selections"></uvx-button>-->
@@ -83,11 +83,12 @@
         <div class="flex align-items-center padding-xs justify-content-space-between margin-bottom-sm">
             <div></div>
             <div class="flex align-items-center">
-                <uvx-icon-button 
-                class="" 
-                icon="delete" 
-                *ngIf="walletEntitySelections.length > 0"
-                (click)="deleteEntitySelectionFromWallet()"></uvx-icon-button>
+                <uvx-icon-button
+                    class=""
+                    icon="delete"
+                    *ngIf="walletEntitySelections.length > 0"
+                    (click)="deleteEntitySelectionFromWallet()"
+                ></uvx-icon-button>
                 <span class="divider-left"></span>
                 <uvx-icon-button icon="sorting_bottom"></uvx-icon-button>
             </div>
@@ -102,49 +103,56 @@
                 [cdkDropListData]="category.items"
                 (cdkDropListDropped)="onDroppedIntoList($event)"
             > -->
-                <!-- <div *ngFor="let category of wallet" class="flex flex-column"> -->
-                    <!-- <div class="flex align-items-center">
+            <!-- <div *ngFor="let category of wallet" class="flex flex-column"> -->
+            <!-- <div class="flex align-items-center">
                         <p class="label margin-bottom-xxs">{{ category.name }}</p>
                     </div> -->
-                    <div *ngIf="searchText === ''" class="margin-bottom-xxs wallet-item-container">
-                        <app-wallet-item
-                            *ngFor="let entity of wallet; let i = index"
-                            [matTooltip]="entity.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
-                            (itemSelectedEvent)="selectWalletEntity(entity)"
-                            (itemUnselectedEvent)="selectWalletEntity(entity)"
-                            [dragIsDisabled]="true"
-                            [isSelected]="entity.selected"
-                            [label]="entity.name"
-                        >
-                        </app-wallet-item>
-                    </div>
+            <div *ngIf="searchText === '';  else resultsTpl" class="margin-bottom-xxs wallet-item-container">
+                <app-wallet-item
+                    *ngFor="let entity of wallet; let i = index"
+                    (itemSelectedEvent)="selectWalletEntity(entity)"
+                    (itemUnselectedEvent)="selectWalletEntity(entity)"
+                    [dragIsDisabled]="true"
+                    [isSelected]="entity.selected"
+                    (itemFavoritedEvent)="onFavoriteItem(entity)"
+                    [isFavorited]="entity.walletFavorite"
+                    [label]="entity.name"
+                >
+                </app-wallet-item>
+            </div>
 
-                    <div *ngIf="searchText === ''; else resultsTpl" class="margin-bottom-xxs wallet-item-container">
-                        <app-wallet-item
-                            *ngFor="let entity of wallet; let i = index"
-                            [matTooltip]="entity.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
-                            (itemSelectedEvent)="selectWalletEntity(entity)"
-                            (itemUnselectedEvent)="selectWalletEntity(entity)"
-                            [dragIsDisabled]="true"
-                            [isSelected]="entity.selected"
-                            [label]="entity.name"
-                        >
-                        </app-wallet-item>
-                    </div>
-                    <ng-template #resultsTpl>
-                        <app-wallet-item
-                            *ngFor="let entity of getWalletSearchResults(searchText); let i = index"
-                            [matTooltip]="entity.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"
-                            (itemSelectedEvent)="selectWalletEntity(entity)"
-                            (itemUnselectedEvent)="selectWalletEntity(entity)"
-                            [dragIsDisabled]="true"
-                            [isSelected]="entity.selected"
-                            [label]="entity.name"
-                        >
-                        </app-wallet-item>
-                    </ng-template>
-                    
-                <!-- </div> -->
+            <!-- <div *ngIf="searchText === ''; else resultsTpl" class="margin-bottom-xxs wallet-item-container">
+                <app-wallet-item
+                    *ngFor="let entity of wallet; let i = index"
+                    (itemSelectedEvent)="selectWalletEntity(entity)"
+                    (itemUnselectedEvent)="selectWalletEntity(entity)"
+                    [dragIsDisabled]="true"
+                    [isSelected]="entity.selected"
+                    [label]="entity.name"
+                    [isFavorited]="entity.walletFavorite"
+                    (itemFavoritedEvent)="onFavoriteItem(entity)"
+                >
+                </app-wallet-item>
+            </div> -->
+            <ng-template #resultsTpl>
+                <app-wallet-item
+                    *ngFor="let entity of getWalletSearchResults(searchText); let i = index"
+                    (itemSelectedEvent)="selectWalletEntity(entity)"
+                    (itemUnselectedEvent)="selectWalletEntity(entity)"
+                    [dragIsDisabled]="true"
+                    [isSelected]="entity.selected"
+                    [isFavorited]="entity.walletFavorite"
+                    [label]="entity.name"
+                    (itemFavoritedEvent)="onFavoriteItem(entity)"
+                >
+                </app-wallet-item>
+            </ng-template>
+
+            <!-- <div *ngFor="let item of apiList">
+                        {{item.name}}
+                    </div> -->
+
+            <!-- </div> -->
             <!-- </div> -->
         </div>
     </div>

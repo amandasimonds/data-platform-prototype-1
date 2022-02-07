@@ -244,6 +244,10 @@
     padding-top: var(--uv-sm-size);
 }
 
+.padding-top-md {
+    padding-top: var(--uv-md-size);
+}
+
 .padding-bottom-xxs {
     padding-bottom: var(--uv-xxs-size);
 }
@@ -251,6 +255,15 @@
 .padding-bottom-xs {
     padding-bottom: var(--uv-xs-size);
 }
+
+.padding-bottom-sm {
+    padding-bottom: var(--uv-sm-size);
+}
+
+.padding-bottom-md {
+    padding-bottom: var(--uv-md-size);
+}
+
 
 .margin-auto {
     margin: 0 auto;

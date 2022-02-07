@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { presetWallet, IWalletCategory } from '../wallet/wallet-preset';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IEntity } from '../models/entity.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,7 @@ export class WalletService {
         showDetails: false,
         tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
         progress: 0,
+        walletFavorite: false,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       },
     ]
@@ -46,14 +48,15 @@ export class WalletService {
       showDetails: false,
       tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
       progress: 0,
+      walletFavorite: false,
       details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     }
   ]
 
   public savedWallet: IWalletCategory[] = JSON.parse(localStorage.getItem('wallet'));
-
   public walletItems$ = new BehaviorSubject<IEntity[]>([]);
   public selectedEntities$ = new BehaviorSubject<IEntity[]>([]);
+  public walletFavorites$ = new BehaviorSubject<IEntity[]>([]);
   public selectedWalletEntities$ = new BehaviorSubject<IEntity[]>([]);
 
   public get walletItemsObservable(): Observable<IEntity[]> {
@@ -64,6 +67,14 @@ export class WalletService {
     console.log('getting selected entities');
     return this.selectedEntities$.asObservable();
   }
+
+  constructor(private http: HttpClient) {}
+
+  // public getWalletApi() {
+  //   const result = JSON.stringify(walletApi);
+  //   console.log(typeof result, result);
+  //   return this.http.get<IEntity[]>(result);
+  // }
 
   public setWalletItems(items: IEntity[]): void {
     this.walletItems$.next(items);
@@ -171,6 +182,15 @@ export class WalletService {
     console.log(wallet);
     this.walletItems$.next(wallet);
     this.selectedWalletEntities$.next([]);
+    this.saveWalletToLocalStorage();
+  }
+
+  public setItemAsFavorite(entities: IEntity[]) {
+    const walletEntities = this.walletItems$.value.slice();
+    console.log(walletEntities);
+    const favoritedEntities = walletEntities.filter(entity => entity.walletFavorite);
+    this.walletFavorites$.next(favoritedEntities);
+    console.log(this.walletFavorites$.value);
     this.saveWalletToLocalStorage();
   }
 
