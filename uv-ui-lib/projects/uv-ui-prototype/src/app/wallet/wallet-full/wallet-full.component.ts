@@ -32,6 +32,7 @@ export class WalletFullComponent implements OnInit {
   public walletEntitySelections: IEntity[] = [];
   public walletEntitySelectionsIndices: number[] = [];
   public walletSearchResults: IEntity[] = [];
+  public walletSortMenuOpen = false;
 
   constructor(
     private dragDropService: DragDropService,
@@ -89,6 +90,28 @@ export class WalletFullComponent implements OnInit {
   public onFavoriteItem(entity: IEntity) {
     entity.walletFavorite = !entity.walletFavorite;
     this.walletService.setItemAsFavorite(this.wallet);
+  }
+
+  public selectAllCheckClicked() {
+    if (this.walletEntitySelections.length === 0) {
+      console.log('length = 0');
+      this.walletService.selectAllWalletEntities();
+    } else if (this.walletEntitySelections.length > 0) {
+      console.log('length > 0');
+      this.walletService.unselectAllWalletEntities();
+    }
+  }
+
+  public toggleSortMenu() {
+    this.walletSortMenuOpen = !this.walletSortMenuOpen;
+  }
+
+  public sortWalletByNewestFirst() {
+    this.walletService.sortWalletByNewestFirst();
+  }
+
+  public sortWalletByOldestFirst() {
+    this.walletService.sortWalletByOldestFirst();
   }
 
   public toggleViewObjects() {

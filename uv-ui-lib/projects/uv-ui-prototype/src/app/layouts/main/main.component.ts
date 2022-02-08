@@ -37,7 +37,7 @@ export class MainComponent implements OnInit {
     public cumminsUser = 'user_cummins@test.com';
     public miniWalletOpen = false;
     public walletOpen = false;
-    public walletSidebarState = 'visible';
+    public walletSidebarState = 'hidden';
     public subNavbarState = 'navbar-peek';
     public navbarIsExpanded = false;
     public subNavbarIsExpanded = false;

@@ -22,18 +22,38 @@
 
 .cdk-drag-placeholder {
     opacity: 0;
-  }
+}
 
-  .folder {
+.folder {
     //   border: 3px solid orange;
-  }
+}
 
-  .cdk-drop-list-dragging {
-      border: 2.5px dashed var(--uv-color-primary-light);
-      box-sizing: border-box;
-  }
+.cdk-drop-list-dragging {
+    border: 2.5px dashed var(--uv-color-primary-light);
+    box-sizing: border-box;
+}
 
-  .wallet-item-container {
-      height: calc(100vh - 327px);
-      overflow: auto;
-  }
+.wallet-item-container {
+    height: calc(100vh - 327px);
+    overflow: auto;
+}
+
+.sort-menu {
+    position: absolute;
+    border-radius: 4px;
+    background-color: var(--uv-color-white);
+    box-shadow: var(--uv-box-shadow-4);
+    right: 15px;
+    margin-top: 10px;
+    text-align: left;
+    width: 200px;
+    cursor: default;
+
+    &-item {
+        padding: 8px 16px;
+        &:hover {
+            cursor: pointer;
+            background-color: var(--uv-color-gray-light);
+        }
+    }
+}
