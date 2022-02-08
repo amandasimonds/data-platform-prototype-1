@@ -235,22 +235,36 @@ export class WalletService {
 
   public sortWalletByNewestFirst() {
     const wallet = this.walletItems$.value.slice();
-    console.log(wallet);
-      wallet.sort((a, b) => (
-        new Date(b.date).getTime() - new Date(a.date).getTime()
+    wallet.sort((a, b) => (
+      new Date(b.walletDate).getTime() - new Date(a.walletDate).getTime()
     ));
     this.walletItems$.next(wallet);
-    console.log(wallet);
+    this.saveWalletToLocalStorage();
   }
 
   public sortWalletByOldestFirst() {
     const wallet = this.walletItems$.value.slice();
-    console.log(wallet);
-      wallet.sort((a, b) => (
-        new Date(b.date).getTime() - new Date(a.date).getTime()
+    wallet.sort((a, b) => (
+      new Date(b.date).getTime() - new Date(a.date).getTime()
     ));
     wallet.reverse();
     this.walletItems$.next(wallet);
-    console.log(wallet);
+  }
+
+  public sortWalletByAtoZ() {
+    const wallet = this.walletItems$.value.slice();
+    wallet.sort((a, b) => (
+      a.name.localeCompare(b.name)
+    ));
+    this.walletItems$.next(wallet);
+  }
+
+  public sortWalletByZtoA() {
+    const wallet = this.walletItems$.value.slice();
+    wallet.sort((a, b) => (
+      a.name.localeCompare(b.name)
+    ));
+    wallet.reverse();
+    this.walletItems$.next(wallet);
   }
 }
