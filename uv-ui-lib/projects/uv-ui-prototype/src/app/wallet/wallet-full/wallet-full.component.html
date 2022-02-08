@@ -100,11 +100,11 @@
                 <uvx-icon-button icon="sorting_bottom" (click)="toggleSortMenu()">
                     <div *ngIf="walletSortMenuOpen" class="sort-menu flex flex-column">
                         <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Title</p>
-                        <p class="sort-menu-item">
+                        <p class="sort-menu-item" (click)="sortWalletByAtoZ()">
                             <uvx-icon icon="sorting_bottom"></uvx-icon>
                             A to Z
                         </p>
-                        <p class="sort-menu-item">
+                        <p class="sort-menu-item" (click)="sortWalletByZtoA()">
                             <uvx-icon icon="sorting_bottom"></uvx-icon>
                             Z to A
                         </p>

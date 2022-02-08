@@ -36,7 +36,6 @@ export class WalletComponent {
     ])
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => this.ref.detectChanges());
-    console.log(this.getWalletFavorites());
   }
 
   public openWalletClicked(event: Event) {
@@ -46,7 +45,6 @@ export class WalletComponent {
   public getWalletFavorites(): IEntity[] {
     const wallet = this.wallet.slice();
     const walletFavorites = wallet.filter(item => item.walletFavorite);
-    console.log(walletFavorites);
     return walletFavorites;
   }
 

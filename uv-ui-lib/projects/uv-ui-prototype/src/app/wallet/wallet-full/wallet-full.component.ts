@@ -114,6 +114,14 @@ export class WalletFullComponent implements OnInit {
     this.walletService.sortWalletByOldestFirst();
   }
 
+  public sortWalletByAtoZ() {
+    this.walletService.sortWalletByAtoZ();
+  }
+
+  public sortWalletByZtoA() {
+    this.walletService.sortWalletByZtoA();
+  }
+
   public toggleViewObjects() {
     this.viewObjectsOpen = !this.viewObjectsOpen;
   }
