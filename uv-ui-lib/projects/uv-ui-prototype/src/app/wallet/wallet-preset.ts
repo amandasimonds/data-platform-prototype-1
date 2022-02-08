@@ -1,7 +1,7 @@
 import { IEntity } from '../models/entity.model';
 
 export interface IWalletCategory {
-    name: string;
+    name: string,
     open: boolean;
     selected: boolean;
     items: IEntity[];
@@ -27,7 +27,9 @@ export const presetWallet: IWalletCategory[] = [
                 details: '',
                 progress: 0,
                 tags: [],
-                walletFavorite: false
+                walletFavorite: false,
+                walletDate: '',
+                formattedWalletDate: ''
             },
         ]
     },
@@ -35,7 +37,7 @@ export const presetWallet: IWalletCategory[] = [
         name: 'Materials',
         open: false,
         selected: false,
-        items: [ 
+        items: [
             {
                 category: 'Materials',
                 name: 'Material',
@@ -50,7 +52,9 @@ export const presetWallet: IWalletCategory[] = [
                 details: '',
                 progress: 0,
                 tags: [],
-                walletFavorite: false
+                walletFavorite: false,
+                walletDate: '',
+                formattedWalletDate: ''
             }
         ]
     },
@@ -73,7 +77,9 @@ export const presetWallet: IWalletCategory[] = [
                 details: '',
                 progress: 0,
                 tags: [],
-                walletFavorite: false
+                walletFavorite: false,
+                walletDate: '',
+                formattedWalletDate: ''
             }
         ]
     }

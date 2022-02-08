@@ -2,20 +2,22 @@ import { IEntity } from '../models/entity.model';
 
 export const walletItems: IEntity[] = [
     {
-      category: 'item',
-      name: 'Part',
+        category: 'item',
+        name: 'Part',
         id: 1,
         description: '',
         date: '',
         active: false,
-      selected: false,
+        selected: false,
         disabled: false,
         formattedDate: '',
         showDetails: false,
         details: '',
         progress: 0,
         tags: [],
-        walletFavorite: false
+        walletFavorite: false,
+        walletDate: '',
+        formattedWalletDate: ''
     },
     {
         category: 'item',
@@ -31,7 +33,9 @@ export const walletItems: IEntity[] = [
         details: '',
         progress: 0,
         tags: [],
-        walletFavorite: false
+        walletFavorite: false,
+        walletDate: '',
+        formattedWalletDate: ''
     },
     {
         category: 'item',
@@ -47,7 +51,9 @@ export const walletItems: IEntity[] = [
         details: '',
         progress: 0,
         tags: [],
-        walletFavorite: false
+        walletFavorite: false,
+        walletDate: '',
+        formattedWalletDate: ''
     },
     {
         category: 'item',
@@ -63,7 +69,9 @@ export const walletItems: IEntity[] = [
         details: '',
         progress: 0,
         tags: [],
-        walletFavorite: false
+        walletFavorite: false,
+        walletDate: '',
+        formattedWalletDate: ''
     },
     // {
     //   type: 'item',

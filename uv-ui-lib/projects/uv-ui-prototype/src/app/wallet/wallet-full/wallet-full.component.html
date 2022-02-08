@@ -81,7 +81,14 @@
 
     <div class="">
         <div class="flex align-items-center padding-xs justify-content-space-between margin-bottom-sm">
-            <div></div>
+            <div class="flex align-items-center gap-xs">
+                <uvx-checkbox
+                    [unselectEnabled]="true"
+                    [isChecked]="walletEntitySelections.length > 0"
+                    (click)="selectAllCheckClicked()"
+                ></uvx-checkbox>
+                <span class="uv-body semibold"> {{ walletEntitySelections.length }} Selected </span>
+            </div>
             <div class="flex align-items-center">
                 <uvx-icon-button
                     class=""
@@ -90,7 +97,39 @@
                     (click)="deleteEntitySelectionFromWallet()"
                 ></uvx-icon-button>
                 <span class="divider-left"></span>
-                <uvx-icon-button icon="sorting_bottom"></uvx-icon-button>
+                <uvx-icon-button icon="sorting_bottom" (click)="toggleSortMenu()">
+                    <div *ngIf="walletSortMenuOpen" class="sort-menu flex flex-column">
+                        <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Title</p>
+                        <p class="sort-menu-item">
+                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            A to Z
+                        </p>
+                        <p class="sort-menu-item">
+                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            Z to A
+                        </p>
+                        <div class="divider"></div>
+                        <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Date</p>
+                        <p class="sort-menu-item" (click)="sortWalletByNewestFirst()">
+                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            Newest first
+                        </p>
+                        <p class="sort-menu-item" (click)="sortWalletByOldestFirst()">
+                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            Oldest first
+                        </p>
+                        <div class="divider"></div>
+                        <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Usage</p>
+                        <p class="sort-menu-item">
+                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            Most used
+                        </p>
+                        <p class="sort-menu-item">
+                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            Less used
+                        </p>
+                    </div>
+                </uvx-icon-button>
             </div>
         </div>
         <div class="">
@@ -107,7 +146,7 @@
             <!-- <div class="flex align-items-center">
                         <p class="label margin-bottom-xxs">{{ category.name }}</p>
                     </div> -->
-            <div *ngIf="searchText === '';  else resultsTpl" class="margin-bottom-xxs wallet-item-container">
+            <div *ngIf="searchText === ''; else resultsTpl" class="margin-bottom-xxs wallet-item-container">
                 <app-wallet-item
                     *ngFor="let entity of wallet; let i = index"
                     (itemSelectedEvent)="selectWalletEntity(entity)"
