@@ -30,6 +30,8 @@ export class WalletService {
         progress: 0,
         walletFavorite: false,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        walletDate: '',
+        formattedWalletDate: ''
       },
     ]
   }];
@@ -50,6 +52,8 @@ export class WalletService {
       progress: 0,
       walletFavorite: false,
       details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      walletDate: '',
+      formattedWalletDate: ''
     }
   ]
 
@@ -68,7 +72,7 @@ export class WalletService {
     return this.selectedEntities$.asObservable();
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // public getWalletApi() {
   //   const result = JSON.stringify(walletApi);
@@ -120,6 +124,8 @@ export class WalletService {
     const walletItemsList = this.walletItems$.value.slice();
     console.log(walletItemsList);
     for (let item of this.selectedEntities$.value) {
+      item.walletDate = new Date().toString();
+      console.log(item.walletDate);
       item.selected = false;
       walletItemsList.push(item);
     }
@@ -150,9 +156,13 @@ export class WalletService {
     } else if (entity.selected) {
       entity.selected = false;
     }
-    const newList = entitiesList.filter(entity => entity.selected);
-    this.selectedWalletEntities$.next(newList);
-    console.log('new selected wallet entities list', this.selectedWalletEntities$.value);
+    this.updateSelectedWalletEntities();
+  }
+
+  public updateSelectedWalletEntities() {
+    const updatedList = this.walletItems$.value.filter(entity => entity.selected);
+    this.selectedWalletEntities$.next(updatedList);
+    console.log('updated wallet entities list', this.selectedWalletEntities$.value);
   }
 
   public deleteEntitySelectionFromWallet(entities: IEntity[]) {
@@ -160,17 +170,17 @@ export class WalletService {
     const wallet = this.walletItems$.value.slice();
     // const filteredWallet: IEntity[] = [];
     wallet.forEach(item => {
-        console.log('item', item.name);
-        entities.forEach(entity => {
-          console.log('selected entity', entity.name);
-          if (entity.name === item.name) {
-            const index = wallet.indexOf(item);
-            console.log(entity.name, entity.name === item.name, index);
-            wallet.splice(index, 1);
-          }
-          entity.selected = false;
-        })
+      console.log('item', item.name);
+      entities.forEach(entity => {
+        console.log('selected entity', entity.name);
+        if (entity.name === item.name) {
+          const index = wallet.indexOf(item);
+          console.log(entity.name, entity.name === item.name, index);
+          wallet.splice(index, 1);
+        }
+        entity.selected = false;
       })
+    })
 
     // entities.forEach(entity =>
     //   wallet.forEach(category => {
@@ -201,5 +211,46 @@ export class WalletService {
     );
 
     return results;
+  }
+
+  public selectAllWalletEntities() {
+    const walletEntities = this.walletItems$.value.slice();
+    const newWallet = walletEntities.map(entity => ({
+      ...entity,
+      selected: true
+    }))
+    this.walletItems$.next(newWallet);
+    this.updateSelectedWalletEntities();
+  }
+
+  public unselectAllWalletEntities() {
+    const walletEntities = this.walletItems$.value.slice();
+    const newWallet = walletEntities.map(entity => ({
+      ...entity,
+      selected: false
+    }))
+    this.walletItems$.next(newWallet);
+    this.updateSelectedWalletEntities();
+  }
+
+  public sortWalletByNewestFirst() {
+    const wallet = this.walletItems$.value.slice();
+    console.log(wallet);
+      wallet.sort((a, b) => (
+        new Date(b.date).getTime() - new Date(a.date).getTime()
+    ));
+    this.walletItems$.next(wallet);
+    console.log(wallet);
+  }
+
+  public sortWalletByOldestFirst() {
+    const wallet = this.walletItems$.value.slice();
+    console.log(wallet);
+      wallet.sort((a, b) => (
+        new Date(b.date).getTime() - new Date(a.date).getTime()
+    ));
+    wallet.reverse();
+    this.walletItems$.next(wallet);
+    console.log(wallet);
   }
 }

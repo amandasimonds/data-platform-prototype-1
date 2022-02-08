@@ -13,4 +13,6 @@ export interface IEntity {
     progress: number;
     tags: string[];
     walletFavorite: boolean;
+    walletDate: string;
+    formattedWalletDate: string;
 }
