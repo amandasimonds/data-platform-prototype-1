@@ -63,7 +63,19 @@ export class GraphComponent {
         { name: 'Sample Graph' }
       ]
     },
-    tooltip: {},
+    tooltip: {
+      show: true,
+          trigger: 'item',
+          // position: ['35%', '32%'],
+          backgroundColor: 'implements',
+          textStyle: {
+            color: '#000000',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+            fontFamily: 'sans-serif',
+            fontSize: 15,
+          },
+    },
     series: [
       {
         // name: 'legend',
