@@ -1,0 +1,21 @@
+.launch-bar {
+    position: absolute;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    gap: 15px;
+    top: -1rem;
+    right: 1rem;
+    border-radius: 4px;
+    box-shadow: var(--uv-box-shadow-hover-2);
+    background-color: var(--uv-color-white);
+    // z-index: var(--uv-z-index-navbar);
+
+    // uvx-icon-button {
+    //     &:hover {
+    //         background-color: var(--uv-color-gray-light);
+    //         color: var(--uv-color-primary);
+    //     }
+    // }
+}

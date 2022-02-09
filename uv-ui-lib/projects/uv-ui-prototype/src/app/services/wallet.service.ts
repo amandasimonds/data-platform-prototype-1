@@ -260,4 +260,13 @@ export class WalletService {
     wallet.reverse();
     this.walletItems$.next(wallet);
   }
+
+  public sortWalletByFavorites() {
+    const wallet = this.walletItems$.value.slice();
+    wallet.sort((a, b) => (
+      Number(a.walletFavorite) - Number(b.walletFavorite)
+    ));
+    wallet.reverse();
+    this.walletItems$.next(wallet);
+  }
 }
