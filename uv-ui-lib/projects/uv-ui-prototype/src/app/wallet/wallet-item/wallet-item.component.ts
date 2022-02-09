@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CdkDragDrop, DragRef, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { IEntity } from '../../models/entity.model';
 
 @Component({
   selector: 'app-wallet-item',
@@ -19,6 +20,7 @@ export class WalletItemComponent {
   @Input() public selections: number[] = [];
   @Input() public dragIsDisabled = false;
   @Input() public isFavorited = false;
+  @Input() public walletFavorites: IEntity[] = [];
 
   @Output() public itemSelectedEvent = new EventEmitter<Event>();
   @Output() public itemUnselectedEvent = new EventEmitter<Event>();
@@ -37,6 +39,22 @@ export class WalletItemComponent {
 
   public get dragPreviewText(): string {
     return this.selections.length > 1 ? `Save ${this.selections.length} items` : 'Save 1 item';
+  }
+
+  public get favoriteIconTooltip(): string {
+    if (this.isFavorited) {
+      return 'Remove from favorites'
+    } else if (!this.isFavorited && this.walletFavorites.length < 5) {
+      return 'Add to favorites'
+    } else if (!this.isFavorited && this.walletFavorites.length >= 5) {
+      return 'Your favorite limit of 5 has been reached. Please unfavorite another item before favoriting this one.'
+    } else {
+      return 'Favorite or Unfavorite'
+    }
+  }
+
+  public get favoriteIconIsDisabled(): boolean {
+    return !this.isFavorited && this.walletFavorites.length >= 5 ? true : false;
   }
 
   public selectItem(event: Event) {

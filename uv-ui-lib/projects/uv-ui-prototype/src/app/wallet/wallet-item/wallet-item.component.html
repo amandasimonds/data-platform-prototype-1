@@ -37,6 +37,8 @@
             </ng-template>
         </div>
         <uvx-icon-button
+            [matTooltip]="favoriteIconTooltip"
+            [disabled]="favoriteIconIsDisabled"
             [icon]="isFavorited ? 'star_solid' : 'star_outline'"
             (click)="onFavoriteItem($event)"
         ></uvx-icon-button>

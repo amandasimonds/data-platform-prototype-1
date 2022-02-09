@@ -35,7 +35,6 @@ export class WalletFullComponent implements OnInit {
   public walletSortMenuOpen = false;
 
   constructor(
-    private dragDropService: DragDropService,
     private walletService: WalletService,
     private ref: ChangeDetectorRef,
     private destroy$: NgOnDestroyService) { }
@@ -58,6 +57,10 @@ export class WalletFullComponent implements OnInit {
   // isSelected(i: number): boolean {
   //   return this.items[i].selected;
   // }
+
+  public get walletFavorites() {
+    return this.walletService.getWalletFavorites();
+  }
 
   public onCloseClicked(state: string): void {
     this.walletSidebarClosedEvent.emit(state);
@@ -88,8 +91,21 @@ export class WalletFullComponent implements OnInit {
   }
 
   public onFavoriteItem(entity: IEntity) {
-    entity.walletFavorite = !entity.walletFavorite;
-    this.walletService.setItemAsFavorite(this.wallet);
+    // entity.walletFavorite = !entity.walletFavorite;
+    const walletFavorites = this.walletService.getWalletFavorites();
+    console.log(walletFavorites.length);
+    if(!entity.walletFavorite && walletFavorites.length >= 5) {
+      console.log('You cant add another favorite SORRY');
+      return
+    } else if (!entity.walletFavorite && walletFavorites.length < 5) {
+      console.log('less than 5 you can add');
+      entity.walletFavorite = true;
+    } else if (entity.walletFavorite) {
+      console.log('its already favorited, unfavorite that shit');
+      entity.walletFavorite = false;
+    }
+    this.walletService.saveWalletToLocalStorage();
+    
   }
 
   public selectAllCheckClicked() {
