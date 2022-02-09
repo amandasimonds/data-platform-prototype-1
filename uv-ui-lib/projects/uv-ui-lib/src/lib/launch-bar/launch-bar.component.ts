@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { launchBarAnimation } from '../animations';
 
 @Component({
@@ -7,11 +7,9 @@ import { launchBarAnimation } from '../animations';
   styleUrls: ['./launch-bar.component.scss'],
   animations: [launchBarAnimation]
 })
-export class LaunchBarComponent implements OnInit {
+export class LaunchBarComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Input() topPos = '';
+  @Input() rightPos = '';
 
 }

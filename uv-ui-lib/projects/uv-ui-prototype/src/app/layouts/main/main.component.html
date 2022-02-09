@@ -1,85 +1,93 @@
 <div class="uv-ui-shell">
     <div class="uv-ui-shell-header">
-        <uvx-header
-            [headerText]="title"
-            [icon]="headerIcon"
-            [uvHighlight]="headerIsHighlight">
-
-            <div left class="margin-left-sm"> 
-<!--                <uvx-search-panel mode="component-border"  width="40vw" *ngIf="checkifDashboard">-->
-<!--                    <input type="text"-->
-<!--                    placeholder="Search"-->
-<!--                    class="uv-input margin-left-xs">-->
-<!--                </uvx-search-panel>-->
+        <uvx-header [headerText]="title" [icon]="headerIcon" [uvHighlight]="headerIsHighlight">
+            <div left class="margin-left-sm">
+                <!--                <uvx-search-panel mode="component-border"  width="40vw" *ngIf="checkifDashboard">-->
+                <!--                    <input type="text"-->
+                <!--                    placeholder="Search"-->
+                <!--                    class="uv-input margin-left-xs">-->
+                <!--                </uvx-search-panel>-->
             </div>
 
             <div right>
                 <uvx-icon-button
                     color="primary"
-                    [matTooltip]="walletOpen || walletSidebarState === 'visible' ? 'Close Wallet' : 'Double click to open wallet'"
+                    [matTooltip]="
+                        walletOpen || walletSidebarState === 'visible' ? 'Close Wallet' : 'Double click to open wallet'
+                    "
                     class="margin-right-sm"
                     id="wallet-icon"
-                    icon="store" (click)="toggleWallet()" (dblclick)="toggleWalletSidebar()">
+                    icon="store"
+                    (click)="toggleWallet()"
+                    (dblclick)="toggleWalletSidebar()"
+                >
                 </uvx-icon-button>
-                <app-wallet *ngIf="miniWalletOpen
-                && walletSidebarState === 'hidden'" 
-                (openWalletClickEvent)="toggleWalletSidebar()"></app-wallet>
-                
+                <app-wallet
+                    *ngIf="miniWalletOpen && walletSidebarState === 'hidden'"
+                    (closeWalletEvent)="miniWalletOpen = false"
+                    (openWalletClickEvent)="toggleWalletSidebar()"
+                ></app-wallet>
+
+                <uvx-icon-button color="primary" matTooltip="Launch Wizard" icon="help" (click)="launchWizard()">
+                </uvx-icon-button>
+
                 <uvx-icon-button
                     color="primary"
-                    matTooltip="Launch Wizard"
-                    icon="help" (click)="launchWizard()">
-                </uvx-icon-button>
-            
-                <uvx-icon-button 
-                    color='primary' 
-                    icon="user" 
+                    icon="user"
                     class="margin-left-sm margin-right-sm"
                     matTooltip="Log out"
-                    (click)="logout()">
-                </uvx-icon-button>    
+                    (click)="logout()"
+                >
+                </uvx-icon-button>
             </div>
-
         </uvx-header>
     </div>
 
     <div class="uv-ui-shell-navbar">
         <uvx-navbar [navbarIsExpanded]="navbarIsExpanded">
             <div class="toggle-button">
-                <uvx-icon-button (click)="toggleExpandNavbar()" 
+                <uvx-icon-button
+                    (click)="toggleExpandNavbar()"
                     color="gray"
                     class="toggle-button"
                     [matTooltip]="navbarIsExpanded ? 'Collapse Menu' : 'Expand Menu'"
-                    [icon]="navbarIsExpanded ? 'double_left' : 'double_right'">
+                    [icon]="navbarIsExpanded ? 'double_left' : 'double_right'"
+                >
                 </uvx-icon-button>
             </div>
 
             <div *ngIf="isDevUser">
-                <div *ngFor="let navlink of navlinks" 
+                <div
+                    *ngFor="let navlink of navlinks"
                     class="nav-icon"
                     [matTooltip]="navlink.tooltip"
                     [class.nav-icon-active-expanded]="navbarIsExpanded"
                     [class.nav-icon-disabled]="navlink.disabled"
                     [class.nav-icon-active]="navActiveIcon === navlink.app"
-                    (click)="handleNavlinkAction(navlink.app)">
-                    <a [routerLink]="navlink.navlink"
-                        class="display-inline-block"
-                        [queryParams]="{app: navlink.app}">
+                    (click)="handleNavlinkAction(navlink.app)"
+                >
+                    <a [routerLink]="navlink.navlink" class="display-inline-block" [queryParams]="{ app: navlink.app }">
                         <uvx-icon color="black" [icon]="navlink.icon"></uvx-icon>
-                        <p [class.navbar-expanded-text-visible]="navbarIsExpanded"
-                            class="display-inline-block margin-left-xxs navbar-expanded-text">
-                            {{navlink.tooltip}}
+                        <p
+                            [class.navbar-expanded-text-visible]="navbarIsExpanded"
+                            class="display-inline-block margin-left-xxs navbar-expanded-text"
+                        >
+                            {{ navlink.tooltip }}
                         </p>
                     </a>
                 </div>
-                <span class="nav-icon"
-                matTooltip="Global Search"
-                [class.nav-icon-active-expanded]="navbarIsExpanded"
-                [class.nav-icon-active]="navActiveIcon === 'search'">
+                <span
+                    class="nav-icon"
+                    matTooltip="Global Search"
+                    [class.nav-icon-active-expanded]="navbarIsExpanded"
+                    [class.nav-icon-active]="navActiveIcon === 'search'"
+                >
                     <a (click)="toggleSearchSidebar()">
                         <uvx-icon icon="search" color="black"></uvx-icon>
-                        <p [class.navbar-expanded-text-visible]="navbarIsExpanded"
-                            class="display-inline-block margin-left-xxs navbar-expanded-text">
+                        <p
+                            [class.navbar-expanded-text-visible]="navbarIsExpanded"
+                            class="display-inline-block margin-left-xxs navbar-expanded-text"
+                        >
                             Global Search
                         </p>
                     </a>
@@ -87,59 +95,54 @@
             </div>
 
             <div *ngIf="currentUser.name === 'user_cummins@test.com'">
-                <span 
-                class="nav-icon"
-                matTooltip="Global Where Used"
-                [class.nav-icon-active]="navActiveIcon === 'gwu'">
-                <a routerLink="gwu"
-                    [queryParams]="{app: 'gwu'}">
-                    <uvx-icon icon="global_where_used"></uvx-icon>
-                </a>
+                <span class="nav-icon" matTooltip="Global Where Used" [class.nav-icon-active]="navActiveIcon === 'gwu'">
+                    <a routerLink="gwu" [queryParams]="{ app: 'gwu' }">
+                        <uvx-icon icon="global_where_used"></uvx-icon>
+                    </a>
                 </span>
             </div>
 
             <div *ngIf="currentUser.name === 'user_chevron@test.com'">
-                <span 
-                class="nav-icon"
-                matTooltip="Side By Side"
-                [class.nav-icon-active]="navActiveIcon === 'sbs'">
-                <a routerLink="sbs"
-                    [queryParams]="{app: 'sbs'}">
-                    <uvx-icon icon="compare"></uvx-icon>
-                </a>
+                <span class="nav-icon" matTooltip="Side By Side" [class.nav-icon-active]="navActiveIcon === 'sbs'">
+                    <a routerLink="sbs" [queryParams]="{ app: 'sbs' }">
+                        <uvx-icon icon="compare"></uvx-icon>
+                    </a>
                 </span>
             </div>
-
         </uvx-navbar>
     </div>
 
     <div class="uv-ui-shell-subnavbar">
         <uvx-navbar-sub [isExpanded]="subNavbarIsExpanded" *ngIf="currentApp === 'settings'">
             <div class="toggle-button">
-                <uvx-icon-button (click)="toggleSubNavbar()" 
+                <uvx-icon-button
+                    (click)="toggleSubNavbar()"
                     color="gray"
                     class="toggle-button"
                     [matTooltip]="subNavbarIsExpanded ? 'Collapse Menu' : 'Expand Menu'"
-                    [icon]="subNavbarIsExpanded ? 'double_left' : 'double_right'">
+                    [icon]="subNavbarIsExpanded ? 'double_left' : 'double_right'"
+                >
                 </uvx-icon-button>
             </div>
 
-                <div *ngFor="let navlink of settingsNavlinks" 
-                    class="nav-icon"
-                    [matTooltip]="navlink.tooltip"
-                    [class.nav-icon-active-expanded]="subNavbarIsExpanded"
-                    [class.nav-icon-disabled]="navlink.disabled"
-                    (click)="handleNavlinkAction(navlink.app)">
-                    <a [routerLink]="navlink.navlink"
-                        class="display-inline-block"
-                        [queryParams]="{app: navlink.app}">
-                        <uvx-icon color="black" [icon]="navlink.icon"></uvx-icon>
-                        <p [class.navbar-expanded-text-visible]="subNavbarIsExpanded"
-                            class="display-inline-block margin-left-xxs navbar-expanded-text">
-                            {{navlink.tooltip}}
-                        </p>
-                    </a>
-                </div>
+            <div
+                *ngFor="let navlink of settingsNavlinks"
+                class="nav-icon"
+                [matTooltip]="navlink.tooltip"
+                [class.nav-icon-active-expanded]="subNavbarIsExpanded"
+                [class.nav-icon-disabled]="navlink.disabled"
+                (click)="handleNavlinkAction(navlink.app)"
+            >
+                <a [routerLink]="navlink.navlink" class="display-inline-block" [queryParams]="{ app: navlink.app }">
+                    <uvx-icon color="black" [icon]="navlink.icon"></uvx-icon>
+                    <p
+                        [class.navbar-expanded-text-visible]="subNavbarIsExpanded"
+                        class="display-inline-block margin-left-xxs navbar-expanded-text"
+                    >
+                        {{ navlink.tooltip }}
+                    </p>
+                </a>
+            </div>
         </uvx-navbar-sub>
     </div>
     <div class="uv-ui-shell-subnavbar2">
@@ -149,22 +152,26 @@
     <div class="uv-ui-shell-content">
         <router-outlet></router-outlet>
     </div>
-    
-    <uvx-backdrop 
-    [backdropState]="uvLight ? 'visible' : searchSidebarState"
+
+    <uvx-backdrop
+        [backdropState]="uvLight ? 'visible' : searchSidebarState"
         [mode]="backdropMode"
-        [backdropState]="searchSidebarState" 
-        (backdropClicked)="!compareWarning && closeSearchSidebar()">
+        [backdropState]="searchSidebarState"
+        (backdropClicked)="!compareWarning && closeSearchSidebar()"
+    >
     </uvx-backdrop>
-    <app-search-sidebar (searchCloseEvent)="toggleSearchSidebar()" [searchSidebarState]="searchSidebarState"></app-search-sidebar>
-    <app-compare-warning *ngIf="compareWarning" 
-        (closeCompareWarning)="closeCompareWarning()" 
-        [selectedItem]="selectedItem">
+    <app-search-sidebar
+        (searchCloseEvent)="toggleSearchSidebar()"
+        [searchSidebarState]="searchSidebarState"
+    ></app-search-sidebar>
+    <app-compare-warning
+        *ngIf="compareWarning"
+        (closeCompareWarning)="closeCompareWarning()"
+        [selectedItem]="selectedItem"
+    >
     </app-compare-warning>
 
-    <app-wallet-full 
-        (walletSidebarClosedEvent)="toggleWalletSidebar()" 
-        [walletSidebarState]="walletSidebarState">
+    <app-wallet-full (walletSidebarClosedEvent)="toggleWalletSidebar()" [walletSidebarState]="walletSidebarState">
     </app-wallet-full>
 
     <app-uv-light *ngIf="uvLight" (uvLightToggle)="toggleUvLight()"></app-uv-light>

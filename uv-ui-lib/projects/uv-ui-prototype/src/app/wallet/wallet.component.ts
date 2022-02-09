@@ -1,5 +1,5 @@
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
-import { ChangeDetectorRef, Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { DragDropService } from '../services/drag-drop.service';
 import { walletItems } from './wallet-items';
 import { IEntity } from '../models/entity.model';
@@ -17,6 +17,7 @@ import { NgOnDestroyService } from '../services/on-destroy.service';
 export class WalletComponent {
 
   @Output() openWalletClickEvent = new EventEmitter<Event>();
+  @Output() closeWalletEvent = new EventEmitter<Event>();
   public favorites: IEntity[] = [];
   public selectedEntities: IEntity[] = [];
   public items = walletItems;
@@ -27,6 +28,7 @@ export class WalletComponent {
     private dragDropService: DragDropService,
     private walletService: WalletService,
     private ref: ChangeDetectorRef,
+    private elementRef: ElementRef,
     private destroy$: NgOnDestroyService) { }
 
   ngOnInit(): void {
@@ -37,6 +39,13 @@ export class WalletComponent {
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => this.ref.detectChanges());
   }
+
+  @HostListener('document:click', ['$event'])
+    public clickOutside(event: any): void {
+        if (!this.elementRef.nativeElement.contains(event.target)) {
+            this.closeWalletEvent.emit(event);
+        }
+    }
 
   public openWalletClicked(event: Event) {
     this.openWalletClickEvent.emit(event);
