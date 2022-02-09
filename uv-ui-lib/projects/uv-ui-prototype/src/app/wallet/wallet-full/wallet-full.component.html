@@ -153,6 +153,7 @@
                     (itemUnselectedEvent)="selectWalletEntity(entity)"
                     [dragIsDisabled]="true"
                     [isSelected]="entity.selected"
+                    [walletFavorites]="walletFavorites"
                     (itemFavoritedEvent)="onFavoriteItem(entity)"
                     [isFavorited]="entity.walletFavorite"
                     [label]="entity.name"

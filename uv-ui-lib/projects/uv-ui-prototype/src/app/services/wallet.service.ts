@@ -60,7 +60,6 @@ export class WalletService {
   public savedWallet: IWalletCategory[] = JSON.parse(localStorage.getItem('wallet'));
   public walletItems$ = new BehaviorSubject<IEntity[]>([]);
   public selectedEntities$ = new BehaviorSubject<IEntity[]>([]);
-  public walletFavorites$ = new BehaviorSubject<IEntity[]>([]);
   public selectedWalletEntities$ = new BehaviorSubject<IEntity[]>([]);
 
   public get walletItemsObservable(): Observable<IEntity[]> {
@@ -98,6 +97,12 @@ export class WalletService {
     }
   }
 
+  public getWalletFavorites(): IEntity[] {
+    const wallet = this.walletItems$.value.slice();
+    const walletFavorites = wallet.filter(item => item.walletFavorite);
+    return walletFavorites;
+  }
+
   public getPresetLocalStorageWallet(): IEntity[] {
     this.walletItems$.next(this.initialWalletItems);
     return this.initialWalletItems;
@@ -122,14 +127,11 @@ export class WalletService {
 
   public addEntityToWallet(entities: IEntity[]) {
     const walletItemsList = this.walletItems$.value.slice();
-    console.log(walletItemsList);
     for (let item of this.selectedEntities$.value) {
       item.walletDate = new Date().toString();
-      console.log(item.walletDate);
       item.selected = false;
       walletItemsList.push(item);
     }
-
     this.walletItems$.next(walletItemsList);
     this.saveWalletToLocalStorage();
   }
@@ -192,15 +194,6 @@ export class WalletService {
     console.log(wallet);
     this.walletItems$.next(wallet);
     this.selectedWalletEntities$.next([]);
-    this.saveWalletToLocalStorage();
-  }
-
-  public setItemAsFavorite(entities: IEntity[]) {
-    const walletEntities = this.walletItems$.value.slice();
-    console.log(walletEntities);
-    const favoritedEntities = walletEntities.filter(entity => entity.walletFavorite);
-    this.walletFavorites$.next(favoritedEntities);
-    console.log(this.walletFavorites$.value);
     this.saveWalletToLocalStorage();
   }
 
