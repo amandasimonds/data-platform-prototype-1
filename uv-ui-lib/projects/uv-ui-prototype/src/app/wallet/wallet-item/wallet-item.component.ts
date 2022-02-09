@@ -21,6 +21,7 @@ export class WalletItemComponent {
   @Input() public dragIsDisabled = false;
   @Input() public isFavorited = false;
   @Input() public walletFavorites: IEntity[] = [];
+  @Input() public first = false;
 
   @Output() public itemSelectedEvent = new EventEmitter<Event>();
   @Output() public itemUnselectedEvent = new EventEmitter<Event>();

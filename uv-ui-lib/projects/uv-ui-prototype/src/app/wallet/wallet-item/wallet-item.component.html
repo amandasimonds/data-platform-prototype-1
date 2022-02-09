@@ -1,5 +1,6 @@
 <div
     class="wallet-item"
+    [class.wallet-item-first]="first"
     [class.entity]="isEntity"
     [class.folder]="isFolder"
     [class.entity-notDragging-hover]="!dragging"
@@ -44,4 +45,5 @@
         ></uvx-icon-button>
         <div *ngIf="itemAmountTrue" class="results-number results-number-sm">{{ itemAmount }}</div>
     </div>
+    <ng-content></ng-content>
 </div>

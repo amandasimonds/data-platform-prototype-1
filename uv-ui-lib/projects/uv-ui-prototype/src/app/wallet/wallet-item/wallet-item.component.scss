@@ -1,13 +1,18 @@
 .wallet-item {
     padding: 12px 20px 20px 16px;
     font-size: var(--uv-font-size-sm);
+    position: relative;
+
+    &-first {
+        margin-top:18px;
+    }
 }
 
 .entity {
-    // cursor: grab;
+    cursor: pointer;
 
     &:hover {
-        // cursor: grab;
+        cursor: pointer;
     }
 
     &-notDragging-hover {

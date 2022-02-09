@@ -26,6 +26,8 @@ export * from './lib/icon-display/icon-display.component';
 export * from './lib/icon-display/icon-display.module';
 export * from './lib/image-button/image-button.component';
 export * from './lib/image-button/image-button.module';
+export * from './lib/launch-bar/launch-bar.component';
+export * from './lib/launch-bar/launch-bar.module';
 export * from './lib/modal/modal.component';
 export * from './lib/modal/modal.module';
 export * from './lib/navbar/navbar.component';

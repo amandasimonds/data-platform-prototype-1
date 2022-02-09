@@ -1,4 +1,4 @@
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, state, style, transition, animate, stagger, query } from '@angular/animations';
 
 export const slideInOutAnimation = [
     trigger('slideInOut', [
@@ -31,5 +31,18 @@ export const fadeInOutAnimation = [
         })),
 
         transition('hidden <=> visible', animate(200))
+    ]),
+];
+
+export const launchBarAnimation = [
+    trigger('launchBarAnimation', [
+        transition(':enter', [   // :enter is alias to 'void => *'
+            style({ opacity: 0 }),
+            animate('.2s .75s', style({ opacity: 1 }))
+        ]),
+        transition(':leave', [   // :leave is alias to '* => void'
+            style({ opacity: 1 }),
+            animate('.5s', style({ opacity: 0 }))
+        ])
     ]),
 ];
