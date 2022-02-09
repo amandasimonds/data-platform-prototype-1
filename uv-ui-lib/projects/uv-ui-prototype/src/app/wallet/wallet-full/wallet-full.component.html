@@ -80,7 +80,7 @@
     <div class="divider"></div>
 
     <div class="">
-        <div class="flex align-items-center padding-xs justify-content-space-between margin-bottom-sm">
+        <div class="flex align-items-center padding-xs justify-content-space-between">
             <div class="flex align-items-center gap-xs">
                 <uvx-checkbox
                     [unselectEnabled]="true"
@@ -97,7 +97,10 @@
                     (click)="deleteEntitySelectionFromWallet()"
                 ></uvx-icon-button>
                 <span class="divider-left"></span>
-                <uvx-icon-button icon="sorting_bottom" (click)="toggleSortMenu()">
+                <uvx-icon-button icon="sorting_bottom" 
+                    [matTooltip]="wallet.length > 0 ? 'Open Sorting options' : 'Nothing in wallet to sort'"
+                    (click)="wallet.length > 0 && toggleSortMenu()" 
+                    [disabled]="wallet.length === 0">
                     <div *ngIf="walletSortMenuOpen" class="sort-menu flex flex-column">
                         <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Title</p>
                         <p class="sort-menu-item" (click)="sortWalletByAtoZ()">
@@ -120,13 +123,9 @@
                         </p>
                         <div class="divider"></div>
                         <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Usage</p>
-                        <p class="sort-menu-item">
+                        <p class="sort-menu-item" (click)="sortWalletByFavorites()">
                             <uvx-icon icon="sorting_bottom"></uvx-icon>
-                            Most used
-                        </p>
-                        <p class="sort-menu-item">
-                            <uvx-icon icon="sorting_bottom"></uvx-icon>
-                            Less used
+                            Favorites
                         </p>
                     </div>
                 </uvx-icon-button>
@@ -149,15 +148,19 @@
             <div *ngIf="searchText === ''; else resultsTpl" class="margin-bottom-xxs wallet-item-container">
                 <app-wallet-item
                     *ngFor="let entity of wallet; let i = index"
+                    [first]="i === 0"
                     (itemSelectedEvent)="selectWalletEntity(entity)"
                     (itemUnselectedEvent)="selectWalletEntity(entity)"
                     [dragIsDisabled]="true"
+                    (mouseenter)="entity.active = true"
+                    (mouseleave)="entity.active = false"
                     [isSelected]="entity.selected"
                     [walletFavorites]="walletFavorites"
                     (itemFavoritedEvent)="onFavoriteItem(entity)"
                     [isFavorited]="entity.walletFavorite"
                     [label]="entity.name"
                 >
+                <uvx-launch-bar *ngIf="entity.active"></uvx-launch-bar>
                 </app-wallet-item>
             </div>
 

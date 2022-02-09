@@ -3,7 +3,7 @@
     position: absolute;
     top: var(--uv-header-height);
     right: 0;
-    z-index: var(--uv-z-index-search-sidebar);
+    // z-index: var(--uv-z-index-search-sidebar);
     animation-name: slide-in;
     animation-duration: 0.6s;
     animation-timing-function: ease-in-out;
@@ -48,6 +48,7 @@
     text-align: left;
     width: 200px;
     cursor: default;
+    z-index: var(--uv-z-index-navbar);
 
     &-item {
         padding: 8px 16px;
@@ -57,3 +58,25 @@
         }
     }
 }
+
+// .launch-bar {
+//     position: absolute;
+//     padding: 10px 16px;
+//     display: flex;
+//     align-items: center;
+//     // justify-content: space-between;
+//     gap: 15px;
+//     top: -10px;
+//     right: 16px;
+//     border-radius: 4px;
+//     box-shadow: var(--uv-box-shadow-hover-2);
+//     background-color: var(--uv-color-white);
+//     z-index: var(--uv-z-index-navbar);
+
+//     // uvx-icon-button {
+//     //     &:hover {
+//     //         background-color: var(--uv-color-gray-light);
+//     //         color: var(--uv-color-primary);
+//     //     }
+//     // }
+// }
