@@ -19,12 +19,15 @@
             ></uvx-button>
         </div>
         <div class="divider" *ngIf="getWalletFavorites().length > 0"></div>
-        <div class="flex flex-column padding-top-md padding-bottom-md" 
-            *ngIf="getWalletFavorites().length > 0">
-            <p class="uv-body bold wallet-favorite" 
-                *ngFor="let item of getWalletFavorites(); let i = index">
-                {{item.name}}
-                <!-- <uvx-launch-bar></uvx-launch-bar> -->
+        <div class="flex flex-column padding-top-md padding-bottom-md" *ngIf="getWalletFavorites().length > 0">
+            <p
+                class="uv-body bold wallet-favorite position-relative"
+                *ngFor="let item of getWalletFavorites(); let i = index"
+                (mouseenter)="item.active = true"
+                (mouseleave)="item.active = false"
+            >
+                {{ item.name }}
+                <uvx-launch-bar topPos="-37px" rightPos="4px" *ngIf="item.active"></uvx-launch-bar>
             </p>
         </div>
     </div>
