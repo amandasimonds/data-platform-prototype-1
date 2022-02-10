@@ -33,6 +33,7 @@ export class WalletFullComponent implements OnInit {
   public walletEntitySelectionsIndices: number[] = [];
   public walletSearchResults: IEntity[] = [];
   public walletSortMenuOpen = false;
+  public entityPreviewOpen = false;
 
   constructor(
     private walletService: WalletService,
@@ -70,8 +71,8 @@ export class WalletFullComponent implements OnInit {
     this.walletService.addEntityToWallet(entities);
   }
 
-  public selectWalletEntity(entity: IEntity) {
-    console.log('event recieved');
+  public selectWalletEntity(entity: IEntity, event: Event) {
+    event.stopPropagation()
     this.walletService.selectWalletEntity(entity);
   }
 
@@ -90,11 +91,12 @@ export class WalletFullComponent implements OnInit {
     return results;
   }
 
-  public onFavoriteItem(entity: IEntity) {
+  public onFavoriteItem(entity: IEntity, event: Event) {
+    event.stopPropagation();
     // entity.walletFavorite = !entity.walletFavorite;
     const walletFavorites = this.walletService.getWalletFavorites();
     console.log(walletFavorites.length);
-    if(!entity.walletFavorite && walletFavorites.length >= 5) {
+    if (!entity.walletFavorite && walletFavorites.length >= 5) {
       console.log('You cant add another favorite SORRY');
       return
     } else if (!entity.walletFavorite && walletFavorites.length < 5) {
@@ -105,7 +107,7 @@ export class WalletFullComponent implements OnInit {
       entity.walletFavorite = false;
     }
     this.walletService.saveWalletToLocalStorage();
-    
+
   }
 
   public selectAllCheckClicked() {
@@ -144,6 +146,18 @@ export class WalletFullComponent implements OnInit {
 
   public toggleViewObjects() {
     this.viewObjectsOpen = !this.viewObjectsOpen;
+  }
+
+  public openEntityPreview() {
+    this.entityPreviewOpen = !this.entityPreviewOpen;
+  }
+
+  public launchBarClicked(event: Event) {
+    event.stopPropagation();
+  }
+
+  public closeEntityPreview() {
+    this.entityPreviewOpen = false;
   }
 
   public createFolder() {

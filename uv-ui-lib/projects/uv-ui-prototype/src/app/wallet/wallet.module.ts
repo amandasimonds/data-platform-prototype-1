@@ -8,9 +8,10 @@ import { WalletItemModule } from './wallet-item/wallet-item.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { WalletItemDroplistComponent } from './wallet-item-droplist/wallet-item-droplist.component';
 import { FormsModule } from '@angular/forms';
+import { EntityPreviewComponent } from './entity-preview/entity-preview.component';
 
 @NgModule({
-  declarations: [WalletComponent, WalletFullComponent, WalletItemDroplistComponent],
+  declarations: [WalletComponent, WalletFullComponent, WalletItemDroplistComponent, EntityPreviewComponent],
   imports: [
     CommonModule,
     CheckboxModule,
