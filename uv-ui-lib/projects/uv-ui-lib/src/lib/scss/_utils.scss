@@ -412,6 +412,11 @@
     transform: translate(-50%, -50%);
 }
 
+.position-bottom {
+    position: absolute;
+    bottom: 0px;
+}
+
 .align {
     &-right {
         text-align: right;

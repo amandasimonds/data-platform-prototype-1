@@ -9,9 +9,9 @@ import { WizardService } from '../../wizard.service';
 import { gwuTabs } from './gwu-tabs';
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-landing',
+    templateUrl: './landing.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingComponent {
 
@@ -21,12 +21,18 @@ export class LandingComponent {
     public columnCount: number = 1;
     public profileViewerPageLength = '';
     public currentProfileViewerPage = '';
-    public currentUser = {id: 1, new: false, name: ''};
+    public currentUser = { id: 1, new: false, name: '' };
     public columns = ['1', '2', '3', '4'];
     public gwuTabs = gwuTabs;
+    public chevronUser = 'user_chevron@test.com';
+    public cumminsUser = 'user_cummins@test.com';
 
     public get backdropMode(): string {
         return this.projectWizard ? 'popup' : 'hidden';
+    }
+
+    public get isDevUser(): boolean {
+        return this.currentUser.name === this.chevronUser || this.currentUser.name === this.cumminsUser ? false : true;
     }
 
     public get backdropState(): string {
@@ -53,15 +59,15 @@ export class LandingComponent {
     //         results: ''
     //     }
     // ];
-    
+
     constructor(
-        private stepsService: WizardService, 
-        private route: ActivatedRoute, 
+        private stepsService: WizardService,
+        private route: ActivatedRoute,
         private router: Router,
         private profileViewerService: ProfileViewerService,
         private userService: UserService,
         private destroy$: NgOnDestroyService,
-        private ref: ChangeDetectorRef) {}
+        private ref: ChangeDetectorRef) { }
 
     ngOnInit(): void {
         combineLatest([
@@ -81,7 +87,7 @@ export class LandingComponent {
     public columnCountChanged(value: number) {
         this.columnCount = value;
         this.profileViewerService.setCurrentColumnCount(this.columnCount);
-        this.router.navigate([], { queryParams: { service: 'profile', columnCount : this.columnCount }});
+        this.router.navigate([], { queryParams: { service: 'profile', columnCount: this.columnCount } });
     }
 
     public getClosest(val: number) {

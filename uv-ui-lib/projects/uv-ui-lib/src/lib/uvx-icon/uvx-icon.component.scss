@@ -2,6 +2,11 @@
     color: var(--uv-color-black);
 }
 
+.disabled {
+    color: var(--uv-color-gray-2);
+    cursor: not-allowed !important;
+}
+
 .uvx-icon-primary {
     color: var(--uv-color-primary);
 }

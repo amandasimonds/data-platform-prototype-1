@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CdkDragDrop, DragRef, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { IEntity } from '../../models/entity.model';
+import { WalletService } from '../../services/wallet.service';
 
 @Component({
   selector: 'app-wallet-item',
@@ -30,6 +31,8 @@ export class WalletItemComponent {
   @Output() public cdkDragDropped = new EventEmitter<Event>();
   @Output() public itemFavoritedEvent = new EventEmitter<Event>();
 
+  constructor(private walletService: WalletService) { }
+
   public get isEntity(): boolean {
     return this.mode === 'entity';
   }
@@ -56,6 +59,10 @@ export class WalletItemComponent {
 
   public get favoriteIconIsDisabled(): boolean {
     return !this.isFavorited && this.walletFavorites.length >= 5 ? true : false;
+  }
+
+  public get walletFavoritesLimitReached() {
+    return this.walletService.getWalletFavorites().length === 5;
   }
 
   public selectItem(event: Event) {

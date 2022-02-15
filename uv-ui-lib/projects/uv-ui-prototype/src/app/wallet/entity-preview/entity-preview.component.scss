@@ -1,11 +1,11 @@
 .entity-preview {
     position: absolute;
     height: 100%;
-    width:400px;
+    width: 400px;
     z-index: -9999;
     background-color: var(--uv-color-white);
     border-left: var(--uv-border-gray);
-    transition: all .5s;
+    transition: all 0.5s;
 
     &-visible {
         transform: translateX(-400.5px);
@@ -15,4 +15,34 @@
 .details-container {
     max-height: 300px;
     overflow: auto;
+
+    &-metadata {
+        height: calc(100% - 393px);
+        overflow: auto;
+    }
+
+    &-title {
+        min-width: 120px;
+    }
+
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
+
+    // -ms-overflow-style: none; /* IE and Edge */
+    // scrollbar-width: none; /* Firefox */
+}
+
+.metadata-container {
+    position: absolute;
+    bottom: 64px;
+
+    &-content {
+        overflow: auto;
+        height: 45vh;
+    }
+
+    &-title {
+        min-width: 120px;
+    }
 }

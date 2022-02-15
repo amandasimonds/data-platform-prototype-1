@@ -1,12 +1,16 @@
-<mat-icon svgIcon={{icon}} 
-    [class.uvx-icon-primary]="color === 'primary'" 
+<mat-icon
+    svgIcon="{{ icon }}"
+    [class.disabled]="disabled"
+    [class.uvx-icon-primary]="color === 'primary'"
     [class.uvx-icon-success]="color === 'success'"
     [class.uvx-icon-black]="color === 'black'"
-    [class.uvx-icon-gray]="color === 'gray'" 
+    [class.uvx-icon-gray]="color === 'gray'"
     [class.uvx-icon-white]="color === 'white'"
-    [class.uvx-icon-xs]="size === 'xs'" 
+    [class.uvx-icon-xs]="size === 'xs'"
     [class.uvx-icon-sm]="size === 'sm'"
     [class.uvx-icon-md]="size === 'md'"
     [class.uvx-icon-xl]="size === 'xl'"
     [class.uvx-icon-bg]="size === 'bg'"
-    [class.uvx-icon-checkmark]="size === 'checkmark'">
+    [class.uvx-icon-checkmark]="size === 'checkmark'"
+>
+</mat-icon>

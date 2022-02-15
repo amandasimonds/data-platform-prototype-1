@@ -44,13 +44,15 @@ import { UserService } from './auth/user.service';
 import { UvLightService } from './services/uv-light.service';
 import { IconDisplayComponent } from './pages/icon-display/icon-display.component';
 import { ProfileViewerService } from './global-where-used/profile-viewer.service';
-import {NgxEchartsModule} from 'ngx-echarts';
+import { NgxEchartsModule } from 'ngx-echarts';
 import * as echarts from 'echarts';
 import { WalletModule } from './wallet/wallet.module';
 import { DragDropService } from './services/drag-drop.service';
 import { ButtonDropdownModule } from 'epd-pattern-library';
 import { ConnectorCreatorService } from './services/connector-creator.service';
 import { WalletService } from './services/wallet.service';
+import { DevAuthGuardService } from './auth/dev-auth-guard.service';
+import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
 
 @NgModule({
     declarations: [
@@ -59,6 +61,7 @@ import { WalletService } from './services/wallet.service';
         MainComponent,
         UvLightComponent,
         IconDisplayComponent,
+        UnauthorizedComponent,
     ],
     imports: [
         ActionBarModule,
@@ -83,7 +86,7 @@ import { WalletService } from './services/wallet.service';
         ExpandingMenuModule,
         NgxEchartsModule.forRoot({
             echarts: () => import('echarts')
-          }),
+        }),
         RegisterIconModule,
         RegisterIconModule.forRoot(ICON_SET),
         SearchPanelModule,
@@ -100,6 +103,7 @@ import { WalletService } from './services/wallet.service';
         AuthService,
         BackdropService,
         ConnectorCreatorService,
+        DevAuthGuardService,
         DragDropService,
         HelperService,
         HttpClient,
