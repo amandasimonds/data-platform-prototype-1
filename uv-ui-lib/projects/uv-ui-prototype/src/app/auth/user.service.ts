@@ -5,7 +5,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class UserService {
 
-    private currentUser$: BehaviorSubject<any> = new BehaviorSubject<any>(
+    public currentUser$: BehaviorSubject<any> = new BehaviorSubject<any>(
         {
             id: 1,
             new: true,
@@ -21,6 +21,10 @@ export class UserService {
 
     public getCurrentUser(): Observable<any> {
         return this.currentUser$.asObservable();
+    }
+
+    public getCurrentUserValue(): string {
+        return this.currentUser$.value.name;
     }
 
     public updateUserName(): void {

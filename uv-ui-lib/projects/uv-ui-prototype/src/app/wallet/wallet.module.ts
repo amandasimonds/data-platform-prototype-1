@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WalletComponent } from './wallet.component';
 import { ButtonDropdownModule } from 'epd-pattern-library';
-import { ButtonModule, CheckboxModule, DropdownModule, FolderTreeIconModule, IconButtonModule, LaunchBarModule, SearchPanelModule, TextInputModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { ButtonModule, CheckboxModule, DropdownModule, FolderTreeIconModule, IconButtonModule, LaunchBarModule, SearchPanelModule, TabModule, TextInputModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
 import { WalletFullComponent } from './wallet-full/wallet-full.component';
 import { WalletItemModule } from './wallet-item/wallet-item.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -27,7 +27,8 @@ import { EntityPreviewComponent } from './entity-preview/entity-preview.componen
     FolderTreeIconModule,
     WalletItemModule,
     TextInputModule,
-    TooltipModule
+    TooltipModule,
+    TabModule
   ],
   exports: [WalletComponent, WalletFullComponent]
 })

@@ -89,7 +89,7 @@ export class WalletService {
 
   public getWallet(): IEntity[] {
     const localStorageWallet = JSON.parse(localStorage.getItem('wallet'));
-    if (localStorageWallet === null) {
+    if (localStorageWallet === null || localStorageWallet.length === 0 ) {
       return this.getPresetLocalStorageWallet();
     } else {
       this.walletItems$.next(localStorageWallet);
@@ -127,11 +127,35 @@ export class WalletService {
 
   public addEntityToWallet(entities: IEntity[]) {
     const walletItemsList = this.walletItems$.value.slice();
+    const modifiedList = walletItemsList.map(item => ({
+      ...item,
+      walletDate: new Date().toString()
+    }))
+    // console.log(modifiedList);
     for (let item of this.selectedEntities$.value) {
-      item.walletDate = new Date().toString();
-      item.selected = false;
-      walletItemsList.push(item);
+      console.log('item: ', item, 'list: ', modifiedList[0], JSON.stringify(modifiedList[0]) === JSON.stringify(item));
+      if (modifiedList.includes(item)) {
+        console.log('this item already in here!');
+      } else {
+        console.log('add this new item please');
+        item.walletDate = new Date().toString();
+        item.selected = false;
+        walletItemsList.unshift(item);
+      }
     }
+    // for (let entity of this.selectedEntities$.value) {
+    //   walletItemsList.forEach(item => {
+    //     if (item.name === entity.name) {
+    //       console.log('this item already in here!');
+    //       return;
+    //     } else if (item.name != entity.name) {
+    //       console.log('yeah you can add this new one');
+    //       item.walletDate = new Date().toString();
+    //       item.selected = false;
+    //       walletItemsList.unshift(entity);
+    //     }
+    //   })
+    // }
     this.walletItems$.next(walletItemsList);
     this.saveWalletToLocalStorage();
   }
@@ -265,6 +289,15 @@ export class WalletService {
     const wallet = this.walletItems$.value.slice();
     wallet.sort((a, b) => (
       Number(a.walletFavorite) - Number(b.walletFavorite)
+    ));
+    wallet.reverse();
+    this.walletItems$.next(wallet);
+  }
+
+  public sortWalletBySelections() {
+    const wallet = this.walletItems$.value.slice();
+    wallet.sort((a, b) => (
+      Number(a.selected) - Number(b.selected)
     ));
     wallet.reverse();
     this.walletItems$.next(wallet);

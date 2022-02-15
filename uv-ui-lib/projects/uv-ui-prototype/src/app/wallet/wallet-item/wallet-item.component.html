@@ -41,7 +41,7 @@
             [matTooltip]="favoriteIconTooltip"
             [disabled]="favoriteIconIsDisabled"
             [icon]="isFavorited ? 'star_solid' : 'star_outline'"
-            (click)="onFavoriteItem($event)"
+            (click)="!walletFavoritesLimitReached && onFavoriteItem($event)"
         ></uvx-icon-button>
         <div *ngIf="itemAmountTrue" class="results-number results-number-sm">{{ itemAmount }}</div>
     </div>

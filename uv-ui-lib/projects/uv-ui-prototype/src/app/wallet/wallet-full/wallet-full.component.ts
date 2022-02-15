@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, In
 import { DragDropService } from '../../services/drag-drop.service';
 import { slideInOutRightSidebarAnimation } from '../../shared/animations';
 import * as _ from 'lodash';
-import { IEntity } from '../../models/entity.model';
+import { emptyEntity, IEntity } from '../../models/entity.model';
 import { WalletService } from '../../services/wallet.service';
 import { combineLatest } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
@@ -33,7 +33,7 @@ export class WalletFullComponent implements OnInit {
   public walletEntitySelectionsIndices: number[] = [];
   public walletSearchResults: IEntity[] = [];
   public walletSortMenuOpen = false;
-  public entityPreviewOpen = false;
+  public entitySelectedForPreview: IEntity = emptyEntity;
 
   constructor(
     private walletService: WalletService,
@@ -52,7 +52,6 @@ export class WalletFullComponent implements OnInit {
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => this.ref.detectChanges());
     console.log(this.wallet);
-    console.log(this.apiList);
   }
 
   // isSelected(i: number): boolean {
@@ -63,8 +62,30 @@ export class WalletFullComponent implements OnInit {
     return this.walletService.getWalletFavorites();
   }
 
+  public get walletFavoritesLimitReached() {
+    console.log(this.walletService.getWalletFavorites().length === 5);
+    return this.walletService.getWalletFavorites().length === 5;
+  }
+
+  public get walletEntitiesSelected() {
+    return this.walletEntitySelections.length > 0;
+  }
+
+  public get entityIsSelectedForPreview(): boolean {
+    return this.entitySelectedForPreview !== emptyEntity;
+  }
+
+  public get sortMenuTooltip(): string {
+    if (this.wallet.length > 0 && !this.walletSortMenuOpen) {
+      return 'Open Sorting options'
+    } else {
+      return ''
+    }
+  }
+
   public onCloseClicked(state: string): void {
     this.walletSidebarClosedEvent.emit(state);
+    this.entitySelectedForPreview = emptyEntity;
   }
 
   public onAddEntityToWallet(entities: IEntity[]) {
@@ -144,12 +165,17 @@ export class WalletFullComponent implements OnInit {
     this.walletService.sortWalletByFavorites();
   }
 
+  public sortWalletBySelections() {
+    console.log(this.walletEntitySelections.length);
+    this.walletService.sortWalletBySelections();
+  }
+
   public toggleViewObjects() {
     this.viewObjectsOpen = !this.viewObjectsOpen;
   }
 
-  public openEntityPreview() {
-    this.entityPreviewOpen = !this.entityPreviewOpen;
+  public openEntityPreview(entity: IEntity) {
+    this.entitySelectedForPreview === entity ? this.entitySelectedForPreview = emptyEntity : this.entitySelectedForPreview = entity;
   }
 
   public launchBarClicked(event: Event) {
@@ -157,7 +183,7 @@ export class WalletFullComponent implements OnInit {
   }
 
   public closeEntityPreview() {
-    this.entityPreviewOpen = false;
+    this.entitySelectedForPreview = emptyEntity;
   }
 
   public createFolder() {

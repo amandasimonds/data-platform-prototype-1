@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AutoLoginAllRoutesGuard } from 'angular-auth-oidc-client';
+import { DevAuthGuardService as DevAuthGuard } from './auth/dev-auth-guard.service';
 import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './layouts/main/main.component';
-import { SettingsComponent } from './settings/settings.component';
 import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
 import { IconDisplayComponent } from './pages/icon-display/icon-display.component';
+import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
 
 const routes: Routes = [
     {
         path: '',
         component: AuthCallbackComponent
+    },
+    {
+        path: 'unauthorized',
+        component: UnauthorizedComponent
     },
     {
         path: 'login',
@@ -48,14 +53,16 @@ const routes: Routes = [
             },
             {
                 path: 'settings',
-                loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)
+                loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule),
+                canActivate: [DevAuthGuard]
             },
             {
                 path: 'icons',
-                component: IconDisplayComponent
+                component: IconDisplayComponent,
+                canActivate: [DevAuthGuard]
             }
         ],
-        canActivate: [AutoLoginAllRoutesGuard]
+        canActivate: [AutoLoginAllRoutesGuard, DevAuthGuard]
     }
 ];
 

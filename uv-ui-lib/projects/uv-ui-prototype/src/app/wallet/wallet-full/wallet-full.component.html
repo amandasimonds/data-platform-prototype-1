@@ -1,7 +1,9 @@
 <div class="wallet-sidebar-wrapper" cdkDropListGroup [@slideInOutRightSidebarAnimation]="walletSidebarState">
-    <app-entity-preview 
-    (entityPreviewClosedEvent)="closeEntityPreview()"
-    [isVisible]="entityPreviewOpen"></app-entity-preview>
+    <app-entity-preview
+        [entity]="entitySelectedForPreview"
+        (entityPreviewClosedEvent)="closeEntityPreview()"
+        [isVisible]="entityIsSelectedForPreview"
+    ></app-entity-preview>
     <div class="wallet-sidebar">
         <div class="padding-top-sm padding-right-sm padding-left-sm padding-bottom-xs">
             <div class="flex flex-column">
@@ -108,7 +110,7 @@
                     <span class="divider-left"></span>
                     <uvx-icon-button
                         icon="sorting_bottom"
-                        [matTooltip]="wallet.length > 0 ? 'Open Sorting options' : 'Nothing in wallet to sort'"
+                        [matTooltip]="sortMenuTooltip"
                         (click)="wallet.length > 0 && toggleSortMenu()"
                         [disabled]="wallet.length === 0"
                     >
@@ -144,6 +146,19 @@
                                 <uvx-icon icon="sorting_bottom"></uvx-icon>
                                 Favorites
                             </p>
+                            <p
+                                class="sort-menu-item"
+                                [class.text-disabled]="!walletEntitiesSelected"
+                                [matTooltip]="
+                                    walletEntitiesSelected
+                                        ? 'Sort Wallet by selections'
+                                        : 'No Wallet items selected to sort'
+                                "
+                                (click)="walletEntitiesSelected && sortWalletBySelections()"
+                            >
+                                <uvx-icon [disabled]="!walletEntitiesSelected" icon="sorting_bottom"></uvx-icon>
+                                Selections
+                            </p>
                         </div>
                     </uvx-icon-button>
                 </div>
@@ -165,7 +180,7 @@
                 <div *ngIf="searchText === ''; else resultsTpl" class="margin-bottom-xxs wallet-item-container">
                     <app-wallet-item
                         *ngFor="let entity of wallet; let i = index"
-                        (click)="openEntityPreview()"
+                        (click)="openEntityPreview(entity)"
                         [first]="i === 0"
                         (itemSelectedEvent)="selectWalletEntity(entity, $event)"
                         (itemUnselectedEvent)="selectWalletEntity(entity, $event)"
@@ -182,19 +197,6 @@
                     </app-wallet-item>
                 </div>
 
-                <!-- <div *ngIf="searchText === ''; else resultsTpl" class="margin-bottom-xxs wallet-item-container">
-                <app-wallet-item
-                    *ngFor="let entity of wallet; let i = index"
-                    (itemSelectedEvent)="selectWalletEntity(entity)"
-                    (itemUnselectedEvent)="selectWalletEntity(entity)"
-                    [dragIsDisabled]="true"
-                    [isSelected]="entity.selected"
-                    [label]="entity.name"
-                    [isFavorited]="entity.walletFavorite"
-                    (itemFavoritedEvent)="onFavoriteItem(entity)"
-                >
-                </app-wallet-item>
-            </div> -->
                 <ng-template #resultsTpl>
                     <app-wallet-item
                         *ngFor="let entity of getWalletSearchResults(searchText); let i = index"

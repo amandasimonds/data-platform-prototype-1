@@ -28,7 +28,12 @@
                     (openWalletClickEvent)="toggleWalletSidebar()"
                 ></app-wallet>
 
-                <uvx-icon-button color="primary" matTooltip="Launch Wizard" icon="help" (click)="launchWizard()">
+                <uvx-icon-button
+                    color="primary"
+                    [matTooltip]="isDevUser ? 'Launch Wizard' : null"
+                    icon="help"
+                    (click)="isDevUser && launchWizard()"
+                >
                 </uvx-icon-button>
 
                 <uvx-icon-button
@@ -95,19 +100,41 @@
             </div>
 
             <div *ngIf="currentUser.name === 'user_cummins@test.com'">
-                <span class="nav-icon" matTooltip="Global Where Used" [class.nav-icon-active]="navActiveIcon === 'gwu'">
+                <div
+                    class="nav-icon"
+                    matTooltip="Global Where Used"
+                    [class.nav-icon-active-expanded]="navbarIsExpanded"
+                    [class.nav-icon-active]="navActiveIcon === 'gwu'"
+                >
                     <a routerLink="gwu" [queryParams]="{ app: 'gwu' }">
                         <uvx-icon icon="global_where_used"></uvx-icon>
+                        <p
+                            [class.navbar-expanded-text-visible]="navbarIsExpanded"
+                            class="display-inline-block margin-left-xxs navbar-expanded-text"
+                        >
+                            Global Where Used
+                        </p>
                     </a>
-                </span>
+                </div>
             </div>
 
             <div *ngIf="currentUser.name === 'user_chevron@test.com'">
-                <span class="nav-icon" matTooltip="Side By Side" [class.nav-icon-active]="navActiveIcon === 'sbs'">
+                <div
+                    class="nav-icon"
+                    matTooltip="Side By Side"
+                    [class.nav-icon-active-expanded]="navbarIsExpanded"
+                    [class.nav-icon-active]="navActiveIcon === 'sbs'"
+                >
                     <a routerLink="sbs" [queryParams]="{ app: 'sbs' }">
                         <uvx-icon icon="compare"></uvx-icon>
+                        <p
+                            [class.navbar-expanded-text-visible]="navbarIsExpanded"
+                            class="display-inline-block margin-left-xxs navbar-expanded-text"
+                        >
+                            Side By Side
+                        </p>
                     </a>
-                </span>
+                </div>
             </div>
         </uvx-navbar>
     </div>

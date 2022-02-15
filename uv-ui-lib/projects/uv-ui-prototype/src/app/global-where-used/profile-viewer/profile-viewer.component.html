@@ -2,11 +2,16 @@
     <div class="padding-sm profile-viewer-top">
         <div class="flex justify-content-space-between margin-bottom-md">
             <div class="flex justify-content-space-between">
-                <div *ngIf="columnCount == 1 || columnCount == 2" >
+                <div *ngIf="columnCount == 1 || columnCount == 2">
                     <uvx-button mode="secondary" label="Compare" icon="compare" class="margin-right-xxxs"></uvx-button>
-                    <uvx-button mode="secondary" label="Design Ripple" icon="design" class="margin-right-xs"></uvx-button>
+                    <uvx-button
+                        mode="secondary"
+                        label="Design Ripple"
+                        icon="design"
+                        class="margin-right-xs"
+                    ></uvx-button>
                 </div>
-                <div *ngIf="columnCount == 3" >
+                <div *ngIf="columnCount == 3">
                     <uvx-icon-button mode="secondary" class="margin-right-xxxs" icon="compare"></uvx-icon-button>
                     <uvx-icon-button mode="secondary" class="margin-right-xs" icon="design"></uvx-icon-button>
                 </div>
@@ -17,21 +22,33 @@
                 <uvx-icon-button icon="full_screen" class="margin-right-xs" color="gray-dark"></uvx-icon-button>
                 <uvx-icon-button icon="close" color="gray-dark"></uvx-icon-button>
             </div>
-
         </div>
         <h5 class="margin-bottom-md">
-            {{name}}</h5>
-        <div id="description"  class="profile-viewer-top-description" (resized)="onDescriptionResized($event)">
+            {{ name }}
+        </h5>
+        <div id="description" class="profile-viewer-top-description" (resized)="onDescriptionResized($event)">
             <p class="uv-body">
-                {{description}}
+                {{ description }}
             </p>
         </div>
-        <uvx-button label="See more" *ngIf="isTextOverflow('description')" (click)="expandDescription()">See more</uvx-button>
+        <uvx-button label="See more" *ngIf="isTextOverflow('description')" (click)="expandDescription()"
+            >See more</uvx-button
+        >
     </div>
 
     <div class="flex">
-        <uvx-tab [isActive]="metadataTabActive" (click)="changeTab('metadata')" mode="horizontal" label="Meta Data"></uvx-tab>
-        <uvx-tab [isActive]="historyTabActive" (click)="changeTab('history')" mode="horizontal" label="History"></uvx-tab>
+        <uvx-tab
+            [isActive]="metadataTabActive"
+            (click)="changeTab('metadata')"
+            mode="horizontal"
+            label="Meta Data"
+        ></uvx-tab>
+        <uvx-tab
+            [isActive]="historyTabActive"
+            (click)="changeTab('history')"
+            mode="horizontal"
+            label="History"
+        ></uvx-tab>
     </div>
 
     <div class="divider"></div>
@@ -39,13 +56,12 @@
     <div class="padding-sm profile-viewer-metadata">
         <div *ngFor="let item of items; let i = index" class="flex margin-bottom-xs">
             <div class="profile-viewer-title">
-                <p class="uv-body bold">{{item.title}}</p>
+                <p class="uv-body bold">{{ item.title }}</p>
             </div>
-            <div>{{item.details}}</div>
-            <div *ngIf="item.tags[0] !=''" class="flex flex-wrap">
-                <div *ngFor="let tag of item.tags" class="uv-tag">{{tag}}</div>
+            <div>{{ item.details }}</div>
+            <div *ngIf="item.tags[0] != ''" class="flex flex-wrap">
+                <div *ngFor="let tag of item.tags" class="uv-tag">{{ tag }}</div>
             </div>
         </div>
     </div>
-
 </div>
