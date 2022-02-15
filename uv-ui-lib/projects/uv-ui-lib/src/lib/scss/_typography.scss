@@ -5,6 +5,11 @@ body, p {
     line-height: 20px;
 }
 
+.text-disabled {
+    color: var(--uv-color-gray-2);
+    cursor: not-allowed !important;
+}
+
 .uv-body {
     font-family: var(--uv-font-family);
     font-size: var(--uv-font-size-sm);

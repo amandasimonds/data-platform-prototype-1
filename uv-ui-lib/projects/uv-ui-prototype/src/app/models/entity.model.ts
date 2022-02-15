@@ -16,3 +16,22 @@ export interface IEntity {
     walletDate: string;
     formattedWalletDate: string;
 }
+
+export const emptyEntity: IEntity = {
+    category: '',
+    name: '',
+    id: 0,
+    description: '',
+    date: '',
+    active: false,
+    selected: false,
+    disabled: false,
+    formattedDate: '',
+    showDetails: false,
+    details: '',
+    progress: 0,
+    tags: [],
+    walletFavorite: false,
+    walletDate: '',
+    formattedWalletDate: '',
+}

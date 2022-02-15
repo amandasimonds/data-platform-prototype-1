@@ -1,9 +1,11 @@
 .wallet-sidebar {
     background-color: var(--uv-color-white);
-    z-index: var(--uv-z-index-search-sidebar);
+    z-index: var(--uv-z-index-wallet-sidebar);
+    height: calc(100vh - 64px);
 }
 
 .wallet-sidebar-wrapper {
+    z-index: var(--uv-z-index-wallet-sidebar);
     height: 100%;
     position: absolute;
     top: var(--uv-header-height);
