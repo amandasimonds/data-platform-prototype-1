@@ -46,7 +46,7 @@ export class SbsActionBarComponent implements OnInit {
     }
 
     public clearSelections(items: IEntity[]): void {
-        this.sbsService.clearTargetDocumentSelections(items);
+        this.sbsService.clearTargetDocumentSelections();
     }
 
     public clearSearch(): void {

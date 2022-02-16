@@ -19,4 +19,12 @@ export class UnauthorizedComponent {
     window.location.href = `${environment.authConfig.authority}/v2/logout?federated`;
     this.router.navigate(['/logout']);
   }
+
+  public navigateToABTest() {
+    window.location.href = "https://uvuiusabilitytest.z13.web.core.windows.net/test";
+  }
+
+  public navigateToHome() {
+    this.router.navigate(['/main/home-splash']);
+  }
 }
