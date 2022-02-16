@@ -89,7 +89,7 @@ export class WalletService {
 
   public getWallet(): IEntity[] {
     const localStorageWallet = JSON.parse(localStorage.getItem('wallet'));
-    if (localStorageWallet === null || localStorageWallet.length === 0 ) {
+    if (localStorageWallet === null || localStorageWallet.length === 0) {
       return this.getPresetLocalStorageWallet();
     } else {
       this.walletItems$.next(localStorageWallet);
@@ -127,36 +127,20 @@ export class WalletService {
 
   public addEntityToWallet(entities: IEntity[]) {
     const walletItemsList = this.walletItems$.value.slice();
-    const modifiedList = walletItemsList.map(item => ({
-      ...item,
-      walletDate: new Date().toString()
-    }))
-    // console.log(modifiedList);
-    for (let item of this.selectedEntities$.value) {
-      console.log('item: ', item, 'list: ', modifiedList[0], JSON.stringify(modifiedList[0]) === JSON.stringify(item));
-      if (modifiedList.includes(item)) {
-        console.log('this item already in here!');
-      } else {
-        console.log('add this new item please');
-        item.walletDate = new Date().toString();
-        item.selected = false;
-        walletItemsList.unshift(item);
+    const oldItems = entities.filter(entity1 => walletItemsList.some(entity2 => entity1.name === entity2.name));
+    const newItems = entities.filter(entity1 => !walletItemsList.some(entity2 => entity1.name === entity2.name));
+    for (let item of oldItems) {
+      for (let walletItem of walletItemsList) {
+        item.name === walletItem.name ? walletItem.walletDate = new Date().toString() : null;
       }
     }
-    // for (let entity of this.selectedEntities$.value) {
-    //   walletItemsList.forEach(item => {
-    //     if (item.name === entity.name) {
-    //       console.log('this item already in here!');
-    //       return;
-    //     } else if (item.name != entity.name) {
-    //       console.log('yeah you can add this new one');
-    //       item.walletDate = new Date().toString();
-    //       item.selected = false;
-    //       walletItemsList.unshift(entity);
-    //     }
-    //   })
-    // }
+    for (let item of newItems) {
+      item.walletDate = new Date().toString();
+      item.selected = false;
+      walletItemsList.unshift(item);
+    }
     this.walletItems$.next(walletItemsList);
+    this.sortWalletByNewestFirst();
     this.saveWalletToLocalStorage();
   }
 
@@ -192,21 +176,27 @@ export class WalletService {
   }
 
   public deleteEntitySelectionFromWallet(entities: IEntity[]) {
+    
     console.log('delete these: ', entities);
     const wallet = this.walletItems$.value.slice();
-    // const filteredWallet: IEntity[] = [];
-    wallet.forEach(item => {
-      console.log('item', item.name);
-      entities.forEach(entity => {
-        console.log('selected entity', entity.name);
-        if (entity.name === item.name) {
-          const index = wallet.indexOf(item);
-          console.log(entity.name, entity.name === item.name, index);
-          wallet.splice(index, 1);
-        }
-        entity.selected = false;
+    if(entities.length === wallet.length) {
+      this.walletItems$.next([]);
+    } else {
+      // const filteredWallet: IEntity[] = [];
+      wallet.forEach(item => {
+        console.log('item', item.name);
+        entities.forEach(entity => {
+          console.log('selected entity', entity.name);
+          if (entity.name === item.name) {
+            const index = wallet.indexOf(item);
+            console.log(entity.name, entity.name === item.name, index);
+            wallet.splice(index, 1);
+          }
+          entity.selected = false;
+        })
       })
-    })
+      this.walletItems$.next(wallet);
+    }
 
     // entities.forEach(entity =>
     //   wallet.forEach(category => {
@@ -216,7 +206,6 @@ export class WalletService {
     //   ))
 
     console.log(wallet);
-    this.walletItems$.next(wallet);
     this.selectedWalletEntities$.next([]);
     this.saveWalletToLocalStorage();
   }
@@ -266,6 +255,7 @@ export class WalletService {
     ));
     wallet.reverse();
     this.walletItems$.next(wallet);
+    this.saveWalletToLocalStorage();
   }
 
   public sortWalletByAtoZ() {
