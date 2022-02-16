@@ -3,12 +3,15 @@ import { BehaviorSubject } from 'rxjs';
 import { IEntity } from '../models/entity.model';
 import { sourceDocumentSamples } from '../side-by-side/sample-data/source-documents';
 import { targetDocumentSamples } from '../side-by-side/sample-data/target-documents';
+import { WalletService } from './wallet.service';
 
 @Injectable()
 export class SidebySideService {
 
     private targetDocumentSelectedEvent = new BehaviorSubject<IEntity[]>([]);
     private sourceDocumentSelectedEvent = new BehaviorSubject<IEntity[]>([]);
+
+    public targetDocuments$ = new BehaviorSubject<IEntity[]>(targetDocumentSamples);
 
     public readonly selectedTargetDocuments$ = this.targetDocumentSelectedEvent.asObservable();
     public readonly sourceDocumentsList$ = this.sourceDocumentSelectedEvent.asObservable();
@@ -18,6 +21,7 @@ export class SidebySideService {
 
     @Output() public readonly sourceDocumentSelected = new EventEmitter<boolean>();
 
+    constructor(private walletService: WalletService) {}
     public getTargetDocuments(): IEntity[] {
         return this.targetDocuments.slice();
     }
@@ -45,6 +49,8 @@ export class SidebySideService {
                     ...item,
                     disabled: !item.disabled
                 }));
+            this.clearTargetDocumentSelections();
+            this.walletService.clearSelectedEntities();
         }
         this.sourceDocumentSelectedEvent.next(sourceDocsList);
     }
@@ -64,9 +70,11 @@ export class SidebySideService {
         return this.targetDocumentSelectedEvent.value.slice();
     }
 
-    public clearTargetDocumentSelections(items: IEntity[]): void {
-        let selectedTargetDocs = items.map(item => ({...item, active: !item.active}));
-        selectedTargetDocs = selectedTargetDocs.filter(item => item.active);
+    public clearTargetDocumentSelections(): void {
+        // const targetDocs = this.getTargetDocuments().map(item => ({ ...item, active: !item.active, selected: false }));
+        const targetDocs = this.getTargetDocuments().map(item => ({ ...item, active: false, selected: false }));
+        const selectedTargetDocs = targetDocs.filter(item => item.active);
         this.targetDocumentSelectedEvent.next(selectedTargetDocs);
+        this.targetDocuments$.next(targetDocs);
     }
 }

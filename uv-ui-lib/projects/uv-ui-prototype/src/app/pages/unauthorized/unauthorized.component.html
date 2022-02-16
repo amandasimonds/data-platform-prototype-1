@@ -1,4 +1,13 @@
-<div class="container">
+<div class="container flex flex-column gap-xxs">
     <h4 class="margin-bottom-xxs">You are unauthorized to view this page.</h4>
-    <a (click)="logout()">Log in as a different user</a>
+    <p>
+        <a (click)="logout()">Log in as a different user</a>
+    </p>
+    <p>
+        Looking for the A/B Usability Test?
+        <a (click)="navigateToABTest()">Click here</a>
+    </p>
+    <p>
+        <a (click)="navigateToHome()">Go to homepage</a>
+    </p>
 </div>

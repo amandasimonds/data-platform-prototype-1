@@ -14,10 +14,13 @@ export class SourceDocumentComponent implements OnInit {
 
     public sourceDocuments: IEntity[] = sourceDocumentSamples;
 
-    constructor(private sbsService: SidebySideService, private walletService: WalletService) { }
+    constructor(
+        private sbsService: SidebySideService,
+        private walletService: WalletService
+    ) { }
 
     ngOnInit(): void {
-        // this.walletService.clearSelectedEntities();
+        this.walletService.clearSelectedEntities();
     }
 
     public onSourceDocumentSelected(item: IEntity, i: number): void {
