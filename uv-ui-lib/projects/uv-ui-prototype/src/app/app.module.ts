@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+// import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ICON_SET } from 'projects/uv-ui-lib/src/lib/register-icon/icon-set';
 import {
@@ -53,6 +54,7 @@ import { ConnectorCreatorService } from './services/connector-creator.service';
 import { WalletService } from './services/wallet.service';
 import { DevAuthGuardService } from './auth/dev-auth-guard.service';
 import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
+// import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
 
 @NgModule({
     declarations: [
@@ -62,6 +64,7 @@ import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.compone
         UvLightComponent,
         IconDisplayComponent,
         UnauthorizedComponent,
+        // AuthCallbackComponent
     ],
     imports: [
         ActionBarModule,
@@ -74,6 +77,7 @@ import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.compone
         ButtonDropdownModule,
         CompareWarningModule,
         HeaderModule,
+        // MatProgressSpinnerModule,
         HomeSplashModule,
         HttpClientModule,
         IconButtonModule,
