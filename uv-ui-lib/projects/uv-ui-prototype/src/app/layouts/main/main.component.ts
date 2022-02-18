@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
@@ -42,6 +42,7 @@ export class MainComponent implements OnInit {
     public navbarIsExpanded = false;
     public subNavbarIsExpanded = false;
     public subNavbar2IsExpanded = false;
+    public displayToastMsg = false;
 
     @Input() public searchQuery = '';
 
@@ -145,7 +146,16 @@ export class MainComponent implements OnInit {
     }
 
     public toggleWallet() {
-        setTimeout(() => { this.miniWalletOpen = !this.miniWalletOpen; }, 150);
+        console.log('start', this.miniWalletOpen);
+        if (!this.miniWalletOpen) {
+            setTimeout(() => {
+                this.miniWalletOpen = true;
+                console.log('opem the mini wallet', this.walletSidebarState);
+            }, 150);
+        } else if (this.miniWalletOpen) {
+            this.miniWalletOpen = false;
+        }
+
         // this.walletOpen = !this.walletOpen;
         this.walletSidebarState = 'hidden';
     }
@@ -153,6 +163,16 @@ export class MainComponent implements OnInit {
     public toggleWalletSidebar() {
         this.miniWalletOpen = false;
         this.walletSidebarState === 'visible' ? this.walletSidebarState = 'hidden' : this.walletSidebarState = 'visible';
+    }
+
+    public onWalletItemAdded() {
+        this.displayToastMsg = true;
+        console.log(this.displayToastMsg);
+        setTimeout(() => {
+            this.displayToastMsg = false;
+            console.log(this.displayToastMsg);
+            this.ref.detectChanges();
+        }, 2000);
     }
 
     public toggleSubNavbar() {

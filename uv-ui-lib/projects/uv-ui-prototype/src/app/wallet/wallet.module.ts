@@ -11,7 +11,12 @@ import { FormsModule } from '@angular/forms';
 import { EntityPreviewComponent } from './entity-preview/entity-preview.component';
 
 @NgModule({
-  declarations: [WalletComponent, WalletFullComponent, WalletItemDroplistComponent, EntityPreviewComponent],
+  declarations: [
+    WalletComponent,
+    WalletFullComponent,
+    WalletItemDroplistComponent,
+    EntityPreviewComponent
+  ],
   imports: [
     CommonModule,
     CheckboxModule,

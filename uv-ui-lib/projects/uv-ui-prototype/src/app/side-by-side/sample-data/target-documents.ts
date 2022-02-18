@@ -3,9 +3,9 @@ import { IEntity } from "../../models/entity.model";
 export const targetDocumentSamples: IEntity[] = [
     {
         category: '',
-        name: 'EXH-SU-5110-B',
+        name: 'Silopren LSR 3485/35',
         id: 1,
-        description: 'Lorem upsum door sit amet consectetur',
+        description: 'A brief description about this item goes here.',
         date: '',
         active: false,
         selected: false,
@@ -21,9 +21,9 @@ export const targetDocumentSamples: IEntity[] = [
     },
     {
         category: '',
-        name: 'EXH-SU-5110-C',
+        name: 'Silicone',
         id: 1,
-        description: 'Lorem upsum door sit amet consectetur',
+        description: 'A brief description about this item goes here.',
         date: '',
         active: false,
         selected: false,
@@ -39,9 +39,9 @@ export const targetDocumentSamples: IEntity[] = [
     },
     {
         category: '',
-        name: 'EXH-SU-5110-D',
+        name: 'PBT GF10',
         id: 1,
-        description: 'Lorem upsum door sit amet consectetur',
+        description: 'A brief description about this item goes here.',
         date: '',
         active: false,
         selected: false,
@@ -57,9 +57,9 @@ export const targetDocumentSamples: IEntity[] = [
     },
     {
         category: '',
-        name: 'EXH-5110-B',
+        name: 'Urethane Foam',
         id: 1,
-        description: 'Lorem upsum door sit amet consectetur',
+        description: 'A brief description about this item goes here.',
         date: '',
         active: false,
         selected: false,

@@ -40,7 +40,7 @@
                         mode="primary"
                         label="Add To Wallet"
                         [disabled]="selectedEntities.length < 1"
-                        (click)="onAddEntityToWallet(selectedEntities)"
+                        (click)="selectedEntities.length > 1 && onAddEntityToWallet(selectedEntities, $event)"
                     ></uvx-button>
                 </div>
                 <!--            <div class="margin-top-xxs text-align-right" [ngStyle]="selectionsIndices.length > 0 && {'height': '15px'}">-->
@@ -112,17 +112,18 @@
                         icon="sorting_bottom"
                         [matTooltip]="sortMenuTooltip"
                         (click)="wallet.length > 0 && toggleSortMenu()"
+                        (clickOutside)="closeSortMenu()"
                         [disabled]="wallet.length === 0"
                     >
-                        <div *ngIf="walletSortMenuOpen" class="sort-menu flex flex-column">
+                        <div *ngIf="walletSortMenuOpen"  class="sort-menu flex flex-column">
                             <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">
                                 Title
                             </p>
-                            <p class="sort-menu-item" (click)="sortWalletByAtoZ()">
+                            <p class="sort-menu-item" (click)="sortWalletByAtoZ(); $event.stopPropagation()">
                                 <uvx-icon icon="sorting_bottom"></uvx-icon>
                                 A to Z
                             </p>
-                            <p class="sort-menu-item" (click)="sortWalletByZtoA()">
+                            <p class="sort-menu-item" (click)="sortWalletByZtoA(); $event.stopPropagation()">
                                 <uvx-icon icon="sorting_bottom"></uvx-icon>
                                 Z to A
                             </p>
@@ -130,11 +131,11 @@
                             <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">
                                 Date
                             </p>
-                            <p class="sort-menu-item" (click)="sortWalletByNewestFirst()">
+                            <p class="sort-menu-item" (click)="sortWalletByNewestFirst(); $event.stopPropagation()">
                                 <uvx-icon icon="sorting_bottom"></uvx-icon>
                                 Newest first
                             </p>
-                            <p class="sort-menu-item" (click)="sortWalletByOldestFirst()">
+                            <p class="sort-menu-item" (click)="sortWalletByOldestFirst(); $event.stopPropagation()">
                                 <uvx-icon icon="sorting_bottom"></uvx-icon>
                                 Oldest first
                             </p>
@@ -142,7 +143,7 @@
                             <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">
                                 Usage
                             </p>
-                            <p class="sort-menu-item" (click)="sortWalletByFavorites()">
+                            <p class="sort-menu-item" (click)="sortWalletByFavorites(); $event.stopPropagation()">
                                 <uvx-icon icon="sorting_bottom"></uvx-icon>
                                 Favorites
                             </p>
@@ -154,7 +155,7 @@
                                         ? 'Sort Wallet by selections'
                                         : 'No Wallet items selected to sort'
                                 "
-                                (click)="walletEntitiesSelected && sortWalletBySelections()"
+                                (click)="walletEntitiesSelected && sortWalletBySelections(); $event.stopPropagation()"
                             >
                                 <uvx-icon [disabled]="!walletEntitiesSelected" icon="sorting_bottom"></uvx-icon>
                                 Selections

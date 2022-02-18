@@ -18,13 +18,13 @@
                     class="margin-right-sm"
                     id="wallet-icon"
                     icon="store"
-                    (click)="toggleWallet()"
+                    (mousedown)="toggleWallet()"
                     (dblclick)="toggleWalletSidebar()"
                 >
                 </uvx-icon-button>
                 <app-wallet
-                    *ngIf="miniWalletOpen && walletSidebarState === 'hidden'"
-                    (closeWalletEvent)="miniWalletOpen = false"
+                    [class.no-display]="!miniWalletOpen || walletSidebarState === 'visible'"
+                    (walletItemAddedEvent)="onWalletItemAdded()"
                     (openWalletClickEvent)="toggleWalletSidebar()"
                 ></app-wallet>
 
@@ -102,6 +102,22 @@
             <div *ngIf="currentUser.name === 'user_cummins@test.com'">
                 <div
                     class="nav-icon"
+                    matTooltip="Dashboard"
+                    [class.nav-icon-active-expanded]="navbarIsExpanded"
+                    [class.nav-icon-active]="navActiveIcon === 'home-splash'"
+                >
+                    <a routerLink="home-splash" [queryParams]="{ app: 'home-splash' }">
+                        <uvx-icon icon="dashboard"></uvx-icon>
+                        <p
+                            [class.navbar-expanded-text-visible]="navbarIsExpanded"
+                            class="display-inline-block margin-left-xxs navbar-expanded-text"
+                        >
+                            Dashboard
+                        </p>
+                    </a>
+                </div>
+                <div
+                    class="nav-icon"
                     matTooltip="Global Where Used"
                     [class.nav-icon-active-expanded]="navbarIsExpanded"
                     [class.nav-icon-active]="navActiveIcon === 'gwu'"
@@ -119,6 +135,22 @@
             </div>
 
             <div *ngIf="currentUser.name === 'user_chevron@test.com'">
+                <div
+                    class="nav-icon"
+                    matTooltip="Dashboard"
+                    [class.nav-icon-active-expanded]="navbarIsExpanded"
+                    [class.nav-icon-active]="navActiveIcon === 'home-splash'"
+                >
+                    <a routerLink="home-splash" [queryParams]="{ app: 'home-splash' }">
+                        <uvx-icon icon="dashboard"></uvx-icon>
+                        <p
+                            [class.navbar-expanded-text-visible]="navbarIsExpanded"
+                            class="display-inline-block margin-left-xxs navbar-expanded-text"
+                        >
+                            Dashboard
+                        </p>
+                    </a>
+                </div>
                 <div
                     class="nav-icon"
                     matTooltip="Side By Side"
@@ -198,8 +230,16 @@
     >
     </app-compare-warning>
 
-    <app-wallet-full (walletSidebarClosedEvent)="toggleWalletSidebar()" [walletSidebarState]="walletSidebarState">
+    <app-wallet-full
+        (walletItemAddedEvent)="onWalletItemAdded()"
+        (walletSidebarClosedEvent)="toggleWalletSidebar()"
+        [walletSidebarState]="walletSidebarState"
+    >
     </app-wallet-full>
 
     <app-uv-light *ngIf="uvLight" (uvLightToggle)="toggleUvLight()"></app-uv-light>
+
+    <div class="toast" [class.toast-visible]="displayToastMsg">
+        <img id="toastImg" src="../../../assets/toatmsg.png" />
+    </div>
 </div>

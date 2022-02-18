@@ -15,3 +15,25 @@
 .toggle-button {
     text-align: right;
 }
+
+.no-display {
+    display: none;
+}
+
+.toast {
+    position: absolute;
+    width: 300px;
+    top: -100px;
+    z-index: var(--uv-z-index-navbar);
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 1s all;
+
+    &-visible {
+        top:10px;
+    }
+}
+
+.toast > img {
+    width: 100%;
+}

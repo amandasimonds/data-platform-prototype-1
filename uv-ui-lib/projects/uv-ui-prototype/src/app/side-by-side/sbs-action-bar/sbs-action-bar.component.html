@@ -49,7 +49,7 @@
         <div class="row">
             <div class="col-6 flex justify-content-space-between padding-right-sm">
                 <p class="uv-body medium-bold">{{loadedSourceDocuments.length}} documents</p>
-                <div class="position-relative flex">
+                <div *ngIf="isDevUser" class="position-relative flex">
                     <uvx-icon-button icon="search" *ngIf="!showFilterModal" color="primary" (click)="toggleFilterModal()" [active]="showFilterModal"></uvx-icon-button>
                     <uvx-search-panel 
                         (searchCloseClicked)="toggleFilterModal(); clearSearch()"
@@ -65,7 +65,7 @@
             <div class="col-6 flex flex-row justify-content-space-between border-left padding-left-md">
                 <p class="uv-body medium-bold">
                     {{ showTargetDocuments ? loadedTargetDocuments.length : '0'}} documents</p>
-                <div>
+                <div *ngIf="isDevUser">
                     <uvx-icon-button icon="search" color="primary" [disabled]="!showTargetDocuments"></uvx-icon-button>
                     <uvx-icon-button icon="more_horisontal" color="primary" [disabled]="!showTargetDocuments" class="margin-left-xxs"></uvx-icon-button>
                 </div>
