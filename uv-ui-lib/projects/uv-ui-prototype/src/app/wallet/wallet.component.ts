@@ -4,7 +4,6 @@ import { DragDropService } from '../services/drag-drop.service';
 import { walletItems } from './wallet-items';
 import { IEntity } from '../models/entity.model';
 import { WalletService } from '../services/wallet.service';
-import { IWalletCategory } from './wallet-preset';
 import { combineLatest } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { NgOnDestroyService } from '../services/on-destroy.service';
@@ -18,6 +17,7 @@ export class WalletComponent {
 
   @Output() openWalletClickEvent = new EventEmitter<Event>();
   @Output() closeWalletEvent = new EventEmitter<Event>();
+  @Output() public readonly walletItemAddedEvent = new EventEmitter<Event>();
   public favorites: IEntity[] = [];
   public selectedEntities: IEntity[] = [];
   public items = walletItems;
@@ -57,9 +57,10 @@ export class WalletComponent {
     return walletFavorites;
   }
 
-  public onAddEntityToWallet() {
+  public onAddEntityToWallet(event: Event) {
     this.walletService.addEntityToWallet(this.selectedEntities);
     console.log('add entity to wallet');
+    this.walletItemAddedEvent.emit(event);
   }
 
   public onDrop(event: CdkDragDrop<string[]>) {

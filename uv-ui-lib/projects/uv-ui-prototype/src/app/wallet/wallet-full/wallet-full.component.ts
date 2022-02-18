@@ -21,6 +21,7 @@ export class WalletFullComponent implements OnInit {
   @Input() public walletSidebarState = 'hidden';
   @Input() public selectedEntities: IEntity[] = [];
   @Output() public readonly walletSidebarClosedEvent = new EventEmitter<string>();
+  @Output() public readonly walletItemAddedEvent = new EventEmitter<Event>();
 
   public apiList: IEntity[] = [];
   public viewObjectsOpen = true;
@@ -88,8 +89,9 @@ export class WalletFullComponent implements OnInit {
     this.entitySelectedForPreview = emptyEntity;
   }
 
-  public onAddEntityToWallet(entities: IEntity[]) {
+  public onAddEntityToWallet(entities: IEntity[], event: Event) {
     this.walletService.addEntityToWallet(entities);
+    this.walletItemAddedEvent.emit(event);
   }
 
   public selectWalletEntity(entity: IEntity, event: Event) {
@@ -145,6 +147,10 @@ export class WalletFullComponent implements OnInit {
     this.walletSortMenuOpen = !this.walletSortMenuOpen;
   }
 
+  public closeSortMenu() {
+    this.walletSortMenuOpen = false;
+  }
+
   public sortWalletByNewestFirst() {
     this.walletService.sortWalletByNewestFirst();
   }
@@ -166,7 +172,6 @@ export class WalletFullComponent implements OnInit {
   }
 
   public sortWalletBySelections() {
-    console.log(this.walletEntitySelections.length);
     this.walletService.sortWalletBySelections();
   }
 

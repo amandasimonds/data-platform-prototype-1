@@ -54,6 +54,7 @@ import { ConnectorCreatorService } from './services/connector-creator.service';
 import { WalletService } from './services/wallet.service';
 import { DevAuthGuardService } from './auth/dev-auth-guard.service';
 import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
+import { ClickOutsideModule } from './shared/directives/click-outside/click-outside.module';
 // import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
 
 @NgModule({
@@ -63,7 +64,7 @@ import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.compone
         MainComponent,
         UvLightComponent,
         IconDisplayComponent,
-        UnauthorizedComponent,
+        UnauthorizedComponent
         // AuthCallbackComponent
     ],
     imports: [
@@ -76,6 +77,7 @@ import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.compone
         ButtonModule,
         ButtonDropdownModule,
         CompareWarningModule,
+        ClickOutsideModule,
         HeaderModule,
         // MatProgressSpinnerModule,
         HomeSplashModule,
