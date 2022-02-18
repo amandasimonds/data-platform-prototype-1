@@ -176,7 +176,6 @@ export class WalletService {
   }
 
   public deleteEntitySelectionFromWallet(entities: IEntity[]) {
-    
     console.log('delete these: ', entities);
     const wallet = this.walletItems$.value.slice();
     if(entities.length === wallet.length) {

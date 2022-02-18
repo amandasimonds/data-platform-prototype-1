@@ -5,7 +5,7 @@
             <uvx-button
                 label="Add to Wallet"
                 [disabled]="selectedEntities.length < 1"
-                (click)="onAddEntityToWallet()"
+                (click)="selectedEntities.length > 1 && onAddEntityToWallet($event)"
                 mode="primary"
                 icon="store"
             >

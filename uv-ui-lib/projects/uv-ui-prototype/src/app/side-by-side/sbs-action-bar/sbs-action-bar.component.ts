@@ -15,6 +15,7 @@ import { IEntity } from '../../models/entity.model';
 export class SbsActionBarComponent implements OnInit {
 
     @Input() public showTargetDocuments = false;
+    @Input() public isDevUser = false;
 
     public selectedTargetDocuments: IEntity[] = [];
     public sourceDocumentsList: IEntity[] = [];
