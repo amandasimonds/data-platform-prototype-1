@@ -146,11 +146,9 @@ export class MainComponent implements OnInit {
     }
 
     public toggleWallet() {
-        console.log('start', this.miniWalletOpen);
         if (!this.miniWalletOpen) {
             setTimeout(() => {
                 this.miniWalletOpen = true;
-                console.log('opem the mini wallet', this.walletSidebarState);
             }, 150);
         } else if (this.miniWalletOpen) {
             this.miniWalletOpen = false;
@@ -167,10 +165,8 @@ export class MainComponent implements OnInit {
 
     public onWalletItemAdded() {
         this.displayToastMsg = true;
-        console.log(this.displayToastMsg);
         setTimeout(() => {
             this.displayToastMsg = false;
-            console.log(this.displayToastMsg);
             this.ref.detectChanges();
         }, 2000);
     }

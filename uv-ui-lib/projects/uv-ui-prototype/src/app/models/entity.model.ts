@@ -15,6 +15,7 @@ export interface IEntity {
     walletFavorite: boolean;
     walletDate: string;
     formattedWalletDate: string;
+    launchbar: boolean;
 }
 
 export const emptyEntity: IEntity = {
@@ -34,4 +35,5 @@ export const emptyEntity: IEntity = {
     walletFavorite: false,
     walletDate: '',
     formattedWalletDate: '',
+    launchbar: false
 }
