@@ -29,7 +29,8 @@ export const presetWallet: IWalletCategory[] = [
                 tags: [],
                 walletFavorite: false,
                 walletDate: '',
-                formattedWalletDate: ''
+                formattedWalletDate: '',
+                launchbar: false
             },
         ]
     },
@@ -54,7 +55,8 @@ export const presetWallet: IWalletCategory[] = [
                 tags: [],
                 walletFavorite: false,
                 walletDate: '',
-                formattedWalletDate: ''
+                formattedWalletDate: '',
+                launchbar: false
             }
         ]
     },
@@ -79,7 +81,8 @@ export const presetWallet: IWalletCategory[] = [
                 tags: [],
                 walletFavorite: false,
                 walletDate: '',
-                formattedWalletDate: ''
+                formattedWalletDate: '',
+                launchbar: false
             }
         ]
     }

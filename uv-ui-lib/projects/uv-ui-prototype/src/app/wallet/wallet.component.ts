@@ -47,6 +47,10 @@ export class WalletComponent {
         }
     }
 
+    public get entitiesSelectedForWallet() {
+      return this.selectedEntities.length > 0;
+    }
+
   public openWalletClicked(event: Event) {
     this.openWalletClickEvent.emit(event);
   }
@@ -65,6 +69,10 @@ export class WalletComponent {
 
   public onDrop(event: CdkDragDrop<string[]>) {
     this.dragDropService.copyOnDrop(event);
+  }
+
+  public doanything(event: Event) {
+    console.log('do anything');
   }
 
 }

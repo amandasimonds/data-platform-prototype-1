@@ -4,8 +4,8 @@
         <div class="padding-top-sm padding-bottom-xs padding-left-sm padding-right-sm flex flex-column">
             <uvx-button
                 label="Add to Wallet"
-                [disabled]="selectedEntities.length < 1"
-                (click)="selectedEntities.length > 1 && onAddEntityToWallet($event)"
+                [disabled]="!entitiesSelectedForWallet"
+                (click)="entitiesSelectedForWallet && onAddEntityToWallet($event)"
                 mode="primary"
                 icon="store"
             >
@@ -23,11 +23,11 @@
             <p
                 class="uv-body bold wallet-favorite position-relative"
                 *ngFor="let item of getWalletFavorites(); let i = index"
-                (mouseenter)="item.active = true"
-                (mouseleave)="item.active = false"
+                (mouseenter)="item.launchbar = true"
+                (mouseleave)="item.launchbar = false"
             >
                 {{ item.name }}
-                <uvx-launch-bar topPos="-37px" rightPos="4px" *ngIf="item.active"></uvx-launch-bar>
+                <uvx-launch-bar topPos="-37px" rightPos="4px" *ngIf="item.launchbar"></uvx-launch-bar>
             </p>
         </div>
     </div>

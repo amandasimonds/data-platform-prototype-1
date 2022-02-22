@@ -59,6 +59,10 @@ export class WalletFullComponent implements OnInit {
   //   return this.items[i].selected;
   // }
 
+  public get entitiesSelectedForWallet() {
+    return this.selectedEntities.length > 0;
+  }
+
   public get walletFavorites() {
     return this.walletService.getWalletFavorites();
   }
