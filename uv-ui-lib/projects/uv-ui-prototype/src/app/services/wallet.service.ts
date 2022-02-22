@@ -19,7 +19,7 @@ export class WalletService {
         category: 'Part',
         id: 1,
         name: 'WG-12',
-        description: 'Lorem upsum door sit amet consectetur',
+        description: 'Description about the item.',
         date: '',
         active: false,
         selected: false,
@@ -31,7 +31,8 @@ export class WalletService {
         walletFavorite: false,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         walletDate: '',
-        formattedWalletDate: ''
+        formattedWalletDate: '',
+        launchbar: false
       },
     ]
   }];
@@ -41,7 +42,7 @@ export class WalletService {
       category: 'Part',
       id: 1,
       name: 'WG-12',
-      description: 'Lorem upsum door sit amet consectetur',
+      description: 'Description about the item.',
       date: '',
       active: false,
       selected: false,
@@ -52,8 +53,9 @@ export class WalletService {
       progress: 0,
       walletFavorite: false,
       details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      walletDate: '',
-      formattedWalletDate: ''
+      walletDate: new Date().toString(),
+      formattedWalletDate: '',
+      launchbar: false
     }
   ]
 
@@ -131,10 +133,12 @@ export class WalletService {
     const newItems = entities.filter(entity1 => !walletItemsList.some(entity2 => entity1.name === entity2.name));
     for (let item of oldItems) {
       for (let walletItem of walletItemsList) {
+        console.log('old item', item);
         item.name === walletItem.name ? walletItem.walletDate = new Date().toString() : null;
       }
     }
     for (let item of newItems) {
+      console.log('adding entity', item);
       item.walletDate = new Date().toString();
       item.selected = false;
       walletItemsList.unshift(item);
@@ -142,6 +146,7 @@ export class WalletService {
     this.walletItems$.next(walletItemsList);
     this.sortWalletByNewestFirst();
     this.saveWalletToLocalStorage();
+    this.selectedEntities$.next([]);
   }
 
   // public getSelectedEntities(): IEntity[] {
@@ -150,6 +155,13 @@ export class WalletService {
 
   public clearSelectedEntities() {
     this.selectedEntities$.next([]);
+  }
+
+  public resetItemsToInactive(items: IEntity[]) {
+    items.map(item => ({
+      ...item,
+      active: false
+    }));
   }
 
   public saveWalletToLocalStorage() {
@@ -178,7 +190,7 @@ export class WalletService {
   public deleteEntitySelectionFromWallet(entities: IEntity[]) {
     console.log('delete these: ', entities);
     const wallet = this.walletItems$.value.slice();
-    if(entities.length === wallet.length) {
+    if (entities.length === wallet.length) {
       this.walletItems$.next([]);
     } else {
       // const filteredWallet: IEntity[] = [];
@@ -240,17 +252,17 @@ export class WalletService {
 
   public sortWalletByNewestFirst() {
     const wallet = this.walletItems$.value.slice();
-    wallet.sort((a, b) => (
+    wallet.sort((a, b) =>
       new Date(b.walletDate).getTime() - new Date(a.walletDate).getTime()
-    ));
+    );
     this.walletItems$.next(wallet);
     this.saveWalletToLocalStorage();
   }
 
   public sortWalletByOldestFirst() {
-    const wallet = this.walletItems$.value.slice();
+    let wallet = this.walletItems$.value.slice();
     wallet.sort((a, b) => (
-      new Date(b.date).getTime() - new Date(a.date).getTime()
+      new Date(b.walletDate).getTime() - new Date(a.walletDate).getTime()
     ));
     wallet.reverse();
     this.walletItems$.next(wallet);

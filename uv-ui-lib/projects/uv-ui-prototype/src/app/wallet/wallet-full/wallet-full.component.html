@@ -39,8 +39,8 @@
                     <uvx-button
                         mode="primary"
                         label="Add To Wallet"
-                        [disabled]="selectedEntities.length < 1"
-                        (click)="selectedEntities.length > 1 && onAddEntityToWallet(selectedEntities, $event)"
+                        [disabled]="!entitiesSelectedForWallet"
+                        (click)="entitiesSelectedForWallet && onAddEntityToWallet(selectedEntities, $event)"
                     ></uvx-button>
                 </div>
                 <!--            <div class="margin-top-xxs text-align-right" [ngStyle]="selectionsIndices.length > 0 && {'height': '15px'}">-->
@@ -186,15 +186,15 @@
                         (itemSelectedEvent)="selectWalletEntity(entity, $event)"
                         (itemUnselectedEvent)="selectWalletEntity(entity, $event)"
                         [dragIsDisabled]="true"
-                        (mouseenter)="entity.active = true"
-                        (mouseleave)="entity.active = false"
+                        (mouseenter)="entity.launchbar = true"
+                        (mouseleave)="entity.launchbar = false"
                         [isSelected]="entity.selected"
                         [walletFavorites]="walletFavorites"
                         (itemFavoritedEvent)="onFavoriteItem(entity, $event)"
                         [isFavorited]="entity.walletFavorite"
                         [label]="entity.name"
                     >
-                        <uvx-launch-bar *ngIf="entity.active" (click)="launchBarClicked($event)"></uvx-launch-bar>
+                        <uvx-launch-bar *ngIf="entity.launchbar" (click)="launchBarClicked($event)"></uvx-launch-bar>
                     </app-wallet-item>
                 </div>
 
