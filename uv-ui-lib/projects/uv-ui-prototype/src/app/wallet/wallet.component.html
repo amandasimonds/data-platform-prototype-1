@@ -1,25 +1,28 @@
 <div id="wallet" class="wallet-wrap">
     <div class="wallet-point"></div>
     <div class="wallet">
-        <div class="padding-top-sm padding-bottom-xs padding-left-sm padding-right-sm flex flex-column">
-            <uvx-button
-                label="Add to Wallet"
+        <div class="padding-top-sm align-items-center padding-bottom-xs padding-left-sm gap-xs padding-right-sm flex flex-column">
+            <button
+                mat-flat-button
+                color="primary"
                 [disabled]="!entitiesSelectedForWallet"
                 (click)="entitiesSelectedForWallet && onAddEntityToWallet($event)"
-                mode="primary"
-                icon="store"
             >
-            </uvx-button>
-            <uvx-button
-                icon="store"
-                mode="primary-text"
-                class="margin-top-xs"
-                label="Open Wallet"
-                (click)="openWalletClicked($event)"
-            ></uvx-button>
+                <mat-icon svgIcon="store"></mat-icon>
+                Add To Wallet
+            </button>
+
+            <button mat-button color="primary" (click)="openWalletClicked($event)">
+                <mat-icon svgIcon="store"></mat-icon>
+                Open Wallet
+            </button>
         </div>
         <div class="divider" *ngIf="getWalletFavorites().length > 0"></div>
-        <div class="flex flex-column padding-top-md padding-bottom-md" *ngIf="getWalletFavorites().length > 0">
+        <div
+            class="flex flex-column padding-top-md padding-bottom-md"
+            style="width: max-content"
+            *ngIf="getWalletFavorites().length > 0"
+        >
             <p
                 class="uv-body bold wallet-favorite position-relative"
                 *ngFor="let item of getWalletFavorites(); let i = index"
@@ -27,7 +30,12 @@
                 (mouseleave)="item.launchbar = false"
             >
                 {{ item.name }}
-                <uvx-launch-bar topPos="-37px" rightPos="4px" *ngIf="item.launchbar"></uvx-launch-bar>
+                <uvx-launch-bar
+                    topPos="-37px"
+                    rightPos="4px"
+                    *ngIf="item.launchbar"
+                    [launchServices]="launchServices"
+                ></uvx-launch-bar>
             </p>
         </div>
     </div>

@@ -1,0 +1,52 @@
+<div class="box box-rounded h-100 profile-viewer margin-auto">
+    <div class="h-100 profile-viewer">
+        <div class="padding-sm profile-viewer-top">
+            <div class="flex justify-content-space-between margin-bottom-md">
+                <div class="flex justify-content-space-between">
+                    <div class="flex gap-xs">
+                        <uvx-icon-button
+                            *ngFor="let item of launchServices"
+                            [icon]="item.icon"
+                            [matTooltip]="item.tooltip"
+                            [routerLink]="item.link"
+                        ></uvx-icon-button>
+                        <span class="divider-left" style="margin: 0"></span>
+                        <uvx-icon-button icon="more_horisontal"></uvx-icon-button>
+                    </div>
+                </div>
+            </div>
+            <h5 class="margin-bottom-md">
+                {{ entity.name ? entity.name : '' }}
+            </h5>
+            <div id="description" class="profile-viewer-top-description">
+                <p class="uv-body">
+                    {{ entity.description ? entity.description : '' }}
+                </p>
+            </div>
+            <!-- <uvx-button label="See more" *ngIf="isTextOverflow('description')" (click)="expandDescription()"
+            >See more</uvx-button
+        > -->
+        </div>
+
+        <div class="flex">
+            <uvx-tab mode="horizontal" label="Meta Data"></uvx-tab>
+            <uvx-tab mode="horizontal" label="History"></uvx-tab>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="padding-sm profile-viewer-metadata">
+            <div class="padding-sm metadata-container-content">
+                <div *ngFor="let item of metaDataItems; let i = index" class="flex margin-bottom-xs">
+                    <div class="metadata-container-title">
+                        <p class="uv-body bold">{{ item.title }}</p>
+                    </div>
+                    <div>{{ item.details }}</div>
+                    <div *ngIf="item.tags[0] != ''" class="flex flex-wrap">
+                        <div *ngFor="let tag of item.tags" class="uv-tag">{{ tag }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

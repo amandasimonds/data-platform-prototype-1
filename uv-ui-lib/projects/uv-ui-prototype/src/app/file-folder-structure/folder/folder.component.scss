@@ -1,0 +1,22 @@
+.file {
+    border: 1px solid var(--uv-color-gray);
+    background-color: var(--uv-color-white);
+    border-radius: 2px;
+    cursor: pointer;
+    width: 165px;
+    height: 167px;
+
+    &:hover {
+        box-shadow: var(--uv-box-shadow);
+        background-color: var(--uv-color-gray-light-2);
+
+        svg {
+            color: var(--uv-color-primary);
+        }
+    }
+
+    &-name {
+        line-height: 1.25em;
+        text-align: center;
+    }
+}

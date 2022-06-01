@@ -7,6 +7,7 @@ import { WalletService } from '../services/wallet.service';
 import { combineLatest } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { NgOnDestroyService } from '../services/on-destroy.service';
+import { launchServices } from '../shared/launch-services';
 
 @Component({
   selector: 'app-wallet',
@@ -20,9 +21,9 @@ export class WalletComponent {
   @Output() public readonly walletItemAddedEvent = new EventEmitter<Event>();
   public favorites: IEntity[] = [];
   public selectedEntities: IEntity[] = [];
-  public items = walletItems;
   public selections: any[] = [];
   public wallet: IEntity[] = [];
+  public launchServices = launchServices;
 
   constructor(
     private dragDropService: DragDropService,
@@ -70,9 +71,4 @@ export class WalletComponent {
   public onDrop(event: CdkDragDrop<string[]>) {
     this.dragDropService.copyOnDrop(event);
   }
-
-  public doanything(event: Event) {
-    console.log('do anything');
-  }
-
 }

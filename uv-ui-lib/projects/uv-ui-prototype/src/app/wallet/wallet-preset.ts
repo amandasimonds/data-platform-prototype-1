@@ -15,6 +15,7 @@ export const presetWallet: IWalletCategory[] = [
         items: [
             {
                 category: 'Documents',
+                type: 'file',
                 name: 'Document',
                 id: 1,
                 description: '',
@@ -30,7 +31,8 @@ export const presetWallet: IWalletCategory[] = [
                 walletFavorite: false,
                 walletDate: '',
                 formattedWalletDate: '',
-                launchbar: false
+                launchbar: false,
+                menuActive: false
             },
         ]
     },
@@ -41,6 +43,7 @@ export const presetWallet: IWalletCategory[] = [
         items: [
             {
                 category: 'Materials',
+                type: 'file',
                 name: 'Material',
                 id: 1,
                 description: '',
@@ -56,7 +59,8 @@ export const presetWallet: IWalletCategory[] = [
                 walletFavorite: false,
                 walletDate: '',
                 formattedWalletDate: '',
-                launchbar: false
+                launchbar: false,
+                menuActive: false
             }
         ]
     },
@@ -67,6 +71,7 @@ export const presetWallet: IWalletCategory[] = [
         items: [
             {
                 category: 'Requirements',
+                type: 'file',
                 name: 'Requirement',
                 id: 1,
                 description: '',
@@ -82,7 +87,8 @@ export const presetWallet: IWalletCategory[] = [
                 walletFavorite: false,
                 walletDate: '',
                 formattedWalletDate: '',
-                launchbar: false
+                launchbar: false,
+                menuActive: false
             }
         ]
     }

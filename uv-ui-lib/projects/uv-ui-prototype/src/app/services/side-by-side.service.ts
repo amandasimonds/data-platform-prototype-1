@@ -21,7 +21,7 @@ export class SidebySideService {
 
     @Output() public readonly sourceDocumentSelected = new EventEmitter<boolean>();
 
-    constructor(private walletService: WalletService) {}
+    constructor(private walletService: WalletService) { }
     public getTargetDocuments(): IEntity[] {
         return this.targetDocuments.slice();
     }

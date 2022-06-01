@@ -1,0 +1,9 @@
+<uvx-navbar-sub
+    [isExpanded]="walletIsOpen"
+    (toggleButtonClicked)="walletToggleClicked($event)"
+    [rightSide]="true"
+    expandedWidth="450px"
+    name="Wallet"
+>
+    <app-wallet-content></app-wallet-content>
+</uvx-navbar-sub>

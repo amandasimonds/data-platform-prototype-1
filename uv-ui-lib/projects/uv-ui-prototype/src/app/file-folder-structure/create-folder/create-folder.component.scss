@@ -1,0 +1,9 @@
+.create-dialogue {
+    box-shadow: var(--uv-box-shadow-2);
+    z-index: var(--uv-z-index-popup);
+    border-radius: 8px;
+    position: absolute;
+    right: 0px;
+    width: max-content;
+    text-align: left;
+}

@@ -1,16 +1,51 @@
 .navbar {
     height: 100%;
+    position: relative;
     border-right: var(--uv-border-gray);
     background-color: var(--uv-color-white);
     box-shadow: var(--uv-box-shadow);
     width: var(--uv-navbar-width);
-    transition: width 0.25s;
+    transition: width 0.5s;
+    z-index: var(--uv-z-index-search-sidebar);
+
+    &-right-side {
+        border-left: var(--uv-border-gray);
+    }
 
     &-expanded {
         width: 200px;
     }
+
+    &-arrow {
+        padding: 6px 8px;
+        background-color: var(--uv-color-white);
+    }
 }
 
 .content {
-    padding: 6px 8px 0 8px;
+    transition-property: opacity;
+    transition-delay: 250ms, 250ms;
+    background-color: var(--uv-color-white);
+    opacity: 0;
+    visibility: hidden;
+
+    &-visible {
+        opacity: 1;
+        transition-property: opacity;
+        transition-delay: 250ms, 250ms;
+        visibility: visible;
+    }
+
+    &-with-padding {
+        padding: 6px 8px 0 8px;
+    }
+}
+
+.heading {
+    transform: rotate(-90deg);
+
+    &-right-side {
+        position: absolute;
+        top:28px;
+    }
 }

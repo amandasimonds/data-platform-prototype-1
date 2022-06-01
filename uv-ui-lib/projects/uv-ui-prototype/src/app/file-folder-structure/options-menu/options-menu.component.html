@@ -1,0 +1,12 @@
+<div
+    class="options-menu box"
+    (clickOutside)="fileFolder.menuActive = false"
+    [class.options-menu-display]="fileFolder.menuActive"
+>
+    <div class="flex flex-column gap-xxs">
+        <div class="flex gap-xs options-menu-item" *ngFor="let item of optionMenuItems">
+            <uvx-icon [icon]="item.icon"></uvx-icon>
+            <p>{{ item.title }}</p>
+        </div>
+    </div>
+</div>

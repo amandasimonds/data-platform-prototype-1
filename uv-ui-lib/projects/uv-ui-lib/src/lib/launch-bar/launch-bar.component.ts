@@ -11,5 +11,6 @@ export class LaunchBarComponent {
 
   @Input() topPos = '';
   @Input() rightPos = '';
+  @Input() launchServices: any[] = [];
 
 }

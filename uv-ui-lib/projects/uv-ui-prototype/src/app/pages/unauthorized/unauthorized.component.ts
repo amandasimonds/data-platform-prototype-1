@@ -47,7 +47,7 @@ export class UnauthorizedComponent {
   }
 
   public redirectUser() {
-    this.currentUser.name === 'abtest@test.com' ? this.navigateToABTest() : console.log('not abtest user');;
+    this.currentUser.name === 'abtest@test.com' ? this.navigateToABTest() : console.log('not abtest user');
   }
 
 }

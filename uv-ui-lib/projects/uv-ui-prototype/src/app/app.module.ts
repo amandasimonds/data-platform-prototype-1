@@ -3,7 +3,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 // import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ICON_SET } from 'projects/uv-ui-lib/src/lib/register-icon/icon-set';
 import {
     ActionBarModule,
     ButtonModule,
@@ -20,7 +19,9 @@ import {
     IconDisplayModule,
     TooltipModule,
     ExpandingMenuModule,
-    NavbarSubModule
+    NavbarSubModule,
+    ToastMessageModule,
+    ICON_SET
 } from '../../../uv-ui-lib/src/public-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,6 +56,15 @@ import { WalletService } from './services/wallet.service';
 import { DevAuthGuardService } from './auth/dev-auth-guard.service';
 import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
 import { ClickOutsideModule } from './shared/directives/click-outside/click-outside.module';
+import { CustomerNavbarComponent } from './layouts/main/customer-navbar/customer-navbar.component';
+import { DevNavbarComponent } from './layouts/main/dev-navbar/dev-navbar.component';
+import { FileFolderStructureModule } from './file-folder-structure/file-folder-structure.module';
+import { FileFolderStructureService } from './services/file-folder.service';
+import { BreadcrumbService } from 'xng-breadcrumb';
+import { ToastMessageService } from './services/toast-message.service';
+import { CustomerChAuthGuardService } from './auth/chevron-auth-guard.service';
+import { CustomerCuAuthGuardService } from './auth/cummins-auth-guard.service';
+import { DevUTAuthGuardService } from './auth/DevUT-auth-guard.service copy';
 // import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
 
 @NgModule({
@@ -64,7 +74,9 @@ import { ClickOutsideModule } from './shared/directives/click-outside/click-outs
         MainComponent,
         UvLightComponent,
         IconDisplayComponent,
-        UnauthorizedComponent
+        UnauthorizedComponent,
+        CustomerNavbarComponent,
+        DevNavbarComponent
         // AuthCallbackComponent
     ],
     imports: [
@@ -82,6 +94,7 @@ import { ClickOutsideModule } from './shared/directives/click-outside/click-outs
         // MatProgressSpinnerModule,
         HomeSplashModule,
         HttpClientModule,
+        FileFolderStructureModule,
         IconButtonModule,
         IconDisplayModule,
         ModalModule,
@@ -101,6 +114,7 @@ import { ClickOutsideModule } from './shared/directives/click-outside/click-outs
         SidePanelModule,
         SideBySideModule,
         TabModule,
+        ToastMessageModule,
         UvxIconModule,
         WalletModule
     ],
@@ -109,7 +123,10 @@ import { ClickOutsideModule } from './shared/directives/click-outside/click-outs
         AuthService,
         BackdropService,
         ConnectorCreatorService,
+        CustomerChAuthGuardService,
+        CustomerCuAuthGuardService,
         DevAuthGuardService,
+        DevUTAuthGuardService,
         DragDropService,
         HelperService,
         HttpClient,
@@ -117,9 +134,12 @@ import { ClickOutsideModule } from './shared/directives/click-outside/click-outs
         ProfileViewerService,
         SearchService,
         SidebySideService,
+        ToastMessageService,
         UserService,
         UvLightService,
-        WalletService
+        WalletService,
+        FileFolderStructureService,
+        BreadcrumbService
     ],
     bootstrap: [AppComponent]
 })

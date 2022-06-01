@@ -8,6 +8,10 @@ import { WalletService } from '../../services/wallet.service';
 import { combineLatest } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
+import { IFileFolder } from '../../models/file-folder.model';
+import { FileFolderStructureService } from '../../services/file-folder.service';
+import { ToastMessageService } from '../../services/toast-message.service';
+import { launchServices } from '../../shared/launch-services';
 
 @Component({
   selector: 'app-wallet-full',
@@ -35,29 +39,28 @@ export class WalletFullComponent implements OnInit {
   public walletSearchResults: IEntity[] = [];
   public walletSortMenuOpen = false;
   public entitySelectedForPreview: IEntity = emptyEntity;
+  public fileFolders: IFileFolder;
+  public launchServices = launchServices
 
   constructor(
     private walletService: WalletService,
+    private fileFolderService: FileFolderStructureService,
+    private toastMessageService: ToastMessageService,
     private ref: ChangeDetectorRef,
     private destroy$: NgOnDestroyService) { }
 
   ngOnInit(): void {
     this.wallet = this.walletService.getWallet();
-    // this.walletService.getWalletApi();
+    this.fileFolders = this.fileFolderService.getFolderFiles();
     combineLatest([
       this.walletService.selectedEntities$.pipe(tap(entities => this.selectedEntities = entities)),
       this.walletService.walletItems$.pipe(tap(wallet => this.wallet = wallet)),
-      this.walletService.selectedWalletEntities$.pipe(tap(selections => this.walletEntitySelections = selections))
-      // this.walletService.getWalletApi().pipe(tap(walletApi => this.apiList = walletApi))
+      this.walletService.selectedWalletEntities$.pipe(tap(selections => this.walletEntitySelections = selections)),
+      this.fileFolderService.folderFiles$.pipe(tap(fileFolders => this.fileFolders = fileFolders))
     ])
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => this.ref.detectChanges());
-    console.log(this.wallet);
   }
-
-  // isSelected(i: number): boolean {
-  //   return this.items[i].selected;
-  // }
 
   public get entitiesSelectedForWallet() {
     return this.selectedEntities.length > 0;
@@ -193,6 +196,13 @@ export class WalletFullComponent implements OnInit {
 
   public closeEntityPreview() {
     this.entitySelectedForPreview = emptyEntity;
+  }
+
+  public saveEntityToFolder(folder: IFileFolder) {
+    const selections = this.walletEntitySelections.length;
+    this.fileFolderService.saveEntityToFolder(folder, this.walletEntitySelections);
+    this.toastMessageService.setTriggerToast(true);
+    this.toastMessageService.setMessage(selections > 1 ? `${selections} Items have been saved to your folder: ${folder.name}` : `1 Item has been saved to your folder: ${folder.name}`);
   }
 
   public createFolder() {

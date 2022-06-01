@@ -1,31 +1,30 @@
-<div class="search-panel w-100 flex justify-content-space-between position-relative"
-[ngStyle]="{'width': width}" 
+<div
+    class="search-panel w-100 flex justify-content-space-between position-relative"
+    [ngStyle]="{ width: width }"
     [class.global]="mode === 'global'"
     [class.component-border]="mode === 'component-border'"
-    [class.rounded]="rounded">
-
-    <div class="w-100 justify-content-space-between flex align-items-center position-relative" 
-        [ngClass]="getMode()">
-
+    [class.rounded]="rounded"
+>
+    <div class="w-100 justify-content-space-between flex align-items-center position-relative" [ngClass]="getMode()">
         <div class="flex align-items-center w-100 h-100">
-            <uvx-icon-button color='primary' icon='search' (click)="onSearch()"></uvx-icon-button>
+            <uvx-icon-button icon="search" (click)="onSearch()"></uvx-icon-button>
             <ng-content></ng-content>
         </div>
 
-        <uvx-icon-button 
-            *ngIf="mode === 'global' || 'component-border'" 
-            color='primary' icon='clear' 
-            (click)="onSearchClearClicked($event)">
+        <uvx-icon-button
+            *ngIf="mode === 'global' || 'component-border'"
+            icon="clear"
+            matTooltip="Clear search query"
+            (click)="onSearchClearClicked($event)"
+        >
         </uvx-icon-button>
-
     </div>
 
-    <div *ngIf="showSuggestions" [ngStyle]="{'max-height': suggestionsDropdownHeight}" class="suggestions-dropdown flex flex-column">
+    <div
+        *ngIf="showSuggestions"
+        [ngStyle]="{ 'max-height': suggestionsDropdownHeight }"
+        class="suggestions-dropdown flex flex-column"
+    >
         <ng-content select="[suggestions]"></ng-content>
     </div>
-
-    
-
 </div>
-
-

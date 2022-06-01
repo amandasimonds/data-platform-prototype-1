@@ -1,0 +1,17 @@
+.metadata-container {
+    position: absolute;
+    bottom: 64px;
+
+    &-content {
+        overflow: auto;
+        max-height: 100%;
+    }
+
+    &-title {
+        min-width: 120px;
+    }
+}
+
+.profile-viewer {
+    overflow-y: auto;
+}

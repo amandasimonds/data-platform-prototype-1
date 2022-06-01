@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { takeUntil } from 'rxjs/operators';
 import { IEntity } from '../../models/entity.model';
+import { NgOnDestroyService } from '../../services/on-destroy.service';
+import { WalletService } from '../../services/wallet.service';
+import { launchServices } from '../../shared/launch-services';
 
 @Component({
   selector: 'app-entity-preview',
@@ -10,6 +14,8 @@ export class EntityPreviewComponent {
 
   @Input() isVisible = false;
   @Input() entity: IEntity;
+
+  public launchServices = launchServices;
 
   @Output() entityPreviewClosedEvent = new EventEmitter<Event>();
 
@@ -45,6 +51,15 @@ export class EntityPreviewComponent {
       tags: ['']
     }
   ]
+
+  constructor(private walletService: WalletService, public destroy$: NgOnDestroyService) {
+  }
+
+  ngOnInit(): void {
+    this.walletService.walletIsOpen$.pipe(takeUntil(this.destroy$))
+      .subscribe(value => { !value ? this.closeEntityPreview(event) : null });
+
+  }
 
   public closeEntityPreview(event: Event) {
     this.entityPreviewClosedEvent.emit(event);

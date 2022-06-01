@@ -11,9 +11,9 @@
     background-color: var(--uv-color-white);
 
     &-top {
-        padding: 24px;
         position: relative;
         z-index: auto;
+        background-color: var(--uv-color-white);
     }
 
     &-header {
@@ -23,26 +23,24 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+        position: relative;
     }
 
-    &-wrapper {
-        padding-right:4px;
-        height: 100%;
-
-        &-scroll {
-            padding-top: 10px;
-            overflow: auto;
-            position: relative;
-            height: calc(100% - 285px);  
-        }
-
-        &-scroll:after {
-            display: table;
-            content: "";
-            clear: both;
-        }
+    &-scroll {
+        background-color: var(--uv-color-white);
+        padding-top: 10px;
+        overflow: auto;
+        position: relative;
+        height: calc(100vh - 285px);
     }
 
+    &-scroll:after {
+        display: table;
+        content: '';
+        clear: both;
+    }
 }
 
+.content-wrapper {
+    border-right: var(--uv-border-gray);
+}

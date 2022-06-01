@@ -1,9 +1,40 @@
-<div class="navbar position-relative" [class.navbar-expanded]="isExpanded">
-
-    <div class="content">
-
-        <ng-content></ng-content>
-
+<div
+    class="navbar position-relative"
+    [class.cursor-pointer]="!isExpanded"
+    [ngStyle]="isExpanded && { width: expandedWidth }"
+    [class.navbar-expanded]="isExpanded"
+    [class.navbar-right-side]="rightSide"
+    
+>
+    <div>
+        <div class="navbar-arrow">
+            <div
+                *ngIf="!rightSide; else rightSideTpl"
+                [ngClass]="isExpanded ? 'text-align-right' : 'flex justify-content-center'"
+            >
+                <uvx-icon-button
+                    [matTooltip]="isExpanded ? 'Collapse Menu' : 'Expand Menu'"
+                    color="gray"
+                    [icon]="expandIcon"
+                    (click)="onToggleButtonClicked($event)"
+                ></uvx-icon-button>
+            </div>
+            <ng-template #rightSideTpl>
+                <div [ngClass]="isExpanded ? 'text-align-left' : 'flex justify-content-center'">
+                    <uvx-icon-button
+                        [matTooltip]="isExpanded ? 'Collapse Menu' : 'Expand Menu'"
+                        color="gray"
+                        [icon]="expandIcon"
+                        (click)="onToggleButtonClicked($event)"
+                    ></uvx-icon-button>
+                </div>
+            </ng-template>
+        </div>
+        <div class="content" [class.content-visible]="isExpanded">
+            <ng-content></ng-content>
+        </div>
+        <div class="flex align-items-center justify-content-center">
+            <p *ngIf="!isExpanded" class="heading margin-top-sm" [class.heading-right-side]="rightSide">{{ name }}</p>
+        </div>
     </div>
-
 </div>
