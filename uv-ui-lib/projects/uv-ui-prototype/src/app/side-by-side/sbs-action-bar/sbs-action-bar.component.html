@@ -41,8 +41,7 @@
             <a class="sbs-action-bar-link uv-link margin-right-sm"(click)="clearSelections(selectedTargetDocuments)">Clear all<uvx-icon icon="clear" color="primary" class="margin-left-xxxs"></uvx-icon></a>
         </div>
     </div>
-
-        <uvx-button mode="primary" [disabled]="!showTargetDocuments" label="Compare"></uvx-button>
+        <button mat-flat-button color="primary" [disabled]="!showTargetDocuments">Compare</button>
     </div>
 
     <div bottom style="padding-bottom: 24px;">

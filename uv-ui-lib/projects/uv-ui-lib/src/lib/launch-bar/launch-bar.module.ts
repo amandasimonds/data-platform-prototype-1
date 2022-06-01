@@ -5,6 +5,7 @@ import { IconButtonModule } from '../icon-button/icon-button.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from '../tooltip/tooltip.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [LaunchBarComponent],
@@ -13,7 +14,8 @@ import { TooltipModule } from '../tooltip/tooltip.module';
     IconButtonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    TooltipModule
+    TooltipModule,
+    RouterModule
   ],
   exports: [LaunchBarComponent]
 })

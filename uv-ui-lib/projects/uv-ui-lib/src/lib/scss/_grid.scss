@@ -6,7 +6,7 @@
     position: fixed;
     display: grid;
     grid-gap: 0;
-    grid-template-columns: [col1] min-content [col2] min-content [col3] min-content [col4] 1fr [end];
+    grid-template-columns: [col1] min-content [col2] min-content [col3] min-content [col4] 1fr [col5] min-content [end];
     grid-template-rows: [row1] var(--uv-header-height) [row2] 1fr [end];
     grid-template-areas: 
     "navbar header"
@@ -40,6 +40,12 @@
         grid-column: col4;
         grid-row-start: row2;
         grid-row-end: span end;
+    }
+
+    &-subnavbar-right {
+        grid-column: col5;
+        grid-row-start: row2;
+        grid-row-end: end;
     }
 }
 

@@ -649,10 +649,6 @@ export const ICON_SET: IconSetValue[] = [
         url: 'content/Up crop.svg'
     },
     {
-        name: 'cummins',
-        url: 'logos/Cummins.svg'
-    },
-    {
         name: 'cursor',
         url: 'gwu/Cursor.svg'
     },
@@ -719,6 +715,10 @@ export const ICON_SET: IconSetValue[] = [
     {
         name: 'star_outline',
         url: 'actions/Star outline.svg'
+    },
+    {
+        name: 'recent_list',
+        url: 'gwu/Recent list.svg'
     }
 ];
 

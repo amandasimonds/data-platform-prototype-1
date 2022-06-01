@@ -1,0 +1,66 @@
+.wallet-sidebar {
+    background-color: var(--uv-color-white);
+    z-index: var(--uv-z-index-wallet-sidebar);
+    height: calc(100vh - 64px);
+}
+
+.wallet-sidebar-wrapper {
+    z-index: var(--uv-z-index-wallet-sidebar);
+    height: 100%;
+    position: absolute;
+    top: var(--uv-header-height);
+    right: 0;
+    animation-name: slide-in;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    width: 464px;
+    background-color: var(--uv-color-white);
+    border-left: var(--uv-border-gray);
+}
+
+.folder-items {
+    margin-left: 64px;
+}
+
+.cdk-drop-list-receiving {
+    //border: 3px solid black;
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.folder {
+    //   border: 3px solid orange;
+}
+
+.cdk-drop-list-dragging {
+    border: 2.5px dashed var(--uv-color-primary-light);
+    box-sizing: border-box;
+}
+
+.wallet-item-container {
+    height: calc(100vh - 327px);
+    overflow: auto;
+}
+
+.sort-menu {
+    position: absolute;
+    border-radius: 4px;
+    background-color: var(--uv-color-white);
+    box-shadow: var(--uv-box-shadow-4);
+    right: 15px;
+    margin-top: 10px;
+    text-align: left;
+    width: 200px;
+    cursor: default;
+    z-index: var(--uv-z-index-navbar);
+
+    &-item {
+        padding: 8px 16px;
+        &:hover {
+            cursor: pointer;
+            background-color: var(--uv-color-gray-light);
+        }
+    }
+}

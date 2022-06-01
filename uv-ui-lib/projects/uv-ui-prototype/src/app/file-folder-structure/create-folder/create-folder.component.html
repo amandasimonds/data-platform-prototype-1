@@ -1,0 +1,23 @@
+<!-- <uvx-modal class="position-center"> -->
+<div class="box create-dialogue padding-sm">
+    <div class="text-align-right">
+        <uvx-icon-button icon="close" (click)="closeDialogue($event)"></uvx-icon-button>
+    </div>
+    <div class="flex flex-column gap-xs">
+        <p class="">Create New Folder</p>
+        <form class="flex flex-column gap-xs" (submit)="createFolder($event)">
+            <input
+                #createFolderInput
+                type="text"
+                placeholder="New Folder Name Here..."
+                class="uv-input uv-input-border"
+                maxlength="40"
+                label="New Folder Name"
+                name="newFolder"
+                [(ngModel)]="newFolderName"
+            />
+            <uvx-button type="submit" mode="primary" label="Create Folder" (click)="createFolder($event)"></uvx-button>
+        </form>
+    </div>
+</div>
+<!-- </uvx-modal> -->

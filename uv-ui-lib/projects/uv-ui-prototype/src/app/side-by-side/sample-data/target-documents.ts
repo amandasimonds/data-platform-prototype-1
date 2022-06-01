@@ -3,6 +3,7 @@ import { IEntity } from "../../models/entity.model";
 export const targetDocumentSamples: IEntity[] = [
     {
         category: '',
+        type: 'file',
         name: 'Silopren LSR 3485/35',
         id: 1,
         description: 'A brief description about this item goes here.',
@@ -17,11 +18,13 @@ export const targetDocumentSamples: IEntity[] = [
         walletFavorite: false,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         walletDate: '',
-                formattedWalletDate: '',
-                launchbar: false
+        formattedWalletDate: '',
+        launchbar: false,
+        menuActive: false
     },
     {
         category: '',
+        type: 'file',
         name: 'Silicone',
         id: 1,
         description: 'A brief description about this item goes here.',
@@ -36,11 +39,13 @@ export const targetDocumentSamples: IEntity[] = [
         walletFavorite: false,
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         walletDate: '',
-                formattedWalletDate: '',
-                launchbar: false
+        formattedWalletDate: '',
+        launchbar: false,
+        menuActive: false
     },
     {
         category: '',
+        type: 'file',
         name: 'PBT GF10',
         id: 1,
         description: 'A brief description about this item goes here.',
@@ -56,10 +61,12 @@ export const targetDocumentSamples: IEntity[] = [
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         walletDate: '',
         formattedWalletDate: '',
-        launchbar: false
+        launchbar: false,
+        menuActive: false
     },
     {
         category: '',
+        type: 'file',
         name: 'Urethane Foam',
         id: 1,
         description: 'A brief description about this item goes here.',
@@ -75,6 +82,7 @@ export const targetDocumentSamples: IEntity[] = [
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         walletDate: '',
         formattedWalletDate: '',
-        launchbar: false
+        launchbar: false,
+        menuActive: false
     }
 ]

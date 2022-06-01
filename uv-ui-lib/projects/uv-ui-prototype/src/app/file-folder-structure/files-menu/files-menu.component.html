@@ -1,0 +1,121 @@
+<uvx-navbar-sub
+    name="Headline"
+    [isExpanded]="subNavbarIsExpanded"
+    expandedWidth="380px"
+    (toggleButtonClicked)="toggleSubNavbar()"
+>
+    <div *ngIf="subNavbarIsExpanded" class="files-menu-content">
+        <div class="padding-bottom-xs padding-left-sm">
+            <h4>Headline</h4>
+        </div>
+        <div class="divider"></div>
+        <div class="margin-right-xxs">
+            <div class="margin-top-sm margin-left-sm margin-right-sm">
+                <uvx-search-panel mode="global" (searchClearClicked)="searchText = ''">
+                    <input
+                        type="text"
+                        placeholder="Search Entities"
+                        class="uv-input margin-left-xs"
+                        maxlength="40"
+                        [(ngModel)]="searchText"
+                    />
+                </uvx-search-panel>
+            </div>
+            <div class="top-container padding-sm">
+                <div class="flex flex-column gap-xs" *ngIf="searchText === ''; else searchResultsTpl">
+                    <div *ngFor="let folder of allFolders.folders">
+                        <div *ngIf="folder.type === 'folder'" class="flex file-item" (click)="folder.menuOpen = !folder.menuOpen">
+                            <!-- <uvx-folder-tree-icon [open]="true"></uvx-folder-tree-icon> -->
+                            <div class="margin-right-xxs">
+                                <uvx-icon
+                                    [color]="folder.menuOpen ? 'primary' : ''"
+                                    [icon]="folder.menuOpen ? 'chevron_bottom' : 'chevron_right'"
+                                ></uvx-icon>
+                                <uvx-icon [icon]="folder.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                            </div>
+                            <p class="semibold" [class.color-primary]="folder.menuOpen">{{ folder.name }}</p>
+                        </div>
+                        <div *ngIf="folder.menuOpen" class="margin-left-md margin-top-xs flex flex-column gap-xxs">
+                            <div *ngFor="let folder of folder.folders" class="flex">
+                                <div class="margin-right-xxs">
+                                    <!-- <uvx-icon [icon]="folder.menuOpen ? 'chevron_top' : 'chevron_bottom'"></uvx-icon> -->
+                                    <uvx-icon [icon]="folder.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                                </div>
+                                <p class="semibold">{{ folder.name }}</p>
+                            </div>
+                            <div *ngFor="let file of folder.files" class="flex pointer" (click)="openEntityProfileFromMenu(file)">
+                                <div class="margin-right-xxs">
+                                    <!-- <uvx-icon [icon]="file.menuOpen ? 'chevron_top' : 'chevron_bottom'"></uvx-icon> -->
+                                    <uvx-icon icon="profile"></uvx-icon>
+                                </div>
+                                <p class="semibold hover-blue">{{ file.name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ng-template #searchResultsTpl>
+                    <div class="margin-top-sm flex flex-column gap-xs">
+                        <div *ngFor="let file of searchResults">
+                            <!-- {{file.name}} -->
+                            <div *ngIf="file.type" class="flex file-item">
+                                <div class="margin-right-xxs">
+                                    <uvx-icon
+                                        [color]="file.menuOpen ? 'primary' : ''"
+                                        [icon]="file.menuOpen ? 'chevron_top' : 'chevron_bottom'"
+                                    ></uvx-icon>
+                                    <uvx-icon [icon]="file.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                                </div>
+                                <p class="semibold" [class.color-primary]="file.menuOpen">{{ file.name }}</p>
+                            </div>
+                            <div *ngIf="file.menuOpen" class="margin-left-md margin-top-xs flex flex-column gap-xxs">
+                                <div *ngFor="let folder of file.folders" class="flex">
+                                    <div class="margin-right-xxs">
+                                        <uvx-icon [icon]="folder.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                                    </div>
+                                    <p class="semibold">{{ folder.name }}</p>
+                                </div>
+                                <div *ngFor="let file of file.files" class="flex">
+                                    <div class="margin-right-xxs">
+                                        <uvx-icon icon="profile"></uvx-icon>
+                                    </div>
+                                    <p class="semibold">{{ file.name }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="margin-right-xxs">
+            <div class="padding-sm flex flex-column gap-xs bottom-container">
+                <p class="uv-body uv-body-secondary">Recently Viewed</p>
+                <span class=" margin-left-sm pointer link position-relative recent-item" *ngFor="let item of recentlyViewed">
+                    <p class="semibold" (click)="openEntityProfileFromMenu(item)">{{ item.name }}</p> 
+                    <div class="launch-bar">
+                        <uvx-icon-button
+                            *ngFor="let item of launchServices"
+                            [icon]="item.icon"
+                            [matTooltip]="item.tooltip"
+                            [routerLink]="item.link"
+                        ></uvx-icon-button>
+                        <uvx-icon-button icon="attention" matTooltip="Launch Service 4"></uvx-icon-button>
+                    </div>
+                </span>
+                <p class="uv-body uv-body-secondary">Most Popular</p>
+                <span class=" margin-left-sm pointer link position-relative recent-item" *ngFor="let item of mostPopular">
+                    <p class="semibold" (click)="openEntityProfileFromMenu(item)">{{ item.name }}</p> 
+                    <div class="launch-bar">
+                        <uvx-icon-button
+                            *ngFor="let item of launchServices"
+                            [icon]="item.icon"
+                            [matTooltip]="item.tooltip"
+                            [routerLink]="item.link"
+                        ></uvx-icon-button>
+                        <uvx-icon-button icon="attention" matTooltip="Launch Service 4"></uvx-icon-button>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</uvx-navbar-sub>

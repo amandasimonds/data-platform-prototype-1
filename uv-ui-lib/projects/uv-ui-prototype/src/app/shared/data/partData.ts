@@ -1,65 +1,65 @@
 export const partData = [
-    {
-        category: 'Parts',
-        name: 'API 13M-4 / ISO 13503-4',
-        id: 1234,
-        description: '1. The LGC NCOE has witnessed several LNG bunkering operations over the last few months and seen common errors/failures, some that have resulted in the release of LNG and/or near misses, but also others that have gone very well. It is critically important for all parties involved to fully understand the risks that are presented when transferring LNG. While LNG can be handled safely, its cryogenic, asphyxiant, and flammability hazards must be recognized and mitigated in order to avoid serious personnel injury, vessel damage, and/or other harmful effects. This LGC NCOE Field Notice augments references (a) and (b) and shares the following recommendations based off best practices and lessons learned observed during recent LNG bunkering operations in order to prevent',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-    },
-    {
-        category: 'Parts',
-        name: 'EXH-SU-5110-B1',
-        id: 1234,
-        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-    },
-    {
-        category: 'Parts',
-        name: 'EXH-A-SU-5110-B2',
-        id: 1234,
-        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-    },
-    {
-        category: 'Parts',
-        name: 'EXH-B-SU-5110',
-        id: 1234,
-        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-    },
+  {
+    category: 'Parts',
+    name: 'API 13M-4 / ISO 13503-4',
+    id: 1234,
+    description: '1. The LGC NCOE has witnessed several LNG bunkering operations over the last few months and seen common errors/failures, some that have resulted in the release of LNG and/or near misses, but also others that have gone very well. It is critically important for all parties involved to fully understand the risks that are presented when transferring LNG. While LNG can be handled safely, its cryogenic, asphyxiant, and flammability hazards must be recognized and mitigated in order to avoid serious personnel injury, vessel damage, and/or other harmful effects. This LGC NCOE Field Notice augments references (a) and (b) and shares the following recommendations based off best practices and lessons learned observed during recent LNG bunkering operations in order to prevent',
+    active: false,
+    disabled: false,
+    date: '',
+    formattedDate: ''
+  },
+  {
+    category: 'Parts',
+    name: 'EXH-SU-5110-B1',
+    id: 1234,
+    description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
+    active: false,
+    disabled: false,
+    date: '',
+    formattedDate: ''
+  },
+  {
+    category: 'Parts',
+    name: 'EXH-A-SU-5110-B2',
+    id: 1234,
+    description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
+    active: false,
+    disabled: false,
+    date: '',
+    formattedDate: ''
+  },
+  {
+    category: 'Parts',
+    name: 'EXH-B-SU-5110',
+    id: 1234,
+    description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
+    active: false,
+    disabled: false,
+    date: '',
+    formattedDate: ''
+  },
 
-    {
-        category: 'Parts',
-        name: 'EXH-C-SU-5110',
-        id: 1234,
-        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-    },
-    {
-        category: 'Parts',
-        name: 'EXH-SU-5110',
-        id: 1234,
-        description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
-        active: false,
-        disabled: false,
-        date: '',
-        formattedDate: ''
-    },
+  {
+    category: 'Parts',
+    name: 'EXH-C-SU-5110',
+    id: 1234,
+    description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
+    active: false,
+    disabled: false,
+    date: '',
+    formattedDate: ''
+  },
+  {
+    category: 'Parts',
+    name: 'EXH-SU-5110',
+    id: 1234,
+    description: 'This is a description of the entitity. Details and metadata may go here, and well as other useful information.',
+    active: false,
+    disabled: false,
+    date: '',
+    formattedDate: ''
+  },
   {
     category: 'Parts',
     name: 'ZK-8285',

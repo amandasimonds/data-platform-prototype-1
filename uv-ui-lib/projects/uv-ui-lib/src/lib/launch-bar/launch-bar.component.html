@@ -1,6 +1,9 @@
 <div class="launch-bar" [@launchBarAnimation] [ngStyle]="{ top: topPos, right: rightPos }">
-    <uvx-icon-button icon="compare" matTooltip="Launch Service 1"></uvx-icon-button>
-    <uvx-icon-button icon="global_where_used" matTooltip="Launch Service 2"></uvx-icon-button>
-    <uvx-icon-button icon="design" matTooltip="Launch Service 3"></uvx-icon-button>
+    <uvx-icon-button
+        *ngFor="let item of launchServices"
+        [icon]="item.icon"
+        [matTooltip]="item.tooltip"
+        [routerLink]="item.link"
+    ></uvx-icon-button>
     <uvx-icon-button icon="attention" matTooltip="Launch Service 4"></uvx-icon-button>
 </div>

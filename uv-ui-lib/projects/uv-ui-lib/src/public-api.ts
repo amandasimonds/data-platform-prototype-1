@@ -54,5 +54,7 @@ export * from './lib/tab/tab.module';
 export * from './lib/text-input/text-input.component';
 export * from './lib/text-input/text-input.module';
 export * from './lib/tooltip/tooltip.module';
+export * from './lib/toast-message/toast-message.component';
+export * from './lib/toast-message/toast-message.module';
 export * from './lib/uvx-icon/uvx-icon.component';
 export * from './lib/uvx-icon/uvx-icon.module';

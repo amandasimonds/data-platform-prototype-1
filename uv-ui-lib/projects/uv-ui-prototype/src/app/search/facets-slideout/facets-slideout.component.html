@@ -1,0 +1,38 @@
+<div class="slide-out" [class.slide-out-visible]="isVisible">
+    <div class="flex justify-content-space-between" style="align-items:flex-start">
+        <div class="padding-left-md padding-top-sm padding-bottom-md">
+            <h5>Facets filters</h5>
+        </div>
+        <div class="padding-xxs text-align-right">
+            <uvx-icon-button
+                icon="double_left"
+                color="gray"
+                style="padding: 6px 8px; align-self: flex-start"
+                (click)="closeFacets($event)"
+            ></uvx-icon-button>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="padding-md container">
+        <div class="flex flex-column gap-xs margin-bottom-sm">
+            <p>Category</p>
+            <div class="flex" *ngFor="let item of items">
+                <uvx-checkbox></uvx-checkbox> Placeholder
+            </div>
+        </div>
+        <div class="flex flex-column gap-xs margin-bottom-sm">
+            <p>Category</p>
+            <div class="flex" *ngFor="let item of items">
+                <uvx-checkbox></uvx-checkbox> Placeholder
+            </div>
+        </div>
+        <div class="flex flex-column gap-xs margin-bottom-sm">
+            <p>Category</p>
+            <div class="flex" *ngFor="let item of items">
+                <uvx-checkbox></uvx-checkbox> Placeholder
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -3,6 +3,7 @@ import { presetWallet, IWalletCategory } from '../wallet/wallet-preset';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IEntity } from '../models/entity.model';
 import { HttpClient } from '@angular/common/http';
+import { ToastMessageService } from './toast-message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class WalletService {
     items: [
       {
         category: 'Part',
+        type: 'file',
         id: 1,
         name: 'WG-12',
         description: 'Description about the item.',
@@ -26,13 +28,14 @@ export class WalletService {
         disabled: false,
         formattedDate: '',
         showDetails: false,
-        tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
+        tags: ['Lorem Ipsum', 'Sit amet', 'Placeholder Tag', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Placeholder Tag'],
         progress: 0,
         walletFavorite: false,
-        details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        details: 'Details about the item.',
         walletDate: '',
         formattedWalletDate: '',
-        launchbar: false
+        launchbar: false,
+        menuActive: false
       },
     ]
   }];
@@ -40,8 +43,9 @@ export class WalletService {
   public initialWalletItems: IEntity[] = [
     {
       category: 'Part',
+      type: 'file',
       id: 1,
-      name: 'WG-12',
+      name: 'ED-720385 Handguard Assembly',
       description: 'Description about the item.',
       date: '',
       active: false,
@@ -49,13 +53,35 @@ export class WalletService {
       disabled: false,
       formattedDate: '',
       showDetails: false,
-      tags: ['Lorem Ipsum', 'Sit amet', 'Lorem, Dolor, and 3 more', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Lorem, Dolor, and 3 more'],
+      tags: ['Lorem Ipsum', 'Sit amet', 'Placeholder Tag', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Placeholder Tag'],
       progress: 0,
       walletFavorite: false,
-      details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      details: 'Details about the item.',
       walletDate: new Date().toString(),
       formattedWalletDate: '',
-      launchbar: false
+      launchbar: false,
+      menuActive: false
+    },
+    {
+      category: 'Part',
+      type: 'file',
+      id: 1,
+      name: 'SDS Hydrogen Sulfide',
+      description: 'Description about the item.',
+      date: '',
+      active: false,
+      selected: false,
+      disabled: false,
+      formattedDate: '',
+      showDetails: false,
+      tags: ['SDS', 'Chemical', 'Placeholder Tag', 'Lorem', 'Ipsum', 'Lorem Ipsum', 'Sit Amet', 'Lorem', 'Placeholder Tag'],
+      progress: 0,
+      walletFavorite: false,
+      details: 'Details about the item.',
+      walletDate: new Date().toString(),
+      formattedWalletDate: '',
+      launchbar: false,
+      menuActive: false
     }
   ]
 
@@ -64,16 +90,26 @@ export class WalletService {
   public selectedEntities$ = new BehaviorSubject<IEntity[]>([]);
   public selectedWalletEntities$ = new BehaviorSubject<IEntity[]>([]);
 
+  public walletIsOpen = new BehaviorSubject<boolean>(false);
+
+  public get walletIsOpen$(): Observable<boolean> {
+    return this.walletIsOpen.asObservable();
+  }
+
+  public setWalletIsOpen(isOpen: boolean): void {
+    console.log('wallet is open: ', isOpen);
+    this.walletIsOpen.next(isOpen);
+  }
+
   public get walletItemsObservable(): Observable<IEntity[]> {
     return this.walletItems$.asObservable();
   }
 
   public get selectedEntitiesObservable(): Observable<IEntity[]> {
-    console.log('getting selected entities');
     return this.selectedEntities$.asObservable();
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastMessageService: ToastMessageService) { }
 
   // public getWalletApi() {
   //   const result = JSON.stringify(walletApi);
@@ -124,7 +160,6 @@ export class WalletService {
     }
     const filteredList = entitiesList.filter(entity => entity.selected);
     this.selectedEntities$.next(filteredList);
-    console.log('new entities selected for wallet', this.selectedEntities$.value);
   }
 
   public addEntityToWallet(entities: IEntity[]) {
@@ -133,12 +168,10 @@ export class WalletService {
     const newItems = entities.filter(entity1 => !walletItemsList.some(entity2 => entity1.name === entity2.name));
     for (let item of oldItems) {
       for (let walletItem of walletItemsList) {
-        console.log('old item', item);
         item.name === walletItem.name ? walletItem.walletDate = new Date().toString() : null;
       }
     }
     for (let item of newItems) {
-      console.log('adding entity', item);
       item.walletDate = new Date().toString();
       item.selected = false;
       walletItemsList.unshift(item);
@@ -147,6 +180,30 @@ export class WalletService {
     this.sortWalletByNewestFirst();
     this.saveWalletToLocalStorage();
     this.selectedEntities$.next([]);
+    this.toastMessageService.setTriggerToast(true);
+    this.toastMessageService.setMessage(newItems.length > 1 ? `${newItems.length} Items have been added to your wallet.` : `1 Item has been added to your wallet.`)
+  }
+
+  public addEntityToFolder(entities: IEntity[]) {
+    const walletItemsList = this.walletItems$.value.slice();
+    const oldItems = entities.filter(entity1 => walletItemsList.some(entity2 => entity1.name === entity2.name));
+    const newItems = entities.filter(entity1 => !walletItemsList.some(entity2 => entity1.name === entity2.name));
+    for (let item of oldItems) {
+      for (let walletItem of walletItemsList) {
+        item.name === walletItem.name ? walletItem.walletDate = new Date().toString() : null;
+      }
+    }
+    for (let item of newItems) {
+      item.walletDate = new Date().toString();
+      item.selected = false;
+      walletItemsList.unshift(item);
+    }
+    this.walletItems$.next(walletItemsList);
+    this.sortWalletByNewestFirst();
+    this.saveWalletToLocalStorage();
+    this.selectedEntities$.next([]);
+    this.toastMessageService.setTriggerToast(true);
+    this.toastMessageService.setMessage(newItems.length > 1 ? `${newItems.length} Items have been added to your wallet.` : `1 Item has been added to your wallet.`)
   }
 
   // public getSelectedEntities(): IEntity[] {
@@ -166,7 +223,6 @@ export class WalletService {
 
   public saveWalletToLocalStorage() {
     const wallet = this.walletItems$.value;
-    console.log('save to localstorage', wallet);
     localStorage.setItem('wallet', JSON.stringify(wallet));
   }
 
@@ -184,23 +240,18 @@ export class WalletService {
   public updateSelectedWalletEntities() {
     const updatedList = this.walletItems$.value.filter(entity => entity.selected);
     this.selectedWalletEntities$.next(updatedList);
-    console.log('updated wallet entities list', this.selectedWalletEntities$.value);
   }
 
   public deleteEntitySelectionFromWallet(entities: IEntity[]) {
-    console.log('delete these: ', entities);
     const wallet = this.walletItems$.value.slice();
     if (entities.length === wallet.length) {
       this.walletItems$.next([]);
     } else {
       // const filteredWallet: IEntity[] = [];
       wallet.forEach(item => {
-        console.log('item', item.name);
         entities.forEach(entity => {
-          console.log('selected entity', entity.name);
           if (entity.name === item.name) {
             const index = wallet.indexOf(item);
-            console.log(entity.name, entity.name === item.name, index);
             wallet.splice(index, 1);
           }
           entity.selected = false;

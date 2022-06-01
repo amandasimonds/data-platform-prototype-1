@@ -20,6 +20,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
     @Input() public searchText = '';
     @Input() public searchSidebarState = 'hidden';
     @Output() public readonly searchCloseEvent = new EventEmitter<string>();
+    public facetsOpen = false;
     public searchCategoryIcon = 'design';
 
     @ViewChild('resultsContainer', { static: true }) public resultsDiv: ElementRef;
@@ -104,6 +105,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
         }
         this.searchText = '';
         this.resetScroll();
+        this.facetsOpen = false;
     }
 
     public updateResults(e: Event): void {
@@ -142,5 +144,13 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
         this.searchResults = this.searchService.typeAheadSearch(this.searchText);
         this.ref.detectChanges();
         this.recentSearches = this.searchService.getRecentSearches();
+    }
+
+    public openFacets() {
+        this.facetsOpen = !this.facetsOpen;
+    }
+
+    public closeFacets() {
+        this.facetsOpen = false;
     }
 }
