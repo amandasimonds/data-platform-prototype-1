@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AutoLoginAllRoutesGuard } from 'angular-auth-oidc-client';
 import { DevAuthGuardService as DevAuthGuard } from './auth/dev-auth-guard.service';
+import { CustomerChAuthGuardService as ChAuthGuard } from './auth/chevron-auth-guard.service';
+import { CustomerCuAuthGuardService as CuAuthGuard } from './auth/cummins-auth-guard.service';
+import { DevUTAuthGuardService as DevUTAuthGuard } from './auth/DevUT-auth-guard.service copy';
 import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './layouts/main/main.component';
 import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
@@ -28,12 +31,13 @@ const routes: Routes = [
         canActivate: [AutoLoginAllRoutesGuard]
     },
     {
-		path: 'auth-callback',
-		component: AuthCallbackComponent
-	},
+        path: 'auth-callback',
+        component: AuthCallbackComponent
+    },
     {
         path: 'main',
         component: MainComponent,
+        data: { breadcrumb: { skip: true } },
         children: [
             {
                 path: 'home-splash',
@@ -45,11 +49,13 @@ const routes: Routes = [
             },
             {
                 path: 'sbs',
-                loadChildren: () => import('./side-by-side/side-by-side.module').then(m => m.SideBySideModule)
+                loadChildren: () => import('./side-by-side/side-by-side.module').then(m => m.SideBySideModule),
+                canActivate: [ChAuthGuard]
             },
             {
                 path: 'gwu',
-                loadChildren: () => import('./global-where-used/gwu.module').then(m => m.GwuModule)
+                loadChildren: () => import('./global-where-used/gwu.module').then(m => m.GwuModule),
+                canActivate: [CuAuthGuard]
             },
             {
                 path: 'settings',
@@ -57,12 +63,18 @@ const routes: Routes = [
                 canActivate: [DevAuthGuard]
             },
             {
+                path: 'file-folder-structure',
+                loadChildren: () => import('./file-folder-structure/file-folder-structure.module').then(m => m.FileFolderStructureModule),
+                canActivate: [],
+                data: { queryParams: { app: 'file-folder-structure' } }
+            },
+            {
                 path: 'icons',
                 component: IconDisplayComponent,
                 canActivate: [DevAuthGuard]
             }
         ],
-        canActivate: [AutoLoginAllRoutesGuard, DevAuthGuard]
+        canActivate: [AutoLoginAllRoutesGuard, DevUTAuthGuard]
     }
 ];
 

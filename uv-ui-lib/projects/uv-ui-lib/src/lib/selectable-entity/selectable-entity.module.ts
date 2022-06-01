@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelectableEntityComponent } from './selectable-entity.component';
-import { CheckboxModule } from 'projects/uv-ui-lib/src/public-api';
+// import { CheckboxModule } from 'projects/uv-ui-lib/src/public-api';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
@@ -9,7 +9,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   declarations: [SelectableEntityComponent],
   imports: [
     CommonModule,
-    CheckboxModule,
+    // CheckboxModule,
     DragDropModule
   ],
   exports: [SelectableEntityComponent]

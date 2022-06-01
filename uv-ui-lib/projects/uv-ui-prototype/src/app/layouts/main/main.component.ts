@@ -10,6 +10,9 @@ import { UvLightService } from '../../services/uv-light.service';
 import { navItems } from './navItems';
 import { environment } from 'projects/uv-ui-prototype/src/environments/environment';
 import { settingsNavlinks } from '../../settings/settingsNavLinks';
+import { IUser } from '../../models/user.model';
+import { ToastMessageService } from '../../services/toast-message.service';
+import { WalletService } from '../../services/wallet.service';
 
 @Component({
     selector: 'prototype-app-main',
@@ -29,20 +32,21 @@ export class MainComponent implements OnInit {
     public searchSidebarState = 'hidden';
     public currentApp = '';
     public currentService = '';
-    public currentUser = { id: 1, new: false, name: '' };
+    public currentUser: IUser = { id: 1, new: false, name: '' };
     public currentHighlight = '';
     public uvLight = false;
     public selectedItem = '';
     public chevronUser = 'user_chevron@test.com';
     public cumminsUser = 'user_cummins@test.com';
     public miniWalletOpen = false;
-    public walletOpen = false;
+    public walletIsOpen = false;
     public walletSidebarState = 'hidden';
     public subNavbarState = 'navbar-peek';
     public navbarIsExpanded = false;
     public subNavbarIsExpanded = false;
     public subNavbar2IsExpanded = false;
-    public displayToastMsg = false;
+    public displayToastMessage = false;
+    public toastMessageText = '';
 
     @Input() public searchQuery = '';
 
@@ -75,10 +79,12 @@ export class MainComponent implements OnInit {
     constructor(
         public appShellService: AppShellService,
         public searchService: SearchService,
+        private walletService: WalletService,
         private ref: ChangeDetectorRef,
         private route: ActivatedRoute,
         private router: Router,
         private destroy$: NgOnDestroyService,
+        private toastMessageService: ToastMessageService,
         private userService: UserService,
         private uvlService: UvLightService) {
     }
@@ -89,10 +95,13 @@ export class MainComponent implements OnInit {
             this.appShellService.currentAppTitle$.pipe(tap(title => this.title = title)),
             this.appShellService.currentAppHeaderIcon$.pipe(tap(icon => this.headerIcon = icon)),
             this.appShellService.currentAppNavIcon$.pipe(tap(icon => this.navActiveIcon = icon)),
+            this.toastMessageService.message$.pipe(tap(message => this.toastMessageText = message)),
+            this.toastMessageService.triggerToast$.pipe(tap(trigger => this.displayToastMessage = trigger)),
             this.searchService.searchState$.pipe(tap(state => this.searchSidebarState = state)),
             this.searchService.compareWarning$.pipe(tap(state => this.compareWarning = state)),
             this.userService.getCurrentUser().pipe(tap(user => this.currentUser = user)),
             this.uvlService.getCurrentHighlight().pipe(tap(highlight => this.currentHighlight = highlight)),
+            this.walletService.walletIsOpen$.pipe(tap(isOpen => this.walletIsOpen = isOpen)),
             this.route.queryParams.pipe(tap(params => {
                 this.currentApp = params['app'];
                 this.currentService = params['service'];
@@ -149,29 +158,23 @@ export class MainComponent implements OnInit {
         if (!this.miniWalletOpen) {
             setTimeout(() => {
                 this.miniWalletOpen = true;
+                // this.walletService.setWalletIsOpen(false);
             }, 150);
         } else if (this.miniWalletOpen) {
             this.miniWalletOpen = false;
         }
-
-        // this.walletOpen = !this.walletOpen;
         this.walletSidebarState = 'hidden';
+        this.walletService.setWalletIsOpen(this.walletSidebarState === 'visible' || !this.walletIsOpen ? true : false)
     }
 
     public toggleWalletSidebar() {
         this.miniWalletOpen = false;
         this.walletSidebarState === 'visible' ? this.walletSidebarState = 'hidden' : this.walletSidebarState = 'visible';
-    }
-
-    public onWalletItemAdded() {
-        this.displayToastMsg = true;
-        setTimeout(() => {
-            this.displayToastMsg = false;
-            this.ref.detectChanges();
-        }, 2000);
+        this.walletService.setWalletIsOpen(this.walletSidebarState === 'visible' || !this.walletIsOpen ? true : false)
     }
 
     public toggleSubNavbar() {
+        console.log('toggling on main');
         this.subNavbarIsExpanded = !this.subNavbarIsExpanded;
     }
 

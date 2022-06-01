@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { IUser } from '../models/user.model';
 
 @Injectable()
 export class UserService {
 
-    public currentUser$: BehaviorSubject<any> = new BehaviorSubject<any>(
+    public currentUser$: BehaviorSubject<IUser> = new BehaviorSubject<IUser>(
         {
             id: 1,
             new: true,

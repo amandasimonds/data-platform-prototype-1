@@ -1,23 +1,32 @@
 <div class="entity-preview" [class.entity-preview-visible]="isVisible">
-    <div class="padding-xs">
-        <div class="flex align-items-center justify-content-space-between margin-bottom-md">
-            <div class="flex gap-xs">
-                <uvx-icon-button icon="compare" matTooltip="Service 1"></uvx-icon-button>
-                <uvx-icon-button icon="global_where_used" matTooltip="Service 2"></uvx-icon-button>
-                <uvx-icon-button icon="design" matTooltip="Service 3"></uvx-icon-button>
+    <div class="flex justify-content-space-between">
+        <div class="flex flex-column padding-xs ">
+            <div class="flex gap-xs align-items-center margin-bottom-md">
+                <uvx-icon-button
+                    *ngFor="let item of launchServices"
+                    [icon]="item.icon"
+                    [routerLink]="item.link"
+                    [matTooltip]="item.tooltip"
+                >
+                </uvx-icon-button>
                 <span class="divider-left" style="margin: 0"></span>
                 <uvx-icon-button icon="more_horisontal"></uvx-icon-button>
             </div>
-            <uvx-icon-button icon="close" color="gray" (click)="closeEntityPreview($event)"></uvx-icon-button>
-        </div>
-        <div>
-            <h5 class="margin-xxs">{{ entity.name }}</h5>
-            <div class="details-container margin-left-xxs padding-right-xxs">
-                <p>
-                    {{ entity.description }}
-                </p>
+            <div>
+                <h5 class="margin-xxs">{{ entity.name }}</h5>
+                <div class="details-container margin-left-xxs padding-right-xxs">
+                    <p>
+                        {{ entity.description }}
+                    </p>
+                </div>
             </div>
         </div>
+        <uvx-icon-button
+            icon="double_right"
+            color="gray"
+            style="padding: 6px 8px; align-self: flex-start "
+            (click)="closeEntityPreview($event)"
+        ></uvx-icon-button>
     </div>
     <div class="metadata-container">
         <div class="flex">

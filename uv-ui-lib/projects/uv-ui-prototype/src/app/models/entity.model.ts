@@ -1,5 +1,6 @@
 export interface IEntity {
     category: string;
+    type: string;
     name: string;
     id: number;
     description: string;
@@ -16,10 +17,12 @@ export interface IEntity {
     walletDate: string;
     formattedWalletDate: string;
     launchbar: boolean;
+    menuActive: boolean;
 }
 
 export const emptyEntity: IEntity = {
     category: '',
+    type: 'file',
     name: '',
     id: 0,
     description: '',
@@ -35,5 +38,6 @@ export const emptyEntity: IEntity = {
     walletFavorite: false,
     walletDate: '',
     formattedWalletDate: '',
-    launchbar: false
+    launchbar: false,
+    menuActive: false
 }

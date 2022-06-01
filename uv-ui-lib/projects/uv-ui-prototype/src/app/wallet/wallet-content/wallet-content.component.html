@@ -1,0 +1,269 @@
+<app-entity-preview
+    [entity]="entitySelectedForPreview"
+    (entityPreviewClosedEvent)="closeEntityPreview()"
+    [isVisible]="entityIsSelectedForPreview"
+></app-entity-preview>
+<div class="wallet-sidebar">
+    <div class="flex flex-column">
+        <uvx-icon-button
+            *ngIf="currentApp !== 'file-folder-structure'"
+            icon="double_right"
+            color="gray"
+            style="padding: 6px 8px"
+            (click)="onCloseClicked('hidden')"
+        ></uvx-icon-button>
+        <div class="padding-right-sm padding-left-sm padding-bottom-xs">
+            <h4 class="margin-right-xs margin-bottom-sm">Wallet</h4>
+            <p class="uv-body margin-bottom-xs">Description about the wallet feature here.</p>
+
+            <div class="flex align-items-center gap-xs margin-bottom-xxs">
+                <button
+                    mat-flat-button
+                    color="primary"
+                    [disabled]="!entitiesSelectedForWallet"
+                    (click)="entitiesSelectedForWallet && onAddEntityToWallet(selectedEntities, $event)"
+                >
+                    Add To Wallet
+                </button>
+
+                <button
+                *ngIf="currentApp === 'file-folder-structure'"
+                    mat-flat-button
+                    color="primary"
+                    [disabled]="!walletEntitiesSelected"
+                    (click)="walletEntitiesSelected && onAddEntityToOpenFolder()"
+                    [disabled]="!entitiesSelectedForWallet"
+                    (click)="entitiesSelectedForWallet && onAddEntityToWallet(selectedEntities, $event)"
+                >
+                    Add To Folder
+                </button>
+
+                <!-- <epd-pl-button-dropdown
+                    [disabled]="!entitiesSelectedForWallet"
+                    contentText="Save Entity"
+                    color="primary"
+                    [disableRipple]="true"
+                >
+                    <ng-template epdPlButtonDropdownItemTmp>
+                        <div
+                            epd-pl-button-dropdown-item
+                            (click)="entitiesSelectedForWallet && onAddEntityToWallet(selectedEntities, $event)"
+                        >
+                            Add To Wallet
+                        </div>
+                        <div
+                            *ngFor="let folder of fileFolders.folders"
+                            epd-pl-button-dropdown-item
+                            (click)="saveEntityToFolder(folder)"
+                        >
+                            Save To Folder: {{ folder.name }}
+                        </div>
+                    </ng-template>
+                </epd-pl-button-dropdown> -->
+                <p
+                    class="uv-body uv-link pointer"
+                    [routerLink]="['/main/file-folder-structure']"
+                    [queryParams]="{ app: 'file-folder-structure' }"
+                    *ngIf="currentApp !== 'file-folder-structure'"
+                >
+                    Go To File Folder Viewer
+                </p>
+            </div>
+            <uvx-search-panel mode="component-border" width="100%" (searchClearClicked)="searchText = ''">
+                <input type="text" [(ngModel)]="searchText" placeholder="Search" class="uv-input margin-left-xs" />
+            </uvx-search-panel>
+            <!--            <div class="margin-top-xxs text-align-right" [ngStyle]="selectionsIndices.length > 0 && {'height': '15px'}">-->
+            <!--                <uvx-button  *ngIf="selectionsIndices.length > 0" icon="clear" (click)="clearSelected()" label="Clear Selections"></uvx-button>-->
+            <!--            </div>-->
+
+            <!--            <div class="margin-top-xxs flex flex-column" *ngIf="viewObjectsOpen">-->
+            <!--                    <div cdkDropList-->
+            <!--                        id="items"-->
+            <!--                        (cdkDropListDropped)="onDroppedIntoList($event)"-->
+            <!--                        [cdkDropListData]="items"-->
+            <!--                        cdkDropListSortingDisabled-->
+            <!--                        [cdkDropListConnectedTo]="['items']">-->
+            <!--                        <div class="flex flex-column">-->
+            <!--                        <app-wallet-item *ngFor="let item of items; let i = index" -->
+            <!--                        [matTooltip]="item.selected ? 'RIGHT CLICK to unselect' : 'CLICK to select'"-->
+            <!--                            (click.ctrl)="unselect($event, i, item)"-->
+            <!--                            (mousedown)="handleItemMouseEvent($event, i, item)"-->
+            <!--                            (contextmenu)="unselect($event, i, item)"-->
+            <!--                            (itemUnselectedEvent)="unselect($event, i, item)"-->
+            <!--                            [isSelected]="isSelected(i)"-->
+            <!--                            (cdkDragStarted)="onDragStart($event, index, item)"-->
+            <!--                            (cdkDragEnded)="onDragEnded($event)"-->
+            <!--                            (cdkDragDropped)="onDropped($event)"-->
+            <!--                            [dragging]="dragging"-->
+            <!--                            [selections]="selectionsIndices"-->
+            <!--                            [label]="item.name">-->
+            <!--                        </app-wallet-item>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+        </div>
+    </div>
+
+    <!--    <div class="divider"></div>-->
+
+    <!--    <div class="padding-xs flex justify-content-space-between">-->
+    <!--        <uvx-icon-button icon="folder_plus"  class="margin-left-sm" (click)="createFolder()"></uvx-icon-button>-->
+    <!--        <div class="flex gap-xxs">-->
+    <!--            <div *ngIf="folderSelected" class="flex gap-xxs">-->
+    <!--                <uvx-icon-button icon="edit" (click)="editFolder()"></uvx-icon-button>-->
+    <!--                <uvx-icon-button icon="delete"></uvx-icon-button>-->
+    <!--            </div>-->
+    <!--            <uvx-icon-button icon="filter"></uvx-icon-button>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <div class="divider"></div>
+
+    <div class="">
+        <div class="flex align-items-center padding-xs justify-content-space-between">
+            <div class="flex align-items-center gap-xs">
+                <uvx-checkbox
+                    [unselectEnabled]="true"
+                    [isChecked]="walletEntitySelections.length > 0"
+                    (click)="selectAllCheckClicked()"
+                ></uvx-checkbox>
+                <span class="uv-body semibold"> {{ walletEntitySelections.length }} Selected </span>
+            </div>
+            <div class="flex align-items-center">
+                <uvx-dropdown
+                    *ngIf="walletEntitySelections.length > 0"
+                    matTooltip="Select a folder to save this entity to"
+                >
+                    <span title class="flex align-items center justify-content-space-between w-100">
+                        <div class="flex align-items-center margin-right-xxs">Save Entities</div>
+                    </span>
+                    <span options>
+                        <div *ngFor="let folder of fileFolders.folders" class="flex flex column">
+                            <div
+                                *ngIf="folder.type === 'folder'"
+                                (click)="saveWalletEntityToFolder(folder)"
+                                class="custom-option w-100 flex align-items-center"
+                            >
+                                {{ folder.name }}
+                            </div>
+                        </div>
+                    </span>
+                </uvx-dropdown>
+                <uvx-icon-button
+                    class=""
+                    [icon]="walletEntitySelections.length > 0 ? 'delete' : ''"
+                    (click)="deleteEntitySelectionFromWallet()"
+                ></uvx-icon-button>
+                <span class="divider-left"></span>
+                <uvx-icon-button
+                    icon="sorting_bottom"
+                    [matTooltip]="sortMenuTooltip"
+                    (click)="wallet.length > 0 && toggleSortMenu()"
+                    (clickOutside)="closeSortMenu()"
+                    [disabled]="wallet.length === 0"
+                >
+                    <div *ngIf="walletSortMenuOpen" class="sort-menu flex flex-column">
+                        <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Title</p>
+                        <p class="sort-menu-item" (click)="sortWalletByAtoZ(); $event.stopPropagation()">
+                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            A to Z
+                        </p>
+                        <p class="sort-menu-item" (click)="sortWalletByZtoA(); $event.stopPropagation()">
+                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            Z to A
+                        </p>
+                        <div class="divider"></div>
+                        <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Date</p>
+                        <p class="sort-menu-item" (click)="sortWalletByNewestFirst(); $event.stopPropagation()">
+                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            Newest first
+                        </p>
+                        <p class="sort-menu-item" (click)="sortWalletByOldestFirst(); $event.stopPropagation()">
+                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            Oldest first
+                        </p>
+                        <div class="divider"></div>
+                        <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Usage</p>
+                        <p class="sort-menu-item" (click)="sortWalletByFavorites(); $event.stopPropagation()">
+                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            Favorites
+                        </p>
+                        <p
+                            class="sort-menu-item"
+                            [class.text-disabled]="!walletEntitiesSelected"
+                            [matTooltip]="
+                                walletEntitiesSelected
+                                    ? 'Sort Wallet by selections'
+                                    : 'No Wallet items selected to sort'
+                            "
+                            (click)="walletEntitiesSelected && sortWalletBySelections(); $event.stopPropagation()"
+                        >
+                            <uvx-icon [disabled]="!walletEntitiesSelected" icon="sorting_bottom"></uvx-icon>
+                            Selections
+                        </p>
+                    </div>
+                </uvx-icon-button>
+            </div>
+        </div>
+        <div class="">
+            <!-- <div
+                cdkDropList
+                *ngFor="let category of wallet"
+                class="margin-bottom-xxs folder"
+                id="items"
+                [cdkDropListConnectedTo]="['items']"
+                [cdkDropListData]="category.items"
+                (cdkDropListDropped)="onDroppedIntoList($event)"
+            > -->
+            <!-- <div *ngFor="let category of wallet" class="flex flex-column"> -->
+            <!-- <div class="flex align-items-center">
+                        <p class="label margin-bottom-xxs">{{ category.name }}</p>
+                    </div> -->
+            <div *ngIf="searchText === ''; else resultsTpl" class="margin-bottom-xxs wallet-item-container">
+                <app-wallet-item
+                    *ngFor="let entity of wallet; let i = index"
+                    (click)="openEntityPreview(entity)"
+                    [first]="i === 0"
+                    (itemSelectedEvent)="selectWalletEntity(entity, $event)"
+                    (itemUnselectedEvent)="selectWalletEntity(entity, $event)"
+                    [dragIsDisabled]="true"
+                    (mouseenter)="entity.launchbar = true"
+                    (mouseleave)="entity.launchbar = false"
+                    [isSelected]="entity.selected"
+                    [walletFavorites]="walletFavorites"
+                    (itemFavoritedEvent)="onFavoriteItem(entity, $event)"
+                    [isFavorited]="entity.walletFavorite"
+                    [label]="entity.name"
+                >
+                    <uvx-launch-bar
+                        [launchServices]="launchServices"
+                        *ngIf="entity.launchbar"
+                        (click)="launchBarClicked($event)"
+                    ></uvx-launch-bar>
+                </app-wallet-item>
+            </div>
+
+            <ng-template #resultsTpl>
+                <app-wallet-item
+                    *ngFor="let entity of getWalletSearchResults(searchText); let i = index"
+                    (itemSelectedEvent)="selectWalletEntity(entity)"
+                    (itemUnselectedEvent)="selectWalletEntity(entity)"
+                    [dragIsDisabled]="true"
+                    [isSelected]="entity.selected"
+                    [isFavorited]="entity.walletFavorite"
+                    [label]="entity.name"
+                    (itemFavoritedEvent)="onFavoriteItem(entity)"
+                >
+                </app-wallet-item>
+            </ng-template>
+
+            <!-- <div *ngFor="let item of apiList">
+                        {{item.name}}
+                    </div> -->
+
+            <!-- </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+</div>
+

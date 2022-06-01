@@ -1,0 +1,21 @@
+<uvx-navbar-sub [withPadding]="true" [isExpanded]="subNavbarIsExpanded" (toggleButtonClicked)="toggleSubNavbar()">
+    <div *ngIf="subNavbarIsExpanded">
+        <div
+            *ngFor="let navlink of settingsNavlinks"
+            class="nav-icon"
+            [matTooltip]="navlink.tooltip"
+            [class.nav-icon-active-expanded]="subNavbarIsExpanded"
+            [class.nav-icon-disabled]="navlink.disabled"
+        >
+            <a [routerLink]="navlink.navlink" class="display-inline-block" [queryParams]="{ app: navlink.app }">
+                <uvx-icon color="black" [icon]="navlink.icon"></uvx-icon>
+                <p
+                    [class.navbar-expanded-text-visible]="subNavbarIsExpanded"
+                    class="display-inline-block margin-left-xxs navbar-expanded-text"
+                >
+                    {{ navlink.tooltip }}
+                </p>
+            </a>
+        </div>
+    </div>
+</uvx-navbar-sub>

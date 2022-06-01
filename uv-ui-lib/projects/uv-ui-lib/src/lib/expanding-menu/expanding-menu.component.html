@@ -1,11 +1,12 @@
 <div class="expanding-menu" [class.expanding-menu-expanded]="menuIsExpanded">
     <div class="align-right padding-xxs">
-        <uvx-icon-button color="gray" [icon]=" isVisible ? 'arrow_back' : 'arrow_forward'" 
-        (click)="onToggleButtonClicked($event)"></uvx-icon-button>
+        <uvx-icon-button
+            color="gray"
+            [icon]="isVisible ? 'arrow_back' : 'arrow_forward'"
+            (click)="onToggleButtonClicked($event)"
+        ></uvx-icon-button>
     </div>
-    <div class="padding-sm expanding-menu-content"
-    [class.expanding-menu-content-visible]="menuIsExpanded">
-       <ng-content select="[content]"></ng-content>
-       
+    <div class="padding-sm expanding-menu-content" [class.expanding-menu-content-visible]="menuIsExpanded">
+        <ng-content select="[content]"></ng-content>
     </div>
 </div>

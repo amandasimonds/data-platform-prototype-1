@@ -1,66 +1,84 @@
+<!-- <app-facets-slideout (facetsClosedEvent)="closeFacets()" [isVisible]="facetsOpen"></app-facets-slideout> -->
 <div class="search-sidebar" [@slideInOut]="searchSidebarState">
-    <div class="search-sidebar-top">
-        <div class="flex align-items-center justify-content-space-between margin-bottom-sm">
-            <div class="flex align-items-center">
-                <uvx-icon icon="search" color="gray" class="margin-right-xxs"></uvx-icon>
-                <h4>Global Search</h4>
+    <app-facets-slideout (facetsClosedEvent)="closeFacets()" [isVisible]="facetsOpen"></app-facets-slideout>
+    <div class="content-wrapper position-relative">
+        <div class="search-sidebar-top">
+            <div class="flex justify-content-space-between" style="align-items: flex-start">
+                <div class="flex align-items-center padding-left-md padding-top-sm padding-bottom-md">
+                    <uvx-icon icon="search" color="gray" class="margin-right-xs"></uvx-icon>
+                    <h4>Global Search</h4>
+                </div>
+                <div class="padding-xxs text-align-right">
+                    <uvx-icon-button
+                        icon="double_left"
+                        color="gray"
+                        (click)="onCloseClicked('hidden')"
+                    ></uvx-icon-button>
+                </div>
             </div>
-            <uvx-icon-button 
-            icon="close" 
-            color="gray" 
-            size="md"
-            (click)="onCloseClicked('hidden')"></uvx-icon-button>
+            <div class="padding-bottom-sm padding-left-sm padding-right-sm">
+                <div class="margin-bottom-sm">
+                    <uvx-search-panel mode="component-border" (searchClearClicked)="searchClear()">
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            class="uv-input margin-left-xs"
+                            maxlength="40"
+                            (ngModelChange)="resetScroll()"
+                            [(ngModel)]="searchText"
+                        />
+                    </uvx-search-panel>
+                </div>
+
+                <uvx-dropdown [hasBorder]="true">
+                    <span title class="flex align-items center justify-content-space-between w-100">
+                        <div class="flex align-items-center">
+                            <uvx-icon icon="{{ searchCategoryIcon }}" class="margin-right-xs"></uvx-icon>
+                            {{ searchCategory }}
+                        </div>
+                        <div class="divider-right margin-right-xs">
+                            <span class="results-number margin-right-xxs">{{
+                                getCategoryResultsNumber(searchCategory)
+                            }}</span>
+                        </div>
+                    </span>
+
+                    <span
+                        options
+                        *ngFor="let item of categories"
+                        class="custom-option flex justify-content-space-between"
+                        (click)="selectCategory(item.name)"
+                        [class.no-display]="getCategoryResultsNumber(item.name) < 1"
+                    >
+                        <div class="flex align-items-center">
+                            <uvx-icon icon="{{ item.icon }}" class="margin-right-xs"></uvx-icon>
+                            {{ item.name }}
+                        </div>
+                        <span class="results-number">{{ getCategoryResultsNumber(item.name) }}</span>
+                    </span>
+                </uvx-dropdown>
+            </div>
         </div>
-        <div class="margin-bottom-sm">
-            <uvx-search-panel mode="component-border" 
-            (searchClearClicked)="searchClear()">
-                <input type="text"
-                    placeholder="Search..."
-                    class="uv-input margin-left-xs"
-                    maxlength="40"
-                    (ngModelChange)="resetScroll()"
-                    [(ngModel)]="searchText">
-            </uvx-search-panel>
+
+        <div class="divider position-relative"></div>
+
+        <div class="search-sidebar-header flex justify-content-space-between">
+            <div>
+                <span *ngIf="searchText === ''">Recent Searches</span>
+                <span *ngIf="getCategoryResultsNumber(searchCategory) > 0 && searchText != ''">{{
+                    getCategoryResultsNumber(searchCategory) + ' Results for ' + searchText
+                }}</span>
+                <span *ngIf="getCategoryResultsNumber(searchCategory) === 0 && searchText != ''">No results</span>
+            </div>
+            <uvx-icon-button icon="filter" (click)="openFacets()"></uvx-icon-button>
         </div>
-        
-        <uvx-dropdown [hasBorder]="true">
-            <span title class="flex align-items center justify-content-space-between w-100">
-                <div class="flex align-items-center">
-                    <uvx-icon icon="{{searchCategoryIcon}}" class="margin-right-xs"></uvx-icon>
-                    {{searchCategory}} 
-                </div>
-                <div class="divider-right margin-right-xs">
-                    <span class="results-number margin-right-xxs">{{getCategoryResultsNumber(searchCategory)}}</span> 
-                </div>
-            </span>
-            
-            <span options *ngFor="let item of categories"
-            class="custom-option flex justify-content-space-between" 
-            (click)="selectCategory(item.name)"
-            [class.no-display]="getCategoryResultsNumber(item.name) < 1">
-                <div class="flex align-items-center">
-                    <uvx-icon icon={{item.icon}} class="margin-right-xs"></uvx-icon>
-                    {{item.name}}
-                </div>
-                <span class="results-number">{{getCategoryResultsNumber(item.name)}}</span>
-            </span>
-        </uvx-dropdown>
-    </div>
 
-    <div class="divider"></div>
-
-    <div class="search-sidebar-header">
-        <span *ngIf="searchText === ''">Recent Searches</span>
-        <span *ngIf="getCategoryResultsNumber(searchCategory) > 0 && searchText != ''">{{getCategoryResultsNumber(searchCategory) + ' Results for ' + searchText }}</span>
-        <span *ngIf="getCategoryResultsNumber(searchCategory) === 0 && searchText != ''">No results</span>
-    </div>
-
-    <div class="search-sidebar-wrapper">
-        <div #resultsContainer class="search-sidebar-wrapper-scroll">
-            <app-search-results 
-            [category]="searchCategory" 
-            [searchText]="searchText"
-            (recentSearchClick)="searchRecentSearch($event)">
+        <div #resultsContainer class="search-sidebar-scroll">
+            <app-search-results
+                [category]="searchCategory"
+                [searchText]="searchText"
+                (recentSearchClick)="searchRecentSearch($event)"
+            >
             </app-search-results>
         </div>
     </div>

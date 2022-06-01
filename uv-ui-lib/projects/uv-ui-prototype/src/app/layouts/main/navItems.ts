@@ -1,5 +1,6 @@
 export const navItems = [
-    {   app: 'home-splash',
+    {
+        app: 'home-splash',
         icon: 'dashboard',
         active: false,
         navlink: 'home-splash',
@@ -37,6 +38,13 @@ export const navItems = [
         navlink: '/main',
         disabled: false,
         tooltip: 'Ingest'
+    },
+    {
+        app: 'file-folder-structure',
+        icon: 'folder',
+        active: false,
+        navlink: 'file-folder-structure',
+        tooltip: 'Folders'
     },
     {
         app: 'settings',

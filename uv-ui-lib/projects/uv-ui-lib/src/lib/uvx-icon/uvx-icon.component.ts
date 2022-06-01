@@ -11,6 +11,6 @@ export class UvxIconComponent {
     @Input() public icon = '';
     @Input() public disabled = false;
     @Input() public color: 'black' | 'primary' | 'success' | 'gray' | 'white' = 'black';
-    @Input() public size: 'xs' | 'sm' | 'md' | 'xl' | 'bg' | 'checkmark' = 'sm';
+    @Input() public size: 'xs' | 'sm' | 'md' | 'xl' | 'xxl' | 'bg' | 'checkmark' = 'sm';
 
 }

@@ -1,14 +1,17 @@
 .entity-preview {
     position: absolute;
+    top: 0px;
     height: 100%;
     width: 400px;
     z-index: -9999;
     background-color: var(--uv-color-white);
     border-left: var(--uv-border-gray);
-    transition: all 0.5s;
+    transition: all 0.5s !important;
+    visibility: hidden;
 
     &-visible {
         transform: translateX(-400.5px);
+        visibility: visible;
     }
 }
 

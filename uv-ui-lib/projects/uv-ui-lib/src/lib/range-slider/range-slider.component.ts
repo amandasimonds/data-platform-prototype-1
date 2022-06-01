@@ -9,8 +9,8 @@ export class RangeSliderComponent implements OnInit{
     @Output() public valueChangedEvent = new EventEmitter<number>();
     @Input() public min = 0;
     @Input() public max = 100;
-    @Input() public value: number;
-    @Input() public rangeValue: number;
+    @Input() public value: number = 10;
+    @Input() public rangeValue: number = 10;
     @Input() public rangeId = 'slider';
     @Input() public label = '';
     @Input() public tooltipPosition = '';
@@ -28,6 +28,7 @@ export class RangeSliderComponent implements OnInit{
         this.tooltipPosition = `calc(${this.value}% - 6px)`
         // this.tooltipPosition = `calc(((${this.value} / ${this.max}) * 100)% - 6px)`
         this.rangeValue = (this.value - this.min)/(this.max-this.min)*100;
+        this.background = 'linear-gradient(to right, var(--uv-color-gray-light-2) ' + this.rangeValue + '%, var(--uv-color-primary) ' + this.rangeValue + '%)'
     }
 
     ngOnInit(): void {
@@ -39,8 +40,6 @@ export class RangeSliderComponent implements OnInit{
         this.rangeValue = (this.value - this.min)/(this.max-this.min)*100;
         this.tooltipPosition = `calc(${this.rangeValue}% - 6px)`
         this.background = 'linear-gradient(to right, var(--uv-color-gray-light-2) ' + this.rangeValue + '%, var(--uv-color-primary) ' + this.rangeValue + '%)'
-        console.log(this.background);
-        console.log(this.rangeValue);
     }
 
     public get getValueMarkers(): number[] {

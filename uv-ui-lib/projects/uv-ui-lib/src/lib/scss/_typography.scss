@@ -151,10 +151,20 @@ a:visited {
     &-secondary {
         color: gray;
     }
+
+    &:hover {
+        color: var(--uv-color-primary-active);
+    }
 }
 
 ul, ol {
     list-style-position:inside;
+}
+
+.hover-blue {
+    &:hover {
+        color: var(--uv-color-primary);
+    }
 }
 
 .uv-input, input {
@@ -175,6 +185,11 @@ ul, ol {
             color: var(--uv-color-gray-dark);
             line-height: 28px;
         }
+    &-border {
+        border: var(--uv-border-gray);
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
 }
 
 ::-webkit-input-placeholder {

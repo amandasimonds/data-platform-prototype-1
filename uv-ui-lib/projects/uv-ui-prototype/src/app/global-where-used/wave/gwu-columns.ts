@@ -12,6 +12,7 @@ export const columns: IGwuColumn[] = [
         entities: [
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'WHFA-196',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -27,6 +28,7 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             }
         ],
@@ -44,6 +46,7 @@ export const columns: IGwuColumn[] = [
         entities: [
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'EXH-SU-B3',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -59,10 +62,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'EXH-SU-B4',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -78,10 +83,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'EXH-SU-B42',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -97,10 +104,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'EXH-SU-B43',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -116,6 +125,7 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
         ],
@@ -133,6 +143,7 @@ export const columns: IGwuColumn[] = [
         entities: [
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'PBYJ-873',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -148,10 +159,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'AMYU-897',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -167,10 +180,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'LQBY-17',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -186,10 +201,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'FKKR-176',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -205,10 +222,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'AGSC-053',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -224,10 +243,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'FERO-700',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -243,6 +264,7 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             }
         ],
@@ -260,6 +282,7 @@ export const columns: IGwuColumn[] = [
         entities: [
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'OGA-546',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -275,10 +298,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'ADTC-116',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -294,6 +319,7 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             }
         ],
@@ -311,6 +337,7 @@ export const columns: IGwuColumn[] = [
         entities: [
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'EXH-SU-B9',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -326,10 +353,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'EXH-SU-B11',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -345,6 +374,7 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             }
         ],
@@ -362,6 +392,7 @@ export const columns: IGwuColumn[] = [
         entities: [
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'QDUF-602',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -377,10 +408,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'VALO-460',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -396,10 +429,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'QKQ-58',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -415,10 +450,12 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
             {
                 category: 'Part',
+                type: 'file',
                 id: 1,
                 name: 'EXH-SU-B1342',
                 description: 'Description of the item. Details and metadata may go here, and well as other useful information. Year: 2019',
@@ -434,6 +471,7 @@ export const columns: IGwuColumn[] = [
                 walletDate: '',
                 formattedWalletDate: '',
                 launchbar: false,
+                menuActive: false,
                 details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
         ],

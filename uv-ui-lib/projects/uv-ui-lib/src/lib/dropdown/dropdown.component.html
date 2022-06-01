@@ -1,8 +1,13 @@
-<label class="uv-input-label">{{label}} <span *ngIf="required">*</span></label>
-<div *ngIf="mode === 'fancy'" class="select-wrapper" (click)="toggle()" [ngStyle]="{'width' : width}" [class.select-wrapper-border]="hasBorder">
+<label class="uv-input-label">{{ label }} <span *ngIf="required">*</span></label>
+<div
+    *ngIf="mode === 'fancy'"
+    class="select-wrapper"
+    (click)="toggle()"
+    [ngStyle]="{ width: width }"
+    [class.select-wrapper-border]="hasBorder"
+>
     <div class="select" [class.open]="open">
         <div class="select__trigger">
-            
             <ng-content select="[title]"></ng-content>
             <uvx-icon [icon]="open ? 'arrow_expand' : 'arrow_collapse'"></uvx-icon>
         </div>
@@ -12,15 +17,15 @@
     </div>
 </div>
 
-<div *ngIf="mode === 'input'" class="select-wrapper" (click)="toggle()" [ngStyle]="{'width' : width}">
+<div *ngIf="mode === 'input'" class="select-wrapper" (click)="toggle()" [ngStyle]="{ width: width }">
     <select class="select" [class.open]="open">
         <!-- <div class="select__trigger">
             <ng-content select="[title]"></ng-content>
             <uvx-icon [icon]="open ? 'arrow_expand' : 'arrow_collapse'"></uvx-icon>
         </div> -->
         <!-- <div class="custom-options flex flex-column"> -->
-            <ng-content></ng-content>
-            <!-- <ng-content select="[options]"></ng-content> -->
+        <ng-content></ng-content>
+        <!-- <ng-content select="[options]"></ng-content> -->
         <!-- </div> -->
     </select>
 </div>

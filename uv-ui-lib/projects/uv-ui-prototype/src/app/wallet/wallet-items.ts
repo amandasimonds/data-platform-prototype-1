@@ -3,6 +3,7 @@ import { IEntity } from '../models/entity.model';
 export const walletItems: IEntity[] = [
     {
         category: 'item',
+        type: 'file',
         name: 'Part',
         id: 1,
         description: '',
@@ -18,10 +19,12 @@ export const walletItems: IEntity[] = [
         walletFavorite: false,
         walletDate: '',
         formattedWalletDate: '',
-        launchbar: false
+        launchbar: false,
+        menuActive: false
     },
     {
         category: 'item',
+        type: 'file',
         name: 'Requirement',
         id: 1,
         description: '',
@@ -37,10 +40,12 @@ export const walletItems: IEntity[] = [
         walletFavorite: false,
         walletDate: '',
         formattedWalletDate: '',
-        launchbar: false
+        launchbar: false,
+        menuActive: false
     },
     {
         category: 'item',
+        type: 'file',
         name: 'Material',
         id: 1,
         description: '',
@@ -56,10 +61,12 @@ export const walletItems: IEntity[] = [
         walletFavorite: false,
         walletDate: '',
         formattedWalletDate: '',
-        launchbar: false
+        launchbar: false,
+        menuActive: false
     },
     {
         category: 'item',
+        type: 'file',
         name: 'Document',
         id: 1,
         description: '',
@@ -75,7 +82,8 @@ export const walletItems: IEntity[] = [
         walletFavorite: false,
         walletDate: '',
         formattedWalletDate: '',
-        launchbar: false
+        launchbar: false,
+        menuActive: false
     },
     // {
     //   type: 'item',
