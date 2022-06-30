@@ -13,6 +13,7 @@ import { settingsNavlinks } from '../../settings/settingsNavLinks';
 import { IUser } from '../../models/user.model';
 import { ToastMessageService } from '../../services/toast-message.service';
 import { WalletService } from '../../services/wallet.service';
+import { ProfileService } from '../../services/profile.service';
 
 @Component({
     selector: 'prototype-app-main',
@@ -30,6 +31,7 @@ export class MainComponent implements OnInit {
     public navActiveIcon = '';
     public compareWarning = false;
     public searchSidebarState = 'hidden';
+    public profileSlideOutState = 'hidden';
     public currentApp = '';
     public currentService = '';
     public currentUser: IUser = { id: 1, new: false, name: '' };
@@ -79,6 +81,7 @@ export class MainComponent implements OnInit {
     constructor(
         public appShellService: AppShellService,
         public searchService: SearchService,
+        public profileService: ProfileService,
         private walletService: WalletService,
         private ref: ChangeDetectorRef,
         private route: ActivatedRoute,
@@ -98,6 +101,7 @@ export class MainComponent implements OnInit {
             this.toastMessageService.message$.pipe(tap(message => this.toastMessageText = message)),
             this.toastMessageService.triggerToast$.pipe(tap(trigger => this.displayToastMessage = trigger)),
             this.searchService.searchState$.pipe(tap(state => this.searchSidebarState = state)),
+            this.profileService.profileSlideOutState$.pipe(tap(state => this.profileSlideOutState = state)),
             this.searchService.compareWarning$.pipe(tap(state => this.compareWarning = state)),
             this.userService.getCurrentUser().pipe(tap(user => this.currentUser = user)),
             this.uvlService.getCurrentHighlight().pipe(tap(highlight => this.currentHighlight = highlight)),
@@ -121,6 +125,11 @@ export class MainComponent implements OnInit {
                 this.appShellService.setNavIcon('search')) :
             (this.searchService.setSearchSidebarState('hidden'),
                 this.appShellService.setNavIcon(this.currentApp));
+    }
+    
+    public onProfileClose() {
+        this.profileSlideOutState = 'hidden';
+        this.profileService.setProfileSlideOutState('hidden')
     }
 
     public toggleUvLight(): void {

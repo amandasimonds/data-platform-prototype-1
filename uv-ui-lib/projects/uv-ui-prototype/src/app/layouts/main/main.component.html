@@ -103,6 +103,10 @@
         (searchCloseEvent)="toggleSearchSidebar()"
         [searchSidebarState]="searchSidebarState"
     ></app-search-sidebar>
+    <app-profile-slide-out
+        (profileCloseEvent)="onProfileClose()"
+        [profileSlideOutState]="profileSlideOutState"
+    ></app-profile-slide-out>
     <app-compare-warning
         *ngIf="compareWarning"
         (closeCompareWarning)="closeCompareWarning()"

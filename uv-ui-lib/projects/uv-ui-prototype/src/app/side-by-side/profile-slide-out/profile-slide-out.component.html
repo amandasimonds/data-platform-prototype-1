@@ -1,0 +1,64 @@
+<div class="profile-slide-out" [@slideInOut]="profileSlideOutState">
+    <app-profile-extend-slide-out
+        (extendedSlideOutCloseEvent)="closeExtendedSlideOut()"
+        [isVisible]="extendedSlideOutOpen"
+    ></app-profile-extend-slide-out>
+    <div class="content-wrapper position-relative">
+        <div class="profile-slide-out-top padding-sm">
+            <div class="flex justify-content-space-between">
+                <div class="flex gap-xs">
+                    <uvx-icon-button *ngFor="let item of profileHeaderNav" [icon]="item.icon"></uvx-icon-button>
+                </div>
+                <div class="flex gap-xs">
+                    <uvx-icon-button icon="expand"></uvx-icon-button>
+                    <uvx-icon-button icon="double_left" (click)="onCloseClicked($event)"></uvx-icon-button>
+                </div>
+            </div>
+            <div class="content-container">
+                <p class="doc-text margin-top-xs">
+                    More information that would go on this document. Filler Text: Sed ut perspiciatis unde omnis iste
+                    natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+                    illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
+                    qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                    amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                    dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
+                </p>
+            </div>
+        </div>
+
+        <nav mat-tab-nav-bar [disableRipple]="true" class="padding-left-sm">
+            <a
+                mat-tab-link
+                *ngFor="let tab of profileTabs"
+                (click)="activeLink = tab.link"
+                [active]="activeLink == tab.link || activeTab == tab.link"
+                (click)="openExtendedSlideOut(tab.link)"
+                [queryParams]="{tab: tab.link}"
+            >
+                {{ tab.title }}
+            </a>
+        </nav>
+        <div class="padding-sm flex flex-column bottom-container">
+            <div>
+                <div
+                    *ngFor="let item of changeRequestList; let i = index"
+                    (click)="openExtendedSlideOut(item.title)"
+                    class="flex gap-xs margin-bottom-xs padding-xs change-request-item"
+                >
+                    <span
+                        class="change-request-priority-label"
+                        [ngStyle]="{ 'background-color': getItemPriorityColor(item) }"
+                    >
+                        ###
+                    </span>
+                    <div class="flex flex-column">
+                        <p class="bold">Change Request #{{ changeRequestList.length - i }}</p>
+                        <p class="uv-body-secondary">Updated - {{ item.formattedDate }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

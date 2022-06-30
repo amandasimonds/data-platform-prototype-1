@@ -7,19 +7,18 @@ import { WalletService } from './wallet.service';
 
 @Injectable()
 export class SidebySideService {
-
     private targetDocumentSelectedEvent = new BehaviorSubject<IEntity[]>([]);
     private sourceDocumentSelectedEvent = new BehaviorSubject<IEntity[]>([]);
+    private _sourceDocumentWasSelected = new BehaviorSubject<boolean>(false);
 
     public targetDocuments$ = new BehaviorSubject<IEntity[]>(targetDocumentSamples);
 
+    public sourceDocumentWasSelected$ = this._sourceDocumentWasSelected.asObservable();
     public readonly selectedTargetDocuments$ = this.targetDocumentSelectedEvent.asObservable();
     public readonly sourceDocumentsList$ = this.sourceDocumentSelectedEvent.asObservable();
 
     private targetDocuments: IEntity[] = targetDocumentSamples;
     private sourceDocuments: IEntity[] = sourceDocumentSamples;
-
-    @Output() public readonly sourceDocumentSelected = new EventEmitter<boolean>();
 
     constructor(private walletService: WalletService) { }
     public getTargetDocuments(): IEntity[] {
@@ -35,7 +34,7 @@ export class SidebySideService {
         let sourceDocsList: IEntity[] = [];
         const exceptIndex = i;
         if (document.active) {
-            this.sourceDocumentSelected.emit(true);
+            this._sourceDocumentWasSelected.next(true);
             sourceDocsList = this.getSourceDocuments()
                 .filter((item, index) => exceptIndex !== index)
                 .map(item => ({
@@ -43,7 +42,7 @@ export class SidebySideService {
                     disabled: !item.disabled
                 }));
         } else {
-            this.sourceDocumentSelected.emit(false);
+            this._sourceDocumentWasSelected.next(false);
             sourceDocsList = this.getSourceDocuments()
                 .map(item => ({
                     ...item,

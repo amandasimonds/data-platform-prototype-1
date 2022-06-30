@@ -1,0 +1,14 @@
+<div
+    class="options-menu box"
+    [ngStyle]="{ 'z-index': zIndex, right: rightPos }"
+    (clickOutside)="isVisible = false"
+    [class.options-menu-display]="isVisible"
+>
+    <div class="flex flex-column gap-xxs">
+        <div class="flex gap-xs options-menu-item" *ngFor="let item of optionMenuItems">
+            <span> <mat-icon color="primary" [svgIcon]="item.icon"></mat-icon></span>
+            <p>{{ item.title }}</p>
+        </div>
+    </div>
+</div>
+

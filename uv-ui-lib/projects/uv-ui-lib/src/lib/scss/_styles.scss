@@ -77,6 +77,18 @@ body {
     }
 }
 
+// FORM
+textarea {
+    outline: none;
+    font-family: var(--uv-font-family);
+    font-size: var(--uv-font-size-sm);
+    padding: var(--uv-xs-size);
+    border: var(--uv-border-gray);
+    border-radius: 4px;
+    resize: none;
+    width: 100%;
+}
+
 //BREADCRUMB STYLING
 
 .xng-breadcrumb-root {
@@ -134,4 +146,3 @@ body {
 //     //     }
 //     // }
 // }
-

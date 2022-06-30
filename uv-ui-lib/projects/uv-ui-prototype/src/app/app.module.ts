@@ -65,6 +65,7 @@ import { ToastMessageService } from './services/toast-message.service';
 import { CustomerChAuthGuardService } from './auth/chevron-auth-guard.service';
 import { CustomerCuAuthGuardService } from './auth/cummins-auth-guard.service';
 import { DevUTAuthGuardService } from './auth/DevUT-auth-guard.service copy';
+import { ProfileSlideOutModule } from './side-by-side/profile-slide-out/profile-slide-out.module';
 // import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
 
 @NgModule({
@@ -106,6 +107,7 @@ import { DevUTAuthGuardService } from './auth/DevUT-auth-guard.service copy';
         NgxEchartsModule.forRoot({
             echarts: () => import('echarts')
         }),
+        ProfileSlideOutModule,
         RegisterIconModule,
         RegisterIconModule.forRoot(ICON_SET),
         SearchPanelModule,
