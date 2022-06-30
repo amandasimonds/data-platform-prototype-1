@@ -1,0 +1,21 @@
+.slide-out {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 100%;
+    width: 580px;
+    background-color: var(--uv-color-white);
+    border-right: var(--uv-border-gray);
+    transition: all 0.4s !important;
+    visibility: hidden;
+
+    &-visible {
+        transform: translateX(429px);
+        visibility: visible;
+    }
+}
+
+.container {
+    height: calc(100vh - 91px);
+    overflow: auto;
+}

@@ -10,15 +10,18 @@ import {
 import { FilterModalModule } from '../filter-modal/filter-modal.module';
 import { SbsActionBarComponent } from './sbs-action-bar.component';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [SbsActionBarComponent],
   imports: [
     CommonModule,
+    MatButtonModule,
     ActionBarModule,
     IconButtonModule,
     UvxIconModule,
     FilterModalModule,
+    RouterModule,
     SearchPanelModule,
     FormsModule,
     MatButtonModule
