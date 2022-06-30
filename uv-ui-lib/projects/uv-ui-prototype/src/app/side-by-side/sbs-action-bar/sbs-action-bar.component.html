@@ -1,61 +1,110 @@
 <uvx-action-bar>
-    <div left style="padding-top: 24px;">
-        <p *ngIf="!showTargetDocuments" class="italic uv-font-gray flex align-items-center" style="height: 50px;">Select documents to get started</p>
+    <div left style="padding-top: 24px">
+        <p *ngIf="!showTargetDocuments" class="italic uv-font-gray flex align-items-center" style="height: 50px">
+            Select documents to get started
+        </p>
 
         <div *ngIf="showTargetDocuments" class="flex flex-row">
             <div>
                 <div class="sbs-action-bar-left-container flex flex-row align-items-center">
-                    <span class="sbs-block medium-bold uv-body margin-right-12">{{loadedSourceDocuments[0].name}}</span>
+                    <span class="sbs-block medium-bold uv-body margin-right-12">{{
+                        loadedSourceDocuments[0].name
+                    }}</span>
                     <uvx-icon icon="compare" class="margin-right-12"></uvx-icon>
-                    <p *ngIf="selectedTargetDocuments.length === 0" class="italic uv-font-gray">Collection: 0 documents selected</p>
+                    <p *ngIf="selectedTargetDocuments.length === 0" class="italic uv-font-gray">
+                        Collection: 0 documents selected
+                    </p>
                 </div>
             </div>
 
-            <div *ngIf="selectedTargetDocuments.length > 0" 
+            <div
+                *ngIf="selectedTargetDocuments.length > 0"
                 [class.sbs-target-doc-selections-container-expanded]="showMoreSelections"
-                class="flex align-items-center sbs-target-doc-selections-container margin-right-xs">
-                <div [ngClass]="showMoreSelections ? 'flex flex-wrap' : 'sbs-target-doc-selections-container-inner'" >
-                    <span 
-                    *ngFor="let item of selectedTargetDocuments" 
-                    class="sbs-block margin-4 sbs-block-with-icon sbs-block-selection medium-bold uv-body flex align-items-center padding-right-sm">
-                    {{item.name}}
-                    <uvx-icon-button icon="clear"  color="primary" class="margin-left-xxxs" (click)="unselectTargetDocument(item)"></uvx-icon-button>
+                class="flex align-items-center sbs-target-doc-selections-container margin-right-xs"
+            >
+                <div [ngClass]="showMoreSelections ? 'flex flex-wrap' : 'sbs-target-doc-selections-container-inner'">
+                    <span
+                        *ngFor="let item of selectedTargetDocuments"
+                        class="
+                            sbs-block
+                            margin-4
+                            sbs-block-with-icon sbs-block-selection
+                            medium-bold
+                            uv-body
+                            flex
+                            align-items-center
+                            padding-right-sm
+                        "
+                    >
+                        {{ item.name }}
+                        <uvx-icon-button
+                            icon="clear"
+                            color="primary"
+                            class="margin-left-xxxs"
+                            (click)="unselectTargetDocument(item)"
+                        ></uvx-icon-button>
                     </span>
                 </div>
             </div>
         </div>
-
     </div>
 
-    <div right style="padding-top: 24px;" class="flex flex-row sbs-action-bar-right-container justify-content-flex-end">
+    <div right style="padding-top: 24px" class="flex flex-row sbs-action-bar-right-container justify-content-flex-end">
         <div>
-
             <div *ngIf="showTargetDocuments" class="flex align-items-center">
-                <a *ngIf="selectedTargetDocuments.length > 5 && !showMoreSelections" (click)="toggleShowMoreSelections()" class="sbs-action-bar-link uv-link">
-                    Show {{selectedTargetDocuments.length - 5}} more<uvx-icon icon="arrow_collapse" color="primary" class="margin-left-xxxs"></uvx-icon>
-            </a>
-            <a *ngIf="showMoreSelections" (click)="toggleShowMoreSelections()" class="sbs-action-bar-link uv-link">
-                Show less<uvx-icon icon="arrow_expand" color="primary" class="margin-left-xxxs"></uvx-icon>
-            </a>
-            <div class="divider-left" style="height: 25px; margin: 0 8px;"></div>
-            <a class="sbs-action-bar-link uv-link margin-right-sm"(click)="clearSelections(selectedTargetDocuments)">Clear all<uvx-icon icon="clear" color="primary" class="margin-left-xxxs"></uvx-icon></a>
+                <a
+                    *ngIf="selectedTargetDocuments.length > 5 && !showMoreSelections"
+                    (click)="toggleShowMoreSelections()"
+                    class="sbs-action-bar-link uv-link"
+                >
+                    Show {{ selectedTargetDocuments.length - 5 }} more<uvx-icon
+                        icon="arrow_collapse"
+                        color="primary"
+                        class="margin-left-xxxs"
+                    ></uvx-icon>
+                </a>
+                <a *ngIf="showMoreSelections" (click)="toggleShowMoreSelections()" class="sbs-action-bar-link uv-link">
+                    Show less<uvx-icon icon="arrow_expand" color="primary" class="margin-left-xxxs"></uvx-icon>
+                </a>
+                <div class="divider-left" style="height: 25px; margin: 0 8px"></div>
+                <a
+                    class="sbs-action-bar-link uv-link margin-right-sm"
+                    (click)="clearSelections(selectedTargetDocuments)"
+                    >Clear all<uvx-icon icon="clear" color="primary" class="margin-left-xxxs"></uvx-icon
+                ></a>
+            </div>
         </div>
-    </div>
-        <button mat-flat-button color="primary" [disabled]="!showTargetDocuments">Compare</button>
+
+        <button
+            mat-flat-button
+            color="primary"
+            [routerLink]="['compare']"
+            [queryParams]="{ app: 'sbs' }"
+            [disabled]="!showTargetDocuments"
+        >
+            Compare
+        </button>
     </div>
 
-    <div bottom style="padding-bottom: 24px;">
+    <div bottom style="padding-bottom: 24px">
         <div class="row">
             <div class="col-6 flex justify-content-space-between padding-right-sm">
-                <p class="uv-body medium-bold">{{loadedSourceDocuments.length}} documents</p>
+                <p class="uv-body medium-bold">{{ loadedSourceDocuments.length }} documents</p>
                 <div *ngIf="isDevUser" class="position-relative flex">
-                    <uvx-icon-button icon="search" *ngIf="!showFilterModal" color="primary" (click)="toggleFilterModal()" [active]="showFilterModal"></uvx-icon-button>
-                    <uvx-search-panel 
+                    <uvx-icon-button
+                        icon="search"
+                        *ngIf="!showFilterModal"
+                        color="primary"
+                        (click)="toggleFilterModal()"
+                        [active]="showFilterModal"
+                    ></uvx-icon-button>
+                    <uvx-search-panel
                         (searchCloseClicked)="toggleFilterModal(); clearSearch()"
                         *ngIf="showFilterModal"
-                        mode="component-border" 
-                        class="z-index-front">
-                        <input [(ngModel)]="searchText" class="margin-left-xs">
+                        mode="component-border"
+                        class="z-index-front"
+                    >
+                        <input [(ngModel)]="searchText" class="margin-left-xs" />
                     </uvx-search-panel>
                     <uvx-icon-button icon="more_horisontal" color="primary" class="margin-left-xxs"></uvx-icon-button>
                     <sbs-filter-modal *ngIf="showFilterModal" [searchText]="searchText"></sbs-filter-modal>
@@ -63,10 +112,16 @@
             </div>
             <div class="col-6 flex flex-row justify-content-space-between border-left padding-left-md">
                 <p class="uv-body medium-bold">
-                    {{ showTargetDocuments ? loadedTargetDocuments.length : '0'}} documents</p>
+                    {{ showTargetDocuments ? loadedTargetDocuments.length : '0' }} documents
+                </p>
                 <div *ngIf="isDevUser">
                     <uvx-icon-button icon="search" color="primary" [disabled]="!showTargetDocuments"></uvx-icon-button>
-                    <uvx-icon-button icon="more_horisontal" color="primary" [disabled]="!showTargetDocuments" class="margin-left-xxs"></uvx-icon-button>
+                    <uvx-icon-button
+                        icon="more_horisontal"
+                        color="primary"
+                        [disabled]="!showTargetDocuments"
+                        class="margin-left-xxs"
+                    ></uvx-icon-button>
                 </div>
             </div>
         </div>

@@ -10,6 +10,7 @@ import { optionsMenu } from './options-menu';
 export class OptionsMenuComponent {
 
   @Input() public fileFolder: IFileFolder;
+  
   public optionMenuItems = optionsMenu;
 
 }

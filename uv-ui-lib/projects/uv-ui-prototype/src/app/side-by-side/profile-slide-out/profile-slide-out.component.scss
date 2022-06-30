@@ -1,0 +1,76 @@
+.profile-slide-out {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: var(--uv-navbar-width);
+    z-index: var(--uv-z-index-search-sidebar);
+    animation-name: slide-in;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    width: 431px;
+
+    &-top {
+        position: relative;
+        z-index: auto;
+        background-color: var(--uv-color-white);
+        height: 60%;
+    }
+
+    &-header {
+        padding: 20px 28px 38px 32px;
+        background-color: var(--uv-color-white);
+        height: 50px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+    }
+
+    &-scroll {
+        background-color: var(--uv-color-white);
+        padding-top: 10px;
+        overflow: auto;
+        position: relative;
+        height: calc(100vh - 285px);
+    }
+
+    &-scroll:after {
+        display: table;
+        content: '';
+        clear: both;
+    }
+}
+
+.content-wrapper {
+    border-right: var(--uv-border-gray);
+    height: 100vh;
+    background-color: var(--uv-color-white);
+}
+
+.change-request {
+    &-item {
+        border-radius: 4px;
+        &:hover {
+            cursor: pointer;
+            background-color: var(--uv-color-gray-light);
+        }
+    }
+
+    &-priority-label {
+        padding: 0 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        height: min-content;
+    }
+}
+
+.bottom-container {
+    height: 35%;
+    overflow: auto;
+}
+
+.content-container {
+    height: 87%;
+    overflow: auto;
+    margin: 24px 0;
+}

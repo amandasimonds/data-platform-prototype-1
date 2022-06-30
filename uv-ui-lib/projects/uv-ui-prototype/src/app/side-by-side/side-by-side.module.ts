@@ -4,29 +4,46 @@ import {
     ActionBarModule,
     ButtonModule,
     SearchPanelModule,
-    CheckboxModule
+    CheckboxModule,
+    IconButtonModule,
+    UvxOptionsMenuModule,
+    UvxToolbarModule
 } from '../../../../uv-ui-lib/src/public-api';
 import { SideBySideLandingModule } from './landing/landing.module';
 import { SideBySideRoutingModule } from './side-by-side-routing.module';
 import { SourceDocumentModule } from './sbs-document/source-document/source-document.module';
 import { SideBySideComponent } from './side-by-side.component';
 import { SbsWizardService } from './wizard/sbs-wizard.service';
+import { SbsCompareComponent } from './sbs-compare/sbs-compare.component';
+import { SelectDocumentsComponent } from './select-documents/select-documents.component';
+import { MatIconModule } from '@angular/material/icon';
+import { ClickOutsideModule } from '../shared/directives/click-outside/click-outside.module';
+import { ChangeRequestService } from '../services/change-request/change-request.service';
+import { TargetDocumentModule } from './sbs-document/target-document/target-document.module';
 
 @NgModule({
     declarations: [
-        SideBySideComponent
+        SideBySideComponent,
+        SbsCompareComponent,
+        SelectDocumentsComponent
     ],
     imports: [
+        ActionBarModule,
+        ButtonModule,
+        CheckboxModule,
+        ClickOutsideModule,
         CommonModule,
         SideBySideRoutingModule,
-        ActionBarModule,
         SideBySideLandingModule,
         SourceDocumentModule,
-        CheckboxModule,
         SearchPanelModule,
-        ButtonModule
+        IconButtonModule,
+        MatIconModule,
+        TargetDocumentModule,
+        UvxOptionsMenuModule,
+        UvxToolbarModule
     ],
     exports: [ SideBySideComponent ],
-    providers: [SbsWizardService]
+    providers: [SbsWizardService, ChangeRequestService]
 })
 export class SideBySideModule { }

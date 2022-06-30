@@ -1,0 +1,18 @@
+<div class="row sbs-landing-container">
+    <div class="col-6 h-100">
+        <div class="scroll-spacing h-100">
+            <div class="source-document-container h-100">
+                <app-source-document>
+                </app-source-document>
+            </div>
+        </div>
+    </div>
+        <div class="col-6 h-100">
+            <div class="scroll-spacing h-100">
+                <div class="source-document-container h-100">
+                    <app-target-document *ngIf="sourceDocumentSelected">
+                    </app-target-document>
+                </div>
+            </div>
+        </div>
+</div>

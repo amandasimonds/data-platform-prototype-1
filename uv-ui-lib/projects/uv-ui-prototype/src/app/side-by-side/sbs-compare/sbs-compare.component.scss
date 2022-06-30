@@ -1,0 +1,41 @@
+.source-document-container {
+    padding: 32px 24px 32px 32px;
+    overflow: auto;
+    border-right: 1px solid var(--uv-border-color-gray);
+    height: calc(100vh - 190px);
+}
+
+.sbs-landing-container {
+    height: calc(100% - 129px);
+}
+
+.doc-wrapper {
+    height: 800px;
+    & > img {
+        width: 100%;
+    }
+}
+
+.sbs-highlight {
+    background-color: rgba(0,163,229,0.12);
+}
+
+.doc-text {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 19px;
+    position: relative;
+}
+
+.link-bubble {
+    position: absolute;
+    top: 80%;
+    z-index: 100;
+}
+
+.link-menu {
+    position: absolute;
+    z-index: 100;
+    background-color: white;
+    box-shadow: var(--uv-box-shadow-2);
+    width: 216px;
+}

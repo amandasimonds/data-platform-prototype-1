@@ -1,0 +1,59 @@
+<div class="row sbs-landing-container">
+    <div class="col-6 h-100">
+        <div class="h-100">
+            <div class="source-document-container h-100">
+                <div class="box doc-wrapper padding-md">
+                    <img src="../../../assets/sbs-doc.png" alt="Document" />
+                    <p class="doc-text">
+                        <span class="sbs-highlight"
+                            >1. Snippet of content that is highlighted and may need to be changed. This content could
+                            include regulatory information or any type of information relating to the selected
+                            documents.
+                        </span>
+                        <uvx-icon-button
+                            icon="linkage_guidelines"
+                            color="primary"
+                            size="md"
+                            class="link-bubble"
+                            (click)="toggleLinkMenu()"
+                            (clickOutside)="linkMenuVisible = false"
+                        >
+                            <!-- <uvx-options-menu
+                                [isVisible]="true"
+                                [optionMenuItems]="optionMenuItems"
+                                zIndex="100"
+                                rightPos="40%"
+                            ></uvx-options-menu> -->
+                            <uvx-toolbar
+                                [isVisible]="linkMenuVisible"
+                                [toolbarItems]="optionMenuItems"
+                                zIndex="100"
+                                rightPos="-15%"
+                                topPos="-100%"
+                                (click)="openProfile()"
+                            ></uvx-toolbar>
+                        </uvx-icon-button>
+                    </p>
+
+                    <p class="doc-text margin-top-xs">
+                        More information that would go on this document. Filler Text: Sed ut perspiciatis unde omnis
+                        iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                        quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                        enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                        magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
+                        ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                        incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+                        nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                        consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                        molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 h-100">
+        <div class="h-100">
+            <div class="source-document-container h-100"></div>
+        </div>
+    </div>
+</div>

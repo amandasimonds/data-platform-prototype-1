@@ -1,0 +1,13 @@
+<div
+    class="toolbar box"
+    [ngStyle]="{ 'z-index': zIndex, 'right': rightPos, 'top': topPos }"
+    
+    [class.toolbar-display]="isVisible"
+>
+    <div class="flex gap-xxs">
+        <div class="flex gap-xs toolbar-item" *ngFor="let item of toolbarItems">
+            <span> <mat-icon [color]="color" [svgIcon]="item.icon"></mat-icon></span>
+        </div>
+    </div>
+</div>
+

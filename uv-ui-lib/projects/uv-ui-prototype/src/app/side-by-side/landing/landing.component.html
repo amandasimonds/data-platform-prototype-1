@@ -1,31 +1,11 @@
 <div class="uv-container--fluid h-100">
-    <div class="row" >
+    <div class="row">
         <div class="col-12">
-            <sbs-action-bar
-            [isDevUser]="isDevUser"
-                [showTargetDocuments]="sourceDocumentSelected">
-            </sbs-action-bar>
+            <sbs-action-bar [isDevUser]="isDevUser" [showTargetDocuments]="sourceDocumentSelected"> </sbs-action-bar>
         </div>
     </div>
 
-    <div class="row sbs-landing-container">
-        <div class="col-6 h-100">
-            <div class="scroll-spacing h-100">
-                <div class="source-document-container h-100">
-                    <app-source-document>
-                    </app-source-document>
-                </div>
-            </div>
-        </div>
-            <div class="col-6 h-100">
-                <div class="scroll-spacing h-100">
-                    <div class="source-document-container h-100">
-                        <app-target-document *ngIf="sourceDocumentSelected">
-                        </app-target-document>
-                    </div>
-                </div>
-            </div>
-    </div>
+    <router-outlet></router-outlet>
 
     <!-- <uvx-backdrop *ngIf="!isDevUser" [blockContent]="true" [transparent]="true"></uvx-backdrop> -->
 </div>
