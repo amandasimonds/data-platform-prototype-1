@@ -3,7 +3,7 @@ import { Router, CanActivate } from '@angular/router';
 import { UserService } from './user.service';
 import { AuthService } from './auth.service';
 import { environment } from '../../environments/environment';
-import { ENV } from '../../app-env';
+import { ENV } from '../app-env';
 @Injectable()
 export class DevAuthGuardService implements CanActivate {
 
