@@ -1,4 +1,4 @@
-import { ENV } from "../app-env";
+import { ENV } from "../app/app-env";
 
 export const environment = {
     production: true,
