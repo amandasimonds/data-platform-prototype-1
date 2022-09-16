@@ -1,8 +1,8 @@
 .tab-wrapper {
     padding: 0 8px;
     background-color: white;
-    &:hover{
-        // background-color: var(--uv-color-gray-light);
+    &:hover {
+        // background-color: var(--pl-base-02);
     }
 }
 
@@ -14,79 +14,84 @@
     align-items: center;
     &:hover {
         cursor: pointer;
-        color: var(--uv-color-primary);
-            a, 
-            svg, 
-            span, 
-            mat-icon {
-                color: var(--uv-color-primary);
+        color: var(--pl-primary);
+        a,
+        svg,
+        span,
+        mat-icon {
+            color: var(--pl-primary);
+        }
+        ::ng-deep {
+            & > * {
+                color: var(--pl-primary);
             }
-            ::ng-deep {
-                & > * {
-                    color: var(--uv-color-primary);
-                }
-            }
+        }
     }
 }
 
 .vertical {
     &:hover {
-        box-shadow: inset -4px 0 0 var(--uv-color-primary);
+        box-shadow: inset -4px 0 0 var(--pl-primary);
     }
     &-active {
-        box-shadow: inset -4px 0 0 var(--uv-color-primary);
+        box-shadow: inset -4px 0 0 var(--pl-primary);
     }
 }
 
 .horizontal {
     padding: 5px 8px 25px 8px;
     &:hover {
-        box-shadow: inset 0 -4px 0 0 var(--uv-color-primary);
+        box-shadow: inset 0 -4px 0 0 var(--pl-primary);
     }
 
     &-active {
-        box-shadow: inset 0 -4px 0 0 var(--uv-color-primary);
+        box-shadow: inset 0 -4px 0 0 var(--pl-primary);
     }
 }
 
 .disabled {
-    color: var(--uv-color-gray);
+    color: var(--pl-base-02);
     pointer-events: none;
     cursor: not-allowed;
-    a, 
-    svg, 
+    a,
+    svg,
     span {
-        color: var(--uv-color-gray);
+        color: var(--pl-base-02);
         pointer-events: none;
     }
     &:hover {
         cursor: not-allowed;
-        color: var(--uv-color-gray);
+        color: var(--pl-base-02);
         font-weight: none;
-        background-color: var(--uv-color-white);
+        background-color: var(--pl-base-01);
         box-shadow: none;
         pointer-events: none;
-        a, svg, span {
-            color: var(--uv-color-gray);
+        a,
+        svg,
+        span {
+            color: var(--pl-base-02);
             pointer-events: none;
         }
     }
 }
 
 .active {
-    color: var(--uv-color-primary);
-        a, svg, span, mat-icon {
-            color: var(--uv-color-primary);
+    color: var(--pl-primary);
+    a,
+    svg,
+    span,
+    mat-icon {
+        color: var(--pl-primary);
+    }
+    ::ng-deep {
+        & > * {
+            color: var(--pl-primary);
         }
-        ::ng-deep {
-            & > * {
-                color:var(--uv-color-primary);
-            }
-        }
+    }
 
-        .horizontal {
-            box-shadow: inset 0 -4px 0 0 var(--uv-color-primary);
-        }
+    .horizontal {
+        box-shadow: inset 0 -4px 0 0 var(--pl-primary);
+    }
 }
 
 .position {
@@ -94,21 +99,20 @@
 }
 
 .reorder-mode {
-    border-bottom: 1px solid var(--uv-color-gray);
+    border-bottom: 1px solid var(--pl-base-02);
     background-color: white;
     &:hover {
         cursor: move;
-        border: 1px solid var(--uv-color-gray);
+        border: 1px solid var(--pl-base-02);
     }
-    &:active:hover{
-        border: 1px solid var(--uv-color-gray);
+    &:active:hover {
+        border: 1px solid var(--pl-base-02);
     }
 }
 
 .cdk-drag {
     box-sizing: border-box;
     border-radius: 4px;
-    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-                0 8px 10px 1px rgba(0, 0, 0, 0.14),
-                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }

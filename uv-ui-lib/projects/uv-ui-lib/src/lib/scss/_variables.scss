@@ -1,77 +1,41 @@
 @font-face {
     font-family: 'Noto Sans';
-    src: url("https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Regular.ttf") format("truetype");
+    src: url('https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Regular.ttf') format('truetype');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Noto Sans';
-    src: url("https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Medium.ttf") format("truetype");
+    src: url('https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Medium.ttf') format('truetype');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'Noto Sans';
-    src: url("https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-SemiBold.ttf") format("truetype");
+    src: url('https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-SemiBold.ttf') format('truetype');
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'Noto Sans';
-    src: url("https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Bold.ttf") format("truetype");
+    src: url('https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Bold.ttf') format('truetype');
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'Noto Sans';
-    src: url("https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Italic.ttf") format("truetype");
+    src: url('https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Italic.ttf') format('truetype');
     font-style: italic;
 }
 
 :root {
-    --uv-font-family: 'Noto Sans', sans-serif;
     --uv-font-bold: 700;
     --uv-font-semibold: 600;
     --uv-font-medium-bold: 500;
 
     //colors
-    --uv-color-primary: var(--uv-color-blue);
-    --uv-color-primary-active: var(--uv-color-blue-2);
-    --uv-color-primary-hover: var(--uv-color-blue-3);
-    --uv-color-primary-light: var(--uv-color-blue-4);
-    --uv-color-success: #03a474;
-    --uv-color-success-active: #007b56;
-    --uv-color-success-light: #D6F0E9;
-    --uv-color-danger: #E28003;
-    --uv-color-danger-light: #FAEAD6;
-    --uv-color-help: var(--uv-color-purple);
-    --uv-color-help-active: var(--uv-color-purple);
-    --uv-font-color: var(--uv-color-black);
-    --uv-font-color-secondary: var(--uv-color-gray-dark);
-    --uv-scrollbar-color: var(--uv-color-gray-light-5);
-    --uv-background-color: var(--uv-color-gray-light-2);
-    --uv-svg-color-gray: var(--uv-color-gray);
-    --uv-border-color-gray: var(--uv-color-gray-2);
-
-    --uv-color-blue: #00A3E5;
-    --uv-color-blue-2:#0375a4;
-    --uv-color-blue-3: rgba(0,163,229,0.08);
-    --uv-color-blue-4: rgba(0, 164, 229, 0.248);
-    --uv-color-purple: #83439A;
-    --uv-color-white: #ffffff;
-    --uv-color-white-2: rgba(251, 251, 251, 0.9);
-    --uv-color-gray: #D2D2D6;
-    --uv-color-gray-2: #dddddd;
-    --uv-color-gray-3: #DBDBDB;
-    --uv-color-gray-4: #4a4a4a;
-    --uv-color-gray-dark: #6E6D7A;
-    --uv-color-gray-light: #F3F3F4;
-    --uv-color-gray-light-2: #f1f1f1;
-    --uv-color-gray-light-3: #f7f7f7;
-    --uv-color-gray-light-4: #EDEDEE;
-    --uv-color-gray-light-5: #E7E7E9;
-    --uv-color-gray-light-6: #F9F9F9;
-    --uv-color-black: #0D0C22;
+    --uv-color-help: #83439a;
+    --uv-color-help-active: #83439a;
 
     //sizes
     --uv-header-height: 64px;
@@ -86,11 +50,11 @@
     --uv-box-shadow: 0 2px 12px 0 rgba(234, 234, 234, 0.5);
     --uv-box-shadow-2: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
     --uv-box-shadow-3: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
-    --uv-box-shadow-4: 0 4px 16px 0 rgba(0,0,0,0.16);
+    --uv-box-shadow-4: 0 4px 16px 0 rgba(0, 0, 0, 0.16);
     --uv-box-shadow-hover: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
     --uv-box-shadow-hover-2: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
-    --uv-box-shadow-big: 0 24px 144px 0 rgba(0,0,0,0.12);
-    --uv-border-gray: 1px solid var(--uv-border-color-gray);
+    --uv-box-shadow-big: 0 24px 144px 0 rgba(0, 0, 0, 0.12);
+    --uv-border-gray: 1px solid var(--pl-border-color);
     --uv-linear-gradient: linear-gradient(180deg, #84439971 0%, #4acaf571 100%);
 
     //typography
@@ -137,15 +101,23 @@
     //     @media (max-width: 56.25em) { @content }; //900px
     // }
     @if $breakpoint == tab-land {
-        @media (max-width: 1200px) { @content };
+        @media (max-width: 1200px) {
+            @content;
+        }
     }
     @if $breakpoint == small-desktop-height {
-        @media (max-height: 800px) { @content };
+        @media (max-height: 800px) {
+            @content;
+        }
     }
     @if $breakpoint == small-desktop-width {
-        @media (max-width: 1200px) { @content }; 
+        @media (max-width: 1200px) {
+            @content;
+        }
     }
     @if $breakpoint == big-desktop-height {
-        @media (min-height: 800px) { @content }; 
+        @media (min-height: 800px) {
+            @content;
+        }
     }
 }

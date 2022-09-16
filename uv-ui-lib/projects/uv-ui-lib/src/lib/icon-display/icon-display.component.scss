@@ -6,11 +6,11 @@
     padding: 8px;
 
     &:hover {
-        color: var(--uv-color-primary);
+        color: var(--pl-primary);
     }
 }
 
 .container {
-height: calc(100vh - 64px);
-overflow: auto;
+    height: calc(100vh - 64px);
+    overflow: auto;
 }

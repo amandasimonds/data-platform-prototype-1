@@ -4,7 +4,7 @@
     position: relative;
 
     &-first {
-        margin-top:18px;
+        margin-top: 18px;
     }
 }
 
@@ -17,12 +17,12 @@
 
     &-notDragging-hover {
         &:hover {
-            background-color: var(--uv-color-gray-light);
+            background-color: var(--pl-base-02);
         }
     }
 
     &-selected {
-        background-color: var(--uv-color-gray-light);
+        background-color: var(--pl-base-02);
     }
 }
 
@@ -53,12 +53,12 @@
 // }
 
 .select-item-drag-preview {
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
     border: var(--uv-border-gray);
     border-radius: 4px;
     padding: 2px 8px;
     font-weight: bold;
-    color: var(--uv-color-primary);
+    color: var(--pl-primary);
     display: inline-block;
     // width: 30px;
     line-height: 30px;

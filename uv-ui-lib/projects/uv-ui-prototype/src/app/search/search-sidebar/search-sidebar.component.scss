@@ -8,17 +8,17 @@
     animation-duration: 0.6s;
     animation-timing-function: ease-in-out;
     width: 431px;
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
 
     &-top {
         position: relative;
         z-index: auto;
-        background-color: var(--uv-color-white);
+        background-color: var(--pl-base-01);
     }
 
     &-header {
         padding: 20px 28px 38px 32px;
-        background-color: var(--uv-color-white);
+        background-color: var(--pl-base-01);
         height: 50px;
         white-space: nowrap;
         overflow: hidden;
@@ -27,7 +27,7 @@
     }
 
     &-scroll {
-        background-color: var(--uv-color-white);
+        background-color: var(--pl-base-01);
         padding-top: 10px;
         overflow: auto;
         position: relative;

@@ -2,7 +2,7 @@
     border-radius: 2px;
     margin: 8px 0 auto;
     transition: all 0.2s;
-    background-color: var(--uv-color-white-2);
+    background-color: var(--pl-base-06);
 
     &-top {
         padding: 16px;
@@ -10,7 +10,7 @@
 
     &-bottom {
         padding: 6px 16px;
-        background-color: var(--uv-color-gray-light-3);
+        background-color: var(--pl-base-06);
 
         &-details-container {
             position: relative;
@@ -35,7 +35,7 @@
             display: inline-block;
 
             &:hover {
-                background-color: var(--uv-color-gray-light);
+                background-color: var(--pl-base-02);
             }
         }
     }
@@ -44,35 +44,36 @@
         cursor: pointer;
         box-shadow: var(--uv-box-shadow-hover);
         transform: translateY(-1px);
-        background-color: var(--uv-color-white);
+        background-color: var(--pl-base-01);
 
-        .options-button, 
+        .options-button,
         .sbs-document-card-bottom-show-more {
             opacity: 1;
         }
 
         .sbs-document-card-top-document-heading {
             p {
-                color: var(--uv-color-primary);
+                color: var(--pl-primary);
             }
         }
     }
 
     &-active {
         box-shadow: var(--uv-box-shadow-hover);
-        background-color: var(--uv-color-white);
+        background-color: var(--pl-base-01);
     }
 
-    &-disabled, 
+    &-disabled,
     &-disabled:hover {
         cursor: not-allowed;
         transform: none;
-        color: var(--uv-color-gray-dark);
-        background-color: var(--uv-color-white-2);
+        color: var(--pl-text-color-02);
+        background-color: var(--pl-base-02);
         box-shadow: none;
         pointer-events: none;
 
-        .options-button, .sbs-document-card-bottom-show-more {
+        .options-button,
+        .sbs-document-card-bottom-show-more {
             opacity: 0;
         }
 
@@ -94,12 +95,12 @@
     text-align: center;
 
     &-success {
-        color: var(--uv-color-success);
-        background-color: var(--uv-color-success-light);
+        color: var(--pl-secondary);
+        background-color: var(--pl-secondary-support-02);
     }
 
     &-danger {
-        color: var(--uv-color-danger);
-        background-color: var(--uv-color-danger-light);
+        color: var(--pl-warn);
+        background-color: var(--pl-warn-support-02);
     }
 }

@@ -2,7 +2,7 @@
     padding: 12px 0;
     opacity: 1;
     position: absolute;
-    color: var(--uv-color-black);
+    color: var(--pl-base-05);
     text-align: left;
     width: 125px;
     max-width: 200px;
@@ -17,7 +17,7 @@
         padding: 4px 8px;
 
         &:hover {
-            background-color: var(--uv-color-gray-light-2);
+            background-color: var(--pl-base-02);
         }
     }
 

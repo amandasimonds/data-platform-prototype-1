@@ -8,9 +8,9 @@
     height: auto;
     width: 100%;
     user-select: none;
-    display: inline-block;  
+    display: inline-block;
     box-shadow: var(--uv-box-shadow);
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
     padding-top: 12px;
     margin: 32px;
 
@@ -24,14 +24,18 @@
         .table-row {
             @extend %columnRowBaseStyles;
             background-color: white;
-            &:nth-child(odd) {background:  rgba(0,0,0,0.1)}
+            &:nth-child(odd) {
+                background: rgba(0, 0, 0, 0.1);
+            }
             cursor: pointer;
 
             .row {
-                &:first-child {margin: 0 0 0 32px;}
+                &:first-child {
+                    margin: 0 0 0 32px;
+                }
                 flex: 1;
                 font-size: var(--uv-font-size-xs);
-                color: var(--uv-font-color-secondary);
+                color: var(--pl-text-color-02);
             }
         }
 
@@ -40,7 +44,9 @@
             background-color: white;
             cursor: pointer;
             .column {
-                &:first-child {margin: 0 0 0 32px;}
+                &:first-child {
+                    margin: 0 0 0 32px;
+                }
                 flex: 1;
                 font-weight: var(--uv-font-bold);
             }

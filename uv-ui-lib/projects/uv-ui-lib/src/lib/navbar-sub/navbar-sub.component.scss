@@ -2,7 +2,7 @@
     height: 100%;
     position: relative;
     border-right: var(--uv-border-gray);
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
     box-shadow: var(--uv-box-shadow);
     width: var(--uv-navbar-width);
     transition: width 0.5s;
@@ -18,14 +18,14 @@
 
     &-arrow {
         padding: 6px 8px;
-        background-color: var(--uv-color-white);
+        background-color: var(--pl-base-01);
     }
 }
 
 .content {
     transition-property: opacity;
     transition-delay: 250ms, 250ms;
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
     opacity: 0;
     visibility: hidden;
 
@@ -46,6 +46,6 @@
 
     &-right-side {
         position: absolute;
-        top:28px;
+        top: 28px;
     }
 }

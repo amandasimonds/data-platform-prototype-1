@@ -1,74 +1,64 @@
-import { Meta, Story, ArgsTable, Source, Typeset, Preview, Canvas } from '@storybook/addon-docs/blocks';
-import dedent from 'ts-dedent';
+import { Meta, Story, ArgsTable, Source, Typeset, Preview, Canvas } from '@storybook/addon-docs/blocks'
+import dedent from 'ts-dedent'
 
-<Meta
-  title='Theme/Colors'
-/>
+<Meta title="Theme/Colors" />
 
 # Colors
 
 export const Colors = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  template: 
-    `
+    props: Object.keys(argTypes),
+    template: `
     <div class="flex">
         <div class="flex flex-column margin-right-md">
             <h3 class="margin-bottom-xs">Color Theme Variables</h3>
-            <div class="color-preview" style="background-color: var(--uv-color-primary);">--uv-color-primary</div>
+            <div class="color-preview" style="background-color: var(--pl-primary);">--pl-primary</div>
             <div class="color-preview" style="background-color: var(--uv-scrollbar-color);">--uv-scrollbar-color</div>
-            <div class="color-preview" style="background-color: var(--uv-background-color);">--uv-background-color</div>
+            <div class="color-preview" style="background-color: var(--pl-base-02);">--pl-base-02</div>
             <div class="color-preview" style="background-color: var(--uv-svg-color-gray);">--uv-svg-color-gray</div>
-            <div class="color-preview" style="background-color: var(--uv-border-color-gray);">--uv-border-color-gray</div>
-            <div class="color-preview" style="color: var(--uv-font-color);">--uv-font-color</div>
+            <div class="color-preview" style="background-color: var(--pl-border-color);">--pl-border-color</div>
+            <div class="color-preview" style="color: var(--pl-text-color-01);">--pl-text-color-01</div>
         </div>
         <div class="flex flex-column margin-left-md">
             <h3 class="margin-bottom-xs">Color Variables</h3>
-            <div class="color-preview" style="background-color: var(--uv-color-primary);">--uv-color-primary</div>
-            <div class="color-preview" style="background-color: var(--uv-color-gray-light);">--uv-color-gray-light</div>
-            <div class="color-preview" style="background-color: var(--uv-color-gray-light-2);">--uv-color-gray-light-2</div>
-            <div class="color-preview" style="background-color: var(--uv-color-gray);">--uv-color-gray</div>
-            <div class="color-preview" style="background-color: var(--uv-color-gray-2);">--uv-color-gray-2</div>
-            <div class="color-preview" style="background-color: var(--uv-color-gray-dark);">--uv-color-gray-dark</div>
+            <div class="color-preview" style="background-color: var(--pl-primary);">--pl-primary</div>
+            <div class="color-preview" style="background-color: var(--pl-base-02);">--pl-base-02</div>
+            <div class="color-preview" style="background-color: var(--pl-base-02);">--pl-base-02</div>
+            <div class="color-preview" style="background-color: var(--pl-base-02);">--pl-base-02</div>
+            <div class="color-preview" style="background-color: var(--pl-base-03);">--pl-base-03</div>
+            <div class="color-preview" style="background-color: var(--pl-text-color-02);">--pl-text-color-02</div>
         </div>
     </div>
-    `
-});
+    `,
+})
 
 <Canvas>
-  <Story
-    name="Colors"
-    height="400px"
-  >
-    { Colors.bind({}) }
-  </Story>
+    <Story name="Colors" height="400px">
+        {Colors.bind({})}
+    </Story>
 </Canvas>
 
 <Source
-  language='html'
-  code={dedent
-    `
+    language="html"
+    code={dedent`
        <div class="flex">
         <div class="flex flex-column margin-right-md">
             <h3 class="margin-bottom-xs">Color Theme Variables</h3>
-            <div class="color-preview" style="background-color: var(--uv-color-primary);">--uv-color-primary</div>
+            <div class="color-preview" style="background-color: var(--pl-primary);">--pl-primary</div>
             <div class="color-preview" style="background-color: var(--uv-scrollbar-color);">--uv-scrollbar-color</div>
-            <div class="color-preview" style="background-color: var(--uv-background-color);">--uv-background-color</div>
+            <div class="color-preview" style="background-color: var(--pl-base-02);">--pl-base-02</div>
             <div class="color-preview" style="background-color: var(--uv-svg-color-gray);">--uv-svg-color-gray</div>
-            <div class="color-preview" style="background-color: var(--uv-border-color-gray);">--uv-border-color-gray</div>
-            <div class="color-preview" style="color: var(--uv-font-color);">--uv-font-color</div>
+            <div class="color-preview" style="background-color: var(--pl-border-color);">--pl-border-color</div>
+            <div class="color-preview" style="color: var(--pl-text-color-01);">--pl-text-color-01</div>
         </div>
         <div class="flex flex-column margin-left-md">
             <h3 class="margin-bottom-xs">Color Variables</h3>
-            <div class="color-preview" style="background-color: var(--uv-color-primary);">--uv-color-primary</div>
-            <div class="color-preview" style="background-color: var(--uv-color-gray-light);">--uv-color-gray-light</div>
-            <div class="color-preview" style="background-color: var(--uv-color-gray-light-2);">--uv-color-gray-light-2</div>
-            <div class="color-preview" style="background-color: var(--uv-color-gray);">--uv-color-gray</div>
-            <div class="color-preview" style="background-color: var(--uv-color-gray-2);">--uv-color-gray-2</div>
-            <div class="color-preview" style="background-color: var(--uv-color-gray-dark);">--uv-color-gray-dark</div>
+            <div class="color-preview" style="background-color: var(--pl-primary);">--pl-primary</div>
+            <div class="color-preview" style="background-color: var(--pl-base-02);">--pl-base-02</div>
+            <div class="color-preview" style="background-color: var(--pl-base-02);">--pl-base-02</div>
+            <div class="color-preview" style="background-color: var(--pl-base-02);">--pl-base-02</div>
+            <div class="color-preview" style="background-color: var(--pl-base-03);">--pl-base-03</div>
+            <div class="color-preview" style="background-color: var(--pl-text-color-02);">--pl-text-color-02</div>
         </div>
     </div>
-    `
-  }
+    `}
 />
-
-

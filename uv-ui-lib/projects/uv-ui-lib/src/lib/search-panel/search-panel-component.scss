@@ -1,7 +1,7 @@
 .search-panel {
     width: 100%;
     height: 40px;
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
     padding-right: 12px;
 }
 
@@ -34,7 +34,7 @@
     border-top: 0;
     cursor: pointer;
     border-radius: 4px;
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
     box-shadow: var(--uv-box-shadow-2);
     overflow: auto;
 }

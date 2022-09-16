@@ -19,7 +19,7 @@
         width: var(--uv-sm-size);
         height: var(--uv-sm-size);
         vertical-align: middle;
-    
+
         &-xs {
             width: var(--uv-xs-size);
             height: var(--uv-xs-size);
@@ -44,33 +44,33 @@
 
 .black {
     color: var(--uv-svg-color-black);
-    
+
     &:hover {
-        color: var(--uv-color-primary);
+        color: var(--pl-primary);
     }
 }
 
 .gray {
     color: var(--uv-svg-color-gray);
-    
+
     &:hover {
-        color: var(--uv-color-primary);
+        color: var(--pl-primary);
     }
 }
 
 .gray-dark {
-    color: var(--uv-color-gray-dark);
-    
+    color: var(--pl-text-color-02);
+
     &:hover {
-        color: var(--uv-color-primary);
+        color: var(--pl-primary);
     }
 }
 
 .primary {
-    color: var(--uv-color-primary);
+    color: var(--pl-primary);
 
     &:hover {
-        color: var(--uv-color-primary-active);
+        color: var(--pl-primary-active);
     }
 }
 
@@ -93,8 +93,8 @@
 }
 
 .active {
-    color: var(--uv-color-primary-active);
-    background-color: var(--uv-color-gray-light);
+    color: var(--pl-primary-active);
+    background-color: var(--pl-base-02);
 }
 
 .secondary {
@@ -103,24 +103,24 @@
     font-weight: var(--uv-font-bold);
     height: 40px;
     width: 40px;
-    color: var(--uv-color-black);
-    background-color: var(--uv-color-white);
-    border: 1px solid var(--uv-color-gray-3);
+    color: var(--pl-base-05);
+    background-color: var(--pl-base-01);
+    border: 1px solid var(--pl-base-02);
 
     &.disabled {
-        color: var(--uv-color-white);
-            background-color: var(--uv-color-gray);
-            font-weight: none;
-            cursor: not-allowed;
-        &:hover{
-            color: var(--uv-color-white);
-            background-color: var(--uv-color-gray);
+        color: var(--pl-base-01);
+        background-color: var(--pl-base-02);
+        font-weight: none;
+        cursor: not-allowed;
+        &:hover {
+            color: var(--pl-base-01);
+            background-color: var(--pl-base-02);
             font-weight: none;
             cursor: not-allowed;
         }
     }
 
     &:hover {
-        background-color: var(--uv-color-gray-light);
+        background-color: var(--pl-base-02);
     }
 }

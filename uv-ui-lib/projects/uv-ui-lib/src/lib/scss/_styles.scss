@@ -26,21 +26,14 @@ svg {
 body {
     box-sizing: border-box;
     height: 100%;
-    background-color: var(--uv-background-color);
-    font-family: var(--uv-font-family);
+    background-color: var(--pl-base-02);
+    font-family: var(--pl-text-font);
 }
 
 .nav-icon {
     height: var(--uv-lg-size);
-    margin: 18px 8px 0px 8px;
-    border-radius: 50%;
-    padding: 10px;
-    display: flex;
-    white-space: nowrap;
-    justify-content: left;
-    transition-property: border-radius;
-    transition-delay: 0.2s;
-    transition-duration: 0.1s;
+    margin: 0 8px;
+    padding: 12px;
 
     & > * {
         display: inline-block;
@@ -51,23 +44,16 @@ body {
     }
 
     &-active {
-        background-color: rgba(0, 163, 229, 0.08);
+        background-color: var(--pl-primary-support-03);
 
         svg {
-            color: var(--uv-color-primary);
-        }
-
-        &-expanded {
-            margin: 18px 0 0 0;
-            padding-left: 18px;
-            border-radius: 0%;
-            transition-property: border-radius;
-            transition-delay: 0s;
+            color: var(--pl-primary);
         }
     }
 
     &:hover {
-        background-color: rgba(0, 163, 229, 0.08);
+        color: var(--pl-primary);
+        cursor: pointer;
     }
 
     img,
@@ -80,7 +66,7 @@ body {
 // FORM
 textarea {
     outline: none;
-    font-family: var(--uv-font-family);
+    font-family: var(--pl-text-font);
     font-size: var(--uv-font-size-sm);
     padding: var(--uv-xs-size);
     border: var(--uv-border-gray);
@@ -94,12 +80,12 @@ textarea {
 .xng-breadcrumb-root {
     font-weight: var(--uv-font-semibold) !important;
     font-size: var(--uv-font-size-sm) !important;
-    color: var(--uv-color-black) !important;
+    color: var(--pl-base-05) !important;
 }
 
 .xng-breadcrumb-separator {
     &:hover {
-        color: var(--uv-color-primary) !important;
+        color: var(--pl-primary) !important;
         cursor: pointer;
     }
 }
@@ -107,42 +93,22 @@ textarea {
 .xng-breadcrumb-item {
     font-weight: var(--uv-font-semibold) !important;
     font-size: var(--uv-font-size-sm) !important;
-    color: var(--uv-color-black) !important;
+    color: var(--pl-base-05) !important;
 }
 
 .xng-breadcrumb-link {
     font-weight: var(--uv-font-semibold) !important;
     font-size: var(--uv-font-size-sm) !important;
-    color: var(--uv-color-black) !important;
+    color: var(--pl-base-05) !important;
 
     &:hover {
         text-decoration: none !important;
-        color: var(--uv-color-primary) !important;
+        color: var(--pl-primary) !important;
     }
 }
 
 .xng-breadcrumb-trail {
     font-weight: var(--uv-font-semibold) !important;
     font-size: var(--uv-font-size-sm) !important;
-    color: var(--uv-color-black) !important;
+    color: var(--pl-base-05) !important;
 }
-
-// .launch-bar {
-//     position: absolute;
-//     padding: 10px 12px;
-//     display: flex;
-//     align-items: center;
-//     // justify-content: space-between;
-//     gap: 12px;
-//     border-radius: 4px;
-//     box-shadow: var(--uv-box-shadow-hover-2);
-//     background-color: var(--uv-color-white);
-//     // z-index: var(--uv-z-index-navbar);
-
-//     // uvx-icon-button {
-//     //     &:hover {
-//     //         background-color: var(--uv-color-gray-light);
-//     //         color: var(--uv-color-primary);
-//     //     }
-//     // }
-// }

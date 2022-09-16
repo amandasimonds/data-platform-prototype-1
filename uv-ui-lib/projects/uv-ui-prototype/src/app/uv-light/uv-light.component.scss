@@ -1,7 +1,7 @@
 .uv-light-modal {
     position: absolute;
     z-index: 999999;
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
     width: 238px;
     top: 32px;
     right: 100px;
@@ -23,18 +23,17 @@
 
     &:hover {
         cursor: pointer;
-        
     }
 }
 
-@keyframes pulse { 
-    0% {  
-        background: var(--uv-color-white); 
+@keyframes pulse {
+    0% {
+        background: var(--pl-base-01);
     }
-    50% { 
-        background: var(--uv-color-help);  
+    50% {
+        background: var(--uv-color-help);
     }
-    100% { 
-        background: var(--uv-color-white);  
+    100% {
+        background: var(--pl-base-01);
     }
 }

@@ -1,7 +1,7 @@
 .source-document-container {
     padding: 32px 24px 32px 32px;
     overflow: auto;
-    border-right: 1px solid var(--uv-border-color-gray);
+    border-right: 1px solid var(--pl-border-color);
     height: calc(100vh - 190px);
 }
 
@@ -17,7 +17,7 @@
 }
 
 .sbs-highlight {
-    background-color: rgba(0,163,229,0.12);
+    background-color: rgba(0, 163, 229, 0.12);
 }
 
 .doc-text {

@@ -1,49 +1,49 @@
-import { setCompodocJson } from "@storybook/addon-docs/angular";
-import '!style-loader!css-loader!sass-loader!./../projects/uv-ui-lib/src/lib/scss/_styles.scss';
-import '!style-loader!css-loader!sass-loader!./styles.scss';
-import docJson from "../documentation.json";
-setCompodocJson(docJson);
+import { setCompodocJson } from '@storybook/addon-docs/angular'
+import '!style-loader!css-loader!sass-loader!./../projects/uv-ui-lib/src/lib/scss/_styles.scss'
+import '!style-loader!css-loader!sass-loader!./styles.scss'
+import docJson from '../documentation.json'
+setCompodocJson(docJson)
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  backgrounds: {
-    default: 'light',
-    values: [
-      {
-        name: 'light',
-        value: 'white',
-      },
-      {
-        name: 'gray',
-        value: 'var(--uv-background-color)',
-      },
-      {
-        name: 'dark',
-        value: 'var(--uv-background-color)',
-      },
-    ],
-  },
-  options: {
-    storySort: {
-      order: [
-          'Intro', 
-          'Theme', 
-          'Components', [
-              'Action Bar', 
-              'Buttons', [
-                  'Button'
-                ], 
-                'Card', 
-                'Checkbox',
-                'Dropdown', 
-                'Header', 
-                'Input',
-                'Navbar', 
-                'Search', 
-                'Side Panel', 
-                'Tab'
-            ]
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    backgrounds: {
+        default: 'light',
+        values: [
+            {
+                name: 'light',
+                value: 'white',
+            },
+            {
+                name: 'gray',
+                value: 'var(--pl-base-02)',
+            },
+            {
+                name: 'dark',
+                value: 'var(--pl-base-02)',
+            },
         ],
     },
-  },
+    options: {
+        storySort: {
+            order: [
+                'Intro',
+                'Theme',
+                'Components',
+                [
+                    'Action Bar',
+                    'Buttons',
+                    ['Button'],
+                    'Card',
+                    'Checkbox',
+                    'Dropdown',
+                    'Header',
+                    'Input',
+                    'Navbar',
+                    'Search',
+                    'Side Panel',
+                    'Tab',
+                ],
+            ],
+        },
+    },
 }
