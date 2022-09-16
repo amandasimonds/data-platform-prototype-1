@@ -1,13 +1,13 @@
 .sbs {
     &-tag {
-        background-color: var(--uv-color-gray-light-4);
+        background-color: var(--pl-base-02);
         padding: 4px 8px;
         border-radius: 4px;
         margin: 2px 2px 0 0;
         display: inline-flex;
 
         &:hover {
-            background-color: var(--uv-color-gray-3);
+            background-color: var(--pl-base-02);
         }
     }
 
@@ -22,9 +22,9 @@
         height: 2.5rem;
 
         &-selection:hover {
-            border: 1px solid var(--uv-color-gray-light);
+            border: 1px solid var(--pl-base-02);
             cursor: pointer;
-            background-color: var(--uv-color-gray-light);
+            background-color: var(--pl-base-02);
         }
 
         &-with-icon {
@@ -34,7 +34,7 @@
 
     &-chip {
         border: var(--uv-border-gray);
-        background-color: var(--uv-color-white);
+        background-color: var(--pl-base-01);
         border-radius: 50%;
         width: 32px;
         height: 32px;
@@ -74,5 +74,5 @@
     right: 16px;
     border-radius: 4px;
     box-shadow: var(--uv-box-shadow-hover-2);
-    transition: all .3s;
+    transition: all 0.3s;
 }

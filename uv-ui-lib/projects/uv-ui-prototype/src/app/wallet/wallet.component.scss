@@ -1,5 +1,5 @@
 .wallet-wrap {
-    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.16));
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.16));
     position: absolute;
     top: 46px;
     right: 25px;
@@ -11,13 +11,13 @@
     left: 40%;
     width: 40px;
     height: 20px;
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
 }
 
 .wallet {
     text-align: left;
     width: auto;
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
     border-radius: 4px;
 }
 
@@ -25,6 +25,6 @@
     padding: 8px 36px;
     &:hover {
         cursor: pointer;
-        background-color: var(--uv-color-gray-light);
+        background-color: var(--pl-base-02);
     }
 }

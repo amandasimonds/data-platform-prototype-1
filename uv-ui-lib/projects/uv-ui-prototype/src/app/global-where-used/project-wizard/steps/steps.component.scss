@@ -50,7 +50,7 @@
 
     &-fullscreen {
         flex-direction: column;
-        align-items:flex-start;
+        align-items: flex-start;
         justify-content: space-between;
         padding: 0.5rem 0;
     }
@@ -58,11 +58,10 @@
     @include respond(small-desktop-height) {
         flex-direction: column;
         height: 100%;
-        align-items:flex-start;
+        align-items: flex-start;
         justify-content: space-between;
         padding: 0.5rem 0;
     }
-    
 }
 
 .step-bubble {
@@ -72,9 +71,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid var(--uv-color-gray-2);
+    border: 2px solid var(--pl-base-03);
     border-radius: 50%;
-    color: var(--uv-color-gray-dark);
+    color: var(--pl-text-color-02);
     font-size: 1em;
     cursor: pointer;
     user-select: none;
@@ -83,7 +82,7 @@
 
 .step-divider {
     height: 2px;
-    background: var(--uv-color-gray-2);
+    background: var(--pl-base-03);
     flex: 1;
 
     &-fullscreen {
@@ -99,14 +98,14 @@
 }
 
 .step-current {
-    background: var(--uv-color-primary);
-    color: var(--uv-color-white);
+    background: var(--pl-primary);
+    color: var(--pl-base-01);
     font-weight: var(--uv-font-bold);
-    border: 2px solid var(--uv-color-primary);
+    border: 2px solid var(--pl-primary);
 }
 
 .step-complete {
-    background-color: var(--uv-color-success);
-    border: 2px solid var(--uv-color-success);
-    color: var(--uv-color-white);
+    background-color: var(--pl-secondary);
+    border: 2px solid var(--pl-secondary);
+    color: var(--pl-base-01);
 }

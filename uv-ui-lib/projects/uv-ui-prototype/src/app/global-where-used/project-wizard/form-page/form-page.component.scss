@@ -11,7 +11,7 @@
             border-bottom: var(--uv-border-gray);
             box-shadow: var(--uv-box-shadow);
             padding: 18px 32px;
-            background-color: var(--uv-color-gray-light-6);
+            background-color: var(--pl-base-06);
         }
 
         @include respond(small-desktop-height) {
@@ -36,7 +36,7 @@
 
     &-bottom {
         padding: 32px;
-        background-color: var(--uv-color-white);
+        background-color: var(--pl-base-01);
         @include respond(small-desktop-height) {
             padding: 18px;
         }
@@ -86,7 +86,7 @@
 }
 
 .fullscreen-bg {
-    background-color: var(--uv-color-gray-light-6);
+    background-color: var(--pl-base-06);
 }
 
 .total-results-container {

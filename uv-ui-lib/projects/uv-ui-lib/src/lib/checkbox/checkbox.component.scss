@@ -6,7 +6,7 @@
     height: 16px;
     width: 16px;
     box-sizing: border-box;
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
     border: var(--uv-border-gray);
     border-radius: 3px;
     cursor: pointer;
@@ -21,7 +21,7 @@
     vertical-align: middle;
 
     &-shape {
-        color: var(--uv-color-white);
+        color: var(--pl-base-01);
         position: relative;
         right: 2.75px;
         top: -2.5px;
@@ -39,11 +39,11 @@
         visibility: visible;
     }
 
-    background-color: var(--uv-color-primary);
+    background-color: var(--pl-primary);
     border: 1px solid rgba(255, 255, 255, 0);
 }
 
 .disabled {
     cursor: not-allowed;
-    color: var(--uv-color-gray);
+    color: var(--pl-base-02);
 }

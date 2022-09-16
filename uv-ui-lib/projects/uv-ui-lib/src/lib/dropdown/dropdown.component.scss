@@ -8,19 +8,34 @@
 //     vertical-align: baseline;
 // }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
 body {
     line-height: 1;
 }
-ol, ul {
+ol,
+ul {
     list-style: none;
 }
-blockquote, q {
+blockquote,
+q {
     quotes: none;
 }
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: '';
     content: none;
 }
@@ -39,7 +54,7 @@ table {
     display: flex;
     align-items: center;
     height: 40px;
-    background-color: var(--uv-color-white);
+    background-color: var(--pl-base-01);
 
     &-border {
         border: var(--uv-border-gray);
@@ -78,12 +93,11 @@ table {
     // pointer-events: none;
     z-index: var(--uv-z-index-search-sidebar-dropdown);
     border-radius: 4px;
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2);
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
 }
 .select.open .custom-options {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
 }
-

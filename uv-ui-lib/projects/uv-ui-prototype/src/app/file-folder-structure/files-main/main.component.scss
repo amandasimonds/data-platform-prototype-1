@@ -1,6 +1,6 @@
 .file {
-    border: 1px solid var(--uv-color-gray);
-    background-color: var(--uv-color-white);
+    border: 1px solid var(--pl-base-02);
+    background-color: var(--pl-base-01);
     border-radius: 2px;
     cursor: pointer;
     width: 165px;
@@ -8,10 +8,10 @@
 
     &:hover {
         box-shadow: var(--uv-box-shadow);
-        background-color: var(--uv-color-gray-light-2);
+        background-color: var(--pl-base-02);
 
         svg {
-            color: var(--uv-color-primary);
+            color: var(--pl-primary);
         }
     }
 
@@ -25,7 +25,7 @@
     position: relative;
 
     &-menu {
-        color: var(--uv-color-black);
+        color: var(--pl-base-05);
         text-align: left;
         width: max-content;
         max-width: 324px;

@@ -6,41 +6,41 @@
 
     &:hover {
         .task-selection-button {
-            background-color: var(--uv-color-gray-light);
-            border: 2px solid var(--uv-color-gray-light);
+            background-color: var(--pl-base-02);
+            border: 2px solid var(--pl-base-02);
             cursor: pointer;
 
             ::ng-deep {
                 & > * {
-                    color: var(--uv-color-primary);
+                    color: var(--pl-primary);
                 }
             }
         }
         p {
-            color: var(--uv-color-primary)
+            color: var(--pl-primary);
         }
     }
 
     &-button {
-        border: 2px solid var(--uv-color-gray-2);
+        border: 2px solid var(--pl-base-03);
         padding: 1.5rem;
         border-radius: 50%;
-    
+
         &-selected {
-            background-color: var(--uv-color-gray-light);
-            border: 2px solid var(--uv-color-gray-light);
+            background-color: var(--pl-base-02);
+            border: 2px solid var(--pl-base-02);
             cursor: pointer;
 
             ::ng-deep {
                 & > * {
-                    color: var(--uv-color-primary);
+                    color: var(--pl-primary);
                 }
             }
         }
     }
 
     &-selected {
-        color: var(--uv-color-primary)
+        color: var(--pl-primary);
     }
 }
 
@@ -56,6 +56,6 @@
     padding: 8px 16px;
 
     &:hover {
-        background-color: var(--uv-color-gray-light);
+        background-color: var(--pl-base-02);
     }
 }

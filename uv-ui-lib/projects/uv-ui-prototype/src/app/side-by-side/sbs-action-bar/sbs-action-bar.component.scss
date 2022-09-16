@@ -6,7 +6,7 @@
         height: min-content;
 
         &:hover {
-            background-color: var(--uv-color-gray-light);
+            background-color: var(--pl-base-02);
         }
     }
 
@@ -27,7 +27,7 @@
     overflow: hidden;
     gap: 4px;
     min-width: 0;
-    
+
     &-expanded {
         height: auto;
     }

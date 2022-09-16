@@ -5,20 +5,19 @@
     top: -100px;
     z-index: var(--uv-z-index-navbar);
     left: 50%;
-    background-color: var(--uv-color-success);
+    background-color: var(--pl-secondary);
     transform: translateX(-50%);
     transition: 1s all;
     border-radius: 4px;
     box-shadow: var(--uv-box-shadow);
 
     &-visible {
-        top:10px;
+        top: 10px;
     }
 
     &-text {
-        color: var(--uv-color-white);
+        color: var(--pl-base-01);
     }
-    
 }
 
 .toast > img {

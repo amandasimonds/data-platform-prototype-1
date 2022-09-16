@@ -13,7 +13,7 @@ export const navItems = [
         active: false,
         navlink: 'gwu',
         disabled: false,
-        tooltip: 'Global Where Used'
+        tooltip: 'Atlas'
     },
     {
         app: 'sbs',
@@ -21,7 +21,7 @@ export const navItems = [
         active: false,
         navlink: 'sbs',
         disabled: false,
-        tooltip: 'Side By Side'
+        tooltip: 'Fusion'
     },
     {
         app: 'design-ripple',
@@ -53,11 +53,4 @@ export const navItems = [
         navlink: 'settings',
         tooltip: 'Settings'
     }
-    // {
-    //     app: 'search',
-    //     icon: 'search',
-    //     active: false,
-    //     navlink: null,
-    //     tooltip: 'Global Search'
-    // }
 ];

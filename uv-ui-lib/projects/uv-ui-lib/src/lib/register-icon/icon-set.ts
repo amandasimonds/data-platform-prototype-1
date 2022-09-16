@@ -719,7 +719,12 @@ export const ICON_SET: IconSetValue[] = [
     {
         name: 'recent_list',
         url: 'gwu/Recent list.svg'
-    }
+    },
+    {
+        name: 'aloka_logo_primary',
+        url: 'logos/Aloka Logo Primary.svg'
+    },
+
 ];
 
 export type UvxMatIconName = typeof ICON_SET[number]['name'];

@@ -7,7 +7,7 @@
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: 8px; 
+    height: 8px;
     border-radius: 4px;
     outline: none;
 }
@@ -17,32 +17,32 @@
 }
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     appearance: none;
-    width: 16px; 
-    height: 16px; 
-    background: var(--uv-color-white); 
-    cursor: pointer; 
-    border: 4px solid var(--uv-color-primary);
+    width: 16px;
+    height: 16px;
+    background: var(--pl-base-01);
+    cursor: pointer;
+    border: 4px solid var(--pl-primary);
     border-radius: 50%;
 }
 
-.slider[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; 
+.slider[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
     appearance: none;
-    width: 16px; 
-    height: 16px; 
-    background: var(--uv-color-white); 
-    cursor: pointer; 
-    border: 4px solid var(--uv-color-primary);
+    width: 16px;
+    height: 16px;
+    background: var(--pl-base-01);
+    cursor: pointer;
+    border: 4px solid var(--pl-primary);
     border-radius: 50%;
 }
 
 .slider::-moz-range-thumb {
-    width: 16px; 
-    height: 16px; 
-    background: var(--uv-color-white); 
-    cursor: pointer; 
+    width: 16px;
+    height: 16px;
+    background: var(--pl-base-01);
+    cursor: pointer;
 }
 
 .slider-tooltip {
@@ -67,10 +67,10 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-input[type=number] {
+input[type='number'] {
     -moz-appearance: textfield;
 }
 
 .marker-active {
-color: var(--uv-color-primary);
+    color: var(--pl-primary);
 }
