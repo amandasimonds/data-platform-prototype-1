@@ -11,6 +11,11 @@
 }
 
 .container {
-    height: calc(100vh - 64px);
+    height: calc(100vh - 152px);
     overflow: auto;
+}
+
+.uv-body-sm {
+    font-size: 11px;
+    line-height: 16px;
 }
