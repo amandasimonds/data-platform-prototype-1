@@ -721,8 +721,20 @@ export const ICON_SET: IconSetValue[] = [
         url: 'gwu/Recent list.svg'
     },
     {
+        name: 'aloka_logo',
+        url: 'logos/Aloka Logo.svg'
+    },
+    {
         name: 'aloka_logo_primary',
         url: 'logos/Aloka Logo Primary.svg'
+    },
+    {
+        name: 'report_an_issue',
+        url: 'actions/Report an issue.svg'
+    },
+    {
+        name: 'security',
+        url: 'services/Security.svg'
     },
 
 ];
