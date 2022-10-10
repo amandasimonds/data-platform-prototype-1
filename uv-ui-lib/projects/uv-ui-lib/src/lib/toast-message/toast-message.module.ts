@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToastMessageComponent } from './toast-message.component';
-import { UvxIconModule } from '../uvx-icon/uvx-icon.module';
-
-
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [ToastMessageComponent],
   imports: [
-    UvxIconModule,
+    MatIconModule,
     CommonModule
   ],
   exports: [ToastMessageComponent]

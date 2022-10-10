@@ -2,7 +2,7 @@
     <uvx-action-bar class="w-100">
         <div left class="flex margin-top-xs margin-bottom-xs">
             <div *ngIf="isCreateConnector" class="flex align-items-center">
-                <uvx-icon icon="datalake" class="margin-right-xs"></uvx-icon>
+                <mat-icon svgIcon="datalake" class="margin-right-xs"></mat-icon>
                 <h4>New Data Lake Connector</h4>
             </div>
         </div>
@@ -14,18 +14,18 @@
                 color="primary" 
                 [disableRipple]="true"> 
                 <ng-template epdPlButtonIconTmp>
-                    <uvx-icon color="white" class="margin-right-xxs" icon="store"></uvx-icon>
+                    <mat-icon svgIcon="store"></mat-icon>
                 </ng-template>
                 <ng-template epdPlButtonDropdownItemTmp>
                     <div epd-pl-button-dropdown-item 
                     [routerLink]="['connector-creator']"
                     [queryParams]="{app: 'settings', service: 'connector-creator'}"
                     (click)="launchDataLakeConnectorCreator()">
-                    <uvx-icon icon="datalake"></uvx-icon>
+                    <mat-icon svgIcon="datalake"></mat-icon>
                         Data Lake Connector
                     </div>
                     <div epd-pl-button-dropdown-item>
-                        <uvx-icon icon="windchill"></uvx-icon>Windchill</div>
+                        <mat-icon svgIcon="windchill"></mat-icon>Windchill</div>
                 </ng-template>
             </epd-pl-button-dropdown>
         </div>

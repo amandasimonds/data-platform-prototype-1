@@ -14,6 +14,7 @@ import { FolderComponent } from './folder/folder.component';
 import { CreateFolderComponent } from './create-folder/create-folder.component';
 import { ClickOutsideModule } from '../shared/directives/click-outside/click-outside.module';
 import { OptionsMenuComponent } from './options-menu/options-menu.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { OptionsMenuComponent } from './options-menu/options-menu.component';
     TooltipModule,
     RangeSliderModule,
     SearchPanelModule,
+    MatIconModule,
     TextInputModule,
     FolderTreeIconModule,
     ModalModule,

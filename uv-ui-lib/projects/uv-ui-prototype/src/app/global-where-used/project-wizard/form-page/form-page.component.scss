@@ -9,7 +9,7 @@
 
         &-fullscreen {
             border-bottom: var(--uv-border-gray);
-            box-shadow: var(--uv-box-shadow);
+            box-shadow: var(--pl-shadow-01);
             padding: 18px 32px;
             background-color: var(--pl-base-06);
         }
@@ -63,7 +63,7 @@
 .app-steps-fullscreen {
     min-width: 182px;
     border-right: var(--uv-border-gray);
-    box-shadow: var(--uv-box-shadow);
+    box-shadow: var(--pl-shadow-01);
     display: flex;
     flex-direction: column;
     align-items: center;

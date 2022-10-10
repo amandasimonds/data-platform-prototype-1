@@ -1,33 +1,3 @@
-@font-face {
-    font-family: 'Noto Sans';
-    src: url('https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Regular.ttf') format('truetype');
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'Noto Sans';
-    src: url('https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Medium.ttf') format('truetype');
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: 'Noto Sans';
-    src: url('https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-}
-
-@font-face {
-    font-family: 'Noto Sans';
-    src: url('https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Bold.ttf') format('truetype');
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: 'Noto Sans';
-    src: url('https://dpzaq1wj21co3.cloudfront.net/fonts/Noto_Sans/NotoSans-Italic.ttf') format('truetype');
-    font-style: italic;
-}
-
 :root {
     --uv-font-bold: 700;
     --uv-font-semibold: 600;
@@ -47,13 +17,6 @@
     --uv-icon-bg: 400px;
 
     //styles
-    --uv-box-shadow: 0 2px 12px 0 rgba(234, 234, 234, 0.5);
-    --uv-box-shadow-2: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-    --uv-box-shadow-3: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
-    --uv-box-shadow-4: 0 4px 16px 0 rgba(0, 0, 0, 0.16);
-    --uv-box-shadow-hover: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
-    --uv-box-shadow-hover-2: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
-    --uv-box-shadow-big: 0 24px 144px 0 rgba(0, 0, 0, 0.12);
     --uv-border-gray: 1px solid var(--pl-border-color);
     --uv-linear-gradient: linear-gradient(180deg, #84439971 0%, #4acaf571 100%);
 
