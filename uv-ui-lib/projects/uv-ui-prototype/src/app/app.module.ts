@@ -12,7 +12,6 @@ import {
     NavbarModule,
     IconButtonModule,
     TabModule,
-    RegisterIconModule,
     UvxIconModule,
     BackdropModule,
     ModalModule,
@@ -20,8 +19,7 @@ import {
     TooltipModule,
     ExpandingMenuModule,
     NavbarSubModule,
-    ToastMessageModule,
-    ICON_SET
+    ToastMessageModule
 } from '../../../uv-ui-lib/src/public-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -67,6 +65,7 @@ import { CustomerCuAuthGuardService } from './auth/cummins-auth-guard.service';
 import { DevUTAuthGuardService } from './auth/DevUT-auth-guard.service copy';
 import { ProfileSlideOutModule } from './side-by-side/profile-slide-out/profile-slide-out.module';
 // import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
+import { RegisterIconModule as RegisterIconModuleEpd, ICON_SET as ICON_SET_EPD } from "epd-pattern-library";
 
 @NgModule({
     declarations: [
@@ -108,8 +107,7 @@ import { ProfileSlideOutModule } from './side-by-side/profile-slide-out/profile-
             echarts: () => import('echarts')
         }),
         ProfileSlideOutModule,
-        RegisterIconModule,
-        RegisterIconModule.forRoot(ICON_SET),
+        RegisterIconModuleEpd.forRoot(ICON_SET_EPD),
         SearchPanelModule,
         SearchSidebarModule,
         SettingsModule,

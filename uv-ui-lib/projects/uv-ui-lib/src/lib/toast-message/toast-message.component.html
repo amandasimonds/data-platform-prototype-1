@@ -1,7 +1,7 @@
 <div class="toast padding-xs flex justify-content-space-between align-items-center" [class.toast-visible]="displayToastMessage">
     <div class="flex gap-xxs align-items-center margin-right-sm">
-        <uvx-icon color="white" icon="success"></uvx-icon>
+        <mat-icon [ngStyle]="{'color':'white'}" svgIcon="success"></mat-icon>
         <p class="toast-text">{{ message }}</p>
     </div>
-    <uvx-icon class="pointer" color="white" icon="close" (click)="displayToastMessage = false"></uvx-icon>
+    <mat-icon class="pointer" [ngStyle]="{'color':'white'}" svgIcon="close" (click)="displayToastMessage = false"></mat-icon>
 </div>

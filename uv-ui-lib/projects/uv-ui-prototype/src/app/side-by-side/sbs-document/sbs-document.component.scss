@@ -42,7 +42,7 @@
 
     &:hover {
         cursor: pointer;
-        box-shadow: var(--uv-box-shadow-hover);
+        box-shadow: var(--pl-shadow-01);
         transform: translateY(-1px);
         background-color: var(--pl-base-01);
 
@@ -59,7 +59,7 @@
     }
 
     &-active {
-        box-shadow: var(--uv-box-shadow-hover);
+        box-shadow: var(--pl-shadow-01);
         background-color: var(--pl-base-01);
     }
 

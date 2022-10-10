@@ -12,11 +12,11 @@
             <p class="uv-body">{{item.description}}</p>
         </div>
         <div class="flex flex-row align-items-center">
-            <p class ="sbs-block uv-label-sbs margin-right-xs semibold">Not started</p>
+            <p class ="sbs-block margin-right-xs semibold">Not started</p>
             <div class="sbs-chips-container flex flex-row">
-                <span class ="sbs-chip uv-label-sbs">AD</span>
-                <span class ="sbs-chip uv-label-sbs">SF</span>
-                <span class ="sbs-chip uv-label-sbs">EF</span> 
+                <span class ="sbs-chip">AD</span>
+                <span class ="sbs-chip">SF</span>
+                <span class ="sbs-chip">EF</span> 
             </div>
         </div>
     </div>
@@ -28,11 +28,11 @@
         
         <div class="sbs-document-card-bottom-details-container" 
             [class.sbs-document-card-bottom-details-container-expanded]="item.showDetails">
-            <div *ngFor="let tag of item.tags" class="sbs-tag uv-label-sbs position-relative">
+            <div *ngFor="let tag of item.tags" class="sbs-tag position-relative">
                 {{tag}}
             </div>
             <div *ngIf="item.showDetails" class="margin-top-xs">
-                <p class="uv-label-sbs margin-bottom-xxs">Lorem ipsum dolor</p>
+                <p class="margin-bottom-xxs">Lorem ipsum dolor</p>
                 <p class="uv-body">
                     {{item.details}}
                 </p>

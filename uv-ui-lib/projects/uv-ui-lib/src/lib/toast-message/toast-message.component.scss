@@ -9,7 +9,7 @@
     transform: translateX(-50%);
     transition: 1s all;
     border-radius: 4px;
-    box-shadow: var(--uv-box-shadow);
+    box-shadow: var(--pl-shadow-01);
 
     &-visible {
         top: 10px;

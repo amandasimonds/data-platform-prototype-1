@@ -10,6 +10,7 @@ import { ConnectorCreatorComponent } from './connector-creator/connector-creator
 import { PositionElementDirective } from '../shared/position-element.directive';
 import { ConnectorCreatorService } from '../services/connector-creator.service';
 import { SettingsSubNavbarComponent } from './settings-sub-navbar/settings-sub-navbar.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SettingsSubNavbarComponent } from './settings-sub-navbar/settings-sub-n
     IconButtonModule,
     SettingsRoutingModule,
     UvxIconModule,
+    MatIconModule,
     TextInputModule,
     ActionBarModule,
     TooltipModule,
