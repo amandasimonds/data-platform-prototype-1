@@ -7,7 +7,6 @@ import {
     ICON_SET, 
     NavbarComponent, 
     HeaderComponent, 
-    RegisterIconModule, 
     HeaderModule, 
     NavbarModule } from '../projects/uv-ui-lib/src/public-api.ts';
 import dedent from 'ts-dedent';
@@ -16,7 +15,7 @@ import dedent from 'ts-dedent';
     title='Layouts/UI Shell'
     decorators={[
         moduleMetadata({
-            imports: [HeaderModule, IconButtonModule, NavbarModule, RegisterIconModule.forRoot(ICON_SET), RouterModule.forRoot([], { useHash: true }), RegisterIconModule.forRoot(ICON_SET)],
+            imports: [HeaderModule, IconButtonModule, NavbarModule, RouterModule.forRoot([], { useHash: true })],
             providers: [{provide: APP_BASE_HREF, useValue: '/'}],
         }),
     ]}

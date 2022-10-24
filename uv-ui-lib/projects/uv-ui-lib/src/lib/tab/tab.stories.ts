@@ -1,16 +1,11 @@
 import { componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
 import { Meta, Story } from '@storybook/angular/types-6-0';
-import { ICON_SET } from '../register-icon/icon-set';
-import { RegisterIconModule } from '../register-icon/register-icon.module';
 import { TabComponent } from './tab.component';
 
 export default {
     title: 'Components/Tab',
     component: TabComponent,
     decorators: [
-        moduleMetadata({
-            imports: [RegisterIconModule.forRoot(ICON_SET)]
-        }),
         componentWrapperDecorator((story) =>
             `
                 <div uvxRegisterIcon>

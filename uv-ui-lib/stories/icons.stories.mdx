@@ -3,7 +3,6 @@ import { moduleMetadata } from '@storybook/angular';
 import { 
     SidePanelModule, 
     TabModule, 
-    RegisterIconModule, 
     UvxIconModule, 
     ICON_SET, 
     CheckboxModule } from '../projects/uv-ui-lib/src/public-api.ts';
@@ -13,7 +12,7 @@ import dedent from 'ts-dedent';
   title='Theme/Icons'
   decorators={[
         moduleMetadata({
-            imports: [SidePanelModule, UvxIconModule, CheckboxModule, TabModule, RegisterIconModule.forRoot(ICON_SET)],
+            imports: [SidePanelModule, UvxIconModule, CheckboxModule, TabModule],
         }),
     ]}
 />

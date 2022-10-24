@@ -13,7 +13,6 @@ import {
     TabModule,
     UvxIconModule,
     ModalModule,
-    IconDisplayModule,
     TooltipModule,
     ExpandingMenuModule,
     NavbarSubModule,
@@ -63,7 +62,9 @@ import { CustomerCuAuthGuardService } from './auth/cummins-auth-guard.service';
 import { DevUTAuthGuardService } from './auth/DevUT-auth-guard.service copy';
 import { ProfileSlideOutModule } from './side-by-side/profile-slide-out/profile-slide-out.module';
 // import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
-import { RegisterIconModule as RegisterIconModuleEpd, ICON_SET as ICON_SET_EPD, ToastModule } from "epd-pattern-library";
+import { RegisterIconModule, ICON_SET as ICON_SET_EPD, ToastModule } from "epd-pattern-library";
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
     declarations: [
@@ -91,12 +92,13 @@ import { RegisterIconModule as RegisterIconModuleEpd, ICON_SET as ICON_SET_EPD, 
         // MatProgressSpinnerModule,
         HomeSplashModule,
         HttpClientModule,
+        FormsModule,
         FileFolderStructureModule,
         IconButtonModule,
-        IconDisplayModule,
         ModalModule,
         TooltipModule,
         SettingsMenuModule,
+        MatButtonModule,
         NavbarModule,
         NavbarSubModule,
         ExpandingMenuModule,
@@ -104,7 +106,7 @@ import { RegisterIconModule as RegisterIconModuleEpd, ICON_SET as ICON_SET_EPD, 
             echarts: () => import('echarts')
         }),
         ProfileSlideOutModule,
-        RegisterIconModuleEpd.forRoot(ICON_SET_EPD),
+        RegisterIconModule.forRoot(ICON_SET_EPD),
         SearchPanelModule,
         SearchSidebarModule,
         SettingsModule,
