@@ -1,10 +1,82 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ICON_SET } from 'epd-pattern-library';
+import { AppShellService } from '../../services/app-shell.service';
+
+export interface IconSetValue {
+  name: string;
+  url: string
+}
+
 
 @Component({
   selector: 'app-icon-display',
   templateUrl: './icon-display.component.html',
   styleUrls: ['./icon-display.component.scss']
 })
-export class IconDisplayComponent {
+export class IconDisplayComponent implements OnInit {
+
+  public icons = ICON_SET;
+  public sortedArray: IconSetValue[] = [];
+  public searchResults: IconSetValue[] = []
+  public searchText = '';
+
+  constructor(private ref: ChangeDetectorRef, private appShellService: AppShellService) {}
+
+  ngOnInit(): void {
+    this.sortArray('recent');
+    this.appShellService.setTitle("EPD PL Registry Icons");
+  }
+
+  ngAfterViewChecked(): void {
+    if (this.searchText != '') {
+      this.typeAheadSearch(this.searchText);
+    }
+    this.ref.detectChanges();
+  }
+
+  public sortArrayByName(x: IconSetValue , y: IconSetValue){
+    if (x.name < y.name) {return -1;}
+    if (x.name > y.name) {return 1;}
+    return 0;
+  }
+
+  public sortArrayByCategory(x: IconSetValue , y: IconSetValue){
+    if (x.url < y.url) {return -1;}
+    if (x.url > y.url) {return 1;}
+    return 0;
+  }
+
+  public sortArray(sortBy: string) {
+    this.clearSearch()
+    let newSortedArray = this.icons.slice();
+    switch(sortBy) {
+      case 'name':
+        newSortedArray.sort(this.sortArrayByName);
+        break;
+      case 'category':
+        newSortedArray.sort(this.sortArrayByCategory);
+        break;
+      case 'recent':
+        newSortedArray.reverse();
+        break;
+      default:
+        newSortedArray.reverse();
+    }
+    this.sortedArray = newSortedArray;
+  }
+
+  public typeAheadSearch(input: string) {
+    console.log('searching');
+    let results = this.icons.slice();
+    results = results.filter(item =>
+        item.name.toLowerCase().includes(input.toLowerCase())
+    );
+
+    this.sortedArray = results;
+  }
+
+  public clearSearch(): void {
+    this.searchText = ''; 
+  }
 
 }

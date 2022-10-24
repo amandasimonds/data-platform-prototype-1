@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { 
     SidePanelModule, 
     TabModule, 
-    RegisterIconModule, 
-    ICON_SET, 
     CheckboxModule } from '../../public-api';
 import dedent from 'ts-dedent';
 
@@ -13,7 +11,7 @@ import dedent from 'ts-dedent';
     title='Components/Side Panel'
     decorators={[
         moduleMetadata({
-            imports: [SidePanelModule, CheckboxModule, TabModule, RegisterIconModule.forRoot(ICON_SET)],
+            imports: [SidePanelModule, CheckboxModule, TabModule,
         }),
     ]}
 />
