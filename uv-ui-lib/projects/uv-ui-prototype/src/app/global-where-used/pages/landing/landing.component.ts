@@ -27,38 +27,13 @@ export class LandingComponent {
     public chevronUser = 'user_chevron@test.com';
     public cumminsUser = 'user_cummins@test.com';
 
-    public get backdropMode(): string {
-        return this.projectWizard ? 'popup' : 'hidden';
-    }
-
     public get isDevUser(): boolean {
         return this.currentUser.name === this.chevronUser || this.currentUser.name === this.cumminsUser ? false : true;
     }
 
-    public get backdropState(): string {
-        return this.projectWizard ? 'visible' : 'hidden';
+    public get backdropState(): boolean {
+        return this.projectWizard ? true : false;
     }
-
-    // public gwuTabs = [
-    //     {
-    //         icon: 'more_horisontal',
-    //         link: '/',
-    //         linkText: 'Link',
-    //         results: ''
-    //     },
-    //     {
-    //         icon: 'more_horisontal',
-    //         link: '/',
-    //         linkText: 'Link',
-    //         results: ''
-    //     },
-    //     {
-    //         icon: 'more_horisontal',
-    //         link: '/',
-    //         linkText: 'Link',
-    //         results: ''
-    //     }
-    // ];
 
     constructor(
         private stepsService: WizardService,

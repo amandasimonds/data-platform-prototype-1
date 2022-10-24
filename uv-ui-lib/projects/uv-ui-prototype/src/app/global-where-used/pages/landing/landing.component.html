@@ -21,8 +21,8 @@
                     <p
                         class="flex justify-content-space-between margin-right-sm divider-right padding-right-sm gap-10 bold"
                     >
-                        Page: <uvx-button [label]="currentProfileViewerPage"></uvx-button> of
-                        <uvx-button [label]="profileViewerPageLength"></uvx-button>
+                        Page: <button mat-button>{{currentProfileViewerPage}}</button> of
+                        <button mat-button>{{profileViewerPageLength}}</button>
                     </p>
                     <p class="uv-body margin-right-xs">Columns:</p>
                     <uvx-range-slider
@@ -58,8 +58,8 @@
                         <p
                             class="flex justify-content-space-between margin-right-sm divider-right padding-right-sm gap-10 bold"
                         >
-                            Page: <uvx-button [label]="currentProfileViewerPage"></uvx-button> of
-                            <uvx-button [label]="profileViewerPageLength"></uvx-button>
+                        Page: <button mat-button>{{currentProfileViewerPage}}</button> of
+                        <button mat-button>{{profileViewerPageLength}}</button>
                         </p>
                         <p class="uv-body margin-right-xs">Columns:</p>
                         <uvx-range-slider
@@ -86,6 +86,4 @@
 
     <app-wizard-container *ngIf="projectWizard" (onCancelWizard)="projectWizard = false"> </app-wizard-container>
 </div>
-
-<uvx-backdrop [backdropState]="backdropState" (backdropClicked)="projectWizard = false" [mode]="backdropMode">
-</uvx-backdrop>
+<epd-pl-backdrop [isVisible]="backdropState" (backdropClicked)="projectWizard = false"></epd-pl-backdrop>

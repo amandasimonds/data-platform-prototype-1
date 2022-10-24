@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input, AfterViewChecked } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
@@ -52,14 +52,8 @@ export class MainComponent implements OnInit {
 
     @Input() public searchQuery = '';
 
-    public get backdropMode(): string {
-        if (this.compareWarning) {
-            return 'popup';
-        } else if (this.uvLight) {
-            return 'uv-light';
-        } else {
-            return '';
-        }
+    get backdropIsVisible(): boolean {
+        return this.searchSidebarState === 'hidden' ? false : true;
     }
 
     public get headerIsHighlight(): boolean {
@@ -126,7 +120,7 @@ export class MainComponent implements OnInit {
             (this.searchService.setSearchSidebarState('hidden'),
                 this.appShellService.setNavIcon(this.currentApp));
     }
-    
+
     public onProfileClose() {
         this.profileSlideOutState = 'hidden';
         this.profileService.setProfileSlideOutState('hidden')

@@ -58,24 +58,22 @@
                 </span>
                 <div class="divider"></div>
                 <div class="form-page-container-bottom flex justify-content-space-between align-items-center">
-                    <uvx-button mode="tertiary" label="Skip" 
-                    matTooltip="Skip this step"
-                    color="gray" 
-                    (click)="onSkipStep()"></uvx-button>
+                    <button mat-button
+                    matTooltip="Skip this step" 
+                    (click)="onSkipStep()">Skip</button>
                     <div>
-                        <uvx-button label="Back" mode="primary" 
+                        <button mat-button
                         class="margin-right-sm" 
                         matTooltip="Go to previous step"
                         [disabled]="currentStepNumber.stepIndex === 1"
-                        (click)="currentStepNumber.stepIndex > 1 && onBackStep()">
-                        </uvx-button>
-                        <uvx-button 
+                        (click)="currentStepNumber.stepIndex > 1 && onBackStep()">Back
+                        </button>
+                        <button mat-button
                         (click)="currentStepNumber.isComplete && onNextStep()" 
                         [disabled]="!currentStepNumber.isComplete" 
-                        mode="primary"
                         [matTooltip]="!isLastStep ? 'Go to next step' : 'Finish and launch into GWU'"
-                        [label]="getButtonLabel()">
-                        </uvx-button>
+                        >{{getButtonLabel()}}
+                        </button>
                     </div>
                 </div>
             <!-- </div> -->

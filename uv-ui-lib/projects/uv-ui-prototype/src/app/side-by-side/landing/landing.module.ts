@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActionBarModule, BackdropModule, ButtonModule, IconButtonModule, UvxIconModule } from '../../../../../uv-ui-lib/src/public-api';
+import { ActionBarModule, BackdropModule, IconButtonModule, UvxIconModule } from '../../../../../uv-ui-lib/src/public-api';
 import { SourceDocumentModule } from '../sbs-document/source-document/source-document.module';
 import { TargetDocumentModule } from '../sbs-document/target-document/target-document.module';
 import { SbsActionBarModule } from '../sbs-action-bar/sbs-action-bar.module';
@@ -15,7 +15,6 @@ import { RouterModule } from '@angular/router';
         CommonModule,
         ActionBarModule,
         RouterModule,
-        ButtonModule,
         UvxIconModule,
         IconButtonModule,
         SourceDocumentModule,

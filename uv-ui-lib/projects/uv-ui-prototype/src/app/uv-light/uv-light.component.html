@@ -7,8 +7,8 @@
                 <span class="step" (click)="stepThree()"></span>
             </div>
             <div class="flex flex-end">
-                <uvx-button *ngIf="varNext != 3" label="Close" class="margin-right-sm" (click)="toggleUvLight()"></uvx-button>
-                <uvx-button label={{stepButton}} (click)="nextStep()"></uvx-button>
+                <button mat-button *ngIf="varNext != 3" class="margin-right-sm" (click)="toggleUvLight()">Close</button>
+                <button mat-button (click)="nextStep()">{{stepButton}}</button>
             </div>
     </div>
 </div>

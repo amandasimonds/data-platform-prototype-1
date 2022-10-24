@@ -3,13 +3,10 @@
         <div class="flex justify-content-space-between margin-bottom-md">
             <div class="flex justify-content-space-between">
                 <div *ngIf="columnCount == 1 || columnCount == 2">
-                    <uvx-button mode="secondary" label="Compare" icon="compare" class="margin-right-xxxs"></uvx-button>
-                    <uvx-button
-                        mode="secondary"
-                        label="Design Ripple"
-                        icon="design"
+                    <button mat-button class="margin-right-xxxs">Compare</button>
+                    <button mat-button
                         class="margin-right-xs"
-                    ></uvx-button>
+                    >Design Ripple</button>
                 </div>
                 <div *ngIf="columnCount == 3">
                     <uvx-icon-button mode="secondary" class="margin-right-xxxs" icon="compare"></uvx-icon-button>
@@ -31,8 +28,8 @@
                 {{ description }}
             </p>
         </div>
-        <uvx-button label="See more" *ngIf="isTextOverflow('description')" (click)="expandDescription()"
-            >See more</uvx-button
+        <button mat-button *ngIf="isTextOverflow('description')" (click)="expandDescription()"
+            >See more</button
         >
     </div>
 

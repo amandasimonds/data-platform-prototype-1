@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SearchFieldModule } from 'epd-pattern-library';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FileFolderStructureComponent } from './file-folder-structure.component';
-import { ActionBarModule, ButtonModule, FolderTreeIconModule, IconButtonModule, ModalModule, NavbarSubModule, RangeSliderModule, SearchPanelModule, TabModule, TextInputModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { ActionBarModule, FolderTreeIconModule, IconButtonModule, ModalModule, NavbarSubModule, RangeSliderModule, SearchPanelModule, TabModule, TextInputModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
 import { FileFolderStructureRoutingModule } from './file-folder-structure-routing.module';
 import { FormsModule } from '@angular/forms';
 import { FilesMainComponent } from './files-main/main.component';
@@ -15,6 +17,7 @@ import { CreateFolderComponent } from './create-folder/create-folder.component';
 import { ClickOutsideModule } from '../shared/directives/click-outside/click-outside.module';
 import { OptionsMenuComponent } from './options-menu/options-menu.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -29,8 +32,10 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   imports: [
     CommonModule,
+    MatButtonModule,
+    // SearchFieldModule,
+    ReactiveFormsModule,
     ActionBarModule,
-    ButtonModule,
     BreadcrumbModule,
     FileFolderStructureRoutingModule,
     FormsModule,
