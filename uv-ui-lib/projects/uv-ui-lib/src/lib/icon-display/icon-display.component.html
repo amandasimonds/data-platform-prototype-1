@@ -1,8 +1,8 @@
 
 <div class="padding-sm flex gap-10">
-    <uvx-button mode="primary" label="Sort by Most Recent" (click)="sortArray('recent')"></uvx-button>
-    <uvx-button mode="primary" label="Sort by Name" (click)="sortArray('name')"></uvx-button>
-    <uvx-button mode="primary" label="Sort by Category" (click)="sortArray('category')"></uvx-button>
+    <button mat-flat-button color="primary" (click)="sortArray('recent')">Sort by Most Recent</button>
+    <button mat-flat-button color="primary" (click)="sortArray('name')">Sort by Name</button>
+    <button mat-flat-button color="primary" (click)="sortArray('category')">Sort by Category</button>
     <uvx-search-panel mode="component-border" (searchClearClicked)="clearSearch()">
         <input type="text"
                     placeholder="Search..."

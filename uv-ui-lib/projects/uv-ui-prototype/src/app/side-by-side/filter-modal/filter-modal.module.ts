@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-    ButtonModule,
     CheckboxModule,
     IconButtonModule,
     SearchPanelModule,
@@ -20,7 +19,6 @@ import { FilterModalComponent } from './filter-modal.component';
     imports: [
         CommonModule,
         SearchPanelModule,
-        ButtonModule,
         UvxIconModule,
         TextInputModule,
         CheckboxModule,

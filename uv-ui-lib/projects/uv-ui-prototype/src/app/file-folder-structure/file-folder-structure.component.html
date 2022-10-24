@@ -2,7 +2,12 @@
     <uvx-action-bar class="w-100">
         <div left class="flex margin-top-xs margin-bottom-xs">
             <div class="margin-right-xs">
-                <uvx-icon-button icon="left" matTooltip="Go Back" class="margin-right-xs" (click)="back()"></uvx-icon-button>
+                <uvx-icon-button
+                    icon="left"
+                    matTooltip="Go Back"
+                    class="margin-right-xs"
+                    (click)="back()"
+                ></uvx-icon-button>
                 <uvx-icon-button icon="right" matTooltip="Go Forward" (click)="forward()"></uvx-icon-button>
             </div>
             <uvx-search-panel mode="global" width="240px" (searchClearClicked)="searchText = ''">
@@ -14,6 +19,7 @@
                     [(ngModel)]="searchText"
                 />
             </uvx-search-panel>
+            <!-- <epd-pl-search-field (searchClearClick)="searchText = ''" placeholder="Search files"></epd-pl-search-field> -->
         </div>
         <div right class="flex margin-top-xs margin-bottom-xs gap-xxs align-items-center">
             <!-- <uvx-icon-button icon="windows"></uvx-icon-button>

@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
     ActionBarModule,
-    ButtonModule,
     SearchPanelModule,
     CheckboxModule,
     IconButtonModule,
     UvxOptionsMenuModule,
     UvxToolbarModule
 } from '../../../../uv-ui-lib/src/public-api';
+import { MatButtonModule } from "@angular/material/button";
 import { SideBySideLandingModule } from './landing/landing.module';
 import { SideBySideRoutingModule } from './side-by-side-routing.module';
 import { SourceDocumentModule } from './sbs-document/source-document/source-document.module';
@@ -29,7 +29,7 @@ import { TargetDocumentModule } from './sbs-document/target-document/target-docu
     ],
     imports: [
         ActionBarModule,
-        ButtonModule,
+        MatButtonModule,
         CheckboxModule,
         ClickOutsideModule,
         CommonModule,

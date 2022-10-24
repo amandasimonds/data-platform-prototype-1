@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {
     ActionBarModule,
-    ButtonModule,
     SidePanelModule,
     SearchPanelModule,
     HeaderModule,
@@ -13,7 +12,6 @@ import {
     IconButtonModule,
     TabModule,
     UvxIconModule,
-    BackdropModule,
     ModalModule,
     IconDisplayModule,
     TooltipModule,
@@ -48,7 +46,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import * as echarts from 'echarts';
 import { WalletModule } from './wallet/wallet.module';
 import { DragDropService } from './services/drag-drop.service';
-import { ButtonDropdownModule } from 'epd-pattern-library';
+import { BackdropModule, ButtonDropdownModule } from 'epd-pattern-library';
 import { ConnectorCreatorService } from './services/connector-creator.service';
 import { WalletService } from './services/wallet.service';
 import { DevAuthGuardService } from './auth/dev-auth-guard.service';
@@ -65,7 +63,7 @@ import { CustomerCuAuthGuardService } from './auth/cummins-auth-guard.service';
 import { DevUTAuthGuardService } from './auth/DevUT-auth-guard.service copy';
 import { ProfileSlideOutModule } from './side-by-side/profile-slide-out/profile-slide-out.module';
 // import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
-import { RegisterIconModule as RegisterIconModuleEpd, ICON_SET as ICON_SET_EPD } from "epd-pattern-library";
+import { RegisterIconModule as RegisterIconModuleEpd, ICON_SET as ICON_SET_EPD, ToastModule } from "epd-pattern-library";
 
 @NgModule({
     declarations: [
@@ -86,7 +84,6 @@ import { RegisterIconModule as RegisterIconModuleEpd, ICON_SET as ICON_SET_EPD }
         BackdropModule,
         BrowserAnimationsModule,
         BrowserModule,
-        ButtonModule,
         ButtonDropdownModule,
         CompareWarningModule,
         ClickOutsideModule,
@@ -115,6 +112,7 @@ import { RegisterIconModule as RegisterIconModuleEpd, ICON_SET as ICON_SET_EPD }
         SideBySideModule,
         TabModule,
         ToastMessageModule,
+        ToastModule,
         UvxIconModule,
         WalletModule
     ],
