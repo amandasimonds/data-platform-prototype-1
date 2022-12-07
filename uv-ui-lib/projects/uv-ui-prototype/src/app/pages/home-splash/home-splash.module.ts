@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeSplashComponent } from './home-splash.component';
 import { HomeSplashRoutingModule } from './home-splash-routing.module';
-import { MatIconModule } from '@angular/material/icon';
+import { IconButtonModule } from 'epd-pattern-library';
 
 @NgModule({
     declarations: [ HomeSplashComponent ],
-    imports: [ CommonModule, HomeSplashRoutingModule, MatIconModule ],
+    imports: [ CommonModule, HomeSplashRoutingModule, IconButtonModule ],
     exports: [ HomeSplashComponent ]
 })
 export class HomeSplashModule {

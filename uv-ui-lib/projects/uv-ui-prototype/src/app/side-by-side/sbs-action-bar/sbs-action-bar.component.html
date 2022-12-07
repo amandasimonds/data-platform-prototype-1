@@ -106,7 +106,7 @@
                     >
                         <input [(ngModel)]="searchText" class="margin-left-xs" />
                     </uvx-search-panel>
-                    <uvx-icon-button icon="more_horisontal" color="primary" class="margin-left-xxs"></uvx-icon-button>
+                    <uvx-icon-button icon="more_horizontal" color="primary" class="margin-left-xxs"></uvx-icon-button>
                     <sbs-filter-modal *ngIf="showFilterModal" [searchText]="searchText"></sbs-filter-modal>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                 <div *ngIf="isDevUser">
                     <uvx-icon-button icon="search" color="primary" [disabled]="!showTargetDocuments"></uvx-icon-button>
                     <uvx-icon-button
-                        icon="more_horisontal"
+                        icon="more_horizontal"
                         color="primary"
                         [disabled]="!showTargetDocuments"
                         class="margin-left-xxs"

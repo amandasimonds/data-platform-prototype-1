@@ -1,15 +1,9 @@
 <div class="uv-ui-shell">
     <div class="uv-ui-shell-header">
         <uvx-header [headerText]="title" [icon]="headerIcon" [uvHighlight]="headerIsHighlight">
-            <div left class="margin-left-sm">
-                <!--                <uvx-search-panel mode="component-border"  width="40vw" *ngIf="checkifDashboard">-->
-                <!--                    <input type="text"-->
-                <!--                    placeholder="Search"-->
-                <!--                    class="uv-input margin-left-xs">-->
-                <!--                </uvx-search-panel>-->
-            </div>
 
-            <div right>
+
+            <!-- <div right>
                 <uvx-icon-button
                     [matTooltip]="
                         walletIsOpen || walletSidebarState === 'visible'
@@ -42,7 +36,7 @@
                     (click)="logout()"
                 >
                 </uvx-icon-button>
-            </div>
+            </div> -->
         </uvx-header>
     </div>
 
@@ -130,4 +124,6 @@
         [message]="toastMessageText"
     >
     </uvx-toast-message>
+
+    <!-- <epd-pl-toast-message></epd-pl-toast-message> -->
 </div>

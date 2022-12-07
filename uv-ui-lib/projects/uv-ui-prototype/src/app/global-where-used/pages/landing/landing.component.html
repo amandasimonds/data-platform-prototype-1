@@ -19,10 +19,18 @@
             <div right class="flex">
                 <div *ngIf="activeService === 'profile'" class="flex align-items-center">
                     <p
-                        class="flex justify-content-space-between margin-right-sm divider-right padding-right-sm gap-10 bold"
+                        class="
+                            flex
+                            justify-content-space-between
+                            margin-right-sm
+                            divider-right
+                            padding-right-sm
+                            gap-10
+                            bold
+                        "
                     >
-                        Page: <button mat-button>{{currentProfileViewerPage}}</button> of
-                        <button mat-button>{{profileViewerPageLength}}</button>
+                        Page: <button mat-button>{{ currentProfileViewerPage }}</button> of
+                        <button mat-button>{{ profileViewerPageLength }}</button>
                     </p>
                     <p class="uv-body margin-right-xs">Columns:</p>
                     <uvx-range-slider
@@ -56,10 +64,18 @@
                 <div right class="flex">
                     <div *ngIf="activeService === 'profile'" class="flex align-items-center">
                         <p
-                            class="flex justify-content-space-between margin-right-sm divider-right padding-right-sm gap-10 bold"
+                            class="
+                                flex
+                                justify-content-space-between
+                                margin-right-sm
+                                divider-right
+                                padding-right-sm
+                                gap-10
+                                bold
+                            "
                         >
-                        Page: <button mat-button>{{currentProfileViewerPage}}</button> of
-                        <button mat-button>{{profileViewerPageLength}}</button>
+                            Page: <button mat-button>{{ currentProfileViewerPage }}</button> of
+                            <button mat-button>{{ profileViewerPageLength }}</button>
                         </p>
                         <p class="uv-body margin-right-xs">Columns:</p>
                         <uvx-range-slider
@@ -77,7 +93,7 @@
     </div>
     <div *ngIf="expandActionBar" class="row">
         <uvx-action-bar class="w-100">
-            <uvx-icon-button class="margin-right-xs" color="primary" icon="more_horisontal"></uvx-icon-button>
+            <uvx-icon-button class="margin-right-xs" color="primary" icon="more_horizontal"></uvx-icon-button>
             <uvx-icon-button color="primary" icon="fullscreen"></uvx-icon-button>
         </uvx-action-bar>
     </div>
