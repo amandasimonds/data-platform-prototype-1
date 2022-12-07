@@ -1,47 +1,56 @@
-<div *ngFor="let item of sourceDocuments; let i = index" 
+<div
+    *ngFor="let item of sourceDocuments; let i = index"
     class="sbs-document-card"
-    (click)="!item.disabled && onSourceDocumentSelected(item, i)" 
+    (click)="!item.disabled && onSourceDocumentSelected(item, i)"
     [class.sbs-document-card-active]="item.active"
-    [class.sbs-document-card-disabled]="item.disabled">
-
+    [class.sbs-document-card-disabled]="item.disabled"
+>
     <div class="sbs-document-card-top flex flex-column gap-sm">
-        <div class="options-button box"><uvx-icon-button icon="more_horisontal" color="primary"></uvx-icon-button></div>
+        <div class="options-button box"><uvx-icon-button icon="more_horizontal" color="primary"></uvx-icon-button></div>
         <div class="flex flex-row sbs-document-card-top-document-heading">
-            <uvx-icon *ngIf="item.active" icon="check" color="primary" size="checkmark" class="margin-right-xxs"></uvx-icon>
-            <p class="bold uv-body margin-right-xxs">{{item.name}}</p> 
-            <p class="uv-body">{{item.description}}</p>
+            <uvx-icon
+                *ngIf="item.active"
+                icon="check"
+                color="primary"
+                size="checkmark"
+                class="margin-right-xxs"
+            ></uvx-icon>
+            <p class="bold uv-body margin-right-xxs">{{ item.name }}</p>
+            <p class="uv-body">{{ item.description }}</p>
         </div>
         <div class="flex flex-row align-items-center">
-            <p class ="sbs-block margin-right-xs semibold">Not started</p>
+            <p class="sbs-block margin-right-xs semibold">Not started</p>
             <div class="sbs-chips-container flex flex-row">
-                <span class ="sbs-chip">AD</span>
-                <span class ="sbs-chip">SF</span>
-                <span class ="sbs-chip">EF</span> 
+                <span class="sbs-chip">AD</span>
+                <span class="sbs-chip">SF</span>
+                <span class="sbs-chip">EF</span>
             </div>
         </div>
     </div>
 
     <div class="divider-light"></div>
 
-    <div class="sbs-document-card-bottom flex align-items-center justify-content-space-between"
-        [ngClass]="{'flex-column' : item.showDetails}">
-        
-        <div class="sbs-document-card-bottom-details-container" 
-            [class.sbs-document-card-bottom-details-container-expanded]="item.showDetails">
+    <div
+        class="sbs-document-card-bottom flex align-items-center justify-content-space-between"
+        [ngClass]="{ 'flex-column': item.showDetails }"
+    >
+        <div
+            class="sbs-document-card-bottom-details-container"
+            [class.sbs-document-card-bottom-details-container-expanded]="item.showDetails"
+        >
             <div *ngFor="let tag of item.tags" class="sbs-tag position-relative">
-                {{tag}}
+                {{ tag }}
             </div>
             <div *ngIf="item.showDetails" class="margin-top-xs">
                 <p class="margin-bottom-xxs">Lorem ipsum dolor</p>
                 <p class="uv-body">
-                    {{item.details}}
+                    {{ item.details }}
                 </p>
             </div>
         </div>
 
         <div class="sbs-document-card-bottom-show-more">
-            <a class="sbs-link z-1000 block" 
-                (click)="onShowMoreDocumentDetails($event, item)">
+            <a class="sbs-link z-1000 block" (click)="onShowMoreDocumentDetails($event, item)">
                 <span *ngIf="!item.showDetails">
                     Show more <uvx-icon color="primary" size="xs" icon="arrow_collapse"></uvx-icon>
                 </span>
@@ -50,7 +59,5 @@
                 </span>
             </a>
         </div>
-
     </div>
-
 </div>

@@ -35,7 +35,7 @@ export class ProfileSlideOutComponent {
       icon: 'link'
     },
     {
-      icon: 'more_horisontal'
+      icon: 'more_horizontal'
     }
   ]
 
