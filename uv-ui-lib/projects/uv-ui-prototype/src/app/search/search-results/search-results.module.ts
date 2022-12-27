@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconButtonModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { IconButtonModule } from 'projects/uv-ui-lib/src/public-api';
 import { SearchResultsComponent } from './search-results.component';
 import { FilterResultsPipe } from './filter-results.pipe';
 import { ToolbarComponent } from './toolbar/toolbar.component';
@@ -14,7 +14,6 @@ import { WizardService } from '../../global-where-used/wizard.service';
     ],
   imports: [
     CommonModule,
-    UvxIconModule,
     IconButtonModule
   ],
   exports: [SearchResultsComponent],

@@ -76,3 +76,14 @@
     box-shadow: var(--pl-shadow-01);
     transition: all 0.3s;
 }
+
+.dbar-actions {
+    border-right: 1px solid var(--pl-border-color);
+    margin: 14px; 
+    height: 34px;
+    padding: 0 14px;
+}
+
+.search-container {
+    width: 220px;
+}

@@ -7102,10 +7102,10 @@
   "resolved" "https://registry.npmjs.org/envinfo/-/envinfo-7.8.1.tgz"
   "version" "7.8.1"
 
-"epd-pattern-library@^1.1.34":
-  "integrity" "sha512-PABTgmDaG1sAVdPtOFgCsvUjw5MguveuWyNFh4yGzJu/2qC4XG86YZZvC+1haChDPW3GLnhG73shGSuFz8q8HQ=="
-  "resolved" "https://repo.ihsmarkit.com/artifactory/api/npm/npm-ultraviolet/epd-pattern-library/-/epd-pattern-library-1.1.34.tgz"
-  "version" "1.1.34"
+"epd-pattern-library@^1.1.40":
+  "integrity" "sha512-Fdy+Rr/IkNXNH3JswZtJpiJeR+El79ME+KZQinh84uvy23JD1N0vexE4eofIh3FioGf7jns6HUqwtmGMCP6hUg=="
+  "resolved" "https://repo.ihsmarkit.com/artifactory/api/npm/npm-ultraviolet/epd-pattern-library/-/epd-pattern-library-1.1.40.tgz"
+  "version" "1.1.40"
   dependencies:
     "tslib" "^2.2.0"
 

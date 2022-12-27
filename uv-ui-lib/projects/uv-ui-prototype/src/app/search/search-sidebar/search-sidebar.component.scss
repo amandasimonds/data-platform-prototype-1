@@ -9,11 +9,31 @@
     animation-timing-function: ease-in-out;
     width: 431px;
     background-color: var(--pl-base-01);
+    transition: left 0.25s;
+    transition-delay: opacity 0.25s;
+
+    &-no-display {
+        opacity: 0;
+        transition-property: opacity;
+        transition-delay: 0.25s;
+    }
+
+    &-in-service {
+        top: 64px;
+        height: calc(100vh - 64px);
+    }
+
+    &-navbar-expanded {
+        transition-property: left 0.25s;
+        transition-delay: opacity 0.25s;
+        left: 200px;
+    }
 
     &-top {
         position: relative;
         z-index: auto;
         background-color: var(--pl-base-01);
+        height: 282px;
     }
 
     &-header {
@@ -31,7 +51,7 @@
         padding-top: 10px;
         overflow: auto;
         position: relative;
-        height: calc(100vh - 285px);
+        height: calc(100% - 282px);
     }
 
     &-scroll:after {
@@ -43,4 +63,5 @@
 
 .content-wrapper {
     border-right: var(--uv-border-gray);
+    height: 100%;
 }

@@ -59,7 +59,6 @@ export class SearchResultsComponent implements OnChanges, OnInit {
     }
 
     public launchClicked(value: boolean, item: SearchResult, i: number, route: string): void {
-        console.log('launch click', item);
         this.searchService.addToRecentSearches('search '+ item.name, item);
         this.searchService.selectResult(item, i);
         // this.searchService.setCompareWarningState(value);

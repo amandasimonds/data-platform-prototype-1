@@ -90,15 +90,23 @@ export class WalletService {
   public selectedEntities$ = new BehaviorSubject<IEntity[]>([]);
   public selectedWalletEntities$ = new BehaviorSubject<IEntity[]>([]);
 
+  public walletSidebarState = new BehaviorSubject<string>('hidden');
   public walletIsOpen = new BehaviorSubject<boolean>(false);
 
   public get walletIsOpen$(): Observable<boolean> {
     return this.walletIsOpen.asObservable();
   }
 
+  public get walletSidebarState$(): Observable<string> {
+    return this.walletSidebarState.asObservable();
+  }
+
   public setWalletIsOpen(isOpen: boolean): void {
-    console.log('wallet is open: ', isOpen);
     this.walletIsOpen.next(isOpen);
+  }
+
+  public setWalletSidebarState(state: string): void {
+    this.walletSidebarState.next(state);
   }
 
   public get walletItemsObservable(): Observable<IEntity[]> {

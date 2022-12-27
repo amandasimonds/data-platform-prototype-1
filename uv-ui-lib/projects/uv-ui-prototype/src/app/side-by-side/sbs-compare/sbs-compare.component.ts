@@ -14,18 +14,22 @@ export class SbsCompareComponent implements OnInit {
     {
       title: 'Copy',
       icon: 'link',
+      link: ''
     },
     {
       title: 'Copy',
       icon: 'edit',
+      link: ''
     },
     {
       title: 'Copy',
       icon: 'delete',
+      link: ''
     },
     {
       title: 'Copy',
       icon: 'profile',
+      link: ''
     }
   ]
 

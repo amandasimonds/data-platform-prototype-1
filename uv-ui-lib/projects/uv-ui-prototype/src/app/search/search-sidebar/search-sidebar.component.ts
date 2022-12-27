@@ -14,30 +14,56 @@ import { NgOnDestroyService } from '../../services/on-destroy.service';
 })
 export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChanges {
 
+    public facetsOpen = false;
+    public searchCategoryIcon = 'design';
+    public categories = [
+        { name: 'All', icon: 'design', resultCount: 0 },
+        { name: 'Materials', icon: 'global_where_used', resultCount: 0 },
+        { name: 'Requirements', icon: 'list-right', resultCount: 0 },
+        { name: 'Parts', icon: 'parts', resultCount: 0 },
+        { name: 'Documents', icon: 'document', resultCount: 0 }
+    ];
+
     @Input() public searchCategory = 'All';
     @Input() public searchResults: SearchResult[] = [];
     @Input() public recentSearches: SearchResult[] = [];
     @Input() public searchText = '';
     @Input() public searchSidebarState = 'hidden';
+    @Input() public inService = false;
+    @Input() public navbarIsExpanded = false;
+
     @Output() public readonly searchCloseEvent = new EventEmitter<string>();
-    public facetsOpen = false;
-    public searchCategoryIcon = 'design';
 
     @ViewChild('resultsContainer', { static: true }) public resultsDiv: ElementRef;
-
-    public categories = [
-        {name: 'All', icon: 'design', resultCount: 0},
-        {name: 'Materials', icon: 'global_where_used', resultCount: 0},
-        {name: 'Requirements', icon: 'list-right', resultCount: 0},
-        {name: 'Parts', icon: 'parts', resultCount: 0},
-        {name: 'Documents', icon: 'document', resultCount: 0}
-    ];
 
     constructor(
         private searchService: SearchService,
         private ref: ChangeDetectorRef,
         private destroy$: NgOnDestroyService) {
+    }
+
+    public ngOnInit(): void {
+        this.recentSearches = this.searchService.getRecentSearches();
+        this.searchResults = this.searchService.getAllSearchResults();
+        this.searchService.searchState$
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(state => {
+                this.searchSidebarState = state;
+                this.ref.detectChanges();
+            });
+    }
+
+    public ngOnChanges(): void {
+        if (this.searchSidebarState === 'hidden') {
+            this.searchSidebarClosed(this.searchText);
         }
+    }
+
+    public ngAfterViewChecked(): void {
+        this.searchResults = this.searchService.typeAheadSearch(this.searchText);
+        this.ref.detectChanges();
+        this.recentSearches = this.searchService.getRecentSearches();
+    }
 
     public resetScroll(): void {
         this.resultsDiv.nativeElement.scrollTop = 0;
@@ -45,7 +71,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
 
     public selectCategory(category: string): void {
         this.searchCategory = category;
-        switch(this.searchCategory) {
+        switch (this.searchCategory) {
             case 'All':
                 this.searchCategoryIcon = 'design';
                 break;
@@ -56,7 +82,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
                 this.searchCategoryIcon = 'list-right';
                 break;
             case 'Parts':
-                this.searchCategoryIcon =  'parts';
+                this.searchCategoryIcon = 'parts';
                 break;
             case 'Documents':
                 this.searchCategoryIcon = 'document';
@@ -83,7 +109,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
         }
     }
 
-    public onCloseClicked(state: string): void{
+    public onCloseClicked(state: string): void {
         this.searchCloseEvent.emit(state);
         this.searchSidebarClosed(this.searchText);
     }
@@ -101,7 +127,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
         };
         searchText.trim();
         if (searchText !== '') {
-            this.searchService.addToRecentSearches('search '+ searchText, searchItem);
+            this.searchService.addToRecentSearches('search ' + searchText, searchItem);
         }
         this.searchText = '';
         this.resetScroll();
@@ -118,32 +144,9 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
     }
 
     public searchClear(): void {
-        this.searchText = ''; 
-        this.resetScroll(); 
+        this.searchText = '';
+        this.resetScroll();
         this.searchCategory = 'All';
-    }
-
-    public ngOnInit(): void {
-        this.recentSearches = this.searchService.getRecentSearches();
-        this.searchResults = this.searchService.getAllSearchResults();
-        this.searchService.searchState$
-            .pipe(takeUntil(this.destroy$))
-            .subscribe(state => {
-                this.searchSidebarState = state;
-                this.ref.detectChanges();
-            });
-    }
-
-    public ngOnChanges(): void {
-        if(this.searchSidebarState === 'hidden') {
-            this.searchSidebarClosed(this.searchText);
-        }
-    }
-
-    public ngAfterViewChecked(): void {
-        this.searchResults = this.searchService.typeAheadSearch(this.searchText);
-        this.ref.detectChanges();
-        this.recentSearches = this.searchService.getRecentSearches();
     }
 
     public openFacets() {

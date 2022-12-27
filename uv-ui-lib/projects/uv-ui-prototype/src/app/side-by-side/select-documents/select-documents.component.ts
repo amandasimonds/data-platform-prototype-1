@@ -26,7 +26,6 @@ export class SelectDocumentsComponent implements OnInit {
       .subscribe((value) => {
         this.sourceDocumentSelected = value;
         this.ref.detectChanges();
-        console.log(this.sourceDocumentSelected);
       })
     
   }

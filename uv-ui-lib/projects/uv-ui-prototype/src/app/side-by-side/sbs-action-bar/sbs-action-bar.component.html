@@ -10,7 +10,7 @@
                     <span class="sbs-block medium-bold uv-body margin-right-12">{{
                         loadedSourceDocuments[0].name
                     }}</span>
-                    <uvx-icon icon="compare" class="margin-right-12"></uvx-icon>
+                    <mat-icon svgIcon="compare" class="margin-right-12"></mat-icon>
                     <p *ngIf="selectedTargetDocuments.length === 0" class="italic uv-font-gray">
                         Collection: 0 documents selected
                     </p>
@@ -57,20 +57,19 @@
                     (click)="toggleShowMoreSelections()"
                     class="sbs-action-bar-link uv-link"
                 >
-                    Show {{ selectedTargetDocuments.length - 5 }} more<uvx-icon
-                        icon="arrow_collapse"
-                        color="primary"
+                    Show {{ selectedTargetDocuments.length - 5 }} more<mat-icon
+                        svgIcon="arrow_collapse"
                         class="margin-left-xxxs"
-                    ></uvx-icon>
+                    ></mat-icon>
                 </a>
                 <a *ngIf="showMoreSelections" (click)="toggleShowMoreSelections()" class="sbs-action-bar-link uv-link">
-                    Show less<uvx-icon icon="arrow_expand" color="primary" class="margin-left-xxxs"></uvx-icon>
+                    Show less<mat-icon svgIcon="arrow_expand" color="primary" class="margin-left-xxxs"></mat-icon>
                 </a>
                 <div class="divider-left" style="height: 25px; margin: 0 8px"></div>
                 <a
                     class="sbs-action-bar-link uv-link margin-right-sm"
                     (click)="clearSelections(selectedTargetDocuments)"
-                    >Clear all<uvx-icon icon="clear" color="primary" class="margin-left-xxxs"></uvx-icon
+                    >Clear all<mat-icon svgIcon="clear" color="primary" class="margin-left-xxxs"></mat-icon
                 ></a>
             </div>
         </div>

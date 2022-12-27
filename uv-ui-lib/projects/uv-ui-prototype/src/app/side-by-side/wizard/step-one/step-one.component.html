@@ -3,10 +3,9 @@
         Here you will search for a [insert item here].
     </h5>
 
-    <uvx-search-panel mode="component-border" 
+    <!-- <uvx-search-panel mode="component-border" 
         width="50%"
         (searchClearClicked)="clearSearch()" 
-        [rounded]="true"
         suggestionsDropdownHeight="34vh" 
         [showSuggestions]="searchText != '' && entitySelected === false">
         <input type="text"
@@ -26,7 +25,7 @@
                 </div>
             </div>
         </div>
-    </uvx-search-panel>
+    </uvx-search-panel> -->
 
     <div *ngIf="entitySelected"class="margin-top-md" style="width: 600px;">
         <p class="bold">Selected entity: {{selectedEntity.name}}</p>
@@ -61,7 +60,7 @@
         <div *ngFor="let item of typeAhead(searchText); trackBy: trackItem; let i = index"
         (click)="selectLocation(item, i)"
             class="custom-option flex align-items-center">
-            <uvx-checkbox [checked]="item.selected"></uvx-checkbox>
+            <mat-checkbox [checked]="item.selected"></mat-checkbox>
             <p class="uv-body">{{item.name}}</p>
         </div>
     </div>

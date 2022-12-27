@@ -37,18 +37,18 @@
                 class="margin-bottom-md" [attr.id]="section.name">
             
                 <div class="flex align-items-center" >
-                    <uvx-icon 
-                    [icon]="section.complete ? 'check' : ''" 
-                    color="success" class="margin-right-xs"></uvx-icon>
+                    <mat-icon 
+                    [svgIcon]="section.complete ? 'check' : ''" 
+                    color="success" class="margin-right-xs"></mat-icon>
                     <p class="uv-body-sm bold">{{section.sectionTitle}}</p>
                 </div>
             
                 <div class="flex align-items-center"
                     *ngFor="let step of section.steps" 
                     [attr.id]="step.name">
-                    <uvx-icon 
-                    [icon]="step.complete ? 'check' : ''" 
-                    color="success" class="margin-right-xs"></uvx-icon>
+                    <mat-icon 
+                    [svgIcon]="step.complete ? 'check' : ''" 
+                    color="success" class="margin-right-xs"></mat-icon>
                     <p class="uv-body-sm">{{step.title}}</p>
                 </div>
             </div>

@@ -139,8 +139,6 @@ export class WalletContentComponent implements OnInit {
 
   public getWalletSearchResults(input: string): IEntity[] {
     let results = this.wallet.slice();
-    console.log(results);
-    console.log(input);
     results = results.filter(item =>
       item.name.toLowerCase().includes(input.toLowerCase())
     );
@@ -152,7 +150,6 @@ export class WalletContentComponent implements OnInit {
     event.stopPropagation();
     // entity.walletFavorite = !entity.walletFavorite;
     const walletFavorites = this.walletService.getWalletFavorites();
-    console.log(walletFavorites.length);
     if (!entity.walletFavorite && walletFavorites.length >= 5) {
       return
     } else if (!entity.walletFavorite && walletFavorites.length < 5) {
@@ -252,7 +249,6 @@ export class WalletContentComponent implements OnInit {
     index = (index + 1);
     item.selected = false;
     const alreadySelected = _.find(this.walletEntitySelectionsIndices, s => s === (index));
-    console.log('alreadySelected', alreadySelected, item, index);
     if (alreadySelected) {
       _.remove(this.walletEntitySelectionsIndices, s => s === (index));
     }

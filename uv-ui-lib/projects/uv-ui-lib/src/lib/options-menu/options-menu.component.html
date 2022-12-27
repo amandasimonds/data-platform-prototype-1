@@ -1,14 +1,17 @@
 <div
     class="options-menu box"
-    [ngStyle]="{ 'z-index': zIndex, right: rightPos }"
-    (clickOutside)="isVisible = false"
+    [ngStyle]="{ 'z-index': zIndex }"
     [class.options-menu-display]="isVisible"
 >
     <div class="flex flex-column gap-xxs">
-        <div class="flex gap-xs options-menu-item" *ngFor="let item of optionMenuItems">
+        <!-- <div
+            class="flex gap-xs options-menu-item"
+            *ngFor="let item of optionMenuItems"
+            [routerLink]="getRelativeLink(item.link)"
+        >
             <span> <mat-icon color="primary" [svgIcon]="item.icon"></mat-icon></span>
             <p>{{ item.title }}</p>
-        </div>
+        </div> -->
+        <ng-content></ng-content>
     </div>
 </div>
-

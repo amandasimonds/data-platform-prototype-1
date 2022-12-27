@@ -9,7 +9,7 @@
     <div class="select" [class.open]="open">
         <div class="select__trigger">
             <ng-content select="[title]"></ng-content>
-            <uvx-icon [icon]="open ? 'arrow_expand' : 'arrow_collapse'"></uvx-icon>
+            <mat-icon [svgIcon]="open ? 'arrow_expand' : 'arrow_collapse'"></mat-icon>
         </div>
         <div class="custom-options flex flex-column">
             <ng-content select="[options]"></ng-content>
@@ -21,7 +21,7 @@
     <select class="select" [class.open]="open">
         <!-- <div class="select__trigger">
             <ng-content select="[title]"></ng-content>
-            <uvx-icon [icon]="open ? 'arrow_expand' : 'arrow_collapse'"></uvx-icon>
+            <mat-icon [icon]="open ? 'arrow_expand' : 'arrow_collapse'"></mat-icon>
         </div> -->
         <!-- <div class="custom-options flex flex-column"> -->
         <ng-content></ng-content>

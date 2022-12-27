@@ -72,8 +72,6 @@ export class SbsActionBarComponent implements OnInit {
     }
 
     public navigateToCompare() {
-        console.log('clicky');
         this.router.navigate(['compare'], { queryParamsHandling: "preserve" })
-        console.log('navving');
     }
 }

@@ -1,60 +1,10 @@
-%columnRowBaseStyles {
-    flex: 0 0 45px;
-    display: flex;
-    align-items: center;
+:host {
+    width: 100%;
+    height: 100%;
+    background-color: var(--pl-base-01);
 }
 
 .table-container {
     height: auto;
     width: 100%;
-    user-select: none;
-    display: inline-block;
-    box-shadow: var(--pl-shadow-01);
-    background-color: var(--pl-base-01);
-    padding-top: 12px;
-    margin: 32px;
-
-    .table {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        height: auto;
-        font-family: Arial, Helvetica, sans-serif;
-
-        .table-row {
-            @extend %columnRowBaseStyles;
-            background-color: white;
-            &:nth-child(odd) {
-                background: rgba(0, 0, 0, 0.1);
-            }
-            cursor: pointer;
-
-            .row {
-                &:first-child {
-                    margin: 0 0 0 32px;
-                }
-                flex: 1;
-                font-size: var(--uv-font-size-xs);
-                color: var(--pl-text-color-02);
-            }
-        }
-
-        .table-column {
-            @extend %columnRowBaseStyles;
-            background-color: white;
-            cursor: pointer;
-            .column {
-                &:first-child {
-                    margin: 0 0 0 32px;
-                }
-                flex: 1;
-                font-weight: var(--uv-font-bold);
-            }
-        }
-    }
-}
-
-.actions {
-    display: flex;
-    justify-content: center;
 }

@@ -7,7 +7,7 @@
     <div class="sbs-document-card-top flex flex-column gap-sm">
         <div class="options-button box"><uvx-icon-button icon="more_horizontal" color="primary"></uvx-icon-button></div>
         <div class="flex flex-row align-items-center">
-            <uvx-checkbox [checked]="item.active"></uvx-checkbox>
+            <mat-checkbox [checked]="item.active"></mat-checkbox>
             <span
                 class="progress-chip margin-right-xxs"
                 [class.progress-chip-success]="item.progress > 60"
@@ -43,10 +43,10 @@
         <div class="sbs-document-card-bottom-show-more">
             <a class="sbs-link z-1000 block" (click)="onShowMoreDocumentDetails($event, item)">
                 <span *ngIf="!item.showDetails">
-                    Show more <uvx-icon color="primary" size="xs" icon="arrow_collapse"></uvx-icon>
+                    Show more <mat-icon svgicon="arrow_collapse"></mat-icon>
                 </span>
                 <span *ngIf="item.showDetails">
-                    Show less <uvx-icon color="primary" size="xs" icon="arrow_expand"></uvx-icon>
+                    Show less <mat-icon svgicon="arrow_expand"></mat-icon>
                 </span>
             </a>
         </div>

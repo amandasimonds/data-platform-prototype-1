@@ -11,12 +11,9 @@ export class SettingsMenuComponent {
   public settingsMenuIsExpanded = true;
   public connectorCreatorSteps = connectorCreatorSteps;
 
-  @ViewChild('section') div:ElementRef;
-
-
-
+  @ViewChild('section') div: ElementRef;
 
   public toggleSettingsMenu() {
-      this.settingsMenuIsExpanded = !this.settingsMenuIsExpanded;
+    this.settingsMenuIsExpanded = !this.settingsMenuIsExpanded;
   }
 }

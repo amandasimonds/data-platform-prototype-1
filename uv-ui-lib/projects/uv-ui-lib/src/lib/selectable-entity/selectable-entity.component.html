@@ -16,7 +16,7 @@
   </div>
   <div class="flex justify-content-space-between align-items-center">
     <div>
-      <uvx-checkbox class="draggable" [isChecked]="isSelected"></uvx-checkbox> 
+      <mat-checkbox class="draggable" [checked]="isSelected" color="primary"></mat-checkbox> 
       <span *ngIf="!isEditMode; else editTpl">
         {{label}}
       </span>
