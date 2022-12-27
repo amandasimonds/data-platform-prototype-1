@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchFieldModule } from 'epd-pattern-library';
+import { DynamicBarModule, ICON_SET, RegisterIconModule, SearchFieldModule } from 'epd-pattern-library';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FileFolderStructureComponent } from './file-folder-structure.component';
-import { ActionBarModule, FolderTreeIconModule, IconButtonModule, ModalModule, NavbarSubModule, RangeSliderModule, SearchPanelModule, TabModule, TextInputModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { ActionBarModule, FolderTreeIconModule, IconButtonModule, ModalModule, NavbarSubModule, RangeSliderModule, SearchPanelModule, TabModule, TextInputModule, TooltipModule } from 'projects/uv-ui-lib/src/public-api';
 import { FileFolderStructureRoutingModule } from './file-folder-structure-routing.module';
 import { FormsModule } from '@angular/forms';
 import { FilesMainComponent } from './files-main/main.component';
@@ -18,6 +18,7 @@ import { ClickOutsideModule } from '../shared/directives/click-outside/click-out
 import { OptionsMenuComponent } from './options-menu/options-menu.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { WalletModule } from '../wallet/wallet.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     MatButtonModule,
     // SearchFieldModule,
+    DynamicBarModule,
     ReactiveFormsModule,
     ActionBarModule,
     BreadcrumbModule,
@@ -41,7 +43,6 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     IconButtonModule,
     NavbarSubModule,
-    UvxIconModule,
     TooltipModule,
     RangeSliderModule,
     SearchPanelModule,
@@ -50,7 +51,9 @@ import { MatButtonModule } from '@angular/material/button';
     FolderTreeIconModule,
     ModalModule,
     TabModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+    WalletModule,
+    RegisterIconModule.forRoot(ICON_SET)
   ],
   exports: [FileFolderStructureComponent, FilesMainComponent, FilesMenuComponent]
 })

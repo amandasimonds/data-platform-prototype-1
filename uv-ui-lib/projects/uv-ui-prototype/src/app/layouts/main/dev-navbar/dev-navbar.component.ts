@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IUser } from '../../../models/user.model';
-import { navItems } from '../navItems';
+import { navItems } from '../navbar/navItems';
 
 @Component({
   selector: 'app-dev-navbar',

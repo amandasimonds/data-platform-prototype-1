@@ -6,15 +6,13 @@
     [class.sbs-document-card-disabled]="item.disabled"
 >
     <div class="sbs-document-card-top flex flex-column gap-sm">
-        <div class="options-button box"><uvx-icon-button icon="more_horizontal" color="primary"></uvx-icon-button></div>
+        <div class="options-button box"><mat-icon svgIcon="more_horizontal" color="primary"></mat-icon></div>
         <div class="flex flex-row sbs-document-card-top-document-heading">
-            <uvx-icon
+            <mat-icon
                 *ngIf="item.active"
-                icon="check"
-                color="primary"
-                size="checkmark"
+                svgIcon="check"
                 class="margin-right-xxs"
-            ></uvx-icon>
+            ></mat-icon>
             <p class="bold uv-body margin-right-xxs">{{ item.name }}</p>
             <p class="uv-body">{{ item.description }}</p>
         </div>
@@ -52,10 +50,10 @@
         <div class="sbs-document-card-bottom-show-more">
             <a class="sbs-link z-1000 block" (click)="onShowMoreDocumentDetails($event, item)">
                 <span *ngIf="!item.showDetails">
-                    Show more <uvx-icon color="primary" size="xs" icon="arrow_collapse"></uvx-icon>
+                    Show more <mat-icon svgIcon="arrow_collapse"></mat-icon>
                 </span>
                 <span *ngIf="item.showDetails">
-                    Show less <uvx-icon color="primary" size="xs" icon="arrow_expand"></uvx-icon>
+                    Show less <mat-icon svgIcon="arrow_expand"></mat-icon>
                 </span>
             </a>
         </div>

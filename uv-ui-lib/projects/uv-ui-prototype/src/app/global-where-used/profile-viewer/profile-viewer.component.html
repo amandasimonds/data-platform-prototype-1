@@ -2,21 +2,12 @@
     <div class="padding-sm profile-viewer-top">
         <div class="flex justify-content-space-between margin-bottom-md">
             <div class="flex justify-content-space-between">
-                <div *ngIf="columnCount == 1 || columnCount == 2">
-                    <button mat-button class="margin-right-xxxs">Compare</button>
-                    <button mat-button class="margin-right-xs">Design Ripple</button>
+                <div>
+                    <epd-pl-icon-button class="margin-right-xxxs" icon="divider_out"></epd-pl-icon-button>
+                    <epd-pl-icon-button class="margin-right-xs" icon="hide"></epd-pl-icon-button>
                 </div>
-                <div *ngIf="columnCount == 3">
-                    <uvx-icon-button mode="secondary" class="margin-right-xxxs" icon="compare"></uvx-icon-button>
-                    <uvx-icon-button mode="secondary" class="margin-right-xs" icon="design"></uvx-icon-button>
-                </div>
-                <uvx-icon-button icon="more_horizontal"></uvx-icon-button>
             </div>
-            <div class="flex">
-                <uvx-icon-button icon="unlock" class="margin-right-xs" color="gray-dark"></uvx-icon-button>
-                <uvx-icon-button icon="full_screen" class="margin-right-xs" color="gray-dark"></uvx-icon-button>
-                <uvx-icon-button icon="close" color="gray-dark"></uvx-icon-button>
-            </div>
+            <epd-pl-icon-button icon="close" buttonStyle="stroke"></epd-pl-icon-button>
         </div>
         <h5 class="margin-bottom-md">
             {{ name }}

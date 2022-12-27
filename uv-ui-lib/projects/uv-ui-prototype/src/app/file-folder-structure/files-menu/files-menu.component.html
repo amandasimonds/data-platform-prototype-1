@@ -27,26 +27,26 @@
                         <div *ngIf="folder.type === 'folder'" class="flex file-item" (click)="folder.menuOpen = !folder.menuOpen">
                             <!-- <uvx-folder-tree-icon [open]="true"></uvx-folder-tree-icon> -->
                             <div class="margin-right-xxs">
-                                <uvx-icon
+                                <mat-icon
                                     [color]="folder.menuOpen ? 'primary' : ''"
-                                    [icon]="folder.menuOpen ? 'chevron_bottom' : 'chevron_right'"
-                                ></uvx-icon>
-                                <uvx-icon [icon]="folder.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                                    [svgIcon]="folder.menuOpen ? 'chevron_bottom' : 'chevron_right'"
+                                ></mat-icon>
+                                <mat-icon [svgIcon]="folder.menuOpen ? 'folder_opened' : 'folder'"></mat-icon>
                             </div>
                             <p class="semibold" [class.color-primary]="folder.menuOpen">{{ folder.name }}</p>
                         </div>
                         <div *ngIf="folder.menuOpen" class="margin-left-md margin-top-xs flex flex-column gap-xxs">
                             <div *ngFor="let folder of folder.folders" class="flex">
                                 <div class="margin-right-xxs">
-                                    <!-- <uvx-icon [icon]="folder.menuOpen ? 'chevron_top' : 'chevron_bottom'"></uvx-icon> -->
-                                    <uvx-icon [icon]="folder.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                                    <!-- <mat-icon [icon]="folder.menuOpen ? 'chevron_top' : 'chevron_bottom'"></mat-icon> -->
+                                    <mat-icon [icon]="folder.menuOpen ? 'folder_opened' : 'folder'"></mat-icon>
                                 </div>
                                 <p class="semibold">{{ folder.name }}</p>
                             </div>
                             <div *ngFor="let file of folder.files" class="flex pointer" (click)="openEntityProfileFromMenu(file)">
                                 <div class="margin-right-xxs">
                                     <!-- <uvx-icon [icon]="file.menuOpen ? 'chevron_top' : 'chevron_bottom'"></uvx-icon> -->
-                                    <uvx-icon icon="profile"></uvx-icon>
+                                    <mat-icon svgIcon="profile"></mat-icon>
                                 </div>
                                 <p class="semibold hover-blue">{{ file.name }}</p>
                             </div>
@@ -59,24 +59,24 @@
                             <!-- {{file.name}} -->
                             <div *ngIf="file.type" class="flex file-item">
                                 <div class="margin-right-xxs">
-                                    <uvx-icon
+                                    <mat-icon
                                         [color]="file.menuOpen ? 'primary' : ''"
-                                        [icon]="file.menuOpen ? 'chevron_top' : 'chevron_bottom'"
-                                    ></uvx-icon>
-                                    <uvx-icon [icon]="file.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                                        [svgIcon]="file.menuOpen ? 'chevron_top' : 'chevron_bottom'"
+                                    ></mat-icon>
+                                    <mat-icon [svgIcon]="file.menuOpen ? 'folder_opened' : 'folder'"></mat-icon>
                                 </div>
                                 <p class="semibold" [class.color-primary]="file.menuOpen">{{ file.name }}</p>
                             </div>
                             <div *ngIf="file.menuOpen" class="margin-left-md margin-top-xs flex flex-column gap-xxs">
                                 <div *ngFor="let folder of file.folders" class="flex">
                                     <div class="margin-right-xxs">
-                                        <uvx-icon [icon]="folder.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                                        <mat-icon [svgIcon]="folder.menuOpen ? 'folder_opened' : 'folder'"></mat-icon>
                                     </div>
                                     <p class="semibold">{{ folder.name }}</p>
                                 </div>
                                 <div *ngFor="let file of file.files" class="flex">
                                     <div class="margin-right-xxs">
-                                        <uvx-icon icon="profile"></uvx-icon>
+                                        <mat-icon svgIcon="profile"></mat-icon>
                                     </div>
                                     <p class="semibold">{{ file.name }}</p>
                                 </div>

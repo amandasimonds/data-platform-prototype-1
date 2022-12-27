@@ -1,2 +1,27 @@
-<router-outlet></router-outlet>
-
+<div epdPlRegisterIcon>
+    <epd-pl-dynamic-bar title="Fusion" [icon]="icon" [actions]="actions" [breadcrumb]="breadcrumb">
+        <ng-template #icon>
+            <mat-icon svgIcon="compare"></mat-icon>
+        </ng-template>
+        <ng-template #breadcrumb>
+            <span class="flex align-items-center align-content-center">
+                <a routerLink="/main/home-splash" class="xng-breadcrumb-link">Aloka</a>
+                <mat-icon svgIcon="chevron_right"></mat-icon>
+                <xng-breadcrumb [separator]="seperator"></xng-breadcrumb>
+                <ng-template #seperator>
+                    <mat-icon svgIcon="chevron_right"></mat-icon>
+                </ng-template>
+            </span>
+        </ng-template>
+        <ng-template #actions>
+            <div class="dbar-actions">
+                <epd-pl-icon-button icon="filter"> </epd-pl-icon-button>
+                <epd-pl-icon-button icon="settings"> </epd-pl-icon-button>
+            </div>
+            <div class="search-container">
+                <epd-pl-search-field placeholder="Search Entities"></epd-pl-search-field>
+            </div>
+        </ng-template>
+    </epd-pl-dynamic-bar>
+    <router-outlet></router-outlet>
+</div>

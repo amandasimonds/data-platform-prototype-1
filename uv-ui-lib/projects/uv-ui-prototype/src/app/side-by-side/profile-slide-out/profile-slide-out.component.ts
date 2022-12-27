@@ -64,7 +64,7 @@ export class ProfileSlideOutComponent {
     private destroy$: NgOnDestroyService) { }
 
   ngOnInit(): void {
-    this.router.navigate([], { queryParams: { tab: 'changeRequests' } })
+    this.router.navigate([])
     combineLatest([
       this.changeRequestService.changeRequestsList$.pipe(tap(requests => this.changeRequestList = requests)),
       this.route.queryParams.pipe(tap(params => this.activeTab = params['tab']))

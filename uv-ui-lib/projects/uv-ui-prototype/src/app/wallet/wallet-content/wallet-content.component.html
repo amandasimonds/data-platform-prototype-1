@@ -122,11 +122,10 @@
     <div class="">
         <div class="flex align-items-center padding-xs justify-content-space-between">
             <div class="flex align-items-center gap-xs">
-                <uvx-checkbox
-                    [unselectEnabled]="true"
-                    [isChecked]="walletEntitySelections.length > 0"
+                <mat-checkbox
+                    [checked]="walletEntitySelections.length > 0"
                     (click)="selectAllCheckClicked()"
-                ></uvx-checkbox>
+                ></mat-checkbox>
                 <span class="uv-body semibold"> {{ walletEntitySelections.length }} Selected </span>
             </div>
             <div class="flex align-items-center">
@@ -165,27 +164,27 @@
                     <div *ngIf="walletSortMenuOpen" class="sort-menu flex flex-column">
                         <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Title</p>
                         <p class="sort-menu-item" (click)="sortWalletByAtoZ(); $event.stopPropagation()">
-                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            <mat-icon svgIcon="sorting_bottom"></mat-icon>
                             A to Z
                         </p>
                         <p class="sort-menu-item" (click)="sortWalletByZtoA(); $event.stopPropagation()">
-                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            <mat-icon svgIcon="sorting_bottom"></mat-icon>
                             Z to A
                         </p>
                         <div class="divider"></div>
                         <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Date</p>
                         <p class="sort-menu-item" (click)="sortWalletByNewestFirst(); $event.stopPropagation()">
-                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            <mat-icon svgIcon="sorting_bottom"></mat-icon>
                             Newest first
                         </p>
                         <p class="sort-menu-item" (click)="sortWalletByOldestFirst(); $event.stopPropagation()">
-                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            <mat-icon svgIcon="sorting_bottom"></mat-icon>
                             Oldest first
                         </p>
                         <div class="divider"></div>
                         <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Usage</p>
                         <p class="sort-menu-item" (click)="sortWalletByFavorites(); $event.stopPropagation()">
-                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            <mat-icon svgIcon="sorting_bottom"></mat-icon>
                             Favorites
                         </p>
                         <p
@@ -198,7 +197,7 @@
                             "
                             (click)="walletEntitiesSelected && sortWalletBySelections(); $event.stopPropagation()"
                         >
-                            <uvx-icon [disabled]="!walletEntitiesSelected" icon="sorting_bottom"></uvx-icon>
+                            <mat-icon svgIcon="sorting_bottom"></mat-icon>
                             Selections
                         </p>
                     </div>

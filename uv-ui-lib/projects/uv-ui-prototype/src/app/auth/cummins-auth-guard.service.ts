@@ -20,7 +20,7 @@ export class CustomerCuAuthGuardService implements CanActivate {
             this.router.navigate(['main/home-splash']);
             return false
         } else {
-            console.log('you are indeed a cummins user or you are just a dev boss', this.userService.getCurrentUserValue(), this.isChevronOrDev);
+            console.log('cummins or dev', this.userService.getCurrentUserValue(), this.isChevronOrDev);
             return true;
         }
     }

@@ -12,17 +12,16 @@ export class NavbarSubComponent {
   @Input() public withPadding = false;
   @Input() public name = '';
   @Input() public rightSide = false;
+  @Input() public zIndex = '';
 
   @Output() public readonly toggleButtonClicked = new EventEmitter<Event>();
 
   public onToggleButtonClicked($event: Event): void {
     this.isExpanded = false;
-    console.log('toggle clicked', this.isExpanded);
     this.toggleButtonClicked.emit($event);
   }
 
   public onNavbarClicked($event: Event): void {
-    console.log('on navbar clicked', this.isExpanded);
     this.isExpanded = true;
     // this.toggleButtonClicked.emit($event);
   }

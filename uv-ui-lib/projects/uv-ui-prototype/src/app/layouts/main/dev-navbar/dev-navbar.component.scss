@@ -12,6 +12,38 @@
     }
 }
 
-.toggle-button {
-    text-align: right;
+.nav-icon {
+    height: var(--uv-lg-size);
+    padding: 12px;
+
+    & > * {
+        display: inline-block;
+    }
+
+    &-disabled {
+        pointer-events: none;
+    }
+
+    &-active {
+        border-right: 4px solid var(--pl-primary);
+        mat-icon, p {
+            color: var(--pl-primary);
+        }
+    }
+
+    &:hover {
+        color: var(--pl-primary);
+        cursor: pointer;
+    }
+
+    img,
+    a {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.nav-title {
+font-size: 9px;
+color: var(--pl-text-color-02);
 }

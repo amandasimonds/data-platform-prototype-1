@@ -1,113 +1,47 @@
 <div class="uv-ui-shell">
-    <div class="uv-ui-shell-header">
-        <uvx-header [headerText]="title" [icon]="headerIcon" [uvHighlight]="headerIsHighlight">
-
-
-            <!-- <div right>
-                <uvx-icon-button
-                    [matTooltip]="
-                        walletIsOpen || walletSidebarState === 'visible'
-                            ? 'Close Wallet'
-                            : 'Double click to open wallet'
-                    "
-                    class="margin-right-sm"
-                    id="wallet-icon"
-                    icon="store"
-                    (mousedown)="toggleWallet()"
-                    (dblclick)="toggleWalletSidebar()"
-                >
-                </uvx-icon-button>
-                <app-wallet
-                    [class.no-display]="!miniWalletOpen || walletSidebarState === 'visible'"
-                    (openWalletClickEvent)="toggleWalletSidebar()"
-                ></app-wallet>
-
-                <uvx-icon-button
-                    [matTooltip]="isDevUser ? 'Launch Wizard' : null"
-                    icon="help"
-                    (click)="isDevUser && launchWizard()"
-                >
-                </uvx-icon-button>
-
-                <uvx-icon-button
-                    icon="user"
-                    class="margin-left-sm margin-right-sm"
-                    matTooltip="Log out"
-                    (click)="logout()"
-                >
-                </uvx-icon-button>
-            </div> -->
-        </uvx-header>
-    </div>
-
     <div class="uv-ui-shell-navbar">
-        <uvx-navbar [navbarIsExpanded]="navbarIsExpanded">
-            <div class="toggle-button">
-                <uvx-icon-button
-                    (click)="toggleExpandNavbar()"
-                    color="gray"
-                    class="toggle-button"
-                    [matTooltip]="navbarIsExpanded ? 'Collapse Menu' : 'Expand Menu'"
-                    [icon]="navbarIsExpanded ? 'double_left' : 'double_right'"
-                >
-                </uvx-icon-button>
-            </div>
-
-            <app-dev-navbar
-                *ngIf="isDevUser"
-                [currentUser]="currentUser"
-                [navActiveIcon]="navActiveIcon"
-                [navbarIsExpanded]="navbarIsExpanded"
-                (toggleSearchSidebarEvent)="toggleSearchSidebar()"
-            ></app-dev-navbar>
-
-            <app-customer-navbar
-                *ngIf="!isDevUser"
-                [currentUser]="currentUser"
-                [navActiveIcon]="navActiveIcon"
-                [navbarIsExpanded]="navbarIsExpanded"
-            ></app-customer-navbar>
-        </uvx-navbar>
+        <app-navbar
+            [navbarIsExpanded]="navbarIsExpanded"
+            [isDevUser]="isDevUser"
+            [navActiveIcon]="navActiveIcon"
+            [currentUser]="currentUser"
+            (searchClickedEvent)="toggleSearchSidebar()"
+            (navbarExpandedEvent)="navbarIsExpanded = true"
+            (navbarCollapsedEvent)="navbarIsExpanded = false"
+        >
+        </app-navbar>
     </div>
 
     <div class="uv-ui-shell-subnavbar">
-        <app-settings-sub-navbar *ngIf="currentApp === 'settings'"></app-settings-sub-navbar>
-        <app-files-menu *ngIf="currentApp === 'file-folder-structure'"> </app-files-menu>
-    </div>
-
-    <div class="uv-ui-shell-subnavbar2">
-        <app-settings-menu *ngIf="isCreatingConnector"></app-settings-menu>
+        <app-search-sidebar
+            (searchCloseEvent)="closeSearchSidebar()"
+            [inService]="isInService"
+            [navbarIsExpanded]="navbarIsExpanded"
+            [searchSidebarState]="searchSidebarState"
+        ></app-search-sidebar>
+        <app-profile-slide-out
+            (profileCloseEvent)="onProfileClose()"
+            [profileSlideOutState]="profileSlideOutState"
+        ></app-profile-slide-out>
     </div>
 
     <div class="uv-ui-shell-content">
         <router-outlet></router-outlet>
     </div>
 
-    <div class="uv-ui-shell-subnavbar-right">
-        <app-expanding-wallet
-            *ngIf="currentApp === 'file-folder-structure'"
-            (walletToggleEvent)="toggleWalletSidebar()"
-        ></app-expanding-wallet>
+    <div [class.backdrop-under-dbar]="isInService">
+        <epd-pl-backdrop
+            [isVisible]="backdropIsVisible"
+            zIndex="950"
+            (backdropClicked)="!compareWarning && closeSearchSidebar()"
+        ></epd-pl-backdrop>
     </div>
-    <epd-pl-backdrop
-        [isVisible]="backdropIsVisible"
-        zIndex="950"
-        (backdropClicked)="!compareWarning && closeSearchSidebar()"
-    ></epd-pl-backdrop>
-    <app-search-sidebar
-        (searchCloseEvent)="toggleSearchSidebar()"
-        [searchSidebarState]="searchSidebarState"
-    ></app-search-sidebar>
-    <app-profile-slide-out
-        (profileCloseEvent)="onProfileClose()"
-        [profileSlideOutState]="profileSlideOutState"
-    ></app-profile-slide-out>
-    <app-compare-warning
+    <!-- <app-compare-warning
         *ngIf="compareWarning"
         (closeCompareWarning)="closeCompareWarning()"
         [selectedItem]="selectedItem"
     >
-    </app-compare-warning>
+    </app-compare-warning> -->
 
     <app-wallet-full
         *ngIf="currentApp !== 'file-folder-structure'"
@@ -116,14 +50,14 @@
     >
     </app-wallet-full>
 
-    <app-uv-light *ngIf="uvLight" (uvLightToggle)="toggleUvLight()"></app-uv-light>
+    <!-- <app-uv-light *ngIf="uvLight" (uvLightToggle)="toggleUvLight()"></app-uv-light> -->
 
-    <uvx-toast-message
+    <!-- <uvx-toast-message
         [displayToastMessage]="displayToastMessage"
         (displayOver)="displayToastMessage = false"
         [message]="toastMessageText"
     >
-    </uvx-toast-message>
+    </uvx-toast-message> -->
 
     <!-- <epd-pl-toast-message></epd-pl-toast-message> -->
 </div>

@@ -1,37 +1,37 @@
-<div class="row">
-    <uvx-action-bar class="w-100">
-        <div left class="flex margin-top-xs margin-bottom-xs">
-            <div *ngIf="isCreateConnector" class="flex align-items-center">
-                <mat-icon svgIcon="datalake" class="margin-right-xs"></mat-icon>
-                <h4>New Data Lake Connector</h4>
-            </div>
-        </div>
-        <div right class="flex margin-top-xs margin-bottom-xs">
-            <epd-pl-button-dropdown 
-            *ngIf="!isCreateConnector"
-                [disabled]="false" 
-                contentText="Create" 
-                color="primary" 
-                [disableRipple]="true"> 
+<div epdPlRegisterIcon class="container">
+    <epd-pl-dynamic-bar title="Settings" [icon]="icon" [actions]="actions">
+        <ng-template #icon>
+            <mat-icon svgIcon="settings"></mat-icon>
+        </ng-template>
+        <ng-template #actions>
+            <epd-pl-button-dropdown
+                *ngIf="!isCreateConnector"
+                [disabled]="false"
+                contentText="Create"
+                color="primary"
+                [disableRipple]="true"
+            >
                 <ng-template epdPlButtonIconTmp>
                     <mat-icon svgIcon="store"></mat-icon>
                 </ng-template>
                 <ng-template epdPlButtonDropdownItemTmp>
-                    <div epd-pl-button-dropdown-item 
-                    [routerLink]="['connector-creator']"
-                    [queryParams]="{app: 'settings', service: 'connector-creator'}"
-                    (click)="launchDataLakeConnectorCreator()">
-                    <mat-icon svgIcon="datalake"></mat-icon>
+                    <div
+                        epd-pl-button-dropdown-item
+                        [routerLink]="['connector-creator']"
+                        [queryParams]="{ app: 'settings', service: 'connector-creator' }"
+                        (click)="launchDataLakeConnectorCreator()"
+                    >
+                        <mat-icon svgIcon="datalake"></mat-icon>
                         Data Lake Connector
                     </div>
-                    <div epd-pl-button-dropdown-item>
-                        <mat-icon svgIcon="windchill"></mat-icon>Windchill</div>
+                    <div epd-pl-button-dropdown-item><mat-icon svgIcon="windchill"></mat-icon>Windchill</div>
                 </ng-template>
             </epd-pl-button-dropdown>
-        </div>
-    </uvx-action-bar>
-</div>
+        </ng-template>
+    </epd-pl-dynamic-bar>
 
-<div class="router-container">
-    <router-outlet></router-outlet>
+    <div class="flex h-100 scroll w-100">
+        <app-settings-menu></app-settings-menu>
+        <router-outlet></router-outlet>
+    </div>
 </div>

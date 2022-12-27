@@ -1,0 +1,29 @@
+<div epdPlRegisterIcon>
+    <epd-pl-dynamic-bar title="Design Ripple" [icon]="icon" [actions]="actions">
+        <ng-template #icon>
+            <mat-icon svgIcon="design"></mat-icon>
+        </ng-template>
+        <ng-template #actions class="flex gap-xs">
+            <epd-pl-icon-button
+                icon="store"
+                [matTooltip]="
+                    walletIsOpen || walletSidebarState === 'visible' ? 'Close Wallet' : 'Double click to open wallet'
+                "
+                id="wallet-icon"
+                (mousedown)="toggleWallet()"
+                (dblclick)="toggleWalletSidebar()"
+            ></epd-pl-icon-button>
+            <app-wallet
+                [class.no-display]="!miniWalletOpen || walletSidebarState === 'visible'"
+                (openWalletClickEvent)="toggleWalletSidebar()"
+            ></app-wallet>
+            <epd-pl-icon-button
+                icon="help"
+                matTooltip="Launch Wizard"
+                icon="help"
+                (click)="launchWizard()"
+            ></epd-pl-icon-button>
+        </ng-template>
+    </epd-pl-dynamic-bar>
+</div>
+

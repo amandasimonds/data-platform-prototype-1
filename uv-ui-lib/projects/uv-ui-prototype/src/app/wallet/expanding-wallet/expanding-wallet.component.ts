@@ -11,8 +11,13 @@ import { WalletService } from '../../services/wallet.service';
 })
 export class ExpandingWalletComponent {
 
-  public walletIsOpen = false;
+  public walletSidebarState = 'hidden';
+
   @Output() public walletToggleEvent = new EventEmitter<Event>();
+
+  public get walletIsOpen(): boolean {
+    return this.walletSidebarState === 'visible';
+  }
 
   constructor(private walletService: WalletService,
     private destroy$: NgOnDestroyService,
@@ -20,7 +25,7 @@ export class ExpandingWalletComponent {
 
   ngOnInit(): void {
     combineLatest([
-      this.walletService.walletIsOpen$.pipe(tap(isOpen => this.walletIsOpen = isOpen))
+      this.walletService.walletSidebarState$.pipe(tap(state => this.walletSidebarState = state))
     ])
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => this.ref.detectChanges());

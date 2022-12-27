@@ -1,11 +1,17 @@
 <!-- <app-facets-slideout (facetsClosedEvent)="closeFacets()" [isVisible]="facetsOpen"></app-facets-slideout> -->
-<div class="search-sidebar" [@slideInOut]="searchSidebarState">
+<div
+    class="search-sidebar"
+    [@slideInOut]="searchSidebarState"
+    [class.search-sidebar-in-service]="inService"
+    [class.search-sidebar-navbar-expanded]="navbarIsExpanded"
+    [class.search-sidebar-no-display]="searchSidebarState === 'hidden'"
+>
     <app-facets-slideout (facetsClosedEvent)="closeFacets()" [isVisible]="facetsOpen"></app-facets-slideout>
     <div class="content-wrapper position-relative">
         <div class="search-sidebar-top">
             <div class="flex justify-content-space-between" style="align-items: flex-start">
                 <div class="flex align-items-center padding-left-md padding-top-sm padding-bottom-md">
-                    <uvx-icon icon="search" color="gray" class="margin-right-xs"></uvx-icon>
+                    <mat-icon svgIcon="search" color="gray" class="margin-right-xs"></mat-icon>
                     <h4>Global Search</h4>
                 </div>
                 <div class="padding-xxs text-align-right">
@@ -33,7 +39,7 @@
                 <uvx-dropdown [hasBorder]="true">
                     <span title class="flex align-items center justify-content-space-between w-100">
                         <div class="flex align-items-center">
-                            <uvx-icon icon="{{ searchCategoryIcon }}" class="margin-right-xs"></uvx-icon>
+                            <mat-icon svgIcon="{{ searchCategoryIcon }}" class="margin-right-xs"></mat-icon>
                             {{ searchCategory }}
                         </div>
                         <div class="divider-right margin-right-xs">
@@ -51,26 +57,26 @@
                         [class.no-display]="getCategoryResultsNumber(item.name) < 1"
                     >
                         <div class="flex align-items-center">
-                            <uvx-icon icon="{{ item.icon }}" class="margin-right-xs"></uvx-icon>
+                            <mat-icon svgIcon="{{ item.icon }}" class="margin-right-xs"></mat-icon>
                             {{ item.name }}
                         </div>
                         <span class="results-number">{{ getCategoryResultsNumber(item.name) }}</span>
                     </span>
                 </uvx-dropdown>
             </div>
-        </div>
 
-        <div class="divider position-relative"></div>
+            <div class="divider position-relative"></div>
 
-        <div class="search-sidebar-header flex justify-content-space-between">
-            <div>
-                <span *ngIf="searchText === ''">Recent Searches</span>
-                <span *ngIf="getCategoryResultsNumber(searchCategory) > 0 && searchText != ''">{{
-                    getCategoryResultsNumber(searchCategory) + ' Results for ' + searchText
-                }}</span>
-                <span *ngIf="getCategoryResultsNumber(searchCategory) === 0 && searchText != ''">No results</span>
+            <div class="search-sidebar-header flex justify-content-space-between">
+                <div>
+                    <span *ngIf="searchText === ''">Recent Searches</span>
+                    <span *ngIf="getCategoryResultsNumber(searchCategory) > 0 && searchText != ''">{{
+                        getCategoryResultsNumber(searchCategory) + ' Results for ' + searchText
+                    }}</span>
+                    <span *ngIf="getCategoryResultsNumber(searchCategory) === 0 && searchText != ''">No results</span>
+                </div>
+                <uvx-icon-button icon="filter" (click)="openFacets()"></uvx-icon-button>
             </div>
-            <uvx-icon-button icon="filter" (click)="openFacets()"></uvx-icon-button>
         </div>
 
         <div #resultsContainer class="search-sidebar-scroll">

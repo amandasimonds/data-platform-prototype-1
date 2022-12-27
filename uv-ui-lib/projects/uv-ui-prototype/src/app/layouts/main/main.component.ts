@@ -7,7 +7,6 @@ import { SearchService } from '../../services/search.service';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 import { UserService } from '../../auth/user.service';
 import { UvLightService } from '../../services/uv-light.service';
-import { navItems } from './navItems';
 import { environment } from 'projects/uv-ui-prototype/src/environments/environment';
 import { settingsNavlinks } from '../../settings/settingsNavLinks';
 import { IUser } from '../../models/user.model';
@@ -24,10 +23,7 @@ import { ProfileService } from '../../services/profile.service';
 
 export class MainComponent implements OnInit {
 
-    public navlinks = navItems;
     public settingsNavlinks = settingsNavlinks;
-    public title = '';
-    public headerIcon = '';
     public navActiveIcon = '';
     public compareWarning = false;
     public searchSidebarState = 'hidden';
@@ -40,8 +36,6 @@ export class MainComponent implements OnInit {
     public selectedItem = '';
     public chevronUser = 'user_chevron@test.com';
     public cumminsUser = 'user_cummins@test.com';
-    public miniWalletOpen = false;
-    public walletIsOpen = false;
     public walletSidebarState = 'hidden';
     public subNavbarState = 'navbar-peek';
     public navbarIsExpanded = false;
@@ -52,16 +46,12 @@ export class MainComponent implements OnInit {
 
     @Input() public searchQuery = '';
 
-    get backdropIsVisible(): boolean {
+    public get backdropIsVisible(): boolean {
         return this.searchSidebarState === 'hidden' ? false : true;
     }
 
     public get headerIsHighlight(): boolean {
         return this.currentHighlight === 'header';
-    }
-
-    public get checkifDashboard(): boolean {
-        return this.title === 'Dashboard';
     }
 
     public get isDevUser(): boolean {
@@ -70,6 +60,10 @@ export class MainComponent implements OnInit {
 
     public get isCreatingConnector(): boolean {
         return this.currentService === 'connector-creator';
+    }
+
+    public get isInService(): boolean {
+        return this.currentApp !== 'home-splash';
     }
 
     constructor(
@@ -89,8 +83,6 @@ export class MainComponent implements OnInit {
     public ngOnInit(): void {
         this.userService.updateUserName();
         combineLatest([
-            this.appShellService.currentAppTitle$.pipe(tap(title => this.title = title)),
-            this.appShellService.currentAppHeaderIcon$.pipe(tap(icon => this.headerIcon = icon)),
             this.appShellService.currentAppNavIcon$.pipe(tap(icon => this.navActiveIcon = icon)),
             this.toastMessageService.message$.pipe(tap(message => this.toastMessageText = message)),
             this.toastMessageService.triggerToast$.pipe(tap(trigger => this.displayToastMessage = trigger)),
@@ -99,18 +91,14 @@ export class MainComponent implements OnInit {
             this.searchService.compareWarning$.pipe(tap(state => this.compareWarning = state)),
             this.userService.getCurrentUser().pipe(tap(user => this.currentUser = user)),
             this.uvlService.getCurrentHighlight().pipe(tap(highlight => this.currentHighlight = highlight)),
-            this.walletService.walletIsOpen$.pipe(tap(isOpen => this.walletIsOpen = isOpen)),
+            this.walletService.walletSidebarState$.pipe(tap(state => this.walletSidebarState = state)),
             this.route.queryParams.pipe(tap(params => {
                 this.currentApp = params['app'];
                 this.currentService = params['service'];
             }))
         ])
             .pipe(takeUntil(this.destroy$))
-            .subscribe(() => this.ref.detectChanges());
-    }
-
-    public handleNavlinkAction(item: string) {
-        item === 'search' ? this.toggleSearchSidebar() : this.closeSearchSidebar();
+            .subscribe(() => {this.ref.detectChanges()});
     }
 
     public toggleSearchSidebar(): void {
@@ -123,7 +111,7 @@ export class MainComponent implements OnInit {
 
     public onProfileClose() {
         this.profileSlideOutState = 'hidden';
-        this.profileService.setProfileSlideOutState('hidden')
+        this.profileService.setProfileSlideOutState('hidden');
     }
 
     public toggleUvLight(): void {
@@ -135,57 +123,21 @@ export class MainComponent implements OnInit {
         this.appShellService.setNavIcon(this.currentApp);
     }
 
-    public launchWizard(): void {
-        if (this.currentApp === 'sbs' || this.currentUser.name === 'user_chevron@test.com') {
-            console.log('sbs', this.currentUser);
-            this.router.navigate(['sbs/wizard'], { relativeTo: this.route, queryParams: { wizardMode: 'fullscreen', app: 'sbs' } });
-        } else if (this.currentApp === 'gwu' || this.currentUser.name === 'user_cummins@test.com') {
-            this.router.navigate(['gwu/wizard'], { relativeTo: this.route, queryParams: { wizardMode: 'fullscreen', app: 'gwu' } });
-        } else {
-            console.log('default', this.currentUser);
-            this.router.navigate(['gwu/wizard'], { relativeTo: this.route, queryParams: { wizardMode: 'fullscreen', app: 'gwu' } });
-        }
-    }
-
-    public logout() {
-        localStorage.clear();
-        window.location.href = `${environment.authConfig.authority}/v2/logout?federated`;
-        this.router.navigate(['/logout']);
-    }
-
     public closeCompareWarning(): void {
         this.compareWarning = false;
     }
 
-    public toggleWallet() {
-        if (!this.miniWalletOpen) {
-            setTimeout(() => {
-                this.miniWalletOpen = true;
-                // this.walletService.setWalletIsOpen(false);
-            }, 150);
-        } else if (this.miniWalletOpen) {
-            this.miniWalletOpen = false;
-        }
-        this.walletSidebarState = 'hidden';
-        this.walletService.setWalletIsOpen(this.walletSidebarState === 'visible' || !this.walletIsOpen ? true : false)
-    }
-
     public toggleWalletSidebar() {
-        this.miniWalletOpen = false;
-        this.walletSidebarState === 'visible' ? this.walletSidebarState = 'hidden' : this.walletSidebarState = 'visible';
-        this.walletService.setWalletIsOpen(this.walletSidebarState === 'visible' || !this.walletIsOpen ? true : false)
+        let state = '';
+        this.walletSidebarState === 'visible' ? state = 'hidden' : state = 'visible';
+        this.walletService.setWalletSidebarState(state);
     }
 
     public toggleSubNavbar() {
-        console.log('toggling on main');
         this.subNavbarIsExpanded = !this.subNavbarIsExpanded;
     }
 
     public toggleSubNavbar2() {
         this.subNavbar2IsExpanded = !this.subNavbar2IsExpanded;
-    }
-
-    public toggleExpandNavbar() {
-        this.navbarIsExpanded = !this.navbarIsExpanded;
     }
 }

@@ -1,0 +1,142 @@
+<div class="navbar position-relative" [class.navbar-expanded]="navbarIsExpanded">
+    <div>
+        <div class="flex align-items-center justify-content-space-between">
+            <div class="flex align-items-center navbar-top" (click)="navigateHome()">
+                <mat-icon svgIcon="aloka_logo_primary" class="navbar-logo"></mat-icon>
+                <h6 *ngIf="navbarIsExpanded" class="margin-left-xxs">Aloka</h6>
+            </div>
+            <epd-pl-icon-button
+                icon="close_left"
+                *ngIf="navbarIsExpanded"
+                (click)="collapseNavbar($event)"
+                class="margin-right-xs"
+            ></epd-pl-icon-button>
+        </div>
+        <div class="content" [class.content-expanded]="navbarIsExpanded">
+            <epd-pl-icon-button
+                *ngIf="!navbarIsExpanded"
+                (click)="expandNavbar($event)"
+                [matTooltip]="navbarIsExpanded ? 'Collapse Menu' : 'Expand Menu'"
+                [icon]="navbarIsExpanded ? 'close_left' : 'open_left'"
+                class="margin-left-xs"
+            >
+            </epd-pl-icon-button>
+            <span class="nav-title" [class.nav-title-expanded]="navbarIsExpanded">
+                {{ navbarIsExpanded ? 'CONTENT' : 'CONT.' }}
+            </span>
+            <div *ngIf="navbarIsExpanded; else searchIconTpl" class="search-field-container">
+                <epd-pl-search-field></epd-pl-search-field>
+            </div>
+            <ng-template #searchIconTpl>
+                <div
+                    class="nav-item"
+                    (click)="searchClicked($event)"
+                    [class.nav-item-active]="navActiveIcon === 'search'"
+                >
+                    <div class="nav-icon" matTooltip="Global Search">
+                        <mat-icon svgIcon="search"></mat-icon>
+                    </div>
+                </div>
+            </ng-template>
+
+            <div
+                *ngFor="let navlink of navlinks.content"
+                class="nav-item"
+                [class.nav-item-disabled]="navlink.disabled"
+                [class.nav-item-active]="navActiveIcon === navlink.app"
+                (click)="handleNavlinkAction(navlink)"
+            >
+                <div class="nav-icon" [matTooltip]="navlink.tooltip">
+                    <mat-icon [svgIcon]="navlink.icon"></mat-icon>
+                </div>
+                <p [class.navbar-expanded-text]="navbarIsExpanded" class="margin-left-xxs navbar-text">
+                    {{ navlink.tooltip }}
+                </p>
+            </div>
+
+            <span class="nav-title" [class.nav-title-expanded]="navbarIsExpanded">
+                {{ navbarIsExpanded ? 'SERVICES' : 'SERV.' }}
+            </span>
+
+            <div
+                *ngFor="let navlink of navlinks.services"
+                class="nav-item"
+                [class.nav-item-active]="navActiveIcon === navlink.app"
+                [class.nav-item-disabled]="navlink.disabled"
+                (click)="handleNavlinkAction(navlink)"
+            >
+                <div class="nav-icon" [matTooltip]="navlink.tooltip">
+                    <mat-icon [svgIcon]="navlink.icon"></mat-icon>
+                </div>
+                <p [class.navbar-expanded-text]="navbarIsExpanded" class="margin-left-xxs navbar-text">
+                    {{ navlink.tooltip }}
+                </p>
+            </div>
+
+            <span class="nav-title" [class.nav-title-expanded]="navbarIsExpanded">
+                {{ navbarIsExpanded ? 'CUSTOMIZATION' : 'CUST.' }}
+            </span>
+
+            <div
+                *ngFor="let navlink of navlinks.customization"
+                class="nav-item"
+                [class.nav-item-disabled]="navlink.disabled"
+                [class.nav-item-active]="navActiveIcon === navlink.app"
+                (click)="handleNavlinkAction(navlink)"
+            >
+                <div class="nav-icon" [matTooltip]="navlink.tooltip">
+                    <mat-icon [svgIcon]="navlink.icon"></mat-icon>
+                </div>
+                <p [class.navbar-expanded-text]="navbarIsExpanded" class="margin-left-xxs navbar-text">
+                    {{ navlink.tooltip }}
+                </p>
+            </div>
+            <!-- <app-dev-navbar
+            *ngIf="isDevUser"
+            [currentUser]="currentUser"
+            [navActiveIcon]="navActiveIcon"
+            [navbarIsExpanded]="navbarIsExpanded"
+            (toggleSearchSidebarEvent)="searchClicked()"
+        ></app-dev-navbar>
+
+        <app-customer-navbar
+            *ngIf="!isDevUser"
+            [currentUser]="currentUser"
+            [navActiveIcon]="navActiveIcon"
+            [navbarIsExpanded]="navbarIsExpanded"
+        ></app-customer-navbar> -->
+        </div>
+    </div>
+    <div class="navbar-bottom padding-bottom-xs">
+        <div class="nav-item">
+            <div class="nav-icon" matTooltip="Notifications">
+                <mat-icon svgIcon="notifications"></mat-icon>
+            </div>
+            <p [class.navbar-expanded-text]="navbarIsExpanded" class="margin-left-xxs navbar-text">Notifications</p>
+        </div>
+        <div class="nav-item nav-item-profile padding-left-xs">
+            <img
+                (click)="toggleProfileMenu()"
+                matTooltip="Profile"
+                src="https://dpzaq1wj21co3.cloudfront.net/prototype/profile.png"
+            />
+            <span
+                [class.navbar-expanded-text]="navbarIsExpanded"
+                class="margin-left-xxs navbar-text flex justify-content-space-between"
+            >
+                <div class="flex flex-column">
+                    <p>Yauheni Likh...</p>
+                    <label>y.likhachou@ih...</label>
+                </div>
+                <epd-pl-icon-button icon="more_vertical" (click)="toggleProfileMenu()"> </epd-pl-icon-button>
+            </span>
+        </div>
+        <div class="menu-container">
+            <uvx-options-menu [isVisible]="profileMenuOpen">
+                <span menuItem (click)="logout()" class="pointer">
+                    <mat-icon svgIcon="logout" class="margin-right-xxs margin-left-xs"></mat-icon>Logout</span
+                >
+            </uvx-options-menu>
+        </div>
+    </div>
+</div>

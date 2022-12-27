@@ -20,7 +20,7 @@ export class CustomerChAuthGuardService implements CanActivate {
             this.router.navigate(['main/home-splash']);
             return false
         } else {
-            console.log('you are indeed a chevron user or you are just a boss in the dev environment', this.userService.getCurrentUserValue());
+            console.log('yyou are chevron or a dev', this.userService.getCurrentUserValue());
             return true;
         }
     }

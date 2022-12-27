@@ -1,16 +1,17 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, Event, RouterEvent } from '@angular/router';
 import { combineLatest } from 'rxjs';
-import { takeUntil, tap } from 'rxjs/operators';
+import { filter, takeUntil, tap } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../../services/on-destroy.service';
 import { ProfileViewerService } from '../../profile-viewer.service';
 import { UserService } from '../../../auth/user.service';
 import { WizardService } from '../../wizard.service';
-import { gwuTabs } from './gwu-tabs';
+import { TabLink } from 'epd-pattern-library/lib/dynamic-bar/dynamic-bar.model';
 
 @Component({
     selector: 'app-landing',
     templateUrl: './landing.component.html',
+    styleUrls: ['./landing.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingComponent {
@@ -18,14 +19,21 @@ export class LandingComponent {
     public expandActionBar = false;
     public projectWizard = false;
     public activeService = '';
-    public columnCount: number = 1;
-    public profileViewerPageLength = '';
-    public currentProfileViewerPage = '';
     public currentUser = { id: 1, new: false, name: '' };
-    public columns = ['1', '2', '3', '4'];
-    public gwuTabs = gwuTabs;
     public chevronUser = 'user_chevron@test.com';
     public cumminsUser = 'user_cummins@test.com';
+    public activeLink = '';
+
+    public atlasTabs: TabLink[] = [
+        {
+            link: 'wave',
+            label: 'WHFA-196'
+        },
+        {
+            link: 'WHFA-196',
+            label: 'Profile'
+        }
+    ]
 
     public get isDevUser(): boolean {
         return this.currentUser.name === this.chevronUser || this.currentUser.name === this.cumminsUser ? false : true;
@@ -39,17 +47,19 @@ export class LandingComponent {
         private stepsService: WizardService,
         private route: ActivatedRoute,
         private router: Router,
-        private profileViewerService: ProfileViewerService,
         private userService: UserService,
         private destroy$: NgOnDestroyService,
-        private ref: ChangeDetectorRef) { }
+        private ref: ChangeDetectorRef) {
+        router.events.pipe(
+            filter((e: Event): e is RouterEvent => e instanceof RouterEvent)
+        ).subscribe((e: RouterEvent) => {
+            this.activeLink = e.url
+        });
+    }
 
     ngOnInit(): void {
         combineLatest([
             this.stepsService.onCancelWizard$.pipe(tap(value => this.projectWizard = value)),
-            this.profileViewerService.currentPage$.pipe(tap(value => this.currentProfileViewerPage = value.toString())),
-            this.profileViewerService.currentColumnCount$.pipe(tap(value => this.columnCount = value)),
-            this.profileViewerService.pages$.pipe(tap(value => this.profileViewerPageLength = value.length.toString())),
             this.userService.getCurrentUser().pipe(tap(value => this.currentUser = value))
         ]).pipe(
             takeUntil(this.destroy$)
@@ -57,17 +67,5 @@ export class LandingComponent {
         this.route.queryParams.subscribe(params => {
             this.activeService = params['service'];
         });
-    }
-
-    public columnCountChanged(value: number) {
-        this.columnCount = value;
-        this.profileViewerService.setCurrentColumnCount(this.columnCount);
-        this.router.navigate([], { queryParams: { service: 'profile', columnCount: this.columnCount } });
-    }
-
-    public getClosest(val: number) {
-        // return this.columns.reduce(value => (prev, curr) {
-        //     // return (Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev);
-        //   });
     }
 }

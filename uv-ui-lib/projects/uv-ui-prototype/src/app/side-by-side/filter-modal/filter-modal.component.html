@@ -13,8 +13,8 @@
             <div *ngIf="!customKeywordMode" class="flex flex-column gap-12 padding-right-xxs">
                 <div *ngFor="let item of filterCategoriesList; let i = index" class="flex justify-content-space-between">
                     <div class="flex align-items-center">
-                        <uvx-checkbox (click)="onFilterApplied(item, i)"
-                        [checked]="item.active"></uvx-checkbox>
+                        <mat-checkbox (click)="onFilterApplied(item, i)"
+                        [checked]="item.active"></mat-checkbox>
                         <p class="uv-body">{{item.name}}</p>
                     </div>
                     <uvx-icon-button color="primary" size="xs" icon="arrow_forward"></uvx-icon-button>
@@ -23,7 +23,7 @@
             <div *ngIf="customKeywordMode" class="flex flex-column gap-12 padding-right-xxs">
                 <div *ngFor="let item of keywordSearchResults; let i = index" class="flex justify-content-space-between">
                     <div class="flex align-items-center">
-                        <uvx-checkbox (click)="onFilterKeywordApplied(item, i)" [checked]="item.active"></uvx-checkbox>
+                        <mat-checkbox (click)="onFilterKeywordApplied(item, i)" [checked]="item.active"></mat-checkbox>
                         <p class="uv-body">{{item}}</p>
                     </div>
                     <uvx-icon-button color="primary" size="xs" icon="arrow_forward"></uvx-icon-button>
@@ -39,10 +39,10 @@
         </span>
         <div *ngIf="!customKeywordMode" class="flex justify-content-space-between"> 
             <div class="flex align-items-center">
-                <uvx-checkbox ></uvx-checkbox> 
+                <mat-checkbox ></mat-checkbox> 
                 <p class="uv-body">Custom Keyword</p>
             </div>
-            <uvx-icon color="primary" size="xs" icon="arrow_forward"></uvx-icon>
+            <mat-icon svgIcon="arrow_forward"></mat-icon>
         </div>
     </div>
 </div>

@@ -1,105 +1,22 @@
-<div class="uv-container-fluid h-100">
-    <div class="row">
-        <uvx-action-bar *ngIf="isDevUser; else customerUserTpl" class="w-100">
-            <div left class="flex">
-                <div class="flex margin-top-sm margin-right-sm">
-                    <uvx-tab
-                        *ngFor="let item of gwuTabs"
-                        [label]="item.label"
-                        mode="horizontal"
-                        [icon]="item.icon"
-                        [routerLink]="item.service"
-                        [queryParams]="{ service: item.service }"
-                        [isActive]="activeService === item.service"
-                        class="margin-right-xxs"
-                    >
-                    </uvx-tab>
-                </div>
-            </div>
-            <div right class="flex">
-                <div *ngIf="activeService === 'profile'" class="flex align-items-center">
-                    <p
-                        class="
-                            flex
-                            justify-content-space-between
-                            margin-right-sm
-                            divider-right
-                            padding-right-sm
-                            gap-10
-                            bold
-                        "
-                    >
-                        Page: <button mat-button>{{ currentProfileViewerPage }}</button> of
-                        <button mat-button>{{ profileViewerPageLength }}</button>
-                    </p>
-                    <p class="uv-body margin-right-xs">Columns:</p>
-                    <uvx-range-slider
-                        [min]="1"
-                        [max]="4"
-                        [value]="columnCount"
-                        [valueMarkers]="true"
-                        (valueChangedEvent)="columnCountChanged($event)"
-                    >
-                    </uvx-range-slider>
-                </div>
-            </div>
-        </uvx-action-bar>
-        <ng-template #customerUserTpl>
-            <uvx-action-bar *ngIf="currentUser.name !== 'user_cummins@test.com'" class="w-100">
-                <div left class="flex">
-                    <div class="flex margin-top-sm margin-right-sm">
-                        <uvx-tab
-                            *ngFor="let item of gwuTabs"
-                            [label]="item.label"
-                            mode="horizontal"
-                            [icon]="item.icon"
-                            [routerLink]="item.service"
-                            [queryParams]="{ service: item.service }"
-                            [isActive]="activeService === item.service"
-                            class="margin-right-xxs"
-                        >
-                        </uvx-tab>
-                    </div>
-                </div>
-                <div right class="flex">
-                    <div *ngIf="activeService === 'profile'" class="flex align-items-center">
-                        <p
-                            class="
-                                flex
-                                justify-content-space-between
-                                margin-right-sm
-                                divider-right
-                                padding-right-sm
-                                gap-10
-                                bold
-                            "
-                        >
-                            Page: <button mat-button>{{ currentProfileViewerPage }}</button> of
-                            <button mat-button>{{ profileViewerPageLength }}</button>
-                        </p>
-                        <p class="uv-body margin-right-xs">Columns:</p>
-                        <uvx-range-slider
-                            [min]="1"
-                            [max]="4"
-                            [value]="columnCount"
-                            [valueMarkers]="true"
-                            (valueChangedEvent)="columnCountChanged($event)"
-                        >
-                        </uvx-range-slider>
-                    </div>
-                </div>
-            </uvx-action-bar>
+<div epdPlRegisterIcon>
+    <epd-pl-dynamic-bar title="Atlas" [icon]="icon" [tabs]="atlasTabs" [breadcrumb]="breadcrumb">
+        <ng-template #icon>
+            <mat-icon svgIcon="global_where_used"></mat-icon>
         </ng-template>
+        <ng-template #breadcrumb>
+            <span class="flex align-items-center align-content-center">
+                <a routerLink="/main/home-splash" class="xng-breadcrumb-link">Aloka</a>
+                <mat-icon svgIcon="chevron_right"></mat-icon>
+                <xng-breadcrumb [separator]="seperator"></xng-breadcrumb>
+                <ng-template #seperator>
+                    <mat-icon svgIcon="chevron_right"></mat-icon>
+                </ng-template>
+            </span>
+        </ng-template>
+    </epd-pl-dynamic-bar>
+    <div class="uv-container-fluid h-100">
+        <router-outlet></router-outlet>
+        <app-wizard-container *ngIf="projectWizard" (onCancelWizard)="projectWizard = false"> </app-wizard-container>
     </div>
-    <div *ngIf="expandActionBar" class="row">
-        <uvx-action-bar class="w-100">
-            <uvx-icon-button class="margin-right-xs" color="primary" icon="more_horizontal"></uvx-icon-button>
-            <uvx-icon-button color="primary" icon="fullscreen"></uvx-icon-button>
-        </uvx-action-bar>
-    </div>
-
-    <router-outlet></router-outlet>
-
-    <app-wizard-container *ngIf="projectWizard" (onCancelWizard)="projectWizard = false"> </app-wizard-container>
+    <epd-pl-backdrop [isVisible]="backdropState" (backdropClicked)="projectWizard = false"></epd-pl-backdrop>
 </div>
-<epd-pl-backdrop [isVisible]="backdropState" (backdropClicked)="projectWizard = false"></epd-pl-backdrop>

@@ -2,40 +2,39 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { WizardService } from './wizard.service';
-import { SidePanelModule, IconButtonModule, SearchPanelModule, TabModule, CheckboxModule, ActionBarModule, ModalModule, UvxIconModule, RangeSliderModule, SelectableEntityModule } from '../../../../uv-ui-lib/src/public-api';
+import { SidePanelModule, IconButtonModule, TabModule, ActionBarModule, ModalModule, RangeSliderModule, SelectableEntityModule } from '../../../../uv-ui-lib/src/public-api';
 import { GlobalWhereUsedComponent } from './global-where-used.component';
 import { GwuRoutingModule } from './global-where-used-routing.module';
 import { FormPageModule } from './project-wizard/form-page/form-page.module';
-import { LandingComponent } from './pages/landing/landing.component';
+import { LandingModule } from './pages/landing/landing.module';
 import { StartPageModule } from './project-wizard/start-page/start-page.module';
 import { ProfileViewerModule } from './profile-viewer/profile-viewer.module';
 import { ProfileViewerContainerModule } from './profile-viewer-container/profile-viewer-container.module';
 import { LaunchPointPageModule } from './project-wizard/launch-point-page/launch-point-page.module';
 import { WaveComponent } from './wave/wave.component';
 import { ForceDirectedGraphComponent } from './force-directed-graph/force-directed-graph.component';
-import { WizardContainerModule } from './project-wizard/wizard-container/wizard-container.module';
 import { GraphModule } from './force-directed-graph/graph/graph.module';
 import { WalletItemModule } from '../wallet/wallet-item/wallet-item.module';
-import { BackdropModule } from 'epd-pattern-library';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { BreadcrumbModule } from 'xng-breadcrumb';
 
 @NgModule({
     declarations: [
         GlobalWhereUsedComponent,
-        LandingComponent,
         WaveComponent,
         ForceDirectedGraphComponent
     ],
     imports: [
-        BackdropModule,
+        LandingModule,
         CommonModule,
         SidePanelModule,
         TabModule,
         MatButtonModule,
         IconButtonModule,
-        SearchPanelModule,
         DragDropModule,
-        CheckboxModule,
+        MatCheckboxModule,
         GraphModule,
         GwuRoutingModule,
         LaunchPointPageModule,
@@ -43,14 +42,14 @@ import { MatButtonModule } from '@angular/material/button';
         ActionBarModule,
         RangeSliderModule,
         StartPageModule,
+        MatIconModule,
         ModalModule,
         ProfileViewerModule,
         ProfileViewerContainerModule,
-        UvxIconModule,
-        WizardContainerModule,
-        SelectableEntityModule
+        SelectableEntityModule,
+        BreadcrumbModule
     ],
-    exports: [ GlobalWhereUsedComponent ],
-    providers: [ WizardService ]
+    exports: [GlobalWhereUsedComponent],
+    providers: [WizardService]
 })
 export class GwuModule { }

@@ -17,7 +17,7 @@
                 class="step-bubble"
                 matTooltip="Skip to this step"
             >
-                <uvx-icon *ngIf="step.isComplete" icon="check" color="white"></uvx-icon>
+                <mat-icon *ngIf="step.isComplete" svgIcon="check"></mat-icon>
                 <span *ngIf="!step.isComplete">{{ step.stepIndex }}</span>
             </div>
             <div

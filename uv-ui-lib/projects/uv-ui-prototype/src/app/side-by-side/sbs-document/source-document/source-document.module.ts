@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { IconButtonModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { TooltipModule } from 'projects/uv-ui-lib/src/public-api';
 import { SourceDocumentComponent } from './source-document.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
     declarations: [
@@ -10,8 +11,7 @@ import { SourceDocumentComponent } from './source-document.component';
     ],
     imports: [
         CommonModule,
-        IconButtonModule,
-        UvxIconModule,
+        MatIconModule,
         RouterModule,
         TooltipModule
     ],

@@ -11,6 +11,7 @@ const routes: Routes = [
     {
         path: '',
         component: GlobalWhereUsedComponent,
+        data: { breadcrumb: 'Atlas' },
         children: [
             {
                 path: 'wizard',
@@ -23,19 +24,25 @@ const routes: Routes = [
                     {
                         path: '',
                         redirectTo: 'wave',
-                        pathMatch: 'full'
+                        pathMatch: 'full',
                     },
                     {
                         path: 'wave',
-                        component: WaveComponent
+                        component: WaveComponent,
+                        data: { breadcrumb: 'Graph Viewer' },
                     },
                     {
                         path: 'force-directed-graph',
                         component: ForceDirectedGraphComponent
                     },
                     {
-                        path: 'profile',
-                        component: ProfileViewerContainerComponent
+                        path: ':id',
+                        component: ProfileViewerContainerComponent,
+                        data: {
+                            breadcrumb: (id: string) => {
+                                return `Profile: ${id}`;
+                            }
+                        },
                     }
                 ]
             }

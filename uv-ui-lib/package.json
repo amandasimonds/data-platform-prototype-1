@@ -45,7 +45,7 @@
     "angular-auth-oidc-client": "^12.0.1",
     "date-fns": "^2.23.0",
     "echarts": "^5.2.2",
-    "epd-pattern-library": "^1.1.34",
+    "epd-pattern-library": "^1.1.40",
     "lodash": "^4.17.21",
     "ngx-echarts": "^8.0.0",
     "rxjs": "^6.6.7",

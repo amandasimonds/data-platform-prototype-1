@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-    CheckboxModule,
     IconButtonModule,
     SearchPanelModule,
     TextInputModule,
-    UvxIconModule
 } from 'projects/uv-ui-lib/src/public-api';
 import { SbsFilterService } from '../sbs-filter.service';
 import { FilterKeywordSearchPipe } from '../../pipes/filter-keyword-search.pipe';
 import { FilterModalComponent } from './filter-modal.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
     declarations: [
@@ -19,9 +18,8 @@ import { FilterModalComponent } from './filter-modal.component';
     imports: [
         CommonModule,
         SearchPanelModule,
-        UvxIconModule,
         TextInputModule,
-        CheckboxModule,
+        MatCheckboxModule,
         IconButtonModule
     ],
     exports: [FilterModalComponent],

@@ -7,13 +7,12 @@ import { AppShellService } from '../services/app-shell.service';
   styleUrls: ['./global-where-used.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GlobalWhereUsedComponent implements OnInit{
+export class GlobalWhereUsedComponent implements OnInit {
 
-    constructor(private appShellService: AppShellService){}
+  constructor(private appShellService: AppShellService) { }
 
-    public ngOnInit(): void {
-        this.appShellService.setTitle('Atlas');
-        this.appShellService.setHeaderIcon('global_where_used');
-        this.appShellService.setNavIcon('gwu');
-    }
+  ngOnInit(): void {
+    this.appShellService.setNavIcon('gwu');
+  }
+
 }

@@ -30,39 +30,6 @@ body {
     font-family: var(--pl-text-font);
 }
 
-.nav-icon {
-    height: var(--uv-lg-size);
-    margin: 0 8px;
-    padding: 12px;
-
-    & > * {
-        display: inline-block;
-    }
-
-    &-disabled {
-        pointer-events: none;
-    }
-
-    &-active {
-        background-color: var(--pl-primary-support-03);
-
-        svg {
-            color: var(--pl-primary);
-        }
-    }
-
-    &:hover {
-        color: var(--pl-primary);
-        cursor: pointer;
-    }
-
-    img,
-    a {
-        width: 24px;
-        height: 24px;
-    }
-}
-
 // FORM
 textarea {
     outline: none;
@@ -77,38 +44,19 @@ textarea {
 
 //BREADCRUMB STYLING
 
-.xng-breadcrumb-root {
-    font-weight: var(--uv-font-semibold) !important;
-    font-size: var(--uv-font-size-sm) !important;
-    color: var(--pl-base-05) !important;
-}
-
-.xng-breadcrumb-separator {
-    &:hover {
-        color: var(--pl-primary) !important;
+.xng-breadcrumb-root,
+.xng-breadcrumb-item,
+.xng-breadcrumb-separator,
+.xng-breadcrumb-link,
+.xng-breadcrumb-trail {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-weight: 500 !important;
+    font-size: 0.75rem !important;
+    color: var(--pl-text-color-02) !important;
+    &:hover:not(.xng-breadcrumb-separator) {
         cursor: pointer;
-    }
-}
-
-.xng-breadcrumb-item {
-    font-weight: var(--uv-font-semibold) !important;
-    font-size: var(--uv-font-size-sm) !important;
-    color: var(--pl-base-05) !important;
-}
-
-.xng-breadcrumb-link {
-    font-weight: var(--uv-font-semibold) !important;
-    font-size: var(--uv-font-size-sm) !important;
-    color: var(--pl-base-05) !important;
-
-    &:hover {
         text-decoration: none !important;
         color: var(--pl-primary) !important;
     }
-}
-
-.xng-breadcrumb-trail {
-    font-weight: var(--uv-font-semibold) !important;
-    font-size: var(--uv-font-size-sm) !important;
-    color: var(--pl-base-05) !important;
 }

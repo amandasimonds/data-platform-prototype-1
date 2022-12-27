@@ -1,34 +1,38 @@
-<div class='uv-container-fluid h-100 padding-sm'>
-    <div *ngIf="columnCount === 1" class="row profile-row" >
-        <div class="col-12">
-            <app-profile-viewer [name]="items[0].name" 
-            [description]="items[0].description"></app-profile-viewer>
-        </div>
-    </div>
-    <div  *ngIf="columnCount === 2" class="udemy-row profile-row" >
-        <div class="col-1-of-2" *ngFor="let item of items.slice(0, 2)">
-                <app-profile-viewer [name]="item.name" [description]="item.description"></app-profile-viewer>
+<div class="flex flex-column">
+    <div class="uv-container-fluid padding-sm">
+        <div *ngIf="pageSize == 1" class="row profile-row">
+            <div class="col-12">
+                <app-profile-viewer [name]="items[0].name" [description]="items[0].description"></app-profile-viewer>
             </div>
-    </div>
-
-    <div  *ngIf="columnCount === 3" class="udemy-row profile-row">
-        <div>
-            <div class="col-1-of-3" *ngFor="let item of items.slice(0, 3)">
+        </div>
+        <div *ngIf="pageSize == 2" class="udemy-row profile-row">
+            <div class="col-1-of-2" *ngFor="let item of items.slice(0, 2)">
                 <app-profile-viewer [name]="item.name" [description]="item.description"></app-profile-viewer>
             </div>
         </div>
-    </div>
 
-    <div  *ngIf="columnCount === 4" class="udemy-row profile-row">
-        <div class="col-1-of-4" *ngFor="let item of items.slice(0, 4)">
-            <app-profile-viewer [name]="item.name" [description]="item.description"></app-profile-viewer>
+        <div *ngIf="pageSize == 3" class="udemy-row profile-row">
+            <div>
+                <div class="col-1-of-3" *ngFor="let item of items.slice(0, 3)">
+                    <app-profile-viewer [name]="item.name" [description]="item.description"></app-profile-viewer>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="pageSize == 4" class="udemy-row profile-row">
+            <div class="col-1-of-4" *ngFor="let item of items.slice(0, 4)">
+                <app-profile-viewer [name]="item.name" [description]="item.description"></app-profile-viewer>
+            </div>
         </div>
     </div>
-
-    <div *ngIf="currentPageNumber > 1"
-        (click)="currentPageNumber > 1 && paginate(currentPageNumber - 1);" 
-        class="paginate paginate-back"></div>
-    <div *ngIf="currentPageNumber < 4"
-        (click)="currentPageNumber < 4 && paginate(currentPageNumber + 1)" 
-        class="paginate paginate-next"></div>
+    <div class="profile-controls text-align-right">
+        <epd-pl-paginator
+            (pageSizeSelected)="handlePageSizeSelected($event)"
+            [totalItemsCount]="totalItemsCount"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+            [currentPage]="currentProfileViewerPage"
+        >
+        </epd-pl-paginator>
+    </div>
 </div>

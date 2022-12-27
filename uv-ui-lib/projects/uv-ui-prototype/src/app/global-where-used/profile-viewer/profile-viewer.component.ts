@@ -15,6 +15,7 @@ export class ProfileViewerComponent implements OnInit {
     public expandedDescription = false;
     public metadataTabActive = false;
     public historyTabActive = false;
+    public pageSize: number = 1;
 
     @Input() public columnCount = 0;
     @Input() public name = '';
@@ -65,8 +66,6 @@ export class ProfileViewerComponent implements OnInit {
                 this.columnCount = count;
                 this.ref.detectChanges();
             });
-
-            console.log(this.columnCount);
     }
 
     public isTextOverflow(elementId: string): boolean {
@@ -82,7 +81,6 @@ export class ProfileViewerComponent implements OnInit {
     }
 
     public onDescriptionResized(event: Event) {
-        // console.log(event);
         this.ref.markForCheck();
     }
 

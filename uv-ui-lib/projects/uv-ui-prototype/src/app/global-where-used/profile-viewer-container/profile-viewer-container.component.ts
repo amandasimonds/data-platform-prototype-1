@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Container, EnterExitLeft, EnterExitRight, flyInOutAnimation, nextPageAnimation } from '../../shared/animations';
@@ -15,32 +15,32 @@ import { ProfileViewerService } from '../profile-viewer.service';
 })
 export class ProfileViewerContainerComponent implements OnInit {
 
-    @Input() public columnCount: number;
     public items = allSearchResults.slice(0, 12);
     public currentPage: Observable<number>;
     public pages: Observable<number[]>;
     public currentPageNumber: number;
     public pageAnimationState = 'back';
     public pageAnimationState2 = 'in';
+    public pageSize: number = 1;
+    public totalItemsCount = '';
+    public currentProfileViewerPage = '';
+    public pageSizeOptions = ['1', '2', '3', '4'];
 
     constructor(
         private profileViewerService: ProfileViewerService, 
         private ref: ChangeDetectorRef,
-        private destroy$ : NgOnDestroyService,
+        private destroy$ : NgOnDestroyService
         ) {}
 
     ngOnInit(): void {
-        this.pages = this.profileViewerService.getPages();
         this.profileViewerService.currentPage$
             .pipe(takeUntil(this.destroy$))
             .subscribe(value => 
             this.currentPageNumber = value)
-        this.profileViewerService.columnCount$
-            .pipe(takeUntil(this.destroy$))
-            .subscribe(count => {
-                this.columnCount = count;
-                this.ref.detectChanges();
-            });
+    }
+
+    public handlePageSizeSelected(pageSize: number) {
+        this.pageSize = pageSize;
     }
 
     public paginate(value: number) {
@@ -58,8 +58,6 @@ export class ProfileViewerContainerComponent implements OnInit {
     }
 
     public setPageAnimationState(page: number, name: string) {
-        // console.log(page);
-        console.log(name, this.currentPageNumber === page ? 'in' : 'out');
         return this.currentPageNumber === page ? 'in' : 'out';
     }
 }

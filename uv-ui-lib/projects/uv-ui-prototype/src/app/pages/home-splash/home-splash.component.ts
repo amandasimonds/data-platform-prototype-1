@@ -12,8 +12,6 @@ export class HomeSplashComponent implements OnInit{
     constructor(private appShellService: AppShellService){}
 
     public ngOnInit(): void {
-        this.appShellService.setTitle('Dashboard');
-        this.appShellService.setHeaderIcon('dashboard');
         this.appShellService.setNavIcon('home-splash');
     }
 }

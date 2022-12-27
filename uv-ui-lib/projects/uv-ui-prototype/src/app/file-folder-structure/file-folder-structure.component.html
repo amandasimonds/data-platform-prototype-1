@@ -1,59 +1,72 @@
-<div class="row">
-    <uvx-action-bar class="w-100">
-        <div left class="flex margin-top-xs margin-bottom-xs">
-            <div class="margin-right-xs">
-                <uvx-icon-button
-                    icon="left"
-                    matTooltip="Go Back"
-                    class="margin-right-xs"
-                    (click)="back()"
-                ></uvx-icon-button>
-                <uvx-icon-button icon="right" matTooltip="Go Forward" (click)="forward()"></uvx-icon-button>
+<div epdPlRegisterIcon>
+    <epd-pl-dynamic-bar title="File Folders" [icon]="icon">
+        <ng-template #icon>
+            <mat-icon svgIcon="folder"></mat-icon>
+        </ng-template>
+    </epd-pl-dynamic-bar>
+    <div class="flex">
+        <app-files-menu> </app-files-menu>
+        <div class="flex flex-column w-100">
+            <div class="row">
+                <uvx-action-bar class="w-100">
+                    <div left class="flex margin-top-xs margin-bottom-xs">
+                        <div class="margin-right-xs">
+                            <uvx-icon-button
+                                icon="left"
+                                matTooltip="Go Back"
+                                class="margin-right-xs"
+                                (click)="back()"
+                            ></uvx-icon-button>
+                            <uvx-icon-button icon="right" matTooltip="Go Forward" (click)="forward()"></uvx-icon-button>
+                        </div>
+                        <uvx-search-panel mode="global" width="240px" (searchClearClicked)="searchText = ''">
+                            <input
+                                type="text"
+                                placeholder="Search files"
+                                class="uv-input margin-left-xs"
+                                maxlength="40"
+                                [(ngModel)]="searchText"
+                            />
+                        </uvx-search-panel>
+                        <!-- <epd-pl-search-field (searchClearClick)="searchText = ''" placeholder="Search files"></epd-pl-search-field> -->
+                    </div>
+                    <div right class="flex margin-top-xs margin-bottom-xs gap-xxs align-items-center">
+                        <!-- <uvx-icon-button icon="windows"></uvx-icon-button>
+                <uvx-icon-button icon="delete"></uvx-icon-button> -->
+                        <uvx-icon-button
+                            icon="folder_plus"
+                            class="position-relative"
+                            (click)="createFolder()"
+                            (keydown.enter)="createFolder()"
+                            type="submit"
+                            [matTooltipDisabled]="createFolderDialogue"
+                            matTooltip="Create new folder"
+                        >
+                            <app-create-folder
+                                *ngIf="createFolderDialogue"
+                                (closeModalEvent)="createFolderDialogue = false"
+                            ></app-create-folder
+                        ></uvx-icon-button>
+                        <div class="divider-left"></div>
+                        <uvx-icon-button icon="sorting_bottom"></uvx-icon-button>
+                        <!-- <uvx-range-slider></uvx-range-slider> -->
+                    </div>
+                </uvx-action-bar>
             </div>
-            <uvx-search-panel mode="global" width="240px" (searchClearClicked)="searchText = ''">
-                <input
-                    type="text"
-                    placeholder="Search files"
-                    class="uv-input margin-left-xs"
-                    maxlength="40"
-                    [(ngModel)]="searchText"
-                />
-            </uvx-search-panel>
-            <!-- <epd-pl-search-field (searchClearClick)="searchText = ''" placeholder="Search files"></epd-pl-search-field> -->
-        </div>
-        <div right class="flex margin-top-xs margin-bottom-xs gap-xxs align-items-center">
-            <!-- <uvx-icon-button icon="windows"></uvx-icon-button>
-            <uvx-icon-button icon="delete"></uvx-icon-button> -->
-            <uvx-icon-button
-                icon="folder_plus"
-                class="position-relative"
-                (click)="createFolder()"
-                (keydown.enter)="createFolder()"
-                type="submit"
-                [matTooltipDisabled]="createFolderDialogue"
-                matTooltip="Create new folder"
-            >
-                <app-create-folder
-                    *ngIf="createFolderDialogue"
-                    (closeModalEvent)="createFolderDialogue = false"
-                ></app-create-folder
-            ></uvx-icon-button>
-            <div class="divider-left"></div>
-            <uvx-icon-button icon="sorting_bottom"></uvx-icon-button>
-            <!-- <uvx-range-slider></uvx-range-slider> -->
-        </div>
-    </uvx-action-bar>
-</div>
 
-<div class="router-container">
-    <div class="flex gap-xxs align-items-center padding-top-sm padding-left-sm">
-        <uvx-icon icon="package"></uvx-icon>
-        <!-- <p class="pointer" (click)="navigateToMain()">Main Page</p> -->
-        <app-folder-file-breadcrumbs></app-folder-file-breadcrumbs>
-    </div>
-    <div class="margin-right-xxs">
-        <div class="padding-sm content">
-            <router-outlet></router-outlet>
+            <div class="router-container">
+                <div class="flex gap-xxs align-items-center padding-top-sm padding-left-sm">
+                    <mat-icon svgIcon="package"></mat-icon>
+                    <!-- <p class="pointer" (click)="navigateToMain()">Main Page</p> -->
+                    <app-folder-file-breadcrumbs></app-folder-file-breadcrumbs>
+                </div>
+                <div class="margin-right-xxs">
+                    <div class="padding-sm content">
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </div>
         </div>
+        <app-expanding-wallet (walletToggleEvent)="toggleWalletSidebar()"></app-expanding-wallet>
     </div>
 </div>

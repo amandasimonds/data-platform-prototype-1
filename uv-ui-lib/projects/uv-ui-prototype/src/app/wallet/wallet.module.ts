@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WalletComponent } from './wallet.component';
 import { ButtonDropdownModule } from 'epd-pattern-library';
-import { CheckboxModule, DropdownModule, FolderTreeIconModule, IconButtonModule, LaunchBarModule, NavbarSubModule, SearchPanelModule, TabModule, TextInputModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { DropdownModule, FolderTreeIconModule, IconButtonModule, LaunchBarModule, NavbarSubModule, SearchPanelModule, TabModule, TextInputModule, TooltipModule } from 'projects/uv-ui-lib/src/public-api';
 import { WalletFullComponent } from './wallet-full/wallet-full.component';
 import { WalletItemModule } from './wallet-item/wallet-item.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -14,6 +14,7 @@ import { ExpandingWalletComponent } from './expanding-wallet/expanding-wallet.co
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   imports: [
     CommonModule,
-    CheckboxModule,
+    MatCheckboxModule,
     ButtonDropdownModule,
     RouterModule,
     MatButtonModule,
@@ -34,7 +35,6 @@ import { MatIconModule } from '@angular/material/icon';
     DragDropModule,
     FormsModule,
     LaunchBarModule,
-    UvxIconModule,
     IconButtonModule,
     NavbarSubModule,
     SearchPanelModule,

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconButtonModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { IconButtonModule, TooltipModule } from 'projects/uv-ui-lib/src/public-api';
 import { StepsComponent } from './steps.component';
 
 @NgModule({
@@ -8,7 +8,6 @@ import { StepsComponent } from './steps.component';
   imports: [
     CommonModule,
     IconButtonModule,
-    UvxIconModule,
     TooltipModule
   ],
   exports: [StepsComponent]

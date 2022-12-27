@@ -12,8 +12,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     IconButtonModule,
-    BrowserModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     TooltipModule,
     RouterModule
   ],

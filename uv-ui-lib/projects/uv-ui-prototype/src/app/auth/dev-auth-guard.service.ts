@@ -22,7 +22,7 @@ export class DevAuthGuardService implements CanActivate {
             this.router.navigate(['unauthorized']);
             return false
         } else {
-            console.log('you are indeed a dev, you may pass', this.userService.getCurrentUserValue());
+            console.log('dev', this.userService.getCurrentUserValue());
             return true;
         }
     }

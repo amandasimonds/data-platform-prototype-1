@@ -10,6 +10,7 @@ export const sideBySideRoutes: Routes = [
     {
         path: '',
         component: SideBySideComponent,
+        data: { breadcrumb: 'Fusion' },
         children: [
             {
                 path: 'wizard',
@@ -21,15 +22,17 @@ export const sideBySideRoutes: Routes = [
                 children: [
                     {
                         path: '',
-                        redirectTo: 'select-documents', pathMatch: 'full'
+                        redirectTo: 'select-documents', pathMatch: 'full',
                     },
                     {
                         path: 'select-documents',
-                        component: SelectDocumentsComponent
+                        component: SelectDocumentsComponent,
+                        data: { breadcrumb: 'Documents' }
                     },
                     {
                         path: 'compare',
-                        component: SbsCompareComponent
+                        component: SbsCompareComponent,
+                        data: { breadcrumb: 'Compare' }
                     }
                 ]
             }

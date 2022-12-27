@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { CheckboxModule, ChipModule, DropdownModule, IconButtonModule, RangeSliderModule, SearchPanelModule, TextInputModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
+import { ChipModule, DropdownModule, IconButtonModule, RangeSliderModule, SearchPanelModule, TextInputModule, TooltipModule } from 'projects/uv-ui-lib/src/public-api';
 import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatRadioModule } from '@angular/material/radio';
@@ -12,6 +12,7 @@ import { StepThreeComponent } from './step-three/step-three.component';
 import { SbsStepOneComponent } from '../../../side-by-side/wizard/step-one/step-one.component';
 import { SbsStepTwoComponent } from '../../../side-by-side/wizard/step-two/step-two.component';
 import { SbsStepThreeComponent } from '../../../side-by-side/wizard/step-three/step-three.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
     declarations: [
@@ -32,13 +33,12 @@ import { SbsStepThreeComponent } from '../../../side-by-side/wizard/step-three/s
         FormsModule,
         RangeSliderModule,
         TooltipModule,
-        UvxIconModule,
-        CheckboxModule,
+        MatCheckboxModule,
         ChipModule,
         MatSlideToggleModule,
         MatRadioModule
     ],
-    exports: [ StepDirectionsComponent ],
-    providers: [ WizardService ]
+    exports: [StepDirectionsComponent],
+    providers: [WizardService]
 })
 export class StepDirectionsModule { }

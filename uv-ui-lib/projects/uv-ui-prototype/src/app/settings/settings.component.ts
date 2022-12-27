@@ -27,8 +27,6 @@ export class SettingsComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.appShellService.setTitle('Settings');
-        this.appShellService.setHeaderIcon('settings');
         this.appShellService.setNavIcon('settings');
         this.route.queryParams.pipe(tap(
           params => {

@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import {
     ActionBarModule,
     IconButtonModule,
-    UvxIconModule,
     SearchPanelModule
 } from 'projects/uv-ui-lib/src/public-api';
 import { FilterModalModule } from '../filter-modal/filter-modal.module';
@@ -19,7 +18,6 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     ActionBarModule,
     IconButtonModule,
-    UvxIconModule,
     FilterModalModule,
     RouterModule,
     SearchPanelModule,

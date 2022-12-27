@@ -8,7 +8,6 @@ import { DevUTAuthGuardService as DevUTAuthGuard } from './auth/DevUT-auth-guard
 import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './layouts/main/main.component';
 import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
-import { IconDisplayComponent } from './pages/icon-display/icon-display.component';
 import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
 
 const routes: Routes = [
@@ -63,15 +62,14 @@ const routes: Routes = [
                 canActivate: [DevAuthGuard]
             },
             {
+                path: 'design-ripple',
+                loadChildren: () => import('./design-ripple/design-ripple.module').then(m => m.DesignRippleModule)
+            },
+            {
                 path: 'file-folder-structure',
                 loadChildren: () => import('./file-folder-structure/file-folder-structure.module').then(m => m.FileFolderStructureModule),
                 canActivate: [],
                 data: { queryParams: { app: 'file-folder-structure' } }
-            },
-            {
-                path: 'icons',
-                component: IconDisplayComponent,
-                canActivate: [DevAuthGuard]
             }
         ],
         canActivate: [AutoLoginAllRoutesGuard, DevUTAuthGuard]

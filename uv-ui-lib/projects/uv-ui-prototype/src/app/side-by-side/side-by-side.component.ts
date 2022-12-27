@@ -15,15 +15,13 @@ export class SideBySideComponent implements OnInit{
     public tasks = compareTasksData;
     public dropdownItems = dropdownItems;
 
-    constructor(private appShellService: AppShellService) {}
+    constructor(private appShellService: AppShellService){}
+
+    public ngOnInit(): void {
+        this.appShellService.setNavIcon('sbs');
+    }
 
     public trackByFn(_: number, {title}: ITask): string {
         return title;
-    }
-
-    public ngOnInit(): void {
-        this.appShellService.setTitle('Fusion');
-        this.appShellService.setHeaderIcon('compare');
-        this.appShellService.setNavIcon('sbs');
     }
 }

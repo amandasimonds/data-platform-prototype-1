@@ -5,7 +5,7 @@ export const optionsMenu = [
     },
     {
         title: 'Move',
-        icon: 'edit_erea'
+        icon: 'edit_area'
     },
     {
         title: 'Rename',

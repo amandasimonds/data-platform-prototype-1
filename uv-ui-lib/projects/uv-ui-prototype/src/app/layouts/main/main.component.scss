@@ -12,11 +12,6 @@
     }
 }
 
-.toggle-button {
-    padding: 6px 8px 0 8px;
-    text-align: right;
-}
-
 .no-display {
     display: none;
 }
@@ -37,4 +32,9 @@
 
 .toast > img {
     width: 100%;
+}
+
+.backdrop-under-dbar {
+    position: relative;
+    top: 64px;
 }

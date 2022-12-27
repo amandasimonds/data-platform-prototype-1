@@ -32,7 +32,6 @@ export class AuthCallbackComponent implements OnInit {
       .subscribe((res: LoginResponse) => {
         if (res) {
           this.helperService.navigateToUrl('/main/home-splash');
-          console.log(res);
         } else {
           this.authService.signOut();
         }
