@@ -15,18 +15,17 @@ import { WaveComponent } from './wave/wave.component';
 import { ForceDirectedGraphComponent } from './force-directed-graph/force-directed-graph.component';
 import { GraphModule } from './force-directed-graph/graph/graph.module';
 import { WalletItemModule } from '../wallet/wallet-item/wallet-item.module';
+// import { G6Module } from './g6/g6.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BreadcrumbModule } from 'xng-breadcrumb';
-import { G6Component } from './g6/g6.component';
 
 @NgModule({
     declarations: [
         GlobalWhereUsedComponent,
         WaveComponent,
-        ForceDirectedGraphComponent,
-        G6Component
+        ForceDirectedGraphComponent
     ],
     imports: [
         LandingModule,
@@ -49,7 +48,8 @@ import { G6Component } from './g6/g6.component';
         ProfileViewerModule,
         ProfileViewerContainerModule,
         SelectableEntityModule,
-        BreadcrumbModule
+        BreadcrumbModule,
+        // G6Module
     ],
     exports: [GlobalWhereUsedComponent],
     providers: [WizardService]
