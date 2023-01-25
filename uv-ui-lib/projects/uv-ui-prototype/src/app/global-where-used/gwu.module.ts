@@ -19,12 +19,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BreadcrumbModule } from 'xng-breadcrumb';
+import { G6Component } from './g6/g6.component';
 
 @NgModule({
     declarations: [
         GlobalWhereUsedComponent,
         WaveComponent,
-        ForceDirectedGraphComponent
+        ForceDirectedGraphComponent,
+        G6Component
     ],
     imports: [
         LandingModule,
