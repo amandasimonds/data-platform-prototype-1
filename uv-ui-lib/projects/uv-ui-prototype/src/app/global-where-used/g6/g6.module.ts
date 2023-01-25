@@ -1,23 +1,16 @@
-// import { NgModule } from '@angular/core';
-// import { G6GraphModule, G6_GRAPH_OPTIONS } from 'ng-antv-g6';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { G6Component } from './g6.component';
 
-// @NgModule({
-//     exports: [G6GraphModule],
-//     providers: [
-//         {
-//             provide: G6_GRAPH_OPTIONS,
-//             useValue: {
-//                 modes: { default: ['drag-canvas', 'zoom-canvas'] },
-//                 layout: {
-//                     type: 'dagre',
-//                     ranksep: 10,
-//                 },
-//                 defaultNode: {
-//                     type: 'rect',
-//                     anchorPoints: [[0.5, 0], [0.5, 1]],
-//                 },
-//             }
-//         },
-//     ]
-// })
-// export class G6Module { }
+@NgModule({
+  declarations: [
+    G6Component
+  ],
+  imports: [
+    CommonModule
+  ],
+  exports: [
+    G6Component
+  ]
+})
+export class G6Module { }

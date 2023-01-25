@@ -6,6 +6,7 @@ import { WaveComponent } from './wave/wave.component';
 import { ForceDirectedGraphComponent } from './force-directed-graph/force-directed-graph.component';
 import { ProfileViewerContainerComponent } from './profile-viewer-container/profile-viewer-container.component';
 import { WizardContainerComponent } from './project-wizard/wizard-container/wizard-container.component';
+import {G6Component} from './g6/g6.component';
 
 const routes: Routes = [
     {
@@ -23,17 +24,18 @@ const routes: Routes = [
                 children: [
                     {
                         path: '',
-                        redirectTo: 'wave',
-                        pathMatch: 'full',
+                        redirectTo: 'force-directed-graph',
+                        pathMatch: 'full'
                     },
                     {
                         path: 'wave',
-                        component: WaveComponent,
-                        data: { breadcrumb: 'Graph Viewer' },
+                        component: G6Component,
+                        data: { breadcrumb: 'Graph Viewer' }
                     },
                     {
                         path: 'force-directed-graph',
-                        component: ForceDirectedGraphComponent
+                        component: G6Component,
+                        data: { breadcrumb: 'Graph Viewer' }
                     },
                     {
                         path: ':id',

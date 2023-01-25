@@ -1,52 +1,73 @@
-import { Component, OnInit } from '@angular/core';
-import G6 from "@antv/g6";
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
+import { Graph, ModeType } from '@antv/g6';
 
 @Component({
-  selector: 'app-g6',
+  selector: 'g6-graph',
   templateUrl: './g6.component.html',
-  styleUrls: ['./g6.component.scss']
+  styles: [],
+  changeDetection: ChangeDetectionStrategy.Default
 })
-export class G6Component implements OnInit {
+export class G6Component implements AfterViewInit, OnDestroy {
 
-  // The source data
-  public data = {
-    // The array of nodes
-    nodes: [
-      {
-        id: 'node1',
-        x: 100,
-        y: 200,
-      },
-      {
-        id: 'node2',
-        x: 300,
-        y: 200,
-      },
-    ],
-    // The array of edges
-    edges: [
-      // An edge links from node1 to node2
-      {
-        source: 'node1',
-        target: 'node2',
-      },
-    ],
+  @Input('ngStyle')
+  public style: any = {
+    width: '100%',
+    height: '100%'
   };
 
-  constructor() {
-    const graph = new G6.Graph({
-      container: 'mountNode', // The container id or HTML node of the graph canvas.
-      // The width and the height of graph canvas
-      width: 800,
-      height: 500,
+  @Input()
+  public defaultModes: ModeType[] = [
+    'drag-node',
+    'drag-canvas',
+    'drag-combo',
+    'zoom-canvas',
+    'click-select',
+    'brush-select'
+  ];
+  @Input()
+  public plugins: any[] = [];
+
+  @Output()
+  public readonly graphReady = new EventEmitter<Graph>();
+
+  @ViewChild('g6GraphContainer')
+  private graphContainer!: ElementRef;
+
+  private resizeObserver = new ResizeObserver( (entries: ResizeObserverEntry[]) => {
+    if (this.graphContainer?.nativeElement && this.graph) {
+      const entry = entries.find( (e: ResizeObserverEntry) => e.target === this.graphContainer.nativeElement );
+      if (entry) {
+        this.graph.changeSize(entry.contentRect.width, entry.contentRect.height);
+      }
+    }
+  });
+
+  private graph!: Graph;
+
+  public ngAfterViewInit(): void {
+
+    const el = this.graphContainer.nativeElement;
+    this.resizeObserver.observe(el);
+    el.onselectstart = () => { return false }
+
+    this.graph = new Graph({
+      container: el,
+      width: el.width,
+      height: el.height,
+      modes: {
+        default: this.defaultModes
+      },
+      plugins: this.plugins
     });
-    // Load the data
-    graph.data(this.data);
-    // Render the graph
-    graph.render();
+    this.graphReady.emit(this.graph);
   }
 
-  ngOnInit(): void {
+  public ngOnDestroy(): void {
+    // unsure if this is actually necessary since the entire observer should get GC'd along with the component
+    this.resizeObserver.unobserve(this.graphContainer.nativeElement);
   }
+}
 
+declare global {
+  interface Window { G6Graph: Graph; }
 }
