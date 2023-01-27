@@ -1,7 +1,8 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
-import { Graph, ModeType } from '@antv/g6';
+import { Graph, GraphData, ModeType } from '@antv/g6';
 import configData from '../../../sample-data/configurations.json';
 import {GraphTransformDataService} from '../graph-services/graph-data-transform.service';
+import {NgOnDestroyService} from '../../services/on-destroy.service';
 
 @Component({
   selector: 'g6-graph',
@@ -13,30 +14,31 @@ export class G6Component implements AfterViewInit, OnDestroy {
 
   public configData = configData;
 
-  public data = {
-    nodes: [
-      {
-        id: 'node1',
-        label: 'node1',
-      },
-      {
-        id: 'node2',
-        label: 'node2',
-      },
-    ],
-    edges: [
-      {
-        source: 'node1',
-        target: 'node2',
-      },
-    ],
-  };
+  // public data = {
+  //   nodes: [
+  //     {
+  //       id: 'node1',
+  //       label: 'node1',
+  //     },
+  //     {
+  //       id: 'node2',
+  //       label: 'node2',
+  //     },
+  //   ],
+  //   edges: [
+  //     {
+  //       source: 'node1',
+  //       target: 'node2',
+  //     },
+  //   ],
+  // };
+
+  public graphData: GraphData = [];
 
   @Input('ngStyle')
   public style: any = {
     width: '100%',
-    height: 'calc(100vh - 64px)',
-    border: '3px solid gray'
+    height: 'calc(100vh - 64px)'
   };
 
   @Input()
@@ -68,9 +70,11 @@ export class G6Component implements AfterViewInit, OnDestroy {
 
   private graph!: Graph;
 
-  constructor(private graphDataService: GraphTransformDataService) { }
+  constructor(private graphDataService: GraphTransformDataService, private destroy$: NgOnDestroyService) { }
 
   public ngAfterViewInit(): void {
+
+    this.graphData = this.graphDataService.transformConfigDataToGraphData();
 
     const el = this.graphContainer.nativeElement;
     this.resizeObserver.observe(el);
@@ -87,8 +91,8 @@ export class G6Component implements AfterViewInit, OnDestroy {
     });
 
     this.graphReady.emit(this.graph);
-    this.graph.data(this.data);
-    this.graph.read(this.data);
+    this.graph.data(this.graphData);
+    this.graph.read(this.graphData);
 
     this.graphDataService.transformConfigDataToGraphData();
   }
