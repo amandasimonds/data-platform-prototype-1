@@ -1,5 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
 import { Graph, ModeType } from '@antv/g6';
+import configData from '../../../sample-data/configurations.json';
+import {GraphTransformDataService} from '../graph-services/graph-data-transform.service';
 
 @Component({
   selector: 'g6-graph',
@@ -9,10 +11,32 @@ import { Graph, ModeType } from '@antv/g6';
 })
 export class G6Component implements AfterViewInit, OnDestroy {
 
+  public configData = configData;
+
+  public data = {
+    nodes: [
+      {
+        id: 'node1',
+        label: 'node1',
+      },
+      {
+        id: 'node2',
+        label: 'node2',
+      },
+    ],
+    edges: [
+      {
+        source: 'node1',
+        target: 'node2',
+      },
+    ],
+  };
+
   @Input('ngStyle')
   public style: any = {
     width: '100%',
-    height: '100%'
+    height: 'calc(100vh - 64px)',
+    border: '3px solid gray'
   };
 
   @Input()
@@ -33,9 +57,9 @@ export class G6Component implements AfterViewInit, OnDestroy {
   @ViewChild('g6GraphContainer')
   private graphContainer!: ElementRef;
 
-  private resizeObserver = new ResizeObserver( (entries: ResizeObserverEntry[]) => {
+  private resizeObserver = new ResizeObserver((entries: ResizeObserverEntry[]) => {
     if (this.graphContainer?.nativeElement && this.graph) {
-      const entry = entries.find( (e: ResizeObserverEntry) => e.target === this.graphContainer.nativeElement );
+      const entry = entries.find((e: ResizeObserverEntry) => e.target === this.graphContainer.nativeElement);
       if (entry) {
         this.graph.changeSize(entry.contentRect.width, entry.contentRect.height);
       }
@@ -43,6 +67,8 @@ export class G6Component implements AfterViewInit, OnDestroy {
   });
 
   private graph!: Graph;
+
+  constructor(private graphDataService: GraphTransformDataService) { }
 
   public ngAfterViewInit(): void {
 
@@ -59,7 +85,12 @@ export class G6Component implements AfterViewInit, OnDestroy {
       },
       plugins: this.plugins
     });
+
     this.graphReady.emit(this.graph);
+    this.graph.data(this.data);
+    this.graph.read(this.data);
+
+    this.graphDataService.transformConfigDataToGraphData();
   }
 
   public ngOnDestroy(): void {

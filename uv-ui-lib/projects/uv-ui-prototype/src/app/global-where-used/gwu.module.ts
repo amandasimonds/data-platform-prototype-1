@@ -20,12 +20,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BreadcrumbModule } from 'xng-breadcrumb';
+import { GraphCanvasComponent } from './graph-canvas/graph-canvas.component';
 
 @NgModule({
     declarations: [
         GlobalWhereUsedComponent,
         WaveComponent,
-        ForceDirectedGraphComponent
+        ForceDirectedGraphComponent,
+        GraphCanvasComponent
     ],
     imports: [
         LandingModule,
