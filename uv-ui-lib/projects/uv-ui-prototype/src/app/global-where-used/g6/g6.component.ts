@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
-import { Graph, GraphData, ModeType } from '@antv/g6';
+import G6, { Graph, GraphData, ModeType } from '@antv/g6';
 import configData from '../../../sample-data/configurations.json';
 import {GraphTransformDataService} from '../graph-services/graph-data-transform.service';
 import {NgOnDestroyService} from '../../services/on-destroy.service';
@@ -38,7 +38,8 @@ export class G6Component implements AfterViewInit, OnDestroy {
   @Input('ngStyle')
   public style: any = {
     width: '100%',
-    height: 'calc(100vh - 64px)'
+    height: 'calc(100vh - 64px)',
+    border: '2px solid gray'
   };
 
   @Input()
@@ -48,7 +49,8 @@ export class G6Component implements AfterViewInit, OnDestroy {
     'drag-combo',
     'zoom-canvas',
     'click-select',
-    'brush-select'
+    'brush-select',
+    {type: 'collapse-expand'}
   ];
   @Input()
   public plugins: any[] = [];
@@ -74,27 +76,42 @@ export class G6Component implements AfterViewInit, OnDestroy {
 
   public ngAfterViewInit(): void {
 
-    this.graphData = this.graphDataService.transformConfigDataToGraphData();
+    // this.graphData = this.graphDataService.transformConfigDataToGraphData();
+    this.graphData = this.graphDataService.transformConfigDataToTreeGraphData();
 
     const el = this.graphContainer.nativeElement;
-    this.resizeObserver.observe(el);
+    // this.resizeObserver.observe(el);
     el.onselectstart = () => { return false }
 
-    this.graph = new Graph({
+    // this.graph = new Graph({
+    //   container: el,
+    //   width: el.width,
+    //   height: el.height,
+    //   modes: {
+    //     default: this.defaultModes
+    //   },
+    //   plugins: this.plugins
+    // });
+
+    this.graph = new G6.TreeGraph({
       container: el,
       width: el.width,
       height: el.height,
       modes: {
         default: this.defaultModes
       },
-      plugins: this.plugins
+      layout: {
+        type: 'dendrogram',
+        direction: 'LR', // H / V / LR / RL / TB / BT
+        nodeSep: 50,
+        rankSep: 100,
+        center: [500, 300],
+      },
+      fitCenter: true
     });
 
     this.graphReady.emit(this.graph);
-    this.graph.data(this.graphData);
     this.graph.read(this.graphData);
-
-    this.graphDataService.transformConfigDataToGraphData();
   }
 
   public ngOnDestroy(): void {
