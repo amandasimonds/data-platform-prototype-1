@@ -1,19 +1,22 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from "@angular/forms";
 import G6, { Graph, GraphData, ModeType } from '@antv/g6';
 import configData from '../../../sample-data/configurations.json';
 import { GraphTransformDataService } from '../graph-services/graph-data-transform.service';
-import { NgOnDestroyService } from '../../services/on-destroy.service';
 
 @Component({
   selector: 'g6-graph',
   templateUrl: './g6.component.html',
-  styles: [],
+  styleUrls: ['./g6.component.scss'],
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class G6Component implements AfterViewInit, OnDestroy {
 
   public configData = configData;
   public graphData: GraphData = [];
+  public graphControlForm: FormGroup = new FormGroup({
+    nodeCount: new FormControl(''),
+});
 
   @Input('ngStyle')
   public style: any = {
@@ -83,8 +86,12 @@ export class G6Component implements AfterViewInit, OnDestroy {
     // unsure if this is actually necessary since the entire observer should get GC'd along with the component
     this.resizeObserver.unobserve(this.graphContainer.nativeElement);
   }
-}
 
+  public updateGraph(): void {
+    this.graphData = this.graphDataService.transformConfigDataToTreeGraphData(this.graphControlForm.controls.nodeCount.value);
+    this.graph.read(this.graphData);
+  }
+}
 declare global {
   interface Window { G6Graph: Graph; }
 }

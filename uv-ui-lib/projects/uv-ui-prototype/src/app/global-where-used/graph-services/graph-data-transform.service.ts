@@ -32,20 +32,29 @@ export class GraphTransformDataService {
         return graphData;
     }
 
-    public transformConfigDataToTreeGraphData(): GraphData {
+    public transformConfigDataToTreeGraphData(value?: number): GraphData {
         const subTree = [];
+        const chosenValue = value ? value : 100;
 
-        for (let item of this.configData) {
+        // for (let item of this.configData) {
+        //     subTree.push({
+        //         id: item.id.toString(),
+        //         label: item.name,
+        //         type: 'rect'
+        //     })
+        // };
+
+        for (let i = 0; i < chosenValue; i++) {
             subTree.push({
-                id: item.id.toString(),
-                label: item.name,
+                id: i.toString(),
+                label: 'Component' + i.toString(),
                 type: 'rect'
             })
         };
 
         const graphData = {
             isRoot: true,
-            id: '1',
+            id: 'root',
             label: 'Root',
             type: 'rect',
             children: [
@@ -55,6 +64,7 @@ export class GraphTransformDataService {
                 }
             ]
         };
+        console.log(graphData);
         return graphData;
     }
 }

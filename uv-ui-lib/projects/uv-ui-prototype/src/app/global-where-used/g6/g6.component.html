@@ -1,1 +1,12 @@
 <div (contextmenu)="$event.preventDefault()" [ngStyle]="style" #g6GraphContainer></div>
+<div class="graph-controls">
+    <form class="form" [formGroup]="graphControlForm" (ngSubmit)="updateGraph()">
+        <epd-pl-input
+            formControlName="nodeCount"
+            placeholder="Enter a number"
+            labelPosition="left"
+            labelText="Number of Nodes:"
+        ></epd-pl-input>
+        <button mat-flat-button color="primary" type="submit">Update Graph</button>
+    </form>
+</div>
