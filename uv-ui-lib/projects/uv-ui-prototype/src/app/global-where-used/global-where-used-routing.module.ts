@@ -24,7 +24,7 @@ const routes: Routes = [
                 children: [
                     {
                         path: '',
-                        redirectTo: 'force-directed-graph',
+                        redirectTo: 'g6',
                         pathMatch: 'full'
                     },
                     {
@@ -33,7 +33,7 @@ const routes: Routes = [
                         data: { breadcrumb: 'Graph Viewer' }
                     },
                     {
-                        path: 'force-directed-graph',
+                        path: 'g6',
                         component: G6Component,
                         data: { breadcrumb: 'Graph Viewer' }
                     },

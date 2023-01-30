@@ -1,8 +1,8 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
 import G6, { Graph, GraphData, ModeType } from '@antv/g6';
 import configData from '../../../sample-data/configurations.json';
-import {GraphTransformDataService} from '../graph-services/graph-data-transform.service';
-import {NgOnDestroyService} from '../../services/on-destroy.service';
+import { GraphTransformDataService } from '../graph-services/graph-data-transform.service';
+import { NgOnDestroyService } from '../../services/on-destroy.service';
 
 @Component({
   selector: 'g6-graph',
@@ -13,33 +13,12 @@ import {NgOnDestroyService} from '../../services/on-destroy.service';
 export class G6Component implements AfterViewInit, OnDestroy {
 
   public configData = configData;
-
-  // public data = {
-  //   nodes: [
-  //     {
-  //       id: 'node1',
-  //       label: 'node1',
-  //     },
-  //     {
-  //       id: 'node2',
-  //       label: 'node2',
-  //     },
-  //   ],
-  //   edges: [
-  //     {
-  //       source: 'node1',
-  //       target: 'node2',
-  //     },
-  //   ],
-  // };
-
   public graphData: GraphData = [];
 
   @Input('ngStyle')
   public style: any = {
     width: '100%',
     height: 'calc(100vh - 64px)',
-    border: '2px solid gray'
   };
 
   @Input()
@@ -50,7 +29,7 @@ export class G6Component implements AfterViewInit, OnDestroy {
     'zoom-canvas',
     'click-select',
     'brush-select',
-    {type: 'collapse-expand'}
+    { type: 'collapse-expand' }
   ];
   @Input()
   public plugins: any[] = [];
@@ -72,27 +51,13 @@ export class G6Component implements AfterViewInit, OnDestroy {
 
   private graph!: Graph;
 
-  constructor(private graphDataService: GraphTransformDataService, private destroy$: NgOnDestroyService) { }
+  constructor(private graphDataService: GraphTransformDataService) { }
 
   public ngAfterViewInit(): void {
-
-    // this.graphData = this.graphDataService.transformConfigDataToGraphData();
-    this.graphData = this.graphDataService.transformConfigDataToTreeGraphData();
-
     const el = this.graphContainer.nativeElement;
-    // this.resizeObserver.observe(el);
+    this.resizeObserver.observe(el);
     el.onselectstart = () => { return false }
-
-    // this.graph = new Graph({
-    //   container: el,
-    //   width: el.width,
-    //   height: el.height,
-    //   modes: {
-    //     default: this.defaultModes
-    //   },
-    //   plugins: this.plugins
-    // });
-
+    this.graphData = this.graphDataService.transformConfigDataToTreeGraphData();
     this.graph = new G6.TreeGraph({
       container: el,
       width: el.width,
@@ -102,7 +67,7 @@ export class G6Component implements AfterViewInit, OnDestroy {
       },
       layout: {
         type: 'dendrogram',
-        direction: 'LR', // H / V / LR / RL / TB / BT
+        direction: 'LR',
         nodeSep: 50,
         rankSep: 100,
         center: [500, 300],
