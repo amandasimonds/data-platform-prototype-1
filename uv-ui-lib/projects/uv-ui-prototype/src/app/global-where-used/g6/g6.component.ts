@@ -60,26 +60,94 @@ export class G6Component implements AfterViewInit, OnDestroy {
     const el = this.graphContainer.nativeElement;
     this.resizeObserver.observe(el);
     el.onselectstart = () => { return false }
-    this.graphData = this.graphDataService.transformConfigDataToTreeGraphData();
+    // this.graphData = this.graphDataService.transformConfigDataToGraphData();
+    this.graphData = this.graphDataService.getTreeGraphData();
+    // this.graphData = this.graphDataService.getComboData();
+
+    // this.graph = new G6.TreeGraph({
+    //   container: el,
+    //   width: el.width,
+    //   height: el.height,
+    //   modes: {
+    //     default: this.defaultModes
+    //   },
+    //   layout: {
+    //     type: 'dendrogram',
+    //     direction: 'LR',
+    //     nodeSep: 50,
+    //     rankSep: 100,
+    //     center: [500, 300],
+    //   },
+    //   fitCenter: true
+    // });
+
     this.graph = new G6.TreeGraph({
       container: el,
       width: el.width,
       height: el.height,
       modes: {
-        default: this.defaultModes
+        default: [
+          {
+            type: 'collapse-expand',
+            // onChange: function onChange(item, collapsed) {
+            //   const data = item.get('model');
+            //   this.graph.updateItem(item, {
+            //     collapsed,
+            //   });
+            //   data.collapsed = collapsed;
+            //   return true;
+            // },
+          },
+          'drag-canvas',
+          'zoom-canvas',
+        ],
+      },
+      defaultNode: {
+        type: 'tree-node',
+        anchorPoints: [
+          [0, 0.5],
+          [1, 0.5],
+        ],
       },
       layout: {
-        type: 'dendrogram',
+        type: 'compactBox',
         direction: 'LR',
-        nodeSep: 50,
-        rankSep: 100,
-        center: [500, 300],
       },
       fitCenter: true
     });
 
+    // this.graph = new G6.Graph({
+    //   container: el,
+    //   width: el.width,
+    //   height: el.height,
+    //   modes: {
+    //     default: this.defaultModes
+    //   },
+    //   layout: {
+    //     type: 'dagre',
+    //     rankdir: 'LR',
+    //     align: 'UL',
+    //     controlPoints: true,
+    //     nodesepFunc: () => 1,
+    //     ranksepFunc: () => 1,
+    //   },
+    //   defaultNode: {
+    //     style: {
+    //       lineWidth: 2,
+    //       stroke: '#5B8FF9',
+    //       fill: '#C6E5FF',
+    //     },
+    //   },
+    //   defaultEdge: {
+    //     size: 1,
+    //     color: 'black'
+    //   },
+    //   fitCenter: true
+    // });
+
     this.graphReady.emit(this.graph);
     this.graph.read(this.graphData);
+    this.graph.fitView();
   }
 
   public ngOnDestroy(): void {
@@ -88,7 +156,7 @@ export class G6Component implements AfterViewInit, OnDestroy {
   }
 
   public updateGraph(): void {
-    this.graphData = this.graphDataService.transformConfigDataToTreeGraphData(this.graphControlForm.controls.nodeCount.value);
+    this.graphData = this.graphDataService.getTreeGraphData(this.graphControlForm.controls.nodeCount.value);
     this.graph.read(this.graphData);
   }
 }

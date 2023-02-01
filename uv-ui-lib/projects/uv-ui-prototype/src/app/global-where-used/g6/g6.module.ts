@@ -5,10 +5,12 @@ import { G6Component } from './g6.component';
 import { GraphTransformDataService } from '../graph-services/graph-data-transform.service';
 import { InputModule } from "epd-pattern-library";
 import { MatButtonModule } from '@angular/material/button';
+import { G6TreeNode } from './node';
 
 @NgModule({
   declarations: [
-    G6Component
+    G6Component,
+    G6TreeNode
   ],
   imports: [
     CommonModule,

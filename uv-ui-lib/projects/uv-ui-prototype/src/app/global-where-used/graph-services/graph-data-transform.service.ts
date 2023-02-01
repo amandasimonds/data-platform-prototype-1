@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { EdgeConfig, GraphData, NodeConfig } from '@antv/g6';
 import configData from '../../../sample-data/configurations.json';
+import { comboSample } from '../g6/sample_data/combo-sample';
 
 @Injectable()
 export class GraphTransformDataService {
@@ -32,7 +33,12 @@ export class GraphTransformDataService {
         return graphData;
     }
 
-    public transformConfigDataToTreeGraphData(value?: number): GraphData {
+    public getComboData(): GraphData {
+        const graphData = comboSample;
+        return graphData;
+    }
+
+    public getTreeGraphData(value?: number): GraphData {
         const subTree = [];
         const chosenValue = value ? value : 100;
 
@@ -48,6 +54,7 @@ export class GraphTransformDataService {
             subTree.push({
                 id: i.toString(),
                 label: 'Component' + i.toString(),
+                comboId: 'a',
                 type: 'rect'
             })
         };
@@ -62,6 +69,12 @@ export class GraphTransformDataService {
                     id: 'SubTree',
                     children: subTree
                 }
+            ],
+            combos: [
+                {
+                    id: 'a',
+                    label: 'Combo A',
+                },
             ]
         };
         console.log(graphData);
