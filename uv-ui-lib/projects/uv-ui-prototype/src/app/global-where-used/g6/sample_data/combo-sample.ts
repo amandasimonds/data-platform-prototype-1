@@ -1,12 +1,32 @@
 export const comboSample = {
+    combos: [
+        {
+            id: 'a',
+            label: 'ECM',
+        },
+        {
+            id: 'b',
+            label: 'Software Build',
+        },
+        {
+            id: 'c',
+            label: 'Software Version',
+        },
+        {
+            id: 'd',
+            label: 'Software Component',
+            // parentId: 'b',
+        },
+    ],
     nodes: [
         {
             id: '0',
-            comboId: 'a',
+            label: 'ESN'
         },
         {
             id: '1',
             comboId: 'a',
+            label: 'ECM 1'
         },
         {
             id: '2',
@@ -81,30 +101,7 @@ export const comboSample = {
             comboId: 'b',
         },
         {
-            id: '20',
-        },
-        {
-            id: '21',
-        },
-        {
-            id: '22',
-        },
-        {
             id: '23',
-            comboId: 'c',
-        },
-        {
-            id: '24',
-            comboId: 'a',
-        },
-        {
-            id: '25',
-        },
-        {
-            id: '26',
-        },
-        {
-            id: '27',
             comboId: 'c',
         },
         {
@@ -139,9 +136,9 @@ export const comboSample = {
             label: 'Combo A - Combo B',
             size: 3,
             labelCfg: {
-                autoRotate: true,
+                // autoRotate: true,
                 style: {
-                    stroke: '#fff',
+                    stroke: 'white',
                     lineWidth: 5,
                     fontSize: 20,
                 },
@@ -151,9 +148,9 @@ export const comboSample = {
             },
         },
         {
-            source: 'a',
-            target: '33',
-            label: 'Combo-Node',
+            source: 'b',
+            target: 'c',
+            label: 'Combo B - Combo C',
             size: 3,
             labelCfg: {
                 autoRotate: true,
@@ -165,266 +162,7 @@ export const comboSample = {
             },
             style: {
                 stroke: 'blue',
-            },
-        },
-        {
-            source: '0',
-            target: '1',
-        },
-        {
-            source: '0',
-            target: '2',
-        },
-        {
-            source: '0',
-            target: '3',
-        },
-        {
-            source: '0',
-            target: '4',
-        },
-        {
-            source: '0',
-            target: '5',
-        },
-        {
-            source: '0',
-            target: '7',
-        },
-        {
-            source: '0',
-            target: '8',
-        },
-        {
-            source: '0',
-            target: '9',
-        },
-        {
-            source: '0',
-            target: '10',
-        },
-        {
-            source: '0',
-            target: '11',
-        },
-        {
-            source: '0',
-            target: '13',
-        },
-        {
-            source: '0',
-            target: '14',
-        },
-        {
-            source: '0',
-            target: '15',
-        },
-        {
-            source: '0',
-            target: '16',
-        },
-        {
-            source: '2',
-            target: '3',
-        },
-        {
-            source: '4',
-            target: '5',
-        },
-        {
-            source: '4',
-            target: '6',
-        },
-        {
-            source: '5',
-            target: '6',
-        },
-        {
-            source: '7',
-            target: '13',
-        },
-        {
-            source: '8',
-            target: '14',
-        },
-        {
-            source: '9',
-            target: '10',
-        },
-        {
-            source: '10',
-            target: '22',
-        },
-        {
-            source: '10',
-            target: '14',
-        },
-        {
-            source: '10',
-            target: '12',
-        },
-        {
-            source: '10',
-            target: '24',
-        },
-        {
-            source: '10',
-            target: '21',
-        },
-        {
-            source: '10',
-            target: '20',
-        },
-        {
-            source: '11',
-            target: '24',
-        },
-        {
-            source: '11',
-            target: '22',
-        },
-        {
-            source: '11',
-            target: '14',
-        },
-        {
-            source: '12',
-            target: '13',
-        },
-        {
-            source: '16',
-            target: '17',
-        },
-        {
-            source: '16',
-            target: '18',
-        },
-        {
-            source: '16',
-            target: '21',
-        },
-        {
-            source: '16',
-            target: '22',
-        },
-        {
-            source: '17',
-            target: '18',
-        },
-        {
-            source: '17',
-            target: '20',
-        },
-        {
-            source: '18',
-            target: '19',
-        },
-        {
-            source: '19',
-            target: '20',
-        },
-        {
-            source: '19',
-            target: '33',
-        },
-        {
-            source: '19',
-            target: '22',
-        },
-        {
-            source: '19',
-            target: '23',
-        },
-        {
-            source: '20',
-            target: '21',
-        },
-        {
-            source: '21',
-            target: '22',
-        },
-        {
-            source: '22',
-            target: '24',
-        },
-        {
-            source: '22',
-            target: '25',
-        },
-        {
-            source: '22',
-            target: '26',
-        },
-        {
-            source: '22',
-            target: '23',
-        },
-        {
-            source: '22',
-            target: '28',
-        },
-        {
-            source: '22',
-            target: '30',
-        },
-        {
-            source: '22',
-            target: '31',
-        },
-        {
-            source: '22',
-            target: '32',
-        },
-        {
-            source: '22',
-            target: '33',
-        },
-        {
-            source: '23',
-            target: '28',
-        },
-        {
-            source: '23',
-            target: '27',
-        },
-        {
-            source: '23',
-            target: '29',
-        },
-        {
-            source: '23',
-            target: '30',
-        },
-        {
-            source: '23',
-            target: '31',
-        },
-        {
-            source: '23',
-            target: '33',
-        },
-        {
-            source: '32',
-            target: '33',
-        },
-    ],
-    combos: [
-        {
-            id: 'a',
-            label: 'Combo A',
-        },
-        {
-            id: 'b',
-            label: 'Combo B',
-        },
-        {
-            id: 'c',
-            label: 'Combo C',
-        },
-        {
-            id: 'd',
-            label: 'Combo D',
-            parentId: 'b',
-        },
+            }
+        }
     ],
 };

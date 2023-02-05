@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Graph, GraphData } from '@antv/g6';
-import { GraphEventService, GRAPH_EVENT_SERVICE } from '../graph-services/graph-event-service';
+import { GraphEventService, GRAPH_EVENT_SERVICE } from '../graph-services/graph-event.service';
 
 @Component({
   selector: 'atlas-graph-canvas',

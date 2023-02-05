@@ -1,6 +1,8 @@
 <div (contextmenu)="$event.preventDefault()" [ngStyle]="style" #g6GraphContainer></div>
 <div class="graph-controls">
     <form class="form" [formGroup]="graphControlForm" (ngSubmit)="updateGraph()">
+        <button mat-flat-button color="primary" (click)="loadDagreLayout()">Dagre layout</button>
+        <button mat-flat-button color="primary" (click)="loadComboLayout()">Combo layout</button>
         <epd-pl-input
             formControlName="nodeCount"
             placeholder="Enter a number"

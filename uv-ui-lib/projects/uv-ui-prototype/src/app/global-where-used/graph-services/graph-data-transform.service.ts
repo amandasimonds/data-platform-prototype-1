@@ -34,13 +34,104 @@ export class GraphTransformDataService {
     }
 
     public getComboData(): GraphData {
-        const graphData = comboSample;
-        return graphData;
+
+        const comboData2 = comboSample;
+        const comboData = [{
+            id: 'a',
+            label: 'ECM',
+        },
+        {
+            id: 'b',
+            label: 'Software Build',
+        },
+        {
+            id: 'c',
+            label: 'Software Version',
+        },
+        {
+            id: 'd',
+            label: 'Software Component',
+            // parentId: 'b',
+        },];
+        const nodeData: {id: string; label: string; comboId?: string;}[] = [{
+            id: 'ESN',
+            label: 'ESN',
+        }];
+        const edgeData = [{
+            source: 'a',
+            target: 'b',
+            label: 'ESM -> Software Build',
+            size: 3,
+            labelCfg: {
+                autoRotate: true,
+                style: {
+                    stroke: 'white',
+                    lineWidth: 5,
+                    fontSize: 20,
+                },
+            },
+            style: {
+                stroke: 'red',
+            },
+        },
+        {
+            source: 'b',
+            target: 'c',
+            label: 'Software Build -> Software Version',
+            size: 3,
+            labelCfg: {
+                autoRotate: true,
+                style: {
+                    stroke: '#fff',
+                    lineWidth: 5,
+                    fontSize: 20,
+                },
+            },
+            style: {
+                stroke: 'blue',
+            }
+        }];
+
+        for (let i = 0; i < 30; i++) {
+            nodeData.push({
+                id: 'ESM' + i.toString(),
+                label: 'ESM' + i.toString(),
+                comboId: 'a'
+            }
+            )
+        };
+
+        for (let i = 0; i < 10; i++) {
+            nodeData.push({
+                id: 'SoftwareBuild' + i.toString(),
+                label: 'Software Build' + i.toString(),
+                comboId: 'b'
+            }
+            )
+        };
+
+        for (let i = 0; i < 50; i++) {
+            nodeData.push({
+                id: 'SoftwareVersion' + i.toString(),
+                label: 'Software Version' + i.toString(),
+                comboId: 'c'
+            }
+            )
+        };
+
+        const graphData = {
+            combos: comboData,
+            nodes: nodeData,
+            edges: edgeData
+        };
+
+        console.log('combo data', comboData2);
+        return comboData2;
     }
 
     public getTreeGraphData(value?: number): GraphData {
-        const subTree = [];
-        const chosenValue = value ? value : 100;
+        const ecmTree = [];
+        const chosenValue = value ? value : 10;
 
         // for (let item of this.configData) {
         //     subTree.push({
@@ -51,29 +142,54 @@ export class GraphTransformDataService {
         // };
 
         for (let i = 0; i < chosenValue; i++) {
-            subTree.push({
+            ecmTree.push({
                 id: i.toString(),
                 label: 'Component' + i.toString(),
                 comboId: 'a',
-                type: 'rect'
+                type: 'tree-node',
+                children: [
+                    {
+                        id: '1',
+                        label: 'Component',
+                        comboId: 'a',
+                        type: 'tree-node',
+                    },
+                    {
+                        id: '2',
+                        label: 'Component',
+                        comboId: 'a',
+                        type: 'tree-node',
+                    },
+                    {
+                        id: '3',
+                        label: 'Component',
+                        comboId: 'a',
+                        type: 'tree-node',
+                    }
+                ]
             })
         };
 
         const graphData = {
             isRoot: true,
             id: 'root',
-            label: 'Root',
-            type: 'rect',
+            label: 'ESN',
+            type: 'tree-node',
             children: [
                 {
-                    id: 'SubTree',
-                    children: subTree
+                    id: 'ECM',
+                    children: ecmTree,
+                    collapsed: true
                 }
             ],
             combos: [
                 {
                     id: 'a',
                     label: 'Combo A',
+                },
+                {
+                    id: 'b',
+                    label: 'Combo B',
                 },
             ]
         };
