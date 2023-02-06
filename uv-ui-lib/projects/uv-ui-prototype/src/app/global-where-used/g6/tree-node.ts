@@ -67,3 +67,66 @@ export const treeNode: NodeConfig = G6.registerNode(
     },
     'single-node',
 );
+
+    // this.graph = new G6.TreeGraph({
+    //   container: el,
+    //   width: el.width,
+    //   height: el.height,
+    //   modes: {
+    //     default: this.defaultModes
+    //   },
+    //   layout: {
+    //     type: 'dendrogram',
+    //     direction: 'LR',
+    //     nodeSep: 50,
+    //     rankSep: 100,
+    //     center: [500, 300],
+    //   },
+    //   fitCenter: true
+    // });
+
+    // this.graph = new G6.TreeGraph({
+    //   container: el,
+    //   width: el.width,
+    //   height: el.height,
+    //   modes: {
+    //     default: [
+    //       {
+    //         type: 'collapse-expand',
+    //         trigger: 'click',
+    //         onChange(item, collapsed) {
+    //           console.log(item);
+    //           const data = item.get('model');
+    //           console.log(data.collapsed);
+    //           data.collapsed = collapsed;
+    //           return true;
+    //         },
+    //       },
+    // {
+    //   type: 'collapse-expand',
+    //   onChange(item, collapsed) {
+    //     const icon = item.get('group').findByClassName('collapse-icon');
+    //     if (collapsed) {
+    //       icon.attr('symbol', EXPAND_ICON);
+    //     } else {
+    //       icon.attr('symbol', COLLAPSE_ICON);
+    //     }
+    //   },
+    // },
+    //       'drag-canvas',
+    //       'zoom-canvas',
+    //     ],
+    //   },
+    //   defaultNode: {
+    //     type: 'tree-node',
+    //     anchorPoints: [
+    //       [0, 0.5],
+    //       [1, 0.5],
+    //     ],
+    //   },
+    //   layout: {
+    //     type: 'compactBox',
+    //     direction: 'LR',
+    //   },
+    //   fitCenter: true
+    // });

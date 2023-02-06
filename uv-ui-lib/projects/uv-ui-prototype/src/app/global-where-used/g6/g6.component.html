@@ -1,14 +1,38 @@
 <div (contextmenu)="$event.preventDefault()" [ngStyle]="style" #g6GraphContainer></div>
 <div class="graph-controls">
     <form class="form" [formGroup]="graphControlForm" (ngSubmit)="updateGraph()">
-        <button mat-flat-button color="primary" (click)="loadDagreLayout()">Dagre layout</button>
-        <button mat-flat-button color="primary" (click)="loadComboLayout()">Combo layout</button>
-        <epd-pl-input
-            formControlName="nodeCount"
-            placeholder="Enter a number"
-            labelPosition="left"
-            labelText="Number of Nodes:"
-        ></epd-pl-input>
-        <button mat-flat-button color="primary" type="submit">Update Graph</button>
+        <div class="flex gap-xs">
+            <button mat-flat-button color="primary" (click)="loadDagreLayout()">Dagre layout</button>
+            <button mat-flat-button color="primary" (click)="loadComboLayout()">Combo layout</button>
+        </div>
+        <div class="flex flex-column gap-xs">
+            <epd-pl-input
+                formControlName="ecmCount"
+                placeholder="Enter a number"
+                labelPosition="left"
+                labelText="# ECMs:"
+            ></epd-pl-input>
+            <epd-pl-input
+                formControlName="softwareBuildCount"
+                placeholder="Enter a number"
+                labelPosition="left"
+                labelText="# Software Builds:"
+            ></epd-pl-input>
+            <epd-pl-input
+                formControlName="softwareVersionCount"
+                placeholder="Enter a number"
+                labelPosition="left"
+                labelText="# Software Versions:"
+            ></epd-pl-input>
+            <epd-pl-input
+                formControlName="softwareComponentCount"
+                placeholder="Enter a number"
+                labelPosition="left"
+                labelText="# Software Components:"
+            ></epd-pl-input>
+        </div>
+        <div>
+            <button mat-flat-button color="primary" type="submit">Update Graph</button>
+        </div>
     </form>
 </div>

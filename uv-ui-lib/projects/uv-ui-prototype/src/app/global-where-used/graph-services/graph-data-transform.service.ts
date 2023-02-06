@@ -35,6 +35,15 @@ export class GraphTransformDataService {
 
     public getComboData(): GraphData {
 
+        const labelCfg = {
+            autoRotate: true,
+            style: {
+                stroke: 'white',
+                lineWidth: 5,
+                fontSize: 20,
+            },
+        }
+
         const comboData2 = comboSample;
         const comboData = [{
             id: 'a',
@@ -43,78 +52,100 @@ export class GraphTransformDataService {
         {
             id: 'b',
             label: 'Software Build',
+            collapsed: true
         },
         {
             id: 'c',
             label: 'Software Version',
+            collapsed: true
         },
         {
             id: 'd',
             label: 'Software Component',
-            // parentId: 'b',
-        },];
-        const nodeData: {id: string; label: string; comboId?: string;}[] = [{
+        },
+        {
+            id: 'e',
+            label: 'ComboChild', 
+            parentId: 'c',
+        }];
+        const nodeData: { id: string; label: string; comboId?: string; }[] = [{
             id: 'ESN',
             label: 'ESN',
         }];
-        const edgeData = [{
-            source: 'a',
-            target: 'b',
-            label: 'ESM -> Software Build',
-            size: 3,
-            labelCfg: {
-                autoRotate: true,
+        const edgeData = [
+            {
+                source: 'ESN',
+                target: 'a',
+                label: 'ESN -> ECM',
+                size: 3,
+                labelCfg: labelCfg,
                 style: {
-                    stroke: 'white',
-                    lineWidth: 5,
-                    fontSize: 20,
+                    stroke: 'red',
                 },
             },
-            style: {
-                stroke: 'red',
-            },
-        },
-        {
-            source: 'b',
-            target: 'c',
-            label: 'Software Build -> Software Version',
-            size: 3,
-            labelCfg: {
-                autoRotate: true,
+            {
+                source: 'a',
+                target: 'b',
+                label: 'ECM -> Software Build',
+                size: 3,
+                labelCfg: labelCfg,
                 style: {
-                    stroke: '#fff',
-                    lineWidth: 5,
-                    fontSize: 20,
+                    stroke: 'red',
                 },
             },
-            style: {
-                stroke: 'blue',
-            }
-        }];
+            {
+                source: 'b',
+                target: 'c',
+                label: 'Software Build -> Software Version',
+                size: 3,
+                labelCfg: labelCfg,
+                style: {
+                    stroke: 'blue',
+                }
+            },
+            {
+                source: 'c',
+                target: 'd',
+                label: 'Software Version -> Software Component',
+                size: 3,
+                labelCfg: labelCfg,
+                style: {
+                    stroke: 'blue',
+                }
+            },];
 
         for (let i = 0; i < 30; i++) {
             nodeData.push({
-                id: 'ESM' + i.toString(),
-                label: 'ESM' + i.toString(),
+                id: 'ECM' + i.toString(),
+                label: 'ECM' + i.toString(),
                 comboId: 'a'
             }
             )
         };
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 70; i++) {
             nodeData.push({
-                id: 'SoftwareBuild' + i.toString(),
-                label: 'Software Build' + i.toString(),
+                id: 'SB' + i.toString(),
+                label: 'SB' + i.toString(),
                 comboId: 'b'
             }
             )
         };
 
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 20; i++) {
             nodeData.push({
-                id: 'SoftwareVersion' + i.toString(),
-                label: 'Software Version' + i.toString(),
+                id: 'SV' + i.toString(),
+                label: 'SV' + i.toString(),
                 comboId: 'c'
+            }
+            )
+        };
+
+        for (let i = 0; i < 20; i++) {
+            nodeData.push({
+                id: 'SC' + i.toString(),
+                label: 'SC' + i.toString(),
+                comboId: 'd'
             }
             )
         };
@@ -125,8 +156,8 @@ export class GraphTransformDataService {
             edges: edgeData
         };
 
-        console.log('combo data', comboData2);
-        return comboData2;
+        console.log('combo data', graphData);
+        return graphData;
     }
 
     public getTreeGraphData(value?: number): GraphData {
