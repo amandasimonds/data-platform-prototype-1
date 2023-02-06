@@ -1,12 +1,19 @@
+<div class="flex gap-xs padding-xs">
+    <button mat-stroked-button color="primary" class="pl-medium-button">Combo Force</button>
+    <button mat-stroked-button color="primary" class="pl-medium-button">Combo Linear</button>
+</div>
 <div (contextmenu)="$event.preventDefault()" [ngStyle]="style" #g6GraphContainer></div>
 <div class="graph-controls">
     <form class="form" [formGroup]="graphControlForm" (ngSubmit)="updateGraph()">
         <div class="flex gap-xs">
-            <button mat-flat-button color="primary" (click)="loadDagreLayout()">Dagre layout</button>
-            <button mat-flat-button color="primary" (click)="loadComboLayout()">Combo layout</button>
+            <button mat-stroked-button color="primary" class="pl-medium-button" (click)="loadDagreLayout()">Dagre layout</button>
+            <button mat-stroked-button color="primary" class="pl-medium-button" (click)="loadComboLayout()">Combo layout</button>
         </div>
-        <div class="flex flex-column gap-xs">
-            <epd-pl-input
+        <button mat-button (click)="displayNodeCountInputs = !displayNodeCountInputs">
+            {{!displayNodeCountInputs ? 'Display Node Count Inputs' : 'Hide Node Count Inputs'}}
+        </button>
+        <div class="node-count-inputs" *ngIf="displayNodeCountInputs">
+            <!-- <epd-pl-input
                 formControlName="ecmCount"
                 placeholder="Enter a number"
                 labelPosition="left"
@@ -17,7 +24,7 @@
                 placeholder="Enter a number"
                 labelPosition="left"
                 labelText="# Software Builds:"
-            ></epd-pl-input>
+            ></epd-pl-input> -->
             <epd-pl-input
                 formControlName="softwareVersionCount"
                 placeholder="Enter a number"

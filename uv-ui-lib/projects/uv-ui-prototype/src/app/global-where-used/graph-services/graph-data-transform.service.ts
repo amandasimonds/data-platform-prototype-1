@@ -33,7 +33,12 @@ export class GraphTransformDataService {
         return graphData;
     }
 
-    public getComboData(): GraphData {
+    public getComboData(ecmCount?: number, softwareBuildCount?: number, softwareVersionCount?: number, softwareComponentCount?: number,): GraphData {
+
+        const ecmCountInput = ecmCount ? ecmCount : 300;
+        const softwareBuildCountInput = softwareBuildCount ? softwareBuildCount : 700;
+        const softwareVersionCountInput = softwareVersionCount ? softwareVersionCount : 200;
+        const softwareComponentCountInput = softwareComponentCount ? softwareComponentCount : 2000;
 
         const labelCfg = {
             autoRotate: true,
@@ -44,44 +49,62 @@ export class GraphTransformDataService {
             },
         }
 
+        const comboLabel = {
+            style: {
+                lineWidth: 5,
+                fontSize: 20,
+            },
+        }
+
         const comboData2 = comboSample;
         const comboData = [{
             id: 'a',
             label: 'ECM',
+            labelCfg: comboLabel,
+            // x: 100
         },
         {
             id: 'b',
             label: 'Software Build',
-            collapsed: true
+            collapsed: true,
+            labelCfg: comboLabel,
+            x: 100
         },
         {
             id: 'c',
             label: 'Software Version',
-            collapsed: true
+            collapsed: true,
+            labelCfg: comboLabel,
+            x: 100
         },
         {
             id: 'd',
             label: 'Software Component',
+            labelCfg: comboLabel,
+            x: 100
         },
         {
             id: 'e',
-            label: 'ComboChild', 
+            label: 'ComboChild',
+            labelCfg: comboLabel,
             parentId: 'c',
+            x: 100
         }];
-        const nodeData: { id: string; label: string; comboId?: string; }[] = [{
+        const nodeData: any[] = [{
             id: 'ESN',
             label: 'ESN',
+            labelCfg: comboLabel,
+            x: 10,
+            y: 10
         }];
         const edgeData = [
             {
                 source: 'ESN',
                 target: 'a',
-                label: 'ESN -> ECM',
                 size: 3,
-                labelCfg: labelCfg,
                 style: {
-                    stroke: 'red',
-                },
+                    stroke: 'black'
+                }                
             },
             {
                 source: 'a',
@@ -90,31 +113,57 @@ export class GraphTransformDataService {
                 size: 3,
                 labelCfg: labelCfg,
                 style: {
-                    stroke: 'red',
-                },
+                    stroke: 'black'
+                }
             },
             {
                 source: 'b',
                 target: 'c',
-                label: 'Software Build -> Software Version',
                 size: 3,
-                labelCfg: labelCfg,
                 style: {
-                    stroke: 'blue',
+                    stroke: 'black'
                 }
             },
             {
                 source: 'c',
                 target: 'd',
-                label: 'Software Version -> Software Component',
                 size: 3,
-                labelCfg: labelCfg,
                 style: {
-                    stroke: 'blue',
+                    stroke: 'black'
                 }
+            },
+            {
+                source: 'c',
+                target: 'd',
+                size: 3,
+                style: {
+                    stroke: 'black'
+                }
+            },
+            {
+                source: 'ECM1',
+                target: 'SB2',
+            },
+            {
+                source: 'ECM2',
+                target: 'SB3',
+            }, {
+                source: 'ECM4',
+                target: 'SB7',
+            }, {
+                source: 'ECM7',
+                target: 'SB6',
+            },
+            {
+                source: 'ECM20',
+                target: 'SB7',
+            },
+            {
+                source: 'ECM15',
+                target: 'SB63',
             },];
 
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < ecmCountInput; i++) {
             nodeData.push({
                 id: 'ECM' + i.toString(),
                 label: 'ECM' + i.toString(),
@@ -123,7 +172,7 @@ export class GraphTransformDataService {
             )
         };
 
-        for (let i = 0; i < 70; i++) {
+        for (let i = 0; i < softwareBuildCountInput; i++) {
             nodeData.push({
                 id: 'SB' + i.toString(),
                 label: 'SB' + i.toString(),
@@ -132,7 +181,7 @@ export class GraphTransformDataService {
             )
         };
 
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < softwareVersionCountInput; i++) {
             nodeData.push({
                 id: 'SV' + i.toString(),
                 label: 'SV' + i.toString(),
@@ -141,7 +190,7 @@ export class GraphTransformDataService {
             )
         };
 
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < softwareComponentCountInput; i++) {
             nodeData.push({
                 id: 'SC' + i.toString(),
                 label: 'SC' + i.toString(),
