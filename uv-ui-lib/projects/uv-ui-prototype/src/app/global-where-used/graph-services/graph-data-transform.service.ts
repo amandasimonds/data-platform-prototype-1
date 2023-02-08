@@ -46,6 +46,7 @@ export class GraphTransformDataService {
                 stroke: 'white',
                 lineWidth: 5,
                 fontSize: 20,
+                position: 'top',
             },
         }
 
@@ -60,14 +61,17 @@ export class GraphTransformDataService {
         const comboData = [{
             id: 'a',
             label: 'ECM',
+            collapsed: true,
             labelCfg: comboLabel,
-            // x: 100
+            type: 'combo-node',
+            // x: 100,
         },
         {
             id: 'b',
             label: 'Software Build',
             collapsed: true,
             labelCfg: comboLabel,
+            type: 'combo-node',
             x: 100
         },
         {
@@ -75,21 +79,26 @@ export class GraphTransformDataService {
             label: 'Software Version',
             collapsed: true,
             labelCfg: comboLabel,
+            type: 'combo-node',
             x: 100
         },
         {
             id: 'd',
             label: 'Software Component',
+            collapsed: true,
             labelCfg: comboLabel,
+            type: 'combo-node',
             x: 100
         },
-        {
-            id: 'e',
-            label: 'ComboChild',
-            labelCfg: comboLabel,
-            parentId: 'c',
-            x: 100
-        }];
+            // {
+            //     id: 'e',
+            //     label: 'ComboChild',
+            //     labelCfg: comboLabel,
+            //     type: 'combo-node',
+            //     parentId: 'c',
+            //     x: 100
+            // }
+        ];
         const nodeData: any[] = [{
             id: 'ESN',
             label: 'ESN',
@@ -104,7 +113,7 @@ export class GraphTransformDataService {
                 size: 3,
                 style: {
                     stroke: 'black'
-                }                
+                }
             },
             {
                 source: 'a',

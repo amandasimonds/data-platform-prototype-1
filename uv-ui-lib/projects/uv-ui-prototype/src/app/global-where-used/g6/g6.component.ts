@@ -66,7 +66,9 @@ export class G6Component implements AfterViewInit, OnChanges {
     private graphEventService: GraphEventService,
     private graphLayoutService: GraphLayoutService
   ) {
+    this.registerNodeService.registerCustomNodes();
     this.graphData = this.graphDataService.getComboData();
+
   }
 
   public ngAfterViewInit(): void {
@@ -74,27 +76,13 @@ export class G6Component implements AfterViewInit, OnChanges {
     this.resizeObserver.observe(el);
     el.onselectstart = () => { return false }
 
-    // this.registerNodeService.registerNode();
-
     this.graph = new G6.Graph({
       container: el,
       width: el.width,
       height: el.height,
-      minZoom: 0.00000001,
+      // minZoom: 0.00000001,
       modes: {
         default: this.defaultModes
-      },
-      defaultCombo: {
-        type: "circle",
-        /* The minimum size of the combo. combo 最小大小 */
-        size: [50, 50],
-        /* style for the keyShape */
-        style: {
-          lineWidth: 1
-        },
-        labelCfg: {
-          position: "top"
-        }
       },
       fitCenter: true
     });
@@ -147,12 +135,15 @@ export class G6Component implements AfterViewInit, OnChanges {
     {
       type: 'comboCombined',
       // center: [0,0],
+      rankdir: 'LR',
+      nodeSep: 100,
+      comboSep: 100,
       innerLayout: new G6.Layout['grid']()
     }
 
     this.graph.updateLayout(layout);
     this.graph.fitView();
-    console.log(this.graph);
+    console.log('loadCombolayout', this.graph);
   }
 
   public loadDagreLayout(): void {
