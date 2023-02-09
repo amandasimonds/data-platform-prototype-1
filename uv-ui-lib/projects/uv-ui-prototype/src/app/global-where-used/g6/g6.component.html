@@ -3,6 +3,9 @@
     <button mat-stroked-button color="primary" class="pl-medium-button">Combo Linear</button>
 </div>
 <div (contextmenu)="$event.preventDefault()" [ngStyle]="style" #g6GraphContainer></div>
+<div class="paginator-container">
+    <g6-paginator *ngIf="paginator" [combo]="selectedComboForPaginator"></g6-paginator>
+</div>
 <div class="graph-controls">
     <form class="form" [formGroup]="graphControlForm" (ngSubmit)="updateGraph()">
         <div class="flex gap-xs">
@@ -11,7 +14,7 @@
         </div>
         <button mat-button (click)="displayNodeCountInputs = !displayNodeCountInputs">
             {{!displayNodeCountInputs ? 'Display Node Count Inputs' : 'Hide Node Count Inputs'}}
-        </button>
+        </button>     
         <div class="node-count-inputs" *ngIf="displayNodeCountInputs">
             <!-- <epd-pl-input
                 formControlName="ecmCount"

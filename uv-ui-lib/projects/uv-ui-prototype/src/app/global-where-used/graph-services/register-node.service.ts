@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import G6, { ModelConfig, IGroup, IShape } from '@antv/g6';
+import G6, { ModelConfig, IGroup } from '@antv/g6';
 
 export const ComboNode2 = {
 
@@ -44,7 +44,7 @@ export const ComboNode = {
         // Get the padding from the configuration
         cfg.padding = cfg.padding || [50, 20, 20, 20];
         const childrenCount = cfg.children.length;
-        cfg.fixCollapseSize = childrenCount * 0.1;
+        cfg.fixCollapseSize = (childrenCount * 0.1) * 2;
         cfg.label = cfg.label + ' \n Item Count: ' + childrenCount;
         // Get the shape's style, where the style.width and style.height correspond to the width and height in the figure of Illustration of Built-in Rect Combo
         const style: any = self.getShapeStyle(cfg);
@@ -61,28 +61,31 @@ export const ComboNode = {
             name: 'combo-keyShape', // must be assigned in G6 3.3 and later versions. it can be any string you want, but should be unique in a custom item type
 
         });
-        // Add the circle on the right
-        group.addShape('circle', {
+        // Add the button on the right
+        group.addShape('rect', {
             attrs: {
                 ...style,
-                fill: '#fff',
+                fill: 'white',
                 opacity: 1,
                 // cfg.style.width and cfg.style.heigth correspond to the innerWidth and innerHeight in the figure of Illustration of Built-in Rect Combo
                 x: cfg.style.width / 2 + cfg.padding[1],
                 y: (cfg.padding[2] - cfg.padding[0]) / 2,
-                r: 5,
+                width: 48,
+                height: 24,
+                stroke: '#BEBEBF',
+                radius: 8,
             },
             draggable: true,
-            name: 'combo-circle-shape', // must be assigned in G6 3.3 and later versions. it can be any string you want, but should be unique in a custom item type
+            cursor: 'pointer',
+            name: 'combo-paginator', // must be assigned in G6 3.3 and later versions. it can be any string you want, but should be unique in a custom item type
         });
-        console.log('drawShape', cfg.collapsed, cfg.fixCollapseSize, childrenCount, cfg, group)
         return circle;
     },
     // Define the updating logic of the right circle
     afterUpdate: function afterUpdate(cfg: any, combo: any) {
         const group = combo.get('group');
         // Find the circle shape in the graphics group of the Combo by name
-        const circle = group.find((ele: any) => ele.get('name') === 'combo-circle-shape');
+        const circle = group.find((ele: any) => ele.get('name') === 'combo-paginator');
         // Update the position of the right circle
         circle.attr({
             // cfg.style.width and cfg.style.heigth correspond to the innerWidth and innerHeight in the figure of Illustration of Built-in Rect Combo

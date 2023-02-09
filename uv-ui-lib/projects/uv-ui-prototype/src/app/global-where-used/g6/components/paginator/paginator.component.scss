@@ -1,0 +1,12 @@
+.g6-paginator {
+    padding: .5rem;
+    border: 1px solid var(--pl-border-color);
+    border-radius: 4px;
+    background-color: var(--pl-base-01);
+}
+
+.list {
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+}

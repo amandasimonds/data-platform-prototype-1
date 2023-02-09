@@ -1,0 +1,16 @@
+<div class="g6-paginator">
+    {{title}}
+    <div class="list">
+        <div class="page" *ngFor="let item of nodes">
+            <span>{{item.id}}</span>
+        </div>
+    </div>
+    <epd-pl-paginator 
+    [totalItemsCount]="totalItemsCount"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    [currentPage]="1"
+    (pageSelected)="handlePageSelected($event)"
+    (pageSizeSelected)="handlePageSizeSelected($event)">
+</epd-pl-paginator>
+</div>

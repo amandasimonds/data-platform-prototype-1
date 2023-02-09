@@ -1,7 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, OnChanges, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from "@angular/forms";
 import G6, { Graph, GraphData, ModeType } from '@antv/g6';
-import { G6TreeNode } from './node';
 import { GraphTransformDataService } from '../graph-services/graph-data-transform.service';
 import { G6RegisterNodeService } from '../graph-services/register-node.service';
 import { GraphEventService } from '../graph-services/graph-event.service';
@@ -16,6 +15,8 @@ import { GraphLayoutService } from '../graph-services/graph-layout.service';
 export class G6Component implements AfterViewInit, OnChanges {
 
   public graphData: GraphData = [];
+  public paginator = false;
+  public selectedComboForPaginator: any[] = [];
   public displayNodeCountInputs = false;
   public graphControlForm: FormGroup = new FormGroup({
     ecmCount: new FormControl(''),
@@ -68,7 +69,17 @@ export class G6Component implements AfterViewInit, OnChanges {
   ) {
     this.registerNodeService.registerCustomNodes();
     this.graphData = this.graphDataService.getComboData();
-
+    this.graphEventService.paginator$.subscribe((item: any) => {
+      if (item) {
+        this.paginator = true;
+        this.selectedComboForPaginator = item;
+        console.log(this.paginator, this.selectedComboForPaginator);
+      } else {
+        this.paginator = false;
+        this.selectedComboForPaginator = item;
+        console.log(this.paginator, this.selectedComboForPaginator);
+      }
+    });
   }
 
   public ngAfterViewInit(): void {
@@ -80,7 +91,7 @@ export class G6Component implements AfterViewInit, OnChanges {
       container: el,
       width: el.width,
       height: el.height,
-      // minZoom: 0.00000001,
+      minZoom: 0.00000001,
       modes: {
         default: this.defaultModes
       },
@@ -111,7 +122,6 @@ export class G6Component implements AfterViewInit, OnChanges {
     this.graph.fitView();
     this.loadComboLayout();
     this.graphEventService.initEvents(this.graph);
-    console.log('init', this.graph);
   }
 
   public ngOnChanges() {
@@ -134,16 +144,24 @@ export class G6Component implements AfterViewInit, OnChanges {
     const layout =
     {
       type: 'comboCombined',
-      // center: [0,0],
+      center: [0, 0],
       rankdir: 'LR',
-      nodeSep: 100,
       comboSep: 100,
-      innerLayout: new G6.Layout['grid']()
+      preventComboOverlap: true,
+      preventOverlapPadding: 20,
+      innerLayout: new G6.Layout['random'](), //random, grid, forceAtlas2
+      comboPadding: (d: any) => 100
+      // spacing: (d: any) => {
+      //   // d is a node
+      //   if (d.type === 'combo-node') {
+      //     return 100;
+      //   }
+      //   return 100;
+      // }
     }
 
     this.graph.updateLayout(layout);
     this.graph.fitView();
-    console.log('loadCombolayout', this.graph);
   }
 
   public loadDagreLayout(): void {

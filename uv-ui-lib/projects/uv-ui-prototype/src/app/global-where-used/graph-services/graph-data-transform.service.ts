@@ -35,10 +35,10 @@ export class GraphTransformDataService {
 
     public getComboData(ecmCount?: number, softwareBuildCount?: number, softwareVersionCount?: number, softwareComponentCount?: number,): GraphData {
 
-        const ecmCountInput = ecmCount ? ecmCount : 300;
-        const softwareBuildCountInput = softwareBuildCount ? softwareBuildCount : 700;
-        const softwareVersionCountInput = softwareVersionCount ? softwareVersionCount : 200;
-        const softwareComponentCountInput = softwareComponentCount ? softwareComponentCount : 2000;
+        const ecmCountInput = ecmCount ? ecmCount : 30;
+        const softwareBuildCountInput = softwareBuildCount ? softwareBuildCount : 70;
+        const softwareVersionCountInput = softwareVersionCount ? softwareVersionCount : 10;
+        const softwareComponentCountInput = softwareComponentCount ? softwareComponentCount : 400;
 
         const labelCfg = {
             autoRotate: true,
@@ -111,9 +111,6 @@ export class GraphTransformDataService {
                 source: 'ESN',
                 target: 'a',
                 size: 3,
-                style: {
-                    stroke: 'black'
-                }
             },
             {
                 source: 'a',
@@ -121,33 +118,21 @@ export class GraphTransformDataService {
                 label: 'ECM -> Software Build',
                 size: 3,
                 labelCfg: labelCfg,
-                style: {
-                    stroke: 'black'
-                }
             },
             {
                 source: 'b',
                 target: 'c',
                 size: 3,
-                style: {
-                    stroke: 'black'
-                }
             },
             {
                 source: 'c',
                 target: 'd',
                 size: 3,
-                style: {
-                    stroke: 'black'
-                }
             },
             {
                 source: 'c',
                 target: 'd',
                 size: 3,
-                style: {
-                    stroke: 'black'
-                }
             },
             {
                 source: 'ECM1',
