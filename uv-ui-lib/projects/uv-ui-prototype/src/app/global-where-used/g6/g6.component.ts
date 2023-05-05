@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, OnChanges, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from "@angular/forms";
 import G6, { Graph, GraphData, ModeType } from '@antv/g6';
 import { GraphTransformDataService } from '../graph-services/graph-data-transform.service';
@@ -12,7 +12,7 @@ import { GraphLayoutService } from '../graph-services/graph-layout.service';
   styleUrls: ['./g6.component.scss'],
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class G6Component implements AfterViewInit, OnChanges {
+export class G6Component implements AfterViewInit {
 
   public graphData: GraphData = [];
   public paginator = false;
@@ -74,6 +74,7 @@ export class G6Component implements AfterViewInit, OnChanges {
         this.paginator = true;
         this.selectedComboForPaginator = item;
         console.log(this.paginator, this.selectedComboForPaginator);
+        this.paginateNodes(item);
       } else {
         this.paginator = false;
         this.selectedComboForPaginator = item;
@@ -98,25 +99,6 @@ export class G6Component implements AfterViewInit, OnChanges {
       fitCenter: true
     });
 
-    // this.graph.node(function (node) {
-    //   return {
-    //     size: 16,
-    //     anchorPoints: [
-    //       [0, 0.5],
-    //       [1, 0.5],
-    //     ],
-    //     style: {
-    //       fill: '#C6E5FF',
-    //       stroke: '#5B8FF9',
-    //     },
-    //     label: node.id,
-    //     labelCfg: {
-    //       position: node.children && node.children.length > 0 ? 'left' : 'right',
-    //       offset: 5,
-    //     },
-    //   };
-    // });
-
     this.graphReady.emit(this.graph);
     this.graph.read(this.graphData);
     this.graph.fitView();
@@ -124,14 +106,22 @@ export class G6Component implements AfterViewInit, OnChanges {
     this.graphEventService.initEvents(this.graph);
   }
 
-  public ngOnChanges() {
-    this.graph.layout();
-    this.graph.render();
-  }
-
   public ngOnDestroy(): void {
     // unsure if this is actually necessary since the entire observer should get GC'd along with the component
     this.resizeObserver.unobserve(this.graphContainer.nativeElement);
+  }
+
+  public paginateNodes(combo: any) {
+    const model = combo.get('model');
+    model.collapsed ? this.graph.expandCombo(combo) : null;
+    console.log(combo.get('model').collapsed);
+    console.log(combo.x);
+    console.log('paginateNodes method', combo.getNodes());
+    const hiddenNodes = combo.getNodes().slice(0, 5)
+    console.log(hiddenNodes);
+    hiddenNodes.forEach((node: any) => {
+      this.graph.hideItem(node)
+    })
   }
 
   public updateGraph(): void {
@@ -147,9 +137,10 @@ export class G6Component implements AfterViewInit, OnChanges {
       center: [0, 0],
       rankdir: 'LR',
       comboSep: 100,
+      nodeSep: 5,
       preventComboOverlap: true,
       preventOverlapPadding: 20,
-      innerLayout: new G6.Layout['random'](), //random, grid, forceAtlas2
+      innerLayout: new G6.Layout['grid'](), //random, grid, forceAtlas2
       comboPadding: (d: any) => 100
       // spacing: (d: any) => {
       //   // d is a node

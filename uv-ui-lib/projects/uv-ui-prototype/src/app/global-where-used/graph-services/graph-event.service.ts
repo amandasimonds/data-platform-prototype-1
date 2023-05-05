@@ -20,7 +20,7 @@ export class GraphEventService {
   public initEvents(graph: Graph): void {
 
     graph.on('combo:click', (e: any) => {
-      if (e.target.get('name') !== 'combo-paginator') {
+      if (e.target.get('name') !== 'next-page') {
         // graph.collapseExpandCombo(e.item.getModel().id);
         graph.collapseExpandCombo(e.item);
         if (graph.get('layout')) graph.layout();
