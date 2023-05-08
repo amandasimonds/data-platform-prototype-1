@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
 import { UserService } from './user.service';
-import { AuthService } from './auth.service';
 @Injectable()
 export class DevUTAuthGuardService implements CanActivate {
 
-    constructor(public auth: AuthService, public router: Router, private userService: UserService) { }
+    constructor( public router: Router, private userService: UserService) { }
 
     canActivate(): boolean {
         this.userService.updateUserName();

@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
 import { UserService } from './user.service';
-import { AuthService } from './auth.service';
 import { environment } from '../../environments/environment';
 import { ENV } from '../../app-env';
 @Injectable()
 export class DevAuthGuardService implements CanActivate {
 
-    constructor(public auth: AuthService, public router: Router, private userService: UserService) { }
+    constructor( public router: Router, private userService: UserService) { }
 
     public get isNotDevUser(): boolean {
-        return this.userService.getCurrentUserValue() === 'user_cummins@test.com' ||
-            this.userService.getCurrentUserValue() === 'user_chevron@test.com' ||
-            this.userService.getCurrentUserValue() === 'abtest@test.com';
+        return false;
     }
 
     canActivate(): boolean {
