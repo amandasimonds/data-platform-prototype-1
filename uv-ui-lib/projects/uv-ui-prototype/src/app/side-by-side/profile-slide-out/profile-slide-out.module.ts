@@ -5,7 +5,6 @@ import { IconButtonModule } from 'projects/uv-ui-lib/src/public-api';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ProfileExtendSlideOutComponent } from './profile-extend-slide-out/profile-extend-slide-out.component';
 import { ChangeRequestInfoBlockComponent } from '../components/change-request-info-block/change-request-info-block.component';
-import { InputModule } from 'epd-pattern-library';
 import { MatSelectModule } from "@angular/material/select";
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +15,6 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     IconButtonModule,
     MatTabsModule,
-    InputModule,
     MatSelectModule,
     MatButtonModule,
     FormsModule
