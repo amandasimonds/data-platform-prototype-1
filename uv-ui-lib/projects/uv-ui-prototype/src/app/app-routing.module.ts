@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AutoLoginAllRoutesGuard } from 'angular-auth-oidc-client';
 import { DevAuthGuardService as DevAuthGuard } from './auth/dev-auth-guard.service';
-import { CustomerChAuthGuardService as ChAuthGuard } from './auth/chevron-auth-guard.service';
-import { CustomerCuAuthGuardService as CuAuthGuard } from './auth/cummins-auth-guard.service';
 import { DevUTAuthGuardService as DevUTAuthGuard } from './auth/DevUT-auth-guard.service copy';
 import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './layouts/main/main.component';
@@ -23,12 +20,10 @@ const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent,
-        canActivate: [AutoLoginAllRoutesGuard]
     },
     {
         path: 'logout',
         component: LoginComponent,
-        canActivate: [AutoLoginAllRoutesGuard]
     },
     {
         path: 'auth-callback',
@@ -50,12 +45,10 @@ const routes: Routes = [
             {
                 path: 'sbs',
                 loadChildren: () => import('./side-by-side/side-by-side.module').then(m => m.SideBySideModule),
-                canActivate: [ChAuthGuard]
             },
             {
                 path: 'gwu',
                 loadChildren: () => import('./global-where-used/gwu.module').then(m => m.GwuModule),
-                canActivate: [CuAuthGuard]
             },
             {
                 path: 'settings',
@@ -71,10 +64,10 @@ const routes: Routes = [
             {
                 path: 'icons',
                 component: IconDisplayComponent,
-                canActivate: [DevAuthGuard]
+                // canActivate: [DevAuthGuard]
             }
         ],
-        canActivate: [AutoLoginAllRoutesGuard, DevUTAuthGuard]
+        // canActivate: [DevUTAuthGuard]
     }
 ];
 

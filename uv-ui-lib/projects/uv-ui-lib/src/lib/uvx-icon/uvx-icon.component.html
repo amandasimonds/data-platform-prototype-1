@@ -1,5 +1,4 @@
 <mat-icon
-    svgIcon="{{ icon }}"
     [class.disabled]="disabled"
     [class.uvx-icon-primary]="color === 'primary'"
     [class.uvx-icon-success]="color === 'success'"
@@ -13,5 +12,5 @@
     [class.uvx-icon-xxl]="size === 'xxl'"
     [class.uvx-icon-bg]="size === 'bg'"
     [class.uvx-icon-checkmark]="size === 'checkmark'"
->
+><ng-content></ng-content>
 </mat-icon>
