@@ -5,6 +5,10 @@ export interface IconSetValue {
 
 export const ICON_SET: IconSetValue[] = [
     {
+        name: 'logo-1',
+        url: 'https://res.cloudinary.com/dr0uztw3o/image/upload/v1682960091/dataplatformlogo_vxzzmu.svg'
+    },
+    {
         name: 'activate_all',
         url: 'actions/Activate all.svg'
     },
