@@ -3,7 +3,7 @@
         <div class="flex justify-content-space-between margin-bottom-md">
             <div class="flex justify-content-space-between">
                 <div *ngIf="columnCount == 1 || columnCount == 2">
-                    <uvx-button mode="secondary" label="Compare" icon="compare" class="margin-right-xxxs"></uvx-button>
+                    <uvx-button mode="secondary" label="Compare" class="margin-right-xxxs">Compare</uvx-button>
                     <uvx-button
                         mode="secondary"
                         label="Design Ripple"
@@ -12,15 +12,15 @@
                     ></uvx-button>
                 </div>
                 <div *ngIf="columnCount == 3">
-                    <uvx-icon-button mode="secondary" class="margin-right-xxxs" icon="compare"></uvx-icon-button>
-                    <uvx-icon-button mode="secondary" class="margin-right-xs" icon="design"></uvx-icon-button>
+                    <uvx-icon-button mode="secondary" class="margin-right-xxxs">description</uvx-icon-button>
+                    <uvx-icon-button mode="secondary" class="margin-right-xs">description</uvx-icon-button>
                 </div>
-                <uvx-icon-button icon="more_horisontal"></uvx-icon-button>
+                <uvx-icon-button>more_horiz</uvx-icon-button>
             </div>
             <div class="flex">
-                <uvx-icon-button icon="unlock" class="margin-right-xs" color="gray-dark"></uvx-icon-button>
-                <uvx-icon-button icon="full_screen" class="margin-right-xs" color="gray-dark"></uvx-icon-button>
-                <uvx-icon-button icon="close" color="gray-dark"></uvx-icon-button>
+                <uvx-icon-button class="margin-right-xs" color="gray-dark">unlock</uvx-icon-button>
+                <uvx-icon-button class="margin-right-xs" color="gray-dark">fullscreen</uvx-icon-button>
+                <uvx-icon-button color="gray-dark">close</uvx-icon-button>
             </div>
         </div>
         <h5 class="margin-bottom-md">
@@ -65,3 +65,4 @@
         </div>
     </div>
 </div>
+
