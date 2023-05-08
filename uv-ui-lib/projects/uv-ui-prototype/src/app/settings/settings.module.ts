@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SettingsComponent } from './settings.component';
-import { RegisterIconModule, ICON_SET, ButtonDropdownModule, DynamicBarModule, IconButtonModule } from 'epd-pattern-library';
-import { DropdownModule, ExpandingMenuModule, NavbarSubModule, TextInputModule, TooltipModule } from 'projects/uv-ui-lib/src/public-api';
+import { ConnectorTableComponent } from './connector-table/connector-table.component';
+// import { ButtonDropdownModule } from 'epd-pattern-library';
+import { ActionBarModule, ButtonModule, DropdownModule, ExpandingMenuModule, IconButtonModule, NavbarSubModule, TextInputModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
 import { SettingsRoutingModule } from './settings-routing.module';
 import { SettingsMenuModule } from './settings-menu/settings-menu.module';
 import { ConnectorCreatorComponent } from './connector-creator/connector-creator.component';
@@ -20,11 +21,9 @@ import { ConnectorTableModule } from './connector-table/connector-table.module';
     SettingsSubNavbarComponent
   ],
   imports: [
-    RegisterIconModule.forRoot(ICON_SET),
-    ButtonDropdownModule,
     CommonModule,
-    ConnectorTableModule,
-    MatButtonModule,
+    ButtonModule,
+    // ButtonDropdownModule,
     DropdownModule,
     DynamicBarModule,
     SettingsRoutingModule,
