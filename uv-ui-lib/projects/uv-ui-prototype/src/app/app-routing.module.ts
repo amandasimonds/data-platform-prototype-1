@@ -1,21 +1,21 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { DevAuthGuardService as DevAuthGuard } from './auth/dev-auth-guard.service';
-import { DevUTAuthGuardService as DevUTAuthGuard } from './auth/DevUT-auth-guard.service copy';
-import { LoginComponent } from './pages/login/login.component';
-import { MainComponent } from './layouts/main/main.component';
-import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
-import { IconDisplayComponent } from './pages/icon-display/icon-display.component';
-import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
+import { DevAuthGuardService as DevAuthGuard } from './auth/dev-auth-guard.service'
+import { DevUTAuthGuardService as DevUTAuthGuard } from './auth/dev-ut-auth-guard.service'
+import { LoginComponent } from './pages/login/login.component'
+import { MainComponent } from './layouts/main/main.component'
+import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component'
+import { IconDisplayComponent } from './pages/icon-display/icon-display.component'
+import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component'
 
 const routes: Routes = [
     {
         path: '',
-        component: AuthCallbackComponent
+        component: AuthCallbackComponent,
     },
     {
         path: 'unauthorized',
-        component: UnauthorizedComponent
+        component: UnauthorizedComponent,
     },
     {
         path: 'login',
@@ -27,7 +27,7 @@ const routes: Routes = [
     },
     {
         path: 'auth-callback',
-        component: AuthCallbackComponent
+        component: AuthCallbackComponent,
     },
     {
         path: 'main',
@@ -36,43 +36,47 @@ const routes: Routes = [
         children: [
             {
                 path: 'home-splash',
-                loadChildren: () => import('./pages/home-splash/home-splash.module').then(m => m.HomeSplashModule)
+                loadChildren: () => import('./pages/home-splash/home-splash.module').then((m) => m.HomeSplashModule),
             },
             {
                 path: 'dashboard',
-                loadChildren: () => import('./layouts/dashboard/dashboard.module').then(m => m.DashboardModule)
+                loadChildren: () => import('./layouts/dashboard/dashboard.module').then((m) => m.DashboardModule),
             },
             {
                 path: 'sbs',
-                loadChildren: () => import('./side-by-side/side-by-side.module').then(m => m.SideBySideModule),
+                loadChildren: () => import('./side-by-side/side-by-side.module').then((m) => m.SideBySideModule),
             },
             {
                 path: 'gwu',
-                loadChildren: () => import('./global-where-used/gwu.module').then(m => m.GwuModule),
+                loadChildren: () => import('./global-where-used/gwu.module').then((m) => m.GwuModule),
             },
             {
                 path: 'settings',
-                loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule),
-                canActivate: [DevAuthGuard]
+                loadChildren: () => import('./settings/settings.module').then((m) => m.SettingsModule),
+                canActivate: [DevAuthGuard],
             },
             {
                 path: 'file-folder-structure',
-                loadChildren: () => import('./file-folder-structure/file-folder-structure.module').then(m => m.FileFolderStructureModule),
+                loadChildren: () =>
+                    import('./file-folder-structure/file-folder-structure.module').then(
+                        (m) => m.FileFolderStructureModule
+                    ),
                 canActivate: [],
-                data: { queryParams: { app: 'file-folder-structure' } }
+                data: { queryParams: { app: 'file-folder-structure' } },
             },
             {
                 path: 'icons',
                 component: IconDisplayComponent,
-                canActivate: [DevAuthGuard]
-            }
+                canActivate: [DevAuthGuard],
+            },
         ],
         // canActivate: [DevUTAuthGuard
-    }
-];
+    },
+]
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
+
