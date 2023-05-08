@@ -33,18 +33,6 @@
             "tsConfig": "projects/uv-ui-lib/tsconfig.spec.json",
             "karmaConfig": "projects/uv-ui-lib/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/uv-ui-lib/tsconfig.lib.json",
-              "projects/uv-ui-lib/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     },
@@ -197,19 +185,6 @@
               "projects/uv-ui-prototype/src/styles.scss"
             ],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/uv-ui-prototype/tsconfig.app.json",
-              "projects/uv-ui-prototype/tsconfig.spec.json",
-              "projects/uv-ui-prototype/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         },
         "e2e": {
