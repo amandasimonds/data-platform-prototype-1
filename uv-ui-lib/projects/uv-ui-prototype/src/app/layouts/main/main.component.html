@@ -12,33 +12,27 @@
             <div right>
                 <uvx-icon-button
                     [matTooltip]="
-                        walletIsOpen || walletSidebarState === 'visible' ? 'Close Wallet' : 'Double click to open wallet'
+                        walletIsOpen || walletSidebarState === 'visible'
+                            ? 'Close Wallet'
+                            : 'Double click to open wallet'
                     "
                     class="margin-right-sm"
                     id="wallet-icon"
-                    icon="store"
                     (mousedown)="toggleWallet()"
                     (dblclick)="toggleWalletSidebar()"
-                >
+                    >inventory_2
                 </uvx-icon-button>
                 <app-wallet
                     [class.no-display]="!miniWalletOpen || walletSidebarState === 'visible'"
                     (openWalletClickEvent)="toggleWalletSidebar()"
                 ></app-wallet>
 
-                <uvx-icon-button
-                    [matTooltip]="isDevUser ? 'Launch Wizard' : null"
-                    icon="help"
-                    (click)="isDevUser && launchWizard()"
-                >
+                <uvx-icon-button [matTooltip]="isDevUser ? 'Launch Wizard' : null" (click)="isDevUser && launchWizard()"
+                    >help
                 </uvx-icon-button>
 
-                <uvx-icon-button
-                    icon="user"
-                    class="margin-left-sm margin-right-sm"
-                    matTooltip="Log out"
-                    (click)="logout()"
-                >
+                <uvx-icon-button class="margin-left-sm margin-right-sm" matTooltip="Log out" (click)="logout()"
+                    >person
                 </uvx-icon-button>
             </div>
         </uvx-header>
@@ -52,8 +46,7 @@
                     color="gray"
                     class="toggle-button"
                     [matTooltip]="navbarIsExpanded ? 'Collapse Menu' : 'Expand Menu'"
-                    [icon]="navbarIsExpanded ? 'double_left' : 'double_right'"
-                >
+                    >{{ navbarIsExpanded ? 'chevron_left' : 'chevron_right' }}
                 </uvx-icon-button>
             </div>
 
@@ -88,8 +81,10 @@
     </div>
 
     <div class="uv-ui-shell-subnavbar-right">
-        <app-expanding-wallet  *ngIf="currentApp === 'file-folder-structure'" 
-        (walletToggleEvent)="toggleWalletSidebar()"></app-expanding-wallet>
+        <app-expanding-wallet
+            *ngIf="currentApp === 'file-folder-structure'"
+            (walletToggleEvent)="toggleWalletSidebar()"
+        ></app-expanding-wallet>
     </div>
 
     <uvx-backdrop
@@ -130,3 +125,4 @@
     >
     </uvx-toast-message>
 </div>
+

@@ -16,24 +16,21 @@
             </uvx-search-panel>
         </div>
         <div right class="flex margin-top-xs margin-bottom-xs gap-xxs align-items-center">
-            <!-- <uvx-icon-button icon="windows"></uvx-icon-button>
-            <uvx-icon-button icon="delete"></uvx-icon-button> -->
             <uvx-icon-button
-                icon="folder_plus"
                 class="position-relative"
                 (click)="createFolder()"
                 (keydown.enter)="createFolder()"
                 type="submit"
                 [matTooltipDisabled]="createFolderDialogue"
                 matTooltip="Create new folder"
-            >
-                <app-create-folder
+            >create_new_folder
+                <!-- <app-create-folder
                     *ngIf="createFolderDialogue"
                     (closeModalEvent)="createFolderDialogue = false"
-                ></app-create-folder
+                ></app-create-folder -->
             ></uvx-icon-button>
             <div class="divider-left"></div>
-            <uvx-icon-button icon="sorting_bottom"></uvx-icon-button>
+            <uvx-icon-button>sort</uvx-icon-button>
             <!-- <uvx-range-slider></uvx-range-slider> -->
         </div>
     </uvx-action-bar>
@@ -41,7 +38,7 @@
 
 <div class="router-container">
     <div class="flex gap-xxs align-items-center padding-top-sm padding-left-sm">
-        <uvx-icon icon="package"></uvx-icon>
+        <uvx-icon>inventory_2</uvx-icon>
         <!-- <p class="pointer" (click)="navigateToMain()">Main Page</p> -->
         <app-folder-file-breadcrumbs></app-folder-file-breadcrumbs>
     </div>

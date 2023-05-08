@@ -8,7 +8,7 @@
         [class.nav-icon-active]="navActiveIcon === navlink.app"
         (click)="handleNavlinkAction(navlink)"
     >
-        <uvx-icon color="black" [icon]="navlink.icon"></uvx-icon>
+        <uvx-icon color="black">{{navlink.icon}}</uvx-icon>
         <p
             [class.navbar-expanded-text-visible]="navbarIsExpanded"
             class="display-inline-block margin-left-xxs navbar-expanded-text"
@@ -23,7 +23,7 @@
         [class.nav-icon-active]="navActiveIcon === 'search'"
     >
         <a (click)="toggleSearchSidebar($event)">
-            <uvx-icon icon="search" color="black"></uvx-icon>
+            <uvx-icon color="black">search</uvx-icon>
             <p
                 [class.navbar-expanded-text-visible]="navbarIsExpanded"
                 class="display-inline-block margin-left-xxs navbar-expanded-text"

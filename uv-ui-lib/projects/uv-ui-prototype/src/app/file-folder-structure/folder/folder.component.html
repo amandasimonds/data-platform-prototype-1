@@ -7,15 +7,21 @@
         <uvx-icon-button
             (click)="optionsMenuClicked(fileFolder, $event, i)"
             [matTooltip]="!fileFolder.menuActive ? 'Options Menu' : null"
-            icon="more_vertical"
             class="text-align-right position-relative"
-        >
-            <app-options-menu [fileFolder]="fileFolder"></app-options-menu>
+            >more_vert
         </uvx-icon-button>
+        <app-options-menu [fileFolder]="fileFolder"></app-options-menu>
         <div
-            class="flex align-items-center h-100 justify-content-space-between flex-column padding-left-md padding-right-md padding-bottom-xs"
+            class="
+                flex
+                align-items-center
+                h-100
+                justify-content-space-between
+                flex-column
+                padding-left-md padding-right-md padding-bottom-xs
+            "
         >
-            <uvx-icon icon="folder" size="xxl"></uvx-icon>
+            <uvx-icon size="xxl">folder</uvx-icon>
             <p class="file-name">{{ fileFolder.name }}</p>
         </div>
     </div>
@@ -27,14 +33,23 @@
         <uvx-icon-button
             (click)="optionsMenuClicked(file, $event, i)"
             [matTooltip]="!file.menuActive ? 'Options Menu' : null"
-            icon="more_vertical"
             class="text-align-right position-relative"
-        >
-            <app-options-menu [fileFolder]="file"></app-options-menu>
+            >more_vert
         </uvx-icon-button>
-        <div class="flex align-items-center flex-column h-100 justify-content-space-between padding-left-md padding-right-md padding-bottom-xs">
-            <uvx-icon icon="profile" size="xxl"></uvx-icon>
+        <app-options-menu [fileFolder]="file"></app-options-menu>
+        <div
+            class="
+                flex
+                align-items-center
+                flex-column
+                h-100
+                justify-content-space-between
+                padding-left-md padding-right-md padding-bottom-xs
+            "
+        >
+            <uvx-icon size="xxl">person</uvx-icon>
             <p class="file-name">{{ file.name }}</p>
         </div>
     </div>
 </div>
+
