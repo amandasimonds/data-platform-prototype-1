@@ -6,15 +6,16 @@
     >
         <div class="flex align-items-center justify-content-space-between">
             <div class="padding-left-xxs">
-                <uvx-icon-button *ngIf="fileFolder.shared" icon="users" class="shared">
-                    <div class="padding-sm padding-right-md box shared-menu">
+                <uvx-icon-button *ngIf="fileFolder.shared" class="shared"
+                    >people
+                    <!-- <div class="padding-sm padding-right-md box shared-menu">
                         <h4>{{ fileFolder.name }}</h4>
                         <p class="margin-top-xs">Description about the folder and the people it is shared with.</p>
                         <div class="flex justify-content-space-between align-items-center margin-top-xs">
                             <img src="../../../assets/users.png" alt="" style="width: 130px; height: 33px" />
                             <uvx-button mode="text" color="gray" label="View Details"></uvx-button>
                         </div>
-                    </div>
+                    </div> -->
                 </uvx-icon-button>
             </div>
             <uvx-icon-button
@@ -28,9 +29,16 @@
         </div>
 
         <div
-            class="flex align-items-center h-100 justify-content-space-between flex-column padding-left-md padding-right-md padding-bottom-xs"
+            class="
+                flex
+                align-items-center
+                h-100
+                justify-content-space-between
+                flex-column
+                padding-left-md padding-right-md padding-bottom-xs
+            "
         >
-            <uvx-icon icon="folder" size="xxl"></uvx-icon>
+            <uvx-icon size="xxl">folder</uvx-icon>
             <p class="file-name">{{ fileFolder.name }}</p>
         </div>
     </div>
@@ -40,17 +48,23 @@
         (click)="navigateToProfile(file)"
     >
         <uvx-icon-button
-            icon="more_vertical"
             class="text-align-right"
             (click)="optionsMenuClicked(file, $event, i)"
             [matTooltip]="!file.menuActive ? 'Options Menu' : null"
-        >
+            >more_horiz
             <app-options-menu [fileFolder]="file"></app-options-menu>
         </uvx-icon-button>
         <div
-            class="flex align-items-center h-100 justify-content-space-between flex-column padding-left-md padding-right-md padding-bottom-xs"
+            class="
+                flex
+                align-items-center
+                h-100
+                justify-content-space-between
+                flex-column
+                padding-left-md padding-right-md padding-bottom-xs
+            "
         >
-            <uvx-icon icon="profile" size="xxl"></uvx-icon>
+            <uvx-icon icon="person" size="xxl"></uvx-icon>
             <p class="file-name">{{ file.name }}</p>
         </div>
     </div>
@@ -78,23 +92,27 @@
                 <uvx-icon-button
                     (click)="optionsMenuClicked(fileFolder, $event, i)"
                     [matTooltip]="!fileFolder.menuActive ? 'Options Menu' : null"
-                    icon="more_vertical"
                     class="text-align-right position-relative"
-                >
-                    <app-options-menu [fileFolder]="fileFolder"></app-options-menu>
+                    >more_vert
                 </uvx-icon-button>
+                <app-options-menu [fileFolder]="fileFolder"></app-options-menu>
             </div>
 
             <div
-                class="flex align-items-center h-100 justify-content-space-between flex-column padding-left-md padding-right-md padding-bottom-xs"
+                class="
+                    flex
+                    align-items-center
+                    h-100
+                    justify-content-space-between
+                    flex-column
+                    padding-left-md padding-right-md padding-bottom-xs
+                "
             >
-                <uvx-icon icon="folder" size="xxl"></uvx-icon>
+                <uvx-icon size="xxl">folder</uvx-icon>
                 <p class="file-name">{{ fileFolder.name }}</p>
             </div>
         </div>
     </div>
-    <ng-template #noResultsTpl>
-        Your search query did not match any folder or file names.
-    </ng-template>
-    
+    <ng-template #noResultsTpl> Your search query did not match any folder or file names. </ng-template>
 </ng-template>
+

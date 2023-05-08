@@ -24,7 +24,11 @@
             <div class="top-container padding-sm">
                 <div class="flex flex-column gap-xs" *ngIf="searchText === ''; else searchResultsTpl">
                     <div *ngFor="let folder of allFolders.folders">
-                        <div *ngIf="folder.type === 'folder'" class="flex file-item" (click)="folder.menuOpen = !folder.menuOpen">
+                        <div
+                            *ngIf="folder.type === 'folder'"
+                            class="flex file-item"
+                            (click)="folder.menuOpen = !folder.menuOpen"
+                        >
                             <!-- <uvx-folder-tree-icon [open]="true"></uvx-folder-tree-icon> -->
                             <div class="margin-right-xxs">
                                 <uvx-icon
@@ -43,10 +47,14 @@
                                 </div>
                                 <p class="semibold">{{ folder.name }}</p>
                             </div>
-                            <div *ngFor="let file of folder.files" class="flex pointer" (click)="openEntityProfileFromMenu(file)">
+                            <div
+                                *ngFor="let file of folder.files"
+                                class="flex pointer"
+                                (click)="openEntityProfileFromMenu(file)"
+                            >
                                 <div class="margin-right-xxs">
                                     <!-- <uvx-icon [icon]="file.menuOpen ? 'chevron_top' : 'chevron_bottom'"></uvx-icon> -->
-                                    <uvx-icon icon="profile"></uvx-icon>
+                                    <uvx-icon>person</uvx-icon>
                                 </div>
                                 <p class="semibold hover-blue">{{ file.name }}</p>
                             </div>
@@ -59,24 +67,23 @@
                             <!-- {{file.name}} -->
                             <div *ngIf="file.type" class="flex file-item">
                                 <div class="margin-right-xxs">
-                                    <uvx-icon
-                                        [color]="file.menuOpen ? 'primary' : ''"
-                                        [icon]="file.menuOpen ? 'chevron_top' : 'chevron_bottom'"
-                                    ></uvx-icon>
-                                    <uvx-icon [icon]="file.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                                    <uvx-icon [color]="file.menuOpen ? 'primary' : ''">{{
+                                        file.menuOpen ? 'expand_less' : 'expand_more'
+                                    }}</uvx-icon>
+                                    <uvx-icon>{{ file.menuOpen ? 'folder_open' : 'folder' }}</uvx-icon>
                                 </div>
                                 <p class="semibold" [class.color-primary]="file.menuOpen">{{ file.name }}</p>
                             </div>
                             <div *ngIf="file.menuOpen" class="margin-left-md margin-top-xs flex flex-column gap-xxs">
                                 <div *ngFor="let folder of file.folders" class="flex">
                                     <div class="margin-right-xxs">
-                                        <uvx-icon [icon]="folder.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                                        <uvx-icon>{{folder.menuOpen ? 'folder_open' : 'folder'}}</uvx-icon>
                                     </div>
                                     <p class="semibold">{{ folder.name }}</p>
                                 </div>
                                 <div *ngFor="let file of file.files" class="flex">
                                     <div class="margin-right-xxs">
-                                        <uvx-icon icon="profile"></uvx-icon>
+                                        <uvx-icon>person</uvx-icon>
                                     </div>
                                     <p class="semibold">{{ file.name }}</p>
                                 </div>
@@ -90,8 +97,11 @@
         <div class="margin-right-xxs">
             <div class="padding-sm flex flex-column gap-xs bottom-container">
                 <p class="uv-body uv-body-secondary">Recently Viewed</p>
-                <span class=" margin-left-sm pointer link position-relative recent-item" *ngFor="let item of recentlyViewed">
-                    <p class="semibold" (click)="openEntityProfileFromMenu(item)">{{ item.name }}</p> 
+                <span
+                    class="margin-left-sm pointer link position-relative recent-item"
+                    *ngFor="let item of recentlyViewed"
+                >
+                    <p class="semibold" (click)="openEntityProfileFromMenu(item)">{{ item.name }}</p>
                     <div class="launch-bar">
                         <uvx-icon-button
                             *ngFor="let item of launchServices"
@@ -99,12 +109,15 @@
                             [matTooltip]="item.tooltip"
                             [routerLink]="item.link"
                         ></uvx-icon-button>
-                        <uvx-icon-button icon="attention" matTooltip="Launch Service 4"></uvx-icon-button>
+                        <uvx-icon-button matTooltip="Launch Service 4">error_outline</uvx-icon-button>
                     </div>
                 </span>
                 <p class="uv-body uv-body-secondary">Most Popular</p>
-                <span class=" margin-left-sm pointer link position-relative recent-item" *ngFor="let item of mostPopular">
-                    <p class="semibold" (click)="openEntityProfileFromMenu(item)">{{ item.name }}</p> 
+                <span
+                    class="margin-left-sm pointer link position-relative recent-item"
+                    *ngFor="let item of mostPopular"
+                >
+                    <p class="semibold" (click)="openEntityProfileFromMenu(item)">{{ item.name }}</p>
                     <div class="launch-bar">
                         <uvx-icon-button
                             *ngFor="let item of launchServices"
@@ -112,10 +125,11 @@
                             [matTooltip]="item.tooltip"
                             [routerLink]="item.link"
                         ></uvx-icon-button>
-                        <uvx-icon-button icon="attention" matTooltip="Launch Service 4"></uvx-icon-button>
+                        <uvx-icon-button matTooltip="Launch Service 4">error_outline</uvx-icon-button>
                     </div>
                 </span>
             </div>
         </div>
     </div>
 </uvx-navbar-sub>
+
