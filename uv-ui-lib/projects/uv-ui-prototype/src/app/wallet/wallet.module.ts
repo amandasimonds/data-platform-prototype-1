@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WalletComponent } from './wallet.component';
-import { ButtonDropdownModule } from 'epd-pattern-library';
+// import { ButtonDropdownModule } from 'epd-pattern-library';
 import { CheckboxModule, DropdownModule, FolderTreeIconModule, IconButtonModule, LaunchBarModule, NavbarSubModule, SearchPanelModule, TabModule, TextInputModule, TooltipModule, UvxIconModule } from 'projects/uv-ui-lib/src/public-api';
 import { WalletFullComponent } from './wallet-full/wallet-full.component';
 import { WalletItemModule } from './wallet-item/wallet-item.module';
@@ -27,7 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     CheckboxModule,
-    ButtonDropdownModule,
+    // ButtonDropdownModule,
     RouterModule,
     MatButtonModule,
     DropdownModule,
