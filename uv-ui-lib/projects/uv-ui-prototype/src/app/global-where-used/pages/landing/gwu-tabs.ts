@@ -1,17 +1,17 @@
 export const gwuTabs = [
     {
         label: "Wave",
-        icon: "wave",
+        icon: "waves",
         service: "wave"
     },
     {
         label: "Force Directed Graph",
-        icon: "global_where_used",
+        icon: "insights",
         service: "force-directed-graph"
     },
     {
         label: "Profile",
-        icon: "profile",
+        icon: "person",
         service: "profile"
     }
 ]
