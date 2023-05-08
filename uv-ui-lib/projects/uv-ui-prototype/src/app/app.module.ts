@@ -34,8 +34,6 @@ import { HelperService } from './services/helper.service';
 import { SearchService } from './services/search.service';
 import { SideBySideModule } from './side-by-side/side-by-side.module';
 import { SidebySideService } from './services/side-by-side.service';
-import { AuthConfigModule } from './auth/auth-config.module';
-import { AuthService } from './auth/auth.service';
 import { NgOnDestroyService } from './services/on-destroy.service';
 import { BackdropService } from './services/backdrop.service';
 import { AppShellService } from './services/app-shell.service';
@@ -50,7 +48,6 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import * as echarts from 'echarts';
 import { WalletModule } from './wallet/wallet.module';
 import { DragDropService } from './services/drag-drop.service';
-import { ButtonDropdownModule } from 'epd-pattern-library';
 import { ConnectorCreatorService } from './services/connector-creator.service';
 import { WalletService } from './services/wallet.service';
 import { DevAuthGuardService } from './auth/dev-auth-guard.service';
@@ -62,8 +59,6 @@ import { FileFolderStructureModule } from './file-folder-structure/file-folder-s
 import { FileFolderStructureService } from './services/file-folder.service';
 import { BreadcrumbService } from 'xng-breadcrumb';
 import { ToastMessageService } from './services/toast-message.service';
-import { CustomerChAuthGuardService } from './auth/chevron-auth-guard.service';
-import { CustomerCuAuthGuardService } from './auth/cummins-auth-guard.service';
 import { DevUTAuthGuardService } from './auth/DevUT-auth-guard.service copy';
 import { ProfileSlideOutModule } from './side-by-side/profile-slide-out/profile-slide-out.module';
 // import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component';
@@ -83,12 +78,10 @@ import { ProfileSlideOutModule } from './side-by-side/profile-slide-out/profile-
     imports: [
         ActionBarModule,
         AppRoutingModule,
-        AuthConfigModule,
         BackdropModule,
         BrowserAnimationsModule,
         BrowserModule,
         ButtonModule,
-        ButtonDropdownModule,
         CompareWarningModule,
         ClickOutsideModule,
         HeaderModule,
@@ -122,11 +115,8 @@ import { ProfileSlideOutModule } from './side-by-side/profile-slide-out/profile-
     ],
     providers: [
         AppShellService,
-        AuthService,
         BackdropService,
         ConnectorCreatorService,
-        CustomerChAuthGuardService,
-        CustomerCuAuthGuardService,
         DevAuthGuardService,
         DevUTAuthGuardService,
         DragDropService,
