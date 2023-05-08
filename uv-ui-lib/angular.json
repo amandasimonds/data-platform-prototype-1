@@ -65,6 +65,11 @@
                 "glob": "**/*",
                 "input": "projects/uv-ui-lib/src/lib/assets/",
                 "output": "./"
+              },
+              {
+                "glob": "_redirects",
+                "input": "src",
+                "output": "/"
               }
             ],
             "styles": [
