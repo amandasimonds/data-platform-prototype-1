@@ -9,11 +9,11 @@ export const navItems = [
     },
     {
         app: 'gwu',
-        icon: 'global_where_used',
+        icon: 'insights',
         active: false,
         navlink: 'gwu',
         disabled: false,
-        tooltip: 'Global Where Used'
+        tooltip: 'Graph'
     },
     {
         app: 'sbs',
@@ -21,15 +21,7 @@ export const navItems = [
         active: false,
         navlink: 'sbs',
         disabled: false,
-        tooltip: 'Side By Side'
-    },
-    {
-        app: 'design-ripple',
-        icon: 'design',
-        active: false,
-        navlink: '/main',
-        disabled: false,
-        tooltip: 'Design Ripple'
+        tooltip: 'Document Tool'
     },
     {
         app: 'ingest',
@@ -37,7 +29,7 @@ export const navItems = [
         active: false,
         navlink: '/main',
         disabled: false,
-        tooltip: 'Ingest'
+        tooltip: 'Upload'
     },
     {
         app: 'file-folder-structure',
