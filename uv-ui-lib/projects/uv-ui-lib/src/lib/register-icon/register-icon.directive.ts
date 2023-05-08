@@ -22,7 +22,7 @@ export class RegisterIconDirective {
 	}
 
 	private registryIcons(): void {
-        const iconsUrl = 'https://dpzaq1wj21co3.cloudfront.net/icons/';
+        const iconsUrl = '';
 		this.iconSet.forEach(({ url, name }) => {
 			this.matIconRegistry.addSvgIcon(
 				name,

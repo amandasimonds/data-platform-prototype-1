@@ -6,12 +6,11 @@
                     <div class="flex gap-xs">
                         <uvx-icon-button
                             *ngFor="let item of launchServices"
-                            [icon]="item.icon"
                             [matTooltip]="item.tooltip"
                             [routerLink]="item.link"
-                        ></uvx-icon-button>
+                        >{{item.icon}}</uvx-icon-button>
                         <span class="divider-left" style="margin: 0"></span>
-                        <uvx-icon-button icon="more_horisontal"></uvx-icon-button>
+                        <uvx-icon-button>more_horiz</uvx-icon-button>
                     </div>
                 </div>
             </div>
