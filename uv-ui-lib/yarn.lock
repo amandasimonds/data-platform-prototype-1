@@ -16589,10 +16589,10 @@ xmldoc@^1.1.2:
   dependencies:
     sax "^1.2.4"
 
-xng-breadcrumb@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/xng-breadcrumb/-/xng-breadcrumb-7.2.0.tgz#b3732bd76a792b924a4ac1d730e47344463f48fb"
-  integrity sha512-dgqAVjrAyD0fDRxcUbVSHWs1SCriWSCqIGfpaW+MAh87LbkBbQRFIyAqNjV534C6CeZxqE+9L357OVmVAw0I5w==
+xng-breadcrumb@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/xng-breadcrumb/-/xng-breadcrumb-9.0.0.tgz#a10b26782922e4b99d2533266692ce0d18943735"
+  integrity sha512-7HgXLJ4vwzQNVAgm7eAOyZhG8Yr4pGl7QsJh2CtZcuOvYMm2fr33QppDgB3lIbfQtuXaTd1cSO+DkyQVBs1jZA==
   dependencies:
     tslib "^2.3.0"
 
