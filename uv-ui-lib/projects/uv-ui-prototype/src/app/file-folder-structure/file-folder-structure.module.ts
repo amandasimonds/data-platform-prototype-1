@@ -14,6 +14,7 @@ import { FolderComponent } from './folder/folder.component';
 import { CreateFolderComponent } from './create-folder/create-folder.component';
 import { ClickOutsideModule } from '../shared/directives/click-outside/click-outside.module';
 import { OptionsMenuComponent } from './options-menu/options-menu.component';
+import { FileFolderStructureService } from '../services/file-folder.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { OptionsMenuComponent } from './options-menu/options-menu.component';
     ClickOutsideModule
   ],
   providers: [
-    BreadcrumbService
+    BreadcrumbService, FileFolderStructureService
   ],
   exports: [FileFolderStructureComponent, FilesMainComponent, FilesMenuComponent]
 })

@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DragDropService } from '../services/drag-drop.service';
+import { WalletService } from '../services/wallet.service';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,6 @@ import { DragDropService } from '../services/drag-drop.service';
     TabModule
   ],
   exports: [WalletComponent, WalletFullComponent, ExpandingWalletComponent],
-  providers: [DragDropService]
+  providers: [DragDropService, WalletService]
 })
 export class WalletModule { }
