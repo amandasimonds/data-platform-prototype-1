@@ -1,61 +1,62 @@
-@import '../../../../scss/main.scss';
+// // @import '../../../../scss/main.scss';
+// @import '../../../../../../uv-ui-lib/src/lib/scss/variables';
 
-.task-selection {
-    width: 112px;
-    text-align: center;
+// .task-selection {
+//     width: 112px;
+//     text-align: center;
 
-    &:hover {
-        .task-selection-button {
-            background-color: var(--uv-color-gray-light);
-            border: 2px solid var(--uv-color-gray-light);
-            cursor: pointer;
+//     &:hover {
+//         .task-selection-button {
+//             background-color: var(--uv-color-gray-light);
+//             border: 2px solid var(--uv-color-gray-light);
+//             cursor: pointer;
 
-            ::ng-deep {
-                & > * {
-                    color: var(--uv-color-primary);
-                }
-            }
-        }
-        p {
-            color: var(--uv-color-primary)
-        }
-    }
+//             // ::ng-deep {
+//             //     & > * {
+//             //         color: var(--uv-color-primary);
+//             //     }
+//             // }
+//         }
+//         p {
+//             color: var(--uv-color-primary)
+//         }
+//     }
 
-    &-button {
-        border: 2px solid var(--uv-color-gray-2);
-        padding: 1.5rem;
-        border-radius: 50%;
+//     // &-button {
+//     //     border: 2px solid var(--uv-color-gray-2);
+//     //     padding: 1.5rem;
+//     //     border-radius: 50%;
     
-        &-selected {
-            background-color: var(--uv-color-gray-light);
-            border: 2px solid var(--uv-color-gray-light);
-            cursor: pointer;
+//     //     &-selected {
+//     //         background-color: var(--uv-color-gray-light);
+//     //         border: 2px solid var(--uv-color-gray-light);
+//     //         cursor: pointer;
 
-            ::ng-deep {
-                & > * {
-                    color: var(--uv-color-primary);
-                }
-            }
-        }
-    }
+//     //         ::ng-deep {
+//     //             & > * {
+//     //                 color: var(--uv-color-primary);
+//     //             }
+//     //         }
+//     //     }
+//     // }
 
-    &-selected {
-        color: var(--uv-color-primary)
-    }
-}
+//     &-selected {
+//         color: var(--uv-color-primary)
+//     }
+// }
 
-.task-selection-container {
-    gap: 36px;
+// .task-selection-container {
+//     gap: 36px;
 
-    @include respond(small-desktop-height) {
-        gap: 18px;
-    }
-}
+//     @include respond(small-desktop-height) {
+//         gap: 18px;
+//     }
+// }
 
-.search-suggestion {
-    padding: 8px 16px;
+// .search-suggestion {
+//     padding: 8px 16px;
 
-    &:hover {
-        background-color: var(--uv-color-gray-light);
-    }
-}
+//     &:hover {
+//         background-color: var(--uv-color-gray-light);
+//     }
+// }
