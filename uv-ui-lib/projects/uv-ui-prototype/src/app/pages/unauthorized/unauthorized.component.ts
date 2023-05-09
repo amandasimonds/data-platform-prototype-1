@@ -28,7 +28,6 @@ export class UnauthorizedComponent {
   }
 
   public navigateToABTest() {
-    window.location.href = "https://uvuiusabilitytest.z13.web.core.windows.net/test";
     console.log('navigate to abtest');
   }
 
