@@ -98,10 +98,6 @@
     }
 }
 
-.tertiary {
-    font-weight: var(--uv-font-weight);
-}
-
 .round {
     background-color: white;
     width: 41px;
@@ -118,25 +114,5 @@
         font-size: 24px;
         text-align:center;
     }
-}
-
-.btn-chip {
-    color: var(--uv-color-orange);
-    font-weight: bold;
-    letter-spacing: 0.2px;
-    line-height: 16px;
-    padding: 8px 13px;
-    border: var(--uv-border-gray);
-}
-
-.btn-add-task {
-    color: var(--uv-color-primary);
-    font-size: 18px;
-    padding: 6px;
-    border: var(--uv-border-gray);
-}
-
-.button-icon {
-    margin-left: -12px;
 }
 

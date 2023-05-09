@@ -4,7 +4,6 @@ import { combineLatest } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { NgOnDestroyService } from '../../../services/on-destroy.service';
 import { ProfileViewerService } from '../../profile-viewer.service';
-import { UserService } from '../../../auth/user.service';
 import { WizardService } from '../../wizard.service';
 import { gwuTabs } from './gwu-tabs';
 
@@ -65,7 +64,6 @@ export class LandingComponent {
         private route: ActivatedRoute,
         private router: Router,
         private profileViewerService: ProfileViewerService,
-        private userService: UserService,
         private destroy$: NgOnDestroyService,
         private ref: ChangeDetectorRef) { }
 
@@ -74,8 +72,7 @@ export class LandingComponent {
             this.stepsService.onCancelWizard$.pipe(tap(value => this.projectWizard = value)),
             this.profileViewerService.currentPage$.pipe(tap(value => this.currentProfileViewerPage = value.toString())),
             this.profileViewerService.currentColumnCount$.pipe(tap(value => this.columnCount = value)),
-            this.profileViewerService.pages$.pipe(tap(value => this.profileViewerPageLength = value.length.toString())),
-            this.userService.getCurrentUser().pipe(tap(value => this.currentUser = value))
+            this.profileViewerService.pages$.pipe(tap(value => this.profileViewerPageLength = value.length.toString()))
         ]).pipe(
             takeUntil(this.destroy$)
         ).subscribe(() => this.ref.detectChanges());
