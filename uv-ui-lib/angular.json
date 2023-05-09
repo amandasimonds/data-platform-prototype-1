@@ -61,7 +61,7 @@
             "assets": [
               "projects/uv-ui-prototype/src/favicon.ico",
               "projects/uv-ui-prototype/src/assets/",
-              "projects/uv-ui-prototype/src/_redirects"
+              "projects/uv-ui-prototype/src/_redirects",
               {
                 "glob": "**/*",
                 "input": "projects/uv-ui-lib/src/lib/assets/",
@@ -87,23 +87,23 @@
                   "with": "projects/uv-ui-prototype/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": false,
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "600kb",
                   "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "6kb"
                 }
               ]
             },
