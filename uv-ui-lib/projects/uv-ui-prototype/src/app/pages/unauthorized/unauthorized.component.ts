@@ -1,8 +1,6 @@
 
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'projects/uv-ui-prototype/src/environments/environment';
-import { UserService } from '../../auth/user.service';
 import { NgOnDestroyService } from '../../services/on-destroy.service';
 
 @Component({
@@ -17,23 +15,15 @@ export class UnauthorizedComponent {
   constructor(
     private router: Router,
     private ref: ChangeDetectorRef,
-    private userService: UserService,
     private destroy$: NgOnDestroyService,) {
   }
 
   public ngOnInit(): void {
-    this.userService.updateUserName();
-    this.userService.getCurrentUser()
-      .subscribe((user) => {
-        this.currentUser = user;
-        this.ref.detectChanges()
-      });
-    this.redirectUser();
+
   }
 
   public logout() {
     localStorage.clear();
-    window.location.href = `${environment.authConfig.authority}/v2/logout?federated`;
     this.router.navigate(['/logout']);
   }
 

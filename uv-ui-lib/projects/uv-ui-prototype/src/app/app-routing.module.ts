@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { DevAuthGuardService as DevAuthGuard } from './auth/dev-auth-guard.service'
-import { DevUTAuthGuardService as DevUTAuthGuard } from './auth/dev-ut-auth-guard.service'
 import { LoginComponent } from './pages/login/login.component'
 import { MainComponent } from './layouts/main/main.component'
 import { AuthCallbackComponent } from './pages/auth-callback/auth-callback.component'
@@ -53,7 +51,6 @@ const routes: Routes = [
             {
                 path: 'settings',
                 loadChildren: () => import('./settings/settings.module').then((m) => m.SettingsModule),
-                canActivate: [DevAuthGuard],
             },
             {
                 path: 'file-folder-structure',
@@ -67,10 +64,8 @@ const routes: Routes = [
             {
                 path: 'icons',
                 component: IconDisplayComponent,
-                canActivate: [DevAuthGuard],
             },
         ],
-        // canActivate: [DevUTAuthGuard
     },
 ]
 

@@ -208,6 +208,9 @@
               "devServerTarget": "uv-ui-prototype:serve:local-ut"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
