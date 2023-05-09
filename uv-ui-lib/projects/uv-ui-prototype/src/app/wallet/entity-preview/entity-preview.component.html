@@ -4,13 +4,12 @@
             <div class="flex gap-xs align-items-center margin-bottom-md">
                 <uvx-icon-button
                     *ngFor="let item of launchServices"
-                    [icon]="item.icon"
                     [routerLink]="item.link"
                     [matTooltip]="item.tooltip"
-                >
+                >{{item.icon}}
                 </uvx-icon-button>
                 <span class="divider-left" style="margin: 0"></span>
-                <uvx-icon-button icon="more_horisontal"></uvx-icon-button>
+                <uvx-icon-button>more_horiz</uvx-icon-button>
             </div>
             <div>
                 <h5 class="margin-xxs">{{ entity.name }}</h5>
@@ -22,11 +21,10 @@
             </div>
         </div>
         <uvx-icon-button
-            icon="double_right"
             color="gray"
             style="padding: 6px 8px; align-self: flex-start "
             (click)="closeEntityPreview($event)"
-        ></uvx-icon-button>
+        >chevron_right</uvx-icon-button>
     </div>
     <div class="metadata-container">
         <div class="flex">

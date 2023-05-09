@@ -26,7 +26,7 @@ export class ProfileSlideOutComponent {
       icon: 'compare'
     },
     {
-      icon: 'global_where_used'
+      icon: 'insights'
     },
     {
       icon: 'design'
@@ -35,7 +35,7 @@ export class ProfileSlideOutComponent {
       icon: 'link'
     },
     {
-      icon: 'more_horisontal'
+      icon: 'more_horiz'
     }
   ]
 
