@@ -45,6 +45,9 @@ import { OptionsMenuComponent } from './options-menu/options-menu.component';
     TabModule,
     ClickOutsideModule
   ],
+  providers: [
+    BreadcrumbService
+  ],
   exports: [FileFolderStructureComponent, FilesMainComponent, FilesMenuComponent]
 })
 export class FileFolderStructureModule { }

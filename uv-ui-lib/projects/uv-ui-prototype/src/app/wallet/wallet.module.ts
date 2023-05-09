@@ -13,6 +13,7 @@ import { ExpandingWalletComponent } from './expanding-wallet/expanding-wallet.co
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { DragDropService } from '../services/drag-drop.service';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { MatIconModule } from '@angular/material/icon';
     TooltipModule,
     TabModule
   ],
-  exports: [WalletComponent, WalletFullComponent, ExpandingWalletComponent]
+  exports: [WalletComponent, WalletFullComponent, ExpandingWalletComponent],
+  providers: [DragDropService]
 })
 export class WalletModule { }

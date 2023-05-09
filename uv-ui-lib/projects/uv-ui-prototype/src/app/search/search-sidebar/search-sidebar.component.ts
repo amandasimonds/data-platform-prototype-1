@@ -50,7 +50,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
                 this.searchCategoryIcon = 'design';
                 break;
             case 'Materials':
-                this.searchCategoryIcon = 'global_where_used';
+                this.searchCategoryIcon = 'insights';
                 break;
             case 'Requirements':
                 this.searchCategoryIcon = 'list-right';

@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ClickOutsideModule } from '../shared/directives/click-outside/click-outside.module';
 import { ChangeRequestService } from '../services/change-request/change-request.service';
 import { TargetDocumentModule } from './sbs-document/target-document/target-document.module';
+import { SidebySideService } from '../services/side-by-side.service';
 
 @NgModule({
     declarations: [
@@ -44,6 +45,6 @@ import { TargetDocumentModule } from './sbs-document/target-document/target-docu
         UvxToolbarModule
     ],
     exports: [ SideBySideComponent ],
-    providers: [SbsWizardService, ChangeRequestService]
+    providers: [SbsWizardService, ChangeRequestService, SidebySideService]
 })
 export class SideBySideModule { }

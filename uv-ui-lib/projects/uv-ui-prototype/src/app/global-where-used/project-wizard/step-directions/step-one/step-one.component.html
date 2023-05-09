@@ -26,8 +26,7 @@
             size="md"
             matTooltip="Placeholder info about this item"
             [class.task-selection-button-selected]="item.selected" 
-            class="task-selection-button margin-bottom-xxs" 
-            [icon]="item.icon"></uvx-icon-button>
+            class="task-selection-button margin-bottom-xxs">{{item.icon}}</uvx-icon-button>
             <p class="uv-body medium-bold" [class.task-selection-selected]="item.selected">
                 {{item.name}}
             </p>
