@@ -8,7 +8,7 @@ const routes: Routes = [
     {
         path: '',
         // redirectTo: 'main',
-        redirectTo: 'data-platform-prototype-1/main',
+        redirectTo: 'data-platform-prototype-1/main/home-splash',
         pathMatch: 'full'
     },
     {
