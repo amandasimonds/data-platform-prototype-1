@@ -4395,7 +4395,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [{
   path: '',
-  redirectTo: 'data-platform-prototype-1/main'
+  // redirectTo: 'main',
+  redirectTo: 'data-platform-prototype-1/main',
+  pathMatch: 'full'
 }, {
   path: 'unauthorized',
   component: _pages_unauthorized_unauthorized_component__WEBPACK_IMPORTED_MODULE_2__.UnauthorizedComponent

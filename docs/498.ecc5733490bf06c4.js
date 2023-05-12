@@ -504,9 +504,9 @@ class GlobalWhereUsedComponent {
     this.appShellService = appShellService;
   }
   ngOnInit() {
-    this.appShellService.setTitle('Global Where Used');
-    this.appShellService.setHeaderIcon('global_where_used');
-    this.appShellService.setNavIcon('gwu');
+    this.appShellService.setTitle('Graph');
+    this.appShellService.setHeaderIcon('insights');
+    this.appShellService.setNavIcon('insights');
   }
 }
 GlobalWhereUsedComponent.ɵfac = function GlobalWhereUsedComponent_Factory(t) {
