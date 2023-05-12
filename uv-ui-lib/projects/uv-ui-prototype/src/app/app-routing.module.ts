@@ -7,7 +7,9 @@ import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.compone
 const routes: Routes = [
     {
         path: '',
+        // redirectTo: 'main',
         redirectTo: 'data-platform-prototype-1/main',
+        pathMatch: 'full'
     },
     {
         path: 'unauthorized',
