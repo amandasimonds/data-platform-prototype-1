@@ -4395,7 +4395,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [{
   path: '',
-  component: _pages_auth_callback_auth_callback_component__WEBPACK_IMPORTED_MODULE_1__.AuthCallbackComponent
+  redirectTo: 'main'
 }, {
   path: 'unauthorized',
   component: _pages_unauthorized_unauthorized_component__WEBPACK_IMPORTED_MODULE_2__.UnauthorizedComponent
