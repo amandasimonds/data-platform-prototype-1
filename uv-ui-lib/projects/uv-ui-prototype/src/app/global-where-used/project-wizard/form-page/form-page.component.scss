@@ -1,0 +1,98 @@
+@import "../../../../../../uv-ui-lib/src/lib/scss/variables";
+
+.form-page-container {
+    flex-direction: column;
+    width: auto;
+
+    &-top {
+        padding: 32px;
+
+        &-fullscreen {
+            border-bottom: var(--uv-border-gray);
+            box-shadow: var(--uv-box-shadow);
+            padding: 18px 32px;
+            background-color: var(--uv-color-gray-light-6);
+        }
+
+        @include respond(small-desktop-height) {
+            padding: 18px;
+        }
+    }
+
+    &-middle {
+        padding: 32px;
+        height: calc(100vh - 315px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 100%;
+
+        @include respond(small-desktop-height) {
+            padding: 18px;
+        }
+        @include respond(small-desktop-width) {
+            padding: 18px;
+        }
+    }
+
+    &-bottom {
+        padding: 32px;
+        background-color: var(--uv-color-white);
+        @include respond(small-desktop-height) {
+            padding: 18px;
+        }
+    }
+
+    &-fullscreen {
+        height: 100%;
+        display: flex;
+    }
+}
+
+.directions-fullscreen {
+    width: 72%;
+    max-height: inherit;
+    padding: 18px;
+}
+
+.app-steps-top {
+    @include respond(small-desktop-height) {
+        display: none;
+    }
+}
+
+.app-steps-fullscreen {
+    min-width: 182px;
+    border-right: var(--uv-border-gray);
+    box-shadow: var(--uv-box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 18px;
+    height: 100%;
+}
+
+.app-steps-side {
+    min-width: 125px;
+    min-height: 270px;
+    @include respond(big-desktop-height) {
+        display: none;
+    }
+}
+
+.steps-divider-side {
+    @include respond(big-desktop-height) {
+        display: none;
+    }
+}
+
+.fullscreen-bg {
+    background-color: var(--uv-color-gray-light-6);
+}
+
+.total-results-container {
+    position: relative;
+    display: inline-flex;
+    right: 0;
+    bottom: 0;
+    margin-left: auto;
+}

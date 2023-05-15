@@ -1,0 +1,79 @@
+<p class="uv-body">
+    This will contain guidance information regarding the sliders and the settings for which you could be calibrating.
+</p>
+<div class="flex flex-column">
+    <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
+        <p class="uv-body bold" style="width: 30%" >Option 1</p>
+        <uvx-range-slider [tooltip]="true" [numberInput]="true" class="flex-grow" 
+        [value]="filter1Value" 
+        minLabel="0%" 
+        maxLabel="100%" 
+        (valueChangedEvent)="filter1Changed($event)" 
+        (mouseup)="setFilter1()"></uvx-range-slider>
+    </div>
+    
+    <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
+        <p class="uv-body bold" style="width: 30%">Option 2</p>
+        <uvx-range-slider [tooltip]="true" [numberInput]="true" class="flex-grow" [value]="filter2Value" minLabel="0%" maxLabel="100%" (valueChangedEvent)="filter2Changed($event)" (mouseup)="setFilter2()"></uvx-range-slider>
+    </div>
+    
+    <div class="flex justify-content-space-between margin-bottom-sm margin-top-sm">
+        <p class="uv-body bold" style="width: 30%">Option 3</p>
+        <uvx-range-slider [tooltip]="true" [numberInput]="true" class="flex-grow" [value]="filter3Value" minLabel="0%" maxLabel="100%" (valueChangedEvent)="filter3Changed($event)" (mouseup)="setFilter3()"></uvx-range-slider>
+    </div>
+
+    <div class="flex margin-top-md">
+        <div class="flex flex-column margin-right-md">
+            <p class="uv-body bold" class="margin-bottom-sm">More settings and options</p>
+            <div class="flex flex-column gap-sm">
+                <mat-slide-toggle color="primary"><p class="uv-body-sm">Example Option</p></mat-slide-toggle>
+                <mat-slide-toggle color="primary"><p class="uv-body-sm">Example Option 2</p></mat-slide-toggle>
+                <mat-slide-toggle color="primary"><p class="uv-body-sm">Example Option 3</p></mat-slide-toggle>
+            </div>
+        </div>
+        <div class="divider-right margin-right-md"></div>
+        <div class="flex flex-column margin-right-md">
+            <p class="uv-body bold" class="margin-bottom-sm">Title for this section of settings</p>
+            <mat-radio-group [(ngModel)]="radioSelection" class="flex flex-column gap-sm">
+                <mat-radio-button color="primary" name="option" value="option 0"><p class="uv-body-sm">No Selection</p></mat-radio-button>
+                <mat-radio-button color="primary" name="option" value="option 2"><p class="uv-body-sm">Option 2</p></mat-radio-button>
+                <mat-radio-button color="primary" name="option" value="option 3"><p class="uv-body-sm">Option 3</p></mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="divider-right margin-right-md"></div>
+        <div class="flex flex-column">
+            <p class="uv-body bold" class="margin-bottom-sm">More settings and options</p>
+            <div class="flex">
+                <div class="flex flex-column margin-right-md gap-sm">
+                    <uvx-checkbox label="Selection 1"></uvx-checkbox>
+                    <uvx-checkbox label="Selection 2"></uvx-checkbox>
+                    <uvx-checkbox label="Selection 5"></uvx-checkbox>
+                </div>
+                <div class="flex flex-column margin-right-md gap-sm">
+                    <uvx-checkbox label="Selection 3"></uvx-checkbox>
+                    <uvx-checkbox label="Selection 4"></uvx-checkbox>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="flex margin-top-sm" (click)="advancedOptions = !advancedOptions">
+    <uvx-button class="right" label="Advanced Options"></uvx-button>
+    <uvx-icon color="primary" [icon]="!advancedOptions ? 'chevron_bottom' : 'chevron_top'"></uvx-icon>
+</div> -->
+
+<div [class.display-none]="!advancedOptions">
+    <p class="uv-body margin-bottom-sm">
+        More advanced Options
+    </p>
+    <div class="margin-bottom-sm">
+        <p class="uv-body bold" style="width: 30%" >Range Input Title</p>
+        <uvx-range-slider [numberInput]="true" [value]="filter1Value" minLabel="0%" maxLabel="100%" (valueChangedEvent)="filter1Changed($event)" (mouseup)="setFilter1()"></uvx-range-slider>
+    </div>
+    <div class="margin-bottom-sm">
+        <p class="uv-body bold" style="width: 30%" >Range Input Title</p>
+        <uvx-range-slider [numberInput]="true" [value]="filter1Value" minLabel="0%" maxLabel="100%" (valueChangedEvent)="filter1Changed($event)" (mouseup)="setFilter1()"></uvx-range-slider>
+    </div>
+</div>
+        
