@@ -7,7 +7,8 @@ import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.compone
 const routes: Routes = [
     {
         path: '',
-        component: AuthCallbackComponent,
+        redirectTo: 'main/home-splash',
+        pathMatch: 'prefix'
     },
     {
         path: 'unauthorized',

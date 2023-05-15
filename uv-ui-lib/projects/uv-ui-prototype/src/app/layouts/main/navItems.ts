@@ -24,14 +24,6 @@ export const navItems = [
         tooltip: 'Document Tool'
     },
     {
-        app: 'ingest',
-        icon: 'upload',
-        active: false,
-        navlink: '/main',
-        disabled: false,
-        tooltip: 'Upload'
-    },
-    {
         app: 'file-folder-structure',
         icon: 'folder',
         active: false,
