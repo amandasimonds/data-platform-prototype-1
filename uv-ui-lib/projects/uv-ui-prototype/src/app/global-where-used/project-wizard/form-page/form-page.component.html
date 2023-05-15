@@ -1,0 +1,84 @@
+<div [class.form-page-container-fullscreen]="wizardModeFullscreen"
+    [class.form-page-container]="!wizardModeFullscreen"
+    *ngIf="(currentStep$ | async) as currentStep">
+
+    <div *ngIf="wizardModeFullscreen"
+    class="app-steps-fullscreen">
+        <app-steps [wizardModeIsFullscreen]="wizardModeFullscreen"></app-steps>
+    </div>
+
+    <div class="flex flex-column w-100">
+        <div [class.form-page-container-top-fullscreen]="wizardModeFullscreen"
+        [class.form-page-container-top]="!wizardModeFullscreen">
+            <div class="flex justify-content-space-between align-items-center margin-bottom-xs">
+                <h4>Title of Step {{currentStepNumber.stepIndex}}</h4>
+                <uvx-icon-button icon="close" matTooltip="Close Wizard" size="md" color="gray" (click)="cancelWizard()"></uvx-icon-button>
+            </div>
+            <p class="uv-body">This will be the location of the description to help guide you, the user, throughout step {{currentStepNumber.stepIndex}}.</p>
+            <div *ngIf="!wizardModeFullscreen" class="app-steps-top">
+                <app-steps></app-steps>
+            </div>
+        </div>
+
+        <div *ngIf="!wizardModeFullscreen" class="divider"></div>
+
+        <div class="flex flex-column justify-content-space-between h-100" 
+        [class.fullscreen-bg]="wizardModeFullscreen">
+            <div class="form-page-container-middle flex justify-content-space-between">
+
+                <div *ngIf="!wizardModeFullscreen" class="app-steps-side">
+                    <app-steps></app-steps>
+                </div>
+                
+                <div *ngIf="!wizardModeFullscreen" class="divider-right margin-right-md steps-divider-side"></div>
+
+                <div class="w-100 flex flex-column justify-content-space-between h-100"
+                [class.directions-fullscreen]="wizardModeFullscreen">
+                    <ng-container [ngSwitch]="currentStep?.stepIndex">
+                        <ng-container *ngSwitchCase="'1'">
+                            <app-step-directions [step]="currentStep"></app-step-directions>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'2'">
+                            <app-step-directions [step]="currentStep"></app-step-directions>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'3'">
+                            <app-step-directions [step]="currentStep"></app-step-directions>
+                        </ng-container>
+                    </ng-container>
+                </div>
+
+                <app-helper-bar *ngIf="wizardModeFullscreen"></app-helper-bar>
+            </div>
+
+            <!-- <div> -->
+                <span class="total-results-container margin-bottom-sm margin-right-sm">
+                    <p class="uv-body uv-font-gray semi-bold color-primary">
+                        Total expected results: <span class="color-primary">{{totalResults}}</span>
+                    </p>
+                </span>
+                <div class="divider"></div>
+                <div class="form-page-container-bottom flex justify-content-space-between align-items-center">
+                    <uvx-button mode="tertiary" label="Skip" 
+                    matTooltip="Skip this step"
+                    color="gray" 
+                    (click)="onSkipStep()"></uvx-button>
+                    <div>
+                        <uvx-button label="Back" mode="primary" 
+                        class="margin-right-sm" 
+                        matTooltip="Go to previous step"
+                        [disabled]="currentStepNumber.stepIndex === 1"
+                        (click)="currentStepNumber.stepIndex > 1 && onBackStep()">
+                        </uvx-button>
+                        <uvx-button 
+                        (click)="currentStepNumber.isComplete && onNextStep()" 
+                        [disabled]="!currentStepNumber.isComplete" 
+                        mode="primary"
+                        [matTooltip]="!isLastStep ? 'Go to next step' : 'Finish and launch into GWU'"
+                        [label]="getButtonLabel()">
+                        </uvx-button>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</div>

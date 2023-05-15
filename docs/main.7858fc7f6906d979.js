@@ -4396,7 +4396,6 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [{
   path: '',
   redirectTo: 'main/home-splash',
-  // redirectTo: 'data-platform-prototype-1/main/home-splash',
   pathMatch: 'prefix'
 }, {
   path: 'unauthorized',

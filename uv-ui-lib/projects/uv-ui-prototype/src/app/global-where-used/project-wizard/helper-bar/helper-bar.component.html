@@ -1,0 +1,11 @@
+<div class="helper-bar flex flex-column" 
+[@slideInOutRight]="helperBarState">
+    <uvx-icon-button 
+    [matTooltip]="helperBarState === 'hidden' ? 'More info about this step' : 'Close helper bar'"
+    [icon]="helperBarState === 'hidden' ? 'double_left' : 'double_right'" 
+    (click)="toggleHelperBar()"></uvx-icon-button>
+        <div class="margin-xs margin-left-sm">
+                <h6 class="margin-bottom-xxxs">synopsis</h6>
+                <p class="uv-body-secondary">This is where we will give you further information based on your actions and selections within Step X.</p>
+        </div>
+</div>

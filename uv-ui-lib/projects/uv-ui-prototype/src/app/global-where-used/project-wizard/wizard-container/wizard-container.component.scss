@@ -1,0 +1,27 @@
+// @import '../../../../scss//main.scss';
+@import '../../../../../../uv-ui-lib/src/lib/scss/variables';
+
+.wizard-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 8px;
+    z-index: var(--uv-z-index-popup);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include respond(small-desktop-width) {
+        width: 80%;
+    }
+
+    @include respond(small-desktop-height) {
+        width: 60%;
+    }
+}
+
+.wizard-full {
+    background-color: var(--uv-color-white);
+    height: 100%;
+}

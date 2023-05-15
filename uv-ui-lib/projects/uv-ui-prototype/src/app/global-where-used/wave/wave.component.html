@@ -1,0 +1,21 @@
+<div class="wave-container">
+    <div class="uv-container padding-xs column-container" style="min-width: 1389px;">
+        
+        <div *ngFor="let column of columns">
+            <div class="col-1 flex flex-column gap-10">
+                <span *ngFor="let entity of column.entities">
+                    <uvx-selectable-entity 
+                    [isSelected]="entity.selected"
+                    [label]="entity.name" 
+                    [dragIsDisabled]="true"
+                    (itemUnselectedEvent)="onGwuEntitySelected(entity)"
+                    (itemSelectedEvent)="onGwuEntitySelected(entity)"></uvx-selectable-entity>
+                </span>
+                <span *ngIf="column.image !== ''">
+                    <img src={{column.image}} alt="">
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
