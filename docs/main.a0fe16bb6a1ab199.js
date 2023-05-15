@@ -4395,9 +4395,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [{
   path: '',
-  // redirectTo: 'main',
-  redirectTo: 'data-platform-prototype-1/main/home-splash',
-  pathMatch: 'full'
+  redirectTo: 'main/home-splash',
+  // redirectTo: 'data-platform-prototype-1/main/home-splash',
+  pathMatch: 'prefix'
 }, {
   path: 'unauthorized',
   component: _pages_unauthorized_unauthorized_component__WEBPACK_IMPORTED_MODULE_2__.UnauthorizedComponent
