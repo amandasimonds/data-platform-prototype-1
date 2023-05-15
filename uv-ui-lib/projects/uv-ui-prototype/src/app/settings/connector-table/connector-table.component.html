@@ -4,7 +4,7 @@
             <div class="column col-name" *ngFor="let col of cols">
                 <div class="flex justify-content-space-between">
                     {{col.colName}}
-                    <uvx-icon [icon]="col.icon" size="xs" class="margin-right-lg"></uvx-icon>
+                    <uvx-icon size="xs" class="margin-right-lg">{{col.icon}}</uvx-icon>
                 </div>
             </div>
         </div>

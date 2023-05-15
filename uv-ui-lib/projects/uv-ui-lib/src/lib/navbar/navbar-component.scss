@@ -16,6 +16,9 @@
 .navbar-logo {
     width: var(--uv-md-size);
     height: calc(var(--uv-header-height) - 2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: 15px;
 }
 

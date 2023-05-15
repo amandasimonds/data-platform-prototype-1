@@ -12,7 +12,8 @@
                     <uvx-icon-button
                         color="gray"
                         (click)="onCloseClicked('hidden')"
-                    >chevron_left</uvx-icon-button>
+                        icon="chevron_left"
+                    ></uvx-icon-button>
                 </div>
             </div>
             <div class="padding-bottom-sm padding-left-sm padding-right-sm">
@@ -32,7 +33,7 @@
                 <uvx-dropdown [hasBorder]="true">
                     <span title class="flex align-items center justify-content-space-between w-100">
                         <div class="flex align-items-center">
-                            <uvx-icon icon="{{ searchCategoryIcon }}" class="margin-right-xs"></uvx-icon>
+                            <uvx-icon class="margin-right-xs">{{ searchCategoryIcon }}</uvx-icon>
                             {{ searchCategory }}
                         </div>
                         <div class="divider-right margin-right-xs">
@@ -50,7 +51,7 @@
                         [class.no-display]="getCategoryResultsNumber(item.name) < 1"
                     >
                         <div class="flex align-items-center">
-                            <uvx-icon icon="{{ item.icon }}" class="margin-right-xs"></uvx-icon>
+                            <uvx-icon class="margin-right-xs">{{item.icon}}</uvx-icon>
                             {{ item.name }}
                         </div>
                         <span class="results-number">{{ getCategoryResultsNumber(item.name) }}</span>

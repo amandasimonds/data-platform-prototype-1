@@ -2,8 +2,13 @@
     <uvx-action-bar class="w-100">
         <div left class="flex margin-top-xs margin-bottom-xs">
             <div class="margin-right-xs">
-                <uvx-icon-button icon="left" matTooltip="Go Back" class="margin-right-xs" (click)="back()"></uvx-icon-button>
-                <uvx-icon-button icon="right" matTooltip="Go Forward" (click)="forward()"></uvx-icon-button>
+                <uvx-icon-button
+                    icon="arrow_back"
+                    matTooltip="Go Back"
+                    class="margin-right-xs"
+                    (click)="back()"
+                ></uvx-icon-button>
+                <uvx-icon-button icon="arrow_forward" matTooltip="Go Forward" (click)="forward()"></uvx-icon-button>
             </div>
             <uvx-search-panel mode="global" width="240px" (searchClearClicked)="searchText = ''">
                 <input
@@ -21,16 +26,17 @@
                 (click)="createFolder()"
                 (keydown.enter)="createFolder()"
                 type="submit"
+                icon="create_new_folder"
                 [matTooltipDisabled]="createFolderDialogue"
                 matTooltip="Create new folder"
-            >create_new_folder
-                <!-- <app-create-folder
+            >
+                <app-create-folder
                     *ngIf="createFolderDialogue"
                     (closeModalEvent)="createFolderDialogue = false"
-                ></app-create-folder -->
+                ></app-create-folder
             ></uvx-icon-button>
             <div class="divider-left"></div>
-            <uvx-icon-button>sort</uvx-icon-button>
+            <uvx-icon-button icon="sort"></uvx-icon-button>
             <!-- <uvx-range-slider></uvx-range-slider> -->
         </div>
     </uvx-action-bar>
@@ -48,3 +54,4 @@
         </div>
     </div>
 </div>
+

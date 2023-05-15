@@ -1,7 +1,7 @@
 export const settingsNavlinks = [
     {   
         app: 'settings',
-        icon: 'force_directed_graph',
+        icon: 'insights',
         active: false,
         navlink: 'settings/connector-table',
         disabled: false,
@@ -17,7 +17,7 @@ export const settingsNavlinks = [
     },
     {   
         app: 'settings',
-        icon: 'users',
+        icon: 'people',
         active: false,
         navlink: 'settings',
         disabled: false,

@@ -31,11 +31,10 @@
                         >
                             <!-- <uvx-folder-tree-icon [open]="true"></uvx-folder-tree-icon> -->
                             <div class="margin-right-xxs">
-                                <uvx-icon
-                                    [color]="folder.menuOpen ? 'primary' : ''"
-                                    [icon]="folder.menuOpen ? 'chevron_bottom' : 'chevron_right'"
-                                ></uvx-icon>
-                                <uvx-icon [icon]="folder.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                                <uvx-icon [color]="folder.menuOpen ? 'primary' : ''">{{
+                                    folder.menuOpen ? 'expand_more' : 'chevron_right'
+                                }}</uvx-icon>
+                                <uvx-icon>{{folder.menuOpen ? 'folder_open' : 'folder'}}</uvx-icon>
                             </div>
                             <p class="semibold" [class.color-primary]="folder.menuOpen">{{ folder.name }}</p>
                         </div>
@@ -43,7 +42,7 @@
                             <div *ngFor="let folder of folder.folders" class="flex">
                                 <div class="margin-right-xxs">
                                     <!-- <uvx-icon [icon]="folder.menuOpen ? 'chevron_top' : 'chevron_bottom'"></uvx-icon> -->
-                                    <uvx-icon [icon]="folder.menuOpen ? 'folder_opened' : 'folder'"></uvx-icon>
+                                    <uvx-icon>{{folder.menuOpen ? 'folder_open' : 'folder'}}</uvx-icon>
                                 </div>
                                 <p class="semibold">{{ folder.name }}</p>
                             </div>
@@ -77,7 +76,7 @@
                             <div *ngIf="file.menuOpen" class="margin-left-md margin-top-xs flex flex-column gap-xxs">
                                 <div *ngFor="let folder of file.folders" class="flex">
                                     <div class="margin-right-xxs">
-                                        <uvx-icon>{{folder.menuOpen ? 'folder_open' : 'folder'}}</uvx-icon>
+                                        <uvx-icon>{{ folder.menuOpen ? 'folder_open' : 'folder' }}</uvx-icon>
                                     </div>
                                     <p class="semibold">{{ folder.name }}</p>
                                 </div>
@@ -109,7 +108,7 @@
                             [matTooltip]="item.tooltip"
                             [routerLink]="item.link"
                         ></uvx-icon-button>
-                        <uvx-icon-button matTooltip="Launch Service 4">error_outline</uvx-icon-button>
+                        <uvx-icon-button icon="error_outline" matTooltip="Launch Service 4">\</uvx-icon-button>
                     </div>
                 </span>
                 <p class="uv-body uv-body-secondary">Most Popular</p>
@@ -125,7 +124,7 @@
                             [matTooltip]="item.tooltip"
                             [routerLink]="item.link"
                         ></uvx-icon-button>
-                        <uvx-icon-button matTooltip="Launch Service 4">error_outline</uvx-icon-button>
+                        <uvx-icon-button icon="error_outline" matTooltip="Launch Service 4"></uvx-icon-button>
                     </div>
                 </span>
             </div>

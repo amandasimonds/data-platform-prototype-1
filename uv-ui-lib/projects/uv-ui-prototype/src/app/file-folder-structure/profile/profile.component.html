@@ -8,9 +8,10 @@
                             *ngFor="let item of launchServices"
                             [matTooltip]="item.tooltip"
                             [routerLink]="item.link"
-                        >{{item.icon}}</uvx-icon-button>
+                            [icon]="item.icon"
+                        ></uvx-icon-button>
                         <span class="divider-left" style="margin: 0"></span>
-                        <uvx-icon-button>more_horiz</uvx-icon-button>
+                        <uvx-icon-button icon="more_horiz"></uvx-icon-button>
                     </div>
                 </div>
             </div>
@@ -49,3 +50,4 @@
         </div>
     </div>
 </div>
+

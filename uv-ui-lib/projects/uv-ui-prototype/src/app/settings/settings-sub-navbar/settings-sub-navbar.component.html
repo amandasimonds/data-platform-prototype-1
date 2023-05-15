@@ -8,7 +8,7 @@
             [class.nav-icon-disabled]="navlink.disabled"
         >
             <a [routerLink]="navlink.navlink" class="display-inline-block" [queryParams]="{ app: navlink.app }">
-                <uvx-icon color="black" [icon]="navlink.icon"></uvx-icon>
+                <uvx-icon color="black">{{navlink.icon}}</uvx-icon>
                 <p
                     [class.navbar-expanded-text-visible]="subNavbarIsExpanded"
                     class="display-inline-block margin-left-xxs navbar-expanded-text"

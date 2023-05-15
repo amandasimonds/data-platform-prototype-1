@@ -10,7 +10,8 @@
             color="gray"
             style="padding: 6px 8px"
             (click)="onCloseClicked('hidden')"
-        >chevron_right</uvx-icon-button>
+            icon="chevron_right"
+        ></uvx-icon-button>
         <div class="padding-right-sm padding-left-sm padding-bottom-xs">
             <h4 class="margin-right-xs margin-bottom-sm">Wallet</h4>
             <p class="uv-body margin-bottom-xs">Description about the wallet feature here.</p>
@@ -26,7 +27,7 @@
                 </button>
 
                 <button
-                *ngIf="currentApp === 'file-folder-structure'"
+                    *ngIf="currentApp === 'file-folder-structure'"
                     mat-flat-button
                     color="primary"
                     [disabled]="!walletEntitiesSelected"
@@ -148,11 +149,9 @@
                         </div>
                     </span>
                 </uvx-dropdown>
-                <uvx-icon-button
-                    class=""
-                    [icon]="walletEntitySelections.length > 0 ? 'delete' : ''"
-                    (click)="deleteEntitySelectionFromWallet()"
-                ></uvx-icon-button>
+                <uvx-icon-button class="" (click)="deleteEntitySelectionFromWallet()">{{
+                    walletEntitySelections.length > 0 ? 'delete' : ''
+                }}</uvx-icon-button>
                 <span class="divider-left"></span>
                 <uvx-icon-button
                     icon="sorting_bottom"
@@ -164,27 +163,27 @@
                     <div *ngIf="walletSortMenuOpen" class="sort-menu flex flex-column">
                         <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Title</p>
                         <p class="sort-menu-item" (click)="sortWalletByAtoZ(); $event.stopPropagation()">
-                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            <uvx-icon>sort</uvx-icon>
                             A to Z
                         </p>
                         <p class="sort-menu-item" (click)="sortWalletByZtoA(); $event.stopPropagation()">
-                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            <uvx-icon>sort</uvx-icon>
                             Z to A
                         </p>
                         <div class="divider"></div>
                         <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Date</p>
                         <p class="sort-menu-item" (click)="sortWalletByNewestFirst(); $event.stopPropagation()">
-                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            <uvx-icon>sort</uvx-icon>
                             Newest first
                         </p>
                         <p class="sort-menu-item" (click)="sortWalletByOldestFirst(); $event.stopPropagation()">
-                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            <uvx-icon>sort</uvx-icon>
                             Oldest first
                         </p>
                         <div class="divider"></div>
                         <p class="uv-body-secondary semibold margin-left-xs margin-top-xs margin-bottom-xxxs">Usage</p>
                         <p class="sort-menu-item" (click)="sortWalletByFavorites(); $event.stopPropagation()">
-                            <uvx-icon icon="sorting_bottom"></uvx-icon>
+                            <uvx-icon>sort</uvx-icon>
                             Favorites
                         </p>
                         <p
@@ -197,7 +196,7 @@
                             "
                             (click)="walletEntitiesSelected && sortWalletBySelections(); $event.stopPropagation()"
                         >
-                            <uvx-icon [disabled]="!walletEntitiesSelected" icon="sorting_bottom"></uvx-icon>
+                            <uvx-icon [disabled]="!walletEntitiesSelected">sort</uvx-icon>
                             Selections
                         </p>
                     </div>

@@ -21,16 +21,16 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
     @Input() public searchSidebarState = 'hidden';
     @Output() public readonly searchCloseEvent = new EventEmitter<string>();
     public facetsOpen = false;
-    public searchCategoryIcon = 'design';
+    public searchCategoryIcon = 'all_inclusive';
 
     @ViewChild('resultsContainer', { static: true }) public resultsDiv: ElementRef;
 
     public categories = [
-        {name: 'All', icon: 'design', resultCount: 0},
-        {name: 'Materials', icon: 'global_where_used', resultCount: 0},
+        {name: 'All', icon: 'all_inclusive', resultCount: 0},
+        {name: 'Materials', icon: 'insights', resultCount: 0},
         {name: 'Requirements', icon: 'list-right', resultCount: 0},
-        {name: 'Parts', icon: 'parts', resultCount: 0},
-        {name: 'Documents', icon: 'document', resultCount: 0}
+        {name: 'Parts', icon: 'handyman', resultCount: 0},
+        {name: 'Documents', icon: 'description', resultCount: 0}
     ];
 
     constructor(
@@ -47,7 +47,7 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
         this.searchCategory = category;
         switch(this.searchCategory) {
             case 'All':
-                this.searchCategoryIcon = 'design';
+                this.searchCategoryIcon = 'all_inclusive';
                 break;
             case 'Materials':
                 this.searchCategoryIcon = 'insights';
@@ -56,13 +56,13 @@ export class SearchSidebarComponent implements OnInit, AfterViewChecked, OnChang
                 this.searchCategoryIcon = 'list-right';
                 break;
             case 'Parts':
-                this.searchCategoryIcon =  'parts';
+                this.searchCategoryIcon =  'handyman';
                 break;
             case 'Documents':
-                this.searchCategoryIcon = 'document';
+                this.searchCategoryIcon = 'description';
                 break;
             default:
-                this.searchCategoryIcon = 'design';
+                this.searchCategoryIcon = 'all_inclusive';
                 break;
         }
     }

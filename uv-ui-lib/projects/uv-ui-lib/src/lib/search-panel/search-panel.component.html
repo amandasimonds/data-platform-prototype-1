@@ -7,7 +7,7 @@
 >
     <div class="w-100 justify-content-space-between flex align-items-center position-relative" [ngClass]="getMode()">
         <div class="flex align-items-center w-100 h-100">
-            <uvx-icon-button (click)="onSearch()">search</uvx-icon-button>
+            <uvx-icon-button (click)="onSearch()" icon="search"></uvx-icon-button>
             <ng-content></ng-content>
         </div>
 
@@ -15,7 +15,8 @@
             *ngIf="mode === 'global' || 'component-border'"
             matTooltip="Clear search query"
             (click)="onSearchClearClicked($event)"
-        >close
+            icon="close"
+        >
         </uvx-icon-button>
     </div>
 

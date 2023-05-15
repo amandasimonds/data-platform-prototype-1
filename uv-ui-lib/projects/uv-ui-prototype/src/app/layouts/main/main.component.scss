@@ -1,0 +1,40 @@
+.navbar-expanded {
+    &-text {
+        opacity: 0;
+        pointer-events: none;
+
+        &-visible {
+            pointer-events: inherit;
+            opacity: 1;
+            transition-delay: 0.25s;
+            transition-property: opacity;
+        }
+    }
+}
+
+.toggle-button {
+    padding: 6px 8px 0 8px;
+    text-align: right;
+}
+
+.no-display {
+    display: none;
+}
+
+.toast {
+    position: absolute;
+    width: 300px;
+    top: -100px;
+    z-index: var(--uv-z-index-navbar);
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 1s all;
+
+    &-visible {
+        top:10px;
+    }
+}
+
+.toast > img {
+    width: 100%;
+}

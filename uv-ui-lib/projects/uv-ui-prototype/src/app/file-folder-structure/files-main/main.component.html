@@ -6,16 +6,15 @@
     >
         <div class="flex align-items-center justify-content-space-between">
             <div class="padding-left-xxs">
-                <uvx-icon-button *ngIf="fileFolder.shared" class="shared"
-                    >people
-                    <!-- <div class="padding-sm padding-right-md box shared-menu">
+                <uvx-icon-button icon="people" *ngIf="fileFolder.shared" class="shared">
+                    <div class="padding-sm padding-right-md box shared-menu">
                         <h4>{{ fileFolder.name }}</h4>
                         <p class="margin-top-xs">Description about the folder and the people it is shared with.</p>
                         <div class="flex justify-content-space-between align-items-center margin-top-xs">
                             <img src="../../../assets/users.png" alt="" style="width: 130px; height: 33px" />
                             <uvx-button mode="text" color="gray" label="View Details"></uvx-button>
                         </div>
-                    </div> -->
+                    </div>
                 </uvx-icon-button>
             </div>
             <uvx-icon-button
@@ -51,7 +50,8 @@
             class="text-align-right"
             (click)="optionsMenuClicked(file, $event, i)"
             [matTooltip]="!file.menuActive ? 'Options Menu' : null"
-            >more_horiz
+            icon="more_vertical"
+        >
             <app-options-menu [fileFolder]="file"></app-options-menu>
         </uvx-icon-button>
         <div
@@ -64,7 +64,7 @@
                 padding-left-md padding-right-md padding-bottom-xs
             "
         >
-            <uvx-icon icon="person" size="xxl"></uvx-icon>
+            <uvx-icon size="xxl">person</uvx-icon>
             <p class="file-name">{{ file.name }}</p>
         </div>
     </div>
@@ -93,7 +93,8 @@
                     (click)="optionsMenuClicked(fileFolder, $event, i)"
                     [matTooltip]="!fileFolder.menuActive ? 'Options Menu' : null"
                     class="text-align-right position-relative"
-                    >more_vert
+                    icon="more_vertical"
+                    >
                 </uvx-icon-button>
                 <app-options-menu [fileFolder]="fileFolder"></app-options-menu>
             </div>

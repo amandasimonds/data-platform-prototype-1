@@ -1,34 +1,43 @@
 <div class="documents flex flex-column" (mouseleave)="mouseLeaveClassRemove()">
-
-    <div class="search-result"
-        *ngFor="let item of getSearchCollection(); let i = index;"
+    <div
+        class="search-result"
+        *ngFor="let item of getSearchCollection(); let i = index"
         [class.search-result-selected]="item.active"
         [class.search-result-disabled]="item.disabled"
         (mouseleave)="mouseLeaveClass()"
         (click)="searchResultClicked(item)"
-        [ngClass]="classes" 
-        >
-        
+        [ngClass]="classes"
+    >
         <div *ngIf="item.category" class="search-result-tool-menu">
             <!-- <uvx-icon-button *ngIf="searchText === ''" (click)="searchText === '' && searchRecent(item.title)" icon="search" class="padding-xxs margin-right-xxs margin-left-xxs"></uvx-icon-button> -->
-            <uvx-icon-button (click)="launchClicked(true, item, i, 'sbs')" class="margin-left-xxs padding-xxs">compare</uvx-icon-button>
-            <uvx-icon-button (click)="launchClicked(true, item, i, 'gwu')" class="padding-xxs">insights</uvx-icon-button>
-            <uvx-icon-button (click)="compareClicked(true, item, i)" class="padding-xxs margin-right-xxs">insights</uvx-icon-button>
+            <uvx-icon-button
+                (click)="launchClicked(true, item, i, 'sbs')"
+                icon="compare"
+                class="margin-left-xxs padding-xxs"
+            ></uvx-icon-button>
+            <uvx-icon-button
+                (click)="launchClicked(true, item, i, 'gwu')"
+                icon="insights"
+                class="padding-xxs"
+            ></uvx-icon-button>
+            <uvx-icon-button
+                (click)="compareClicked(true, item, i)"
+                icon="insights"
+                class="padding-xxs margin-right-xxs"
+            ></uvx-icon-button>
         </div>
-        
+
         <div class="flex justify-content-space-between align-content-center align-items-center">
             <div class="flex flex-column">
-                <h5 class="margin-bottom-xxs">{{item.name}}</h5>
-                <p class="uv-body" *ngIf="!searchIsEmpty; else recentSearchesTpl">{{item.description}}</p>
+                <h5 class="margin-bottom-xxs">{{ item.name }}</h5>
+                <p class="uv-body" *ngIf="!searchIsEmpty; else recentSearchesTpl">{{ item.description }}</p>
                 <ng-template #recentSearchesTpl>
-                    <p class="uv-label-sbs-secondary">{{item.formattedDate}}</p>
+                    <p class="uv-label-sbs-secondary">{{ item.formattedDate }}</p>
                 </ng-template>
             </div>
-            <uvx-icon-button *ngIf="searchIsEmpty" color="primary"
-                (click)="deleteRecentSearch(item.name)">close
+            <uvx-icon-button *ngIf="searchIsEmpty" color="primary" icon="close" (click)="deleteRecentSearch(item.name)">
             </uvx-icon-button>
         </div>
-        
     </div>
-
 </div>
+

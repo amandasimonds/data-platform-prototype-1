@@ -8,7 +8,7 @@ export const taskSelections: IGoal[] = [
     },
     {
         name: 'Current',
-        icon: 'thunderbolt',
+        icon: 'bolt',
         selected: false
     },
     {

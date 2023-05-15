@@ -5,7 +5,7 @@
 >
     <div class="flex flex-column gap-xxs">
         <div class="flex gap-xs options-menu-item" *ngFor="let item of optionMenuItems">
-            <uvx-icon [icon]="item.icon"></uvx-icon>
+            <uvx-icon>{{item.icon}}</uvx-icon>
             <p>{{ item.title }}</p>
         </div>
     </div>

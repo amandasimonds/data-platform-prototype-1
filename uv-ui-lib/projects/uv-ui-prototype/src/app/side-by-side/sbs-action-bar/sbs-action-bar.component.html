@@ -10,7 +10,7 @@
                     <span class="sbs-block medium-bold uv-body margin-right-12">{{
                         loadedSourceDocuments[0].name
                     }}</span>
-                    <uvx-icon icon="compare" class="margin-right-12"></uvx-icon>
+                    <uvx-icon class="margin-right-12">compare</uvx-icon>
                     <p *ngIf="selectedTargetDocuments.length === 0" class="italic uv-font-gray">
                         Collection: 0 documents selected
                     </p>
@@ -38,7 +38,7 @@
                     >
                         {{ item.name }}
                         <uvx-icon-button
-                            icon="clear"
+                            icon="close"
                             color="primary"
                             class="margin-left-xxxs"
                             (click)="unselectTargetDocument(item)"
@@ -57,11 +57,9 @@
                     (click)="toggleShowMoreSelections()"
                     class="sbs-action-bar-link uv-link"
                 >
-                    Show {{ selectedTargetDocuments.length - 5 }} more<uvx-icon
-                        icon="arrow_collapse"
-                        color="primary"
-                        class="margin-left-xxxs"
-                    ></uvx-icon>
+                    Show {{ selectedTargetDocuments.length - 5 }} more<uvx-icon color="primary" class="margin-left-xxxs"
+                        >expand_less</uvx-icon
+                    >
                 </a>
                 <a *ngIf="showMoreSelections" (click)="toggleShowMoreSelections()" class="sbs-action-bar-link uv-link">
                     Show less<uvx-icon icon="arrow_expand" color="primary" class="margin-left-xxxs"></uvx-icon>
@@ -70,8 +68,8 @@
                 <a
                     class="sbs-action-bar-link uv-link margin-right-sm"
                     (click)="clearSelections(selectedTargetDocuments)"
-                    >Clear all<uvx-icon icon="clear" color="primary" class="margin-left-xxxs"></uvx-icon
-                ></a>
+                    >Clear all<uvx-icon color="primary" class="margin-left-xxxs">close</uvx-icon></a
+                >
             </div>
         </div>
 
@@ -94,9 +92,10 @@
                     <uvx-icon-button
                         *ngIf="!showFilterModal"
                         color="primary"
+                        icon="search"
                         (click)="toggleFilterModal()"
                         [active]="showFilterModal"
-                    >search</uvx-icon-button>
+                    ></uvx-icon-button>
                     <uvx-search-panel
                         (searchCloseClicked)="toggleFilterModal(); clearSearch()"
                         *ngIf="showFilterModal"
@@ -105,7 +104,7 @@
                     >
                         <input [(ngModel)]="searchText" class="margin-left-xs" />
                     </uvx-search-panel>
-                    <uvx-icon-button icon="more_horisontal" color="primary" class="margin-left-xxs"></uvx-icon-button>
+                    <uvx-icon-button icon="more_horiz" color="primary" class="margin-left-xxs"></uvx-icon-button>
                     <sbs-filter-modal *ngIf="showFilterModal" [searchText]="searchText"></sbs-filter-modal>
                 </div>
             </div>
@@ -114,14 +113,16 @@
                     {{ showTargetDocuments ? loadedTargetDocuments.length : '0' }} documents
                 </p>
                 <div *ngIf="isDevUser">
-                    <uvx-icon-button color="primary" [disabled]="!showTargetDocuments">search</uvx-icon-button>
+                    <uvx-icon-button color="primary" [disabled]="!showTargetDocuments" icon="search"></uvx-icon-button>
                     <uvx-icon-button
                         color="primary"
                         [disabled]="!showTargetDocuments"
                         class="margin-left-xxs"
-                    >more_horiz</uvx-icon-button>
+                        icon="more_horiz"
+                    ></uvx-icon-button>
                 </div>
             </div>
         </div>
     </div>
 </uvx-action-bar>
+

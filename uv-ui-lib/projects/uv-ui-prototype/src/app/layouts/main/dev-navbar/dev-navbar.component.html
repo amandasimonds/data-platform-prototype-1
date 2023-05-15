@@ -1,0 +1,35 @@
+<div>
+    <div
+        *ngFor="let navlink of navlinks"
+        class="nav-icon pointer"
+        [matTooltip]="navlink.tooltip"
+        [class.nav-icon-active-expanded]="navbarIsExpanded"
+        [class.nav-icon-disabled]="navlink.disabled"
+        [class.nav-icon-active]="navActiveIcon === navlink.app"
+        (click)="handleNavlinkAction(navlink)"
+    >
+        <uvx-icon color="black">{{navlink.icon}}</uvx-icon>
+        <p
+            [class.navbar-expanded-text-visible]="navbarIsExpanded"
+            class="display-inline-block margin-left-xxs navbar-expanded-text"
+        >
+            {{ navlink.tooltip }}
+        </p>
+    </div>
+    <span
+        class="nav-icon"
+        matTooltip="Global Search"
+        [class.nav-icon-active-expanded]="navbarIsExpanded"
+        [class.nav-icon-active]="navActiveIcon === 'search'"
+    >
+        <a (click)="toggleSearchSidebar($event)">
+            <uvx-icon color="black">search</uvx-icon>
+            <p
+                [class.navbar-expanded-text-visible]="navbarIsExpanded"
+                class="display-inline-block margin-left-xxs navbar-expanded-text"
+            >
+                Global Search
+            </p>
+        </a>
+    </span>
+</div>

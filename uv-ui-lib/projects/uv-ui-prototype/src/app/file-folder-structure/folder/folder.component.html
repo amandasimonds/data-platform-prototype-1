@@ -8,7 +8,8 @@
             (click)="optionsMenuClicked(fileFolder, $event, i)"
             [matTooltip]="!fileFolder.menuActive ? 'Options Menu' : null"
             class="text-align-right position-relative"
-            >more_vert
+            icon="more_vert"
+        >
         </uvx-icon-button>
         <app-options-menu [fileFolder]="fileFolder"></app-options-menu>
         <div
@@ -34,7 +35,8 @@
             (click)="optionsMenuClicked(file, $event, i)"
             [matTooltip]="!file.menuActive ? 'Options Menu' : null"
             class="text-align-right position-relative"
-            >more_vert
+            icon="more_vert"
+        >
         </uvx-icon-button>
         <app-options-menu [fileFolder]="file"></app-options-menu>
         <div

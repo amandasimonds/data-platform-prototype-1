@@ -38,10 +38,10 @@
             <a class="sbs-link z-1000 block" 
                 (click)="onShowMoreDocumentDetails($event, item)">
                 <span *ngIf="!item.showDetails">
-                    Show more <uvx-icon color="primary" size="xs" icon="arrow_collapse"></uvx-icon>
+                    Show more <uvx-icon color="primary" size="xs">expand_more</uvx-icon>
                 </span>
                 <span *ngIf="item.showDetails">
-                    Show less <uvx-icon color="primary" size="xs" icon="arrow_expand"></uvx-icon>
+                    Show less <uvx-icon color="primary" size="xs">expand_less</uvx-icon>
                 </span>
             </a>
         </div>

@@ -1,10 +1,6 @@
-<uvx-expanding-menu 
-    (toggleButtonClicked)="toggleSettingsMenu()" 
-    [menuIsExpanded]="settingsMenuIsExpanded"
-    >
+<uvx-expanding-menu (toggleButtonClicked)="toggleSettingsMenu()" [menuIsExpanded]="settingsMenuIsExpanded">
     <div content>
         <div *ngFor="let section of connectorCreatorSteps">
-
             <!-- <div *ngIf="!section.complete"
                 yPosition 
                 [topPosition]="section.yPos" 
@@ -32,28 +28,19 @@
                 </div>
             </div> -->
 
-
-            <div
-                class="margin-bottom-md" [attr.id]="section.name">
-            
-                <div class="flex align-items-center" >
-                    <uvx-icon 
-                    [icon]="section.complete ? 'check' : ''" 
-                    color="success" class="margin-right-xs"></uvx-icon>
-                    <p class="uv-body-sm bold">{{section.sectionTitle}}</p>
+            <div class="margin-bottom-md" [attr.id]="section.name">
+                <div class="flex align-items-center">
+                    <uvx-icon color="success" class="margin-right-xs"
+                        >{{step.complete ? 'check' : ''}}</uvx-icon
+                    >
+                    <p class="uv-body-sm bold">{{ section.sectionTitle }}</p>
                 </div>
-            
-                <div class="flex align-items-center"
-                    *ngFor="let step of section.steps" 
-                    [attr.id]="step.name">
-                    <uvx-icon 
-                    [icon]="step.complete ? 'check' : ''" 
-                    color="success" class="margin-right-xs"></uvx-icon>
-                    <p class="uv-body-sm">{{step.title}}</p>
+
+                <div class="flex align-items-center" *ngFor="let step of section.steps" [attr.id]="step.name">
+                    <uvx-icon color="success" class="margin-right-xs">{{step.complete ? 'check' : ''}}</uvx-icon>
+                    <p class="uv-body-sm">{{ step.title }}</p>
                 </div>
             </div>
-    
-        </div> 
-
+        </div>
     </div>
 </uvx-expanding-menu>

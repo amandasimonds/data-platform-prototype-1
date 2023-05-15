@@ -1,12 +1,17 @@
-<button class="btn btn-svg h-100" 
+<button
+    class="btn btn-svg h-100"
     [ngClass]="cssClasses"
-    [class.secondary]="mode === 'secondary'" 
+    [class.secondary]="mode === 'secondary'"
     [class.disabled]="disabled"
-    [class.active]="active">
-    <mat-icon svgIcon="{{icon}}" 
-        [class.uvx-icon-xs]="size === 'xs'" 
+    [class.active]="active"
+>
+    <mat-icon
+        [class.uvx-icon-xs]="size === 'xs'"
         [class.uvx-icon-sm]="size === 'sm'"
-        [class.uvx-icon-md]="size === 'md'">
-        <ng-content></ng-content>
+        [class.uvx-icon-md]="size === 'md'"
+    >
+        {{ icon }}
     </mat-icon>
+    <ng-content></ng-content>
 </button>
+
