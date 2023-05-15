@@ -8,7 +8,6 @@ const routes: Routes = [
     {
         path: '',
         redirectTo: 'main/home-splash',
-        // redirectTo: 'data-platform-prototype-1/main/home-splash',
         pathMatch: 'prefix'
     },
     {
