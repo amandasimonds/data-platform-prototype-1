@@ -23,15 +23,13 @@ export class LandingComponent {
     public currentUser = { id: 1, new: false, name: '' };
     public columns = ['1', '2', '3', '4'];
     public gwuTabs = gwuTabs;
-    public chevronUser = 'user_chevron@test.com';
-    public cumminsUser = 'user_cummins@test.com';
 
     public get backdropMode(): string {
         return this.projectWizard ? 'popup' : 'hidden';
     }
 
     public get isDevUser(): boolean {
-        return this.currentUser.name === this.chevronUser || this.currentUser.name === this.cumminsUser ? false : true;
+        return true;
     }
 
     public get backdropState(): string {
