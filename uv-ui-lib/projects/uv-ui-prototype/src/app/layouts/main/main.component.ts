@@ -133,19 +133,18 @@ export class MainComponent implements OnInit {
     }
 
     public launchWizard(): void {
-        if (this.currentApp === 'sbs' || this.currentUser.name === 'user_chevron@test.com') {
+        if (this.currentApp === 'sbs') {
             console.log('sbs', this.currentUser)
             this.router.navigate(['sbs/wizard'], {
                 relativeTo: this.route,
                 queryParams: { wizardMode: 'fullscreen', app: 'sbs' },
             })
-        } else if (this.currentApp === 'gwu' || this.currentUser.name === 'user_cummins@test.com') {
+        } else if (this.currentApp === 'gwu') {
             this.router.navigate(['gwu/wizard'], {
                 relativeTo: this.route,
                 queryParams: { wizardMode: 'fullscreen', app: 'gwu' },
             })
         } else {
-            console.log('default', this.currentUser)
             this.router.navigate(['gwu/wizard'], {
                 relativeTo: this.route,
                 queryParams: { wizardMode: 'fullscreen', app: 'gwu' },

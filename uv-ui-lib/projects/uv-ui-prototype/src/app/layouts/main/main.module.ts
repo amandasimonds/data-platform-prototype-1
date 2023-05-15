@@ -16,12 +16,11 @@ import { ProfileSlideOutModule } from '../../side-by-side/profile-slide-out/prof
 import { SearchSidebarModule } from '../../search/search-sidebar/search-sidebar.module'
 import { MatIconModule } from '@angular/material/icon'
 import { DevNavbarComponent } from './dev-navbar/dev-navbar.component'
-import { CustomerNavbarComponent } from './customer-navbar/customer-navbar.component'
 import { SearchService } from '../../services/search.service'
 import { AppShellService } from '../../services/app-shell.service'
 
 @NgModule({
-    declarations: [MainComponent, DevNavbarComponent, CustomerNavbarComponent],
+    declarations: [MainComponent, DevNavbarComponent],
     imports: [
         CommonModule,
         HeaderModule,

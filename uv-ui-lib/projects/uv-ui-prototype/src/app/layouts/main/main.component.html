@@ -57,13 +57,6 @@
                 [navbarIsExpanded]="navbarIsExpanded"
                 (toggleSearchSidebarEvent)="toggleSearchSidebar()"
             ></app-dev-navbar>
-
-            <app-customer-navbar
-                *ngIf="!isDevUser"
-                [currentUser]="currentUser"
-                [navActiveIcon]="navActiveIcon"
-                [navbarIsExpanded]="navbarIsExpanded"
-            ></app-customer-navbar>
         </uvx-navbar>
     </div>
 
