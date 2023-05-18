@@ -623,9 +623,9 @@ StartPageComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2
   outputs: {
     createNewProjectEvent: "createNewProjectEvent"
   },
-  decls: 20,
+  decls: 18,
   vars: 0,
-  consts: [[1, "flex", "flex-column", "padding-md"], [1, "flex", "margin-bottom-md", "justify-content-space-between"], ["size", "md", "color", "gray", 3, "click"], [3, "click"], [1, "create-project", "margin-bottom-xs"], [1, "project", "flex", "justify-content-space-between", "align-items-center"], [1, "flex", "flex-column", "project-text"], [1, "margin-bottom-xxxs"], [1, "uv-body-sm"], [1, "project-action", "margin-right-xs"], ["color", "primary", 1, "project-action"]],
+  consts: [[1, "flex", "flex-column", "padding-md"], [1, "flex", "margin-bottom-md", "justify-content-space-between"], ["size", "md", "color", "gray", 3, "click"], [3, "click"], [1, "create-project", "margin-bottom-xs"], [1, "project", "flex", "justify-content-space-between", "align-items-center"], [1, "flex", "flex-column", "project-text"], [1, "margin-bottom-xxxs"], [1, "uv-body-sm"], ["icon", "more_horiz", 1, "project-action", "margin-right-xs"], ["color", "primary", "icon", "arrow_forward", 1, "project-action"]],
   template: function StartPageComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "h4");
@@ -650,12 +650,9 @@ StartPageComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "p", 8);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](14, "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "div")(16, "uvx-icon-button", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](17, "more_horiz");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](18, "uvx-icon-button", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](19, "arrow_forward");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "div");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](16, "uvx-icon-button", 9)(17, "uvx-icon-button", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
     }
   },
   dependencies: [_uv_ui_lib_src_lib_icon_button_icon_button_component__WEBPACK_IMPORTED_MODULE_1__.IconButtonComponent],
@@ -1078,7 +1075,7 @@ const taskSelections = [{
   selected: false
 }, {
   name: 'Current',
-  icon: 'thunderbolt',
+  icon: 'bolt',
   selected: false
 }, {
   name: 'Design',

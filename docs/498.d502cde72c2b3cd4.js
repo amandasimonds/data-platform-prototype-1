@@ -774,11 +774,10 @@ function LandingComponent_ng_template_3_Template(rf, ctx) {
 }
 function LandingComponent_div_5_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](0, "div", 1)(1, "uvx-action-bar", 7)(2, "uvx-icon-button", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](3, "more_horiz");
-    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](4, "uvx-icon-button", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](5, "fullscreen");
+    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](0, "div", 1)(1, "uvx-action-bar", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](2, "uvx-icon-button", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](3, "uvx-icon-button", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtext"](4, "fullscreen");
     _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]()()();
   }
 }
@@ -875,14 +874,14 @@ LandingComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_10_
   selectors: [["app-landing"]],
   decls: 9,
   vars: 6,
-  consts: [[1, "uv-container-fluid", "h-100"], [1, "row"], ["class", "w-100", 4, "ngIf", "ngIfElse"], ["customerUserTpl", ""], ["class", "row", 4, "ngIf"], [3, "onCancelWizard", 4, "ngIf"], [3, "backdropState", "mode", "backdropClicked"], [1, "w-100"], ["left", "", 1, "flex"], [1, "flex", "margin-top-sm", "margin-right-sm"], ["mode", "horizontal", "class", "margin-right-xxs", 3, "label", "icon", "routerLink", "queryParams", "isActive", 4, "ngFor", "ngForOf"], ["right", "", 1, "flex"], ["class", "flex align-items-center", 4, "ngIf"], ["mode", "horizontal", 1, "margin-right-xxs", 3, "label", "icon", "routerLink", "queryParams", "isActive"], [1, "flex", "align-items-center"], [1, "flex", "justify-content-space-between", "margin-right-sm", "divider-right", "padding-right-sm", "gap-10", "bold"], [3, "label"], [1, "uv-body", "margin-right-xs"], [3, "min", "max", "value", "valueMarkers", "valueChangedEvent"], ["color", "primary", 1, "margin-right-xs"], ["color", "primary"], [3, "onCancelWizard"]],
+  consts: [[1, "uv-container-fluid", "h-100"], [1, "row"], ["class", "w-100", 4, "ngIf", "ngIfElse"], ["customerUserTpl", ""], ["class", "row", 4, "ngIf"], [3, "onCancelWizard", 4, "ngIf"], [3, "backdropState", "mode", "backdropClicked"], [1, "w-100"], ["left", "", 1, "flex"], [1, "flex", "margin-top-sm", "margin-right-sm"], ["mode", "horizontal", "class", "margin-right-xxs", 3, "label", "icon", "routerLink", "queryParams", "isActive", 4, "ngFor", "ngForOf"], ["right", "", 1, "flex"], ["class", "flex align-items-center", 4, "ngIf"], ["mode", "horizontal", 1, "margin-right-xxs", 3, "label", "icon", "routerLink", "queryParams", "isActive"], [1, "flex", "align-items-center"], [1, "flex", "justify-content-space-between", "margin-right-sm", "divider-right", "padding-right-sm", "gap-10", "bold"], [3, "label"], [1, "uv-body", "margin-right-xs"], [3, "min", "max", "value", "valueMarkers", "valueChangedEvent"], ["color", "primary", "icon", "more_horiz", 1, "margin-right-xs"], ["color", "primary"], [3, "onCancelWizard"]],
   template: function LandingComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementStart"](0, "div", 0)(1, "div", 1);
       _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](2, LandingComponent_uvx_action_bar_2_Template, 6, 2, "uvx-action-bar", 2);
       _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](3, LandingComponent_ng_template_3_Template, 6, 2, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplateRefExtractor"]);
       _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](5, LandingComponent_div_5_Template, 6, 0, "div", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](5, LandingComponent_div_5_Template, 5, 0, "div", 4);
       _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](6, "router-outlet");
       _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵtemplate"](7, LandingComponent_app_wizard_container_7_Template, 1, 0, "app-wizard-container", 5);
       _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelementEnd"]();
@@ -1195,28 +1194,23 @@ __webpack_require__.r(__webpack_exports__);
 
 function ProfileViewerComponent_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div")(1, "uvx-button", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div")(1, "uvx-button", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "Compare");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](3, "uvx-button", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
   }
 }
 function ProfileViewerComponent_div_5_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div")(1, "uvx-icon-button", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "description");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "uvx-icon-button", 20)(2, "uvx-icon-button", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "uvx-icon-button", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "description");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
   }
 }
-function ProfileViewerComponent_uvx_button_20_Template(rf, ctx) {
+function ProfileViewerComponent_uvx_button_16_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "uvx-button", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileViewerComponent_uvx_button_20_Template_uvx_button_click_0_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "uvx-button", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileViewerComponent_uvx_button_16_Template_uvx_button_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5);
       const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r4.expandDescription());
@@ -1225,9 +1219,9 @@ function ProfileViewerComponent_uvx_button_20_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
 }
-function ProfileViewerComponent_div_26_div_6_div_1_Template(rf, ctx) {
+function ProfileViewerComponent_div_22_div_6_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
@@ -1237,10 +1231,10 @@ function ProfileViewerComponent_div_26_div_6_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](tag_r10);
   }
 }
-function ProfileViewerComponent_div_26_div_6_Template(rf, ctx) {
+function ProfileViewerComponent_div_22_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, ProfileViewerComponent_div_26_div_6_div_1_Template, 2, 1, "div", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, ProfileViewerComponent_div_22_div_6_div_1_Template, 2, 1, "div", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -1249,15 +1243,15 @@ function ProfileViewerComponent_div_26_div_6_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", item_r6.tags);
   }
 }
-function ProfileViewerComponent_div_26_Template(rf, ctx) {
+function ProfileViewerComponent_div_22_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 22)(1, "div", 23)(2, "p", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 23)(1, "div", 24)(2, "p", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](6, ProfileViewerComponent_div_26_div_6_Template, 2, 1, "div", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](6, ProfileViewerComponent_div_22_div_6_Template, 2, 1, "div", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -1347,51 +1341,44 @@ ProfileViewerComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
     name: "name",
     description: "description"
   },
-  decls: 27,
+  decls: 23,
   vars: 8,
-  consts: [[1, "box", "box-rounded", "h-100", "profile-viewer", "margin-auto"], [1, "padding-sm", "profile-viewer-top"], [1, "flex", "justify-content-space-between", "margin-bottom-md"], [1, "flex", "justify-content-space-between"], [4, "ngIf"], [1, "flex"], ["color", "gray-dark", 1, "margin-right-xs"], ["color", "gray-dark"], [1, "margin-bottom-md"], ["id", "description", 1, "profile-viewer-top-description", 3, "resized"], [1, "uv-body"], ["label", "See more", 3, "click", 4, "ngIf"], ["mode", "horizontal", "label", "Meta Data", 3, "isActive", "click"], ["mode", "horizontal", "label", "History", 3, "isActive", "click"], [1, "divider"], [1, "padding-sm", "profile-viewer-metadata"], ["class", "flex margin-bottom-xs", 4, "ngFor", "ngForOf"], ["mode", "secondary", "label", "Compare", 1, "margin-right-xxxs"], ["mode", "secondary", "label", "Design Ripple", "icon", "design", 1, "margin-right-xs"], ["mode", "secondary", 1, "margin-right-xxxs"], ["mode", "secondary", 1, "margin-right-xs"], ["label", "See more", 3, "click"], [1, "flex", "margin-bottom-xs"], [1, "profile-viewer-title"], [1, "uv-body", "bold"], ["class", "flex flex-wrap", 4, "ngIf"], [1, "flex", "flex-wrap"], ["class", "uv-tag", 4, "ngFor", "ngForOf"], [1, "uv-tag"]],
+  consts: [[1, "box", "box-rounded", "h-100", "profile-viewer", "margin-auto"], [1, "padding-sm", "profile-viewer-top"], [1, "flex", "justify-content-space-between", "margin-bottom-md"], [1, "flex", "justify-content-space-between"], [4, "ngIf"], ["icon", "more_horiz"], [1, "flex"], ["icon", "unlock", "color", "gray-dark", 1, "margin-right-xs"], ["icon", "fullscreen", "color", "gray-dark", 1, "margin-right-xs"], ["icon", "close", "color", "gray-dark"], [1, "margin-bottom-md"], ["id", "description", 1, "profile-viewer-top-description", 3, "resized"], [1, "uv-body"], ["label", "See more", 3, "click", 4, "ngIf"], ["mode", "horizontal", "label", "Meta Data", 3, "isActive", "click"], ["mode", "horizontal", "label", "History", 3, "isActive", "click"], [1, "divider"], [1, "padding-sm", "profile-viewer-metadata"], ["class", "flex margin-bottom-xs", 4, "ngFor", "ngForOf"], ["mode", "secondary", "label", "Compare", 1, "margin-right-xxxs"], ["icon", "description", "mode", "secondary", 1, "margin-right-xxxs"], ["icon", "description", "mode", "secondary", 1, "margin-right-xs"], ["label", "See more", 3, "click"], [1, "flex", "margin-bottom-xs"], [1, "profile-viewer-title"], [1, "uv-body", "bold"], ["class", "flex flex-wrap", 4, "ngIf"], [1, "flex", "flex-wrap"], ["class", "uv-tag", 4, "ngFor", "ngForOf"], [1, "uv-tag"]],
   template: function ProfileViewerComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, ProfileViewerComponent_div_4_Template, 4, 0, "div", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, ProfileViewerComponent_div_5_Template, 5, 0, "div", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "uvx-icon-button");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](7, "more_horiz");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, ProfileViewerComponent_div_4_Template, 3, 0, "div", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, ProfileViewerComponent_div_5_Template, 3, 0, "div", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](6, "uvx-icon-button", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "div", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](8, "uvx-icon-button", 7)(9, "uvx-icon-button", 8)(10, "uvx-icon-button", 9);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 5)(9, "uvx-icon-button", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10, "unlock");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "h5", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "uvx-icon-button", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12, "fullscreen");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "uvx-icon-button", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "close");
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "h5", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "div", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("resized", function ProfileViewerComponent_Template_div_resized_17_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "div", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("resized", function ProfileViewerComponent_Template_div_resized_13_listener($event) {
         return ctx.onDescriptionResized($event);
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "p", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "p", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](15);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](20, ProfileViewerComponent_uvx_button_20_Template, 2, 0, "uvx-button", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](16, ProfileViewerComponent_uvx_button_16_Template, 2, 0, "uvx-button", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "div", 5)(22, "uvx-tab", 12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileViewerComponent_Template_uvx_tab_click_22_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "div", 6)(18, "uvx-tab", 14);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileViewerComponent_Template_uvx_tab_click_18_listener() {
         return ctx.changeTab("metadata");
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](23, "uvx-tab", 13);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileViewerComponent_Template_uvx_tab_click_23_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "uvx-tab", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileViewerComponent_Template_uvx_tab_click_19_listener() {
         return ctx.changeTab("history");
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](24, "div", 14);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](25, "div", 15);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](26, ProfileViewerComponent_div_26_Template, 7, 3, "div", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](20, "div", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "div", 17);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](22, ProfileViewerComponent_div_22_Template, 7, 3, "div", 18);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
     }
     if (rf & 2) {
@@ -1399,7 +1386,7 @@ ProfileViewerComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.columnCount == 1 || ctx.columnCount == 2);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.columnCount == 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](7);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx.name, " ");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx.description, " ");
