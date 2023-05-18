@@ -5,27 +5,27 @@ import {
     ActionBarModule,
     IconButtonModule,
     UvxIconModule,
-    SearchPanelModule
+    SearchPanelModule,
+    ButtonModule,
 } from 'projects/uv-ui-lib/src/public-api';
 import { FilterModalModule } from '../filter-modal/filter-modal.module';
 import { SbsActionBarComponent } from './sbs-action-bar.component';
-import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [SbsActionBarComponent],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    ActionBarModule,
-    IconButtonModule,
-    UvxIconModule,
-    FilterModalModule,
-    RouterModule,
-    SearchPanelModule,
-    FormsModule,
-    MatButtonModule
-  ],
-  exports: [ SbsActionBarComponent]
+    declarations: [SbsActionBarComponent],
+    imports: [
+        CommonModule,
+        ButtonModule,
+        ActionBarModule,
+        IconButtonModule,
+        UvxIconModule,
+        FilterModalModule,
+        RouterModule,
+        SearchPanelModule,
+        FormsModule,
+    ],
+    exports: [SbsActionBarComponent],
 })
-export class SbsActionBarModule { }
+export class SbsActionBarModule {}
+
