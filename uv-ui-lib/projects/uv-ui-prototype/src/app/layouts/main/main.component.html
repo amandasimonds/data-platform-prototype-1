@@ -68,6 +68,16 @@
     </div>
 
     <div class="uv-ui-shell-subnavbar">
+        <app-search-sidebar
+            (searchCloseEvent)="toggleSearchSidebar()"
+            [searchSidebarState]="searchSidebarState"
+            [inService]="isInService"
+            [navbarIsExpanded]="navbarIsExpanded"
+        ></app-search-sidebar>
+        <app-profile-slide-out
+            (profileCloseEvent)="onProfileClose()"
+            [profileSlideOutState]="profileSlideOutState"
+        ></app-profile-slide-out>
         <app-settings-sub-navbar *ngIf="currentApp === 'settings'"></app-settings-sub-navbar>
         <app-files-menu *ngIf="currentApp === 'file-folder-structure'"> </app-files-menu>
     </div>
@@ -88,26 +98,10 @@
     </div>
 
     <uvx-backdrop
-        [backdropState]="uvLight ? 'visible' : searchSidebarState"
-        [mode]="backdropMode"
-        [backdropState]="searchSidebarState"
+        [isVisible]="backdropIsVisible"
         (backdropClicked)="!compareWarning && closeSearchSidebar()"
-    >
-    </uvx-backdrop>
-    <app-search-sidebar
-        (searchCloseEvent)="toggleSearchSidebar()"
-        [searchSidebarState]="searchSidebarState"
-    ></app-search-sidebar>
-    <app-profile-slide-out
-        (profileCloseEvent)="onProfileClose()"
-        [profileSlideOutState]="profileSlideOutState"
-    ></app-profile-slide-out>
-    <app-compare-warning
-        *ngIf="compareWarning"
-        (closeCompareWarning)="closeCompareWarning()"
-        [selectedItem]="selectedItem"
-    >
-    </app-compare-warning>
+        zIndex="900"
+    ></uvx-backdrop>
 
     <app-wallet-full
         *ngIf="currentApp !== 'file-folder-structure'"
