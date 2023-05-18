@@ -1,5 +1,11 @@
 <!-- <app-facets-slideout (facetsClosedEvent)="closeFacets()" [isVisible]="facetsOpen"></app-facets-slideout> -->
-<div class="search-sidebar" [@slideInOut]="searchSidebarState">
+<div
+    class="search-sidebar"
+    [@slideInOut]="searchSidebarState"
+    [class.search-sidebar-in-service]="inService"
+    [class.search-sidebar-navbar-expanded]="navbarIsExpanded"
+    [class.search-sidebar-no-display]="searchSidebarState === 'hidden'"
+>
     <app-facets-slideout (facetsClosedEvent)="closeFacets()" [isVisible]="facetsOpen"></app-facets-slideout>
     <div class="content-wrapper position-relative">
         <div class="search-sidebar-top">
@@ -51,7 +57,7 @@
                         [class.no-display]="getCategoryResultsNumber(item.name) < 1"
                     >
                         <div class="flex align-items-center">
-                            <uvx-icon class="margin-right-xs">{{item.icon}}</uvx-icon>
+                            <uvx-icon class="margin-right-xs">{{ item.icon }}</uvx-icon>
                             {{ item.name }}
                         </div>
                         <span class="results-number">{{ getCategoryResultsNumber(item.name) }}</span>
@@ -83,3 +89,4 @@
         </div>
     </div>
 </div>
+
