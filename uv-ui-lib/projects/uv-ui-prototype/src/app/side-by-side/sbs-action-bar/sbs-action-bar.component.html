@@ -73,15 +73,14 @@
             </div>
         </div>
 
-        <button
-            mat-flat-button
+        <uvx-button
             color="primary"
+            label="Compare"
             [routerLink]="['compare']"
             [queryParams]="{ app: 'sbs' }"
             [disabled]="!showTargetDocuments"
         >
-            Compare
-        </button>
+        </uvx-button>
     </div>
 
     <div bottom style="padding-bottom: 24px">

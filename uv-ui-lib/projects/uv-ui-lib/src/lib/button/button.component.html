@@ -9,7 +9,7 @@
     [class.gray]="color === 'gray'"
     [class.tertiary]="mode === 'tertiary'"
     [class.disabled]="disabled">
-        <mat-icon *ngIf="icon != '' " class="position-svg button-icon margin-right-xxxs" svgIcon="{{icon}}"></mat-icon>
+        <mat-icon *ngIf="icon != '' " class="position-svg button-icon margin-right-xxxs">{{icon}}</mat-icon>
     {{label}}
 </button>
 

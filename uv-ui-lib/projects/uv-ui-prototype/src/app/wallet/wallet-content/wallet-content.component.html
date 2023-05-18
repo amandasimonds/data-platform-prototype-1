@@ -17,26 +17,24 @@
             <p class="uv-body margin-bottom-xs">Description about the wallet feature here.</p>
 
             <div class="flex align-items-center gap-xs margin-bottom-xxs">
-                <button
-                    mat-flat-button
+                <uvx-button
                     color="primary"
+                    label="Add To Wallet"
                     [disabled]="!entitiesSelectedForWallet"
                     (click)="entitiesSelectedForWallet && onAddEntityToWallet(selectedEntities, $event)"
                 >
-                    Add To Wallet
-                </button>
+                </uvx-button>
 
-                <button
+                <uvx-button
                     *ngIf="currentApp === 'file-folder-structure'"
-                    mat-flat-button
                     color="primary"
+                    label="Add To Folder"
                     [disabled]="!walletEntitiesSelected"
                     (click)="walletEntitiesSelected && onAddEntityToOpenFolder()"
                     [disabled]="!entitiesSelectedForWallet"
                     (click)="entitiesSelectedForWallet && onAddEntityToWallet(selectedEntities, $event)"
                 >
-                    Add To Folder
-                </button>
+                </uvx-button>
 
                 <!-- <epd-pl-button-dropdown
                     [disabled]="!entitiesSelectedForWallet"

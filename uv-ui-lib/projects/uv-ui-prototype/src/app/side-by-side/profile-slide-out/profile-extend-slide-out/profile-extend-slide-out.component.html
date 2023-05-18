@@ -37,8 +37,8 @@
                         <mat-option value="high">High</mat-option>
                     </mat-select>
                     <div class="flex gap-xs">
-                        <button mat-button type="button" color="secondary" (click)="onCancel()">Cancel</button>
-                        <button mat-flat-button color="primary" [disabled]="!form.valid">Submit</button>
+                        <uvx-button type="button" color="secondary" (click)="onCancel()">Cancel</uvx-button>
+                        <uvx-button color="primary" [disabled]="!form.valid">Submit</uvx-button>
                     </div>
                 </div>
             </form>
