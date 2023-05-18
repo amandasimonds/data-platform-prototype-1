@@ -69,6 +69,7 @@
               }
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/uv-ui-prototype/src/scss/main.scss"
             ],
             "scripts": [],
@@ -183,6 +184,7 @@
               "projects/uv-ui-prototype/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/uv-ui-prototype/src/styles.scss"
             ],
             "scripts": []
