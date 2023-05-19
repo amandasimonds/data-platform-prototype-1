@@ -26,4 +26,12 @@ export class DevNavbarComponent {
     this.router.navigate([navlink.navlink], { queryParams: { app: navlink.app }, relativeTo: this.route });
   }
 
+  ngOnInit() {
+    console.log("dev navbar", this.navActiveIcon)
+  }
+
+  ngOnChanges() {
+    console.log("dev navbar", this.navActiveIcon)
+  }
+
 }

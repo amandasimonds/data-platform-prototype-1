@@ -9,7 +9,7 @@ export const launchServices = [
         name: 'global_where_used',
         icon: 'insights',
         tooltip: 'Service 2',
-        link: '/main/gwu' 
+        link: '/main/graph' 
     },
     {
         name: 'design',

@@ -76,7 +76,7 @@ export class FormPageComponent implements OnInit {
   }
 
   public get isGwu() {
-      return this.app === 'gwu';
+      return this.app === 'graph';
   }
 
   public onNextStep(): void {
@@ -121,7 +121,7 @@ export class FormPageComponent implements OnInit {
 
         if (data.stepOneSkip && data.stepTwoSkip || data.stepOneSkip && data.stepTwoSkip && data.stepThreeSkip) {
             this.wizardService.cancelWizard();
-            this.router.navigate(['main/gwu/wave'], { queryParams: {service: 'wave'}})
+            this.router.navigate(['main/graph/wave'], { queryParams: {service: 'wave'}})
         } else {
             this.onNextStep();
         }
@@ -161,7 +161,7 @@ export class FormPageComponent implements OnInit {
       console.log('submit');
     this.onSubmitEvent.emit();
     if (this.isGwu) {
-        this.router.navigate(['/main/gwu'], { queryParams: {service: 'wave'}});
+        this.router.navigate(['/main/graph'], { queryParams: {service: 'wave'}});
         this.wizardService.resetWizard();
     } else {
         this.router.navigate(['/main/sbs'], { queryParams: {app: 'sbs'}});

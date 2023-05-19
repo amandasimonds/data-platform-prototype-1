@@ -137,15 +137,15 @@ export class MainComponent implements OnInit {
                 relativeTo: this.route,
                 queryParams: { wizardMode: 'fullscreen', app: 'sbs' },
             });
-        } else if (this.currentApp === 'gwu') {
-            this.router.navigate(['gwu/wizard'], {
+        } else if (this.currentApp === 'graph') {
+            this.router.navigate(['graph/wizard'], {
                 relativeTo: this.route,
-                queryParams: { wizardMode: 'fullscreen', app: 'gwu' },
+                queryParams: { wizardMode: 'fullscreen', app: 'graph' },
             });
         } else {
-            this.router.navigate(['gwu/wizard'], {
+            this.router.navigate(['graph/wizard'], {
                 relativeTo: this.route,
-                queryParams: { wizardMode: 'fullscreen', app: 'gwu' },
+                queryParams: { wizardMode: 'fullscreen', app: 'graph' },
             });
         }
     }
