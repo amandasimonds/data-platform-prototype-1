@@ -29,7 +29,7 @@ export class LaunchPointPageComponent {
     public onLaunchPointSelected(route: string): void {
         this.stepsService.cancelWizard();
         this.stepsService.resetWizard();
-        this.router.navigate([`main/gwu/${route}`], { queryParams: {service: `${route}`}});
+        this.router.navigate([`main/graph/${route}`], { queryParams: {service: `${route}`}});
     }
 
     getLaunchPointOptions() {

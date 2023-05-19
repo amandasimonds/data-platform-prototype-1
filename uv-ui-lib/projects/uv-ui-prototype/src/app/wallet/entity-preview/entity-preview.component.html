@@ -1,12 +1,13 @@
 <div class="entity-preview" [class.entity-preview-visible]="isVisible">
     <div class="flex justify-content-space-between">
-        <div class="flex flex-column padding-xs ">
+        <div class="flex flex-column padding-xs">
             <div class="flex gap-xs align-items-center margin-bottom-md">
                 <uvx-icon-button
                     *ngFor="let item of launchServices"
                     [routerLink]="item.link"
                     [matTooltip]="item.tooltip"
-                >{{item.icon}}
+                    [icon]="item.icon"
+                >
                 </uvx-icon-button>
                 <span class="divider-left" style="margin: 0"></span>
                 <uvx-icon-button icon="more_horiz"></uvx-icon-button>
@@ -22,7 +23,7 @@
         </div>
         <uvx-icon-button
             color="gray"
-            style="padding: 6px 8px; align-self: flex-start "
+            style="padding: 6px 8px; align-self: flex-start"
             (click)="closeEntityPreview($event)"
             icon="chevron_right"
         ></uvx-icon-button>
@@ -46,3 +47,4 @@
         </div>
     </div>
 </div>
+

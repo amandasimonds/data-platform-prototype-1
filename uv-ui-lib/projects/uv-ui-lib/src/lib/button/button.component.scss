@@ -6,6 +6,8 @@
     display: inline-block;
     line-height: 1;
     background-color: transparent;
+    display: flex;
+    align-items: center;
 
     &>* {
         display: inline-block;

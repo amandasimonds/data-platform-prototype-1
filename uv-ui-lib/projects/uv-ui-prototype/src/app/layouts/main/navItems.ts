@@ -8,10 +8,10 @@ export const navItems = [
         tooltip: 'Dashboard'
     },
     {
-        app: 'gwu',
+        app: 'insights',
         icon: 'insights',
         active: false,
-        navlink: 'gwu',
+        navlink: 'graph',
         disabled: false,
         tooltip: 'Graph'
     },

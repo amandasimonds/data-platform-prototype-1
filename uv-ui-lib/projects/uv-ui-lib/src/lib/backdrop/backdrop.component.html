@@ -1,15 +1,7 @@
-<div [@fadeInOut]="backdropState" class="backdrop" 
-        [class.backdrop-transparent]="transparent === true"
-        [class.backdrop-popup]="mode === 'popup'"
-        [class.backdrop-uv-light]="mode === 'uv-light'"
-        [class.backdrop-not-active]="backdropState === 'hidden'"
-        [class.backdrop-block-content]="blockContent === true"
-        (click)="onBackdropClicked($event)">
-    <img *ngIf="logo === 'uv-logo'" 
-        class="position-center backdrop-logo" 
-        src="https://dpzaq1wj21co3.cloudfront.net/uv-logo.svg">
-    <uvx-icon *ngIf="logo === 'search'" 
-        class="position-center backdrop-logo-search" 
-        size="bg">search
-    </uvx-icon>
-</div>
+<div
+    class="backdrop"
+    [class.backdrop-visible]="isVisible"
+    [ngStyle]="{ 'z-index': zIndex, height: height, width: width }"
+    (click)="onBackdropClicked($event)"
+></div>
+

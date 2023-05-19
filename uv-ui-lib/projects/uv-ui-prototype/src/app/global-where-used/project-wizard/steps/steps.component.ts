@@ -32,7 +32,7 @@ export class StepsComponent implements OnInit {
     }
 
     public get isGwu() {
-        return this.app === 'gwu';
+        return this.app === 'graph';
     }
 
     public onStepClick(step: StepModel): void {
