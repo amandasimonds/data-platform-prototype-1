@@ -435,7 +435,7 @@ HelperBarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("@slideInOutRight", ctx.helperBarState);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("matTooltip", ctx.helperBarState === "hidden" ? "More info about this step" : "Close helper bar")("icon", ctx.helperBarState === "hidden" ? "double_left" : "double_right");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("matTooltip", ctx.helperBarState === "hidden" ? "More info about this step" : "Close helper bar")("icon", ctx.helperBarState === "hidden" ? "chevron_left" : "chevron_right");
     }
   },
   dependencies: [_uv_ui_lib_src_lib_icon_button_icon_button_component__WEBPACK_IMPORTED_MODULE_1__.IconButtonComponent, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_3__.MatTooltip],
