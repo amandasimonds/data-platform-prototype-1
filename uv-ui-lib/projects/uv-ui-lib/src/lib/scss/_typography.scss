@@ -142,7 +142,7 @@ a:link,
 a:hover,
 a:active,
 a:visited {
-    font-size: var(--uv-font-size-sm);
+    font-size: inherit;
     font-weight: var(--uv-font-bold);
     color: var(--uv-color-primary);
     text-decoration: none;
