@@ -4691,15 +4691,15 @@ HomeSplashComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "uvx-icon", 1);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "h5", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "Welcome to the Data Platform Prototype");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "Welcome to the Data Platform Prototype that I (Amanda Simonds) built!");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "p", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " Thank you for participating in this usability test. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " This prototype was used for usability testing for UIUX design and front end development of a beta release, data platform application. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Our aim is to determine the usability of the proposed wallet feature. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Our aim was to conduct research on user intuitiveness around the workflows we were designing for. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, " Please note that this prototype demonstrates proposed workflows and features. All visuals and content are placeholders only, and do not represent real-world examples. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, " This prototype demonstrates proposed workflows and features. All visuals and content are placeholders only, and do not represent real-world examples. Feel free to look around! ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
     }
   },
