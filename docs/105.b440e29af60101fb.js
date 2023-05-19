@@ -623,7 +623,7 @@ function FilesMainComponent_div_0_div_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](2, "app-options-menu", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](3, "div", 10)(4, "uvx-icon", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](5, "person");
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](5, "description");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](6, "p", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](7);

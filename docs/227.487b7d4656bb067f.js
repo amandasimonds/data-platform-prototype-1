@@ -258,7 +258,7 @@ class FormPageComponent {
     return this.isGwu ? this.wizardService.isLastStep() : this.sbsWizardService.isLastStep();
   }
   get isGwu() {
-    return this.app === 'gwu';
+    return this.app === 'graph';
   }
   onNextStep() {
     if (this.isGwu && !this.wizardService.isLastStep()) {
@@ -298,7 +298,7 @@ class FormPageComponent {
       }
       if (data.stepOneSkip && data.stepTwoSkip || data.stepOneSkip && data.stepTwoSkip && data.stepThreeSkip) {
         this.wizardService.cancelWizard();
-        this.router.navigate(['main/gwu/wave'], {
+        this.router.navigate(['main/graph/wave'], {
           queryParams: {
             service: 'wave'
           }
@@ -339,7 +339,7 @@ class FormPageComponent {
     console.log('submit');
     this.onSubmitEvent.emit();
     if (this.isGwu) {
-      this.router.navigate(['/main/gwu'], {
+      this.router.navigate(['/main/graph'], {
         queryParams: {
           service: 'wave'
         }
@@ -510,7 +510,7 @@ class LaunchPointPageComponent {
   onLaunchPointSelected(route) {
     this.stepsService.cancelWizard();
     this.stepsService.resetWizard();
-    this.router.navigate([`main/gwu/${route}`], {
+    this.router.navigate([`main/graph/${route}`], {
       queryParams: {
         service: `${route}`
       }
@@ -833,7 +833,7 @@ StepDirectionsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.app === "gwu");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.app === "graph");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.app === "sbs");
     }
@@ -1617,7 +1617,7 @@ class StepsComponent {
     this.isGwu ? this.currentStep = this.gwuWizardService.getCurrentStep() : this.currentStep = this.sbsWizardService.getCurrentStep();
   }
   get isGwu() {
-    return this.app === 'gwu';
+    return this.app === 'graph';
   }
   onStepClick(step) {
     this.isGwu ? this.gwuWizardService.setCurrentStep(step) : this.sbsWizardService.setCurrentStep(step);

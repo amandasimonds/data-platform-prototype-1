@@ -130,35 +130,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BackdropComponent": () => (/* binding */ BackdropComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 94650);
-/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../animations */ 6660);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 36895);
-/* harmony import */ var _uvx_icon_uvx_icon_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../uvx-icon/uvx-icon.component */ 45187);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 94650);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 36895);
 
 
 
-
-
-function BackdropComponent_img_1_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "img", 3);
-  }
-}
-function BackdropComponent_uvx_icon_2_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "uvx-icon", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "search ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-  }
-}
+const _c0 = function (a0, a1, a2) {
+  return {
+    "z-index": a0,
+    height: a1,
+    width: a2
+  };
+};
 class BackdropComponent {
   constructor() {
-    this.backdropState = 'visible';
-    this.mode = '';
-    this.logo = '';
-    this.transparent = false;
-    this.blockContent = false;
-    this.backdropClicked = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
+    this.zIndex = '';
+    this.height = '';
+    this.width = '';
+    this.isVisible = false;
+    this.backdropClicked = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
   }
   onBackdropClicked($event) {
     this.backdropClicked.emit($event);
@@ -167,46 +157,36 @@ class BackdropComponent {
 BackdropComponent.ɵfac = function BackdropComponent_Factory(t) {
   return new (t || BackdropComponent)();
 };
-BackdropComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
+BackdropComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: BackdropComponent,
   selectors: [["uvx-backdrop"]],
   inputs: {
-    backdropState: "backdropState",
-    mode: "mode",
-    logo: "logo",
-    transparent: "transparent",
-    blockContent: "blockContent"
+    zIndex: "zIndex",
+    height: "height",
+    width: "width",
+    isVisible: "isVisible"
   },
   outputs: {
     backdropClicked: "backdropClicked"
   },
-  decls: 3,
-  vars: 13,
-  consts: [[1, "backdrop", 3, "click"], ["class", "position-center backdrop-logo", "src", "https://dpzaq1wj21co3.cloudfront.net/uv-logo.svg", 4, "ngIf"], ["class", "position-center backdrop-logo-search", "size", "bg", 4, "ngIf"], ["src", "https://dpzaq1wj21co3.cloudfront.net/uv-logo.svg", 1, "position-center", "backdrop-logo"], ["size", "bg", 1, "position-center", "backdrop-logo-search"]],
+  decls: 1,
+  vars: 7,
+  consts: [[1, "backdrop", 3, "ngStyle", "click"]],
   template: function BackdropComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function BackdropComponent_Template_div_click_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BackdropComponent_Template_div_click_0_listener($event) {
         return ctx.onBackdropClicked($event);
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, BackdropComponent_img_1_Template, 1, 0, "img", 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, BackdropComponent_uvx_icon_2_Template, 2, 0, "uvx-icon", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("backdrop-transparent", ctx.transparent === true)("backdrop-popup", ctx.mode === "popup")("backdrop-uv-light", ctx.mode === "uv-light")("backdrop-not-active", ctx.backdropState === "hidden")("backdrop-block-content", ctx.blockContent === true);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("@fadeInOut", ctx.backdropState);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.logo === "uv-logo");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.logo === "search");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("backdrop-visible", ctx.isVisible);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction3"](3, _c0, ctx.zIndex, ctx.height, ctx.width));
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _uvx_icon_uvx_icon_component__WEBPACK_IMPORTED_MODULE_1__.UvxIconComponent],
-  styles: [".backdrop[_ngcontent-%COMP%] {\n  top: calc(0px - var(--uv-header-height));\n  height: calc(100% + var(--uv-header-height));\n  width: 100vw;\n  background-color: rgba(13, 12, 34, 0.16);\n  position: absolute;\n  z-index: var(--uv-z-index-search-backdrop);\n}\n.backdrop-search[_ngcontent-%COMP%] {\n  z-index: var(--uv-z-index-search-backdrop);\n}\n.backdrop-popup[_ngcontent-%COMP%] {\n  z-index: var(--uv-z-index-popup-backdrop);\n}\n.backdrop-uv-light[_ngcontent-%COMP%] {\n  z-index: var(--uv-z-index-uv-light-backdrop);\n}\n.backdrop-logo[_ngcontent-%COMP%] {\n  opacity: 0.2;\n  width: 200px;\n}\n.backdrop-logo-search[_ngcontent-%COMP%] {\n  opacity: 0.2;\n  left: 60%;\n  top: 56%;\n}\n.backdrop-not-active[_ngcontent-%COMP%] {\n  transform: translateX(-2000px);\n  transition-duration: 0s;\n  transition-delay: 0.3s;\n}\n.backdrop-transparent[_ngcontent-%COMP%] {\n  background-color: rgba(13, 12, 34, 0.028);\n}\n.backdrop-block-content[_ngcontent-%COMP%] {\n  transform: translateY(128px);\n}\n\n.navbar[_ngcontent-%COMP%] {\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: var(--uv-header-height);\n}\n\n.sbs[_ngcontent-%COMP%] {\n  top: 229px;\n  left: 92px;\n  width: 43%;\n  height: 80vh;\n}\n\n.action-bar[_ngcontent-%COMP%] {\n  top: var(--uv-header-height);\n  left: var(--uv-navbar-width);\n  width: 100%;\n  height: 75px;\n}\n\n.sbs-search[_ngcontent-%COMP%] {\n  top: calc(var(--uv-header-height) + 75px);\n  left: 538px;\n  width: 100px;\n  height: 47px;\n}"],
-  data: {
-    animation: [_animations__WEBPACK_IMPORTED_MODULE_0__.fadeInOutAnimation]
-  },
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgStyle],
+  styles: [".backdrop[_ngcontent-%COMP%] {\n  top: 0;\n  left: 0;\n  height: 100vh;\n  width: 100vw;\n  background-color: rgba(13, 12, 34, 0.16);\n  position: absolute;\n  opacity: 0;\n  visibility: hidden;\n  transition: all 0.5s;\n}\n.backdrop-visible[_ngcontent-%COMP%] {\n  opacity: 1;\n  visibility: visible;\n  transition: opacity 0.5s;\n}"],
   changeDetection: 0
 });
 
@@ -268,11 +248,14 @@ __webpack_require__.r(__webpack_exports__);
 
 function ButtonComponent_mat_icon_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "mat-icon", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("svgIcon", ctx_r0.icon);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r0.icon);
   }
 }
 class ButtonComponent {
@@ -299,11 +282,11 @@ ButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__[
   },
   decls: 3,
   vars: 20,
-  consts: [[1, "button"], ["class", "position-svg button-icon margin-right-xxxs", 3, "svgIcon", 4, "ngIf"], [1, "position-svg", "button-icon", "margin-right-xxxs", 3, "svgIcon"]],
+  consts: [[1, "button"], ["class", "position-svg button-icon margin-right-xxxs", 4, "ngIf"], [1, "position-svg", "button-icon", "margin-right-xxxs"]],
   template: function ButtonComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ButtonComponent_mat_icon_1_Template, 1, 1, "mat-icon", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ButtonComponent_mat_icon_1_Template, 2, 1, "mat-icon", 1);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
@@ -316,7 +299,7 @@ ButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__[
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _angular_material_icon__WEBPACK_IMPORTED_MODULE_2__.MatIcon],
-  styles: [".button[_ngcontent-%COMP%] {\n  font-family: var(--uv-font-family);\n  border: 0;\n  border-radius: 4px;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n  background-color: transparent;\n}\n.button[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  display: inline-block;\n}\n\n.text[_ngcontent-%COMP%] {\n  line-height: 20px;\n  font-weight: var(--uv-font-bold);\n  background-color: transparent;\n  color: var(--uv-color-primary);\n}\n.text.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray);\n  cursor: not-allowed;\n}\n\n.gray[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-dark);\n}\n\n.help[_ngcontent-%COMP%] {\n  color: var(--uv-color-help);\n}\n\n.primary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  padding: 0 25px;\n  color: white;\n  background-color: var(--uv-color-primary);\n  border: 0;\n}\n.primary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.primary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.primary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-primary-active);\n}\n.primary-text[_ngcontent-%COMP%] {\n  background-color: var(--uv-color-white);\n  color: var(--uv-color-primary);\n}\n.primary-text[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-white);\n  color: var(--uv-color-primary-active);\n}\n\n.secondary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  padding: 0 25px;\n  color: var(--uv-color-black);\n  background-color: var(--uv-color-white);\n  border: 1px solid var(--uv-color-gray-3);\n}\n.secondary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-gray-light);\n}\n\n.round[_ngcontent-%COMP%] {\n  background-color: white;\n  width: 41px;\n  height: 41px;\n  padding: 10.5px;\n  border-radius: 100%;\n  border: var(--uv-border-gray);\n}\n.round-large[_ngcontent-%COMP%] {\n  width: 57px;\n  height: 57px;\n  color: var(--uv-color-primary);\n  font-weight: bold;\n  font-size: 24px;\n  text-align: center;\n}"],
+  styles: [".button[_ngcontent-%COMP%] {\n  font-family: var(--uv-font-family);\n  border: 0;\n  border-radius: 4px;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n  background-color: transparent;\n  display: flex;\n  align-items: center;\n}\n.button[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  display: inline-block;\n}\n\n.text[_ngcontent-%COMP%] {\n  line-height: 20px;\n  font-weight: var(--uv-font-bold);\n  background-color: transparent;\n  color: var(--uv-color-primary);\n}\n.text.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray);\n  cursor: not-allowed;\n}\n\n.gray[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-dark);\n}\n\n.help[_ngcontent-%COMP%] {\n  color: var(--uv-color-help);\n}\n\n.primary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  padding: 0 25px;\n  color: white;\n  background-color: var(--uv-color-primary);\n  border: 0;\n}\n.primary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.primary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.primary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-primary-active);\n}\n.primary-text[_ngcontent-%COMP%] {\n  background-color: var(--uv-color-white);\n  color: var(--uv-color-primary);\n}\n.primary-text[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-white);\n  color: var(--uv-color-primary-active);\n}\n\n.secondary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  padding: 0 25px;\n  color: var(--uv-color-black);\n  background-color: var(--uv-color-white);\n  border: 1px solid var(--uv-color-gray-3);\n}\n.secondary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-gray-light);\n}\n\n.round[_ngcontent-%COMP%] {\n  background-color: white;\n  width: 41px;\n  height: 41px;\n  padding: 10.5px;\n  border-radius: 100%;\n  border: var(--uv-border-gray);\n}\n.round-large[_ngcontent-%COMP%] {\n  width: 57px;\n  height: 57px;\n  color: var(--uv-color-primary);\n  font-weight: bold;\n  font-size: 24px;\n  text-align: center;\n}"],
   changeDetection: 0
 });
 
@@ -561,7 +544,7 @@ CheckboxComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1_
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _uvx_icon_uvx_icon_component__WEBPACK_IMPORTED_MODULE_0__.UvxIconComponent],
-  styles: [".checkbox-container[_ngcontent-%COMP%] {\n  display: inline-flex;\n}\n\n.checkbox[_ngcontent-%COMP%] {\n  height: 16px;\n  width: 16px;\n  box-sizing: border-box;\n  background-color: var(--uv-color-white);\n  border: var(--uv-border-gray);\n  border-radius: 3px;\n  cursor: pointer;\n}\n\n.checkmark[_ngcontent-%COMP%] {\n  line-height: 14px;\n  font-size: var(--uv-font-size-sm);\n  visibility: hidden;\n  height: 100%;\n  text-align: center;\n  vertical-align: middle;\n}\n.checkmark-shape[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  position: relative;\n  right: 2.75px;\n  top: -2.5px;\n}\n\n.checkbox-label[_ngcontent-%COMP%] {\n  font-size: var(--uv-font-size-sm);\n  line-height: 16px;\n  margin-left: 8px;\n}\n\n.checked[_ngcontent-%COMP%] {\n  background-color: var(--uv-color-primary);\n  border: 1px solid rgba(255, 255, 255, 0);\n}\n.checked[_ngcontent-%COMP%]   .checkmark[_ngcontent-%COMP%] {\n  visibility: visible;\n}\n\n.disabled[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n  color: var(--uv-color-gray);\n}"],
+  styles: [".checkbox-container[_ngcontent-%COMP%] {\n  display: inline-flex;\n}\n\n.checkbox[_ngcontent-%COMP%] {\n  height: 16px;\n  width: 16px;\n  box-sizing: border-box;\n  background-color: var(--uv-color-white);\n  border: var(--uv-border-gray);\n  border-radius: 3px;\n  cursor: pointer;\n}\n\n.checkmark[_ngcontent-%COMP%] {\n  line-height: 16px;\n  font-size: var(--uv-font-size-sm);\n  visibility: hidden;\n  height: 100%;\n  text-align: center;\n  vertical-align: middle;\n}\n.checkmark-shape[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  position: relative;\n}\n\n.checkbox-label[_ngcontent-%COMP%] {\n  font-size: var(--uv-font-size-sm);\n  line-height: 16px;\n  margin-left: 8px;\n}\n\n.checked[_ngcontent-%COMP%] {\n  background-color: var(--uv-color-primary);\n  border: 1px solid rgba(255, 255, 255, 0);\n}\n.checked[_ngcontent-%COMP%]   .checkmark[_ngcontent-%COMP%] {\n  visibility: visible;\n}\n\n.disabled[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n  color: var(--uv-color-gray);\n}"],
   changeDetection: 0
 });
 
@@ -1288,7 +1271,7 @@ IconButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgClass, _angular_material_icon__WEBPACK_IMPORTED_MODULE_2__.MatIcon],
-  styles: [".btn-svg[_ngcontent-%COMP%], .btn-svg[_ngcontent-%COMP%]:link, .btn-svg[_ngcontent-%COMP%]:visited {\n  display: inline-block;\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  background-color: transparent;\n}\n.btn-svg[_ngcontent-%COMP%]:active, .btn-svg[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.btn-svg[_ngcontent-%COMP%]   svg[_ngcontent-%COMP%] {\n  cursor: pointer;\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n  vertical-align: middle;\n}\n.btn-svg[_ngcontent-%COMP%]   svg-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-sm[_ngcontent-%COMP%] {\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n}\n\n.uvx-icon-md[_ngcontent-%COMP%] {\n  width: var(--uv-md-size);\n  height: var(--uv-md-size);\n}\n\n.black[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-black);\n}\n.black[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.gray[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-gray);\n}\n.gray[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.gray-dark[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-dark);\n}\n.gray-dark[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.primary[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary);\n}\n.primary[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary-active);\n}\n\n.help[_ngcontent-%COMP%] {\n  color: var(--uv-color-help);\n}\n.help[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-help-active);\n}\n\n.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-gray);\n  cursor: not-allowed;\n}\n.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-svg-color-gray);\n  cursor: not-allowed;\n}\n\n.active[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary-active);\n  background-color: var(--uv-color-gray-light);\n}\n\n.secondary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  width: 40px;\n  color: var(--uv-color-black);\n  background-color: var(--uv-color-white);\n  border: 1px solid var(--uv-color-gray-3);\n}\n.secondary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-gray-light);\n}"],
+  styles: [".btn-svg[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n.btn-svg[_ngcontent-%COMP%], .btn-svg[_ngcontent-%COMP%]:link, .btn-svg[_ngcontent-%COMP%]:visited {\n  display: inline-block;\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  background-color: transparent;\n}\n.btn-svg[_ngcontent-%COMP%]:active, .btn-svg[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.btn-svg[_ngcontent-%COMP%]   svg[_ngcontent-%COMP%] {\n  cursor: pointer;\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n  vertical-align: middle;\n}\n.btn-svg[_ngcontent-%COMP%]   svg-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-sm[_ngcontent-%COMP%] {\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n}\n\n.uvx-icon-md[_ngcontent-%COMP%] {\n  width: var(--uv-md-size);\n  height: var(--uv-md-size);\n}\n\n.black[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-black);\n}\n.black[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.gray[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-gray);\n}\n.gray[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.gray-dark[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-dark);\n}\n.gray-dark[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.primary[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary);\n}\n.primary[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary-active);\n}\n\n.help[_ngcontent-%COMP%] {\n  color: var(--uv-color-help);\n}\n.help[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-help-active);\n}\n\n.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-gray);\n  cursor: not-allowed;\n}\n.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-svg-color-gray);\n  cursor: not-allowed;\n}\n\n.active[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary-active);\n  background-color: var(--uv-color-gray-light);\n}\n\n.secondary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  width: 40px;\n  color: var(--uv-color-black);\n  background-color: var(--uv-color-white);\n  border: 1px solid var(--uv-color-gray-3);\n}\n.secondary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-gray-light);\n}"],
   changeDetection: 0
 });
 
@@ -3031,7 +3014,7 @@ SearchPanelComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
   ngContentSelectors: _c3,
   decls: 7,
   vars: 12,
-  consts: [[1, "search-panel", "w-100", "flex", "justify-content-space-between", "position-relative", 3, "ngStyle"], [1, "w-100", "justify-content-space-between", "flex", "align-items-center", "position-relative", 3, "ngClass"], [1, "flex", "align-items-center", "w-100", "h-100"], ["icon", "search", 3, "click"], ["matTooltip", "Clear search query", "icon", "close", 3, "click", 4, "ngIf"], ["class", "suggestions-dropdown flex flex-column", 3, "ngStyle", 4, "ngIf"], ["matTooltip", "Clear search query", "icon", "close", 3, "click"], [1, "suggestions-dropdown", "flex", "flex-column", 3, "ngStyle"]],
+  consts: [[1, "search-panel", "w-100", "h-100", "flex", "justify-content-space-between", "align-content-center", "position-relative", 3, "ngStyle"], [1, "w-100", "h-100", "justify-content-space-between", "flex", "align-items-center", "position-relative", 3, "ngClass"], [1, "flex", "align-items-center", "w-100", "h-100"], ["icon", "search", 3, "click"], ["matTooltip", "Clear search query", "icon", "close", 3, "click", 4, "ngIf"], ["class", "suggestions-dropdown flex flex-column", 3, "ngStyle", 4, "ngIf"], ["matTooltip", "Clear search query", "icon", "close", 3, "click"], [1, "suggestions-dropdown", "flex", "flex-column", 3, "ngStyle"]],
   template: function SearchPanelComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"](_c1);
@@ -4058,8 +4041,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const myCustomTooltipDefaults = {
   showDelay: 500,
-  hideDelay: 100,
-  touchendHideDelay: 100
+  hideDelay: 0,
+  touchendHideDelay: 0
 };
 class TooltipModule {}
 TooltipModule.ɵfac = function TooltipModule_Factory(t) {
@@ -4136,7 +4119,7 @@ UvxIconComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__
     }
   },
   dependencies: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_1__.MatIcon],
-  styles: [".uvx-icon-black[_ngcontent-%COMP%] {\n  color: var(--uv-color-black);\n}\n\n.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-2);\n  cursor: not-allowed !important;\n}\n\n.uvx-icon-primary[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary);\n}\n\n.uvx-icon-success[_ngcontent-%COMP%] {\n  color: var(--uv-color-success);\n}\n\n.uvx-icon-gray[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray);\n}\n\n.uvx-icon-white[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n}\n\n.uvx-icon-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-sm[_ngcontent-%COMP%] {\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n}\n\n.uvx-icon-md[_ngcontent-%COMP%] {\n  width: var(--uv-md-size);\n  height: var(--uv-md-size);\n}\n\n.uvx-icon-xl[_ngcontent-%COMP%] {\n  width: var(--uv-xl-size);\n  height: var(--uv-xl-size);\n}\n\n.uvx-icon-xxl[_ngcontent-%COMP%] {\n  width: 75px;\n  height: 75px;\n}\n\n.uvx-icon-bg[_ngcontent-%COMP%] {\n  width: var(--uv-icon-bg);\n  height: var(--uv-icon-bg);\n}\n\n.uvx-icon-checkmark[_ngcontent-%COMP%] {\n  width: 20px;\n  height: 20px;\n}"],
+  styles: ["[_nghost-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n\n.uvx-icon-black[_ngcontent-%COMP%] {\n  color: var(--uv-color-black);\n}\n\n.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-2);\n  cursor: not-allowed !important;\n}\n\n.uvx-icon-primary[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary);\n}\n\n.uvx-icon-success[_ngcontent-%COMP%] {\n  color: var(--uv-color-success);\n}\n\n.uvx-icon-gray[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray);\n}\n\n.uvx-icon-white[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n}\n\n.uvx-icon-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-sm[_ngcontent-%COMP%] {\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n}\n\n.uvx-icon-md[_ngcontent-%COMP%] {\n  width: var(--uv-md-size);\n  height: var(--uv-md-size);\n}\n\n.uvx-icon-xl[_ngcontent-%COMP%] {\n  width: var(--uv-xl-size);\n  height: var(--uv-xl-size);\n}\n\n.uvx-icon-xxl[_ngcontent-%COMP%] {\n  transform: scale(1.5);\n}\n\n.uvx-icon-bg[_ngcontent-%COMP%] {\n  width: var(--uv-icon-bg);\n  height: var(--uv-icon-bg);\n}\n\n.uvx-icon-checkmark[_ngcontent-%COMP%] {\n  font-size: 16px;\n}"],
   changeDetection: 0
 });
 

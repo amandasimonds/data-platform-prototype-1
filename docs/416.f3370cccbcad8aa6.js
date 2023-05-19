@@ -874,7 +874,7 @@ SettingsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4_
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterOutlet, _uv_ui_lib_src_lib_uvx_icon_uvx_icon_component__WEBPACK_IMPORTED_MODULE_2__.UvxIconComponent, _uv_ui_lib_src_lib_action_bar_action_bar_component__WEBPACK_IMPORTED_MODULE_3__.ActionBarComponent],
-  styles: [".router-container[_ngcontent-%COMP%] {\n  height: calc(100vh - 132px);\n  margin-right: 32px;\n  overflow: auto;\n}"],
+  styles: [".router-container[_ngcontent-%COMP%] {\n  height: 100%;\n  margin-right: 32px;\n  overflow: auto;\n}"],
   changeDetection: 0
 });
 
