@@ -29,13 +29,13 @@ export class NavbarSubComponent {
 
   public get expandIcon(): string {
     if (!this.rightSide && !this.isExpanded) {
-      return 'double_right'
+      return 'chevron_right'
     } else if (!this.rightSide && this.isExpanded ) {
-      return 'double_left'
+      return 'chevron_left'
     } else if (this.rightSide && !this.isExpanded) {
-      return 'double_left'
+      return 'chevron_left'
     } else if (this.rightSide && this.isExpanded) {
-      return 'double_right'
+      return 'chevron_right'
     } else {
       return 'close'
     }

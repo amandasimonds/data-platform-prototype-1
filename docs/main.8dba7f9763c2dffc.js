@@ -130,35 +130,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BackdropComponent": () => (/* binding */ BackdropComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 94650);
-/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../animations */ 6660);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 36895);
-/* harmony import */ var _uvx_icon_uvx_icon_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../uvx-icon/uvx-icon.component */ 45187);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 94650);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 36895);
 
 
 
-
-
-function BackdropComponent_img_1_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "img", 3);
-  }
-}
-function BackdropComponent_uvx_icon_2_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "uvx-icon", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "search ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-  }
-}
+const _c0 = function (a0, a1, a2) {
+  return {
+    "z-index": a0,
+    height: a1,
+    width: a2
+  };
+};
 class BackdropComponent {
   constructor() {
-    this.backdropState = 'visible';
-    this.mode = '';
-    this.logo = '';
-    this.transparent = false;
-    this.blockContent = false;
-    this.backdropClicked = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
+    this.zIndex = '';
+    this.height = '';
+    this.width = '';
+    this.isVisible = false;
+    this.backdropClicked = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
   }
   onBackdropClicked($event) {
     this.backdropClicked.emit($event);
@@ -167,46 +157,36 @@ class BackdropComponent {
 BackdropComponent.ɵfac = function BackdropComponent_Factory(t) {
   return new (t || BackdropComponent)();
 };
-BackdropComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
+BackdropComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: BackdropComponent,
   selectors: [["uvx-backdrop"]],
   inputs: {
-    backdropState: "backdropState",
-    mode: "mode",
-    logo: "logo",
-    transparent: "transparent",
-    blockContent: "blockContent"
+    zIndex: "zIndex",
+    height: "height",
+    width: "width",
+    isVisible: "isVisible"
   },
   outputs: {
     backdropClicked: "backdropClicked"
   },
-  decls: 3,
-  vars: 13,
-  consts: [[1, "backdrop", 3, "click"], ["class", "position-center backdrop-logo", "src", "https://dpzaq1wj21co3.cloudfront.net/uv-logo.svg", 4, "ngIf"], ["class", "position-center backdrop-logo-search", "size", "bg", 4, "ngIf"], ["src", "https://dpzaq1wj21co3.cloudfront.net/uv-logo.svg", 1, "position-center", "backdrop-logo"], ["size", "bg", 1, "position-center", "backdrop-logo-search"]],
+  decls: 1,
+  vars: 7,
+  consts: [[1, "backdrop", 3, "ngStyle", "click"]],
   template: function BackdropComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function BackdropComponent_Template_div_click_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BackdropComponent_Template_div_click_0_listener($event) {
         return ctx.onBackdropClicked($event);
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, BackdropComponent_img_1_Template, 1, 0, "img", 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, BackdropComponent_uvx_icon_2_Template, 2, 0, "uvx-icon", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("backdrop-transparent", ctx.transparent === true)("backdrop-popup", ctx.mode === "popup")("backdrop-uv-light", ctx.mode === "uv-light")("backdrop-not-active", ctx.backdropState === "hidden")("backdrop-block-content", ctx.blockContent === true);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("@fadeInOut", ctx.backdropState);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.logo === "uv-logo");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.logo === "search");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("backdrop-visible", ctx.isVisible);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction3"](3, _c0, ctx.zIndex, ctx.height, ctx.width));
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _uvx_icon_uvx_icon_component__WEBPACK_IMPORTED_MODULE_1__.UvxIconComponent],
-  styles: [".backdrop[_ngcontent-%COMP%] {\n  top: calc(0px - var(--uv-header-height));\n  height: calc(100% + var(--uv-header-height));\n  width: 100vw;\n  background-color: rgba(13, 12, 34, 0.16);\n  position: absolute;\n  z-index: var(--uv-z-index-search-backdrop);\n}\n.backdrop-search[_ngcontent-%COMP%] {\n  z-index: var(--uv-z-index-search-backdrop);\n}\n.backdrop-popup[_ngcontent-%COMP%] {\n  z-index: var(--uv-z-index-popup-backdrop);\n}\n.backdrop-uv-light[_ngcontent-%COMP%] {\n  z-index: var(--uv-z-index-uv-light-backdrop);\n}\n.backdrop-logo[_ngcontent-%COMP%] {\n  opacity: 0.2;\n  width: 200px;\n}\n.backdrop-logo-search[_ngcontent-%COMP%] {\n  opacity: 0.2;\n  left: 60%;\n  top: 56%;\n}\n.backdrop-not-active[_ngcontent-%COMP%] {\n  transform: translateX(-2000px);\n  transition-duration: 0s;\n  transition-delay: 0.3s;\n}\n.backdrop-transparent[_ngcontent-%COMP%] {\n  background-color: rgba(13, 12, 34, 0.028);\n}\n.backdrop-block-content[_ngcontent-%COMP%] {\n  transform: translateY(128px);\n}\n\n.navbar[_ngcontent-%COMP%] {\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: var(--uv-header-height);\n}\n\n.sbs[_ngcontent-%COMP%] {\n  top: 229px;\n  left: 92px;\n  width: 43%;\n  height: 80vh;\n}\n\n.action-bar[_ngcontent-%COMP%] {\n  top: var(--uv-header-height);\n  left: var(--uv-navbar-width);\n  width: 100%;\n  height: 75px;\n}\n\n.sbs-search[_ngcontent-%COMP%] {\n  top: calc(var(--uv-header-height) + 75px);\n  left: 538px;\n  width: 100px;\n  height: 47px;\n}"],
-  data: {
-    animation: [_animations__WEBPACK_IMPORTED_MODULE_0__.fadeInOutAnimation]
-  },
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgStyle],
+  styles: [".backdrop[_ngcontent-%COMP%] {\n  top: 0;\n  left: 0;\n  height: 100vh;\n  width: 100vw;\n  background-color: rgba(13, 12, 34, 0.16);\n  position: absolute;\n  opacity: 0;\n  visibility: hidden;\n  transition: all 0.5s;\n}\n.backdrop-visible[_ngcontent-%COMP%] {\n  opacity: 1;\n  visibility: visible;\n  transition: opacity 0.5s;\n}"],
   changeDetection: 0
 });
 
@@ -268,11 +248,14 @@ __webpack_require__.r(__webpack_exports__);
 
 function ButtonComponent_mat_icon_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "mat-icon", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("svgIcon", ctx_r0.icon);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r0.icon);
   }
 }
 class ButtonComponent {
@@ -299,11 +282,11 @@ ButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__[
   },
   decls: 3,
   vars: 20,
-  consts: [[1, "button"], ["class", "position-svg button-icon margin-right-xxxs", 3, "svgIcon", 4, "ngIf"], [1, "position-svg", "button-icon", "margin-right-xxxs", 3, "svgIcon"]],
+  consts: [[1, "button"], ["class", "position-svg button-icon margin-right-xxxs", 4, "ngIf"], [1, "position-svg", "button-icon", "margin-right-xxxs"]],
   template: function ButtonComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ButtonComponent_mat_icon_1_Template, 1, 1, "mat-icon", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ButtonComponent_mat_icon_1_Template, 2, 1, "mat-icon", 1);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
@@ -316,7 +299,7 @@ ButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__[
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _angular_material_icon__WEBPACK_IMPORTED_MODULE_2__.MatIcon],
-  styles: [".button[_ngcontent-%COMP%] {\n  font-family: var(--uv-font-family);\n  border: 0;\n  border-radius: 4px;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n  background-color: transparent;\n}\n.button[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  display: inline-block;\n}\n\n.text[_ngcontent-%COMP%] {\n  line-height: 20px;\n  font-weight: var(--uv-font-bold);\n  background-color: transparent;\n  color: var(--uv-color-primary);\n}\n.text.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray);\n  cursor: not-allowed;\n}\n\n.gray[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-dark);\n}\n\n.help[_ngcontent-%COMP%] {\n  color: var(--uv-color-help);\n}\n\n.primary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  padding: 0 25px;\n  color: white;\n  background-color: var(--uv-color-primary);\n  border: 0;\n}\n.primary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.primary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.primary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-primary-active);\n}\n.primary-text[_ngcontent-%COMP%] {\n  background-color: var(--uv-color-white);\n  color: var(--uv-color-primary);\n}\n.primary-text[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-white);\n  color: var(--uv-color-primary-active);\n}\n\n.secondary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  padding: 0 25px;\n  color: var(--uv-color-black);\n  background-color: var(--uv-color-white);\n  border: 1px solid var(--uv-color-gray-3);\n}\n.secondary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-gray-light);\n}\n\n.round[_ngcontent-%COMP%] {\n  background-color: white;\n  width: 41px;\n  height: 41px;\n  padding: 10.5px;\n  border-radius: 100%;\n  border: var(--uv-border-gray);\n}\n.round-large[_ngcontent-%COMP%] {\n  width: 57px;\n  height: 57px;\n  color: var(--uv-color-primary);\n  font-weight: bold;\n  font-size: 24px;\n  text-align: center;\n}"],
+  styles: [".button[_ngcontent-%COMP%] {\n  font-family: var(--uv-font-family);\n  border: 0;\n  border-radius: 4px;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n  background-color: transparent;\n  display: flex;\n  align-items: center;\n}\n.button[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n  display: inline-block;\n}\n\n.text[_ngcontent-%COMP%] {\n  line-height: 20px;\n  font-weight: var(--uv-font-bold);\n  background-color: transparent;\n  color: var(--uv-color-primary);\n}\n.text.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray);\n  cursor: not-allowed;\n}\n\n.gray[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-dark);\n}\n\n.help[_ngcontent-%COMP%] {\n  color: var(--uv-color-help);\n}\n\n.primary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  padding: 0 25px;\n  color: white;\n  background-color: var(--uv-color-primary);\n  border: 0;\n}\n.primary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.primary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.primary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-primary-active);\n}\n.primary-text[_ngcontent-%COMP%] {\n  background-color: var(--uv-color-white);\n  color: var(--uv-color-primary);\n}\n.primary-text[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-white);\n  color: var(--uv-color-primary-active);\n}\n\n.secondary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  padding: 0 25px;\n  color: var(--uv-color-black);\n  background-color: var(--uv-color-white);\n  border: 1px solid var(--uv-color-gray-3);\n}\n.secondary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-gray-light);\n}\n\n.round[_ngcontent-%COMP%] {\n  background-color: white;\n  width: 41px;\n  height: 41px;\n  padding: 10.5px;\n  border-radius: 100%;\n  border: var(--uv-border-gray);\n}\n.round-large[_ngcontent-%COMP%] {\n  width: 57px;\n  height: 57px;\n  color: var(--uv-color-primary);\n  font-weight: bold;\n  font-size: 24px;\n  text-align: center;\n}"],
   changeDetection: 0
 });
 
@@ -561,7 +544,7 @@ CheckboxComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1_
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _uvx_icon_uvx_icon_component__WEBPACK_IMPORTED_MODULE_0__.UvxIconComponent],
-  styles: [".checkbox-container[_ngcontent-%COMP%] {\n  display: inline-flex;\n}\n\n.checkbox[_ngcontent-%COMP%] {\n  height: 16px;\n  width: 16px;\n  box-sizing: border-box;\n  background-color: var(--uv-color-white);\n  border: var(--uv-border-gray);\n  border-radius: 3px;\n  cursor: pointer;\n}\n\n.checkmark[_ngcontent-%COMP%] {\n  line-height: 14px;\n  font-size: var(--uv-font-size-sm);\n  visibility: hidden;\n  height: 100%;\n  text-align: center;\n  vertical-align: middle;\n}\n.checkmark-shape[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  position: relative;\n  right: 2.75px;\n  top: -2.5px;\n}\n\n.checkbox-label[_ngcontent-%COMP%] {\n  font-size: var(--uv-font-size-sm);\n  line-height: 16px;\n  margin-left: 8px;\n}\n\n.checked[_ngcontent-%COMP%] {\n  background-color: var(--uv-color-primary);\n  border: 1px solid rgba(255, 255, 255, 0);\n}\n.checked[_ngcontent-%COMP%]   .checkmark[_ngcontent-%COMP%] {\n  visibility: visible;\n}\n\n.disabled[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n  color: var(--uv-color-gray);\n}"],
+  styles: [".checkbox-container[_ngcontent-%COMP%] {\n  display: inline-flex;\n}\n\n.checkbox[_ngcontent-%COMP%] {\n  height: 16px;\n  width: 16px;\n  box-sizing: border-box;\n  background-color: var(--uv-color-white);\n  border: var(--uv-border-gray);\n  border-radius: 3px;\n  cursor: pointer;\n}\n\n.checkmark[_ngcontent-%COMP%] {\n  line-height: 16px;\n  font-size: var(--uv-font-size-sm);\n  visibility: hidden;\n  height: 100%;\n  text-align: center;\n  vertical-align: middle;\n}\n.checkmark-shape[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  position: relative;\n}\n\n.checkbox-label[_ngcontent-%COMP%] {\n  font-size: var(--uv-font-size-sm);\n  line-height: 16px;\n  margin-left: 8px;\n}\n\n.checked[_ngcontent-%COMP%] {\n  background-color: var(--uv-color-primary);\n  border: 1px solid rgba(255, 255, 255, 0);\n}\n.checked[_ngcontent-%COMP%]   .checkmark[_ngcontent-%COMP%] {\n  visibility: visible;\n}\n\n.disabled[_ngcontent-%COMP%] {\n  cursor: not-allowed;\n  color: var(--uv-color-gray);\n}"],
   changeDetection: 0
 });
 
@@ -746,10 +729,11 @@ function DropdownComponent_div_3_Template(rf, ctx) {
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 5)(2, "div", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "uvx-icon", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "div", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](6, 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "uvx-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](7, 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
@@ -758,8 +742,8 @@ function DropdownComponent_div_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction1"](6, _c0, ctx_r1.width));
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("open", ctx_r1.open);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("icon", ctx_r1.open ? "arrow_expand" : "arrow_collapse");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r1.open ? "arrow_expand" : "expand_less");
   }
 }
 function DropdownComponent_div_4_Template(rf, ctx) {
@@ -837,7 +821,7 @@ DropdownComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1_
   ngContentSelectors: _c2,
   decls: 5,
   vars: 4,
-  consts: [[1, "uv-input-label"], [4, "ngIf"], ["class", "select-wrapper", 3, "ngStyle", "select-wrapper-border", "click", 4, "ngIf"], ["class", "select-wrapper", 3, "ngStyle", "click", 4, "ngIf"], [1, "select-wrapper", 3, "ngStyle", "click"], [1, "select"], [1, "select__trigger"], [3, "icon"], [1, "custom-options", "flex", "flex-column"]],
+  consts: [[1, "uv-input-label"], [4, "ngIf"], ["class", "select-wrapper", 3, "ngStyle", "select-wrapper-border", "click", 4, "ngIf"], ["class", "select-wrapper", 3, "ngStyle", "click", 4, "ngIf"], [1, "select-wrapper", 3, "ngStyle", "click"], [1, "select"], [1, "select__trigger"], [1, "custom-options", "flex", "flex-column"]],
   template: function DropdownComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"](_c1);
@@ -845,7 +829,7 @@ DropdownComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1_
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, DropdownComponent_span_2_Template, 2, 0, "span", 1);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, DropdownComponent_div_3_Template, 7, 8, "div", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, DropdownComponent_div_3_Template, 8, 8, "div", 2);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](4, DropdownComponent_div_4_Template, 3, 5, "div", 3);
     }
     if (rf & 2) {
@@ -1265,26 +1249,29 @@ IconButtonComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
     active: "active"
   },
   ngContentSelectors: _c0,
-  decls: 3,
+  decls: 4,
   vars: 14,
-  consts: [[1, "btn", "btn-svg", "h-100", 3, "ngClass"], [3, "svgIcon"]],
+  consts: [[1, "btn", "btn-svg", "h-100", 3, "ngClass"]],
   template: function IconButtonComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0)(1, "mat-icon", 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0)(1, "mat-icon");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("secondary", ctx.mode === "secondary")("disabled", ctx.disabled)("active", ctx.active);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.cssClasses);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("uvx-icon-xs", ctx.size === "xs")("uvx-icon-sm", ctx.size === "sm")("uvx-icon-md", ctx.size === "md");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("svgIcon", ctx.icon);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.icon, " ");
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgClass, _angular_material_icon__WEBPACK_IMPORTED_MODULE_2__.MatIcon],
-  styles: [".btn-svg[_ngcontent-%COMP%], .btn-svg[_ngcontent-%COMP%]:link, .btn-svg[_ngcontent-%COMP%]:visited {\n  display: inline-block;\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  background-color: transparent;\n}\n.btn-svg[_ngcontent-%COMP%]:active, .btn-svg[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.btn-svg[_ngcontent-%COMP%]   svg[_ngcontent-%COMP%] {\n  cursor: pointer;\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n  vertical-align: middle;\n}\n.btn-svg[_ngcontent-%COMP%]   svg-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-sm[_ngcontent-%COMP%] {\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n}\n\n.uvx-icon-md[_ngcontent-%COMP%] {\n  width: var(--uv-md-size);\n  height: var(--uv-md-size);\n}\n\n.black[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-black);\n}\n.black[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.gray[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-gray);\n}\n.gray[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.gray-dark[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-dark);\n}\n.gray-dark[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.primary[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary);\n}\n.primary[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary-active);\n}\n\n.help[_ngcontent-%COMP%] {\n  color: var(--uv-color-help);\n}\n.help[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-help-active);\n}\n\n.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-gray);\n  cursor: not-allowed;\n}\n.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-svg-color-gray);\n  cursor: not-allowed;\n}\n\n.active[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary-active);\n  background-color: var(--uv-color-gray-light);\n}\n\n.secondary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  width: 40px;\n  color: var(--uv-color-black);\n  background-color: var(--uv-color-white);\n  border: 1px solid var(--uv-color-gray-3);\n}\n.secondary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-gray-light);\n}"],
+  styles: [".btn-svg[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n.btn-svg[_ngcontent-%COMP%], .btn-svg[_ngcontent-%COMP%]:link, .btn-svg[_ngcontent-%COMP%]:visited {\n  display: inline-block;\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  background-color: transparent;\n}\n.btn-svg[_ngcontent-%COMP%]:active, .btn-svg[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n.btn-svg[_ngcontent-%COMP%]   svg[_ngcontent-%COMP%] {\n  cursor: pointer;\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n  vertical-align: middle;\n}\n.btn-svg[_ngcontent-%COMP%]   svg-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-sm[_ngcontent-%COMP%] {\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n}\n\n.uvx-icon-md[_ngcontent-%COMP%] {\n  width: var(--uv-md-size);\n  height: var(--uv-md-size);\n}\n\n.black[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-black);\n}\n.black[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.gray[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-gray);\n}\n.gray[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.gray-dark[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-dark);\n}\n.gray-dark[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary);\n}\n\n.primary[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary);\n}\n.primary[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-primary-active);\n}\n\n.help[_ngcontent-%COMP%] {\n  color: var(--uv-color-help);\n}\n.help[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-help-active);\n}\n\n.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-svg-color-gray);\n  cursor: not-allowed;\n}\n.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-svg-color-gray);\n  cursor: not-allowed;\n}\n\n.active[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary-active);\n  background-color: var(--uv-color-gray-light);\n}\n\n.secondary[_ngcontent-%COMP%] {\n  font-size: 14px;\n  line-height: 24px;\n  font-weight: var(--uv-font-bold);\n  height: 40px;\n  width: 40px;\n  color: var(--uv-color-black);\n  background-color: var(--uv-color-white);\n  border: 1px solid var(--uv-color-gray-3);\n}\n.secondary.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary.disabled[_ngcontent-%COMP%]:hover {\n  color: var(--uv-color-white);\n  background-color: var(--uv-color-gray);\n  font-weight: none;\n  cursor: not-allowed;\n}\n.secondary[_ngcontent-%COMP%]:hover {\n  background-color: var(--uv-color-gray-light);\n}"],
   changeDetection: 0
 });
 
@@ -1671,16 +1658,15 @@ LaunchBarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2
     rightPos: "rightPos",
     launchServices: "launchServices"
   },
-  decls: 4,
+  decls: 3,
   vars: 6,
-  consts: [[1, "launch-bar", 3, "ngStyle"], [3, "icon", "matTooltip", "routerLink", 4, "ngFor", "ngForOf"], ["matTooltip", "Launch Service 4"], [3, "icon", "matTooltip", "routerLink"]],
+  consts: [[1, "launch-bar", 3, "ngStyle"], [3, "icon", "matTooltip", "routerLink", 4, "ngFor", "ngForOf"], ["icon", "error", "matTooltip", "Launch Service 4"], [3, "icon", "matTooltip", "routerLink"]],
   template: function LaunchBarComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, LaunchBarComponent_uvx_icon_button_1_Template, 1, 3, "uvx-icon-button", 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "uvx-icon-button", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "error");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "uvx-icon-button", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("@launchBarAnimation", undefined)("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction2"](3, _c0, ctx.topPos, ctx.rightPos));
@@ -1909,13 +1895,13 @@ class NavbarSubComponent {
 
   get expandIcon() {
     if (!this.rightSide && !this.isExpanded) {
-      return 'double_right';
+      return 'chevron_right';
     } else if (!this.rightSide && this.isExpanded) {
-      return 'double_left';
+      return 'chevron_left';
     } else if (this.rightSide && !this.isExpanded) {
-      return 'double_left';
+      return 'chevron_left';
     } else if (this.rightSide && this.isExpanded) {
-      return 'double_right';
+      return 'chevron_right';
     } else {
       return 'close';
     }
@@ -2045,7 +2031,7 @@ NavbarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__[
   ngContentSelectors: _c0,
   decls: 6,
   vars: 2,
-  consts: [[1, "navbar", "position-relative"], [1, "flex"], ["icon", "logo-1"], [1, "divider"], [1, "content"]],
+  consts: [[1, "navbar", "position-relative"], [1, "flex"], ["icon", "logo-1", "size", "xl", 1, "navbar-logo"], [1, "divider"], [1, "content"]],
   template: function NavbarComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -2062,7 +2048,7 @@ NavbarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__[
     }
   },
   dependencies: [_uvx_icon_uvx_icon_component__WEBPACK_IMPORTED_MODULE_0__.UvxIconComponent],
-  styles: [".navbar[_ngcontent-%COMP%] {\n  height: 100%;\n  z-index: var(--uv-z-index-navbar);\n  border: var(--uv-border-gray);\n  border-bottom: none;\n  background-color: var(--uv-color-white);\n  box-shadow: var(--uv-box-shadow);\n  width: var(--uv-navbar-width);\n  transition: width 0.25s;\n}\n.navbar-expanded[_ngcontent-%COMP%] {\n  width: 200px;\n}\n\n.navbar-logo[_ngcontent-%COMP%] {\n  width: var(--uv-md-size);\n  height: calc(var(--uv-header-height) - 2px);\n  margin-left: 15px;\n}\n\n.logo-box[_ngcontent-%COMP%] {\n  padding-left: 8px;\n}"],
+  styles: [".navbar[_ngcontent-%COMP%] {\n  height: 100%;\n  z-index: var(--uv-z-index-navbar);\n  border: var(--uv-border-gray);\n  border-bottom: none;\n  background-color: var(--uv-color-white);\n  box-shadow: var(--uv-box-shadow);\n  width: var(--uv-navbar-width);\n  transition: width 0.25s;\n}\n.navbar-expanded[_ngcontent-%COMP%] {\n  width: 200px;\n}\n\n.navbar-logo[_ngcontent-%COMP%] {\n  width: var(--uv-md-size);\n  height: calc(var(--uv-header-height) - 2px);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-left: 15px;\n}\n\n.logo-box[_ngcontent-%COMP%] {\n  padding-left: 8px;\n}"],
   changeDetection: 0
 });
 
@@ -2938,16 +2924,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function SearchPanelComponent_uvx_icon_button_6_Template(rf, ctx) {
+function SearchPanelComponent_uvx_icon_button_5_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "uvx-icon-button", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function SearchPanelComponent_uvx_icon_button_6_Template_uvx_icon_button_click_0_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function SearchPanelComponent_uvx_icon_button_5_Template_uvx_icon_button_click_0_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r3);
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresetView"](ctx_r2.onSearchClearClicked($event));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "close ");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
@@ -2956,7 +2941,7 @@ const _c0 = function (a0) {
     "max-height": a0
   };
 };
-function SearchPanelComponent_div_7_Template(rf, ctx) {
+function SearchPanelComponent_div_6_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](1, 1);
@@ -3027,9 +3012,9 @@ SearchPanelComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
     searchClearClicked: "searchClearClicked"
   },
   ngContentSelectors: _c3,
-  decls: 8,
+  decls: 7,
   vars: 12,
-  consts: [[1, "search-panel", "w-100", "flex", "justify-content-space-between", "position-relative", 3, "ngStyle"], [1, "w-100", "justify-content-space-between", "flex", "align-items-center", "position-relative", 3, "ngClass"], [1, "flex", "align-items-center", "w-100", "h-100"], [3, "click"], ["matTooltip", "Clear search query", 3, "click", 4, "ngIf"], ["class", "suggestions-dropdown flex flex-column", 3, "ngStyle", 4, "ngIf"], ["matTooltip", "Clear search query", 3, "click"], [1, "suggestions-dropdown", "flex", "flex-column", 3, "ngStyle"]],
+  consts: [[1, "search-panel", "w-100", "h-100", "flex", "justify-content-space-between", "align-content-center", "position-relative", 3, "ngStyle"], [1, "w-100", "h-100", "justify-content-space-between", "flex", "align-items-center", "position-relative", 3, "ngClass"], [1, "flex", "align-items-center", "w-100", "h-100"], ["icon", "search", 3, "click"], ["matTooltip", "Clear search query", "icon", "close", 3, "click", 4, "ngIf"], ["class", "suggestions-dropdown flex flex-column", 3, "ngStyle", 4, "ngIf"], ["matTooltip", "Clear search query", "icon", "close", 3, "click"], [1, "suggestions-dropdown", "flex", "flex-column", 3, "ngStyle"]],
   template: function SearchPanelComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"](_c1);
@@ -3037,13 +3022,12 @@ SearchPanelComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function SearchPanelComponent_Template_uvx_icon_button_click_3_listener() {
         return ctx.onSearch();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "search");
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](4);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, SearchPanelComponent_uvx_icon_button_6_Template, 2, 0, "uvx-icon-button", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, SearchPanelComponent_uvx_icon_button_5_Template, 1, 0, "uvx-icon-button", 4);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](7, SearchPanelComponent_div_7_Template, 2, 3, "div", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, SearchPanelComponent_div_6_Template, 2, 3, "div", 5);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
@@ -3051,7 +3035,7 @@ SearchPanelComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction1"](10, _c2, ctx.width));
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", ctx.getMode());
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.mode === "global" || "component-border");
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.showSuggestions);
@@ -3553,17 +3537,20 @@ __webpack_require__.r(__webpack_exports__);
 
 function TabComponent_mat_icon_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "mat-icon", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("margin-right-sm", ctx_r0.mode === "vertical")("position-relative", ctx_r0.mode === "vertical")("position", ctx_r0.mode === "vertical")("blue", ctx_r0.isReorderMode);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("svgIcon", ctx_r0.isReorderMode ? "reorder" : ctx_r0.icon);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r0.icon);
   }
 }
 const _c0 = function (a0, a1, a2, a3) {
   return {
-    "disabled": a0,
+    disabled: a0,
     "horizontal-active": a1,
     "vertical-active": a2,
     "reorder-mode": a3
@@ -3597,12 +3584,12 @@ TabComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
   ngContentSelectors: _c1,
   decls: 6,
   vars: 14,
-  consts: [[1, "tab-wrapper"], [1, "tab", 3, "ngClass"], ["class", "position-svg black margin-right-xs", 3, "margin-right-sm", "position-relative", "position", "blue", "svgIcon", 4, "ngIf"], [1, "position-svg", "black", "margin-right-xs", 3, "svgIcon"]],
+  consts: [[1, "tab-wrapper"], [1, "tab", 3, "ngClass"], [1, "flex", "align-items-center"], ["class", "position-svg black margin-right-xs", 3, "margin-right-sm", "position-relative", "position", "blue", 4, "ngIf"], [1, "position-svg", "black", "margin-right-xs"]],
   template: function TabComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, TabComponent_mat_icon_3_Template, 1, 9, "mat-icon", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, TabComponent_mat_icon_3_Template, 2, 9, "mat-icon", 3);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](5);
@@ -4054,8 +4041,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const myCustomTooltipDefaults = {
   showDelay: 500,
-  hideDelay: 100,
-  touchendHideDelay: 100
+  hideDelay: 0,
+  touchendHideDelay: 0
 };
 class TooltipModule {}
 TooltipModule.ɵfac = function TooltipModule_Factory(t) {
@@ -4132,7 +4119,7 @@ UvxIconComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__
     }
   },
   dependencies: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_1__.MatIcon],
-  styles: [".uvx-icon-black[_ngcontent-%COMP%] {\n  color: var(--uv-color-black);\n}\n\n.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-2);\n  cursor: not-allowed !important;\n}\n\n.uvx-icon-primary[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary);\n}\n\n.uvx-icon-success[_ngcontent-%COMP%] {\n  color: var(--uv-color-success);\n}\n\n.uvx-icon-gray[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray);\n}\n\n.uvx-icon-white[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n}\n\n.uvx-icon-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-sm[_ngcontent-%COMP%] {\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n}\n\n.uvx-icon-md[_ngcontent-%COMP%] {\n  width: var(--uv-md-size);\n  height: var(--uv-md-size);\n}\n\n.uvx-icon-xl[_ngcontent-%COMP%] {\n  width: var(--uv-xl-size);\n  height: var(--uv-xl-size);\n}\n\n.uvx-icon-xxl[_ngcontent-%COMP%] {\n  width: 75px;\n  height: 75px;\n}\n\n.uvx-icon-bg[_ngcontent-%COMP%] {\n  width: var(--uv-icon-bg);\n  height: var(--uv-icon-bg);\n}\n\n.uvx-icon-checkmark[_ngcontent-%COMP%] {\n  width: 20px;\n  height: 20px;\n}"],
+  styles: ["[_nghost-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n\n.uvx-icon-black[_ngcontent-%COMP%] {\n  color: var(--uv-color-black);\n}\n\n.disabled[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray-2);\n  cursor: not-allowed !important;\n}\n\n.uvx-icon-primary[_ngcontent-%COMP%] {\n  color: var(--uv-color-primary);\n}\n\n.uvx-icon-success[_ngcontent-%COMP%] {\n  color: var(--uv-color-success);\n}\n\n.uvx-icon-gray[_ngcontent-%COMP%] {\n  color: var(--uv-color-gray);\n}\n\n.uvx-icon-white[_ngcontent-%COMP%] {\n  color: var(--uv-color-white);\n}\n\n.uvx-icon-xs[_ngcontent-%COMP%] {\n  width: var(--uv-xs-size);\n  height: var(--uv-xs-size);\n}\n\n.uvx-icon-sm[_ngcontent-%COMP%] {\n  width: var(--uv-sm-size);\n  height: var(--uv-sm-size);\n}\n\n.uvx-icon-md[_ngcontent-%COMP%] {\n  width: var(--uv-md-size);\n  height: var(--uv-md-size);\n}\n\n.uvx-icon-xl[_ngcontent-%COMP%] {\n  width: var(--uv-xl-size);\n  height: var(--uv-xl-size);\n}\n\n.uvx-icon-xxl[_ngcontent-%COMP%] {\n  transform: scale(1.5);\n}\n\n.uvx-icon-bg[_ngcontent-%COMP%] {\n  width: var(--uv-icon-bg);\n  height: var(--uv-icon-bg);\n}\n\n.uvx-icon-checkmark[_ngcontent-%COMP%] {\n  font-size: 16px;\n}"],
   changeDetection: 0
 });
 
@@ -4704,15 +4691,15 @@ HomeSplashComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "uvx-icon", 1);
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "h5", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "Welcome to the Data Platform Prototype");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "Welcome to the Data Platform Prototype that I (Amanda Simonds) built!");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "p", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " Thank you for participating in this usability test. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " This prototype was used for usability testing for UIUX design and front end development of a beta release, data platform application. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "br");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Our aim is to determine the usability of the proposed wallet feature. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Our aim was to conduct research on user intuitiveness around the workflows we were designing for. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, " Please note that this prototype demonstrates proposed workflows and features. All visuals and content are placeholders only, and do not represent real-world examples. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, " This prototype demonstrates proposed workflows and features. All visuals and content are placeholders only, and do not represent real-world examples. Feel free to look around! ");
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
     }
   },
@@ -91481,7 +91468,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NgxEchartsDirective": () => (/* binding */ NgxEchartsDirective),
 /* harmony export */   "NgxEchartsModule": () => (/* binding */ NgxEchartsModule)
 /* harmony export */ });
-/* harmony import */ var C_Users_amand_repos_prototype_my_original_lib_data_platform_prototype_1_uv_ui_lib_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 49671);
+/* harmony import */ var C_Users_amand_repos_new_data_repo_data_platform_prototype_1_uv_ui_lib_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 49671);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 94650);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 21086);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 68896);
@@ -91659,7 +91646,7 @@ class NgxEchartsDirective {
    */
   refreshChart() {
     var _this = this;
-    return (0,C_Users_amand_repos_prototype_my_original_lib_data_platform_prototype_1_uv_ui_lib_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_amand_repos_new_data_repo_data_platform_prototype_1_uv_ui_lib_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       _this.dispose();
       yield _this.initChart();
     })();
@@ -91683,7 +91670,7 @@ class NgxEchartsDirective {
   }
   initChart() {
     var _this2 = this;
-    return (0,C_Users_amand_repos_prototype_my_original_lib_data_platform_prototype_1_uv_ui_lib_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_amand_repos_new_data_repo_data_platform_prototype_1_uv_ui_lib_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       yield _this2.onOptionsChange(_this2.options);
       if (_this2.merge && _this2.chart) {
         _this2.setOption(_this2.merge);
@@ -91692,7 +91679,7 @@ class NgxEchartsDirective {
   }
   onOptionsChange(opt) {
     var _this3 = this;
-    return (0,C_Users_amand_repos_prototype_my_original_lib_data_platform_prototype_1_uv_ui_lib_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_amand_repos_new_data_repo_data_platform_prototype_1_uv_ui_lib_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (!opt) {
         return;
       }

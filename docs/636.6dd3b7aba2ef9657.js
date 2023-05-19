@@ -65,7 +65,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function DashboardComponent_uvx_dropdown_9_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "uvx-dropdown")(1, "div", 11)(2, "uvx-icon", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "uvx-dropdown")(1, "div", 12)(2, "uvx-icon", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "description");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Placeholder ");
@@ -97,9 +97,9 @@ DashboardComponent.ɵfac = function DashboardComponent_Factory(t) {
 DashboardComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
   type: DashboardComponent,
   selectors: [["app-dashboard"]],
-  decls: 20,
+  decls: 19,
   vars: 1,
-  consts: [[1, "container", "flex", "padding-sm"], [1, "side-container", "gap-sm", "flex-column", "padding-right-sm", "padding-left-sm"], [1, "item", "item-square"], [1, "item", "item-square", "margin-top-sm"], [1, "main-container", "flex", "flex-column"], [1, "top-container", "padding-right-sm", "padding-left-sm", "flex", "justify-content-space-between"], [4, "ngFor", "ngForOf"], [1, "widget-container", "align-items-stretch", "align-content-stretch", "flex", "flex-column", "gap-sm", "padding-top-sm", "padding-left-sm"], [1, "flex", "h-100", "align-items-stretch", "align-content-stretch", "gap-sm"], [1, "item"], [1, "wallet"], ["title", ""], ["size", "sm", 1, "margin-right-xxs"]],
+  consts: [[1, "container", "flex", "padding-sm"], [1, "side-container", "gap-sm", "flex-column", "padding-right-sm", "padding-left-sm"], [1, "item", "item-square"], [1, "item", "item-square", "margin-top-sm"], [1, "main-container", "flex", "flex-column"], [1, "top-container", "padding-right-sm", "padding-left-sm", "flex", "justify-content-space-between"], [4, "ngFor", "ngForOf"], [1, "widget-container", "align-items-stretch", "align-content-stretch", "flex", "flex-column", "gap-sm", "padding-top-sm", "padding-left-sm"], [1, "flex", "h-100", "align-items-stretch", "align-content-stretch", "gap-sm"], [1, "item"], [1, "wallet"], ["icon", "chevron_left"], ["title", ""], ["size", "sm", 1, "margin-right-xxs"]],
   template: function DashboardComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0)(1, "div", 1);
@@ -114,9 +114,9 @@ DashboardComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](14, "div", 8);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](15, "div", 9)(16, "div", 9);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "div", 10)(18, "uvx-icon-button");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](19, "chevron_left");
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](17, "div", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](18, "uvx-icon-button", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](9);
