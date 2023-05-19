@@ -12,6 +12,39 @@
     }
 }
 
-.toggle-button {
-    text-align: right;
+.nav-icon {
+    height: var(--uv-lg-size);
+    padding: 12px;
+
+    & > * {
+        display: inline-block;
+    }
+
+    &-disabled {
+        pointer-events: none;
+    }
+
+    &-active {
+        // border-right: 4px solid var(--uv-color-primary);
+        mat-icon,
+        p {
+            color: var(--uv-color-primary);
+        }
+    }
+
+    &:hover {
+        color: var(--uv-color-primary);
+        cursor: pointer;
+    }
+
+    img,
+    a {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.nav-title {
+    font-size: 9px; 
+    color: var(--uv-color-black);
 }

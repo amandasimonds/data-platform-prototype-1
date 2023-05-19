@@ -64,8 +64,8 @@ export class SearchResultsComponent implements OnChanges, OnInit {
         this.searchService.selectResult(item, i);
         // this.searchService.setCompareWarningState(value);
         this.wizardService.updateWizardData('entity', item);
-        if (route === 'gwu') {
-            this.router.navigate(['main/gwu/wave']);
+        if (route === 'graph') {
+            this.router.navigate(['main/graph/wave']);
         } else if (route === 'sbs') {
             this.router.navigate(['main/sbs']);
         }

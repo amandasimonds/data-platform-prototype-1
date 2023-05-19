@@ -22,7 +22,7 @@ const routes: Routes = [
                 loadChildren: () => import('../../side-by-side/side-by-side.module').then((m) => m.SideBySideModule),
             },
             {
-                path: 'gwu',
+                path: 'graph',
                 loadChildren: () => import('../../global-where-used/gwu.module').then((m) => m.GwuModule),
             },
             {
