@@ -13,7 +13,7 @@
 }
 
 .checkmark {
-    line-height: 14px;
+    line-height: 16px;
     font-size: var(--uv-font-size-sm);
     visibility: hidden;
     height: 100%;
@@ -23,8 +23,6 @@
     &-shape {
         color: var(--uv-color-white);
         position: relative;
-        right: 2.75px;
-        top: -2.5px;
     }
 }
 

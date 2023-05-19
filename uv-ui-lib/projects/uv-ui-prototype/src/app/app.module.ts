@@ -14,7 +14,6 @@ import { UvLightService } from './services/uv-light.service';
 import { IconDisplayComponent } from './pages/icon-display/icon-display.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
-import { FooterComponent } from './layouts/footer/footer.component';
 
 @NgModule({
     declarations: [
@@ -22,8 +21,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
         LoginComponent,
         UvLightComponent,
         IconDisplayComponent,
-        UnauthorizedComponent,
-        FooterComponent,
+        UnauthorizedComponent
     ],
     imports: [
         AppRoutingModule,
