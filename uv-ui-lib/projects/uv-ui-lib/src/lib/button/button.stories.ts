@@ -9,40 +9,41 @@ export default {
     component: ButtonComponent,
     decorators: [
         moduleMetadata({
-            imports: [RegisterIconModule.forRoot(ICON_SET)]
+            imports: [RegisterIconModule.forRoot(ICON_SET)],
         }),
-        componentWrapperDecorator((story) => `<div uvxRegisterIcon><div style="height: 68px;">${story}</div></div>`)
-    ]
+        componentWrapperDecorator((story) => `<div uvxRegisterIcon><div style="height: 68px;">${story}</div></div>`),
+    ],
 } as Meta;
 
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
     component: ButtonComponent,
-    props: args
+    props: args,
 });
 
 export const Text = Template.bind({});
 Text.args = {
     label: 'Text Button',
-    mode: 'text'
+    mode: 'text',
 };
 
 Text.parameters = {
     docs: {
-      source: {
-        mode: 'auto'
-      }
-    }
-  };
+        source: {
+            mode: 'auto',
+        },
+    },
+};
 
 export const TextWithIcon = Template.bind({});
 TextWithIcon.args = {
     label: 'Text With Icon',
     mode: 'text',
-    icon: 'back'
+    icon: 'back',
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
     label: 'Primary Button',
-    mode: 'primary'
+    mode: 'primary',
 };
+

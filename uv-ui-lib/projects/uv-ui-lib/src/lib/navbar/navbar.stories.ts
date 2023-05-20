@@ -24,30 +24,30 @@ const Template: Story<NavbarComponent> = (args: NavbarComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-    navlinks: [
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',
-            navlink: '/'
-        },
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',
-            navlink: '/'
-        },
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',
-            navlink: '/'
-        },
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',
-            navlink: '/'
-        },
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',
-            navlink: '/'
-        },
-        {
-            icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',
-            navlink: '/'
-        }
-    ]
+    // navlinks: [
+    //     {
+    //         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-quad-gradient.svg',
+    //         navlink: '/'
+    //     },
+    //     {
+    //         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-gwu-gradient.svg',
+    //         navlink: '/'
+    //     },
+    //     {
+    //         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-sbs-gradient.svg',
+    //         navlink: '/'
+    //     },
+    //     {
+    //         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-design-ripple-gradient.svg',
+    //         navlink: '/'
+    //     },
+    //     {
+    //         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-ingestion-gradient.svg',
+    //         navlink: '/'
+    //     },
+    //     {
+    //         icon: 'http://dpzaq1wj21co3.cloudfront.net/icons/gradient/apps-settings-gradient.svg',
+    //         navlink: '/'
+    //     }
+    // ]
 };

@@ -1,6 +1,6 @@
 import { setCompodocJson } from "@storybook/addon-docs/angular";
 import '!style-loader!css-loader!sass-loader!./../projects/uv-ui-lib/src/lib/scss/_styles.scss';
-import '!style-loader!css-loader!sass-loader!./styles.scss';
+// import '!style-loader!css-loader!sass-loader!./styles.scss';
 import docJson from "../documentation.json";
 setCompodocJson(docJson);
 

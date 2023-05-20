@@ -13,6 +13,9 @@
   ],
   "include": [
     "../projects/uv-ui-lib/*",
+    "../stories/**/*",
+    "../src/**/*",
+    "../projects/**/*"
   ],
   "files": [
     "./typings.d.ts"
